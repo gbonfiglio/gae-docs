@@ -16,6 +16,8 @@
 
 
 
+
+
  
  
  
@@ -34,7 +36,7 @@
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<title>Quotas - Google App Engine - Google Code</title>
+<title>Limits - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
@@ -188,6 +190,7 @@ _gaq.push(
   <li><a href="../downloads.html">Downloads</a></li>
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -228,14 +231,15 @@ _gaq.push(
       <li><a href="python/gettingstartedpython27/index.html">Python 2.7</a>
         <ul>
             <li><a href="python/gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="python/gettingstartedpython27/devenvironment.html">The Development Environment</a></li>
   <li><a href="python/gettingstartedpython27/helloworld.html">Hello, World!</a></li>
-  <li><a href="python/gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
   <li><a href="python/gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="python/gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
   <li><a href="python/gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="python/gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
   <li><a href="python/gettingstartedpython27/templates.html">Using Templates</a></li>
   <li><a href="python/gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
+  <li><a href="python/gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -280,6 +284,7 @@ _gaq.push(
     <li><a href="java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="java/datastore/stats.html">Statistics</a></li>
     <li><a href="java/datastore/async.html">Async API</a></li>
+    <li><a href="java/datastore/callbacks.html">Callbacks</a></li>
     <li><a href="java/datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="java/datastore/jdo/overview.html">Overview</a></li>
@@ -449,10 +454,11 @@ _gaq.push(
     <li><a href="java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="java/tools/capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="java/tools/appstats.html">Appstats</a></li>
     <li><a href="java/tools/remoteapi.html">Remote API</a></li>
@@ -525,6 +531,19 @@ _gaq.push(
           <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="python/dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="python/dataprocessing/overview.html">Overview</a></li>
+     <li><a href="python/dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -836,6 +855,7 @@ _gaq.push(
     <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="python/tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="python/tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -929,6 +949,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="go/config/appconfig.html">App Config</a></li>
+    <li><a href="go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="go/tools/devserver.html">Development Server</a></li>
+    <li><a href="go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -961,6 +998,7 @@ _gaq.push(
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="../articles/index.html">Articles</a></li>
+      <li><a href="videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -986,7 +1024,7 @@ _gaq.push(
       </div>
 
       <div class="g-unit" id="gc-pagecontent">
-        <h1 class="page_title">Quotas</h1>
+        <h1 class="page_title">Limits</h1>
 
 
 
@@ -1173,17 +1211,12 @@ _gaq.push(
 
 
 
-
-
-
-<p>An App Engine application can consume resources up to certain maximums, or <i>quotas</i>. With quotas, App Engine ensures that your application won't exceed your budget, and that other applications running on App Engine won't impact the performance of your app.</p>
+<p>An App Engine application can consume resources up to certain quotas. With these quotas, App Engine ensures that your application won't exceed your budget, and that other applications running on App Engine won't impact your application's performance.</p>
 
 <ul>
-  <li><a href="#Billable_Quotas_and_Fixed_Quotas">Billable Quotas and Fixed Quotas</a></li>
+  <li><a href="#Safety_Quotas_and_Billable_Quotas">Safety Quotas and Billable Quotas</a></li>
   <li><a href="#How_Resources_are_Replenished">How Resources are Replenished</a></li>
-  <li><a href="#Per-minute_Quotas">Per-minute Quotas</a></li>
   <li><a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a></li>
-  <li><a href="#Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in Java</a></li>
   <li><a href="#Resources">Resources</a>
     <ul>
       <li><a href="#Blobstore">Blobstore</a></li>
@@ -1199,51 +1232,49 @@ _gaq.push(
   </li>
 </ul>
 
+<h2 id="Safety_Quotas_and_Billable_Quotas">Safety Limits and Billable Resource Limits</h2>
 
-<h2 id="Billable_Quotas_and_Fixed_Quotas">Billable Quotas and Fixed Quotas</h2>
+<p>Safety quotas are set by Google to protect the integrity of the App Engine system. These quotas ensure that no single app can over-consume resources to the detriment of other apps. Billable resource quotas are set by the application administrator in the <strong>Billing Settings</strong> tab of the Administration Console. These quotas allow administrators to manage application performance and cost.</p>
 
-<p>Each App Engine resource is measured against one of two kinds of quota: a <i>billable quota</i> or a <i>fixed quota</i>.</p>
+<h3>Safety Limits</h3>
 
-<p>Billable quotas are resource maximums set by you, the application's administrator, to prevent the cost of the application from exceeding your budget. Every application gets an amount of each billable quota for free. You can increase billable quotas for your application by enabling billing, setting a daily budget, then allocating the budget to the quotas. You will be charged only for the resources your app actually uses, and only for the amount of resources used above the free quota thresholds.</p>
+<p>Safety quotas include <em>daily quotas</em> and <em>per-minute quotas</em>:</p>
 
-<p>After you <a href="billing.html#Enabling_Billing">enable billing</a> for your application, you can set your daily budget and adjust quota allocations for your app using the <a href="https://appengine.google.com">Admin Console</a>. For more information about setting your budget and allocating quotas, see <a href="billing.html">Billing</a>.</p>
+<ul>
+  <li><strong>Daily quotas</strong> are refreshed daily at midnight Pacific time. Paid applications can exceed this free quota until their budget is exhausted.</li>
+  <li><strong>Per-minute quotas</strong> protect the application from consuming all of its resources in very short periods of time, and prevent other applications from monopolizing a given resource. If your application consumes a resource too quickly and depletes one of the per-minute quotas, the word "Limited" appears next to the appropriate quota on the <strong>Quota Details</strong> screen in the Admin Console. Requests for resources that have hit their per-minute maximum will be denied. See <a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a> for details.</li>
+</ul>
 
-<p>Fixed quotas are resource maximums set by App Engine to ensure the integrity of the system. These resources describe the boundaries of the architecture, and all applications are expected to run within the same limits. They ensure that another app that is consuming too many resources will not affect the performance of your app.</p>
+<p>Paid applications have higher daily and per-minute quotas than free applications. When a paid application exceeds this quota, it continues to use the resource until the budget is exhausted. You can see all the current quotas in the <a href="#Resources">Resources</a> section. These quotas are strictly for safety and represent an extreme that most applications will not encounter in normal usage.</p>
 
-<p>When you enable billing for your app, the app's fixed quotas increase. See the <a href="#Resources">Resources</a> section for details.</p>
+<p class="note"><b>Tip:</b> For paid apps, the maximum per-minute quotas accommodate very high traffic levels, enough to handle a spike in traffic from your site getting mentioned in news stories. In extreme cases, you can <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">request an increase in the maximums</a>.</p>
+
+<h3>Billable Resource Limits</h3>
+
+<p>Every application gets an amount of each billable resource for free, but application administrators can increase the billable quotas by <a href="billing.html#Enabling_Paid_Apps">enabling paid apps</a> and setting a daily budget. You will be charged for the resources your application actually uses, and for the amount of resources used above the free quota thresholds. Paid applications incur a minimum spend of $2.10/week.</p>
+
+<p>After you enable billing for your application, you can set your daily budget and adjust quotas using the Administration Console. For more information about setting your budget and allocating resources, see <a href="billing.html">Billing</a>. When you enable billing for your application, the application's safety quotas increase. See the <a href="#Resources">Resources</a> section for details.</p>
 
 
 <h2 id="How_Resources_are_Replenished">How Resources are Replenished</h2>
 
-<p>App Engine records how much of each resource an application uses in a calendar day, and considers the resource depleted when this amount reaches the app's quota for the resource. A calendar day is a period of 24 hours beginning at midnight, Pacific Time. App Engine resets all resource measurements at the beginning of each day, except for Stored Data which always represents the amount of datastore storage in use.</p>
+<p>App Engine tracks your application's resource usage against system quotas. For both free and paid applications, App Engine resets all resource measurements at the beginning of each calendar day (except for Stored Data, which always represents the amount of datastore storage in use). When free applications reach their quota for a resource, they cannot use that resource until the quota is replenished. Paid apps can exceed the free quota until their budget is exhausted.</p>
 
-<p><i>Historical note:</i> The 24-hour replenishment cycle was introduced in December 2008. It replaced a more complicated system of "continuous" replenishment, to make it easier to report and control resource usage.</p>
-
-
-<h2 id="Per-minute_Quotas">Per-minute Quotas</h2>
-
-<p>In addition to the daily quotas described above, App Engine moderates how quickly an app can consume some resources, using <em>per-minute quotas</em>. This protects the app from consuming all of its quota in very short periods of time, and keeps other apps from affecting your app by monopolizing a given resource.</p>
-
-<p>If your application consumes a resource too quickly and depletes one of the per-minute limits, the word "Limited" will appear by the appropriate quota on the <strong>Quota Details</strong> screen in the Admin Console. Requests for resources that have hit their per-minute maximum will be denied. See <a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a> for details.</p>
-
-<p>As with the daily fixed quotas, there are two levels of per-minute quotas, depending on whether billing has been enabled or not. See the quota tables in the <a href="#Resources">Resources</a> section for details.</p>
-
-<p class="note"><b>Tip:</b> The maximum per-minute quotas with billing enabled can accommodate high traffic levels for most applications, enough to handle a spike in traffic from your site getting mentioned in news stories. In extreme cases, you can <a href="http://code.google.com/appengine/kb/billing.html#cpu">request an increase in the maximums</a>.</p>
+<p>Daily quotas are replenished daily at midnight Pacific time. Per-minute quotas are refreshed every 60 seconds.</p>
 
 
 <h2 id="When_a_Resource_is_Depleted">When a Resource is Depleted</h2>
 
-<p>When an app consumes all of an allocated resource, the resource becomes unavailable until the quota is replenished. This may mean that your app will not work until the quota is replenished.</p>
+<p>When an application consumes all of an allocated resource, the resource becomes unavailable until the quota is replenished. This may mean that your application will not work until the quota is replenished.</p>
 
 <p>For resources that are required to initiate a request, when the resource is depleted, App Engine by default returns an HTTP 403 Forbidden status code for the request instead of calling a request handler. The following resources have this behavior:</p>
 <ul>
-  <li>CPU Time</li>
   <li>Bandwidth, incoming and outgoing</li>
 </ul>
 
-<p class="note"><b>Tip:</b> You can configure your app to serve a custom error page when your app exceeds its quota. For details, see Custom Error Responses documentation for <a href="python/config/appconfig.html#Custom_Error_Responses">Python</a> and <a href="java/config/appconfig.html#Custom_Error_Responses">Java</a>.</p>
+<p class="note"><b>Tip:</b> You can configure your application to serve a custom error page when your application exceeds a quota. For details, see Custom Error Responses documentation for <a href="python/config/appconfig.html#Custom_Error_Responses">Python</a> and <a href="java/config/appconfig.html#Custom_Error_Responses">Java</a>.</p>
 
-<p>For all other resources, when the resource is depleted, an attempt in the app to consume the resource results in an exception. This exception can be caught by the app and handled, such as by displaying a friendly error message to the user. In the Python API, this exception is <code>apiproxy_errors.OverQuotaError</code>. In the Java API, this exception is <code>com.google.apphosting.api.ApiProxy.OverQuotaException</code>.</p>
+<p>For all other resources, when the resource is depleted, an attempt in the application to consume the resource results in an exception. This exception can be caught by the application and handled, such as by displaying a friendly error message to the user. In the Python API, this exception is <code>apiproxy_errors.OverQuotaError</code>. In the Java API, this exception is <code>com.google.apphosting.api.ApiProxy.OverQuotaException</code>.</p>
 
 <p>The following example illustrates how to catch the <code>OverQuotaError</code>, which may be raised by the <code>SendMessage()</code> method if an email-related quota has been exceeded:</p>
 <pre class="prettyprint">try:
@@ -1259,30 +1290,12 @@ except apiproxy_errors.OverQuotaError, message:
                           'Please try again later.')
 </pre>
 
-<p>If you're going over your system resource quota unexpectedly, consider <a href="../kb/commontasks.html#profiling">profiling your app's performance</a>.</p>
-
-
-<h2 id="Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in a Java</h2>
-
-<p>In the Java environment, the <code>com.google.appengine.api.quota</code> package provides the <code>QuotaService</code> interface (with an implementation and factory) with several methods. See <a href="java/javadoc/com/google/appengine/api/quota/package-summary.html">the Javadoc</a> for details.</p>
-
-<pre class="prettyprint">
-import com.google.appengine.api.quota.QuotaService;
-import com.google.appengine.api.quota.QuotaServiceFactory;
-
-// ...
-        QuotaService qs = QuotaServiceFactory.getQuotaService();
-        long start = qs.getCpuTimeInMegaCycles();
-        doSomethingExpensive();
-        long end = qs.getCpuTimeInMegaCycles();
-
-        double cpuSeconds = qs.convertMegacyclesToCpuSeconds(end - start);
-</pre>
+<p>If you're exceeding your system resource quota unexpectedly, consider <a href="../kb/commontasks.html#profiling">profiling your application's performance</a>.</p>
 
 
 <h2 id="Resources">Resources</h2>
 
-<p>An application may use the following resources, subject to quotas. Resources measured against billable quotas are indicated with "(billable)." Resource amounts represent an allocation over a 24 hour period.</p>
+<p>An application may use the following resources, subject to quotas. Resources measured against billable resources are indicated with "(billable)." Resource amounts represent an allocation over a 24 hour period.</p>
 
 <p>The cost of additional billable resources is listed on the <a href="billing.html">Billing</a> page.</p>
 
@@ -1293,21 +1306,19 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
 <dl>
   <dt>Blobstore Stored Data</dt>
-  <dd>The total amount of data stored in the blobstore. Also counts toward the <b>Stored Data (billable)</b> quota.</dd>
+  <dd>The total amount of data stored in the blobstore. Also counts toward the <b>Stored Data (billable)</b> quota. Available for both paid and free apps.</dd>
 </dl>
-
-<p class="note"><b>Note:</b> The Blobstore API is only available for apps with billing enabled. You still get an amount of quota for free, but billing must be enabled to use it.</p>
 
 <table width="75%">
   <tr>
     <th width="30%">Resource</th>
-    <th width="35%">Free Default Quota</th>
-    <th width="35%">Billing Enabled Default Quota</th>
+    <th width="35%">Free Default Limit</th>
+    <th width="35%">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <td>Blobstore Stored Data</td>
-    <td>1 GB</td>
-    <td>1 GB free; no maximum</td>
+    <td>5 GB</td>
+    <td>5 GB free; no maximum</td>
   </tr>
 </table>
 
@@ -1315,10 +1326,10 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <h3 id="Channel">Channel</h3>
 <dl>
   <dt>Channel API Calls</dt>
-  <dd>The total number of times the app accessed the Channel service.</dd>
+  <dd>The total number of times the application accessed the Channel service.</dd>
 
   <dt>Channels Created</dt>
-  <dd>The number of channels created by the app.</dd>
+  <dd>The number of channels created by the application.</dd>
 
   <dt>Channel Data Sent</dt>
   <dd>The amount of data sent over the Channel service. This also counts toward the Outgoing Bandwidth quota.</dd>
@@ -1327,8 +1338,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1352,20 +1363,20 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>Channel Data Sent</td>
-    <td>up to the Outgoing Bandwidth limit</td>
+    <td>up to the Outgoing Bandwidth quota</td>
     <td>22 MB/minute</td>
     <td>2 GB</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 
 
 <h3 id="Datastore">Datastore</h3>
 
-<p>The <b>Stored Data (billable)</b> quota refers to data stored for the app in the Master/Slave Datastore, the task queue and the Blobstore. The <b>High Replication Storage (billable)</b> quota refers to data stored for the app in the High Replication Datstore. Other quotas in the "Datastore" section of the Quota Details screen in the Administration Console refer to the Datastore service specifically.</p>
+<p>The <b>Stored Data (billable)</b> quota refers to data stored for the application in the Master/Slave Datastore, the task queue and the Blobstore. The <b>High Replication Storage (billable)</b> quota refers to data stored for the application in the High Replication Datstore. Other quotas in the "Datastore" section of the <strong>Quota Details</strong> screen in the Administration Console refer to the Datastore service specifically.</p>
 
 <dl>
   <dt>Stored Data (billable)</dt>
@@ -1401,18 +1412,13 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <table width="75%">
   <tr>
     <th width="30%">Resource</th>
-    <th width="35%">Free Default Quota</th>
-    <th width="35%">Billing Enabled Default Quota</th>
+    <th width="35%">Free Default Limit</th>
+    <th width="35%">Billing Enabled Default Limit</th>
   </tr>
   <tr>
-    <td>Stored Data (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
+    <td>Stored Data (<a href="#Billable_Resources">billable</a>)</td>
     <td>1 GB</td>
     <td>1 GB free; no maximum</td>
-  </tr>
-  <tr>
-    <td>High Replication Storage (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>.5 GB</td>
-    <td>.5 GB free; no maximum</td>
   </tr>
   <tr>
     <td>Number of Indexes</td>
@@ -1420,30 +1426,52 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>200</td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 
+<p>There are three types of low-level <a href="quotas.html#Datastore">Datastore operations</a>:
+<table>
+  <tr><th>Operation</th><th>Cost</th></tr>
+  <tr><td>Write</td><td>$0.10 per 100k operations</td></tr>
+  <tr><td>Read</td><td>$0.07 per 100k operations</td></tr>
+  <tr><td>Small</td><td>$0.01 per 100k operations</td></tr>
+</table>
+</p>
+
+<p>
+These low-level operations map to API-level operations as follows:
+<table>
+  <tr><th>High-Level Operation</th><th>Low-Level Operations Required</th></tr>
+  <tr><td>Entity Get (per entity)</td><td>1 Read</td></tr>
+  <tr><td>New Entity Put (per entity, regardless of entity size)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
+  <tr><td>Existing Entity Put (per entity)</td><td>1 Write + 4 Writes per modified indexed property value + 2 Writes per modified composite index value</td></tr>
+  <tr><td>Entity Delete (per entity)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
+  <tr><td>Query</td><td>1 Read + 1 Read per entity returned</td></tr>
+  <tr><td>Query (keys only)</td><td>1 Read + 1 Small per entity returned</td></tr>
+  <tr><td>Key allocation (per key)</td><td>1 Small</td></tr>
+</table>
+</p>
 
 <h3 id="Deployments">Deployments</h3>
 
 <dl>
   <dt>Deployments</dt>
-  <dd>The number of times the app has been uploaded by a developer. The current limit is 1,000 per day.
-  <p>Apps are restricted to a maximum size of 10 megabytes or 10,485,760 bytes.</p></dd>
+  <dd>The number of times the application has been uploaded by a developer. The current quota is 1,000 per day.
+  <p>An application is limited to 10,000 uploaded files per version. Each file is limited to a maximum size of 32 megabytes.</p></dd>
 </dl>
 
 <h3 id="Mail">Mail</h3>
 
 <dl>
   <dt>Mail API Calls</dt>
-  <dd>The total number of times the app accessed the mail service to send an email message.</dd>
+  <dd>The total number of times the application accessed the mail service to send an email message.</dd>
 
   <dt>Recipients Emailed (billable)</dt>
-  <dd>The total number of recipients to whom the app has sent email messages.</dd>
+  <dd>The total number of recipients to whom the application has sent email messages.</dd>
 
   <dt>Admins Emailed</dt>
-  <dd>The total number of application admins to whom the app has sent email messages.</dd>
+  <dd>The total number of application admins to whom the application has sent email messages.</dd>
 
   <dt>Message Body Data Sent</dt>
   <dd>The amount of data sent in the body of email messages. This also counts toward the Outgoing Bandwidth quota.</dd>
@@ -1458,8 +1486,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1475,8 +1503,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td width="17.5%">4,900 calls/minute</td>
   </tr>
   <tr>
-    <td>Recipients Emailed (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>2000 recipients</td>
+    <td>Recipients Emailed (<a href="#Billable_Resources">billable</a>)</td>
+    <td>100 recipients</td>
     <td>8 recipients/minute</td>
     <td>2000 recipients free; 7,400,000 recipients maximum</td>
     <td>5,100 recipients/minute</td>
@@ -1510,7 +1538,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>300 MB/minute</td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></p></td>
   </tr>
 </table>
 
@@ -1519,10 +1547,10 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <dl>
   <dt>Outgoing Bandwidth (billable)</dt>
   <dd>
-    <p>The amount of data sent by the app in response to requests.</p>
+    <p>The amount of data sent by the application in response to requests.</p>
     <p>This includes:</p>
     <ul>
-      <li>data served in response to both secure requests and non-secure requests by app servers, static file servers, or the Blobstore</li>
+      <li>data served in response to both secure requests and non-secure requests by application servers, static file servers, or the Blobstore</li>
       <li>data sent in email messages</li>
       <li>data sent over XMPP or the Channel API</li>
       <li>data in outgoing HTTP requests sent by the URL fetch service.</li>
@@ -1530,38 +1558,28 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </dd>
   <dt>Incoming Bandwidth (billable)</dt>
   <dd>
-    <p>The amount of data received by the app from requests. Each incoming HTTP request can be no larger than 32MB.</p>
+    <p>The amount of data received by the application from requests. Each incoming HTTP request can be no larger than 32MB.</p>
     <p>This includes:</p>
     <ul>
-      <li>data received by the app in secure requests and non-secure requests</li>
+      <li>data received by the application in secure requests and non-secure requests</li>
       <li>uploads to the Blobstore</li>
       <li>data received in response to HTTP requests by the URL fetch service</li>
     </ul>
   </dd>
-  <dt>CPU Time (billable)</dt>
-  <dd>
-    <p>The total processing time for handling requests, including time spent running the app and performing datastore operations. This does <i>not</i> include time spent waiting for other services, such as waiting for a URL fetch to return or the image service to transform an image.</p>
-    <p>CPU time is reported in "seconds," which is equivalent to the number of CPU cycles that can be performed by a 1.2 GHz Intel x86 processor in that amount of time. The actual number of CPU cycles spent varies greatly depending on conditions internal to App Engine, so this number is adjusted for reporting purposes using this processor as a reference measurement.</p>
-    <p>One tool to assist you in identifying areas in the application which use high amounts of runtime CPU quota is the <code>cProfile</code> module. For instructions on setting up profiling while debugging your application, see <a href="../kb/commontasks.html#profiling">&quot;How do I profile my app's performance?&quot;</a>.</p>
-    <p>You can examine the CPU time used to serve each request by looking at the Logs section of the Admin Console. While profiling will assist in identifying inefficient portions of your Python code, it's also helpful to understand which datastore operations contribute to your CPU usage.</p>
-    <ul> 
-      <li>Writes to the datastore use roughly 5 times as much CPU as reads.</li>
-      <li>Writes that update indexes require more CPU than writes that do not.</li>
-      <li>As the number of properties associated with a given entity increases, so does the CPU time required to read and write that entity.</li>
-      <li>For the most part, queries are equally efficient, since all queries use indexes. However, fetching results requires additional CPU Time.</li>
-    </ul>
-  </dd>
+  <dt>Instance Hours (billable)</dt>
+  <dd>In general, instance usage is billed on an hourly basis based on the instance's uptime. Billing begins when the instance starts and ends fifteen minutes after the instance shuts down. You will be billed only for idle instances up to the number of maximum idle instances set in the Performance Settings tab of the Admin Console. Runtime overhead is counted against the instance memory.</dd>
+
   <dt>Secure Outgoing Bandwidth</dt>
-  <dd>The amount of data sent by the app over a secure connection in response to requests. Secure outgoing bandwidth also counts toward the Outgoing Bandwidth quota.</dd>
+  <dd>The amount of data sent by the application over a secure connection in response to requests. Secure outgoing bandwidth also counts toward the Outgoing Bandwidth quota.</dd>
   <dt>Secure Incoming Bandwidth</dt>
-  <dd>The amount of data received by the app over a secure connection from requests. Secure incoming bandwidth also counts toward the Incoming Bandwidth quota.</dd>
+  <dd>The amount of data received by the application over a secure connection from requests. Secure incoming bandwidth also counts toward the Incoming Bandwidth quota.</dd>
 </dl>
 
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1570,49 +1588,42 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <th width="17.5%">Maximum Rate</th>
   </tr>
   <tr>
-    <td>Outgoing Bandwidth (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>, includes HTTPS)</td>
+    <td>Outgoing Bandwidth (<a href="#Billable_Resources">billable</a>, includes HTTPS)</td>
     <td>1 GB</td>
     <td>56 MB/minute</td>
     <td>1 GB free; 14,400 GB maximum</td>
     <td>10 GB/minute</td>
   </tr>
   <tr>
-    <td>Incoming Bandwidth (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>, includes HTTPS)</td>
-    <td>1 GB</td>
+    <td>Incoming Bandwidth (<a href="#Billable_Resources">billable</a>, includes HTTPS)</td>
+    <td>1 GB; 14,400 GB maximum </td>
     <td>56 MB/minute</td>
-    <td>1 GB free; 14,400 GB maximum</td>
-    <td>10 GB/minute</td>
+    <td>none</td>
+    <td>none</td>
   </tr>
   <tr>
-    <td>CPU Time (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>6.5 CPU-hours</td>
-    <td>15 CPU-minutes/minute</td>
-    <td>6.5 CPU-hours free; 1,729 CPU-hours maximum</i></td>
-    <td>72 CPU-minutes/minute</td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
-<tr>
-  <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
-</tr>
 </table>
 
 <h3 id="Task_Queue">Task Queue</h3>
 
 <dl>
   <dt>Task Queue API Calls</dt>
-  <dd>The total number of times the app accessed the task queue service to enqueue a task.</dd>
+  <dd>The total number of times the application accessed the task queue service to enqueue a task.</dd>
   <dt>Task Queue Stored Task Count</dt>
-  <dd>The total number of tasks the app has enqueued that are not yet executed.</dd>
+  <dd>The total number of tasks the application has enqueued that are not yet executed.</dd>
   <dt>Task Queue Stored Task Bytes</dt>
-  <dd>The bytes consumed by tasks the app has enqueued that are not yet executed. This quota is counted as part of Stored Data (billable).</dd>
+  <dd>The bytes consumed by tasks the application has enqueued that are not yet executed. This quota is counted as part of Stored Data (billable).</dd>
 
-<p class="note"><b>Tip:</b> You can configure the Stored Task Bytes Quota by adjusting your queue configuration. See the <a href="python/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Python</a> or <a href="java/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Java</a> documentation for more details.
+<p class="note"><b>Tip:</b> You can configure the Stored Task Bytes Limit by adjusting your queue configuration. See the <a href="python/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Python</a> or <a href="java/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Java</a> documentation for more details.
 </dl>
 
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1627,14 +1638,14 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td width="17.5%"><i>n/a</i></td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 <table width="75%">
   <tr>
     <th width="30%">Resource</th>
-    <th width="35%">Free Default Quota</th>
-    <th width="35%">Billing Enabled Default Quota</th>
+    <th width="35%">Free Default Limit</th>
+    <th width="35%">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <td>Task Queue Stored Task Count</td>
@@ -1643,11 +1654,11 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>Task Queue Stored Task Bytes</td>
-    <td>100 MB. Configurable up to 1 GB.</td>
-    <td>100 MB. Configurable up to <b>Stored Data (billable).</b></td>
+    <td>500 MB. Configurable up to 1 GB.</td>
+    <td>none MB. Configurable up to <b>Stored Data (billable).</b></td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 
@@ -1656,7 +1667,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
 <dl>
   <dt>URL Fetch API Calls</dt>
-  <dd>The total number of times the app accessed the URL fetch service to perform an HTTP or HTTPS request.</dd>
+  <dd>The total number of times the application accessed the URL fetch service to perform an HTTP or HTTPS request.</dd>
 
   <dt>URL Fetch Data Sent</dt>
   <dd>The amount of data sent to the URL fetch service in requests. This also counts toward the Outgoing Bandwidth quota.</dd>
@@ -1668,8 +1679,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1686,20 +1697,20 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>UrlFetch Data Sent</td>
-    <td>up to the Outgoing Bandwidth limit</td>
+    <td>up to the Outgoing Bandwidth quota</td>
     <td>22 MB/minute</td>
-    <td>up to the Outgoing Bandwidth limit</td>
+    <td>up to the Outgoing Bandwidth quota</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
     <td>UrlFetch Data Received</td>
-    <td>up to the Incoming Bandwidth limit</td>
+    <td>up to the Incoming Bandwidth quota</td>
     <td>22 MB/minute</td>
-    <td>up to the Incoming Bandwidth limit</td>
+    <td>up to the Incoming Bandwidth quota</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 
@@ -1707,23 +1718,26 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
 <dl>
   <dt>XMPP API Calls</dt>
-  <dd>The total number of times the app accessed the XMPP service.</dd>
+  <dd>The total number of times the application accessed the XMPP service.</dd>
 
   <dt>XMPP Data Sent</dt>
   <dd>The amount of data sent via the XMPP service. This also counts toward the Outgoing Bandwidth quota.</dd>
 
   <dt>Recipients Messaged</dt>
-  <dd>The total number of recipients to whom the app has sent XMPP messages.</dd>
+  <dd>The total number of recipients to whom the application has sent XMPP messages.</dd>
 
   <dt>Invitations Sent</dt>
-  <dd>The total number of chat invitations sent by the app.</dd>
+  <dd>The total number of chat invitations sent by the application.</dd>
+  
+  <dt>Stanzas Sent</dt>
+  <dd>XMPP stanzas sent when the application sends a message, invitation, or presence information.</dd>
 </dl>
 
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1760,7 +1774,14 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>2,000 invitations/minute</td>
   </tr>
   <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+    <td>XMPP Stanzas Sent</td>
+    <td>10,000 stanzas</td>
+    <td>n/a</td>
+    <td>Based on your budget</td>
+    <td>n/a</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">Request an increase.</a></b></td>
   </tr>
 </table>
 
@@ -1798,7 +1819,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
@@ -1830,5 +1851,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
   </body>
 </html>
+
 
 

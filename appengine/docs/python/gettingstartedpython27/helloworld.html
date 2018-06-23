@@ -15,6 +15,8 @@
 
 
 
+
+
  
  
  
@@ -187,6 +189,7 @@ _gaq.push(
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -227,14 +230,15 @@ _gaq.push(
       <li><a href="index.html">Python 2.7</a>
         <ul>
             <li><a href="introduction.html">Introduction</a></li>
+  <li><a href="devenvironment.html">The Development Environment</a></li>
   <li><a href="helloworld.html">Hello, World!</a></li>
-  <li><a href="uploading.html">Uploading Your Application</a></li>
   <li><a href="usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="usingusers.html">Using the Users Service</a></li>
   <li><a href="handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="usingdatastore.html">Using the Datastore</a></li>
   <li><a href="templates.html">Using Templates</a></li>
   <li><a href="staticfiles.html">Using Static Files</a></li>
+  <li><a href="uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -279,6 +283,7 @@ _gaq.push(
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/callbacks.html">Callbacks</a></li>
     <li><a href="../../java/datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
@@ -448,10 +453,11 @@ _gaq.push(
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
     <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
@@ -524,6 +530,19 @@ _gaq.push(
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="../dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="../dataprocessing/overview.html">Overview</a></li>
+     <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -835,6 +854,7 @@ _gaq.push(
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="../tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -928,6 +948,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="../../go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="../../go/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -960,6 +997,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -989,7 +1027,11 @@ _gaq.push(
 
 
 
-<p>Python 2.7 App Engine applications communicate with the web server using either the <a href="http://www.python.org/dev/peps/pep-0333/">WSGI</a> or <a href="http://www.w3.org/CGI/">CGI</a> standards. WSGI is required to use certain features, such as <a href="../config/appconfig.html#Using_Concurrent_Requests">concurrent requests</a>, and will be used in these examples.</p>
+<div class="special">
+<h4>Experimental!</h4>
+<p>The Python 2.7 runtime is an experimental, innovative, and rapidly changing new feature for App Engine. Unfortunately, being on the bleeding edge means that we may make backwards-incompatible changes. We will inform the community once the Python 2.7 runtime is no longer experimental.</p>
+</div>
+
 
 <p>Let's begin by implementing a tiny application that displays a short message.</p>
 
@@ -1004,15 +1046,15 @@ _gaq.push(
 import webapp2
 
 class MainPage(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, webapp2 World!')
+  def get(self):
+      self.response.headers['Content-Type'] = 'text/plain'
+      self.response.out.write('Hello, webapp World!')
 
 app = webapp2.WSGIApplication([('/', MainPage)],
                               debug=True)
 </pre>
 
-<p>This Python script responds to a request with an HTTP header that describes the content and the message <code>Hello, webapp2 world!</code>.</p>
+<p>This Python script responds to a request with an HTTP header that describes the content and the message <code>Hello, world!</code>.</p>
 
 
 <h2>Creating the Configuration File</h2>
@@ -1035,7 +1077,7 @@ handlers:
 
 <p>From top to bottom, this configuration file says the following about this application:
 <ul>
-<li>The application identifier is <code>helloworld</code>. When you register your application with App Engine in the final step, you will select a unique identifier, and update this value. This value can be anything during development. For now, leave it set to <code>helloworld</code>.</li>
+<li>The application identifier is <code>helloworld</code>. When you register your application with App Engine in the next step, you will select a unique identifier, and update this value. This value can be anything during development. For now, leave it set to <code>helloworld</code>.</li>
 <li>This is version number <code>1</code> of this application's code. If you adjust this before uploading new versions of your application software, App Engine will retain previous versions, and let you roll back to a previous version using the administrative console.</li>
 <li>This code runs in the <code>python27</code> runtime environment, version "1". Additional runtime environments and languages may be supported in the future.</li>
 <li>This application is <code>threadsafe</code> so the same instance can handle several simultaneous requests. Threadsafe is an advanced feature and may result in erratic behavior if your application is not specifically designed to be threadsafe.</li>
@@ -1044,11 +1086,40 @@ handlers:
 
 <p>The syntax of this file is <a href="http://www.yaml.org/">YAML</a>. For a complete list of configuration options, see <a href="../config/appconfig.html">the app.yaml reference</a>.</p>
 
+
+<h2>Testing the Application</h2>
+
+<p>With a handler script and configuration file mapping every URL to the handler, the application is complete. You can now test it with the web server included with the App Engine SDK.</p>
+
+<p>If you're using the Google App Engine Launcher, you can set up the application by selecting the <b>File</b> menu, <b>Add Existing Application...</b>, then selecting the <code>helloworld</code> directory. Select the application in the app list, click the Run button to start the application, then click the Browse button to view it. Clicking Browse simply loads (or reloads) <a href="http://localhost:8080/">http://localhost:8080/</a> in your default web browser.</p> 
+
+<p>If you're not using Google App Engine Launcher, start the web server with the following command, giving it the path to the <code>helloworld</code> directory:</p>
+
+<pre>
+google_appengine/dev_appserver.py helloworld/
+</pre>
+
+<p>The web server is now running, listening for requests on port 8080. You can test the application by visiting the following URL in your web browser:</p>
+<ul class="nolist"><li><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></li></ul>
+
+<p>For more information about running the development web server, including how to change which port it uses, see <a href="../tools/devserver.html">the Dev Web Server reference</a>, or run the command with the option <code>--help</code>.</p>
+
+<h2>Iterative Development</h2>
+
+<p>You can leave the web server running while you develop your application. The web server knows to watch for changes in your source files and reload them if necessary.</p>
+
+<p>Try it now: Leave the web server running, then edit <code>helloworld.py</code> to change <code>Hello, world!</code> to something else. Reload <a href="http://localhost:8080/">http://localhost:8080/</a> or click Browse in Google App Engine Launcher to see the change.</p>
+
+<p>To shut down the web server, make sure the terminal window is active, then press Control-C (or the appropriate "break" key for your console), or click Stop in Google App Engine Launcher.</p>
+
+<p>You can leave the web server running for the rest of this tutorial. If you need to stop it, you can restart it again by running the command above.</p>
+
+
 <h2>Next...</h2>
 
-<p>You now have a complete App Engine application! Ket's deploy this right now and share it with users worldwide.</p>
+<p>You now have a complete App Engine application!  You could deploy this simple greeting right now and share it with users worldwide. But before we deploy it, let's take a closer look at the webapp2 framework and add some more intereseting features.</p>
 
-<p>Continue to <a href="uploading.html">Uploading Your Application</a>.</p>
+<p>Continue to <a href="usingwebapp.html">Explaining the webapp2 Framework</a>.</p>
 
 
       </div><!-- end gc-pagecontent -->
@@ -1083,7 +1154,7 @@ handlers:
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -

@@ -17,6 +17,8 @@
 
 
 
+
+
  
  
  
@@ -189,6 +191,7 @@ _gaq.push(
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -229,14 +232,15 @@ _gaq.push(
       <li><a href="../gettingstartedpython27/index.html">Python 2.7</a>
         <ul>
             <li><a href="../gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstartedpython27/devenvironment.html">The Development Environment</a></li>
   <li><a href="../gettingstartedpython27/helloworld.html">Hello, World!</a></li>
-  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
   <li><a href="../gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="../gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
   <li><a href="../gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="../gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
   <li><a href="../gettingstartedpython27/templates.html">Using Templates</a></li>
   <li><a href="../gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
+  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -281,6 +285,7 @@ _gaq.push(
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/callbacks.html">Callbacks</a></li>
     <li><a href="../../java/datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
@@ -450,10 +455,11 @@ _gaq.push(
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
     <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
@@ -526,6 +532,19 @@ _gaq.push(
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="../dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="../dataprocessing/overview.html">Overview</a></li>
+     <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -837,6 +856,7 @@ _gaq.push(
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="../tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -930,6 +950,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="../../go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="../../go/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -962,6 +999,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1054,7 +1092,9 @@ _gaq.push(
 <h3 id="Adding_Tasks_to_a_Pull_Queue">Adding Tasks to a Pull Queue</h3>
 <p>To add tasks to a pull queue, simply get the queue using the <a href="queues.html#Queue_name">queue name</a> defined in <code>queue.yaml</code>, and set the <a href="tasks.html#Task">Task</a>  <code>method</code> to <code>PULL</code>. The following example enqueues tasks in a pull queue named <code>pull-queue</code>:</p>
 
-<pre class="prettyprint">q = taskqueue.Queue('pull-queue')
+<pre class="prettyprint">from google.appengine.api import taskqueue
+
+q = taskqueue.Queue('pull-queue')
 tasks = []
 payload_str = 'hello world'
 tasks.append(taskqueue.Task(payload=payload_str, method='PULL'))
@@ -1074,7 +1114,8 @@ available via <a href="queues.html#Queue_lease_tasks">lease_tasks()</a>. When yo
 <p class="note"><b>Note:</b> lease_tasks() operates only on pull queues. If you attempt to lease tasks added in a push queue, App Engine throws an exception. You can change a push queue to a pull queue by changing its definition in <code>queue.yaml</code>. Please see <a href="../config/queue.html#Defining_Pull_Queues">Defining Pull Queues</a> for more information. The following code sample leases 100 tasks from the queue <code>pull-queue</code> for one hour:</p>
 
 
-<pre class="prettyprint">
+<pre class="prettyprint">from google.appengine.api import taskqueue
+
 q = taskqueue.Queue('pull-queue')
 q.lease_tasks(3600, 100)</pre>
 
@@ -1087,10 +1128,12 @@ q.lease_tasks(3600, 100)</pre>
 
 <p>You can delete a list of tasks, such as that returned by lease_task(), simply by passing it to <a href="queues.html#Queue_delete_tasks">delete_tasks()</a>:</p>
 
-<pre class="prettyprint"># ...
-tasks = queue.lease_tasks(3600, 100)
+<pre class="prettyprint">from google.appengine.api import taskqueue
+
+q = taskqueue.Queue('pull-queue')
+tasks = q.lease_tasks(3600, 100)
 # Perform some work with the tasks here
-queue.delete_tasks(tasks)</pre>
+q.delete_tasks(tasks)</pre>
 
 
 <h2 id="Pulling_Tasks_to_a_Backend">Pulling Tasks to a Backend</h2>
@@ -1303,11 +1346,8 @@ The OAuth scope for all methods is <code>https://www.googleapis.com/auth/taskque
 <p>To begin using the library, you need to <a href="http://code.google.com/p/google-api-python-client/wiki/Installation">install it</a> in your local environment. After installation, you can import the appropriate client libraries and build the taskqueue service:</p>
 
 <pre class="prettyprint">from apiclient.discovery import build
-...
-      self.task_api = build('taskqueue',
-                            FLAGS.service_version,
-                            http=http,
-                            discoveryServiceUrl=discovery_uri)</pre>
+
+task_api = build('taskqueue', 'v1beta1')</pre>
 
 <p>Once you've built the task queue service, your application can access methods from the library allowing you to interact with the REST API. The following sections describe the two most common functions used with the Task Queue API, allowing you to lease and delete tasks.</p>
 
@@ -1320,7 +1360,7 @@ The OAuth scope for all methods is <code>https://www.googleapis.com/auth/taskque
 
 <p>The following code from the gtaskqueue sample shows how to lease tasks using the library.</p>
 
-<pre class="prettyprint">  def _GetTasksFromQueue(self):
+<pre class="prettyprint">  def _get_tasks_from_queue(self):
 
     """Gets the available tasks from the taskqueue.
 
@@ -1328,7 +1368,7 @@ The OAuth scope for all methods is <code>https://www.googleapis.com/auth/taskque
       Lease response object.
     """
     try:
-      tasks_to_fetch = self._NumTasksToLease()
+      tasks_to_fetch = self._num_tasks_to_lease()
       lease_req = self.task_api.tasks().lease(project=FLAGS.project_name,
                                               taskqueue=FLAGS.taskqueue_name,
                                               leaseSecs=FLAGS.lease_secs,
@@ -1342,10 +1382,10 @@ The OAuth scope for all methods is <code>https://www.googleapis.com/auth/taskque
 
 <p>This code enables a command-line tool for leasing a specified number of tasks for a set duration:</p>
 
-<pre class="prettyprint">gtaskqueue leasetask --project="gpullqueue1"
---taskqueue_name=appengtaskpuller
---lease_secs=30
---tasks_to_fetch=100</pre>
+<pre class="prettyprint">gtaskqueue leasetask --project="gpullqueue1" \
+--taskqueue_name=appengtaskpuller \
+--lease_secs=30 \
+--num_tasks=100</pre>
 
 <p>When run, this command-line tool constructs the following URI call to the REST API:</p>
 
@@ -1384,7 +1424,7 @@ https://www.googleapis.com/taskqueue/v1beta1/projects/gpullqueue1/taskqueues/app
 
 <p>Returning to our gtaskqueue example, the following code snippet uses the Google APIs Client Library for Python to delete tasks from a queue:</p>
 
-<pre class="prettyprint">  def _DeleteTaskFromQueue(self, task_api):
+<pre class="prettyprint">  def _delete_task_from_queue(self, task_api):
     try:
       delete_request = task_api.tasks().delete(project=FLAGS.project_name,
                                                taskqueue=FLAGS.taskqueue_name,
@@ -1396,9 +1436,9 @@ https://www.googleapis.com/taskqueue/v1beta1/projects/gpullqueue1/taskqueues/app
 
 <p>This code enables a command for naming a task to delete:</p>
 
-<pre>gtaskqueue deletetask --project_name="gpullqueue1"
---taskqueue_name=appengtaskpuller
---task_id=taskID</pre>
+<pre>gtaskqueue deletetask --project_name="gpullqueue1" \
+--taskqueue_name=appengtaskpuller \
+--task_name=taskID</pre>
 
 <p>When run, this command constructs the following URI call to the REST API:</p>
 
@@ -1491,7 +1531,7 @@ https://www.googleapis.com/taskqueue/v1beta1/projects/gpullqueue1/taskqueues/app
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -

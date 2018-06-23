@@ -39,7 +39,8 @@ gaearticles.tags['Datastore'] = [
   'e8d48f6d69fdcfb1f582f9e9c90eda8463d277b9',
   'eba5a43a073414ae2ff46a01d806bf2e2c6a6a4b',
   'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a',
-  'aa7d6fb1ac292403a80b380306de22f7cda13e53'
+  'aa7d6fb1ac292403a80b380306de22f7cda13e53',
+  '83afad2194929152784842624eddd7d88f05ab92'
 ];
 gaearticles.tags['Django'] = [
   '7f508b242272025d39aa6cad6072f65c081cd14d',
@@ -76,7 +77,8 @@ gaearticles.tags['Indexes'] = [
   '05de8e4947bfafd5168af4e1c1809574316a7f5e',
   '0b373c70c008aa414dd89b796688b088363d714e',
   '233f7ad1b1fab23a96bd37d0b3659826d444497d',
-  'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a'
+  'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a',
+  '83afad2194929152784842624eddd7d88f05ab92'
 ];
 gaearticles.tags['Java runtime'] = [
   '57e8905cbff23a7c5355c3b47900ca1e3f4934ba',

@@ -15,6 +15,8 @@
 
 
 
+
+
  
  
  
@@ -187,6 +189,7 @@ _gaq.push(
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -227,14 +230,15 @@ _gaq.push(
       <li><a href="index.html">Python 2.7</a>
         <ul>
             <li><a href="introduction.html">Introduction</a></li>
+  <li><a href="devenvironment.html">The Development Environment</a></li>
   <li><a href="helloworld.html">Hello, World!</a></li>
-  <li><a href="uploading.html">Uploading Your Application</a></li>
   <li><a href="usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="usingusers.html">Using the Users Service</a></li>
   <li><a href="handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="usingdatastore.html">Using the Datastore</a></li>
   <li><a href="templates.html">Using Templates</a></li>
   <li><a href="staticfiles.html">Using Static Files</a></li>
+  <li><a href="uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -279,6 +283,7 @@ _gaq.push(
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/callbacks.html">Callbacks</a></li>
     <li><a href="../../java/datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
@@ -448,10 +453,11 @@ _gaq.push(
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
     <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
@@ -524,6 +530,19 @@ _gaq.push(
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="../dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="../dataprocessing/overview.html">Overview</a></li>
+     <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -835,6 +854,7 @@ _gaq.push(
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="../tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -928,6 +948,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="../../go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="../../go/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -960,6 +997,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -987,6 +1025,12 @@ _gaq.push(
       <div class="g-unit" id="gc-pagecontent">
         <h1 class="page_title">Using Templates</h1>
 
+
+
+<div class="special">
+<h4>Experimental!</h4>
+<p>The Python 2.7 runtime is an experimental, innovative, and rapidly changing new feature for App Engine. Unfortunately, being on the bleeding edge means that we may make backwards-incompatible changes. We will inform the community once the Python 2.7 runtime is no longer experimental.</p>
+</div>
 
 
 <p>HTML embedded in code is messy and difficult to maintain. It's better to use a templating system, where the HTML is kept in a separate file with special syntax to indicate where the data from the application appears. There are many templating systems for Python: <a href="http://svn.webdav.org/repos/projects/ezt/trunk/ezt.py">EZT</a>, <a href="http://www.cheetahtemplate.org/">Cheetah</a>, <a href="http://www.clearsilver.net/">ClearSilver</a>, <a href="http://www.mems-exchange.org/software/quixote/">Quixote</a>, <a href="http://www.djangoproject.com/documentation/templates/">Django</a>, and <a href="http://jinja.pocoo.org/docs/">Jinja2</a> are just a few. You can use your template engine of choice by bundling it with your application code.</p>
@@ -1018,7 +1062,7 @@ jinja_environment = jinja2.Environment(
 <p>Replace the <code>MainPage</code> handler with code that resembles the following:</p>
 
 <pre class="prettyprint">
-class MainPage(webapp.RequestHandler):
+class MainPage(webapp2.RequestHandler):
     def get(self):
         guestbook_name=self.request.get('guestbook_name')
         greetings_query = Greeting.all().ancestor(
@@ -1049,7 +1093,7 @@ class MainPage(webapp.RequestHandler):
   &lt;body&gt;
     {% for greeting in greetings %}
       {% if greeting.author %}
-        &lt;b&gt;{{ greeting.author.nickname }}&lt;/b&gt; wrote:
+        &lt;b&gt;{{ greeting.author.nickname() }}&lt;/b&gt; wrote:
       {% else %}
         An anonymous person wrote:
       {% endif %}
@@ -1067,7 +1111,7 @@ class MainPage(webapp.RequestHandler):
 &lt;/html&gt;
 </pre>
 
-<p>Upload the application again and reload the page, and try it out.</p>
+<p>Reload the page, and try it out.</p>
 
 <p><code>jinja_environment.get_template(name)</code> takes the name of a template file, and returns a template object. <code>template.render(template_values)</code> takes a dictionary of values, and returns the rendered text. The template uses Jinja2 templating syntax to access and iterate over the values, and can refer to properties of those values. In many cases, you can pass datastore model objects directly as values, and access their properties from templates.</p>
 
@@ -1113,7 +1157,7 @@ class MainPage(webapp.RequestHandler):
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -

@@ -15,6 +15,8 @@
 
 
 
+
+
  
  
  
@@ -187,6 +189,7 @@ _gaq.push(
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -227,14 +230,15 @@ _gaq.push(
       <li><a href="../../python/gettingstartedpython27/index.html">Python 2.7</a>
         <ul>
             <li><a href="../../python/gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../../python/gettingstartedpython27/devenvironment.html">The Development Environment</a></li>
   <li><a href="../../python/gettingstartedpython27/helloworld.html">Hello, World!</a></li>
-  <li><a href="../../python/gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
   <li><a href="../../python/gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="../../python/gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
   <li><a href="../../python/gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="../../python/gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
   <li><a href="../../python/gettingstartedpython27/templates.html">Using Templates</a></li>
   <li><a href="../../python/gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
+  <li><a href="../../python/gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -279,6 +283,7 @@ _gaq.push(
     <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../datastore/stats.html">Statistics</a></li>
     <li><a href="../datastore/async.html">Async API</a></li>
+    <li><a href="../datastore/callbacks.html">Callbacks</a></li>
     <li><a href="../datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="../datastore/jdo/overview.html">Overview</a></li>
@@ -448,10 +453,11 @@ _gaq.push(
     <li><a href="uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="ant.html">Using Apache Ant</a></li>
+    <li><a href="capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="appstats.html">Appstats</a></li>
     <li><a href="remoteapi.html">Remote API</a></li>
@@ -524,6 +530,19 @@ _gaq.push(
           <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="../../python/dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="../../python/dataprocessing/overview.html">Overview</a></li>
+     <li><a href="../../python/dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -835,6 +854,7 @@ _gaq.push(
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="../../python/tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="../../python/tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -928,6 +948,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="../../go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="../../go/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -960,6 +997,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1005,6 +1043,11 @@ _gaq.push(
 
 
 
+
+
+
+
+
 <p><a href="http://en.wikipedia.org/wiki/Unit_testing">Unit testing</a> allows you to check the quality of your code after you've written it, but you can also use unit testing to improve your development process as you go along. Instead of writing tests after you finish developing your application, consider writing the tests as you go. This helps you design small, maintainable, reusable units of code. It also makes it easier for you to test your code thoroughly and quickly.</p>
 <p>When you do local unit testing, you run tests that stay inside your own development environment without involving remote components. App Engine provides testing utilities that use local implementations of datastore and other <a href="../apis.html">App Engine services</a>. This means you can exercise your code's use of these services locally, without deploying your code to App Engine, by using service stubs.</p>
 <p>A service stub is a method that simulates the behavior of the service. For example, the datastore service stub shown in <a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a> allows you to test your datastore code without making any requests to the real datastore. Any entity stored during a datastore unit test is held in memory, not in the datastore, and is deleted after the test run. You can run small, fast tests without any dependency on datastore itself.</p>
@@ -1017,9 +1060,11 @@ _gaq.push(
 <li><a href="#Introducing_the_Java_Testing_Utilities">Introducing the Java Testing Utilities</a></li>
 
   <li><a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a></li>
-<li><a href="#Writing_HRD_Datastore_Tests">Writing High Replication Datastore Tests</a></li>
+  <li><a href="#Writing_HRD_Datastore_Tests">Writing High Replication Datastore Tests</a></li>
+
 <li><a href="#Writing_Task_Queue_Tests">Writing Task Queue Tests</a></li>
 <li><a href="#Writing_Deferred_Task_Tests">Writing Deferred Task Tests</a></li>
+<li><a href="#Writing_Local_Service_Capabilities_Tests">Writing Local Service Capabilities Tests</a></li>
 <li><a href="#Writing_Tests_for_Other_Services">Writing Tests for Other Services</a></li>
 <li><a href="#Writing_Tests_with_Authentication_Expectations">Writing Tests with Authentication Expectations</a></li>
 
@@ -1048,7 +1093,7 @@ public class MyFirstTest {
 
 <h2 id="Introducing_the_Java_Testing_Utilities">Introducing the Java Testing Utilities</h2>
 
-<p><code>MyFirstTest</code> demonstrates the simplest possible test setup, and for tests that have no dependency on App Engine APIs or local service implementations, you may not need anything more. However, if your tests or code under test have these dependencies, add the following JAR files to your testing classpath:</p> 
+<p><code>MyFirstTest</code> demonstrates the simplest possible test setup, and for tests that have no dependency on App Engine APIs or local service implementations, you may not need anything more. However, if your tests or code under test have these dependencies, add the following JAR files to your testing classpath:</p>
 <ul><li><code>${SDK_ROOT}/lib/impl/appengine-api.jar</code></li> <li><code>${SDK_ROOT}/lib/impl/appengine-api-labs.jar</code></li> <li><code>${SDK_ROOT}/lib/impl/appengine-api-stubs.jar</code></li></ul>
 <p>These JARs make the runtime APIs and the local implementations of those APIs available to your tests.</p>
 <p>App Engine services expect a number of things from their execution environment, and setting these things up involves a fair amount of boilerplate code. Rather than set it up yourself, you can use the utilities in the <code>com.google.appengine.tools.development.testing</code> package. To use this package, add the following JAR file to your testing classpath: </p>
@@ -1247,6 +1292,10 @@ public class LocalCustomPolicyHighRepDatastoreTest {
 }
 </pre>
 <p>The testing APIs are useful for verifying that your application behaves properly in the face of eventual consistency, but please keep in mind that the local High Replication read consistency model is an approximation of the production High Replication read consistency model, not an exact replica. In the local environment, performing a get() of an <code>Entity</code> that belongs to an entity group with an unapplied write will always make the results of the unapplied write visible to subsequent global queries. In production this is not the case.</p>
+
+
+
+
 <h2 id="Writing_Task_Queue_Tests">Writing Task Queue Tests</h2>
 
 <p>Tests that use the local task queue are a bit more involved because, unlike datastore and memcache, the task queue API does not expose a facility for examining the state of the service. We need to access the local task queue itself to verify that a task has been scheduled with the expected parameters. To do this, we need <code>com.google.appengine.api.taskqueue.dev.LocalTaskQueue</code>.</p>
@@ -1329,7 +1378,7 @@ import java.util.concurrent.TimeUnit;
 public class DeferredTaskTest {
 
     // Unlike CountDownLatch, TaskCountDownlatch lets us reset.
-    private final LocalTaskQueueTestConfig.TaskCountDownLatch latch = 
+    private final LocalTaskQueueTestConfig.TaskCountDownLatch latch =
         new LocalTaskQueueTestConfig.TaskCountDownLatch(1);
 
     private final LocalServiceTestHelper helper =
@@ -1370,6 +1419,61 @@ public class DeferredTaskTest {
 </pre>
 
 <p>As with our first Local Task Queue example, we are using a <code>LocalTaskqueueTestConfig</code>, but this time we are initializing it with some additional arguments that give us an easy way to verify not just that the task was scheduled but that the task was executed:  We call <code>setDisableAutoTaskExecution(false)</code> to tell the Local Task Queue to automatically execute tasks. We call <code>setCallbackClass(LocalTaskQueueTestConfig.DeferredTaskCallback.class)</code> to tell the Local Task Queue to use a callback that understands how to execute Deferred tasks. And finally we call <code>setTaskExecutionLatch(latch)</code> to tell the Local Task Queue to decrement the latch after each task execution. This configuration allows us to write a test in which we enqueue a Deferred task, wait until that task runs, and then verify that the task behaved as expected when it ran.</p>
+
+
+<h2 id="Writing_Local_Service_Capabilities_Tests">Writing Local Service Capabilities Tests</h2>
+<p>Capabilities testing involves changing the status of some service, such as datastore, blobstore, memcache, and so forth, and running your application against that service to determine whether your application is responding as expected under different conditions. The capability status can be changed using the <a href="localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalCapabilitiesServiceTestConfig.html">LocalCapabilitiesServiceTestConfig</a> class.</p>
+
+<p class="note"><strong>Note:</strong> The capability status can also be changed in the dev app server console, or via command line options. For complete details, see <a href="capabilities.html">Capabilities Service Test Configuration</a>.</p>
+
+<p>The following code snippet changes the capability status of the datastore service to disabled and then runs a test on the datastore service. (You can substitute other services for datastore as needed.)</p>
+
+<pre class="prettyprint">
+import com.google.appengine.api.capabilities.Capability;
+import com.google.appengine.api.capabilities.CapabilityState;
+import com.google.appengine.api.capabilities.CapabilityStatus;
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.FetchOptions;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
+import com.google.appengine.tools.development.testing.LocalCapabilitiesServiceTestConfig;
+import com.google.apphosting.api.ApiProxy;
+
+import org.junit.After;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+public class ShortTest {
+
+
+      private LocalServiceTestHelper helper;
+
+      @After
+      public void tearDown() {
+          helper.tearDown();
+      }
+
+
+      @Test(expected = ApiProxy.CapabilityDisabledException.class)
+      public void testDisabledDatastore() {
+        Capability testOne = new Capability("datastore_v3");
+        CapabilityStatus testStatus = CapabilityStatus.DISABLED;
+        //Initialize
+        LocalCapabilitiesServiceTestConfig config = 
+                new LocalCapabilitiesServiceTestConfig().setCapabilityStatus(testOne, testStatus);
+        helper = new LocalServiceTestHelper(config);
+        helper.setUp();
+        FetchOptions fo = FetchOptions.Builder.withLimit(10);
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        assertEquals(0, ds.prepare(new Query("yam")).countEntities(fo));
+      }
+}
+</pre>
+<p>The sample test first creates a <code>Capability</code> object initialized to datastore, then creates a <code>CapabilityStatus</code> object set to DISABLED. The <code>LocalCapabilitiesServiceTestConfig</code> is created with the capability and status set using the <code>Capability</code> and <code>CapabilityStatus</code> objects just created.</p>
+
+<p>The <code>LocalServiceHelper</code> is then created using the <code>LocalCapabilitiesServiceTestConfig</code> object. Now that the test has been set up, the <code>DatastoreService</code> is created and a Query is sent to it to determine whether the test generates the expected results, in this case, a <code>CapabilityDisabledException</code>.
+</p>
 
 
 <h2 id="Writing_Tests_for_Other_Services">Writing Tests for Other Services</h2>
@@ -1455,7 +1559,7 @@ public class AuthenticationTest {
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -

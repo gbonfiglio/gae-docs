@@ -15,6 +15,8 @@
 
 
 
+
+
  
  
  
@@ -187,6 +189,7 @@ _gaq.push(
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -227,14 +230,15 @@ _gaq.push(
       <li><a href="../gettingstartedpython27/index.html">Python 2.7</a>
         <ul>
             <li><a href="../gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstartedpython27/devenvironment.html">The Development Environment</a></li>
   <li><a href="../gettingstartedpython27/helloworld.html">Hello, World!</a></li>
-  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
   <li><a href="../gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
   <li><a href="../gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
   <li><a href="../gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
   <li><a href="../gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
   <li><a href="../gettingstartedpython27/templates.html">Using Templates</a></li>
   <li><a href="../gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
+  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
 
         </ul>
       </li>
@@ -279,6 +283,7 @@ _gaq.push(
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/callbacks.html">Callbacks</a></li>
     <li><a href="../../java/datastore/jdo/index.html">JDO</a>
       <ul>
             <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
@@ -448,10 +453,11 @@ _gaq.push(
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/capabilities.html">Capabilities Service Test Configuration</a>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
-        </ul>    
+        </ul>
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
     <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
@@ -524,6 +530,19 @@ _gaq.push(
           <li><a href="exceptions.html">Exceptions</a></li>
         </ul>
       </li>
+
+      </ul>
+    </li>
+    <li><a href="../dataprocessing/index.html">Data Processing</a>
+      <ul>
+             <li><a href="../dataprocessing/overview.html">Overview</a></li>
+     <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
+       </ul>
+     </li>
 
       </ul>
     </li>
@@ -835,6 +854,7 @@ _gaq.push(
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
     <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
+    <li><a href="../tools/appengineconfig.html">Python Module Configuration</a></li>
 
       </ul>
     </li>
@@ -928,6 +948,23 @@ _gaq.push(
           </ul>
         </li>
       </ul>
+        <li><a href="../../go/config/index.html">Configuration</a>
+          <ul>
+                <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../go/config/dos.html">DoS Protection Config</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/tools/index.html">Tools</a>
+          <ul>
+                <li><a href="../../go/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../go/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+
+          </ul>
+        </li>
     </li>
 
     </ul>
@@ -960,6 +997,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1046,12 +1084,12 @@ class Employee(db.Model):
     attended_hr_training = db.BooleanProperty()
 
 # ...
-        employee = Employee(first_name='Antonio',
-                            last_name='Salieri')
-        employee.hire_date = datetime.datetime.now().date()
-        employee.attended_hr_training = True
+employee = Employee(first_name='Antonio',
+                    last_name='Salieri')
+employee.hire_date = datetime.datetime.now().date()
+employee.attended_hr_training = True
 
-        employee.put()
+employee.put()
 
 </pre>
 
@@ -1093,16 +1131,16 @@ The only way to avoid this problem is to have
 <p>You specify whether an entity ought to use an app-assigned key name string or a system-assigned numeric ID as its identifier when you create the object. To set a key name, provide the <code>key_name</code> named argument to the model class constructor:</p>
 
 <pre class="prettyprint">
-        # Create an entity with the key Employee:'asalieri'.
-        employee = Employee(key_name='asalieri')
+# Create an entity with the key Employee:'asalieri'.
+employee = Employee(key_name='asalieri')
 
 </pre>
 
 <p>To specify that the datastore should assign a unique numeric ID automatically, simply omit the argument:</p>
 
 <pre class="prettyprint">
-        # Create an entity with a key such as Employee:8261.
-        employee = Employee()
+# Create an entity with a key such as Employee:8261.
+employee = Employee()
 
 </pre>
 
@@ -1130,16 +1168,16 @@ successfully. Whenever possible, make your datastore transactions idempotent so 
 <p>To specify that an entity be created in an existing entity group, provide the <code>parent</code> argument to the model class constructor. The value of this argument can be the model class instance of the parent entity, or a <a href="keyclass.html">db.Key</a> value that represents the entity:</p>
 
 <pre class="prettyprint">
-        employee = Employee()
-        employee.put()
+employee = Employee()
+employee.put()
 
-        # Create an Address in the same entity group as the Employee by setting
-        # the Employee as the Address's parent.
-        address = Address(parent=employee)
+# Create an Address in the same entity group as the Employee by setting
+# the Employee as the Address's parent.
+address = Address(parent=employee)
 
-        # ...using the db.Key of the Employee.
-        e_key = employee.key()
-        address = Address(parent=e_key)
+# ...using the db.Key of the Employee.
+e_key = employee.key()
+address = Address(parent=e_key)
 
 </pre>
 
@@ -1386,12 +1424,12 @@ successfully. Whenever possible, make your datastore transactions idempotent so 
 <p>In Python, you create a new entity by creating a new instance of a model class, then call the instance's <code>put()</code> method. If the object was not created with a <code>key_name</code> attribute passed to the constructor, calling the <code>put()</code> method populates the object's key with the system-generated ID.</p>
 
 <pre class="prettyprint">
-        employee = Employee(first_name='Antonio',
-                            last_name='Salieri')
-        employee.hire_date = datetime.datetime.now().date()
-        employee.attended_hr_training = True
+employee = Employee(first_name='Antonio',
+                    last_name='Salieri')
+employee.hire_date = datetime.datetime.now().date()
+employee.attended_hr_training = True
 
-        employee.put()
+employee.put()
 
 </pre>
 
@@ -1401,9 +1439,9 @@ successfully. Whenever possible, make your datastore transactions idempotent so 
 
 
 <pre class="prettyprint">
-        address_k = db.Key.from_path('Employee', 'asalieri', 'Address', 1)
+address_k = db.Key.from_path('Employee', 'asalieri', 'Address', 1)
 
-        address = db.get(address_k)
+address = db.get(address_k)
 
 </pre>
 
@@ -1418,15 +1456,15 @@ successfully. Whenever possible, make your datastore transactions idempotent so 
 <p>You can delete an entity given its key by calling the <a href="functions.html#delete">db.delete()</a> function, or by calling the <a href="modelclass.html#Model_delete">delete()</a> method of the model instance.</p>
 
 <pre class="prettyprint">
-        address_k = db.Key.from_path('Employee', 'asalieri', 'Address', 1)
-        db.delete(address_k)
+address_k = db.Key.from_path('Employee', 'asalieri', 'Address', 1)
+db.delete(address_k)
 
-        employee_k = db.Key.from_path('Employee', 'asalieri')
-        employee = db.get(employee_k)
+employee_k = db.Key.from_path('Employee', 'asalieri')
+employee = db.get(employee_k)
 
-        # ...
+# ...
 
-        employee.delete()
+employee.delete()
 
 </pre>
 
@@ -1435,14 +1473,14 @@ successfully. Whenever possible, make your datastore transactions idempotent so 
 <p>The <a href="functions.html#put">db.put()</a>, <a href="functions.html#get">db.get()</a> and <a href="functions.html#delete">db.delete()</a> functions can accept multiple parameters to act on multiple entities in a single datastore call. A batch call to the datastore is faster than making separate calls for each entity because it only incurs the overhead of one service call.</p>
 
 <pre class="prettyprint">
-        # A batch put.
-        db.put([e1, e2, e3])
+# A batch put.
+db.put([[]e1, e2, e3])
 
-        # A batch get.
-        entities = db.get([k1, k2, k3])
+# A batch get.
+entities = db.get([[]k1, k2, k3])
 
-        # A batch delete.
-        db.delete([k1, k2, k3])
+# A batch delete.
+db.delete([[]k1, k2, k3])
 
 </pre>
 
@@ -1548,7 +1586,7 @@ C: 'this', 'that'
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Oracle and/or its affiliates</div>
+Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
