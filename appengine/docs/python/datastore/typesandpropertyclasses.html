@@ -66,6 +66,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -99,8 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -145,8 +144,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -215,7 +220,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/backends/index.html">Backends</a>
       <ul>
         <li><a href="../../java/backends/overview.html">Overview</a></li>
-<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -436,6 +441,7 @@ var logged_in_user_email = null;
       <li><a href="hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="metadataqueries.html">Metadata Queries</a></li>
       <li><a href="stats.html">Statistics</a></li>
+      <li><a href="async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -655,11 +661,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../tools/webapp/overview.html">Overview</a></li>
@@ -713,6 +772,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -723,6 +783,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -744,6 +819,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -824,9 +900,9 @@ var logged_in_user_email = null;
 
 
 
-<p>The App Engine datastore supports a fixed set of value types for properties on data entities.  <a href="propertyclass.html">Property</a> classes can define new types that are converted to and from the underlying value types, and the value types can be used directly with <a href="expandoclass.html">Expando</a> dynamic properties and <a href="#ListProperty">ListProperty</a> aggregate property models.</p>
+<p>The App Engine datastore supports a fixed set of value types for properties on data entities. <a href="propertyclass.html">Property</a> classes can define new types that are converted to and from the underlying value types, and the value types can be used directly with <a href="expandoclass.html">Expando</a> dynamic properties and <a href="#ListProperty">ListProperty</a> aggregate property models.</p>
 
-<p>The following table describes the Property classes whose values correspond directly with the underlying data types.  Any of these value types can be used in an Expando dynamic property or ListProperty aggregate type.</p>
+<p>The following table describes the Property classes whose values correspond directly with the underlying data types. Any of these value types can be used in an Expando dynamic property or ListProperty aggregate type.</p>
 
 <table>
   <tr>
@@ -957,7 +1033,7 @@ var logged_in_user_email = null;
 
 <h2 id="Datastore_Value_Types">Datastore Value Types</h2>
 
-<p>Datastore entity property values can be of one of the following types.  See above for a list of corresponding <a href="propertyclass.html">Property</a> classes to use with <a href="modelclass.html">Model</a> definitions.</p>
+<p>Datastore entity property values can be of one of the following types. See above for a list of corresponding <a href="propertyclass.html">Property</a> classes to use with <a href="modelclass.html">Model</a> definitions.</p>
 
 <p>Other than the Python standard types and <a href="../users/userclass.html">users.User</a>, all classes described in this section are provided by the <code>google.appengine.ext.db</code> module.</p>
 
@@ -966,8 +1042,8 @@ var logged_in_user_email = null;
   <dt id="str"><code>str</code> or <code>unicode</code></dt>
   <dd>
     <p>A short string value, less than 500 characters in length.</p>
-    <p>A <code>str</code> value is assumed to be text encoded with the <code>ascii</code> codec, and is converted to a <code>unicode</code> value before being stored.  The value is returned by the datastore as a <code>unicode</code> value.  For short strings using other codecs, use a <code>unicode</code> value.</p>
-    <p>Short strings are indexed by the datastore, and can be used in filters and sort orders.  For text strings longer than 500 characters (which are not indexed), use a <a href="#Text">Text</a> instance.  For unencoded byte strings longer than 500 bytes (also not indexed), use a <a href="#Blob">Blob</a> instance.  For non-textual unencoded byte strings up to 500 bytes (not characters) that should be indexed, use a <a href="#ByteString">ByteString</a> instance.</p>
+    <p>A <code>str</code> value is assumed to be text encoded with the <code>ascii</code> codec, and is converted to a <code>unicode</code> value before being stored. The value is returned by the datastore as a <code>unicode</code> value. For short strings using other codecs, use a <code>unicode</code> value.</p>
+    <p>Short strings are indexed by the datastore, and can be used in filters and sort orders. For text strings longer than 500 characters (which are not indexed), use a <a href="#Text">Text</a> instance. For unencoded byte strings longer than 500 bytes (also not indexed), use a <a href="#Blob">Blob</a> instance. For non-textual unencoded byte strings up to 500 bytes (not characters) that should be indexed, use a <a href="#ByteString">ByteString</a> instance.</p>
     <p><i>Model property:</i> <a href="#StringProperty">StringProperty</a></p>
   </dd>
 
@@ -980,7 +1056,7 @@ var logged_in_user_email = null;
   <dt id="int"><code>int</code> or <code>long</code></dt>
   <dd>
     <p>An integer value, up to 64 bits.</p>
-    <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage.  A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
+    <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage. A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
     <p>If a <code>long</code> larger than 64 bits is assigned, only the least significant 64 bits are stored.</p>
     <p><i>Model property:</i> <a href="#IntegerProperty">IntegerProperty</a></p>
   </dd>
@@ -993,9 +1069,9 @@ var logged_in_user_email = null;
 
   <dt id="datetime"><code>datetime.datetime</code></dt>
   <dd>
-    <p>A date and time.  See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a>.</p>
-    <p>If the <code>datetime</code> value has a <code>tzinfo</code> attribute, it will be converted to the UTC time zone for storage.  Values come back from the datastore as UTC, with a <code>tzinfo</code> of <code>None</code>.  An application that needs date and time values to be in a particular time zone must set <code>tzinfo</code> correctly when updating the value, and convert values to the timezone when accessing the value.</p>
-    <p>Some libraries use the <code>TZ</code> environment variable to control the time zone applied to date-time values.  App Engine sets this environment variable to <code>"UTC"</code>.  Note that changing this variable in an application will not change the behavior of some datetime functions, because changes to environment variables are not visible outside of the Python code.</p>
+    <p>A date and time. See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a>.</p>
+    <p>If the <code>datetime</code> value has a <code>tzinfo</code> attribute, it will be converted to the UTC time zone for storage. Values come back from the datastore as UTC, with a <code>tzinfo</code> of <code>None</code>. An application that needs date and time values to be in a particular time zone must set <code>tzinfo</code> correctly when updating the value, and convert values to the timezone when accessing the value.</p>
+    <p>Some libraries use the <code>TZ</code> environment variable to control the time zone applied to date-time values. App Engine sets this environment variable to <code>"UTC"</code>. Note that changing this variable in an application will not change the behavior of some datetime functions, because changes to environment variables are not visible outside of the Python code.</p>
     <p>If you only convert values to and from a particular time zone, you can implement a custom <code>datetime.tzinfo</code> to convert values from the datastore:</p>
     <pre class="prettyprint">
 class Pacific_tzinfo(datetime_module.tzinfo):
@@ -1025,15 +1101,15 @@ class Pacific_tzinfo(datetime_module.tzinfo):
 
 pacific_time = utc_time.astimezone(Pacific_tzinfo())
 </pre>
-    <p>See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a> (including <a href="http://www.python.org/doc/2.5.2/lib/datetime-tzinfo.html">datetime.tzinfo</a>).  See also the third-party module <a href="http://pytz.sourceforge.net/">pytz</a>, though note that the pytz distribution has many files.</p>
-    <p>The <a href="#DateTimeProperty">DateTimeProperty</a> model property class includes features such as the ability to automatically use the date and time a model instance is stored.  These are features of the model, and are not available on the raw datastore value (such as in an <a href="expandoclass.html">Expando</a> dynamic property).</p>
+    <p>See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a> (including <a href="http://www.python.org/doc/2.5.2/lib/datetime-tzinfo.html">datetime.tzinfo</a>). See also the third-party module <a href="http://pytz.sourceforge.net/">pytz</a>, though note that the pytz distribution has many files.</p>
+    <p>The <a href="#DateTimeProperty">DateTimeProperty</a> model property class includes features such as the ability to automatically use the date and time a model instance is stored. These are features of the model, and are not available on the raw datastore value (such as in an <a href="expandoclass.html">Expando</a> dynamic property).</p>
     <p><i>Model properties:</i> <a href="#DateTimeProperty">DateTimeProperty</a>, <a href="#DateProperty">DateProperty</a>, <a href="#TimeProperty">TimeProperty</a></p>
   </dd>
 
   <dt id="list"><code>list</code></code></dt>
   <dd>
     <p>A list of values, each of which is of one of the supported data types.</p>
-    <p>When a <code>list</code> is used as the value of an <a href="expandoclass.html">Expando</a> dynamic property, it cannot be an empty list.  This is due to how list values are stored: When a list property has no items, it has no representation in the datastore.  You can use a static property and the <a href="#ListProperty">ListProperty</a> class to represent an empty list value for a property.</p>
+    <p>When a <code>list</code> is used as the value of an <a href="expandoclass.html">Expando</a> dynamic property, it cannot be an empty list. This is due to how list values are stored: When a list property has no items, it has no representation in the datastore. You can use a static property and the <a href="#ListProperty">ListProperty</a> class to represent an empty list value for a property.</p>
     <p><i>Model property:</i> <a href="#ListProperty">ListProperty</a></p>
   </dd>
 
@@ -1061,15 +1137,15 @@ e = Employee(name="Jennifer", manager=m_key)
   <dt id="users_User"><a href="../users/userclass.html">users.User</a></dt>
   <dd>
     <p>A user with a Google account.</p>
-    <p>A User value in the datastore does not get updated if the user changes her email address.  This may be remedied in a future release.  Until then, you can use the User value's <code>user_id()</code> as the user's stable unique identifier.</p>
+    <p>A User value in the datastore does not get updated if the user changes her email address. This may be remedied in a future release. Until then, you can use the User value's <code>user_id()</code> as the user's stable unique identifier.</p>
     <p><i>Model property:</i> <a href="#UserProperty">UserProperty</a></p>
   </dd>
 
   <dt id="Blob"><span class="type">class</span>&nbsp;<span class="itemname">Blob</span>(<span class="argname">arg</span>=<span class="argdefault">None</span>)</dt>
   <dd>
-    <p>Binary data, as a byte string.  This is a subclass of the built-in <code>str</code> type.</p>
+    <p>Binary data, as a byte string. This is a subclass of the built-in <code>str</code> type.</p>
     <p>Blob properties are not indexed, and cannot be used in filters or sort orders.</p>
-    <p>Blob is for binary data, such as images.  It takes a <code>str</code> value, but this value is stored as a byte string and is not encoded as text.  Use a <a href="#Text">Text</a> instance for large text data.</p>
+    <p>Blob is for binary data, such as images. It takes a <code>str</code> value, but this value is stored as a byte string and is not encoded as text. Use a <a href="#Text">Text</a> instance for large text data.</p>
     <p><i>Model property:</i> <a href="#BlobProperty">BlobProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1083,16 +1159,16 @@ m.blob = db.Blob(open("image.png", "rb").read())
 
   <dt id="ByteString"><span class="type">class</span>&nbsp;<span class="itemname">ByteString</span>(<span class="argname">arg</span>)</dt>
   <dd>
-    <p>A short blob value (a "byte string"), less than 500 bytes in length.  ByteString is a subclass of <a href="#str">str</a>, and takes an unencoded <code>str</code> value as an argument to its constructor.</p>
-    <p>ByteStrings are indexed by the datastore, and can be used in filters and sort orders.  For byte strings longer than 500 bytes (which are not indexed), use a <a href="#Blob">Blob</a> instance.  For encoded text data, use <a href="#str">str</a> (short, indexed) or <a href="#Text">Text</a> (long, not indexed).</p>
+    <p>A short blob value (a "byte string"), less than 500 bytes in length. ByteString is a subclass of <a href="#str">str</a>, and takes an unencoded <code>str</code> value as an argument to its constructor.</p>
+    <p>ByteStrings are indexed by the datastore, and can be used in filters and sort orders. For byte strings longer than 500 bytes (which are not indexed), use a <a href="#Blob">Blob</a> instance. For encoded text data, use <a href="#str">str</a> (short, indexed) or <a href="#Text">Text</a> (long, not indexed).</p>
     <p><i>Model property:</i> <a href="#ByteStringProperty">ByteStringProperty</a></p>
   </dd>
 
   <dt id="Text"><span class="type">class</span>&nbsp;<span class="itemname">Text</span>(<span class="argname">arg</span>=<span class="argdefault">None</span>, <span class="argname">encoding</span>=<span class="argdefault">None</span>)</dt>
   <dd>
-    <p>A long string.  This is a subclass of the built-in <code>unicode</code> type.</p>
-    <p><span class="argname">arg</span> a <code>unicode</code> or <code>str</code> value.  If <span class="argname">arg</span> is a <code>str</code>, then it is parsed with the encoding specified by <span class="argname">encoding</span>, or <code>ascii</code> if no encoding is specified.  See <a href="http://www.python.org/doc/2.5.2/lib/standard-encodings.html">the list of standard encodings</a> for possible values for <span class="argname">encoding</span>.</p>
-    <p>Unlike an entity property whose value is a simple <code>str</code> or <code>unicode</code>, a Text property can be more than 500 characters long.  However, Text properties are not indexed, and cannot be used in filters or sort orders.</p>
+    <p>A long string. This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p><span class="argname">arg</span> a <code>unicode</code> or <code>str</code> value. If <span class="argname">arg</span> is a <code>str</code>, then it is parsed with the encoding specified by <span class="argname">encoding</span>, or <code>ascii</code> if no encoding is specified. See <a href="http://www.python.org/doc/2.5.2/lib/standard-encodings.html">the list of standard encodings</a> for possible values for <span class="argname">encoding</span>.</p>
+    <p>Unlike an entity property whose value is a simple <code>str</code> or <code>unicode</code>, a Text property can be more than 500 characters long. However, Text properties are not indexed, and cannot be used in filters or sort orders.</p>
     <p><i>Model property:</i> <a href="#TextProperty">TextProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1107,7 +1183,7 @@ m.text = db.Text("kittens", encoding="latin-1")
 
   <dt id="Category"><span class="type">class</span>&nbsp;<span class="itemname">Category</span>(<span class="argname">tag</span>)</dt>
   <dd>
-    <p>A category or "tag".  This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p>A category or "tag". This is a subclass of the built-in <code>unicode</code> type.</p>
     <p><i>Model property:</i> <a href="#CategoryProperty">CategoryProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1116,12 +1192,12 @@ class MyModel(db.Model):
 m = MyModel()
 m.category = db.Category("kittens")
 </pre>
-    <p>In XML, this is an Atom <code>category</code> element.  See <a href="http://www.atomenabled.org/developers/syndication/#category">the Atom specification</a>.</p>
+    <p>In XML, this is an Atom <code>category</code> element. See <a href="http://www.atomenabled.org/developers/syndication/#category">the Atom specification</a>.</p>
   </dd>
 
   <dt id="Email"><span class="type">class</span>&nbsp;<span class="itemname">Email</span>(<span class="argname">email</span>)</dt>
   <dd>
-    <p>An email address.  This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p>An email address. This is a subclass of the built-in <code>unicode</code> type.</p>
     <p>Neither the property class nor the value class perform validation of email addresses, they just store the value.</p>
     <p><i>Model property:</i> <a href="#EmailProperty">EmailProperty</a></p>
     <pre class="prettyprint">
@@ -1131,20 +1207,20 @@ class MyModel(db.Model):
 m = MyModel()
 m.email_address = db.Email("larry@example.com")
 </pre>
-    <p>In XML, this is a <code>gd:email</code> element.  See <a href="http://code.google.com/apis/gdata/common-elements.html#gdEmail">the GData API reference</a>.</p>
+    <p>In XML, this is a <code>gd:email</code> element. See <a href="http://code.google.com/apis/gdata/common-elements.html#gdEmail">the GData API reference</a>.</p>
   </dd>
 
   <dt id="GeoPt"><span class="type">class</span>&nbsp;<span class="itemname">GeoPt</span>(<span class="argname">lat</span>, <span class="argname">lon</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>A geographical point represented by floating-point latitude and longitude coordinates.</p>
     <p><i>Model property:</i> <a href="#GeoPtProperty">GeoPtProperty</a></p>
-    <p>In XML, this is a <code>georss:point</code> element.  See <a href="http://georss.org/">georss.org</a>.</p>
+    <p>In XML, this is a <code>georss:point</code> element. See <a href="http://georss.org/">georss.org</a>.</p>
   </dd>
 
   <dt id="IM"><span class="type">class</span>&nbsp;<span class="itemname">IM</span>(<span class="argname">protocol</span>, <span class="argname">address</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>An instant messaging handle.</p>
-    <p><span class="argname">protocol</span> is the canonical URL of the instant messaging service.  Some possible values:</p>
+    <p><span class="argname">protocol</span> is the canonical URL of the instant messaging service. Some possible values:</p>
     <table>
       <tr><th>Protocol</th><th>Description</th></tr>
       <tr><td>sip</td><td>SIP/SIMPLE</td></tr>
@@ -1167,12 +1243,12 @@ class MyModel(db.Model):
 m = MyModel()
 m.im = db.IM("http://example.com/", "Larry97")
 </pre>
-    <p>In XML, this is a <code>gd:im</code> element.  See <a href="http://code.google.com/apis/gdata/common-elements.html#gdIm">the GData API reference</a>.</p>
+    <p>In XML, this is a <code>gd:im</code> element. See <a href="http://code.google.com/apis/gdata/common-elements.html#gdIm">the GData API reference</a>.</p>
   </dd>
 
   <dt id="Link"><span class="type">class</span>&nbsp;<span class="itemname">Link</span>(<span class="argname">link</span>)</dt>
   <dd>
-    <p>A fully qualified URL.  This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p>A fully qualified URL. This is a subclass of the built-in <code>unicode</code> type.</p>
     <p><i>Model property:</i> <a href="#LinkProperty">LinkProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1181,12 +1257,12 @@ class MyModel(db.Model):
 m = MyModel()
 m.link = db.Link("http://www.google.com/")
 </pre>
-    <p>In XML, this is an Atom <code>link</code> element.  See <a href="http://www.atomenabled.org/developers/syndication/#link">the Atom specification</a>.</p>
+    <p>In XML, this is an Atom <code>link</code> element. See <a href="http://www.atomenabled.org/developers/syndication/#link">the Atom specification</a>.</p>
   </dd>
 
   <dt id="PhoneNumber"><span class="type">class</span>&nbsp;<span class="itemname">PhoneNumber</span>(<span class="argname">phone</span>)</dt>
   <dd>
-    <p>A human-readable telephone number.  This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p>A human-readable telephone number. This is a subclass of the built-in <code>unicode</code> type.</p>
     <p><i>Model property:</i> <a href="#PhoneNumberProperty">PhoneNumberProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1195,12 +1271,12 @@ class MyModel(db.Model):
 m = MyModel()
 m.phone = db.PhoneNumber("1 (206) 555-1212")
 </pre>
-    <p>In XML, this is a <code>gd.phoneNumber</code> element.  See <a href="http://code.google.com/apis/gdata/common-elements.html#gdPhoneNumber">the GData API reference</a>.</p>
+    <p>In XML, this is a <code>gd.phoneNumber</code> element. See <a href="http://code.google.com/apis/gdata/common-elements.html#gdPhoneNumber">the GData API reference</a>.</p>
   </dd>
 
   <dt id="PostalAddress"><span class="type">class</span>&nbsp;<span class="itemname">PostalAddress</span>(<span class="argname">address</span>)</dt>
   <dd>
-    <p>A postal address.  This is a subclass of the built-in <code>unicode</code> type.</p>
+    <p>A postal address. This is a subclass of the built-in <code>unicode</code> type.</p>
     <p><i>Model property:</i> <a href="#PostalAddressProperty">PostalAddressProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1209,12 +1285,12 @@ class MyModel(db.Model):
 m = MyModel()
 m.address = db.PostalAddress("1600 Ampitheater Pkwy., Mountain View, CA")
 </pre>
-    <p>In XML, this is a <code>gd:postalAddress</code> element.  See <a href="http://code.google.com/apis/gdata/common-elements.html#gdPostalAddress">the GData API reference</a>.</p>
+    <p>In XML, this is a <code>gd:postalAddress</code> element. See <a href="http://code.google.com/apis/gdata/common-elements.html#gdPostalAddress">the GData API reference</a>.</p>
   </dd>
 
   <dt id="Rating"><span class="type">class</span>&nbsp;<span class="itemname">Rating</span>(<span class="argname">rating</span>)</dt>
   <dd>
-    <p>A user-provided rating for a piece of content, as an integer between 0 and 100.  This is a subclass of the built-in <code>long</code> type.  The class validates that the value is an integer between 0 and 100, and raises a <a href="exceptions.html#BadValueError">BadValueError</a> if the value is invalid.</p>
+    <p>A user-provided rating for a piece of content, as an integer between 0 and 100. This is a subclass of the built-in <code>long</code> type. The class validates that the value is an integer between 0 and 100, and raises a <a href="exceptions.html#BadValueError">BadValueError</a> if the value is invalid.</p>
     <p><i>Model property:</i> <a href="#RatingProperty">RatingProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1223,7 +1299,7 @@ class MyModel(db.Model):
 m = MyModel()
 m.rating = db.Rating(97)
 </pre>
-    <p>In XML, this is a <code>gd:rating</code> element.  See <a href="http://code.google.com/apis/gdata/common-elements.html#gdRating">the GData API reference</a>.</p>
+    <p>In XML, this is a <code>gd:rating</code> element. See <a href="http://code.google.com/apis/gdata/common-elements.html#gdRating">the GData API reference</a>.</p>
   </dd>
 
 </dl>
@@ -1231,7 +1307,7 @@ m.rating = db.Rating(97)
 
 <h2 id="Property_Classes">Property Classes</h2>
 
-<p>All model property classes provided by <code>google.appengine.ext.db</code> are subclasses of the <a href="propertyclass.html">Property</a> base class, and support all of the base constructor's arguments.  See the base class documentation for information about those arguments.</p>
+<p>All model property classes provided by <code>google.appengine.ext.db</code> are subclasses of the <a href="propertyclass.html">Property</a> base class, and support all of the base constructor's arguments. See the base class documentation for information about those arguments.</p>
 
 <p>The <code>google.appengine.ext.db</code> package provides the following model property classes:</p>
 
@@ -1240,7 +1316,7 @@ m.rating = db.Rating(97)
   <dt id="BlobProperty"><span class="type">class</span>&nbsp;<span class="itemname">BlobProperty</span>(...)</dt>
   <dd>
     <p>A binary data property.</p>
-    <p>Blob data is a byte string.  For text data, which may involve encoding, use <a href="#TextProperty">TextProperty</a>.</p>
+    <p>Blob data is a byte string. For text data, which may involve encoding, use <a href="#TextProperty">TextProperty</a>.</p>
     <p><i>Value type:</i> <a href="#Blob">Blob</a></p>
   </dd>
 
@@ -1252,9 +1328,9 @@ m.rating = db.Rating(97)
 
   <dt id="ByteStringProperty"><span class="type">class</span>&nbsp;<span class="itemname">ByteStringProperty</span>(<span class="argname">verbose_name</code>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
-    <p>A short blob property (a "byte string").  Takes a <a href="#ByteString">ByteString</a> value of 500 bytes or less.</p>
+    <p>A short blob property (a "byte string"). Takes a <a href="#ByteString">ByteString</a> value of 500 bytes or less.</p>
     <p>ByteStringProperty property values are indexed, and can be used in filters and sort orders.</p>
-    <p>Like <a href="#StringProperty">StringProperty</a>, except the value is not encoded in any way.  The bytes are stored literally.</p>
+    <p>Like <a href="#StringProperty">StringProperty</a>, except the value is not encoded in any way. The bytes are stored literally.</p>
     <p>If the ByteStringProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#ByteString">ByteString</a></p>
   </dd>
@@ -1267,16 +1343,16 @@ m.rating = db.Rating(97)
 
   <dt id="DateProperty"><span class="type">class</span>&nbsp;<span class="itemname">DateProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">auto_now</span>=<span class="argdefault">False</span>, <span class="argname">auto_now_add</span>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
-    <p>A date property, without a time of day.  See <a href="#DateTimeProperty">DateTimeProperty</a> for more information.</p>
-    <p><i>Value type:</i> <code>datetime.date</code>.  This is converted to a <a href="#datetime">datetime.datetime</a> internally.</p>
+    <p>A date property, without a time of day. See <a href="#DateTimeProperty">DateTimeProperty</a> for more information.</p>
+    <p><i>Value type:</i> <code>datetime.date</code>. This is converted to a <a href="#datetime">datetime.datetime</a> internally.</p>
   </dd>
 
   <dt id="DateTimeProperty"><span class="type">class</span>&nbsp;<span class="itemname">DateTimeProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">auto_now</span>=<span class="argdefault">False</span>, <span class="argname">auto_now_add</span>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
     <p>A date and time property.</p>
-    <p>If <span class="argname">auto_now</span> is <code>True</code>, the property value is set to the current time whenever the model instance is stored in the datastore, overwriting the property's previous value.  This is useful for tracking a "last modified" date and time for a model instance.</p>
-    <p>If <span class="argname">auto_now_add</span> is <code>True</code>, the property value is set to the current time the first time the model instance is stored in the datastore, unless the property has already been assigned a value.  This is useful for storing a "created" date and time for a model instance.</p>
-    <p>Date-time values are stored as and returned using the UTC time zone.  See <a href="#datetime">datetime.datetime</a> for a discussion of how to manage time zones.</p>
+    <p>If <span class="argname">auto_now</span> is <code>True</code>, the property value is set to the current time whenever the model instance is stored in the datastore, overwriting the property's previous value. This is useful for tracking a "last modified" date and time for a model instance.</p>
+    <p>If <span class="argname">auto_now_add</span> is <code>True</code>, the property value is set to the current time the first time the model instance is stored in the datastore, unless the property has already been assigned a value. This is useful for storing a "created" date and time for a model instance.</p>
+    <p>Date-time values are stored as and returned using the UTC time zone. See <a href="#datetime">datetime.datetime</a> for a discussion of how to manage time zones.</p>
     <p><i>Value type:</i> <a href="#datetime">datetime.datetime</a></p>
   </dd>
 
@@ -1308,7 +1384,7 @@ m.rating = db.Rating(97)
   <dt id="IntegerProperty"><span class="type">class</span>&nbsp;<span class="itemname">IntegerProperty</span>(...)</dt>
   <dd>
     <p>An integer property, up to 64 bits.</p>
-    <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage.  A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
+    <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage. A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
     <p>If a <code>long</code> larger than 64 bits is assigned, only the least significant 64 bits are stored.</p>
     <p><i>Value type:</i> <a href="#int">int or long</a></p>
   </dd>
@@ -1323,11 +1399,11 @@ m.rating = db.Rating(97)
   <dd>
     <p>A list of values of the type given as <span class="argname">item_type</span>.</p>
     <p>In a query, comparing a list property to a value performs the test against the list members: <code>list_property = value</code> tests if the value appears anywhere in the list, <code>list_property &lt; value</code> tests if any of the members of the list are less than the given value, and so forth.</p>
-    <p>A query cannot compare two list values.  There is no way to test two lists for equality without testing each element for membership separately.</p>
-    <p><span class="argname">item_type</span> is the type of the items in the list, as a Python type or class.  All items in the list value must be of the given type.  <span class="argname">item_type</span> must be one of the datastore value types, and cannot be <code>list</code>.  See <a href="#Datastore_Value_Types">Datastore Value Types</a>, above.</p>
-    <p>The value of a ListProperty cannot be <code>None</code>.  It can, however, be an empty list.  When <code>None</code> is specified for the <span class="argname">default</span> argument (or when the <span class="argname">default</span> argument is not specified), the default value of the property is the empty list.</p>
-    <p class="note"><b>Tip:</b> Because ListProperty aggregate types do not use the Property classes, Property class features such as automatic values and validation are not applied automatically to members of the list value.  If you want to validate a member value using a Property class, you can instantiate the class and call its <a href="propertyclass.html#Property_validate">validate()</a> method on the value.</p>
-    <p><span class="argname">default</span> is the default value for the list property.  If <code>None</code>, the default is an empty list.  A list property can define a custom <span class="argname">validator</span> to disallow the empty list.</p>
+    <p>A query cannot compare two list values. There is no way to test two lists for equality without testing each element for membership separately.</p>
+    <p><span class="argname">item_type</span> is the type of the items in the list, as a Python type or class. All items in the list value must be of the given type. <span class="argname">item_type</span> must be one of the datastore value types, and cannot be <code>list</code>. See <a href="#Datastore_Value_Types">Datastore Value Types</a>, above.</p>
+    <p>The value of a ListProperty cannot be <code>None</code>. It can, however, be an empty list. When <code>None</code> is specified for the <span class="argname">default</span> argument (or when the <span class="argname">default</span> argument is not specified), the default value of the property is the empty list.</p>
+    <p class="note"><b>Tip:</b> Because ListProperty aggregate types do not use the Property classes, Property class features such as automatic values and validation are not applied automatically to members of the list value. If you want to validate a member value using a Property class, you can instantiate the class and call its <a href="propertyclass.html#Property_validate">validate()</a> method on the value.</p>
+    <p><span class="argname">default</span> is the default value for the list property. If <code>None</code>, the default is an empty list. A list property can define a custom <span class="argname">validator</span> to disallow the empty list.</p>
     <p>See <a href="entities.html#Properties_and_Value_Types">Entities and Models</a> for more information on ListProperty and list values.</p>
     <p><i>Value type:</i> a Python <a href="#list">list</a> of zero or more values, where each value is of the configured type</p>
   </dd>
@@ -1352,11 +1428,11 @@ m.rating = db.Rating(97)
 
   <dt id="ReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">ReferenceProperty</span>(<span class="argname">reference_class</span>=<span class="argdefault">None</span>, <span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">collection_name</span>=<span class="argdefault">None</code>, ...)</dt>
   <dd>
-    <p>A reference to another model instance.  For example, a reference may indicate a many-to-one relationship between the model with the property and the model referenced by the property.</p>
-    <p><span class="argname">reference_class</span> is the model class of the model instance being referenced.  If specified, only model instances of the class can be assigned to this property.  If <code>None</code>, any model instance can be the value of this property.</p>
-    <p><span class="argname">collection_name</span> is the name of the property to give to the referenced model class whose value is a <a href="queryclass.html">Query</a> for all entities that reference the entity.  If no <span class="argname">collection_name</span> is set, then <code><i>modelname</i>_set</code> (with the name of the model in lowercase letters and "_set" added) is used.</p>
-    <p class="note"><b>Note:</b> <span class="argname">collection_name</span> must be set if there are multiple properties within the same model referencing the same model class.  Otherwise, a <code>DuplicatePropertyError</code> will be raised when the default names are generated.</p>
-    <p>ReferenceProperty automatically references and dereferences model instances as property values: A model instance can be assigned to a ReferenceProperty directly, and its key will be used.  The ReferenceProperty value can be used as if it were a model instance, and the datastore entity will be fetched and the model instance created when it is first used in this way.  Untouched reference properties do not query for unneeded data.</p>
+    <p>A reference to another model instance. For example, a reference may indicate a many-to-one relationship between the model with the property and the model referenced by the property.</p>
+    <p><span class="argname">reference_class</span> is the model class of the model instance being referenced. If specified, only model instances of the class can be assigned to this property. If <code>None</code>, any model instance can be the value of this property.</p>
+    <p><span class="argname">collection_name</span> is the name of the property to give to the referenced model class. The value of the property is a <a href="queryclass.html">Query</a> for all entities that reference the entity. If no <span class="argname">collection_name</span> is set, then <code><i>modelname</i>_set</code> (with the name of the referenced model in lowercase letters and "_set" added) is used.</p>
+    <p class="note"><b>Note:</b> <span class="argname">collection_name</span> must be set if there are multiple properties within the same model referencing the same model class. Otherwise, a <code>DuplicatePropertyError</code> will be raised when the default names are generated.</p>
+    <p>ReferenceProperty automatically references and dereferences model instances as property values: A model instance can be assigned to a ReferenceProperty directly, and its key will be used. The ReferenceProperty value can be used as if it were a model instance, and the datastore entity will be fetched and the model instance created when it is first used in this way. Untouched reference properties do not query for unneeded data.</p>
     <pre class="prettyprint">
 class Author(db.Model):
     name = db.StringProperty()
@@ -1366,37 +1442,39 @@ class Story(db.Model):
 
 story = db.get(story_key)
 author_name = story.author.name
+
+author = db.get(author_key)
+stories_by_author = author.story_set.get()
 </pre>
-    <p>As with a <a href="keyclass.html">Key</a> value, it is possible for a reference property value to refer to a data entity that does not exist.  If a referenced entity is deleted from the datastore, references to the entity are not updated. Accessing an entity that does not exist raises a <a href="exceptions.html#ReferencePropertyResolveError">ReferencePropertyResolveError</a>.
+    <p>As with a <a href="keyclass.html">Key</a> value, it is possible for a reference property value to refer to a data entity that does not exist. If a referenced entity is deleted from the datastore, references to the entity are not updated. Accessing an entity that does not exist raises a <a href="exceptions.html#ReferencePropertyResolveError">ReferencePropertyResolveError</a>.
     <p>Deleting an entity does not delete entities referred to by a ReferenceProperty.</p>
-    <p>See also <a href="typesandpropertyclasses.html#lists">this introduction to reference properties</a>.</p>
     <p><i>Value type:</i> <a href="keyclass.html">db.Key</a> (<a href="#db_Key">see above</a>)</p>
   </dd>
 
   <dt id="SelfReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">SelfReferenceProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">collection_name</span>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
-    <p>A reference to another model instance of the same class.  See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
+    <p>A reference to another model instance of the same class. See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
     <p><i>Value type:</i> <a href="keyclass.html">db.Key</a> (<a href="#db_Key">see above</a>)</p>
   </dd>
 
   <dt id="BlobReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">blobstore.BlobReferenceProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
-    <p>A reference to the <a href="../blobstore/blobinfoclass.html">BlobInfo</a> entity that corresponds with a Blobstore value.  See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
-    <p>The value stored in the reference property is the Blobstore key.  When the property is de-referenced, the corresponding <a href="../blobstore/blobinfoclass.html">BlobInfo</a> object is fetched and behaves as the value of the property.  As with a <a href="#ReferenceProperty">ReferenceProperty</a> and model instance values, a BlobReferenceProperty must be assigned a BlobInfo object as its value.</p>
+    <p>A reference to the <a href="../blobstore/blobinfoclass.html">BlobInfo</a> entity that corresponds with a Blobstore value. See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
+    <p>The value stored in the reference property is the Blobstore key. When the property is de-referenced, the corresponding <a href="../blobstore/blobinfoclass.html">BlobInfo</a> object is fetched and behaves as the value of the property. As with a <a href="#ReferenceProperty">ReferenceProperty</a> and model instance values, a BlobReferenceProperty must be assigned a BlobInfo object as its value.</p>
     <p><i>Value type:</i> <a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></p>
   </dd>
 
   <dt id="StringListProperty"><span class="type">class</span>&nbsp;<span class="itemname">StringListProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">default</span>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
-    <p>Similar to a <a href="#ListProperty">ListProperty</a> of Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) values.  See <a href="#ListProperty">ListProperty</a>.</p>
+    <p>Similar to a <a href="#ListProperty">ListProperty</a> of Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) values. See <a href="#ListProperty">ListProperty</a>.</p>
     <p><i>Value type:</i> a Python <code>list</code> of <a href="#str">str or unicode</a> values</p>
   </dd>
 
   <dt id="StringProperty"><span class="type">class</span>&nbsp;<span class="itemname">StringProperty</span>(<span class="argname">verbose_name</code>=<span class="argdefault">None</span>, <span class="argname">multiline</code>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
-    <p>A short string property.  Takes a Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) value of 500 characters or less.</p>
+    <p>A short string property. Takes a Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) value of 500 characters or less.</p>
     <p>StringProperty property values are indexed, and can be used in filters and sort orders.</p>
-    <p>If <span class="argname">multiline</span> is <code>False</code>, then the value cannot include linefeed characters.  The <code>djangoforms</code> library uses this to enforce a difference between text fields and textarea fields in the data model, and others can use it for a similar purpose.</p>
+    <p>If <span class="argname">multiline</span> is <code>False</code>, then the value cannot include linefeed characters. The <code>djangoforms</code> library uses this to enforce a difference between text fields and textarea fields in the data model, and others can use it for a similar purpose.</p>
     <p>If the StringProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#str">str or unicode</a></p>
   </dd>
@@ -1404,24 +1482,24 @@ author_name = story.author.name
   <dt id="TextProperty"><span class="type">class</span>&nbsp;<span class="itemname">TextProperty</span>()</dt>
   <dd>
     <p>A long string.</p>
-    <p>Unlike <a href="#StringProperty">StringProperty</a>, a TextProperty value can be more than 500 characters long.  However, TextProperty values are not indexed, and cannot be used in filters or sort orders.</p>
-    <p>TextProperty values store text with a text encoding.  For binary data, use <a href="#BlobProperty">BlobProperty</a>.</p>
+    <p>Unlike <a href="#StringProperty">StringProperty</a>, a TextProperty value can be more than 500 characters long. However, TextProperty values are not indexed, and cannot be used in filters or sort orders.</p>
+    <p>TextProperty values store text with a text encoding. For binary data, use <a href="#BlobProperty">BlobProperty</a>.</p>
     <p>If the TextProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#Text">Text</a></p>
   </dd>
 
   <dt id="TimeProperty"><span class="type">class</span>&nbsp;<span class="itemname">TimeProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">auto_now</span>=<span class="argdefault">False</span>, <span class="argname">auto_now_add</span>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
-    <p>A time property, without a date.  Takes a Python standard library <span class="itemname">datetime.time</span> value.  See <a href="#DateTimeProperty">DateTimeProperty</a> for more information.</p>
-    <p><i>Value type:</i> <code>datetime.time</code>.  This is converted to a <a href="#datetime">datetime.datetime</a> internally.</p>
+    <p>A time property, without a date. Takes a Python standard library <span class="itemname">datetime.time</span> value. See <a href="#DateTimeProperty">DateTimeProperty</a> for more information.</p>
+    <p><i>Value type:</i> <code>datetime.time</code>. This is converted to a <a href="#datetime">datetime.datetime</a> internally.</p>
   </dd>
 
   <dt id="UserProperty"><span class="type">class</span>&nbsp;<span class="itemname">UserProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">auto_current_user</span>=<span class="argdefault">False</span>, <span class="argname">auto_current_user_add</span>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
     <p>A user with a Google account.</p>
-    <p>If <span class="argname">auto_current_user</span> is <code>True</code>, the property value is set to the currently signed-in user whenever the model instance is stored in the datastore, overwriting the property's previous value.  This is useful for tracking which user modifies a model instance.</p>
-    <p>If <span class="argname">auto_current_user_add</span> is <code>True</code>, the property value is set to the currently signed-in user the first time the model instance is stored in the datastore, unless the property has already been assigned a value.  This is useful for tracking which user creates a model instance, which may not be the same user that modifies it later.</p>
-    <p>UserProperty does not accept a default value.  Default values are set when the model class is first imported, and with import caching may not be the currently signed-in user.</p>
+    <p>If <span class="argname">auto_current_user</span> is <code>True</code>, the property value is set to the currently signed-in user whenever the model instance is stored in the datastore, overwriting the property's previous value. This is useful for tracking which user modifies a model instance.</p>
+    <p>If <span class="argname">auto_current_user_add</span> is <code>True</code>, the property value is set to the currently signed-in user the first time the model instance is stored in the datastore, unless the property has already been assigned a value. This is useful for tracking which user creates a model instance, which may not be the same user that modifies it later.</p>
+    <p>UserProperty does not accept a default value. Default values are set when the model class is first imported, and with import caching may not be the currently signed-in user.</p>
     <p><i>Value type:</i> <a href="../users/userclass.html">users.User</a>  (<a href="#users_User">see above</a>)</p>
   </dd>
 
@@ -1485,6 +1563,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

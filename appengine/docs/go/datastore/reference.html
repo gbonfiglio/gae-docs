@@ -66,6 +66,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -99,8 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -145,8 +144,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -215,7 +220,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/backends/index.html">Backends</a>
       <ul>
         <li><a href="../../java/backends/overview.html">Overview</a></li>
-<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -436,6 +441,7 @@ var logged_in_user_email = null;
       <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -655,11 +661,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
@@ -713,6 +772,7 @@ var logged_in_user_email = null;
     <li><a href="index.html">Storing Data</a>
       <ul>
              <li><a href="overview.html">Overview</a></li>
+     <li><a href="transactions.html">Transactions</a></li>
      <li><a href="reference.html">Reference</a></li>
 
       </ul>
@@ -723,6 +783,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
 <li><a href="../blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../capabilities/overview.html">Overview</a></li>
+<li><a href="../capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><a href="../channel/reference.html">Reference</a></li>
+<li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -744,6 +819,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
      <li><a href="../taskqueue/reference.html">Reference</a></li>
+     <li><a href="../taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -826,7 +902,7 @@ var logged_in_user_email = null;
 
   <h2 id="Introduction">Introduction</h2>
   <p>
-The datastore package provides a client for App Engine&#39;s datastore service.
+Package datastore provides a client for App Engine&#39;s datastore service.
 </p>
 <p>
 Entities are the unit of storage and are associated with a key. A key
@@ -844,7 +920,7 @@ to be generated for that entity, with a non-zero IntID.
 An entity&#39;s contents are a mapping from case-sensitive field names to values.
 Valid value types are:
 </p>
-<pre>- signed integers (int, int8, int16, int32 and int64),
+<pre class="prettyprint">- signed integers (int, int8, int16, int32 and int64),
 - bool,
 - string,
 - float32 and float64,
@@ -878,7 +954,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
     k := datastore.NewKey(&#34;Entity&#34;, &#34;stringID&#34;, 0, nil)
     e := new(Entity)
     if err := datastore.Get(c, k, e); err != nil {
-    	serveError(w, err)
+    	serveError(c, w, err)
     	return
     }
 
@@ -886,17 +962,22 @@ func handle(w http.ResponseWriter, r *http.Request) {
     e.Value = r.URL.Path
 
     if _, err := datastore.Put(c, k, e); err != nil {
-    	serveError(w, err)
+    	serveError(c, w, err)
     	return
     }
 
-    w.SetHeader(&#34;Content-Type&#34;, &#34;text/plain&#34;)
+    w.Header().Set(&#34;Content-Type&#34;, &#34;text/plain; charset=utf-8&#34;)
     fmt.Fprintf(w, &#34;old=%q\nnew=%q\n&#34;, old, e.Value)
 }
 </pre>
 <p>
 To derive example code that saves and loads a Map instead of a struct, replace
 e := new(Entity) and e.Value with e := make(datastore.Map) and e[&#34;Value&#34;].
+</p>
+<p>
+GetMulti, PutMulti and DeleteMulti are batch versions of the Get, Put and
+Delete functions. They take a []*Key instead of a *Key, and may return an
+ErrMulti when encountering partial failure.
 </p>
 <p>
 Queries are created using datastore.NewQuery and are configured
@@ -926,13 +1007,51 @@ func handle(w http.ResponseWriter, r *http.Request) {
     		break
     	}
     	if err != nil {
-    		serveError(w, err)
+    		serveError(c, w, err)
     		return
     	}
     	fmt.Fprintf(b, &#34;Key=%v\nWidget=%#v\n\n&#34;, x, key)
     }
-    w.SetHeader(&#34;Content-Type&#34;, &#34;text/plain&#34;)
+    w.Header().Set(&#34;Content-Type&#34;, &#34;text/plain; charset=utf-8&#34;)
     io.Copy(w, b)
+}
+</pre>
+<p>
+RunInTransaction runs a function in a transaction.
+</p>
+<p>
+Example code:
+</p>
+<pre class="prettyprint">type Counter struct {
+    Count int
+}
+
+func inc(c appengine.Context, key *datastore.Key) (int, os.Error) {
+    var x Counter
+    if err := datastore.Get(c, key, &amp;x); err != nil &amp;&amp; err != datastore.ErrNoSuchEntity {
+    	return 0, err
+    }
+    x.Count++
+    if _, err := datastore.Put(c, key, &amp;x); err != nil {
+    	return 0, err
+    }
+    return x.Count, nil
+}
+
+func handle(w http.ResponseWriter, r *http.Request) {
+    c := appengine.NewContext(r)
+    var count int
+    err := datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
+    	var err1 os.Error
+    	count, err1 = inc(c, datastore.NewKey(&#34;Counter&#34;, &#34;singleton&#34;, 0, nil))
+    	return err1
+    })
+    if err != nil {
+    	serveError(c, w, err)
+    	return
+    }
+    w.Header().Set(&#34;Content-Type&#34;, &#34;text/plain; charset=utf-8&#34;)
+    fmt.Fprintf(w, &#34;Count=%d&#34;, count)
 }
 </pre>
 
@@ -952,19 +1071,33 @@ Done is returned when a query iteration has completed.
 </p>
 
       <pre class="prettyprint">var Done = os.NewError(&#34;datastore: query has no more results&#34;)</pre>
+      <p>
+ErrConcurrentTransaction is returned when a transaction is rolled back due
+to a conflict with a concurrent transaction.
+</p>
+
+      <pre class="prettyprint">var ErrConcurrentTransaction = os.NewError(&#34;datastore: concurrent transaction&#34;)</pre>
   <h2>Functions</h2>
   <dl class="apireference">
       <dt id="Delete"><span class="type">func</span> <span class="itemname">Delete</span></dt>
       <dd>
-        <p><code>func Delete(c appengine.Context, k *Key) os.Error</code></p>
+        <p><code>func Delete(c appengine.Context, key *Key) os.Error</code></p>
         <p>
 Delete deletes the entity for the given key.
 </p>
 
       </dd>
+      <dt id="DeleteMulti"><span class="type">func</span> <span class="itemname">DeleteMulti</span></dt>
+      <dd>
+        <p><code>func DeleteMulti(c appengine.Context, key []*Key) os.Error</code></p>
+        <p>
+DeleteMulti is a batch version of Delete.
+</p>
+
+      </dd>
       <dt id="Get"><span class="type">func</span> <span class="itemname">Get</span></dt>
       <dd>
-        <p><code>func Get(c appengine.Context, k *Key, dst interface{}) os.Error</code></p>
+        <p><code>func Get(c appengine.Context, key *Key, dst interface{}) os.Error</code></p>
         <p>
 Get loads the entity stored for k into dst, which may be either a struct
 pointer or a Map. If there is no such entity for the key, Get returns
@@ -980,6 +1113,54 @@ ErrFieldMismatch is returned when a field is to be loaded into a different
 type than the one it was stored from, or when a field is missing or
 unexported in the destination struct. ErrFieldMismatch is only returned if
 dst is a struct pointer.
+</p>
+
+      </dd>
+      <dt id="GetMulti"><span class="type">func</span> <span class="itemname">GetMulti</span></dt>
+      <dd>
+        <p><code>func GetMulti(c appengine.Context, key []*Key, dst []interface{}) os.Error</code></p>
+        <p>
+GetMulti is a batch version of Get.
+</p>
+
+      </dd>
+      <dt id="PutMulti"><span class="type">func</span> <span class="itemname">PutMulti</span></dt>
+      <dd>
+        <p><code>func PutMulti(c appengine.Context, key []*Key, src []interface{}) ([]*Key, os.Error)</code></p>
+        <p>
+PutMulti is a batch version of Put.
+</p>
+
+      </dd>
+      <dt id="RunInTransaction"><span class="type">func</span> <span class="itemname">RunInTransaction</span></dt>
+      <dd>
+        <p><code>func RunInTransaction(c appengine.Context, f func(tc appengine.Context) os.Error) os.Error</code></p>
+        <p>
+RunInTransaction runs f in a transaction. It calls f with a transaction
+context tc that f should use for all App Engine operations.
+</p>
+<p>
+If f returns nil, RunInTransaction attempts to commit the transaction,
+returning nil if it succeeds. If the commit fails due to a conflicting
+transaction, RunInTransaction retries f, each time with a new transaction
+context. It gives up and returns ErrConcurrentTransaction after three
+failed attempts.
+</p>
+<p>
+If f returns non-nil, then any datastore changes will not be applied and
+RunInTransaction returns that same error. The function f is not retried.
+</p>
+<p>
+Note that when f returns, the transaction is not yet committed. Calling code
+must be careful not to assume that any of f&#39;s changes have been committed
+until RunInTransaction returns nil.
+</p>
+<p>
+All datastore keys used inside a transaction must belong to the same entity
+group; that is, they must all have the same root key.
+</p>
+<p>
+Nested transactions are not supported; c may not be a transaction context.
 </p>
 
       </dd>
@@ -1013,6 +1194,24 @@ String returns a string representation of the error.
         </dd>
       </dl>
       </dd>
+      <dt id="ErrMulti"><span class="type">type</span> <span class="itemname">ErrMulti</span></dt>
+      <dd>
+      <p>
+ErrMulti indicates that a batch operation failed on at least one element.
+</p>
+
+      <pre class="prettyprint">type ErrMulti []os.Error</pre>
+      <dl class="apireference">
+        <dt id="ErrMulti.String"><span class="type">func</span> <span class="itemname">(ErrMulti) String</span></dt>
+        <dd>
+          <p><code>func (m ErrMulti) String() string</code></p>
+          <p>
+String returns a string representation of the error.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
       <dt id="Iterator"><span class="type">type</span> <span class="itemname">Iterator</span></dt>
       <dd>
       <p>
@@ -1020,7 +1219,7 @@ Iterator is the result of running a query.
 </p>
 
       <pre class="prettyprint">type Iterator struct {
-    <span class="comment">// contains unexported fields</span>
+    <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
       <dl class="apireference">
         <dt id="Iterator.Next"><span class="type">func</span> <span class="itemname">(*Iterator) Next</span></dt>
@@ -1045,7 +1244,7 @@ Key represents the datastore key for a stored entity, and is immutable.
 </p>
 
       <pre class="prettyprint">type Key struct {
-    <span class="comment">// contains unexported fields</span>
+    <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
       <dl class="apireference">
         <dt id="Key.NewIncompleteKey"><span class="type">func</span> <span class="itemname">NewIncompleteKey</span></dt>
@@ -1071,7 +1270,7 @@ parent must either be a complete key or nil.
         </dd>
         <dt id="Key.Put"><span class="type">func</span> <span class="itemname">Put</span></dt>
         <dd>
-          <p><code>func Put(c appengine.Context, k *Key, src interface{}) (*Key, os.Error)</code></p>
+          <p><code>func Put(c appengine.Context, key *Key, src interface{}) (*Key, os.Error)</code></p>
           <p>
 Put saves the entity src into the datastore with key k. src may be either a
 struct pointer or a Map; if the former then any unexported fields of that
@@ -1168,7 +1367,7 @@ Query represents a datastore query.
 </p>
 
       <pre class="prettyprint">type Query struct {
-    <span class="comment">// contains unexported fields</span>
+    <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
       <dl class="apireference">
         <dt id="Query.NewQuery"><span class="type">func</span> <span class="itemname">NewQuery</span></dt>
@@ -1345,6 +1544,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

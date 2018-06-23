@@ -67,6 +67,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -100,8 +101,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -146,8 +145,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -216,7 +221,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/backends/index.html">Backends</a>
       <ul>
         <li><a href="../../java/backends/overview.html">Overview</a></li>
-<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -437,6 +442,7 @@ var logged_in_user_email = null;
       <li><a href="../datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../datastore/stats.html">Statistics</a></li>
+      <li><a href="../datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -656,11 +662,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="index.html">Tools</a>
+    <li><span class="tlw-title"><a href="index.html">Tools</a></span>
       <ul>
             <li><a href="devserver.html">Development Server</a></li>
     <li><a href="uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="protorpc/overview.html">Overview</a></li>
+<li><a href="protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="protorpc/remote/index.html">Overview</a></li>
+    <li><a href="protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="webapp/overview.html">Overview</a></li>
@@ -714,6 +773,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -724,6 +784,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -745,6 +820,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -826,5 +902,344 @@ var logged_in_user_email = null;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><a href="http://en.wikipedia.org/wiki/Unit_testing">Unit testing</a> allows you to check the quality of your code after you've written it, but you can also use unit testing to improve your development process as you go along. Instead of writing tests after you finish developing your application, consider writing the tests as you go. This helps you design small, maintainable, reusable units of code. It also makes it easier for you to test your code thoroughly and quickly.</p>
+<p>When you do local unit testing, you run tests that stay inside your own development environment without involving remote components. App Engine provides testing utilities that use local implementations of datastore and other <a href="../apis.html">App Engine services</a>. This means you can exercise your code's use of these services locally, without deploying your code to App Engine, by using service stubs.</p>
+<p>A service stub is a method that simulates the behavior of the service. For example, the datastore service stub shown in <a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a> allows you to test your datastore code without making any requests to the real datastore. Any entity stored during a datastore unit test is held in memory, not in the datastore, and is deleted after the test run. You can run small, fast tests without any dependency on datastore itself.</p>
+<p>This document describes how to write unit tests against several local App Engine services, then gives some information about setting up a testing framework.</p>
+
+
+<ul>
+
+<li><a href="#Introducing_the_Python_Testing_Utilities">Introducing the Python Testing Utilities</a></li>
+
+  <li><a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a></li>
+
+
+
+
+
+<li><a href="#Changing_the_Default_Environment_Variables">Changing the Default Environment Variables</a></li>
+
+<li><a href="#Setting_Up_a_Testing_Framework">Setting Up a Testing Framework</a></li>
+</ul>
+
+
+
+<h2 id="Introducing_the_Python_Testing_Utilities">Introducing the Python Testing Utilities</h2>
+<p>An App Engine Python module called <code>testbed</code> makes service stubs available for unit testing. The <code>testbed</code> module was inspired by <a href="https://github.com/jgeewax/gaetestbed/">GAE Testbed</a>, which was designed by JJ Geewax.</p>
+
+<p>To write a test that uses <code>testbed</code>, you need to create and activate a <code>Testbed</code> instance, then declare the service stubs that you want to use. For an example, see <a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a>.</p>
+
+<p>Service stubs are available for the following services:</p>
+<ul>
+<li>Datastore (use <code>init_datastore_v3_stub</code>)</li>
+<li>Memcache (use <code>init_memcache_stub</code>)</li>
+<li>Task Queue (use <code>init_taskqueue_stub</code>)</li>
+<li>Images (only for <a href="devserver.html">dev_appserver</a>; use <code>init_images_stub</code>)</li>
+<li>URL fetch (use <code>init_urlfetch_stub</code>)</li>
+<li>User service (use <code>init_user_stub</code>)</li>
+<li>XMPP (use <code>init_xmpp_stub</code>)</li>
+</ul>
+
+<p class="note"><b>Note:</b> In some cases, service stubs behave differently than the actual services. Even if tests pass, your code could still fail when it runs in a production environment. </p>
+
+
+
+<h2 id="Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</h2>
+<p>This section shows an example of how to write code that tests the use of the <a href="../datastore/index.html">datastore</a> and <a href="../memcache/index.html">memcache</a> services.</p>
+<p>First, import the Python <code>unittest</code> module and the App Engine modules that are relevant to the services being tested&#8212;in this case <code>memcache</code> and <code>db</code>, which is for the datastore. Also import the App Engine <code>testbed</code> module.</p>
+<pre class="prettyprint">
+import unittest
+from google.appengine.api import memcache
+from google.appengine.ext import db
+from google.appengine.ext import testbed
+</pre>
+<p>Then create a <code>TestModel</code> class. In this example, a function checks to see whether an entity is stored in memcache. If no entity is found, it checks for an entity in the datastore.</p>
+<pre class="prettyprint">
+class TestModel(db.Model):
+  """A model class used for testing."""
+  number = db.IntegerProperty(default=42)
+  text = db.StringProperty()
+
+class TestEntityGroupRoot(db.Model):
+  """Entity group root"""
+  pass
+
+def GetEntityViaMemcache(entity_key):
+  """Get entity from memcache if available, from datastore if not."""
+  entity = memcache.get(entity_key)
+  if entity is not None:
+    return entity
+  entity = TestModel.get(entity_key)
+  if entity is not None:
+    memcache.set(entity_key, entity)
+  return entity
+</pre>
+<p>Next, create a test case. No matter what services you are testing, the test case must create a <code>Testbed</code> instance and activate it. The test case must also initialize the relevant service stubs, in this case using <code>init_datastore_v3_stub</code> and <code>init_memcache_stub</code>. (The methods for initializing other App Engine service stubs are listed in <a href="#Introducing_the_Python_Testing_Utilities">Introducing the Python Testing Utilities</a>.)</p>
+<pre class="prettyprint">
+class DemoTestCase(unittest.TestCase):
+
+  def setUp(self):
+    # First, create an instance of the Testbed class.
+    self.testbed = testbed.Testbed()
+    # Then activate the testbed, which prepares the service stubs for use.
+    self.testbed.activate()
+    # Next, declare which service stubs you want to use.
+    self.testbed.init_datastore_v3_stub()
+    self.testbed.init_memcache_stub()
+</pre>
+<p>The <code>init_datastore_v3_stub()</code> method with no argument uses an in-memory datastore that is initially empty. If you want to test an existing datastore entity, include its pathname as an argument to <code>init_datastore_v3_stub()</code>. </p>
+<p class="note"><strong>Note:</strong> The <code>setUp()</code> method uses a default application ID for test runs. The test can only access entities in the datastore that have that same application ID. To change the application ID of a test, use <code>setup_env()</code>, as described in <a href="#Changing_the_Default_Environment_Variables">Changing the Default Environment Variables</a>.</p>
+<p>In addition to <code>setUp()</code>, include a <code>tearDown()</code> method that deactivates the testbed. This restores the original stubs so that tests do not interfere with each other.</p>
+<pre class="prettyprint">
+  def tearDown(self):
+    self.testbed.deactivate()
+</pre>
+<p>And finally, implement the tests.</p> 
+<pre class="prettyprint">
+  def testInsertEntity(self):
+    TestModel().put()
+    self.assertEqual(1, len(TestModel.all().fetch(2)))
+</pre>
+<p>Now you can use <code>TestModel</code> to write tests that use the datastore or memcache service stubs instead of using the real services.</p>
+<p>For example, the method shown below creates two entities: the first entity uses the default value for the <code>number</code> attribute (42), and the second uses a nondefault value for <code>number</code> (17). The method then builds a query for <code>TestModel</code> entities, but only for those with the default value of <code>number</code>.</p>
+<p>After retrieving all matching entities, the method tests that exactly one entity was found, and that the <code>number</code> attribute value of that entity is the default value.</p>
+<pre class="prettyprint">  def testFilterByNumber(self):
+    root = TestEntityGroupRoot(key_name="root")
+    TestModel(parent=root.key()).put()
+    TestModel(number=17, parent=root.key()).put()
+    query = TestModel.all().ancestor(root.key()).filter('number =', 42)
+    results = query.fetch(2)
+    self.assertEqual(1, len(results))
+    self.assertEqual(42, results[0].number)</pre>
+<p>As another example, the following method creates an entity and retrieves it using the <code>GetEntityViaMemcache()</code> function that we created above. The method then tests that an entity was returned, and that its <code>number</code> value is the same as for the the previously created entity.</p>
+<pre class="prettyprint">
+  def testGetEntityViaMemcache(self):
+    entity_key = str(TestModel(number=18).put())
+    retrieved_entity = GetEntityViaMemcache(entity_key)
+    self.assertNotEqual(None, retrieved_entity)
+    self.assertEqual(18, retrieved_entity.number)
+</pre>
+
+
+
+
+
+
+
+
+<h2 id="Writing_HRD_Datastore_Tests">Writing High Replication Datastore Tests</h2>
+<p>If your app uses the High Replication Datastore (HRD), you may want to write tests that verify your application's behavior in the face of eventual consistency. <code>db.testbed</code> exposes options that make this easy:</p>
+<pre class="prettyprint">
+import unittest
+from google.appengine.ext import db
+from google.appengine.ext import testbed
+from google.appengine.datastore import datastore_stub_util
+
+class DemoTestCase(unittest.TestCase):
+
+  def setUp(self):
+    # First, create an instance of the Testbed class.
+    self.testbed = testbed.Testbed()
+    # Then activate the testbed, which prepares the service stubs for use.
+    self.testbed.activate()
+    # Create a consistency policy that will simulate the High Replication consistency model.
+    self.policy = datastore_stub_util.PseudoRandomHRConsistencyPolicy(probability=0)
+    # Initialize the datastore stub with this policy.
+    self.testbed.init_datastore_v3_stub(consistency_policy=self.policy)
+
+  def tearDown(self):
+    self.testbed.deactivate()
+
+  def testEventuallyConsistentGlobalQueryResult(self):
+    class TestModel(db.Model):
+      pass
+
+    user_key = db.Key.from_path('User', 'ryan')
+    # Put two entities
+    db.put([TestModel(parent=user_key), TestModel(parent=user_key)])
+
+    # Global query doesn't see the data.
+    self.assertEqual(0, TestModel.all().count(3))
+    # Ancestor query does see the data.
+    self.assertEqual(2, TestModel.all().ancestor(user_key).count(3))
+</pre>
+<p>The <code>PseudoRandomHRConsistencyPolicy</code> class lets you control the likelihood of a write applying before each global (non-ancestor) query. By setting the probability to 0%, we are instructing the datastore stub to operate with the maximum amount of eventual consistency. Maximum eventual consistency means writes will commit but always fail to apply, so global (non-ancestor) queries will consistently fail to see changes. This is of course not representative of the amount of eventual consistency your application will see when running in production, but for testing purposes, it's very useful to be able to configure the local datastore to behave this way every time. If you use a non-zero probability, <code>PseudoRandomHRConsistencyPolicy</code> makes a deterministic sequence of consistency decisions so test outcomes are consistent:</p>
+<pre class="prettyprint">
+class DemoTestCase(unittest.TestCase):
+
+  # ...
+
+  def testDeterminisiticOutcome(self):
+    self.policy.SetProbability(.5)  # 50% chance to apply.
+    self.policy.SetSeed(2) # Use the pseudo random sequence derived from seed=2.
+
+    class TestModel(db.Model):
+      pass
+
+    TestModel().put()
+
+    self.assertEqual(0, TestModel.all().count(3))
+    self.assertEqual(0, TestModel.all().count(3))
+    # Will always be applied before the third query.
+    self.assertEqual(1, TestModel.all().count(3))
+</pre>
+<p>The testing APIs are useful for verifying that your application behaves properly in the face of eventual consistency, but please keep in mind that the local High Replication read consistency model is an approximation of the production High Replication read consistency model, not an exact replica. In the local environment, performing a get() of an <code>Entity</code> that belongs to an entity group with an unapplied write will always make the results of the unapplied write visible to subsequent global queries. In production this is not the case.</p>
+<h2 id="Changing_the_Default_Environment_Variables">Changing the Default Environment Variables</h2>
+<p>App Engine services often depend on <a href="../runtime.html#The_Environment">environment variables</a>. The <code>setUp()</code> method within <code>testbed</code> uses default values for these, but you can set custom values based on your testing needs.</p><p>For example, let's say you have a test that stores several entities in datastore, all of them linked to the same application ID. Now you want to run the same tests again, but using an application ID different from the one that is linked to the stored entities. To do this, pass the new value into <code>self.setup_env()</code> as <code>app_id</code>.</p>
+<p>For example:</p>
+<pre class="prettyprint">
+  def setUp(self):
+    self.testbed = testbed.Testbed()
+    self.testbed.setup_env(app_id=<em>application-id</em>)
+    self.testbed.activate()
+    self.testbed.init_datastore_v3_stub()
+</pre>
+
+
+<h2 id="Setting_Up_a_Testing_Framework">Setting Up a Testing Framework</h2>
+<p>The SDK's testing utilities are not tied to a specific framework. You can run your unit tests with any available App Engine testrunner, for example <a href="http://code.google.com/p/nose-gae/">nose-gae</a> or <a href="http://code.google.com/p/gaeunit/">gaeunit</a>. You can also write a simple testrunner of your own, or use the one shown below.</p>
+<p>The following script is a basic testrunner that you can copy and paste into a file. Before you use it, install the Python <a href="http://pypi.python.org/pypi/unittest2">unittest2</a> module.</p>
+<p>You can name the script anything you want. When you run it, provide the path to your App Engine SDK installation and the path to your test modules. The script runs the tests and prints results to the standard error stream.</p>
+
+<pre class="prettyprint">
+#!/usr/bin/python
+import optparse
+import sys
+# Install the Python unittest2 package before you run this script.
+import unittest2
+
+USAGE = """%prog SDK_PATH TEST_PATH
+Run unit tests for App Engine apps.
+
+SDK_PATH    Path to the SDK installation
+TEST_PATH   Path to package containing test modules"""
+
+
+def main(sdk_path, test_path):
+    sys.path.insert(0, sdk_path)
+    import dev_appserver
+    dev_appserver.fix_sys_path()
+    suite = unittest2.loader.TestLoader().discover(test_path)
+    unittest2.TextTestRunner(verbosity=2).run(suite)
+
+
+if __name__ == '__main__':
+    parser = optparse.OptionParser(USAGE)
+    options, args = parser.parse_args()
+    if len(args) != 2:
+        print 'Error: Exactly 2 arguments required.'
+        parser.print_help()
+        sys.exit(1)
+    SDK_PATH = args[0]
+    TEST_PATH = args[1]
+    main(SDK_PATH, TEST_PATH)
+</pre>
+
+
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
+    
+    ©2011 Google -
+    <a href="http://code.google.com">Code Home</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+
+
+  </body>
+</html>
 
 

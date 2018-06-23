@@ -69,6 +69,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -102,8 +103,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -148,8 +147,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -219,7 +224,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/backends/index.html">Backends</a>
       <ul>
         <li><a href="../docs/java/backends/overview.html">Overview</a></li>
-<li><a href="../docs/java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -440,6 +445,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../docs/python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../docs/python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../docs/python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../docs/python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -659,11 +665,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../docs/python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../docs/python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../docs/python/tools/devserver.html">Development Server</a></li>
     <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../docs/python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../docs/python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../docs/python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../docs/python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../docs/python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../docs/python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../docs/python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../docs/python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../docs/python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../docs/python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../docs/python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../docs/python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../docs/python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../docs/python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../docs/python/tools/webapp/overview.html">Overview</a></li>
@@ -717,6 +776,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../docs/go/datastore/overview.html">Overview</a></li>
+     <li><a href="../docs/go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../docs/go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -727,6 +787,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../docs/go/blobstore/overview.html">Overview</a></li>
 <li><a href="../docs/go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../docs/go/capabilities/overview.html">Overview</a></li>
+<li><a href="../docs/go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../docs/go/channel/overview.html">Overview</a></li>
+<li><a href="../docs/go/channel/reference.html">Reference</a></li>
+<li><a href="../docs/go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -748,6 +823,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../docs/go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../docs/go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../docs/go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -827,7 +903,7 @@ var logged_in_user_email = null;
 
 
 
-<p class="note"><strong>NOTE</strong>: 
+<p class="note"><strong>NOTE</strong>:
 The App Engine team introduced a new authentication option in SDK 1.3.4: federated login via OpenID. To find out more about this, please check out the <a href="openid.html">OpenID article</a> (Jul 2010).
 </p>
 
@@ -835,6 +911,7 @@ The App Engine team introduced a new authentication option in SDK 1.3.4: federat
 <em>August 2008</em><br/>
 <em>SDK: 1.1.1</em>
 </p>
+<p><em>Updated by Rufus, June 2011</em></p>
 
 <div id="jd-content">
 <div class="jd-descr">
@@ -846,30 +923,43 @@ The App Engine team introduced a new authentication option in SDK 1.3.4: federat
 </ol>
 <p>In the <a href="domains.html">next article</a>, we discuss how to deploy your application on a custom domain.  Below, we discuss the available authentication options, and how to select the correct one for your application.</p>
 <h2>App Engine authentication options</h2>
-<p>Google offers two different systems for authenticating your application's users. Only one form of authentication can be used for a given application.
+<p>Google offers three different systems for authenticating your application's users. Only one form of authentication can be used for a given application.
 <ul>
 <li><b>Google Accounts</b>
 <p><a href="https://www.google.com/accounts/ManageAccount">Google Accounts</a> is Google's unified sign-in system. All a user needs is a valid email address (it doesn't need to be a Gmail address!) to sign up for a Google Account.</p></li>
 <li><b>Google Apps for your domain</b>
 <p>Users of <a href="http://www.google.com/a">Google Apps</a> for your domain can choose to restrict all or part of their web application to only those people who have a valid email address on their domain.</p></li>
-</ul>
+<li><b>(Experimental) Open to all users with an OpenID Provider</b>
+<p>If your application uses authentication, anyone who has an account
+with an OpenID Provider may sign in. To find out more about this,
+please check out the <a href="openid.html">OpenID
+article</a>.</p> </ul>
 </p>
-<p>Currently, you are not able to switch authentication options for existing App Engine apps.</p>
+
+<p class="warning"><b>Warning:</b><br />
+Currently, you cannot switch authentication options for existing App
+Engine apps.<br />
+The option for restricting an application's authentication settings
+can only be set at app creation time.
+</p>
+
 <h2>Administering your App Engine Application</h2>
 <p>With Google App Engine, you can administer your application using a Google Account or a Google Apps account. Your app's administration account should use the same authentication as the app's users.  For instance, if you set your app's authentication to Google Apps, you should administer that account using a Google Apps email address.  While it is possible to have an account that is both a valid Google Apps account and a valid Google Accounts account, you should avoid using such an account to administer your applications.</p>
 <p>If your App Engine developer account is a Google Account, you can access the Administration Console at <a href="https://appengine.google.com">https://appengine.google.com</a>.  If you are using a Google Apps account, you can access the Administration Console at https://appengine.google.com/a/YOURDOMAIN (substituting YOURDOMAIN with your actual domain name).</p>
 <h2>Restrict your application's authentication to members of your domain</h2>
-<p>The option for restricting an application's authentication settings can only be set at app creation time, so your first step is to create a new application:</p>
-<br><img src="create1.png" />
-<p>You'll need to specify the Application Identifier (a unique ID you'll include in your <code>app.yaml</code> configuration file) and the Application Title.</p>
+<p>The option for restricting an application's authentication settings can only be set at app creation time, so your first step is to <a href="http://appengine.google.com/start/createapp">create a new application.</a></p>
 <p>By default, Google App Engine applications use Google Accounts for authentication, which means that if your application uses authentication, anyone with a valid Google Account will be able to sign in.  This does not include <a href="http://www.google.com/a">Google Apps</a> accounts.</p>
-<p>If you'd like to restrict your application to members of your Google Apps domain (i.e. only users with accounts on <code>example.com</code>), click on the 'Edit' button at the bottom of the orange Authentication Options box.</p>
+<br><img src="create1.png" />
+<p>If you'd like to restrict your application to members of your Google Apps domain (i.e. only users with accounts on <code>example.com</code>), click on the 'Edit' button at the bottom of the Authentication Options box.</p>
 <br><img src="create_restricted.png">
 <p>Select the radio button next to 'Restricted to the following Google Apps domain:' and enter your Google Apps domain (e.g. <code>example.com</code>) in the text box and click 'Save'.  You will be taken to a confirmation screen indicating your application has been successfully registered.</p>
-<h2>Configuring Google Apps to Authenticate on Appspot</h2>
-<p>In order to restrict your application to members of a particular Google Apps domain, you will need to add the app id to your Google Apps account through the Google Apps control panel.</p>
-<p>After signing in to your Google Apps Control Panel, click the 'Add more services' link on the Dashboard.  On the 'Google Services' page, enter your Google App Engine app id under 'Other Services'.</p>
-<br /><img src="img/service.png" />
+<h2 id="AppspotDomainAuth">Configuring Google Apps to Authenticate on Appspot</h2>
+<p>In order to restrict your application to members of a particular Google Apps domain, you will need to add the app id to your Google Apps account through the Google Apps control panel (i.e. open <code>http://google.com/a/<b>YOUR DOMAIN</b></code>).</p>
+<p>After signing in to your Google Apps Control Panel, click the 'Add more services' link on the Dashboard:</p>
+<img src="img/add-more-services.png" class="topmargin"/>
+
+<p>On the 'Google Services' page, enter your Google App Engine app id under 'Other Services'.</p>
+<img src="img/service.png" class="topmargin" />
 <p>Once you agree to the Terms and Conditions, your application will be configured to serve Google Apps authentication off of the <code>appspot.com</code> domain.  To serve the app off of a Google Apps URL, please see our <a href="domains.html">article</a>.</p>
 <p class="note"><b>Note:</b> App ids added to Google Apps prior to March 13, 2009 will need to be re-added in order to support serving Google Apps authentication off of <code>appspot.com</code>.</p>
 </div>
@@ -933,6 +1023,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

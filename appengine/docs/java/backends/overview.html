@@ -66,6 +66,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -99,8 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -145,8 +144,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -215,7 +220,7 @@ var logged_in_user_email = null;
     <li><a href="index.html">Backends</a>
       <ul>
         <li><a href="overview.html">Overview</a></li>
-<li><a href="../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -436,6 +441,7 @@ var logged_in_user_email = null;
       <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -655,11 +661,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
@@ -713,6 +772,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -723,6 +783,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -744,6 +819,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -823,42 +899,13 @@ var logged_in_user_email = null;
 
 
 
-<p>App Engine Backends are instances of your application that are
- exempt from request deadlines and have access to more memory (up to
- 1GB) and CPU (up to 4.8GHz) than normal instances. They are designed
- for applications that need faster performance, large amounts of
- addressable memory, and continuous or long-running background
- processes. Backends come in several sizes and configurations, and
- are billed for uptime rather than CPU usage.</p>
+<p>App Engine Backends are instances of your application that are exempt from request deadlines and have access to more memory (up to 1GB) and CPU (up to 4.8GHz) than normal instances. They are designed for applications that need faster performance, large amounts of addressable memory, and continuous or long-running background processes. Backends come in several sizes and configurations, and are billed for uptime rather than CPU usage.</p>
 
-<p>A backend may be configured as either <i>resident</i> or
-<i>dynamic</i>. Resident backends run continuously, allowing you to
-rely on the state of their memory over time and perform complex
-initialization. Dynamic backends come into existence when they
-receive a request, and are turned down when idle; they are ideal for
-work that is intermittent or driven by user activity. For more
-information about the differences between resident and dynamic
-backends, see <a href="../config/backends.html#Types_of_Backends">Types of Backends</a> and also the discussion of <a href="#Startup">Startup</a> and <a href="#Shutdown">Shutdown</a>.
+<p>A backend may be configured as either <i>resident</i> or <i>dynamic</i>. Resident backends run continuously, allowing you to rely on the state of their memory over time and perform complex initialization. Dynamic backends come into existence when they receive a request, and are turned down when idle; they are ideal for work that is intermittent or driven by user activity. For more information about the differences between resident and dynamic backends, see <a href="../config/backends.html#Types_of_Backends">Types of Backends</a> and also the discussion of <a href="#Startup">Startup</a> and <a href="#Shutdown">Shutdown</a>.</p>
 
-<p>Backends do not automatically scale in response to request volume.
-Instead, you specify the number of instances of each backend, and
-change this number by performing an update. The number of instances
-is usually set in proportion to the size of a dataset or the degree of
-processing power you want to bring to bear on a problem. Cost may
-also be a consideration.</p>
+<p>Backends do not automatically scale in response to request volume. Instead, you specify the number of instances of each backend, and change this number by performing an update. The number of instances is usually set in proportion to the size of a dataset or the degree of processing power you want to bring to bear on a problem. Cost may also be a consideration.</p>
 
-<p>Backends are <a
-href="../config/backends.html">configured</a> using
-either <code>backends.xml</code> or <code>backends.yaml</code>.
-You can list each backend and specify its properties, such as the
-number of instances, the memory and CPU class, whether it is <a
-href="#Public_and_Private_Backends">public or private</a>, and other
-options. Backends share the servlets defined in
-<code>web.xml</code> with the main application version. You can
-place your backends in a separate application root directory if you
-want to avoid sharing code or handlers, or simply mark the relevant
-handlers with <code>login: admin</code>.
-
+<p>Backends are <a href="../config/backends.html">configured</a> using either <code>backends.xml</code> or <code>backends.yaml</code>. You can list each backend and specify its properties, such as the number of instances, the memory and CPU class, whether it is <a href="#Public_and_Private_Backends">public or private</a>, and other options. Backends share the servlets defined in <code>web.xml</code> with the main application version. You can place your backends in a separate application root directory if you want to avoid sharing code or handlers, or simply mark the relevant handlers with <code>login: admin</code>.</p>
 
 <ul>
   <li><a href="#Properties_of_Backends">Properties of Backends</a></li>
@@ -922,7 +969,6 @@ handlers with <code>login: admin</code>.
     <p><code>[instance].[backend].[app].appspot.com</code></p>
     <p>You can reliably cache state in each instance and retrieve it in subsequent requests.</p></td>
   </tr>
-
   <tr>
     <th><p>Scaling</p></th>
     <td><p>App Engine scales the number of instances automatically in response to processing volume.</td>
@@ -965,24 +1011,19 @@ handlers with <code>login: admin</code>.
 
 <h2 id="Backend_States">Backend States</h2>
 
-<p>A backend can be in one of two states: <code>START</code> or
-<code>STOP</code>. You can view and change the state of a backend
-using <code>appcfg</code> or the Backends tab in the Administration Console.
-The state controls whether a backend instance is considered active and capable of handling requests, or is disabled and shutting down.</p>
+<p>A backend can be in one of two states: <code>START</code> or <code>STOP</code>. You can view and change the state of a backend using <code>appcfg</code> or the Backends tab in the Administration Console. The state controls whether a backend instance is considered active and capable of handling requests, or is disabled and shutting down.</p>
 
 <h3 id="Startup">Startup</h3>
-<p>Each backend instance is created in response to a start request, which is an empty <code>GET</code> request to <code>/_ah/start</code>. App Engine sends this special request to bring the instance into existence; users cannot send a request to <code>/_ah/start</code>. 
+<p>Each backend instance is created in response to a start request, which is an empty <code>GET</code> request to <code>/_ah/start</code>. App Engine sends this special request to bring the instance into existence; users cannot send a to <code>/_ah/start</code>. 
 
-<p>Backend instances must respond to the start request before they can
-handle another request. The start request can be used for two
-purposes:</p>
+<p>Backend instances must respond to the start request before they can handle another request. The start request can be used for two purposes:</p>
 
 <ol>
   <li>To start a program that runs indefinitely, without accepting further requests</li>
   <li>To initialize an instance before it receives additional traffic</li>
 </ol>
 
-<p>Resident backends and dynamic backends startup differently. When you start a resident backend, App Engine immediately sends a <code>/_ah/start</code> request to each backend instance. When you start a dynamic backend, App Engine allows it to accept traffic, but the <code>/_ah/start</code> request is not sent to an instance until it receives its first user request.  Multiple dynamic instances are only started as necessary, in order to handle increased traffic.</p>
+<p>Resident backends and dynamic backends startup differently. When you start a resident backend, App Engine immediately sends a <code>/_ah/start</code> request to each backend instance. When you start a dynamic backend, App Engine allows it to accept traffic, but the <code>/_ah/start</code> request is not sent to an instance until it receives its first user request. Multiple dynamic instances are only started as necessary, in order to handle increased traffic.</p>
 
 <p>When an instance responds to the <code>/_ah/start</code> request
 with an HTTP status code of 200&ndash;299 or 404, it is considered to
@@ -991,6 +1032,7 @@ responds otherwise, App Engine terminates the instance and
 re-issues the start request if necessary. Resident backends are
 restarted immediately, while dynamic backends are restarted only when
 needed for serving traffic.
+
 
 
 
@@ -1009,16 +1051,11 @@ needed for serving traffic.
 <p>If possible, App Engine notifies the backend 30 seconds before terminating it. There are two ways to receive this notification. First, the <code>isShuttingDown()</code>
 method from <a href="../javadoc/com/google/appengine/api/LifecycleManager.html">com.google.apphosting.api.LifecycleManager</a> begins returning true. Second, if you have registered a shutdown hook, it will be called. It's a good idea to register the shutdown hook in your start request.</p>
 
-<p>The shutdown hook appears in your logs as a request to <code>/_ah/stop</code>. The <code>/_ah/stop</code> request bypasses normal handling logic and
-cannot be handled by user code; its sole purpose is to invoke the
-shutdown hook. If you raise an exception in your shutdown hook while
-handling another request, it will bubble up into the request, where
-you can catch it.</p>
-
+<p>The shutdown hook appears in your logs as a request to <code>/_ah/stop</code>. The <code>/_ah/stop</code> request bypasses normal handling logic and cannot be handled by user code; its sole purpose is to invoke the shutdown hook. If you raise an exception in your shutdown hook while handling another request, it will bubble up into the request, where you can catch it.</p>
 
 <p>The shutdown hook always runs in a different
 thread, even if your app isn't marked <a
-href="../runtime.html#Requests_and_Servlets">threadsafe</a>. Inside the shutdown hook, you can use <a
+href="../runtimeapi.html#Requests_and_Servlets">threadsafe</a>. Inside the shutdown hook, you can use <a
 href="../javadoc/com/google/appengine/api/LifecycleManager.html#interruptAllRequests()">interruptAllRequests()</a> to cancel your request threads and API calls.</p>
 
 <p>The following code sample demonstrates a basic shutdown hook:</p>
@@ -1042,14 +1079,7 @@ href="../javadoc/com/google/appengine/api/LifecycleManager.html#interruptAllRequ
 
 <h2 id="Backend_Uptime">Backend Uptime</h2>
 
-<p>App Engine attempts to keep backends running indefinitely.
-However, at this time there is no guaranteed uptime for backends.
-Hardware and software failures that cause early termination or
-frequent restarts can occur without prior warning and may take
-considerable time to resolve; thus, you should construct your
-application in a way that tolerates these failures. The App Engine
-team will provide more guidance on expected backend uptime as
-statistics become available.</p>
+<p>App Engine attempts to keep backends running indefinitely. However, at this time there is no guaranteed uptime for backends. Hardware and software failures that cause early termination or frequent restarts can occur without prior warning and may take considerable time to resolve; thus, you should construct your application in a way that tolerates these failures. The App Engine team will provide more guidance on expected backend uptime as statistics become available.</p>
 
 <p>Good strategies for avoiding downtime due to backend restarts include:</p>
 
@@ -1062,18 +1092,18 @@ statistics become available.</p>
 </ul>
 
 <p>It's also important to recognize that the shutdown hook is not always able to
-run before a backend terminates. In rare cases, an outage can occur that
-prevents App Engine from providing 30 seconds of shutdown time. Thus, we recommend periodically checkpointing the state of your backend and using it primarily as an in-memory cache rather than a reliable data store.</p>
+run before a backend terminates. In rare cases, an outage can occur that prevents App Engine from providing 30 seconds of shutdown time. Thus, we recommend periodically checkpointing the state of your backend and using it primarily as an in-memory cache rather than a reliable data store.</p>
+
 
 <h2 id="Addressing_Backends">Addressing Backends</a></h2>
 
 <p>A backend instance can be targeted with HTTP requests to <code>http://[instance].[backend].[app].appspot.com</code>, or at your application's custom domain. If you target a backend without targeting an instance using <code>http://[backend].[app].appspot.com</code>, App Engine selects the first available instance of the backend.</p>
 
-<p>The <a href="java/javadoc/com/google/api/backends/BackendsService.html">Backends API</a> provides functions to retrieve the address of the current backend or instance, or another backend or instance, in a way that works in both the development and production environments. This allows application versions to target backends with requests, for a backend to target another backend, or for one instance of a backend to target another instance.</p>
+<p>The <a href="../javadoc/com/google/appengine/api/backends/package-summary.html">Backends API</a> provides functions to retrieve the address of the current backend or instance, or another backend or instance, in a way that works in both the development and production environments. This allows application versions to target backends with requests, for a backend to target another backend, or for one instance of a backend to target another instance.</p>
 
 
 
-The <a href="java/javadoc/com/google/api/backends/BackendsService.html">com.google.appengine.api.backends</a> package contains tools for programmatic access to backend information. The following code sample shows how to get the backend name and instance id for a request:
+The <a href="../javadoc/com/google/appengine/api/backends/package-summary.html">com.google.appengine.api.backends</a> package contains tools for programmatic access to backend information. The following code sample shows how to get the backend name and instance id for a request:
 
 <pre class="prettyprint">
 import com.google.appengine.api.backends.BackendService;
@@ -1089,38 +1119,19 @@ int currentInstance = backendsApi.getCurrentInstance();
 
 
 
-
 <h2 id="Public_and_Private_Backends">Public and Private Backends</h2>
 
-<p>Backends are private by default, since they typically function as a
-component inside an application, rather than acting as its public
-face. Private backends can be accessed by application administrators,
-instances of the application, and by App Engine APIs and services
-(such as Task Queue tasks and Cron jobs) without any special
-configuration. 
+<p>Backends are private by default, since they typically function as a component inside an application, rather than acting as its public face. Private backends can be accessed by application administrators, instances of the application, and by App Engine APIs and services (such as Task Queue tasks and Cron jobs) without any special configuration. 
 
-<p>A backend that is used for offline processing can typically be
-taken down, updated, or resized without any user-visible effects.
-When a backend is incorporated into a user-visible request flow,
-updating it requires more care. Updates to a backend, such as
-adjusting the number of instances or changing the memory and CPU
-class, require existing instances to shut down and new instances to
-start up. If startup and shutdown are fast, then updates can be
-performed rapidly with minimal impact on user traffic.</p>
+<p>A backend that is used for offline processing can typically be taken down, updated, or resized without any user-visible effects. When a backend is incorporated into a user-visible request flow, updating it requires more care. Updates to a backend, such as adjusting the number of instances or changing the memory and CPU class, require existing instances to shut down and new instances to start up. If startup and shutdown are fast, then updates can be performed rapidly with minimal impact on user traffic.</p>
 
-<p>Because backends must be manually reconfigured to add capacity,
-they are not well-suited for flows that experience unexpected load
-spikes. If you incorporate a backend into a request flow that is
-subject to load spikes, make sure that the backend is adequately provisioned to handle the extra load.</p>
+<p>Because backends must be manually reconfigured to add capacity, they are not well-suited for flows that experience unexpected load spikes. If you incorporate a backend into a request flow that is subject to load spikes, make sure that the backend is adequately provisioned to handle the extra load.</p>
+
 
 <h2 id="Monitoring_Resource_Usage">Monitoring Resource Usage</h2>
 
-<p>The <b>Instances Console</b> section of the Administration Console
-provides visibility into how backend instances are performing.
-By selecting your backend in the version/backend dropdown, you can see
-the memory and CPU usage of each instance, uptime, number of requests,
-and other statistics. You can also manually initiate the <a
-href="#Shutdown">shutdown</a> process for any instance.</p>
+<p>The <b>Instances Console</b> section of the Administration Console provides visibility into how backend instances are performing. By selecting your backend in the version/backend dropdown, you can see the memory and CPU usage of each instance, uptime, number of requests, and other statistics. You can also manually initiate the <a href="#Shutdown">shutdown</a> process for any instance.</p>
+
 
 
 
@@ -1227,6 +1238,7 @@ the request that generated the flush:</p>
 </table>
 
 
+
       </div><!-- end gc-pagecontent -->
    </div><!-- end gooey wrapper -->
 
@@ -1283,6 +1295,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

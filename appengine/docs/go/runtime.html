@@ -66,6 +66,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -99,8 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -145,8 +144,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -215,7 +220,7 @@ var logged_in_user_email = null;
     <li><a href="../java/backends/index.html">Backends</a>
       <ul>
         <li><a href="../java/backends/overview.html">Overview</a></li>
-<li><a href="../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -436,6 +441,7 @@ var logged_in_user_email = null;
       <li><a href="../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -655,11 +661,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../python/tools/webapp/overview.html">Overview</a></li>
@@ -713,6 +772,7 @@ var logged_in_user_email = null;
     <li><a href="datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="datastore/overview.html">Overview</a></li>
+     <li><a href="datastore/transactions.html">Transactions</a></li>
      <li><a href="datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -723,6 +783,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="blobstore/overview.html">Overview</a></li>
 <li><a href="blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="capabilities/overview.html">Overview</a></li>
+<li><a href="capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="channel/index.html">Channel</a>
+          <ul>
+            <li><a href="channel/overview.html">Overview</a></li>
+<li><a href="channel/reference.html">Reference</a></li>
+<li><a href="channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -744,6 +819,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="taskqueue/overview.html">Overview</a></li>
      <li><a href="taskqueue/reference.html">Reference</a></li>
+     <li><a href="taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -866,7 +942,7 @@ responses by interacting with this environment.
   <li><a href="#Selecting_the_Go_Runtime">Selecting the Go Runtime</a></li>
   <li><a href="#Requests_and_Domains">Requests and Domains</a></li>
   <li><a href="#Requests_and_HTTP">Requests and HTTP</a></li>
-
+  <li><a href="#Request_Headers">Request Headers</a></li>
   <li><a href="#Responses">Responses</a></li>
   <li><a href="#The_Request_Timer">The Request Timer</a></li>
   <li><a href="#The_Sandbox">The Sandbox</a></li>
@@ -903,11 +979,18 @@ environment.
 <p>
 The second element, <code>api_version</code>, selects which version of the Go
 runtime environment to use. As of this writing, App Engine only has one
-version of the Go environment, <code>1</code>. If the App Engine team ever
-needs to release changes to the environment that may not be compatible with
-existing code, they will do so with a new version identifier. Your app will
-continue to use the selected version until you change the
-<code>api_version</code> setting and upload your app.
+version of the Go environment, <code>1</code>. 
+The version identifier will be incremented if the App Engine team releases
+changes to the environment that may not be compatible with existing code.
+This means you can continue to use the older APIs until you are able to 
+update your app and change the <code>api_version</code> setting.
+</p>
+
+<p class="note">
+During the Go runtime's "experimental" phase, the App Engine team may change
+the APIs in backwards-incompatible ways without updating the <code>api_version</code>. Please subscribe to the
+<a href="http://groups.google.com/group/google-appengine-go">google-appengine-go</a>
+mailing list to be notified of any significant API changes.
 </p>
 
 
@@ -946,6 +1029,7 @@ App Engine uses multiple web servers to run your application, and automatically
 adjusts the number of servers it is using to handle requests reliably. A given
 request may be routed to any server, and it may not be the same server that
 handled a previous request from the same user.
+Multiple requests may be handled concurrently by a given server.
 </p>
 
 <p>
@@ -971,6 +1055,10 @@ func hello(w http.ResponseWriter, r *http.Request) {
 </pre>
 
 
+<h2 id="Request_Headers">Request Headers</h2>
+<p>An incoming HTTP request includes the HTTP headers sent by the client. For security purposes, some headers are sanitized or amended by intermediate proxies before they reach the application.</p>
+
+<p>As a service to the app, App Engine adds an additional header: <code>X-AppEngine-Country</code>  This header's value represents the country from which the request originated, as an <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> country code. App Engine determines this code from the client's IP address.</p>
 
 <h2 id="Responses">Responses</h2>
 
@@ -1041,8 +1129,9 @@ return an <code>os.EPERM</code> error or removed entirely.
 
 <p>
 The Go API's <a href="reference.html">Context</a>
-object has a <code>Logf</code> method that sends log messages to the
-App Engine web server.
+object has <code>Debugf<code>, </code>Infof<code>, </code>Warningf<code>,
+</code>Errorf<code>, and </code>Criticalf</code> methods that send log messages
+to the App Engine web server.
 </p>
 
 <p>
@@ -1072,7 +1161,7 @@ func init() {
 
 func Logger(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
-    c.Logf("Requested URL: %v", r.URL)
+    c.Infof("Requested URL: %v", r.URL)
 }
 </pre>
 
@@ -1202,6 +1291,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

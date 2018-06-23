@@ -66,6 +66,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -99,8 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -145,8 +144,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -215,7 +220,7 @@ var logged_in_user_email = null;
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
-<li><a href="../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -436,6 +441,7 @@ var logged_in_user_email = null;
       <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -655,11 +661,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
@@ -713,6 +772,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -723,6 +783,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -744,6 +819,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -849,7 +925,9 @@ var logged_in_user_email = null;
 <li><a href="#Introducing_the_Java_Testing_Utilities">Introducing the Java Testing Utilities</a></li>
 
   <li><a href="#Writing_Datastore_and_Memcache_Tests">Writing Datastore and Memcache Tests</a></li>
+<li><a href="#Writing_HRD_Datastore_Tests">Writing High Replication Datastore Tests</a></li>
 <li><a href="#Writing_Task_Queue_Tests">Writing Task Queue Tests</a></li>
+<li><a href="#Writing_Deferred_Task_Tests">Writing Deferred Task Tests</a></li>
 <li><a href="#Writing_Tests_for_Other_Services">Writing Tests for Other Services</a></li>
 <li><a href="#Writing_Tests_with_Authentication_Expectations">Writing Tests with Authentication Expectations</a></li>
 
@@ -883,7 +961,7 @@ public class MyFirstTest {
 <p>These JARs make the runtime APIs and the local implementations of those APIs available to your tests.</p>
 <p>App Engine services expect a number of things from their execution environment, and setting these things up involves a fair amount of boilerplate code. Rather than set it up yourself, you can use the utilities in the <code>com.google.appengine.tools.development.testing</code> package. To use this package, add the following JAR file to your testing classpath: </p>
 <ul><li><code>${SDK_ROOT}/lib/testing/appengine-testing.jar</code></li></ul>
-<p>Take a minute to browse the <a href="localunittesting/javadoc/index.html">javadoc</a> for the <code>com.google.appengine.tools.development.testing</code> package. The most important class in this package is <a href="localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestHelper.html"><code>com.google.appengine.tools.development.testing.LocalServiceTestHelper</code></a>, which handles all of the necessary environment setup and gives you a top-level point of configuration for all the local services you might want to access in your tests.</p>
+<p>Take a minute to browse the <a href="localunittesting/javadoc/index.html">javadoc</a> for the <code>com.google.appengine.tools.development.testing</code> package. The most important class in this package is <a href="localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestHelper.html"><code>LocalServiceTestHelper</code></a>, which handles all of the necessary environment setup and gives you a top-level point of configuration for all the local services you might want to access in your tests.</p>
 <p>To write a test that accesses a specific local service:
 <ul><li>Create an instance of <a href="localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestHelper.html"><code>LocalServiceTestHelper</code></a> with a <a href="localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestConfig.html"><code>LocalServiceTestConfig</code></a> implementation for that specific local service.</li>
 <li>Call <code>setUp()</code> on your <code>LocalServiceTestHelper</code> instance before each test and <code>tearDown()</code> after each test.</li></ul>
@@ -898,6 +976,7 @@ public class MyFirstTest {
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
+import static com.google.appengine.api.datastore.FetchOptions.Builder.withLimit;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
@@ -979,6 +1058,103 @@ public class LocalMemcacheTest {
 <p>As in the datastore example, the <code>LocalServiceTestHelper</code> and the service-specific <code>LocalServiceTestConfig</code> (in this case <code>LocalMemcacheServiceTestConfig</code>) manage the execution environment. </p>
 
 
+<h2 id="Writing_HRD_Datastore_Tests">Writing High Replication Datastore Tests</h2>
+<p>If your app uses the High Replication Datastore (HRD), you may want to write tests that verify your application's behavior in the face of eventual consistency. <code>LocalDatastoreServiceTestConfig</code> exposes options that make this easy:</p>
+<pre class="prettyprint">
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import static com.google.appengine.api.datastore.FetchOptions.Builder.withLimit;
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestConfig;
+import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class LocalHighRepDatastoreTest {
+
+    // maximum eventual consistency
+    private final LocalServiceTestHelper helper =
+        new LocalServiceTestHelper(new LocalDatastoreServiceTestConfig()
+            .setDefaultHighRepJobPolicyUnappliedJobPercentage(100));
+
+    @Before
+    public void setUp() {
+        helper.setUp();
+    }
+
+    @After
+    public void tearDown() {
+        helper.tearDown();
+    }
+
+    @Test
+    public void testEventuallyConsistentGlobalQueryResult() {
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        Key ancestor = KeyFactory.createKey("foo", 3);
+        ds.put(new Entity("yam", ancestor));
+        ds.put(new Entity("yam", ancestor));
+        // global query doesn't see the data
+        assertEquals(0, ds.prepare(new Query("yam")).countEntities(withLimit(10)));
+        // ancestor query does see the data
+        assertEquals(2, ds.prepare(new Query("yam", ancestor)).countEntities(withLimit(10)));
+    }
+}
+</pre>
+<p>By setting the unapplied job percentage to 100, we are instructing the local datastore to operate with the maximum amount of eventual consistency. Maximum eventual consistency means writes will commit but always fail to apply, so global (non-ancestor) queries will consistently fail to see changes. This is of course not representative of the amount of eventual consistency your application will see when running in production, but for testing purposes, it's very useful to be able to configure the local datastore to behave this way every time. If you want more fine-grained control over which transactions fail to apply, you can register your own <a href="localunittesting/javadoc/com/google/appengine/api/datastore/dev/HighRepJobPolicy.html"><code>HighRepJobPolicy</code></a>:</p>
+<pre class="prettyprint">
+// ...
+import com.google.appengine.api.datastore.dev.HighRepJobPolicy;
+
+public class LocalCustomPolicyHighRepDatastoreTest {
+    private static final class CustomHighRepJobPolicy implements HighRepJobPolicy {
+        static int count = 0;
+        @Override
+        public boolean shouldApplyNewJob(Key entityGroup) {
+            // every other new job fails to apply
+            return count++ % 2 == 0;
+        }
+
+        @Override
+        public boolean shouldRollForwardExistingJob(Key entityGroup) {
+            // every other exsting job fails to apply
+            return count++ % 2 == 0;
+        }
+    }
+
+    private final LocalServiceTestHelper helper =
+        new LocalServiceTestHelper(new LocalDatastoreServiceTestConfig()
+           .setAlternateHighRepJobPolicyClass(CustomHighRepJobPolicy.class));
+
+    @Before
+    public void setUp() {
+        helper.setUp();
+    }
+
+    @After
+    public void tearDown() {
+        helper.tearDown();
+    }
+
+    @Test
+    public void testEventuallyConsistentGlobalQueryResult() {
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        ds.put(new Entity("yam")); // applies
+        ds.put(new Entity("yam")); // does not apply
+        // first global query only sees the first Entity
+        assertEquals(1, ds.prepare(new Query("yam")).countEntities(withLimit(10)));
+        // second global query sees both Entities because we "groom" (attempt to
+        // apply unapplied jobs) after every query
+        assertEquals(2, ds.prepare(new Query("yam")).countEntities(withLimit(10)));
+    }
+}
+</pre>
+<p>The testing APIs are useful for verifying that your application behaves properly in the face of eventual consistency, but please keep in mind that the local High Replication read consistency model is an approximation of the production High Replication read consistency model, not an exact replica. In the local environment, performing a get() of an <code>Entity</code> that belongs to an entity group with an unapplied write will always make the results of the unapplied write visible to subsequent global queries. In production this is not the case.</p>
 <h2 id="Writing_Task_Queue_Tests">Writing Task Queue Tests</h2>
 
 <p>Tests that use the local task queue are a bit more involved because, unlike datastore and memcache, the task queue API does not expose a facility for examining the state of the service. We need to access the local task queue itself to verify that a task has been scheduled with the expected parameters. To do this, we need <code>com.google.appengine.api.taskqueue.dev.LocalTaskQueue</code>.</p>
@@ -1039,6 +1215,69 @@ public class TaskQueueTest {
 </pre>
 
 <p>Notice how we ask the <code>LocalTaskqueueTestConfig</code> for a handle to the local service instance, and then we investigate the local service itself to make sure the task was scheduled as expected. All <code>LocalServiceTestConfig</code> implementations expose a similar method. You may not always need it, but sooner or later you'll be glad it's there.</p>
+<h2 id="Writing_Deferred_Task_Tests">Writing Deferred Task Tests</h2>
+
+<p>If your application code uses <a href="../taskqueue/overview.html#Deferred_Tasks">Deferred Tasks</a>, the Java Testing Utilities make it easy to write an integration test that verifies the results of these tasks.</p>
+
+<pre class="prettyprint">
+import static org.junit.Assert.*;
+
+import com.google.appengine.api.taskqueue.DeferredTask;
+import com.google.appengine.api.taskqueue.QueueFactory;
+import com.google.appengine.api.taskqueue.TaskOptions;
+import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
+import com.google.appengine.tools.development.testing.LocalTaskQueueTestConfig;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.concurrent.TimeUnit;
+
+public class DeferredTaskTest {
+
+    // Unlike CountDownLatch, TaskCountDownlatch lets us reset.
+    private final LocalTaskQueueTestConfig.TaskCountDownLatch latch = 
+        new LocalTaskQueueTestConfig.TaskCountDownLatch(1);
+
+    private final LocalServiceTestHelper helper =
+        new LocalServiceTestHelper(new LocalTaskQueueTestConfig()
+            .setDisableAutoTaskExecution(false)
+            .setCallbackClass(LocalTaskQueueTestConfig.DeferredTaskCallback.class)
+            .setTaskExecutionLatch(latch));
+
+    private static class MyTask implements DeferredTask {
+        private static boolean taskRan = false;
+
+        @Override
+        public void run() {
+            taskRan = true;
+        }
+    }
+
+    @Before
+    public void setUp() {
+        helper.setUp();
+    }
+
+    @After
+    public void tearDown() {
+        MyTask.taskRan = false;
+        latch.reset();
+        helper.tearDown();
+    }
+
+    @Test
+    public void testTaskGetsRun() throws InterruptedException {
+        QueueFactory.getDefaultQueue().add(
+            TaskOptions.Builder.withPayload(new MyTask()));
+        assertTrue(latch.await(5, TimeUnit.SECONDS));
+        assertTrue(MyTask.taskRan);
+    }
+}
+</pre>
+
+<p>As with our first Local Task Queue example, we are using a <code>LocalTaskqueueTestConfig</code>, but this time we are initializing it with some additional arguments that give us an easy way to verify not just that the task was scheduled but that the task was executed:  We call <code>setDisableAutoTaskExecution(false)</code> to tell the Local Task Queue to automatically execute tasks. We call <code>setCallbackClass(LocalTaskQueueTestConfig.DeferredTaskCallback.class)</code> to tell the Local Task Queue to use a callback that understands how to execute Deferred tasks. And finally we call <code>setTaskExecutionLatch(latch)</code> to tell the Local Task Queue to decrement the latch after each task execution. This configuration allows us to write a test in which we enqueue a Deferred task, wait until that task runs, and then verify that the task behaved as expected when it ran.</p>
 
 
 <h2 id="Writing_Tests_for_Other_Services">Writing Tests for Other Services</h2>
@@ -1148,6 +1387,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

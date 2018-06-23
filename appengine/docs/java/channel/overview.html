@@ -67,6 +67,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -100,8 +101,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -146,8 +145,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -216,7 +221,7 @@ var logged_in_user_email = null;
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
-<li><a href="../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -437,6 +442,7 @@ var logged_in_user_email = null;
       <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -656,11 +662,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
@@ -714,6 +773,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -724,6 +784,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -745,6 +820,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -829,11 +905,15 @@ var logged_in_user_email = null;
 
 
 
+
+
+
 <ul>
   <li><a href="#Overview">Overview</a></li>
   <li><a href="#Elements_of_the_Channel_API">Elements of the Channel API</a></li>
   <li><a href="#Life_of_a_Typical_Channel_Message">Life of a Typical Channel Message</a></li>
   <li><a href="#Example_Tic_Tac_Toe_Application">Example Tic Tac Toe Application</a></li>
+  <li><a href="#Tracking_Client_Connections_and_Disconnections">Tracking Client Connections and Disconnections</a></li>
   <li><a href="#Tokens_and_Security">Tokens and Security</a></li>
   <li><a href="#Caveats">Caveats</a></li>
 </ul>
@@ -863,8 +943,9 @@ var logged_in_user_email = null;
 <ul>
   <li>Creating a unique channel for individual JavaScript clients</li>
   <li>Creating and sending a unique token to each JavaScript client so they may connect and listen to their channel</li>
-  <li>Receiving update messages from clients via <code>POST</code></li>
+  <li>Receiving update messages from clients via HTTP requests</li>
   <li>Sending update messages to clients via their channels</li>
+  <li>Optionally, managing client connection state.</li>
 </ul>
 
 <h3>The Client ID</h3>
@@ -881,17 +962,20 @@ var logged_in_user_email = null;
 
 <h3>The Channel</h3>
 
-<p>A channel is a one-way communication path through which the server sends updates to a specific JavaScript client identified by its Client ID.  The server receives updates from clients via <code>POST</code>, then sends the messages to relevant clients via their channels. </p>
+<p>A channel is a one-way communication path through which the server sends updates to a specific JavaScript client identified by its Client ID.  The server receives updates from clients via HTTP requests, then sends the messages to relevant clients via their channels. </p>
 
 <h3>The Message</h3>
 
-<p>Messages are sent via <code>POST</code> from one client to the server. Once received, the server passes the message to the designated client via the correct channel identified by the Client ID. Messages are limited to 32K. </p>
+<p>Messages are sent via HTTP requests from one client to the server. Once received, the server passes the message to the designated client via the correct channel identified by the Client ID. Messages are limited to 32K. </p>
 
 <p class="warning"><strong>Warning:</strong> Avoid sending raw messages, especially when sending URLs. Instead, use <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> encoding to ensure that messages arrive intact.</p>
 
 <h3>Socket</h3>
 
 <p>The JavaScript client opens a socket using the token provided by the server. It uses the socket to listen for updates on the channel.</p>
+
+<h3>Presence</h3>
+<p>The server can register to receive a notification when a client connects to or disconnects from a channel.</p>
 
 <h2 id="Life_of_a_Typical_Channel_Message">Life of a Channel Typical Message</h2>
 
@@ -919,7 +1003,7 @@ var logged_in_user_email = null;
 
 <p>To better illustrate how to use Channel API, take a look at the following example Tic Tac Toe game application written in Java. The game allows users to create a game, invite another player by sending out a URL, and play the game together in real time. The application updates both players' views of the board in real time as soon as the other player makes a move.</p>
 
-<p>The full source code of the application is available at the <a href="http://code.google.com/p/java-channel-tic-tac-toe">Java Channel Tac Toe Project page</a>. We'll go over major highlights that illustrate Channel API below.</p>
+
 
 <h3>Creating and Connecting to a Channel</h3>
 
@@ -1019,9 +1103,7 @@ moveInSquare = function(id) {
 
 
 
-<p>Always use <code>POST</code> to send messages sent from the client to the server. </p>
-
-<p>When the server receives the client's <code>POST</code> message, it first uses its <code>POST</code> handler to validate the move. Then, if the move is legal, the server uses the <a href="../javadoc/com/google/appengine/api/channel/ChannelService.html#sendMessage(com.google.appengine.api.channel.ChannelMessage)">ChannelService.sendMessage()</a> method to send messages indicating the new state of the board to both clients.</p>
+<p>Use an HTTP request to send messages from the client to the server. In our example, when the server receives the client's message via an HTTP request, it first uses its request handler to validate the move. Then, if the move is legal, the server uses the <a href="../javadoc/com/google/appengine/api/channel/ChannelService.html#sendMessage(com.google.appengine.api.channel.ChannelMessage)">ChannelService.sendMessage()</a> method to send messages indicating the new state of the board to both clients.</p>
 
 <pre class="prettyprint">
 public class Game {
@@ -1058,6 +1140,37 @@ public class MoveServlet extends HttpServlet {
 </pre>
 
 
+<h2 id="Tracking_Client_Connections_and_Disconnections">Tracking Client Connections and Disconnections</h3>
+
+<p>Applications may register to be notified when a client connects to or disconnects from a channel.</p>
+
+<p>You can <a href="../config/appconfig.html#Inbound_Services">enable this inbound service</a> in <code>appengine-web.xml</code>:</p>
+
+
+
+<pre class="prettyprint">  &lt;inbound-services&gt;
+    &lt;service&gt;channel_presence&lt;/service&gt;
+  &lt;/inbound-services&gt;</pre>
+
+
+<p>When you enable <code>channel_presence</code>, your application receives POSTs to the following URL paths:</p>
+
+<ul>
+  <li>POSTs to <code>/_ah/channel/connected/</code> signal that the client has connected to the channel and can receive messages.</li>
+  <li>POSTs to <code>/_ah/channel/disconnected/</code> signal that the client has disconnected from the channel.</li>
+</ul>
+
+<p>Your application can register handlers to these paths in order to receive notifications. You can use these notifications to track which clients are currently connected.</p>
+
+
+<p>You can use the <code>ChannelService</code> class's <code>parsePresence()</code> to retrieve the <code>client_id</code> of the connected or disconnected channel.</p>
+<pre class="prettyprint">
+// In the handler for _ah/channel/connected/
+ChannelService channelService = ChannelServiceFactory.getChannelService();
+ChannelPresence presence = channelService.parsePresence(req);
+</pre>
+
+
 <h2 id="Tokens_and_Security">Tokens and Security</h2>
 
 <p>Treat the token returned by <code>createChannel()</code> as a secret.  If a malicious application gains access to the token, it could listen to messages sent along the channel you are using. Avoid using the token in a URL request because a malicious website could see it in their referrer logs.</p>
@@ -1079,11 +1192,6 @@ clients.)</p>
 
 <p>A client can only connect to one channel per page. If an application needs to send multiple types of data to a client, aggregate it on the server side and send it to appropriate handlers in the client’s <a href="javascript.html#onmessage">socket.onmessage</a> callback.</p>
 
-<h3 id="Tracking_Client_Connections_and_Disconnections">Tracking Client Connections and Disconnections</h3>
-
-<p>There is no concept of “presence” for clients connected to a channel. This means the application cannot receive a call when a client connects to or disconnects from a channel.</p>
-
-<p>If the application needs to keep track of which clients are connected, one solution is to set the socket’s <code>onopen</code> property to call a function designed to send a <code>POST</code> message to the server at some regular interval in order to notify the server of the client's state.</p>
 
 
       </div><!-- end gc-pagecontent -->
@@ -1142,6 +1250,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 

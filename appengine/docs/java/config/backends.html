@@ -69,6 +69,7 @@ var logged_in_user_email = null;
 <div class="gbh" style="left:0px;"></div>
 <div class="gbh" style="right:0px;"></div>
 
+
 <div id="gc-container">
 <a id="top"></a>
 <div id="skipto">
@@ -102,8 +103,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
-</h2>
 
 </div> <!-- end gc-header -->
 
@@ -148,8 +147,14 @@ var logged_in_user_email = null;
     </li>
   
 
-  </ul>
+  
+  
+  
+  
+  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+</ul>
 </div> <!-- end gc-topnav -->
+
 
     <div class="g-section g-tpl-170">
 
@@ -218,7 +223,7 @@ var logged_in_user_email = null;
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
-<li><a href="../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../javadoc/com/google/appengine/api/backends/package-summary.html">Javadoc Reference</a></li>
 
 
       </ul>
@@ -439,6 +444,7 @@ var logged_in_user_email = null;
       <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
       <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
       <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><a href="../../python/datastore/async.html">Async API</a></li>
       <li><span class="tlw-title tlw-expanded">Reference</span>
         <ul>
           <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
@@ -658,11 +664,64 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
-    <li><a href="../../python/tools/index.html">Tools</a>
+    <li><span class="tlw-title"><a href="../../python/tools/index.html">Tools</a></span>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
     <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><span class="tlw-title"><a href="../../python/tools/protorpc/index.html">ProtoRPC</a></span>
+      <ul>
+        <li><a href="../../python/tools/protorpc/overview.html">Overview</a></li>
+<li><a href="../../python/tools/protorpc/definition-functions.html">Definition Module</a></li>
+<li>Descriptor Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/descriptor/descriptorlibrary.html">DescriptorLibrary Functions</a></li>
+    <li><a href="../../python/tools/protorpc/descriptor/functions.html">Functions</a></li>
+
+  </ul>
+</li>
+<li>Messages Module
+  <ul>
+        <li><a href="../../python/tools/protorpc/messages/enumclass.html">Enum</a></li>
+    <li><a href="../../python/tools/protorpc/messages/enumfieldclass.html">EnumField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclass.html">Field</a></li>
+    <li><a href="../../python/tools/protorpc/messages/fieldclasses.html">Message Field Classes</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messageclass.html">Message</a></li>
+    <li><a href="../../python/tools/protorpc/messages/messagefieldclass.html">MessageField</a></li>
+    <li><a href="../../python/tools/protorpc/messages/variantclass.html">Variant</a></li>
+    <li><a href="../../python/tools/protorpc/messages/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/messages/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+<li>Remote Service Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/remote/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/remote/httprequeststateclass.html">HttpRequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/requeststateclass.html">RequestState Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/rpcstatusclass.html">RpcStatus Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/serviceclass.html">Service Class</a></li>
+    <li><a href="../../python/tools/protorpc/remote/functions.html">Functions</a></li>
+    <li><a href="../../python/tools/protorpc/remote/exceptions.html">Exceptions</a></li>
+
+  </ul>
+</li>
+<li>Transport Library
+  <ul>
+        <li><a href="../../python/tools/protorpc/transport/httptransport.html">HttpTransport Class</a></li>
+    <li><a href="../../python/tools/protorpc/transport/transport.html">Transport Class</a></li>
+
+  </ul>
+</li>
+<li>WebApp Service Handlers
+  <ul>
+        <li><a href="../../python/tools/protorpc/webapp/index.html">Overview</a></li>
+    <li><a href="../../python/tools/protorpc/webapp/functions.html">WebApp Service Handlers</a></li>
+
+  </ul>
+</li>
+
+      </ul>
+    </li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
              <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
@@ -716,6 +775,7 @@ var logged_in_user_email = null;
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../go/datastore/reference.html">Reference</a></li>
 
       </ul>
@@ -726,6 +786,21 @@ var logged_in_user_email = null;
           <ul>
             <li><a href="../../go/blobstore/overview.html">Overview</a></li>
 <li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../go/capabilities/overview.html">Overview</a></li>
+<li><a href="../../go/capabilities/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../go/channel/overview.html">Overview</a></li>
+<li><a href="../../go/channel/reference.html">Reference</a></li>
+<li><a href="../../go/channel/javascript.html">Client Javascript Reference</a></li>
 
           </ul>
         </li>
@@ -747,6 +822,7 @@ var logged_in_user_email = null;
           <ul>
                  <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+     <li><a href="../../go/taskqueue/delay.html">Delay package</a></li>
 
           </ul>
         </li>
@@ -844,21 +920,22 @@ var logged_in_user_email = null;
   <li>A backend named <code>cmdline</code>, used to execute long-running commands issued by admins of the application.</li>
 </ol>
 
-<pre class="prettyprint">
-&lt;backends&gt;
-  &lt;backend&gt;
-    &lt;name&gt;memdb&lt;/name&gt;
-    &lt;class&gt;b8&lt;/class&gt;
-    &lt;instances&gt;5&lt;/instances&gt;
-  &lt;/backend&gt;
-  &lt;backend&gt;
-    &lt;name&gt;worker&lt;/name&gt;
-    &lt;options&gt;failfast&lt;/failfast&gt;
-  &lt;backend&gt;
-  &lt;backend&gt;
-    &lt;name&gt;cmdline&lt;/name&gt;
-    &lt;options&gt;dynamic&lt;/failfast&gt;
-  &lt;backend&gt;
+<pre class="prettyprint">&lt;backends&gt;
+ &lt;backend name="memdb"&gt;
+   &lt;class&gt;b8&lt;/class&gt;
+   &lt;instances&gt;5&lt;/instances&gt;
+ &lt;/backend&gt;
+ &lt;backend name="worker"&gt;
+   &lt;options&gt;
+     &lt;fail-fast&gt;true&lt;/fail-fast&gt;
+   &lt;/options/&gt;
+ &lt;backend&gt;
+ &lt;backend name="cmdline"&gt;
+   &lt;name&gt;cmdline&lt;/name&gt;
+   &lt;options&gt;
+     &lt;dynamic&gt;true&lt;/dynamic&gt;
+   &lt;/options/&gt;
+ &lt;backend&gt;
 &lt;/backends&gt;</pre>
 
 
@@ -941,11 +1018,11 @@ var logged_in_user_email = null;
 
 <p>Resident and dynamic backends both use pending queues to handle incoming traffic. Requests to a backend that is busy handling other requests wait in a pending queue for a short period of time (10 seconds) before being aborted.</p>
 
-<p>You can disable the backend's pending queue using the <code>failfast</code> feature. You can configure failfast either on a per-request basis or on an entire backend (though the backend option is currently experimental). To use failfast for a single request, add the following header to the task request:</p>
+<p>You can disable the backend's pending queue using the failfast feature. You can configure failfast either on a per-request basis or on an entire backend (though the backend option is currently experimental). To use failfast for a single request, add the following header to the task request:</p>
 
 <pre class="prettyprint">X-AppEngine-FailFast</pre>
 
-<p>To make an entire backend failfast, add the <code>failfast</code> option to the backend definition in <code>backends.xml</code>.
+<p>To make an entire backend failfast, add the <code>&lt;fail-fast&gt;</code> option to the backend definition in <code>backends.xml</code>.
 
 
 <h2 id="Defining_Handlers">Defining Handlers</h2>
@@ -1050,9 +1127,9 @@ var logged_in_user_email = null;
       <dd>
         <p>Defaults to resident instances. This option sets the backend to use dynamic instances rather than resident instances.</p>
       </dd>
-      <dt><span class="itemname">&lt;failfast&gt;</span><sup class="new">Experimental!</sup></dt>
+      <dt><span class="itemname">&lt;fail-fast&gt;</span><sup class="new">Experimental!</sup></dt>
       <dd>
-        <p>The <code>failfast</code> option is experimental. It disables queues, so that an instance that is busy returns an HTTP 503 error immediately when it receives a new request. You can achieve this same behavior by adding an <code>X-AppEngine-FailFast</code> header to requests, and the header is not experimental.</p>
+        <p>The <code>fail-fast</code> option is experimental. It disables queues, so that an instance that is busy returns an HTTP 503 error immediately when it receives a new request. You can achieve this same behavior by adding an <code>X-AppEngine-FailFast</code> header to requests, and the header is not experimental.</p>
       </dd>
 
       <dt id="options_public"><span class="itemname">&lt;public&gt;</span><sup class="new">Experimental!</sup></dt>
@@ -1121,6 +1198,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
 
 
