@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="propertyclass.html">Property</a></li>
           <li><a href="queryclass.html">Query</a></li>
           <li><a href="gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="keyclass.html">Key</a></li>
           <li><a href="functions.html">Functions</a></li>
           <li><a href="exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="../blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="../blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="../blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="../blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="../blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="../blobstore/functions.html">Functions</a></li>
     <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1083,17 +1123,22 @@ _gaq.push(
 
 <ul>
   <li><a href="#Introduction">Introduction</a></li>
-  <li><a href="#Query">Query()</a></li>
+  <li>Constructor:
+    <ul>
+      <li><code><a href="#Query">Query()</a></code></li>
+    </ul>
   <li>Instance methods:
     <ul>
-      <li><a href="#Query_filter">filter()</a></li>
-      <li><a href="#Query_order">order()</a></li>
-      <li><a href="#Query_ancestor">ancestor()</a></li>
-      <li><a href="#Query_get">get()</a></li>
-      <li><a href="#Query_fetch">fetch()</a></li>
-      <li><a href="#Query_count">count()</a></li>
-      <li><a href="#Query_cursor">cursor()</a></li>
-      <li><a href="#Query_with_cursor">with_cursor()</a></li>
+      <li><code><a href="#Query_filter">filter()</a></code></li>
+      <li><code><a href="#Query_order">order()</a></code></li>
+      <li><code><a href="#Query_ancestor">ancestor()</a></code></li>
+      <li><code><a href="#Query_get">get()</a></code></li>
+      <li><code><a href="#Query_fetch">fetch()</a></code></li>
+      <li><code><a href="#Query_run">run()</a></code></li>
+      <li><code><a href="#Query_count">count()</a></code></li>
+      <li><code><a href="#Query_index_list">index_list()</a></code></li>
+      <li><code><a href="#Query_cursor">cursor()</a></code></li>
+      <li><code><a href="#Query_with_cursor">with_cursor()</a></code></li>
     </ul>
   </li>
 </ul>
@@ -1225,7 +1270,7 @@ query.order('-height')
     </dl>
   </dd>
 
-  <dt id="Query_get"><span class="itemname">get</span>()</dt>
+  <dt id="Query_get"><span class="itemname">get</span>(<span class="argname">config</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Executes the query, then returns the first result, or <code>None</code> if the query returned no results.</p>
     <p>get() fetches a "limit" of one result, at most.</p>
@@ -1236,7 +1281,7 @@ query.order('-height')
     </dl>
   </dd>
 
-  <dt id="Query_fetch"><span class="itemname">fetch</span>(<span class="argname">limit</span>, <span class="argname">offset</span>=<span class="argdefault">0</span>)</dt>
+  <dt id="Query_fetch"><span class="itemname">fetch</span>(<span class="argname">limit</span>, <span class="argname">offset</span>=<span class="argdefault">0</span>, <span class="argname">config</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Executes the query, then returns the results.</p>
     <p>The <span class="argname">limit</span> and <span class="argname">offset</span> arguments control how many results are fetched from the datastore, and how many are returned by the fetch() method:</p>
@@ -1272,7 +1317,7 @@ query.order('-height')
     </dl>
   </dd>
 
-  <dt id="Query_count"><span class="itemname">count</span>(<span class="argname">limit</span>)</dt>
+  <dt id="Query_count"><span class="itemname">count</span>(<span class="argname">limit</span>, <span class="argname">config</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Returns the number of results this query fetches.</p>
     <p><span class="itemname">count()</span> is somewhat faster than retrieving all of the data by a constant factor, but the running time still grows with the size of the result set. It's best to only use <span class="itemname">count()</span> in cases where the count is expected to be small, or specify a <span class="argname">limit</span>.</p>
@@ -1289,10 +1334,65 @@ query.order('-height')
     </dl>
   </dd>
 
+
+  <dt id="Query_index_list"><span class="itemname">index_list</span>()</dt>
+  <dd>
+     <p>Returns a list of indexes used by the executed query. If you invoke this on a query that has not yet run, you'll get an <a href="http://docs.python.org/library/exceptions.html#exceptions.AssertionError">AssertionError</a>.</p>
+     <p>The indexes returned can be composite indexes, primary indexes, kind indexes, and single-property indexes. </p>
+     <p class="note">This feature is not fully supported on the development server. When used with the development server, the result is either the empty list or a list containing exactly one composite index.</p>
+<p>The following snippet shows one way to process the index list returned by this method call:</p>
+<pre class="prettyprint">
+# other imports ...
+from google.appengine.ext import webapp
+from google.appengine.ext.webapp.util import run_wsgi_app
+from google.appengine.api import users
+from google.appengine.ext import db
+from google.appengine.api import datastore
+
+class Greeting(db.Model):
+  author = db.UserProperty()
+  content = db.StringProperty(multiline=True)
+  date = db.DateTimeProperty(auto_now_add=True)
+
+
+class MainPage(webapp.RequestHandler):
+  def get(self):
+    user = users.get_current_user()
+    q = db.Query(Greeting)
+    q.filter("author =", user.nickname())
+    q.order("-date")
+    q.fetch(100)
+    index_list = q.index_list()
+    for indx in index_list:
+      self.response.out.write("Kind: %s" % indx.kind())
+      self.response.out.write("&lt;br /&gt;")
+      self.response.out.write("Has ancestor? %s" % indx.has_ancestor())
+      self.response.out.write("&lt;br /&gt;")
+      for name, direction in indx.properties():
+        self.response.out.write("Property name: "+name)
+        self.response.out.write("&lt;br /&gt;")
+        if direction == datastore.Query.DESCENDING:
+          self.response.out.write("Sort direction: DESCENDING")
+        else:
+          self.response.out.write("Sort direction: ASCENDING")
+        self.response.out.write("&lt;br /&gt;")
+</pre>
+<p>The snippet queries for an object called Greetings, filtering by the author property. After the fetch, the returned list of indexes is processed and various information about the index is extracted, such as the object Kind, filters, sort orders used, and sort direction, as shown below:</p>
+<pre>
+Kind: Greeting
+Has ancestor? False
+Property name: author
+Sort direction: ASCENDING
+Property name: date
+Sort direction: DESCENDING
+</pre>
+</dd>
+
+
   <dt id="Query_cursor"><span class="itemname">cursor</span>()</dt>
   <dd>
      <p>Returns an encoded cursor that represents the location in the result set after the last result fetched. A future invocation of the same query can provide this cursor using <a href="#Query_with_cursor">with_cursor()</a> to start fetching results from this location.</p>
-     <p>You must fetch results (using either <a href="#Query_fetch">fetch()</a> or the iterator interface) before you can get a cursor.</p>
+     <p>You must fetch results (using either <a href="#Query_fetch">fetch()</a> or the iterator interface) before you can get a cursor, otherwise you'll get an <a href="http://docs.python.org/library/exceptions.html#exceptions.AssertionError">AssertionError</a>.</p>
      <p>The cursor is a base64-encoded string. It is safe to use in HTTP GET and POST parameters, and can also be stored in the datastore or memcache.</p>
      <p class="note"><b>Note:</b> Not all queries are compatible with cursors. See <a href="queries.html#Query_Cursors">Query Cursors</a> for more information.</p>
   </dd>

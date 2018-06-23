@@ -187,7 +187,7 @@ _gaq.push(
         <ul>
   <li><a href="../../downloads.html">Downloads</a></li>
   <li><a href="../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -299,6 +299,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -402,7 +411,6 @@ _gaq.push(
 <li><a href="../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -538,11 +546,47 @@ _gaq.push(
           <li><a href="../python/datastore/propertyclass.html">Property</a></li>
           <li><a href="../python/datastore/queryclass.html">Query</a></li>
           <li><a href="../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="../python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../python/datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="../python/datastore/keyclass.html">Key</a></li>
           <li><a href="../python/datastore/functions.html">Functions</a></li>
           <li><a href="../python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../python/ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../python/ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../python/ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../python/ndb/properties.html">Properties</a></li>
+      <li><a href="../python/ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../python/ndb/queries.html">Queries</a></li>
+      <li><a href="../python/ndb/transactions.html">Transactions</a></li>
+      <li><a href="../python/ndb/admin.html">Administration</a></li>
+      <li><a href="../python/ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../python/ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../python/ndb/contextclass.html">Context</a></li>
+          <li><a href="../python/ndb/futureclass.html">Future</a></li>
+          <li><a href="../python/ndb/keyclass.html">Key</a></li>
+          <li><a href="../python/ndb/modelclass.html">Model</a></li>
+          <li><a href="../python/ndb/queryclass.html">Query</a></li>
+          <li><a href="../python/ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../python/ndb/metadata.html">Metadata</a></li>
+          <li><a href="../python/ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../python/googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../python/googlestorage/overview.html">Overview</a></li>
+<li><a href="../python/googlestorage/functions.html">Functions</a></li>
+<li><a href="../python/googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -579,9 +623,10 @@ _gaq.push(
             <li><a href="../python/blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="../python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="../python/blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="../python/blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="../python/blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="../python/blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="../python/blobstore/functions.html">Functions</a></li>
     <li><a href="../python/blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -724,16 +769,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../python/googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../python/googlestorage/overview.html">Overview</a></li>
-<li><a href="../python/googlestorage/functions.html">Functions</a></li>
-<li><a href="../python/googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="../python/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1028,9 +1063,15 @@ _gaq.push(
           <li><a href="instances.html">Instances</a></li>
 <li><a href="roles.html">Roles</a></li>
 <li><a href="applicationsettings.html">Application Settings</a></li>
-<li><a href="experiments.html">Experiments</a></li>
-<li><a href="datastoreadmin.html">Datastore</a></li>
+<li><a href="migration.html">Migrating Applications</a></li>
+<li><a href="datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="performancesettings.html">Performance Settings</a></li>
+<li><a href="trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1047,8 +1088,8 @@ _gaq.push(
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
-      <li><a href="../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1064,7 +1105,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../revision_history.html">Revision History</a></li>
@@ -1088,7 +1128,7 @@ _gaq.push(
   <li><a href="#How_Applications_Scale">How Applications Scale</a></li>
   <li><a href="#Loading_Requests">Loading Requests</a></li>
   <li><a href="#Warmup_Requests">Warmup Requests</a></li>
-  <li><a href="#The_Instances_View">The Instances View</a></li>
+  <li><a href="#dashboard">The Instances Dashboard</a></li>
   <li><a href="#Instance_Billing">Instance Billing</a></li>
 </ul>
 
@@ -1103,7 +1143,7 @@ inadvertently affect each other. At any given time, your application may be runn
 
 <p>App Engine also offers <i>resident</i> instances, which remain running all the time. Resident instances allow you to improve application performance, and, if your application uses backends, allow you to perform longer-running, larger tasks. You can enable resident instances on a <a href="../python/backends/index.html">backend</a>, or by <a href="performancesettings.html">setting minimum idle instances</a>.</p>
 
-<p>App Engine charges for instance usage on an hourly basis. If you expect to use a certain number of instance hours weekly, you can save money by purchasing them in advance on the <strong>Billing Settings</strong> tab of the Administration Console. Note that, if you purchase instance hours in advance, you will be charged for them whether or not you use them. You can track your instance usage on the <a href="#The_Instances_View">Instances Viewer</a> of the Administration Console.</p>
+<p>App Engine charges for instance usage on an hourly basis. If you expect to use a certain number of instance hours weekly, you can save money by purchasing them in advance on the <strong>Billing Settings</strong> tab of the Administration Console. Note that, if you purchase instance hours in advance, you will be charged for them whether or not you use them. You can track your instance usage on the <a href="#dashboard">Instances Dashboard</a> of the Administration Console.</p>
 
 
 <h2 id="Types_of_Instances">Types of Instances</h2>
@@ -1159,16 +1199,17 @@ App Engine offers two types of instances:
 <h2 id="Warmup_Requests">Warmup Requests</h2>
 <p>Warmup requests are a specific type of loading request that load application code into an instance ahead of time, before any live requests are made. To learn more about how to use warmup requests, see the Warmup Requests section of the Application Configuration page (<a href="../java/config/appconfig.html#Warmup_Requests">Java</a> | <a href="../python/config/appconfig.html#Warmup_Requests">Python</a> | <a href="../go/config/appconfig.html#Warmup_Requests">Go</a>).</p>
 
-<p class="note"><b>Note:</b> Warmup requests are not always called for every new instance. For example, if the new instance is the very first instance of your application, the user's request is sent to the application directly. As a result, you may still encounter loading requests, even with warmup requests enabled. Using the <a href="#Always_On">Always On</a> feature will prevent loading requests in most cases.</p>
+<p class="note"><b>Note:</b> Warmup requests are not always called for every new instance. For example, if the new instance is the very first instance of your application, the user's request is sent to the application directly. As a result, you may still encounter loading requests, even with warmup requests enabled.</p>
 
 
-<h2 id="The_Instances_View">The Instances View</h2>
+<h2 id="dashboard">The Instances Dashboard</h2>
 
-<p>The <b>Instances</b> view is part of the App Engine Admin Console:</p>
+<p>The <b>Instances</b> Dashboard is part of the App Engine Admin Console:</p>
 <br />
 <img src="../images/instances_viewer.png">
 
-<p>The Instances view shows information about all the instances assigned to your application, including:</p>
+<p>It shows instances assigned to your application with some information
+   and controls:</p>
 <ul>
   <li>Average Queries Per Second (QPS) over the last minute</li>
   <li>Average Latency over the last minute</li>
@@ -1176,6 +1217,7 @@ App Engine offers two types of instances:
   <li>The Age, or how long the instance has been running</li>
   <li>Current memory usage</li>
   <li>The instance's availability, either resident or dynamic.</li>
+  <li>A Shutdown button to shut down the instance.</li>
 </ul>
 
 

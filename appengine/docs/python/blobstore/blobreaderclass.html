@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="../datastore/propertyclass.html">Property</a></li>
           <li><a href="../datastore/queryclass.html">Query</a></li>
           <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="../datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="../datastore/keyclass.html">Key</a></li>
           <li><a href="../datastore/functions.html">Functions</a></li>
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="blobkeyclass.html">BlobKey</a></li>
-    <li><a href="blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="rpcclass.html">Blobstore RPC</a></li>
     <li><a href="functions.html">Functions</a></li>
     <li><a href="exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1077,17 +1117,17 @@ _gaq.push(
 
 
 
-<p>A Python app can read Blobstore values through a file-like interface, implemented by the BlobReader class. The reader implementation streams data from the Blobstore as needed, so values larger than 1 megabyte can be read, using multiple service calls behind the scenes. This interface is read-only: Blobstore values cannot be modified directly by the application.</p>
+<p>A Python application can read Blobstore values through a file-like interface, implemented by the BlobReader class. The reader implementation streams data from the Blobstore as needed, so values larger than 1 megabyte can be read, using multiple service calls behind the scenes. This interface is read-only: Blobstore values cannot be modified directly by the application.</p>
 
 <p><code>BlobReader</code> is provided by the <code>google.appengine.ext.blobstore</code> module.</p>
 
 <ul>
   <li><a href="#Introduction">Introduction</a></li>
-  <li><a href="#BlobReader">BlobReader()</a></li>
+  <li><code><a href="#BlobReader">BlobReader()</a></code></li>
   <li><a href="#Instance_Methods">Instance Methods</a></li>
   <li>Instance properties:
     <ul>
-      <li><a href="#BlobReader_blob_info">blob_info</a></li>
+      <li><code><a href="#BlobReader_blob_info">blob_info</a></code></li>
     </ul>
   </li>
 </ul>
@@ -1095,16 +1135,19 @@ _gaq.push(
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>An app can read data from Blobstore values using an interface similar to a Python <a href="http://docs.python.org/library/stdtypes.html#file-objects">file</a> object. This interface can start reading a value at any byte position, and uses multiple service calls and buffering, so an app can access the full size of the value despite the limit on the size of a single service call response.</p>
+<p>An application can read data from Blobstore values using an interface
+similar to a Python
+<code><a href="http://docs.python.org/library/stdtypes.html#file-objects">file</a></code> object.
+This interface can start reading a value at any byte position, and uses multiple service calls and buffering, so an application can access the full size of the value despite the limit on the size of a single service call response.</p>
 
 <p>The BlobReader class can take one of three values as an argument to its constructor:</p>
 <ul>
-  <li>A <a href="blobkeyclass.html">BlobKey</a></li>
+  <li>A <code><a href="blobkeyclass.html">BlobKey</a></code></li>
   <li>The string form of a BlobKey</li>
-  <li>A <a href="blobinfoclass.html#BlobInfo_open">BlobInfo</a> object</li>
+  <li>A <code><a href="blobinfoclass.html#BlobInfo_open">BlobInfo</a></code> object</li>
 </ul>
 
-<p>The object implements the familiar file methods for reading the value. The app cannot modify the Blobstore value; file methods for writing are not implemented.</p>
+<p>The object implements the familiar file methods for reading the value. The application cannot modify the Blobstore value; file methods for writing are not implemented.</p>
 
 <pre class="prettyprint">
 from google.appengine.ext import blobstore
@@ -1143,10 +1186,12 @@ for line in blob_reader:
   <dt id="BlobReader"><span class="type">class</span>&nbsp;<span class="itemname">BlobReader</span>(<span class="argname">blob_key</span>, <span class="argname">buffer_size</span>=<span class="argdefault">131072</span>, <span class="argname">position</span>=<span class="argdefault">0</span>)</dt>
   <dd>
     <p>A file-like interface for reading a Blobstore value.</p>
-    <p>Arguments:</p>
+    <p><b>Arguments</b></p>
     <dl>
       <dt><span class="argname">blob</span></dt>
-      <dd>The <a href="blobinfoclass.html">BlobInfo</a>, <a href="blobkeyclass.html">BlobKey</a>, or string form of a blob key of the Blobstore value to read. Required.</dd>
+      <dd>The <code><a href="blobinfoclass.html">BlobInfo</a></code>,
+          <code><a href="blobkeyclass.html">BlobKey</a></code>,
+          or string form of a blob key of the Blobstore value to read. Required.</dd>
       <dt><span class="argname">buffer_size</span></dt>
       <dd>The size of the input buffer, as a number of bytes. The default is 128 kilobytes (131,072 bytes). The buffer size cannot exceed 1 megabyte (1,048,576 bytes).</dd>
       <dt><span class="argname">position</span></dt>
@@ -1158,13 +1203,19 @@ for line in blob_reader:
 
 <h2 id="Instance_Methods">Instance Methods</h2>
 
-<p>A BlobReader instance has methods and properties similar to a Python <a href="http://docs.python.org/library/stdtypes.html#file-objects">file</a> object. Methods that would modify a file (such as <code>write()</code>) are not implemented, and raise an <code>IOError</code>. You can pass a BlobReader object to code expecting a (read-only) file interface (such as the <a href="http://docs.python.org/library/zipfile.html">zipfile</a> module).</p>
+<p>A <code>BlobReader</code> instance has methods and properties similar
+to a Python
+<code><a href="http://docs.python.org/library/stdtypes.html#file-objects">file</a></code> object.
+Methods that would modify a file (such as <code>write()</code>) are not implemented, and raise an <code>IOError</code>. You can pass a BlobReader object to code expecting a (read-only) file interface (such as the
+<code><a href="http://docs.python.org/library/zipfile.html">zipfile</a></code>
+module).</p>
 
 <p>Methods and interfaces include:</p>
 
 <ul>
   <li>iterator and iterable interfaces</li>
-  <li>interfaces to support serialization of BlobReader state via <a href="http://docs.python.org/library/pickle.html">pickle</a></li>
+  <li>interfaces to support serialization of BlobReader state via
+      <code><a href="http://docs.python.org/library/pickle.html">pickle</a></code></li>
   <li><code>close()</code>
   <li><code>read(size=-1)</code></li>
   <li><code>readline(size=-1)</code></li>
@@ -1177,12 +1228,16 @@ for line in blob_reader:
 
 <h2>Instance Properties</h2>
 
-<p>In addition to the file-like interface, the BlobReader class provides read-only access to a Blobstore value's <a href="blobinfoclass.html">BlobInfo</a> object through the <code>blob_info</code> property.</p>
+<p>In addition to the file-like interface, the <code>BlobReader</code> class
+provides read-only access to a Blobstore value's
+<code><a href="blobinfoclass.html">BlobInfo</a></code> object through the
+<code>blob_info</code> property.</p>
 
 <dl class="apireference">
 
   <dt id="BlobReader_blob_info"><span class="itemname">blob_info</span></dt>
-  <dd>The <a href="blobinfoclass.html">BlobInfo</a> object for the instance's Blobstore value.</dd>
+  <dd>The
+  <code><a href="blobinfoclass.html">BlobInfo</a></code> object for the instance's Blobstore value.</dd>
 
 </dl>
 

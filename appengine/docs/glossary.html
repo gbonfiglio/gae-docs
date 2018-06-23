@@ -187,7 +187,7 @@ _gaq.push(
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -299,6 +299,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -402,7 +411,6 @@ _gaq.push(
 <li><a href="java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -538,11 +546,47 @@ _gaq.push(
           <li><a href="python/datastore/propertyclass.html">Property</a></li>
           <li><a href="python/datastore/queryclass.html">Query</a></li>
           <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="python/datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="python/datastore/keyclass.html">Key</a></li>
           <li><a href="python/datastore/functions.html">Functions</a></li>
           <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="python/ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="python/ndb/overview.html">NDB Overview</a></li>
+      <li><a href="python/ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="python/ndb/properties.html">Properties</a></li>
+      <li><a href="python/ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="python/ndb/queries.html">Queries</a></li>
+      <li><a href="python/ndb/transactions.html">Transactions</a></li>
+      <li><a href="python/ndb/admin.html">Administration</a></li>
+      <li><a href="python/ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="python/ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="python/ndb/contextclass.html">Context</a></li>
+          <li><a href="python/ndb/futureclass.html">Future</a></li>
+          <li><a href="python/ndb/keyclass.html">Key</a></li>
+          <li><a href="python/ndb/modelclass.html">Model</a></li>
+          <li><a href="python/ndb/queryclass.html">Query</a></li>
+          <li><a href="python/ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="python/ndb/metadata.html">Metadata</a></li>
+          <li><a href="python/ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="python/googlestorage/overview.html">Overview</a></li>
+<li><a href="python/googlestorage/functions.html">Functions</a></li>
+<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -579,9 +623,10 @@ _gaq.push(
             <li><a href="python/blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="python/blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="python/blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="python/blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="python/blobstore/functions.html">Functions</a></li>
     <li><a href="python/blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -724,16 +769,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="python/googlestorage/overview.html">Overview</a></li>
-<li><a href="python/googlestorage/functions.html">Functions</a></li>
-<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1028,9 +1063,15 @@ _gaq.push(
           <li><a href="adminconsole/instances.html">Instances</a></li>
 <li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="adminconsole/experiments.html">Experiments</a></li>
-<li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1047,8 +1088,8 @@ _gaq.push(
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="../articles/index.html">Articles</a></li>
-      <li><a href="features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1064,7 +1105,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="revision_history.html">Revision History</a></li>
@@ -1178,7 +1218,7 @@ _gaq.push(
   <dd>Python applications must use <a href="python/config/backends.html">backends.yaml</a> to configure backends. Java applications may use either <a href="java/configyaml/backends.html">backends.yaml</a> or <a href="java/config/backends.html">backends.xml</a>.</dd>
 
   <dt id="term_billable_quota">Billable Quota</dt>
-  <dd><a href="quotas.html#Billable_Quotas_and_Fixed_Quotas">Billable quotas</a> are resource maximums set by you, the application's administrator, to prevent the cost of your application from exceeding your budget. Every application gets an amount of each billable quota for free. You can increase billable quotas for your application by enabling billing, setting a daily budget, then allocating the budget to the quotas. Google charges you for only the resources that your application uses, and only for the amount of resources used above the free quota thresholds.</dd>
+  <dd><a href="quotas.html#Billable_Resource_Quotas">Billable quotas</a> are resource maximums set by you, the application's administrator, to prevent the cost of your application from exceeding your budget. Every application gets an amount of each billable quota for free. You can increase billable quotas for your application by enabling billing, setting a daily budget, then allocating the budget to the quotas. Google charges you for only the resources that your application uses, and only for the amount of resources used above the free quota thresholds.</dd>
 
   <dt id="term_blob">Blob</dt>
   <dd>An acronym for "Binary Large Object". A blob may refer to a large data object in the <a href="#term_blobstore_api">blobstore API</a>, or it may refer to a <a href="#term_datastore_blob_property">property type</a> in the datastore API.</dd>
@@ -1323,9 +1363,6 @@ _gaq.push(
   <dt id="term_filter_class">Filter Class</dt>
   <dd>A <a href="java/config/webxml.html#Filters">filter</a> is a class that acts on a request like a servlet, but may allow the handling of the request to continue with other filters or servlets.</dd>
 
-  <dt id="term_fixed_quota">Fixed Quota</dt>
-  <dd><a href="quotas.html#Billable_Quotas_and_Fixed_Quotas">Fixed quotas</a> are resource maximums set by App Engine to ensure the integrity of the system. These resources describe the boundaries of the architecture, and App Engine expects all applications to run within the same limits.</dd>
-
   <dt id="term_frontend_instance">Frontend Instance</dt>
   <dd>An <a href="#term_instance">instance</a> running your code and scaling dynamically based on the incoming requests but limited in <a href="quotas.html#Requests">how long a request can run</a></dd>
 
@@ -1424,7 +1461,7 @@ _gaq.push(
   <dd>A key is a unique identifier for each <a href="#term_entity">entity</a> in the datastore. Keys consist of a <a href="#term_kind">kind</a>, a unique name assigned either by the app or the datastore, and an optional ancestor path that specifies a parent entity. If an ancestor path is present, the entity belongs to an <a href="#term_entity_group">entity group</a> defined by that parent.</dd>
 
   <dt id="term_kind">Kind</dt>
-  <dd>Each datastore <a href="#term_entity">entity</a> is of a particular <a href="python/datastore/entities.html#Kinds_IDs_and_Names">kind</a>, which is simply a name specified by the application. A kind categorizes the entity for the purpose of queries. For example, a human resources application might represent each employee at a company with an entity of the kind &ldquo;Employee&rdquo;. Unlike rows in a table, two entities of the same kind need not have the same properties. If required, an application can establish such a restriction in its data model.</dd>
+  <dd>Each datastore <a href="#term_entity">entity</a> is of a particular <a href="python/datastore/entities.html#Kinds_and_Identifiers">kind</a>, which is simply a name specified by the application. A kind categorizes the entity for the purpose of queries. For example, a human resources application might represent each employee at a company with an entity of the kind &ldquo;Employee&rdquo;. Unlike rows in a table, two entities of the same kind need not have the same properties. If required, an application can establish such a restriction in its data model.</dd>
 
   <dt id="term_kindless_query">Kindless Query</dt>
   <dd>In a <a href="python/datastore/queries.html#Overview">kindless query</a>, App Engine datastore returns all entites matching query constraints regardless of kind.</dd>
@@ -1462,7 +1499,7 @@ _gaq.push(
   </dd>
 
   <dt id="term_master_slave_datastore">Master/Slave Datastore</dt>
-  <dd>The <a href="python/datastore/hr/index.html#Comparing_the_Data_Storage_Options">master-slave</a> replication system asynchronously replicates data to other data centers as you write it. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime. The master/slave datastore is suitable only for applications that do not require high availability of data, can tolerate spikes in datastore latency, or need to incur the lowest possible serving cost.</dd>
+  <dd>The <a href="python/datastore/hr/index.html#Data_Storage_Options_Compared">master-slave</a> replication system asynchronously replicates data to other data centers as you write it. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime. The master/slave datastore is suitable only for applications that do not require high availability of data, can tolerate spikes in datastore latency, or need to incur the lowest possible serving cost.</dd>
 
   <dt id="term_maximum_pending_latency">Maximum Pending Latency</dt>
   <dd>The maximum length of time a request must wait in the <a href="#term_pending_request_queue">pending request queue</a> before App Engine starts a new <a href="#term_instance">instance</a> to serve it. A higher value means users may wait longer for your application to serve their request; a lower value means users don't have to wait as long, but your application may cost more to run. App Engine can automatically determine the maximum pending latency based on recent request data, or you can <a href="adminconsole/performancesettings.html">adjust this setting manually</a> to trade off latency for cost.</dd>
@@ -1516,7 +1553,7 @@ _gaq.push(
 <dl>
 
   <dt id="term_parent_entity">Parent Entity</dt>
-  <dd>A parent entity is the root of an <a href="python/datastore/entities.html#Entity_Groups_and_Ancestor_Paths">entity group</a>.</dd>
+  <dd>A parent entity is the root of an <a href="python/datastore/entities.html##Transactions_and_Entity_Groups">entity group</a>.</dd>
 
   <dt id="term_partitioning">Partitioning</dt>
   <dd>See <a href="#term_sharding">sharding</a>.</dd>
@@ -1598,6 +1635,10 @@ _gaq.push(
 
 <h2 id="s_start_letter">S</h2>
 <dl>
+
+  <dt id="term_safety_quota">Safety Quota</dt>
+  <dd><a href="quotas.html#Safety_Quotas_and_Billable_Quotas">Safety quotas</a> are resource maximums set by App Engine to ensure the integrity of the system. These resources describe the boundaries of the architecture, and App Engine expects all applications to run within the same limits.</dd>
+
 
   <dt id="term_scheduler">Scheduler</dt>
   <dd>The infrastructure component that determines how many <a href="#term_instance">instances</a> are needed to serve your application's current traffic and to which instance to send a request.</dd>

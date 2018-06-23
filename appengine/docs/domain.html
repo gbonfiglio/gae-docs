@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="python/datastore/propertyclass.html">Property</a></li>
           <li><a href="python/datastore/queryclass.html">Query</a></li>
           <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="python/datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="python/datastore/keyclass.html">Key</a></li>
           <li><a href="python/datastore/functions.html">Functions</a></li>
           <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="python/ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="python/ndb/overview.html">NDB Overview</a></li>
+      <li><a href="python/ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="python/ndb/properties.html">Properties</a></li>
+      <li><a href="python/ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="python/ndb/queries.html">Queries</a></li>
+      <li><a href="python/ndb/transactions.html">Transactions</a></li>
+      <li><a href="python/ndb/admin.html">Administration</a></li>
+      <li><a href="python/ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="python/ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="python/ndb/contextclass.html">Context</a></li>
+          <li><a href="python/ndb/futureclass.html">Future</a></li>
+          <li><a href="python/ndb/keyclass.html">Key</a></li>
+          <li><a href="python/ndb/modelclass.html">Model</a></li>
+          <li><a href="python/ndb/queryclass.html">Query</a></li>
+          <li><a href="python/ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="python/ndb/metadata.html">Metadata</a></li>
+          <li><a href="python/ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="python/googlestorage/overview.html">Overview</a></li>
+<li><a href="python/googlestorage/functions.html">Functions</a></li>
+<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="python/blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="python/blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="python/blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="python/blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="python/blobstore/functions.html">Functions</a></li>
     <li><a href="python/blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="python/googlestorage/overview.html">Overview</a></li>
-<li><a href="python/googlestorage/functions.html">Functions</a></li>
-<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="adminconsole/instances.html">Instances</a></li>
 <li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="adminconsole/experiments.html">Experiments</a></li>
-<li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="../articles/index.html">Articles</a></li>
-      <li><a href="features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="revision_history.html">Revision History</a></li>
@@ -1086,9 +1126,8 @@ _gaq.push(
 
 <h2>Serving Your App on a Custom Domain</h2>
 
-<p>To serve your app on a custom domain, the domain must be set up with Google Apps. You can use an existing domain, or you can register one as part of the Google Apps setup process.</p>
-
-<p>To serve your app on a custom domain, follow these steps.</p>
+<p>To serve your app on a custom domain, you must tell Google Apps to
+   handle requests on that domain. Follow these steps.</p>
 
 <ol>
  <li>
@@ -1104,12 +1143,12 @@ _gaq.push(
 <img src="images/add_domain.png" width=723 height=191 />
 </p>
 
-<p><b>Otherwise</b>, click Sign up for Google Apps and continue with this step.</p> 
+<p><b>Otherwise</b>, click Sign up for Google Apps and continue with this step.</p>
 
 <p>Proceed through the Google Apps signup process, either using an existing domain name or registering a new one. When you have finished the Google Apps process, you'll reach the Google Apps dashboard. Next to the Service Settings heading, click Add More Services. (If you don't see this link, your domain name payment might not be processed yet. Refresh the page periodically until the "Your domain is not yet ready" message goes away.)</p>
 
 <p>Under Google App Engine, enter your app ID in the text box and click Add It Now.</p>
- </li> 
+ </li>
  <li>
 <p>Read and accept the terms of service, then click Activate This Service.</p>
  </li>
@@ -1118,11 +1157,21 @@ _gaq.push(
 </p>
 
  <li>
-<p>Click Add New URL. <b>If you want to serve your app on the <code>www</code> subdomain</b>, skip the rest of this step and continue with step 6 in this list.</p>
+<p>Click Add New URL.
+
+<p><b>If you want to serve your app on the <code>www</code> subdomain</b>, skip the rest of this step and continue with step 6 in this list.</p>
 <p><img src="images/add_new_urls.png" width=733 height=316 /></p>
 <p>To serve your app on a single subdomain, type the subdomain name, such as <code>testapp</code> or <code>mytest.testapp</code>. (Note that your registered domain, such as <code>example.com</code>, and a preceding period are already entered on the page; don't type them.)</p>
 
-<p>To serve your app on all subdomains within a given higher-level subdomain, you can use wildcard subdomain mapping: enter an asterisk in place of the lowest-level name. For example, entering <code>*</code> will cause your app to be served on all subdomains within your registered domain.</p>
+<p>To serve your app on all subdomains within a given higher-level
+   subdomain, you can use wildcard subdomain mapping: enter an
+   asterisk in place of the lowest-level name. For example, entering
+   <code>*</code> will cause your app to be served on all subdomains
+   within your registered domain. A wildcard subdomain allows you to
+   serve different versions and backends
+   of your application from different subdomains, as described
+   in <a href="#wildcard">More About Wildcard Subdomain Mapping</a>.
+</p>
 
 <p>If a page appears containing instructions about changing a CNAME record, follow those instructions. The details of these instructions depend on your DNS provider (typically, this is the same as your domain registrar).</p>
 
@@ -1147,7 +1196,36 @@ _gaq.push(
 
 </ol>
 
-<h2>More About Wildcard Subdomain Mapping</h2>
+<h2 id="wildcard">More About Wildcard Subdomain Mapping</h2>
+
+<p>If you set up a wildcard subdomain mapping for your custom domain, then
+   your application serves requests for any subdomain that matches.
+
+<p>If the user browses a domain that matches an application version name
+   or backend name, the application serves that version.
+   If the user browses a domain that matches a backend name,
+   the application serves that backend. For example,
+   suppose you set up a wildcard subdomain <code>*.wild.example.com</code>.
+   Your application has two versions, the default version and one named
+   <code>beta</code>. Your application has a backend server named
+   <code>be</code> with just one backend instance running.
+
+<ul>
+  <li><code>whatever.wild.example.com</code> serves your application.
+  <li><code>beta.wild.example.com</code> serves the <code>beta</code> version
+      of your application.
+  <li><code>alpha.beta.wild.example.com</code> also serves the
+      <code>beta</code> version of your application.
+  <li><code>be.wild.example.com</code> serves the
+      <code>be</code> backend server.
+  <li><code>0.be.wild.example.com</code> serves the zeroth instance
+      of the <code>be</code> backend server.
+  <li><code>something.0.be.wild.example.com</code> also serves the zeroth
+       instance of the <code>be</code> backend server.
+  <li><code>1.be.wild.example.com</code> serves an error message, but if the
+      <code>be</code> backend was provisioned with more than one instance,
+      then this would serve the first (after zeroth) instance.
+</ul>
 
 <p>You can use wildcards to map subdomains at any level, starting at third-level subdomains. For example, if your domain is <code>example.com</code> and you enter text in the web address field:</p>
 <p>Entering <code>*</code> maps all subdomains of <code>example.com</code> to your app.</p> 

@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="../datastore/propertyclass.html">Property</a></li>
           <li><a href="../datastore/queryclass.html">Query</a></li>
           <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="../datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="../datastore/keyclass.html">Key</a></li>
           <li><a href="../datastore/functions.html">Functions</a></li>
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="blobkeyclass.html">BlobKey</a></li>
-    <li><a href="blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="rpcclass.html">Blobstore RPC</a></li>
     <li><a href="functions.html">Functions</a></li>
     <li><a href="exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1077,15 +1117,45 @@ _gaq.push(
 
 
 
-<p>The <code>google.appengine.ext.blobstore</code> package provides the following functions:</p>
+<p>The <code>google.appengine.ext.blobstore</code> package provides several
+   functions. These functions allow applications to generate upload URLs,
+   delete blobs, and fetch blob data.</p>
 
 <dl class="apireference">
-  <dt id="create_upload_url"><span class="itemname">create_upload_url</span>(<span class="argname">success_path</span>, <span class="argname">max_bytes_per_blob</span>=<span class="argdefault">None</span>, <span class="argname">max_bytes_total</span>=<span class="argdefault">None</span>)</dt>
+<dt><span class="itemname">create_rpc</span>(<span class="argname">deadline</span>=<span class="argdefault">None</span>, <span class="argname">callback</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Creates and returns an <a href="rpcclass.html">RPC object</a>.
+    <p><strong>Arguments</strong></p>
+    <dl>
+      <dt><span class="argname">deadline</span></dt>
+      <dd>
+        <p>The most amount of time to wait for a response from the remote host, as a number of seconds. If the remote host does not respond in this amount of time, an exception is raised when the
+           <code><a href="rpcclass.html#check_success">check_success()</a></code> method or the
+           <code><a href="rpcclass.html#get_result">get_result()</a></code>
+           method of the RPC object is called.</p>
+        <p>If the application attempts to access results before the remote host has responded <em>and</em> before the deadline has elapsed, the call will wait until either of these have occurred, and either return results or raise the exception. If the application request timer expires while the application is waiting, the call is canceled.</p>
+      </dd>
+
+      <dt><span class="argname">callback</span></dt>
+      <dd>
+        <p>A Python function to be called when the service returns results successfully. The function is called without arguments.</p>
+        <p>The callback function is called when the
+           <code><a href="rpcclass.html#wait">wait()</a></code>
+           method of the RPC object is called, either directly by the application or implicitly with a call to
+           <code><a href="rpcclass.html#check_success">check_success()</a></code> or
+           <code><a href="rpcclass.html#get_result">get_result()</a></code>.
+           The function does <em>not</em> get called in a background process or thread; it only gets called when one of these methods is called by the application.</p>
+        <p>The callback function is called even if the request fails or if the RPC deadline elapses.</p>
+      </dd>
+    </dl>
+  </dd>
+
+  <dt id="create_upload_url"><span class="itemname">create_upload_url</span>(<span class="argname">success_path</span>, <span class="argname">max_bytes_per_blob</span>=<span class="argdefault">None</span>, <span class="argname">max_bytes_total</span>=<span class="argdefault">None</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Generate an action URL for a Blobstore upload web form.</p>
-    <p>When the user submits an upload web form, the uploaded data goes directly to the Blobstore.  The Blobstore rewrites the incoming request to remove the uploaded data (the MIME part body) and add the Blobstore key (as a header in the MIME part), then passes the rewritten request to the app handler associated with the URL path given to <span class="itemname">create_upload_url</span>() as <span class="argname">success_path</span>.  The handler at that path can process the rest of the form.</p>
+    <p>When the user submits an upload web form, the uploaded data goes directly to the Blobstore. The Blobstore rewrites the incoming request to remove the uploaded data (the MIME part body) and add the Blobstore key (as a header in the MIME part), then passes the rewritten request to the application handler associated with the URL path given to <span class="itemname">create_upload_url</span>() as <span class="argname">success_path</span>. The handler at that path can process the rest of the form.</p>
     <p>The generated URL will accept a Blobstore upload for up to 10 minutes after it is created. After 10 minutes Blobstore uploads to this URL will be rejected.</p>
-    <p>Arguments:</p>
+    <p><strong>Arguments</strong></p>
     <dl>
       <dt><span class="argname">success_path</span></dt>
       <dd>The URL path of the request handler that will process the upload request, after the file submitted with the form has been uploaded to the Blobstore.</dd>
@@ -1093,41 +1163,129 @@ _gaq.push(
       <dd>The maximum size in bytes that any one blob in the upload can be, or None if there is no maximum blob size. Must be a positive value or None.</dd>
       <dt><span class="argname">max_bytes_total</span></dt>
       <dd>The maximum aggregate size of all of the blobs in the upload, or None if there is no total maximum. Must be a positive value or None.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
     </dl>
     <p>Returns the URL to use as the action of an upload form.</p>
   </dd>
 
-  <dt id="delete"><span class="itemname">delete</span>(<span class="argname">blob_keys</span>)</dt>
+<dt id="create_upload_url_async"><span class="itemname">create_upload_url_async</span>(<span class="argname">success_path</span>, <span class="argname">max_bytes_per_blob</span>=<span class="argdefault">None</span>, <span class="argname">max_bytes_total</span>=<span class="argdefault">None</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+  <p>Asynchronously generate an action URL for a Blobstore upload web form.
+     This function is the asynchronous version of
+     <code><a href="#create_upload_url">create_upload_url()</a></code>.
+  </p>
+
+    <p><strong>Arguments</strong></p>
+    <dl>
+      <dt><span class="argname">success_path</span></dt>
+      <dd>The URL path of the request handler that will process the upload request, after the file submitted with the form has been uploaded to the Blobstore.</dd>
+      <dt><span class="argname">max_bytes_per_blob</span></dt>
+      <dd>The maximum size in bytes that any one blob in the upload can be, or None if there is no maximum blob size. Must be a positive value or None.</dd>
+      <dt><span class="argname">max_bytes_total</span></dt>
+      <dd>The maximum aggregate size of all of the blobs in the upload, or None if there is no total maximum. Must be a positive value or None.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
+    </dl>
+
+    <p>Returns an RPC object.
+       If the <code>rpc</code> argument is specified, this return value is
+       that RPC object.
+       This RPC object's result will be
+       the URL to use as the action of an upload form.</p>
+  </dd>
+
+  <dt id="delete"><span class="itemname">delete</span>(<span class="argname">blob_keys</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Deletes a value or values from the Blobstore, and the corresponding BlobInfo entities from the datastore.</p>
-    <p>Arguments:</p>
+    <p><strong>Arguments</strong></p>
     <dl>
       <dt><span class="argname">blob_keys</span></dt>
-      <dd>A <a href="blobkeyclass.html">BlobKey</a> object or blob key string, or a list of BlobKey objects or blob key strings to delete.</dd>
+      <dd>A <code><a href="blobkeyclass.html">BlobKey</a></code>
+          object or blob key string, or a list of BlobKey objects or blob key strings to delete.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
     </dl>
-    <p>This function does not return a value.  An app can confirm that a value has been deleted by attempting to get its correpsonding BlobInfo entity using the <a href="#get">get()</a> function.</p>
+    <p>This function does not return a value. An application can confirm that a value has been deleted by attempting to get its correpsonding BlobInfo entity using the
+       <code><a href="#get">get()</a></code> function.</p>
+  </dd>
+
+  <dt id="delete_async"><span class="itemname">delete_async</span>(<span class="argname">blob_keys</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Asynchronously deletes a value or values from the Blobstore and the
+       corresponding
+       <code><a href="blobinfoclass.html">BlobInfo</a></code>
+       entities from the datastore.
+       This function is the asynchronous version of
+       <code><a href="#delete">delete()</a></code>.</p>
+
+    <p><strong>Arguments</strong></p>
+    <dl>
+      <dt><span class="argname">blob_keys</span></dt>
+      <dd>A 
+          <code><a href="blobkeyclass.html">BlobKey</a></code> object or blob key string,
+          or a list of <code>BlobKey</code> objects or blob key
+          strings to delete.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
+    </dl>
+
+    <p>This function returns an RPC with result <code>None</code>.
+       If the <code>rpc</code> argument is specified, this return value is
+       that RPC object.</p>
   </dd>
 
   <dt id="get"><span class="itemname">get</span>(<span class="argname">blob_key</span>)</dt>
   <dd>
-    <p>A synonym for <a href="blobinfoclass.html#BlobInfo_get">BlobInfo.get()</a>.</p>
+    <p>A synonym for
+       <code><a href="blobinfoclass.html#BlobInfo_get">BlobInfo.get()</a></code>.</p>
   </dd>
 
   <dt id="parse_blob_info"><span class="itemname">parse_blob_info</span>(<span class="argname">field_storage</span>)</dt>
   <dd>
-    <p>Parses a <code>cgi.FieldStorage</code> object into a <a href="blobinfoclass.html">BlobInfo</a> object.</p>
-    <p>When a Blobstore value is uploaded, the Blobstore creates a <code>BlobInfo</code> entity in the datastore.  It also retains this data in the headers of the request passed to the upload handler.  The upload handler can use <code>parse_blob_info()</code> to access this data from the header instead of making a call to the datastore.</p>
-    <p>Arguments:</p>
+    <p>Parses a <code>cgi.FieldStorage</code> object into a
+       <code><a href="blobinfoclass.html">BlobInfo</a></code> object.</p>
+    <p>When a Blobstore value is uploaded, the Blobstore creates a <code>BlobInfo</code> entity in the datastore. It also retains this data in the headers of the request passed to the upload handler. The upload handler can use <code>parse_blob_info()</code> to access this data from the header instead of making a call to the datastore.</p>
+    <p><strong>Arguments</strong></p>
     <dl>
       <dt><span class="argname">field_storage</span></dt>
       <dd>
-        <p>A <code>FieldStorage</code> object, from the <a href="http://www.python.org/doc/2.5/lib/module-cgi.html">cgi</a> module in the Python standard library.</p>
+        <p>A <code>FieldStorage</code> object, from the
+           <code><a href="http://www.python.org/doc/2.5/lib/module-cgi.html">cgi</a></code> module in the Python standard library.</p>
         <pre class="prettyprint">import cgi
 from google.appengine.ext import blobstore
 
 blob_info = blobstore.parse_blob_info(cgi.FieldStorage()['file'])
 # blob_info.filename...</pre>
-        <p>The argument must be a <code>FieldStorage</code> object that represents a single file upload.  If the user request contains more than one file upload (as multipart MIME data), you can iterate over the <code>FieldStorage</code> to get an inner <code>FieldStorage</code> object for each upload, and pass the inner object to the <code>parse_blob_info()</code> function.  Here's an example that accommodates multiple files in a single form:</p>
+        <p>The argument must be a <code>FieldStorage</code> object that represents a single file upload. If the user request contains more than one file upload (as multipart MIME data), you can iterate over the <code>FieldStorage</code> to get an inner <code>FieldStorage</code> object for each upload, and pass the inner object to the <code>parse_blob_info()</code> function. Here's an example that accommodates multiple files in a single form:</p>
         <pre class="prettyprint">fields = cgi.FieldStorage()
 file_fields = fields['file']  # all fields named "file" assumed to contain file uploads
 if not isinstance(file_fields, list):
@@ -1140,19 +1298,64 @@ for field in file_fields:
     </dl>
   </dd>
 
-  <dt id="fetch_data"><span class="itemname">fetch_data</span>(<span class="argname">blob</span>, <span class="argname">start_index</span>, <span class="argname">end_index</span>)</dt>
+  <dt id="fetch_data"><span class="itemname">fetch_data</span>(<span class="argname">blob</span>, <span class="argname">start_index</span>, <span class="argname">end_index</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
   <dd>
-    <p>Retrieves the portion of a given Blobstore value described by the given byte indexes.</p>
-    <p>The size of the portion (<span class="argname">end_index</span><code> - </code><span class="argname">start_index</span> + 1) must not exceed <code>MAX_BLOB_FETCH_SIZE</code> (about 1 megabyte).  <span class="itemname">fetch_data()</span> allows your app to access data in Blobstore values without exceeding the size limit on API return values.</p>
-    <p>Returns a <code>str</code> containing the requested portion of the Blobstore value.  The return value may contain fewer than <span class="argname">end_index</span><code> - </code><span class="argname">start_index</span> + 1 bytes if either index is larger than the last index of the value.</p>
-    <p>Byte indexes are inclusive, with the first byte having an index of 0.  For example, a <code>start_index</code> of 9 and an <code>end_index</code> of 19 will return up to 11 bytes, starting from the 10th byte (index 9) in the value.</p>
-    <p>If <span class="argname">blob</span> does not refer to an actual Blobstore value, <span class="itemname">fetch_data</span> raises a <code>...api.blobstore.BlobNotFoundError</code>.</p>
+    <p>Retrieves the portion of a given Blobstore value described by the
+       given byte indices.</p>
+    <p>The size of the portion (<span class="argname">end_index</span><code> - </code><span class="argname">start_index</span> + 1) must not exceed <code>MAX_BLOB_FETCH_SIZE</code> (about 1 megabyte). <span class="itemname">fetch_data()</span> allows your application to access data in Blobstore values without exceeding the size limit on API return values.</p>
+    <p>Returns a <code>str</code> containing the requested portion of the Blobstore value. The return value may contain fewer than <span class="argname">end_index</span><code> - </code><span class="argname">start_index</span> + 1 bytes if either index is larger than the last index of the value.</p>
+    <p>Byte indices are inclusive, with the first byte having an index of 0.
+       For example, a <code>start_index</code> of 9 and an
+       <code>end_index</code> of 19 will return up to 11 bytes, starting
+       from the 10th byte (index 9) in the value.</p>
+    <p>If <span class="argname">blob</span> does not refer to an actual Blobstore value, <span class="itemname">fetch_data</span> raises a
+<code><a href="exceptions.html#BlobNotFoundError">BlobNotFoundError</a></code>.</p>
 
-    <p>Arguments:</p>
+    <p><strong>Arguments</strong></p>
     <dl>
       <dt><span class="argname">blob</span></dt>
       <dd>
-        <p>A <a href="blobinfoclass.html">BlobInfo</a> object, a <a href="blobkeyclass.html">BlobKey</a> object, or a <code>str</code> or <code>unicode</code> representation of the blob key for the Blobstore value.</p>
+        <p>A <code><a href="blobinfoclass.html">BlobInfo</a></code> object, a
+           <code><a href="blobkeyclass.html">BlobKey</a></code> object,
+           or a <code>str</code> or <code>unicode</code> representation of the blob key for the Blobstore value.</p>
+      </dd>
+
+      <dt><span class="argname">start_index</span></dt>
+      <dd>
+        <p>The index of the first byte of the portion of the value to fetch. An index of 0 represents the first byte of the value. If <span class="argname">start_index</span> is larger than the last index of the value, <span class="itemname">fetch_data()</span> returns an empty byte string.</p>
+      </dd>
+
+      <dt><span class="argname">end_index</span></dt>
+      <dd>
+        <p>The index of the last byte of the portion of the value to fetch. If <span class="argname">end_index</span> is larger than the last index of the value, all bytes from <span class="argname">start_index</span> to the end of the value are returned.</p>
+      </dd>
+
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
+    </dl>
+
+  </dd>
+<dt id="fetch_data_async"><span class="itemname">fetch_data_async</span>(<span class="argname">blob</span>, <span class="argname">start_index</span>, <span class="argname">end_index</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Asynchronously retrieves the portion of a given Blobstore value
+       described by the given byte indices. This function is the
+       asynchronous version of
+    <code><a href="#fetch_data">fetch_data()</a></code>.</p>
+
+    <p><strong>Arguments</strong></p>
+    <dl>
+      <dt><span class="argname">blob</span></dt>
+      <dd>
+        <p>A <code><a href="blobinfoclass.html">BlobInfo</a></code> object, a
+           <code><a href="blobkeyclass.html">BlobKey</a></code> object,
+           or a <code>str</code> or <code>unicode</code> representation of the blob key for the Blobstore value.</p>
       </dd>
 
       <dt><span class="argname">start_index</span></dt>
@@ -1164,9 +1367,27 @@ for field in file_fields:
       <dd>
         <p>The index of the last byte of the portion of the value to fetch.  If <span class="argname">end_index</span> is larger than the last index of the value, all bytes from <span class="argname">start_index</span> to the end of the value are returned.</p>
       </dd>
+
+      <dt><span class="argname">rpc</span></dt>
+      <dd>
+        <p>An
+           <a href="rpcclass.html">RPC object</a> that controls
+           some settings of this request from the application to the Blobstore
+           service (deadline and optional callback function). If this argument
+           is <code>None</code> (the default), this request uses normal
+           settings.</p>
+      </dd>
     </dl>
 
+    <p>Returns an RPC object.
+       If the <code>rpc</code> argument is specified, this return value is
+       that RPC object.
+       The RPC object's result will be a string containing the requested portion of the Blobstore value. The return value may contain fewer than
+       <code>end_index&nbsp;- start_index&nbsp;+&nbsp;1</code>
+       bytes if either index is larger than the last index of the value.
   </dd>
+</dl>
+
 
 </dl>
 

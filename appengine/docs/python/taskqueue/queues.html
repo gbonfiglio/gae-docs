@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="../datastore/propertyclass.html">Property</a></li>
           <li><a href="../datastore/queryclass.html">Query</a></li>
           <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="../datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="../datastore/keyclass.html">Key</a></li>
           <li><a href="../datastore/functions.html">Functions</a></li>
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="../blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="../blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="../blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="../blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="../blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="../blobstore/functions.html">Functions</a></li>
     <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1097,6 +1137,7 @@ Engine.
       <li><a href="#Queue_add">add()</a></li>
       <li><a href="#Queue_delete_tasks">delete_tasks()</a></li>
       <li><a href="#Queue_lease_tasks">lease_tasks()</a></li>
+      <li><a href="#Queue_lease_tasks_by_tag">lease_tasks_by_tag()</a></li>
       <li><a href="#Queue_modify_task_lease">modify_task_lease()</a></li>
       <li><a href="#Queue_purge">purge()</a></li>
     </ul>
@@ -1236,6 +1277,20 @@ However, a single Task object may only be added to one Queue.
   </dd>
 
 
+  <dt id="Queue_lease_tasks_by_tag"><span class="itemname">lease_tasks_by_tag(<span class="argname">lease_seconds</span>, <span class="argname">max_tasks</span>, <span class="argname">tag</span>=<span class="argdefault">None</span>)</dt>
+    <dd>
+      <p>Leases up to a specified number of tasks from the queue for a specified period of time. If a <code>tag</code> is specified, queries for tasks with that tag. Returns a list of leased tasks.</p>
+      <p class="note"><strong>Note:</strong> Applies only to pull queues. Any non-pull tasks will be converted into pull tasks when being leased by tag.</p>
+      <p>Raises:</p>
+      <dl>
+        <dt><a href="exceptions.html#InvalidLeaseTimeError"><code>InvalidLeaseTimeError</code></a><dt>
+          <dd>if <code>lease_seconds</code> is not a valid float or integer number, or is outside the value range.</dd>
+          <dt><a href="exceptions.html#InvalidMaxTasksError"><code>InvalidMaxTasksError</code></a></dt>
+            <dd>if <code>max_tasks</code> is not a valid integer or is outside the valid range.</dd>
+          <dt><a href="exceptions.html#InvalidQueueModeError"><code>InvalidQueueModeError</code></a> if invoked on a queue that is not a pull queue.</dt>
+    </dd>
+
+
   <dt id="Queue_modify_task_lease"><span class="itemname">modify_task_lease</span>(<span class="argname">lease_seconds</span>, <span class="argname">max_tasks</span>)</dt>
   <dd>
   <p>Modifies the lease of a task in this queue.</p>
@@ -1251,6 +1306,7 @@ However, a single Task object may only be added to one Queue.
         <p>Number of seconds to lease this task, up to one week (604,800 seconds). Must not be negative. Setting <code>lease_seconds</code> to 0 removes the task lease, making the task available for leasing again using <a href="#Queue_lease_tasks">lease_tasks()</a>.</p>
         <p>Raises a TypeError if <code>lease_seconds</code> is not a valid float or integer. Raises an <a href="exceptions.html#InvalidLeaseTimeError">InvalidLeaseTimeError</a> if <code>lease_seconds</code> is outside of the valid range.</p>
       </dd>
+  </dl>
 
   <dt id="Queue_purge"><span class="itemname">purge</span>()</dt>
   <dd>Removes all tasks from this queue. Purging the queue takes about 20 seconds, regardless of the queue size. Tasks continue executing during this time, until the backends recognize that the queue has been purged.</dd>

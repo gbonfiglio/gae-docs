@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -186,7 +199,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +311,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +423,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +558,47 @@ _gaq.push(
           <li><a href="propertyclass.html">Property</a></li>
           <li><a href="queryclass.html">Query</a></li>
           <li><a href="gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="keyclass.html">Key</a></li>
           <li><a href="functions.html">Functions</a></li>
           <li><a href="exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +635,10 @@ _gaq.push(
             <li><a href="../blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="../blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="../blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="../blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="../blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="../blobstore/functions.html">Functions</a></li>
     <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +781,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1075,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1100,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1117,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1079,69 +1132,106 @@ _gaq.push(
 
 
 
+<p>The App Engine Datastore provides robust, scalable storage for your web application, with an emphasis on read and query performance. An application creates <em>entities</em>, with data values stored as <em>properties</em> of an entity. The application can perform <em>queries</em> over entities. All queries are pre-indexed for fast results over very large data sets.</p>
 
+  <ul>
 
+    <li>
+      <a href="#Introducing_the_Datastore">Introducing the Datastore</a>
+    </li>
 
+    <li>
+      <a href="#Introducing_the_Python_Datastore_API">
+        Introducing the Python Datastore API</a>
+    </li>
 
+    <li>
+      <a href="#Entities_Properties_and_Keys">
+        Entities, Properties, and Keys</a>
+      </li>
 
+    <li>
+      <a href="#Queries_and_Indexes">Queries and Indexes</a>
+    </li>
 
+    <li>
+      <a href="#Transactions_and_Entity_Groups">
+        Transactions and Entity Groups</a>
+    </li>
 
-<p>The App Engine datastore provides robust, scalable storage for your web application, with an emphasis on read and query performance. An application creates <i>entities</i>, with data values stored as <i>properties</i> of an entity. The app can perform queries over entities. All queries are pre-indexed for fast results over very large data sets.</p>
+    <li>
+      <a href="#Cross_Group_Transactions">Cross-Group Transactions</a>
+    </li>
 
-<ul>
-  <li><a href="#Introducing_the_Datastore">Introducing the Datastore</a></li>
-<li><a href="#Introducing_the_Python_Datastore">Introducing the Python Datastore</a></li>
+    <li>
+      <a href="#Differences_from_SQL">Differences from SQL</a>
+    </li>
 
-  <li><a href="#Entities_and_Properties">Entities and Properties</a></li>
-  <li><a href="#Queries_and_Indexes">Queries and Indexes</a></li>
-  <li><a href="#Transactions_and_Entity_Groups">Transactions and Entity Groups</a></li>
-  <li><a href="#Cross_Group_Transactions">Cross-Group Transactions</a></li>
-  <li><a href="#Differences_From_SQL">Differences From SQL</a></li>
-  <li><a href="#Understanding_Datastore_Writes">Understanding Datastore Writes: Commit, Apply, and Data Visibility</a></li>
-  <li><a href="#Datastore_Statistics">Datastore Statistics</a></li>
-  <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
-</ul>
+    <li>
+      <a href="#Understanding_Datastore_Writes">
+        Understanding Datastore Writes: Commit, Apply, and Data Visibility</a>
+    </li>
+
+    <li>
+      <a href="#Datastore_Statistics">Datastore Statistics</a>
+    </li>
+
+    <li>
+      <a href="#Quotas_and_Limits">Quotas and Limits</a>
+    </li>
+
+  </ul>
+
 
 
 <h2 id="Introducing_the_Datastore">Introducing the Datastore</h2>
 
-
-<p>App Engine provides two different data storage options differentiated by their availability and consistency guarantees:</p>
-<ul>
-  <li>In the <b>High Replication</b> datastore, data is replicated across data centers using a system based on the <a href="http://research.google.com/pubs/pub33002.html">Paxos algorithm</a>. High Replication provides very high availability for reads and writes (at the cost of higher-latency writes). Most queries are eventually consistent. Storage resources cost the same as in the Master/Slave option. The High Replication datastore is the only datastore type supported by Python 2.7. Only paid applications using the High Replication datastore are covered by the <a href="../../../sla.html">SLA</a>.</li>
-  <li>The <b>Master/Slave</b> datastore uses a master-slave replication system, which asynchronously replicates data as you write it to a physical data center. Since only one data center is the master for writing at any given time, this option offers strong consistency for all reads and queries, at the cost of periods of temporary unavailability during data center issues or planned downtime. Not supported in Python 2.7.</li>
-</ul>
-<p>For more information, please see <a href="hr/index.html">Choosing a Datastore</a>.</p>
-
-
-<p>The App Engine datastore saves data objects, known as <i>entities</i>. An entity has one or more <i>properties</i>, named values of one of several supported data types. For instance, a property can be a string, an integer, or even a reference to another entity.</p>
-
-<p>The datastore can execute multiple operations in a single transaction. By definition, a transaction cannot succeed unless every operation in the transaction succeeds. If any of the operations fail, the transaction is automatically rolled back. This is especially useful for distributed web applications, where multiple users may be accessing or manipulating the same data at the same time.</p>
-
-<p>Unlike traditional databases, the datastore uses a distributed architecture to automatically manage scaling to very large data sets. It is very different from a traditional relational database in how it describes relationships between data objects. Two entities of the same kind can have different properties. Different entities can have properties with the same name, but different value types. While the datastore interface has many of the same features of traditional databases, the datastore's unique characteristics imply a different way of designing and managing data to take advantage of the ability to scale automatically. This documentation explains how to design your application to take the greatest advantage of the datastore's distributed architecture.</p>
+<p>The App Engine Datastore holds data objects known as <em>entities.</em> An entity has one or more <em>properties,</em> named values of one of several supported data types: for instance, a property can be a string, an integer, or even a reference to another entity.
 
 
 
 
-<h2 id="Introducing_the_Python_Datastore">Introducing the Python Datastore API</h2>
 
-<p>In Python, datastore entities are created from Python objects; the object's properties become properties for the entity. To create a new entity, you call the parent entity's base class (if desired), set the object's attributes, then save the object (by calling a method such as <code>put()</code>). The base class becomes the name of the entity's kind. Updating an existing entity requires you to get the entity's object (for example, by using a query), modify its properties, and then save it with the new properties.</p>
+  
 
-<p>Datastore entities are <i>schemaless</i>: Two entities of the same kind need not have the same properties; nor do they need to use the same value types for the same properties. The application is responsible for ensuring that entities conform to a schema when needed. For this purpose, the Python SDK includes a rich library of data modeling features that make enforcing a schema easy.</p>
 
-<p>In the Python API, a model describes a kind of entity, including the types and configuration for its properties. An application defines a model using Python classes, with class attributes describing the properties. Entities of the same kind are represented by instances of the corresponding model class, with instance attributes representing the property values. An entity can be created by calling the constructor of the class, then stored by calling the <code>put()</code> method.</p>
+  
+
+    <p class="note"><strong>Note:</strong> Only the HRD is supported by Python 2.7.</p>
+
+  
+
+
+  
+
+
+<p>Unlike traditional relational databases, the App Engine Datastore uses a distributed architecture to automatically manage scaling to very large data sets. While the Datastore interface has many of the same features as traditional databases, it differs from them in the way it describes relationships between data objects. Entities of the same kind can have different properties, and different entities can have properties with the same name but different value types. These unique characteristics imply a different way of designing and managing data to take advantage of the ability to scale automatically. This documentation explains how to design your application to take the greatest advantage of the Datastore's distributed architecture.</p>
+
+<p>The Datastore can execute multiple operations in a single <em>transaction.</em> By definition, a transaction cannot succeed unless every one of its operations succeeds; if any of the operations fails, the transaction is automatically rolled back. This is especially useful for distributed web applications, where multiple users may be accessing or manipulating the same data at the same time.</p>
+
+
+
+
+
+<h2 id="Introducing_the_Python_Datastore_API">Introducing the Python Datastore API</h2>
+
+<p>In Python, Datastore entities are created from Python objects; the object's attributes become properties for the entity. To create a new entity, you call the parent entity's base class (if desired), set the object's attributes, and then save the object (by calling a method such as <code>put()</code>). The base class becomes the name of the entity's kind. Updating an existing entity requires you to retrieve the entity's object (for example, by using a query), modify its properties, and then save it with the new properties.</p>
+
+<p>In the Python API, a <em>model</em> describes a kind of entity, including the types and configuration for its properties. An application defines a model using Python classes, with class attributes describing the properties. Entities of a given kind are represented by instances of the corresponding model class, with instance attributes representing the property values. An entity can be created with the class constructor method, then stored by calling the <code>put()</code> method:</p>
 
 <pre class="prettyprint">
 import datetime
 from google.appengine.ext import db
 from google.appengine.api import users
 
+
 class Employee(db.Model):
-    name = db.StringProperty(required=True)
-    role = db.StringProperty(required=True, choices=set(["executive", "manager", "producer"]))
-    hire_date = db.DateProperty()
-    new_hire_training_completed = db.BooleanProperty(indexed=False)
-    account = db.UserProperty()
+  name = db.StringProperty(required=True)
+  role = db.StringProperty(required=True, choices=set(["executive", "manager", "producer"]))
+  hire_date = db.DateProperty()
+  new_hire_training_completed = db.BooleanProperty(indexed=False)
+  account = db.UserProperty()
+
 
 e = Employee(name="John",
              role="manager",
@@ -1150,7 +1240,16 @@ e.hire_date = datetime.datetime.now().date()
 e.put()
 </pre>
 
-<p>The datastore API provides two interfaces for queries: a <a href="queryclass.html">query object interface</a>, and a SQL-like query language called <a href="gqlqueryclass.html">GQL</a>. A query returns entities in the form of instances of the model classes that can be modified and put back into the datastore.</p>
+<p>The Datastore API provides two interfaces for queries: a
+
+  <a href="queryclass.html">
+    query object interface</a>
+
+and an SQL-like query language called
+
+  <a href="gqlqueryclass.html">GQL</a>.
+
+A query returns entities in the form of instances of the model classes that can be modified and put back into the Datastore:</p>
 
 <pre class="prettyprint">
 training_registration_list = [users.User("Alfred.Smith@example.com"),
@@ -1159,108 +1258,255 @@ training_registration_list = [users.User("Alfred.Smith@example.com"),
 employees_trained = db.GqlQuery("SELECT * FROM Employee WHERE account IN :1",
                                 training_registration_list)
 for e in employees_trained:
-    e.new_hire_training_completed = True
-    db.put(e)
+  e.new_hire_training_completed = True
+  db.put(e)
 </pre>
 
 
 
 
-<h2 id="Entities_and_Properties">Entities and Properties</h2>
 
-<p>A data object in the App Engine datastore is known as an <i>entity</i>. An entity has one or more <i>properties</i>, named values of one of several data types, including integers, floating point values, strings, dates, binary data, and more.</p>
+<h2 id="Entities_Properties_and_Keys">Entities, Properties, and Keys</h2>
 
-<p>Each entity also has a <i>key</i> that uniquely identifies the entity. The simplest key has a <i>kind</i> and an <i>entity ID</i> provided by the datastore. The kind categorizes the entity so you can query it more easily. The entity ID can also be a string provided by the application.</p>
+<p>Data objects in the App Engine Datastore are known as <em>entities.</em> An entity has one or more named <em>properties</em>, each of which can have one or more values. Property values can belong to
 
-<p>An application can fetch an entity from the datastore by using its key, or by performing a query that matches the entity's properties. A query can return zero or more entities, and can return the results sorted by property values. A query can also limit the number of results returned by the datastore to conserve memory and run time.</p>
+  
 
-<p>Unlike relational databases, the App Engine datastore does not require that all entities of a given kind have the same properties. The application can specify and enforce its data model using libraries included with the SDK, or its own code.</p>
+  
 
-<p>A property can have one or more values. A property with multiple values can have values of mixed types. A query on a property with multiple values tests whether any of the values meets the query criteria. This makes such properties useful for testing for membership.</p>
+including integers, floating-point numbers, strings, dates, binary data, and others. A query on a property with multiple values tests whether any of the values meets the query criteria. This makes such properties useful for membership testing.</p>
+
+<p>Datastore entities are <em>schemaless:</em> unlike traditional relational databases, the App Engine Datastore does not require that all entities of a given kind have the same properties or that all of an entity's values for a given property be of the same data type. If a formal schema is needed, the application itself is responsible for ensuring that entities conform to it; the Python SDK includes a rich library of data modeling features for this purpose.</p>
+
+<p>Each entity has a <em>key</em> that uniquely identifies it. The key consists of the following components:</p>
+
+  <ul>
+
+    <li>A
+      <em><a href="#Kinds_and_Identifiers">kind</a>,</em>
+which categorizes it for the purpose of Datastore queries</li>
+
+    <li>An
+      <em><a href="#Kinds_and_Identifiers">identifier</a>,</em>
+which can be either
+      <ul>
+        <li>a <em>key name</em> string</li>
+        <li>an integer <em>numeric ID</em></li>
+      </ul>
+    </li>
+
+    <li>An optional
+      <em><a href="#Ancestor_Paths">ancestor path</a></em>
+locating the entity within the Datastore hierarchy</li>
+
+  </ul>
+
+
+<h3 id="Kinds_and_Identifiers">Kinds and Identifiers</h2>
+
+<p>Each Datastore entity is of a particular <em>kind,</em> which categorizes the entity for the purpose of queries: for instance, a human resources application might represent each employee at a company with an entity of kind <code>Employee</code>. In addition, each entity has its own <em>identifier,</em> assigned when the entity is created. Because the identifier is part of the entity's key, it is associated permanently with the entity and cannot be changed. It can be assigned in either of two ways:</p>
+
+  <ul>
+    <li>Your application can specify its own identifier string for the entity (called the <em>key name</em>).</li>
+
+    <li>You can have the Datastore automatically assign the entity an integer <em>numeric ID.</em></li>
+  </ul>
+
+
+
+<h3 id="Ancestor_Paths">Ancestor Paths</h2>
+
+<p>Entities in the Datastore form a hierarchically structured space similar to the directory structure of a file system. When you create an entity, you can optionally designate another entity as its <em>parent;</em> the new entity is a <em>child</em> of the parent entity. This association between an entity and its parent is permanent, and cannot be changed once the entity is created. An entity without a parent is a <em>root entity.</em> The Datastore will never assign the same numeric ID to two entities with the same parent, or to two root entities (those without a parent).</p>
+
+<p>An entity's parent, parent's parent, and so on recursively, are its <em>ancestors;</em> its children, children's children, and so on, are its <em>descendants.</em> The sequence of entities beginning with a root entity and proceeding from parent to child, leading to a given entity, constitute that entity's <em>ancestor path.</em> The complete key identifying the entity consists of a sequence of kind-identifier pairs specifying its ancestor path and terminating with those of the entity itself:</p>
+
+<pre>Person:GreatGrandpa / Person:Grandpa / Person:Dad / Person:Me</pre>
+
+<p>For a root entity, the ancestor path is empty and the key consists solely of the entity's own kind and identifier:</p>
+
+<pre>Person:GreatGrandpa</pre>
+
+
 
 <h2 id="Queries_and_Indexes">Queries and Indexes</h2>
 
-<p>An App Engine datastore query operates on every entity of a given kind (a data class). It specifies zero or more filters on entity property values and keys, and zero or more sort orders. If a given entity has at least one (possibly null) value for every property in the filters and sort orders, and all the filter criteria are met by the property values, then that entity is returned as a result.</p>
+<p>In addition to retrieving entities from the Datastore directly by their keys, an application can perform a <em>query</em> to retrieve them by the values of their properties. A query operates on entities of a given kind; it can specify <em>filters</em> on the entities' property values and keys, and can return zero or more entities as <em>results.</em> (To conserve memory and improve performance, the query should, whenever possible, specify a limit on the number of results returned.) A query can also specify <em>sort orders</em> to order the results by their property values. The results include all entities that have at least one value for every property named in the filters and sort orders, and whose property values meet all the specified filter criteria. The query can return either the entire entities or just their keys.</li>
 
-<p>Every datastore query uses an index, a table that contains the results for the query in the desired order. An App Engine application defines its indexes in a configuration file (although indexes for some types of queries are provided automatically). The development web server automatically adds suggestions to this file when it encounters queries that do not yet have indexes configured. You can tune indexes manually by editing the file before uploading the application. As the application changes datastore entities, the datastore updates the indexes with the correct results. When the application executes a query, the datastore fetches the results directly from the corresponding index.</p>
+<p>Every query uses an <em>index,</em> a table containing the query's results in the desired order. Indexes for some types of query are provided automatically; an App Engine application can define additional indexes for itself in a <em>configuration file</em> named <code>index.yaml</code>. The Datastore updates the indexes incrementally to reflect any changes the application makes to its entities. Thus the correct results of all queries are immediately available directly from the indexes, with no further computation needed.</p>
 
-<p>This mechanism supports a wide range of queries and is suitable for most applications. However, it does not support some kinds of queries common in other database technologies. In particular, joins and aggregate queries aren't supported.</p>
+<p>The development web server automatically adds suggestions to the configuration file when it encounters queries that do not yet have indexes configured. You can tune indexes manually by editing the file before uploading the application; see the article
+  <a href="http://code.google.com/appengine/articles/indexselection.html">
+    Index Selection and Advanced Search</a>
+for more information.</p>
+
+<p class="note"><strong>Note:</strong> This mechanism supports a wide range of queries and is suitable for most applications. However, it does not support some kinds of query common in other database technologies: in particular, joins and aggregate queries aren't supported within the query engine.</p>
+
 
 
 <h2 id="Transactions_and_Entity_Groups">Transactions and Entity Groups</h2>
 
-<p>With the App Engine datastore, every attempt to create, update or delete an entity happens in a <i>transaction</i>. A transaction ensures that every change made to the entity is saved to the datastore, or, in the case of failure, none of the changes are made. This ensures consistency of data within an entity.</p>
+<p>Every attempt to create, update, or delete an entity takes place in the context of a
 
-<p>You can perform multiple actions on an entity within a single transaction using the transaction API. For example, say you want to increment a counter field in an object. To do so, you need to read the value of the counter, calculate the new value, then store it. Without a transaction, it is possible for another process to increment the counter between the time you read the value and the time you update the value, causing your app to overwrite the updated value. Doing the read, calculation, and write in a single transaction ensures that no other process interferes with the increment.</p>
+  <em><a href="transactions.html">
+    transaction</a>.</em>
 
-<p>You can make changes to multiple entities within a single transaction using <i>entity groups</i>. You declare that an entity belongs to an entity group when you create the entity. For apps using the Master-Slave datastore, all entities fetched, created, updated, or deleted in a transaction must be in the same entity group. For apps using the High Replication datastore (HRD), the entities in a transaction can either be in a single entity group or they can be in different entity groups. (See <a href="#Cross_Group_Transactions">cross-group transactions</a>).</p>
+A single transaction can include any number of such operations. To maintain the consistency of the data, the transaction ensures that all of the operations it contains are applied to the Datastore as a unit or, if any of the operations fails, that none of them are applied.</p>
 
-<p>Entity groups are defined by a hierarchy of relationships between entities. To create an entity in a group, you declare that the entity is a <i>child</i> of another entity already in the group. The other entity is the <i>parent</i>. An entity created without a parent is a <i>root entity</i>. A root entity without any children exists in an entity group by itself. Each entity has a path of parent-child relationships from a root entity to itself (the shortest path being no parent). This path is an essential part of the entity's complete key. A complete key can be represented by the kind and ID or key name of each entity in the path.</p>
+<p>You can perform multiple actions on an entity within a single transaction. For example, suppose you want to increment a counter field in an object. To do so, you need to read the value of the counter, calculate the new value, and then store it back. Without a transaction, it is possible for another process to increment the counter between the time you read the value and the time you update it, causing your application to overwrite the updated value. Doing the read, calculation, and write in a single transaction ensures that no other process can interfere with the increment.</p>
 
-<p>The datastore uses <i>optimistic concurrency</i> to manage transactions. While one app instance is applying changes to entities in an entity group, all other attempts to update the group, either by updating existing entities or creating new entities, fail on commit. The app can try the transaction again to apply it to the updated data. Note that because the datastore works this way, using entity groups limits the number of concurrent writes you can do on any entity in that group.</p>
+<p>A single transaction can apply to multiple entities, so long as the entities are descended from a common ancestor. Such entities are said to belong to the same <em>entity group.</em> For applications using the Master/Slave Datastore, all entities retrieved, created, updated, or deleted in a transaction must be in the same entity group; in the High Replication Datastore (HRD), the entities in a transaction can belong either to a single entity group or to different entity groups (see
+
+  <a href="#Cross_Group_Transactions">Cross-Group Transactions</a>).
+
+In designing your data model, you should determine which entities you need to be able to process in the same transaction. Then, when you create those entities, place them in the same entity group by declaring them with a common ancestor. This tells App Engine that the entities will be updated together, so it can store them in a way that supports transactions.</p>
+
+<p>The Datastore uses
+
+  <em><a href="http://en.wikipedia.org/wiki/Optimistic_concurrency">
+    optimistic concurrency</a></em>
+
+to manage transactions. When two or more application instances try to change the same entity group at the same time (either by updating existing entities or by creating new ones), the first application to commit its changes will succeed and all others will fail on commit. These other applications can then try their transactions again to apply them to the updated data. Note that because the Datastore works this way, using entity groups limits the number of concurrent writes you can do to any entity in a given group.</p>
+
+
 
 <h2 id="Cross_Group_Transactions">Cross-Group Transactions</h2>
-<p>Applications using High Replication Datastore (HRD) can perform transactions on entities that belong to different entity groups. This feature is called <em>cross-group transactions</em>, or <em>XG</em> transactions for short. XG transactions give you more flexibility in deciding how to divide your data amongst entity groups because you are not forced to put two disparate pieces of data in the same entity group just because you need atomic writes on that data.</p>
 
-<p>XG transactions can be used across a maximum of 5 entity groups. An XG transaction will succeed as long as no concurrent transaction touches any of the entity groups used in the transaction, which is an extension of the behavior users experience with single-group transactions. An XG transaction that only touches a single entity group will behave like a single entity group transaction. With regard to billing and resource usage, operations within an XG transaction have the same performance and cost as the equivalent single-group transactions, but the commit itself will be slower. </p>
+<p>Applications using the HRD can perform transactions on entities belonging to different entity groups. Transactions of this type, called <em>cross-group (XG) transactions,</em> extend the behavior users experience with single-group transactions: an XG transaction will succeed as long as no concurrent transaction touches any of the entity groups to which it applies. This gives you more flexibility in organizing your data, because you aren't forced to put disparate pieces of data under the same ancestor just to perform atomic writes on them.</p>
 
-<p>Similar to single entity group transactions, you cannot perform a non ancestor query in an XG transaction. However you can perform ancestor queries on separate entity groups.</p>
+<p class="note"><strong>Note:</strong> The first read of an entity group in an XG transaction may throw
+
+  
+
+  
+    a
+      <code><a href="exceptions.html#TransactionFailedError">
+        TransactionFailedError</a></code>
+    exception
+  
+
+  
+
+if there is a conflict with other transactions accessing that same entity group. This means that an XG transaction that performs only reads can fail with a concurrency exception.</p>
+
+<p>XG transactions can be used across a maximum of five entity groups. A transaction that touches only a single entity group behaves like a single-group transaction. Operations within such an XG transaction have the same performance and cost as the equivalent single-group transactions with regard to billing and resource usage, but will experience higher latency.</p>
+
+<p>Similarly to single-group transactions, you cannot perform a non-ancestor query in an XG transaction. You can, however, perform ancestor queries on separate entity groups. Nontransactional (non-ancestor) queries may see all, some, or none of the results of a previously committed transaction. (For background on this issue, see
+
+  <a href="#Understanding_Datastore_Writes">
+    Understanding Datastore Writes: Commit, Apply, and Data Visibility</a>.)
+
+However, such nontransactional queries are more likely to see the results of a partially committed XG transaction than those of a partially commited single-group transaction.</p>
 
 
-<p class="note"><strong>Note:</strong> The first read of an entity group in an XG transaction may throw a <a href="exceptions.html#TransactionFailedError">TransactionFailedError</a> exception if there is a conflict with other transactions accessing that entity group. This means that an XG transaction that performs only reads can fail with a concurrency exception.</p>
 
-<p>Non transactional (non ancestor) queries may see all, some, or none of the results of a previously committed transaction. (For background on this issue, see <a href="#Understanding_Datastore_Writes">Understanding Datastore Writes: Commit, Apply, and Data Visibility</a>.) However, such non transactional queries are more likely to see the results of a partially committed XG transaction than the results of a partially commited single-entity group transaction.
-</p>
+<h2 id="Differences_from_SQL">Differences from SQL</h2>
 
-<h2 id="Differences_From_SQL">Differences From SQL</h2>
+<p>The App Engine Datastore differs from a traditional
 
-<p>The App Engine datastore differs from a traditional <a href="http://en.wikipedia.org/wiki/Relational_database">relational database</a> in several important ways.</p>
+  <a href="http://en.wikipedia.org/wiki/Relational_database">
+    relational database</a>
 
-<p>The App Engine datastore is designed to scale, allowing apps to maintain high performance as they receive more traffic. Datastore writes scale by automatically distributing data as necessary. Datastore reads scale because the only supported queries are those whose performance scales with the size of the result set (as opposed to the data set). This means that a query whose result set contains 100 entities performs the same whether it searches over a hundred entities or a million entities. This property is the key reason some types of queries are not supported.</p>
+in several important ways:</p>
 
-<p>Because all queries on App Engine are served by pre-built indexes, the types of queries that can be executed are more restrictive than those allowed on a relational database with SQL. No joins are supported in the datastore. The datastore also does not allow inequality filtering on multiple properties or filtering of data based on results of a sub-query.</p>
+  <ul>
 
-<p>Unlike traditional relational databases, the App Engine datastore doesn't require data kinds to have a consistent property set (although you can choose to enforce this requirement in your application's code). When querying the datastore, it is not currently possible to return only a subset of kind properties. The App Engine datastore can either return entire entities or only entity keys from a query.</p>
+    <li>The App Engine Datastore is designed to scale, allowing applications to maintain high performance as they receive more traffic:
+      <ul>
+        <li>Datastore writes scale by automatically distributing data as necessary.</li>
 
-<p>For more in-depth information on the design of the datastore, read our <a href="../../../articles/datastore/overview.html">Mastering the datastore</a> series of articles.</p>
+        <li>Datastore reads scale because the only supported queries are those whose performance scales with the size of the result set (as opposed to the data set). This means that a query whose result set contains 100 entities performs the same whether it searches over a hundred entities or a million. This property is the key reason some types of query are not supported.</li>
+      </ul>
+    </li>
+
+    <li>Because all queries on App Engine are served by pre-built indexes, the types of query that can be executed are more restrictive than those allowed on a relational database with SQL. The following are not supported:
+      <ul>
+        <li>Join operations</li>
+
+        <li>Inequality filtering on multiple properties</li>
+
+        <li>Filtering of data based on results of a subquery</li>
+      </ul>
+    </li>
+
+    <li>Unlike traditional relational databases, the App Engine Datastore doesn't require entities of the same kind to have a consistent property set (although you can choose to enforce such a requirement in your own application code). It is not currently possible for a query to return only a subset of the result entities' properties.</li>
+
+  </ul>
+
+<p>For more in-depth information about the design of the Datastore, read our series of articles on
+
+  <a href="../../../articles/datastore/overview.html">
+    Mastering the Datastore</a>.</p>
+
+
 
 <h2 id="Understanding_Datastore_Writes">Understanding Datastore Writes: Commit, Apply, and Data Visibility</h2>
 
-<p class="note"><strong>Note:</strong> For a full discussion of this topic, see <a href="http://code.google.com/appengine/articles/life_of_write.html">Life of a Datastore Write</a> and <a href="http://code.google.com/appengine/articles/transaction_isolation.html"> Transaction Isolation in App Engine</a>.</p>
+<p class="note">For a full discussion of this topic, see the articles
+
+  <a href="http://code.google.com/appengine/articles/life_of_write.html">
+    Life of a Datastore Write</a>
+
+and
+
+  <a href="http://code.google.com/appengine/articles/transaction_isolation.html">
+    Transaction Isolation in App Engine</a>.
+</p>
 
 
-<p>For App Engine apps, data is written to the datastore in two phases: Commit and Apply. The Commit phase occurs first; in it, the entity data is recorded in certain logs. The Apply phase occurs after the Commit phase. The Apply phase consists of two actions done in parallel: (a) the entity data is written, and (b) the index rows for the entity are written. (Notice that it can take longer for the index rows to be written than for the entity data to be written.) For apps using Master-Slave datastore (not recommended), the datastore usually returns after everything is written, that is, after the end of the Apply phase. For apps using High Replication Datastore (HRD), the datastore returns after the Commit phase and then the Apply phase is done asynchronously.</p>
+<p>For App Engine applications, data is written to the Datastore in two phases:</p>
 
+  <ol>
 
-<p>If there is a failure during the Commit phase, there are automatic retries, but if failures continue, the datastore returns an error message that your app receives as an exception. If the Commit phase succeeds but the Apply fails, the Apply is rolled forward to completion when one of the following occurs:</p>
+    <li>In the Commit phase, the entity data is recorded in a log.</li>
 
-<ul>
-<li>Periodic datastore "sweeps" check for uncompleted Commit jobs and applies them.</li> 
-<li>The next app read*, write, or transaction that uses the impacted entity group causes the committed but not applied changes to be applied before the read, write, or transaction.</li>
-</ul>
-<p class="note"><strong>Note:</strong> *For HRD, reads that causes an apply are: get or ancestor query. For Master-Slave, reads that cause an apply are: get or ancestor query in a transaction.</p>
+    <li>The Apply phase consists of two actions performed in parallel:
 
-<h3>Data Visibility after Datastore Writes</h3>
-<p>The datastore write behavior described above has an impact on how and when data is visible to your app at different parts of the Commit and Apply phases. Data visibility is usually not an issue for an app using Master-Slave datastore, because the entire transaction is normally completely applied before the datastore returns. However, for apps using HRD the transaction may not be completely applied for a few hundred milliseconds or so after the datastore returns. In this event, data can be visible with updates that are only partially complete. The following list shows how your app might be impacted by this:</p>
+      <ul>
+        <li>The entity data is written.</li>
+        <li>The index rows for the entity are written. (Note that this can take longer than writing the data itself.)</li>
+      </ul>
 
-<ul>
-<li>Subsequent datastore gets, writes, and ancestor queries always reflect the results of the Commit phase because these operations apply any outstanding modifications before executing. This means that a request looking up an updated entity by its key (a get) is guaranteed to see the latest version of that entity, even if the indexes for the entity are not yet completed.</li>
-<li>Queries spanning more than one entity group cannot determine if there are any outstanding modifications before executing and may return stale or partially applied results.</li>
+    </li>
 
-<li>Concurrent requests executing a query whose predicate (the 'where clause' in SQL/GQL) is not satisfied by the pre-update entity&mdash;but is satisfied by the post-update entity&mdash;the entity will only be part of the result set if the query executes after the apply operation has reached the end of the Apply phase, after the indexes are written.</li>
-</ul>
+  </ol>
+
+<p>In the High Replication Datastore (HRD), the write operation returns immediately after the Commit phase and the Apply phase then takes place asynchronously; the Master/Slave Datastore usually doesn't return until the Apply phase is complete (both the data and the indexes have been written).</p>
+
+<p>If a failure occurs during the Commit phase, there are automatic retries; but if failures continue, the Datastore returns an error message that your application receives as an exception. If the Commit phase succeeds but the Apply fails, the Apply is rolled forward to completion when one of the following occurs:</p>
+
+  <ul>
+
+    <li>Periodic Datastore sweeps check for uncompleted Commit jobs and apply them.</li>
+
+    <li>Certain application operations (gets, puts, deletes, and ancestor queries) that use the affected entity group cause any changes that have been committed but not yet applied to be completed before proceeding with the new operation.
+
+      <p class="note"><strong>Note:</strong> In the Master/Slave Datastore, ancestor queries trigger an Apply only when they are included within a transaction.</p>
+
+    </li>
+
+  </ul>
+
+<p>This Datastore write behavior can have several implications for how and when data is visible to your application at different parts of the Commit and Apply phases:</p>
+
+  <ul>
+
+    <li>Because Datastore gets and ancestor queries apply any outstanding modifications before executing, these operations always see a consistent view of all previous successful transactions. This means that a get operation (looking up an updated entity by its key) is guaranteed to see the latest version of that entity.</li>
+
+    <li>In the HRD, as much as a few hundred milliseconds may elapse from the time a write operation returns until the transaction is completely applied. In this case, queries spanning more than one entity group cannot determine whether there are any outstanding modifications before executing and may return stale results. (This is usually not an issue with the Master/Slave Datastore, because the entire transaction is normally completed before the operation returns.)</li>
+
+    <li>The timing of concurrent query requests may affect their results. If an entity initially satisfies a query but is later changed so that it no longer does, the entity may still be included in the query's result set; it will be omitted only if the query executes after the Apply phase of the update has been completed (that is, after the indexes have been written).</li>
+
+  </ul>
+
 
 
 <h2 id="Datastore_Statistics">Datastore Statistics</h2>
 
-<p>The datastore maintains statistics about the data stored for an application, such as how many entities there are of a given kind, or how much space is used by property values of a given type. You can view these statistics in the Administration Console, under Datastore &gt; Statistics.</p>
-
-<p>You can also access these values programmatically within the application by querying for specially named entites using the datastore API. For more information, see <a href="stats.html">Datastore Statistics</a>.</p>
+<p>The Datastore maintains statistics about the data stored for an application, such as how many entities there are of a given kind, or how much space is used by property values of a given type. You can view these statistics in the Administration Console under <strong>Datastore</strong> &gt; <strong>Statistics.</strong></p>
 
 
-<h2 id="Quotas_and_Limits">Quotas</h2>
 
-<p>Each call to the datastore API counts toward the <b>Datastore API Calls</b> limit. Note that some library calls result in multiple calls to the API, and so use more of your resource.</p>
+
 
 <p>Data sent to the datastore by the app counts toward the <b>Data Sent to (Datastore) API</b> limit. Data received by the app from the datastore counts toward the <b>Data Received from (Datastore) API</b> limit.</p>
 
@@ -1291,6 +1537,8 @@ for e in employees_trained:
     </td>
   </tr>
 </table>
+
+
 
 
 

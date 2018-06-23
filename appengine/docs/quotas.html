@@ -187,7 +187,7 @@ _gaq.push(
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -299,6 +299,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -402,7 +411,6 @@ _gaq.push(
 <li><a href="java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -538,11 +546,47 @@ _gaq.push(
           <li><a href="python/datastore/propertyclass.html">Property</a></li>
           <li><a href="python/datastore/queryclass.html">Query</a></li>
           <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="python/datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="python/datastore/keyclass.html">Key</a></li>
           <li><a href="python/datastore/functions.html">Functions</a></li>
           <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="python/ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="python/ndb/overview.html">NDB Overview</a></li>
+      <li><a href="python/ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="python/ndb/properties.html">Properties</a></li>
+      <li><a href="python/ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="python/ndb/queries.html">Queries</a></li>
+      <li><a href="python/ndb/transactions.html">Transactions</a></li>
+      <li><a href="python/ndb/admin.html">Administration</a></li>
+      <li><a href="python/ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="python/ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="python/ndb/contextclass.html">Context</a></li>
+          <li><a href="python/ndb/futureclass.html">Future</a></li>
+          <li><a href="python/ndb/keyclass.html">Key</a></li>
+          <li><a href="python/ndb/modelclass.html">Model</a></li>
+          <li><a href="python/ndb/queryclass.html">Query</a></li>
+          <li><a href="python/ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="python/ndb/metadata.html">Metadata</a></li>
+          <li><a href="python/ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="python/googlestorage/overview.html">Overview</a></li>
+<li><a href="python/googlestorage/functions.html">Functions</a></li>
+<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -579,9 +623,10 @@ _gaq.push(
             <li><a href="python/blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="python/blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="python/blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="python/blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="python/blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="python/blobstore/functions.html">Functions</a></li>
     <li><a href="python/blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -724,16 +769,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="python/googlestorage/overview.html">Overview</a></li>
-<li><a href="python/googlestorage/functions.html">Functions</a></li>
-<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -1028,9 +1063,15 @@ _gaq.push(
           <li><a href="adminconsole/instances.html">Instances</a></li>
 <li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="adminconsole/experiments.html">Experiments</a></li>
-<li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1047,8 +1088,8 @@ _gaq.push(
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="../articles/index.html">Articles</a></li>
-      <li><a href="features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1064,7 +1105,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="revision_history.html">Revision History</a></li>
@@ -1286,10 +1326,13 @@ _gaq.push(
 
 
 
+
+
+
 <p>An App Engine application can consume resources up to certain quotas. With these quotas, App Engine ensures that your application won't exceed your budget, and that other applications running on App Engine won't impact your application's performance.</p>
 
 <ul>
-  <li><a href="#Safety_Quotas_and_Billable_Quotas">Safety Quotas and Billable Quotas</a></li>
+  <li><a href="#Safety_Quotas_and_Billable_Quotas">Safety Limits and Billable Resources</a></li>
   <li><a href="#How_Resources_are_Replenished">How Resources are Replenished</a></li>
   <li><a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a></li>
   <li><a href="#Resources">Resources</a>
@@ -1312,7 +1355,7 @@ _gaq.push(
 
 <p>Safety quotas are set by Google to protect the integrity of the App Engine system. These quotas ensure that no single app can over-consume resources to the detriment of other apps. Billable resource quotas are set by the application administrator in the <strong>Billing Settings</strong> tab of the Administration Console. These quotas allow administrators to manage application performance and cost.</p>
 
-<h3>Safety Limits</h3>
+<h3 ID="Safety_Quotas">Safety Quotas</h3>
 
 <p>Safety quotas include <em>daily quotas</em> and <em>per-minute quotas</em>:</p>
 
@@ -1325,7 +1368,7 @@ _gaq.push(
 
 <p class="note"><b>Tip:</b> For paid apps, the maximum per-minute quotas accommodate very high traffic levels, enough to handle a spike in traffic from your site getting mentioned in news stories. In extreme cases, you can <a href="http://code.google.com/support/bin/request.py?contact_type=AppEngineCPURequest">request an increase in the maximums</a>.</p>
 
-<h3>Billable Resource Limits</h3>
+<h3 id="Billable_Resource_Quotas">Billable Resource Quotas</h3>
 
 <p>Every application gets an amount of each billable resource for free, but application administrators can increase the billable quotas by <a href="billing.html#Enabling_Paid_Apps">enabling paid apps</a> and setting a daily budget. You will be charged for the resources your application actually uses, and for the amount of resources used above the free quota thresholds. Paid applications incur a minimum spend of $2.10/week.</p>
 
@@ -1407,6 +1450,9 @@ except apiproxy_errors.OverQuotaError, message:
   <dt>Channels Created</dt>
   <dd>The number of channels created by the application.</dd>
 
+  <dt>Channel Hours Requested</dt>
+  <dd>The number of hours of channel connect time requested by the application.</dd>
+
   <dt>Channel Data Sent</dt>
   <dd>The amount of data sent over the Channel service. This also counts toward the Outgoing Bandwidth quota.</dd>
 </dl>
@@ -1436,6 +1482,13 @@ except apiproxy_errors.OverQuotaError, message:
     <td>6 creations/minute</td>
     <td>Based on your budget</td>
     <td>60 creations/minute</td>
+  </tr>
+  <tr>
+    <td>Channels Hours Requested</dt>
+    <td>200 hours</td>
+    <td>12 hours requested/minute</td>
+    <td>Based on your budget</td>
+    <td>120 hours requested/minute</td>
   </tr>
   <tr>
     <td>Channel Data Sent</td>
@@ -1506,7 +1559,7 @@ except apiproxy_errors.OverQuotaError, message:
     <th width="35%">Billing Enabled Default Limit</th>
   </tr>
   <tr>
-    <td>Stored Data (<a href="#Billable_Resources">billable</a>)</td>
+    <td>Stored Data (<a href="#Safety_Quotas_and_Billable_Resources">billable</a>)</td>
     <td>1 GB</td>
     <td>1 GB free; no maximum</td>
   </tr>
@@ -1537,7 +1590,7 @@ except apiproxy_errors.OverQuotaError, message:
   <dd>The total number of times the application accessed the mail service to send an email message.</dd>
 
   <dt>Recipients Emailed (billable)</dt>
-  <dd>The total number of recipients to whom the application has sent email messages.</dd>
+  <dd>The total number of recipients to whom the application has sent email messages. Note that the maximum quota for Recipients Emailed stays at free levels until the first charge for your application has cleared.</dd>
 
   <dt>Admins Emailed</dt>
   <dd>The total number of application admins to whom the application has sent email messages.</dd>
@@ -1575,7 +1628,7 @@ except apiproxy_errors.OverQuotaError, message:
     <td>Recipients Emailed (<a href="#Billable_Resources">billable</a>)</td>
     <td>100 recipients</td>
     <td>8 recipients/minute</td>
-    <td>2000 recipients free; 7,400,000 recipients maximum</td>
+    <td>100 recipients until first charge cleared; 100 recipients free and no maximum thereafter</td>
     <td>5,100 recipients/minute</td>
   </tr>
   <tr>
@@ -1797,7 +1850,7 @@ except apiproxy_errors.OverQuotaError, message:
 
   <dt>Invitations Sent</dt>
   <dd>The total number of chat invitations sent by the application.</dd>
-  
+
   <dt>Stanzas Sent</dt>
   <dd>XMPP stanzas sent when the application sends a message, invitation, or presence information.</dd>
 </dl>

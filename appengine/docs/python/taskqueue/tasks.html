@@ -186,7 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
-  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
+  <li><a href="../../glossary.html">Glossary</a></li>
   <li><a href="https://appengine.google.com/">Admin Console</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
@@ -298,6 +298,15 @@ _gaq.push(
 
       </ul>
     </li>
+    <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+      <ul>
+        <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
@@ -401,7 +410,6 @@ _gaq.push(
 <li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
-        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -537,11 +545,47 @@ _gaq.push(
           <li><a href="../datastore/propertyclass.html">Property</a></li>
           <li><a href="../datastore/queryclass.html">Query</a></li>
           <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
-          <li><a href="../datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../datastore/metadataentityclasses.html">Metadata Entities</a></li>
           <li><a href="../datastore/keyclass.html">Key</a></li>
           <li><a href="../datastore/functions.html">Functions</a></li>
           <li><a href="../datastore/exceptions.html">Exceptions</a></li>
         </ul>
+      <li><a href="../ndb/index.html">NDB</a>
+        <ul>
+                <li><a href="../ndb/overview.html">NDB Overview</a></li>
+      <li><a href="../ndb/entities.html">Entities and Keys</a></li>
+      <li><a href="../ndb/properties.html">Properties</a></li>
+      <li><a href="../ndb/subclassprop.html">Writing Property Subclasses</a></li>
+      <li><a href="../ndb/queries.html">Queries</a></li>
+      <li><a href="../ndb/transactions.html">Transactions</a></li>
+      <li><a href="../ndb/admin.html">Administration</a></li>
+      <li><a href="../ndb/async.html">Asynchronous Operation</a></li>
+      <li><a href="../ndb/cache.html">Caching</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../ndb/contextclass.html">Context</a></li>
+          <li><a href="../ndb/futureclass.html">Future</a></li>
+          <li><a href="../ndb/keyclass.html">Key</a></li>
+          <li><a href="../ndb/modelclass.html">Model</a></li>
+          <li><a href="../ndb/queryclass.html">Query</a></li>
+          <li><a href="../ndb/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../ndb/metadata.html">Metadata</a></li>
+          <li><a href="../ndb/functions.html">functions</a></li>
+        </ul>
+      </li>
+
+        </ul>
+      </li>
+      <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+        <ul>
+          <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+        </ul>
+      </li>
       </li>
 
       </ul>
@@ -578,9 +622,10 @@ _gaq.push(
             <li><a href="../blobstore/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><code><a href="../blobstore/blobinfoclass.html">BlobInfo</a></code></li>
+    <li><code><a href="../blobstore/blobkeyclass.html">BlobKey</a></code></li>
+    <li><code><a href="../blobstore/blobreaderclass.html">BlobReader</a></code></li>
+    <li><a href="../blobstore/rpcclass.html">Blobstore RPC</a></li>
     <li><a href="../blobstore/functions.html">Functions</a></li>
     <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
   </ul>
@@ -723,16 +768,6 @@ _gaq.push(
 </li> 
 
           </ul> 
-        </li>
-         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
-          <ul>
-            <li><a href="../googlestorage/overview.html">Overview</a></li>
-<li><a href="../googlestorage/functions.html">Functions</a></li>
-<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
-    </li>
-
-
-          </ul>
         </li>
         <li><a href="index.html">Task Queues</a>
           <ul>
@@ -1027,9 +1062,15 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
-<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
-<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/migration.html">Migrating Applications</a></li>
+<li><a href="../../adminconsole/datastoreconsole.html">Datastore</a>
+<ul>
+<li><a href="../../adminconsole/datastoreadmin.html">Backup/Restore, Copy, and Delete</a></li>
+<li><a href="../../adminconsole/datastorestats.html">Statistics</a></li>
+</ul>
+</li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+<li><a href="../../adminconsole/trafficsplitting.html">Traffic Splitting</a></li>
 
         </ul>
       </li>
@@ -1046,8 +1087,8 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
-      <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
+      <li><a href="../../features.html">Roadmap & Features</a><sup class="new">New!</sup></li>
+      <li><a href="../../videoresources.html">Video Resources</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1063,7 +1104,6 @@ _gaq.push(
 </ul>
 <div class="line"></div>
 <ul>
-  <li><a href="../../roadmap.html">Product Roadmap</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
   <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
@@ -1096,17 +1136,19 @@ _gaq.push(
   <li><a href="#Task">Task()</a></li>
   <li>Properties
     <ul>
-      <li><a href="#Task_on_queue_url">on_queue_url</a></li>
-      <li><a href="#Task_eta_posix">eta_posix</a></li>
       <li><a href="#Task_eta">eta</a></li>
+      <li><a href="#Task_eta_posix">eta_posix</a></li>
       <li><a href="#Task_headers">headers</a></li>
       <li><a href="#Task_method">method</a></li>
       <li><a href="#Task_name">name</a></li>
+      <li><a href="#Task_on_queue_url">on_queue_url</a></li>
       <li><a href="#Task_payload">payload</a></li>
       <li><a href="#Task_size">size</a></li>
-      <li><a href="#Task_url">url</a></li>
-      <li><a href="#Task_retry_options">retry_options</a></li>
       <li><a href="#Task_retry_count">retry_count</a></li>
+      <li><a href="#Task_retry_options">retry_options</a></li>
+      <li><a href="#Task_tag">tag</a></li>
+      <li><a href="#Task_target">target</a></li>
+      <li><a href="#Task_url">url</a></li>
       <li><a href="#Task_was_enqueued">was_enqueued</a></li>
       <li><a href="#Task_was_deleted">was_deleted</a></li>
     </ul>
@@ -1115,6 +1157,7 @@ _gaq.push(
     <ul>
       <li><a href="#Task_add">add</a></li>
       <li><a href="#Task_extract_params">extract_params</a></li>
+      <li><a href="#Task_lease_tasks_by_tag">lease_tasks_by_tag()</a></li>
     </ul>
   </li>
 </ul>
@@ -1243,20 +1286,16 @@ The Task class encapsulates a description of offline work in a <a href="overview
     <th>Task instance property</th>
     <th>Meaning for Push Tasks</th>
     <th>Meaning for Pull Tasks</th>
+
   <tr>
-    <td id="Task_on_queue_url"><p><code>on_queue_url</code></p></td>
-    <td><p>True if this task will run on the queue's default URL; false if not.</p></td>
-    <td><p>Not applicable</p></td>
+    <td id="Task_eta"><p><code>eta</code></p></td>
+    <td><p>A datetime.datetime object which provides the earliest time when this task will execute.</p></td>
+    <td><p>A datetime.datetime object representing the earliest time this task can be leased.</p></td>
   </tr>
   <tr>
     <td id="Task_eta_posix"><p><code>eta_posix</code></p></td>
     <td><p>A <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> timestamp giving an estimate of when this task will execute.</p></td>
     <td><p>A <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> timestamp representing the earliest time this task can be leased.</p></td>
-  </tr>
-  <tr>
-    <td id="Task_eta"><p><code>eta</code></p></td>
-    <td><p>A datetime.datetime object which provides the earliest time when this task will execute.</p></td>
-    <td><p>A datetime.datetime object representing the earliest time this task can be leased.</p></td>
   </tr>
   <tr>
     <td id="Task_headers"><p><code>headers</code></p></td>
@@ -1274,6 +1313,11 @@ The Task class encapsulates a description of offline work in a <a href="overview
     <td><p>The name of this task. Will be <code>None</code> if using auto-assigned task names and this task has not yet been added to a queue.</p></td>
   </tr>
   <tr>
+    <td id="Task_on_queue_url"><p><code>on_queue_url</code></p></td>
+    <td><p>True if this task will run on the queue's default URL; false if not.</p></td>
+    <td><p>Not applicable</p></td>
+  </tr>
+  <tr>
     <td id="Task_payload"><p><code>payload</code></p></td>
     <td><p>The payload which will be used when invoking this task; may be None.</p></td>
     <td><p>The payload which will be used when invoking this task; may be None.</p></td>
@@ -1284,10 +1328,9 @@ The Task class encapsulates a description of offline work in a <a href="overview
     <td><p>Size of this task in bytes.</p></td>
   </tr>
   <tr>
-    <td id="Task_url"><p><code>url</code></p></td>
-    <td><p>The URL handler for this task relative to your application's root directory.</p>
-    </td>
-    <td><p>Pull queues have no url.</p></td>
+    <td id="Task_retry_count"><p><code>retry_count</code></p></td>
+    <td><p>The number of times this task has been retried.</p></td>
+    <td><p>The number of times this task has been leased.</p></td>
   </tr>
   <tr>
     <td id="Task_retry_options"><p><code>retry_options</code></p></td>
@@ -1295,19 +1338,33 @@ The Task class encapsulates a description of offline work in a <a href="overview
     <td><p>May be only the <code>task_retry_limit</code> parameter of the <a href="../config/queue.html#retry_parameters">TaskRetryOptions</a> class, or None.</p></td>
   </tr>
   <tr>
-    <td id="Task_retry_count"><p><code>retry_count</code></p></td>
-    <td><p>The number of times this task has been retried.</p></td>
-    <td><p>The number of times this task has been leased.</p></td>
+    <td id="Task_tag"><p><code>tag</code></p></td>
+    <td><p>None.</p></td>
+    <td><p>The tag for this task. You can enqueue tasks by tag in pull queues using <a href="queues.html#lease_tasks_by_tag"><code>Queue.lease_tasks_by_tag()</code></a>.</p></td>
   </tr>
   <tr>
-    <td id="Task_was_enqueued"><p><code>was_enqueued</code></p></td>
-    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
-    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
+    <td id="task_target"><p><code>target</code></p></td>
+    <td><p>Returns the version of the application to which this task was targeted.</p></td>
+    <td><p>No push-specific details.</p></td>
+    <td><p>No pull-specific details.</p></td>
+  </tr>
+</table>
+  <tr>
+    <td id="Task_url"><p><code>url</code></p></td>
+    <td><p>The URL handler for this task relative to your application's root directory.</p>
+    </td>
+    <td><p>Pull queues have no url.</p></td>
   </tr>
   <tr>
     <td id="Task_was_deleted"><p><code>was_deleted</code></p></td>
     <td><p>True if this task has been successfully deleted.</p></td>
     <td><p>True if this task has been successfully deleted.</p></td>
+  </tr>
+</table>
+  <tr>
+    <td id="Task_was_enqueued"><p><code>was_enqueued</code></p></td>
+    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
+    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
   </tr>
 </table>
 
@@ -1318,8 +1375,7 @@ The Task class encapsulates a description of offline work in a <a href="overview
 <p>A Task instance has the following methods:</p>
 
 <dl class="apireference">
-  <dt id="Task_add"><span class="itemname">add</span>(queue_name<span class="argdefault">='default'</span>,
-                    <span class="argname">transactional</span>=<span class="argdefault">False</span>)</dt>
+  <dt id="Task_add"><span class="itemname">add</span>(queue_name<span class="argdefault">='default'</span>, <span class="argname">transactional</span>=<span class="argdefault">False</span>)</dt>
   <dd>
     <p>
       Adds this task to a queue. The queue is specified by name. A single Task
@@ -1357,7 +1413,6 @@ The Task class encapsulates a description of offline work in a <a href="overview
       </ul>
     </p>
   </dd>
-
 </dl>
 
 
