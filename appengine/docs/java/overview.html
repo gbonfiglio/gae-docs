@@ -78,13 +78,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -202,17 +202,31 @@ var logged_in_user_email = null;
     <li><a href="datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="datastore/overview.html">Overview</a></li>
-    <li><a href="datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="datastore/usingjdo.html">Using JDO</a></li>
-    <li><a href="datastore/dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="datastore/entities.html">Entities</a></li>
+    <li><a href="datastore/queries.html">Queries</a></li>
     <li><a href="datastore/transactions.html">Transactions</a></li>
-    <li><a href="datastore/relationships.html">Relationships</a></li>
+    <li><a href="datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="datastore/hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="datastore/stats.html">Statistics</a></li>
-    <li><a href="datastore/usingjpa.html">Using JPA</a></li>
-    <li><a href="javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="datastore/async.html">Async API</a></li>
+    <li><a href="datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -261,14 +275,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="multitenancy/overview.html">Overview</a></li>
     <li><a href="multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="oauth/index.html">OAuth</a>
           <ul>
@@ -281,7 +295,7 @@ var logged_in_user_email = null;
         <li><a href="taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="taskqueue/overview.html">Overview</a></li>
-     <li><a href="javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -340,7 +354,7 @@ var logged_in_user_email = null;
     <li><a href="tools/ant.html">Using Apache Ant</a></li>
     <li><a href="tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="tools/appstats.html">Appstats</a></li>
@@ -365,31 +379,32 @@ var logged_in_user_email = null;
     <li><a href="../python/runtime.html">CGI Environment</a></li>
     <li><a href="../python/datastore/index.html">Storing Data</a>
       <ul>
-             <li><a href="../python/datastore/overview.html">Overview</a></li>
-     <li><a href="../python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="../python/datastore/entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="../python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="../python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="../python/datastore/queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="../python/datastore/transactions.html">Transactions</a></li>
-     <li><a href="../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="../python/datastore/gqlreference.html">GQL Reference</a></li>
-    <li><a href="../python/datastore/metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="../python/datastore/stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../python/datastore/modelclass.html">Model</a></li>
-         <li><a href="../python/datastore/expandoclass.html">Expando</a></li>
-         <li><a href="../python/datastore/polymodelclass.html">PolyModel</a></li>
-         <li><a href="../python/datastore/propertyclass.html">Property</a></li>
-         <li><a href="../python/datastore/queryclass.html">Query</a></li>
-         <li><a href="../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="../python/datastore/keyclass.html">Key</a></li>
-         <li><a href="../python/datastore/functions.html">Functions</a></li>
-         <li><a href="../python/datastore/exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="../python/datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="../python/datastore/entities.html">Entities</a></li>
+      <li><a href="../python/datastore/queries.html">Queries</a></li>
+      <li><a href="../python/datastore/transactions.html">Transactions</a></li>
+      <li><a href="../python/datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="../python/datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="../python/datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="../python/datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="../python/datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="../python/datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="../python/datastore/modelclass.html">Model</a></li>
+          <li><a href="../python/datastore/expandoclass.html">Expando</a></li>
+          <li><a href="../python/datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../python/datastore/propertyclass.html">Property</a></li>
+          <li><a href="../python/datastore/queryclass.html">Query</a></li>
+          <li><a href="../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="../python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../python/datastore/keyclass.html">Key</a></li>
+          <li><a href="../python/datastore/functions.html">Functions</a></li>
+          <li><a href="../python/datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -615,6 +630,8 @@ var logged_in_user_email = null;
       <li><a href="../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../adminconsole/instances.html">Instances</a></li>
+<li><a href="../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="../quotas.html">Quotas</a></li>
@@ -659,41 +676,41 @@ var logged_in_user_email = null;
 
 
 
-<p>Welcome to Google App Engine for Java!  With App Engine, you can build web applications using standard Java technologies and run them on Google's scalable infrastructure.  The Java environment provides a Java 6 JVM, a Java Servlets interface, and support for standard interfaces to the App Engine scalable datastore and services, such as JDO, JPA, JavaMail, and JCache.  Standards support makes developing your application easy and familiar, and also makes porting your application to and from your own servlet environment straightforward.</p>
+<p>Welcome to Google App Engine for Java!  With App Engine, you can build web applications using standard Java technologies and run them on Google's scalable infrastructure. The Java environment provides a Java 6 JVM, a Java Servlets interface, and support for standard interfaces to the App Engine scalable datastore and services, such as JDO, JPA, JavaMail, and JCache. Standards support makes developing your application easy and familiar, and also makes porting your application to and from your own servlet environment straightforward.</p>
 
-<p>The <a href="tools/eclipse.html">Google Plugin for Eclipse</a> adds new project wizards and debug configurations to your <a href="http://www.eclipse.org/">Eclipse</a> IDE for App Engine projects.  App Engine for Java makes it especially easy to develop and deploy world-class web applications using <a href="http://code.google.com/webtoolkit">Google Web Toolkit</a> (GWT).  The Eclipse plugin comes bundled with the App Engine and GWT SDKs.</p>
+<p>The <a href="tools/eclipse.html">Google Plugin for Eclipse</a> adds new project wizards and debug configurations to your <a href="http://www.eclipse.org/">Eclipse</a> IDE for App Engine projects. App Engine for Java makes it especially easy to develop and deploy world-class web applications using <a href="http://code.google.com/webtoolkit">Google Web Toolkit</a> (GWT). The Eclipse plugin comes bundled with the App Engine and GWT SDKs.</p>
 
-<p>Third-party plugins are available for other Java IDEs as well.  For NetBeans, see <a href="http://kenai.com/projects/nbappengine/pages/Home">NetBeans support for Google App Engine</a>.  For IntelliJ, see <a href="http://plugins.intellij.net/plugin/?id=4254">Google App Engine Integration for IntelliJ</a>.  (These links take you to third-party websites.)</p>
+<p>Third-party plugins are available for other Java IDEs as well. For NetBeans, see <a href="http://kenai.com/projects/nbappengine/pages/Home">NetBeans support for Google App Engine</a>. For IntelliJ, see <a href="http://plugins.intellij.net/plugin/?id=4254">Google App Engine Integration for IntelliJ</a>. (These links take you to third-party websites.)</p>
 
 <p>If you haven't already, see <a href="gettingstarted/index.html">the Java Getting Started Guide</a> for an interactive introduction to developing web applications with Java technologies and Google App Engine.</p>
 
 
 <h3>The Java Runtime Environment</h3>
 
-<p>App Engine runs Java applications using the Java 6 virtual machine (JVM).  The App Engine SDK supports Java 5 and later, and the Java 6 JVM can use classes compiled with any version of the Java compiler up to Java 6.</p>
+<p>App Engine runs Java applications using the Java 6 virtual machine (JVM). The App Engine SDK supports Java 5 and later, and the Java 6 JVM can use classes compiled with any version of the Java compiler up to Java 6.</p>
 
-<p>App Engine uses <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a> for web applications.  You provide your app's servlet classes, JavaServer Pages (JSPs), static files and data files, along with the deployment descriptor (the <code>web.xml</code> file) and other configuration files, in a standard WAR directory structure.  App Engine serves requests by invoking servlets according to the deployment descriptor.</p>
+<p>App Engine uses <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a> for web applications. You provide your app's servlet classes, JavaServer Pages (JSPs), static files and data files, along with the deployment descriptor (the <code>web.xml</code> file) and other configuration files, in a standard WAR directory structure. App Engine serves requests by invoking servlets according to the deployment descriptor.</p>
 
-<p>The JVM runs in a secured "sandbox" environment to isolate your application for service and security.  The sandbox ensures that apps can only perform actions that do not interfere with the performance and scalability of other apps.  For instance, an app cannot spawn threads, write data to the local file system or make arbitrary network connections.  An app also cannot use JNI or other native code.  The JVM can execute any Java bytecode that operates within the sandbox restrictions.</p>
+<p>The JVM runs in a secured "sandbox" environment to isolate your application for service and security. The sandbox ensures that apps can only perform actions that do not interfere with the performance and scalability of other apps. For instance, an app cannot spawn threads, write data to the local file system or make arbitrary network connections. An app also cannot use JNI or other native code. The JVM can execute any Java bytecode that operates within the sandbox restrictions.</p>
 
 <p>See <a href="runtime.html">Servlet Environment</a> for more information.</p>
 
 
 <h3>The Datastore, the Services and the Standard Interfaces</h3>
 
-<p>App Engine provides scalable services that apps can use to store persistent data, access resources over the network, and perform other tasks like manipulating image data.  Where possible, the Java interfaces to these services conform to established standard APIs to allow for porting apps to and from App Engine.  Each service also provides a complete low-level interface for implementing new interface adapters, or for direct access.</p>
+<p>App Engine provides scalable services that apps can use to store persistent data, access resources over the network, and perform other tasks like manipulating image data. You have the choice between <a href="datastore/hr/index.html">two different data storage options</a> differentiated by their availability and consistency guarantees. Where possible, the Java interfaces to these services conform to established standard APIs to allow for porting apps to and from App Engine. Each service also provides a complete low-level interface for implementing new interface adapters, or for direct access.</p>
 
-<p>Apps can use the App Engine <a href="datastore/index.html">Datastore</a> for reliable, scalable persistent storage of data.  The datastore supports 2 standard Java interfaces: <a href="http://java.sun.com/jdo/index.jsp">Java Data Objects</a> (JDO) 2.3 and <a href="http://java.sun.com/developer/technicalArticles/J2EE/jpa/">Java Persistence API</a> (JPA) 1.0.  These interfaces are implemented using <a href="http://www.datanucleus.org/products/accessplatform/">DataNucleus Access Platform</a>, the open source implementation of these standards.</p>
+<p>Apps can use the App Engine datastore for reliable, scalable persistent storage of data. The datastore supports two standard Java interfaces: <a href="http://java.sun.com/jdo/index.jsp">Java Data Objects</a> (JDO) 2.3 and <a href="http://java.sun.com/developer/technicalArticles/J2EE/jpa/">Java Persistence API</a> (JPA) 1.0. These interfaces are implemented using <a href="http://www.datanucleus.org/products/accessplatform/">DataNucleus Access Platform</a>, the open source implementation of these standards.</p>
 
-<p>The App Engine <a href="memcache/index.html">Memcache</a> provides fast, transient distributed storage for caching the results of datastore queries and calculations.  The Java interface implements <a href="http://jcp.org/en/jsr/detail?id=107">JCache</a> (JSR 107).</p>
+<p>The App Engine <a href="memcache/index.html">Memcache</a> provides fast, transient distributed storage for caching the results of datastore queries and calculations. The Java interface implements <a href="http://jcp.org/en/jsr/detail?id=107">JCache</a> (JSR 107).</p>
 
-<p>Apps use the <a href="urlfetch/index.html">URL Fetch</a> service to access resources over the web, and to communicate with other hosts using the HTTP and HTTPS protocols.  Java apps can simply use <a href="http://java.sun.com/javase/6/docs/api/java/net/URLConnection.html">java.net.URLConnection</a> and related classes from the Java standard library to access this service.</p>
+<p>Apps use the <a href="urlfetch/index.html">URL Fetch</a> service to access resources over the web, and to communicate with other hosts using the HTTP and HTTPS protocols. Java apps can simply use <a href="http://java.sun.com/javase/6/docs/api/java/net/URLConnection.html">java.net.URLConnection</a> and related classes from the Java standard library to access this service.</p>
 
-<p>An app can use the <a href="mail/index.html">Mail</a> service to send email messages on behalf of the application's administrators, or on behalf of the currently signed in user.  Java apps use the <a href="http://java.sun.com/products/javamail/">JavaMail</a> interface for sending email messages.</p>
+<p>An app can use the <a href="mail/index.html">Mail</a> service to send email messages on behalf of the application's administrators, or on behalf of the currently signed in user. Java apps use the <a href="http://java.sun.com/products/javamail/">JavaMail</a> interface for sending email messages.</p>
 
-<p>The <a href="images/index.html">Images</a> service lets applications transform and manipulate image data in several formats, including cropping, rotating, resizing, and photo color enhancement.  The service can handle CPU-intensive image processing tasks, leaving more resources available for the application server to handle web requests.  (You can also use any JVM-based image processing software on the application server, provided it operates within the sandbox restrictions.)</p>
+<p>The <a href="images/index.html">Images</a> service lets applications transform and manipulate image data in several formats, including cropping, rotating, resizing, and photo color enhancement. The service can handle CPU-intensive image processing tasks, leaving more resources available for the application server to handle web requests. (You can also use any JVM-based image processing software on the application server, provided it operates within the sandbox restrictions.)</p>
 
-<p>An application can use <a href="users/index.html">Google Accounts</a> for user authentication.  Google Accounts handles user account creation and sign-in, and a user that already has a Google account (such as a GMail account) can use that account with your app.  An app can detect when the current user is signed in, and can access the user's email address.  Java applications can use security constraints in the deployment descriptor to control access via Google Accounts, and can detect whether the user is signed in and get the email address using the <code>getUserPrincipal()</code> method on the servlet request object.  An app can use the low-level Google Accounts API to generate sign-in and sign-out URLs, and to get a user data object suitable for storage in the datastore.</p>
+<p>An application can use <a href="users/index.html">Google Accounts</a> for user authentication. Google Accounts handles user account creation and sign-in, and a user that already has a Google account (such as a GMail account) can use that account with your app. An app can detect when the current user is signed in, and can access the user's email address. Java applications can use security constraints in the deployment descriptor to control access via Google Accounts, and can detect whether the user is signed in and get the email address using the <code>getUserPrincipal()</code> method on the servlet request object. An app can use the low-level Google Accounts API to generate sign-in and sign-out URLs, and to get a user data object suitable for storage in the datastore.</p>
 
 <h3>Scheduled Tasks</h3>
  
@@ -701,11 +718,11 @@ var logged_in_user_email = null;
 
 <h3>Java Tools</h3>
 
-<p>The App Engine Java SDK includes tools for testing your application, uploading your application files, and downloading log data.  The SDK also includes a component for <a href="tools/ant.html">Apache Ant</a> to simplify tasks common to App Engine projects.  The <a href="tools/eclipse.html">Google Plugin for Eclipse</a> adds features to the Eclipse IDE for App Engine development, testing and deployment, and includes the complete App Engine SDK.  The Eclipse plugin also makes it easy to develop <a href="http://code.google.com/webtoolkit">Google Web Toolkit</a> applications and run them on App Engine.</p>
+<p>The App Engine Java SDK includes tools for testing your application, uploading your application files, and downloading log data. The SDK also includes a component for <a href="tools/ant.html">Apache Ant</a> to simplify tasks common to App Engine projects. The <a href="tools/eclipse.html">Google Plugin for Eclipse</a> adds features to the Eclipse IDE for App Engine development, testing and deployment, and includes the complete App Engine SDK. The Eclipse plugin also makes it easy to develop <a href="http://code.google.com/webtoolkit">Google Web Toolkit</a> applications and run them on App Engine.</p>
 
-<p>The <a href="tools/devserver.html">development server</a> runs your application on your local computer for development and testing.  The server simulates the App Engine datastore, services and sandbox restrictions.  The development server can also generate configuration for datastore indexes based on the queries the app performs during testing.</p>
+<p>The <a href="tools/devserver.html">development server</a> runs your application on your local computer for development and testing. The server simulates the App Engine datastore, services and sandbox restrictions. The development server can also generate configuration for datastore indexes based on the queries the app performs during testing.</p>
 
-<p>A multipurpose tool called <a href="tools/uploadinganapp.html">AppCfg</a> handles all command-line interaction with your application running on App Engine.  AppCfg can upload your application to App Engine, or just update the datastore index configuration so you can build new indexes before updating the code.  It can also download the app's log data, so you can analyze your app's performance using your own tools.</p>
+<p>A multipurpose tool called <a href="tools/uploadinganapp.html">AppCfg</a> handles all command-line interaction with your application running on App Engine. AppCfg can upload your application to App Engine, or just update the datastore index configuration so you can build new indexes before updating the code. It can also download the app's log data, so you can analyze your app's performance using your own tools.</p>
 
 
 
@@ -743,7 +760,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -

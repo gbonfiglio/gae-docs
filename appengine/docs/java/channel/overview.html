@@ -79,13 +79,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -203,17 +203,31 @@ var logged_in_user_email = null;
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../datastore/overview.html">Overview</a></li>
-    <li><a href="../datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="../datastore/usingjdo.html">Using JDO</a></li>
-    <li><a href="../datastore/dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="../datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="../datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../datastore/entities.html">Entities</a></li>
+    <li><a href="../datastore/queries.html">Queries</a></li>
     <li><a href="../datastore/transactions.html">Transactions</a></li>
-    <li><a href="../datastore/relationships.html">Relationships</a></li>
+    <li><a href="../datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="../datastore/hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../datastore/stats.html">Statistics</a></li>
-    <li><a href="../datastore/usingjpa.html">Using JPA</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="../datastore/async.html">Async API</a></li>
+    <li><a href="../datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="../datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="../datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="../datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="../datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="../datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="../datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -262,14 +276,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="../oauth/index.html">OAuth</a>
           <ul>
@@ -282,7 +296,7 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
-     <li><a href="../javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="../javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -341,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="../tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
@@ -366,31 +380,32 @@ var logged_in_user_email = null;
     <li><a href="../../python/runtime.html">CGI Environment</a></li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
-             <li><a href="../../python/datastore/overview.html">Overview</a></li>
-     <li><a href="../../python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="../../python/datastore/entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="../../python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="../../python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="../../python/datastore/queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
-     <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
-    <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="../../python/datastore/stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../../python/datastore/modelclass.html">Model</a></li>
-         <li><a href="../../python/datastore/expandoclass.html">Expando</a></li>
-         <li><a href="../../python/datastore/polymodelclass.html">PolyModel</a></li>
-         <li><a href="../../python/datastore/propertyclass.html">Property</a></li>
-         <li><a href="../../python/datastore/queryclass.html">Query</a></li>
-         <li><a href="../../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="../../python/datastore/keyclass.html">Key</a></li>
-         <li><a href="../../python/datastore/functions.html">Functions</a></li>
-         <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="../../python/datastore/entities.html">Entities</a></li>
+      <li><a href="../../python/datastore/queries.html">Queries</a></li>
+      <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
+      <li><a href="../../python/datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="../../python/datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="../../python/datastore/modelclass.html">Model</a></li>
+          <li><a href="../../python/datastore/expandoclass.html">Expando</a></li>
+          <li><a href="../../python/datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../../python/datastore/propertyclass.html">Property</a></li>
+          <li><a href="../../python/datastore/queryclass.html">Query</a></li>
+          <li><a href="../../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="../../python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../../python/datastore/keyclass.html">Key</a></li>
+          <li><a href="../../python/datastore/functions.html">Functions</a></li>
+          <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -616,6 +631,8 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -757,7 +774,7 @@ var logged_in_user_email = null;
 
 <p>To better illustrate how to use Channel API, take a look at the following example Tic Tac Toe game application written in Java. The game allows users to create a game, invite another player by sending out a URL, and play the game together in real time. The application updates both players' views of the board in real time as soon as the other player makes a move.</p>
 
-<p>The full source code of the application is available at the <a href="http://code.google.com/p/java-channel-tac-toe">Java Channel Tac Toe Project page</a>. We'll go over major highlights that illustrate Channel API below.</p>
+<p>The full source code of the application is available at the <a href="http://code.google.com/p/java-channel-tic-tac-toe">Java Channel Tac Toe Project page</a>. We'll go over major highlights that illustrate Channel API below.</p>
 
 <h3>Creating and Connecting to a Channel</h3>
 
@@ -958,7 +975,7 @@ clients.)</p>
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -

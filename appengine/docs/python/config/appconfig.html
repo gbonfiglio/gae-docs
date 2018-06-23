@@ -89,13 +89,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -213,17 +213,31 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
-    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
-    <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../../java/datastore/entities.html">Entities</a></li>
+    <li><a href="../../java/datastore/queries.html">Queries</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
-    <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="../../java/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
-    <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="../../java/datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="../../java/datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -272,14 +286,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -292,7 +306,7 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -351,7 +365,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="../../java/tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
@@ -376,31 +390,32 @@ var logged_in_user_email = null;
     <li><a href="../runtime.html">CGI Environment</a></li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
-             <li><a href="../datastore/overview.html">Overview</a></li>
-     <li><a href="../datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="../datastore/entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="../datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="../datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="../datastore/queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="../datastore/transactions.html">Transactions</a></li>
-     <li><a href="../datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="../datastore/gqlreference.html">GQL Reference</a></li>
-    <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="../datastore/stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../datastore/modelclass.html">Model</a></li>
-         <li><a href="../datastore/expandoclass.html">Expando</a></li>
-         <li><a href="../datastore/polymodelclass.html">PolyModel</a></li>
-         <li><a href="../datastore/propertyclass.html">Property</a></li>
-         <li><a href="../datastore/queryclass.html">Query</a></li>
-         <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="../datastore/keyclass.html">Key</a></li>
-         <li><a href="../datastore/functions.html">Functions</a></li>
-         <li><a href="../datastore/exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="../datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="../datastore/entities.html">Entities</a></li>
+      <li><a href="../datastore/queries.html">Queries</a></li>
+      <li><a href="../datastore/transactions.html">Transactions</a></li>
+      <li><a href="../datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="../datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="../datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="../datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="../datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="../datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="../datastore/modelclass.html">Model</a></li>
+          <li><a href="../datastore/expandoclass.html">Expando</a></li>
+          <li><a href="../datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../datastore/propertyclass.html">Property</a></li>
+          <li><a href="../datastore/queryclass.html">Query</a></li>
+          <li><a href="../datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="../datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../datastore/keyclass.html">Key</a></li>
+          <li><a href="../datastore/functions.html">Functions</a></li>
+          <li><a href="../datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -626,6 +641,8 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -984,7 +1001,7 @@ builtins:
 <ul>
   <li><code>admin_redirect</code> &ndash; Redirects calls to <code>/_ah/admin</code> from the development console of the development web server to the Admin Console dashboard page.</li>
   <li><code>appstats</code> &ndash; Enables <a href="../tools/appstats.html">Appstats</a> at <code>/_ah/stats/</code>, which you can use to measure your application's performance. In order to use App Stats, you also need to <a href="../tools/appstats.html#Installing_the_Event_Recorder">Install the Event Recorder</a>.</li>
-  <li><code>datastore_admin</code> &ndash; Enables <a href="../datastore/creatinggettinganddeletingdata.html#Deleting_Entities_in_Mass">datastore admin</a> at <code>/_ah/datastore_admin/</code>. This builtin enables the Datastore Admin page in the Admin Console, where you can delete all entities of a given kind, or of all kinds, in the default namespace. </li>
+  <li><code>datastore_admin</code> &ndash; Enables <a href="../../adminconsole/datastoreadmin.html">datastore admin</a> at <code>/_ah/datastore_admin/</code>. This builtin enables the Datastore Admin page in the Admin Console, where you can delete all entities of a given kind, or of all kinds, in the default namespace. </li>
   <li><code>remote_api</code> &ndash; enables the <a href="../tools/uploadingdata.html#Setting_Up_remote_api">remote_api</a> handler at <code>/_ah/remote_api/</code>.</li>
 </ul>
 
@@ -1010,7 +1027,7 @@ includes:
   <li><a href="#Administration_Console_Custom_Pages">admin_console</a></li>
 </ul>
 
-<p>The <a href="#builtin_handlers">builtins</a> directive is a special instance of the <code>includes</code> directive. Each <code>builtin</code> directive is equivalent, in Python, to an <code>includes</code> directive with an expanded path. For example:</p>
+<p>The <a href="#Builtin_Handlers">builtins</a> directive is a special instance of the <code>includes</code> directive. Each <code>builtin</code> directive is equivalent, in Python, to an <code>includes</code> directive with an expanded path. For example:</p>
 
 <pre>
 builtins:
@@ -1297,7 +1314,7 @@ error_handlers:
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -

@@ -78,13 +78,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -202,17 +202,31 @@ var logged_in_user_email = null;
     <li><a href="java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="java/datastore/overview.html">Overview</a></li>
-    <li><a href="java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="java/datastore/usingjdo.html">Using JDO</a></li>
-    <li><a href="java/datastore/dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="java/datastore/entities.html">Entities</a></li>
+    <li><a href="java/datastore/queries.html">Queries</a></li>
     <li><a href="java/datastore/transactions.html">Transactions</a></li>
-    <li><a href="java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="java/datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="java/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="java/datastore/stats.html">Statistics</a></li>
-    <li><a href="java/datastore/usingjpa.html">Using JPA</a></li>
-    <li><a href="java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="java/datastore/async.html">Async API</a></li>
+    <li><a href="java/datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="java/datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="java/datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="java/datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="java/datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="java/datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="java/datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="java/datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -261,14 +275,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="java/multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="java/multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="java/multitenancy/overview.html">Overview</a></li>
     <li><a href="java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="java/oauth/index.html">OAuth</a>
           <ul>
@@ -281,7 +295,7 @@ var logged_in_user_email = null;
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -340,7 +354,7 @@ var logged_in_user_email = null;
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="java/tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="java/tools/appstats.html">Appstats</a></li>
@@ -365,31 +379,32 @@ var logged_in_user_email = null;
     <li><a href="python/runtime.html">CGI Environment</a></li>
     <li><a href="python/datastore/index.html">Storing Data</a>
       <ul>
-             <li><a href="python/datastore/overview.html">Overview</a></li>
-     <li><a href="python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="python/datastore/entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="python/datastore/queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="python/datastore/transactions.html">Transactions</a></li>
-     <li><a href="python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="python/datastore/gqlreference.html">GQL Reference</a></li>
-    <li><a href="python/datastore/metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="python/datastore/stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="python/datastore/modelclass.html">Model</a></li>
-         <li><a href="python/datastore/expandoclass.html">Expando</a></li>
-         <li><a href="python/datastore/polymodelclass.html">PolyModel</a></li>
-         <li><a href="python/datastore/propertyclass.html">Property</a></li>
-         <li><a href="python/datastore/queryclass.html">Query</a></li>
-         <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="python/datastore/keyclass.html">Key</a></li>
-         <li><a href="python/datastore/functions.html">Functions</a></li>
-         <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="python/datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="python/datastore/entities.html">Entities</a></li>
+      <li><a href="python/datastore/queries.html">Queries</a></li>
+      <li><a href="python/datastore/transactions.html">Transactions</a></li>
+      <li><a href="python/datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="python/datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="python/datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="python/datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="python/datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="python/datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="python/datastore/modelclass.html">Model</a></li>
+          <li><a href="python/datastore/expandoclass.html">Expando</a></li>
+          <li><a href="python/datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="python/datastore/propertyclass.html">Property</a></li>
+          <li><a href="python/datastore/queryclass.html">Query</a></li>
+          <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="python/datastore/keyclass.html">Key</a></li>
+          <li><a href="python/datastore/functions.html">Functions</a></li>
+          <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -615,6 +630,8 @@ var logged_in_user_email = null;
       <li><a href="adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="adminconsole/instances.html">Instances</a></li>
+<li><a href="adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="quotas.html">Quotas</a></li>
@@ -659,20 +676,20 @@ var logged_in_user_email = null;
 
 
 
-<p>Google App Engine lets you run your web applications on Google's infrastructure.  App Engine applications are easy to build, easy to maintain, and easy to scale as your traffic and data storage needs grow.  With App Engine, there are no servers to maintain: You just upload your application, and it's ready to serve your users.</p>
+<p>Google App Engine lets you run your web applications on Google's infrastructure. App Engine applications are easy to build, easy to maintain, and easy to scale as your traffic and data storage needs grow. With App Engine, there are no servers to maintain: You just upload your application, and it's ready to serve your users.</p>
 
-<p>You can serve your app from your own domain name (such as <code>http://www.example.com/</code>) using <a href="http://www.google.com/a/">Google Apps</a>.  Or, you can serve your app using a free name on the <code>appspot.com</code> domain.  You can share your application with the world, or limit access to members of your organization.</p>
+<p>You can serve your app from your own domain name (such as <code>http://www.example.com/</code>) using <a href="http://www.google.com/a/">Google Apps</a>. Or, you can serve your app using a free name on the <code>appspot.com</code> domain. You can share your application with the world, or limit access to members of your organization.</p>
 
-<p>Google App Engine supports apps written in several programming languages.  With App Engine's Java runtime environment, you can build your app using standard Java technologies, including the JVM, Java servlets, and the Java programming language&mdash;or any other language using a JVM-based interpreter or compiler, such as JavaScript or Ruby.  App Engine also features a dedicated Python runtime environment, which includes a fast Python interpreter and the Python standard library.  The Java and Python runtime environments are built to ensure that your application runs quickly, securely, and without interference from other apps on the system.</p>
+<p>Google App Engine supports apps written in several programming languages. With App Engine's Java runtime environment, you can build your app using standard Java technologies, including the JVM, Java servlets, and the Java programming language&mdash;or any other language using a JVM-based interpreter or compiler, such as JavaScript or Ruby. App Engine also features a dedicated Python runtime environment, which includes a fast Python interpreter and the Python standard library. The Java and Python runtime environments are built to ensure that your application runs quickly, securely, and without interference from other apps on the system.</p>
 
-<p>With App Engine, you only pay for what you use.  There are no set-up costs and no recurring fees.  The resources your application uses, such as storage and bandwidth, are measured by the gigabyte, and billed at competitive rates.  You control the maximum amounts of resources your app can consume, so it always stays within your budget.</p>
+<p>With App Engine, you only pay for what you use. There are no set-up costs and no recurring fees. The resources your application uses, such as storage and bandwidth, are measured by the gigabyte, and billed at competitive rates. You control the maximum amounts of resources your app can consume, so it always stays within your budget.</p>
 
-<p>App Engine costs nothing to get started.  All applications can use up to 500 MB of storage and enough CPU and bandwidth to support an efficient app serving around 5 million page views a month, absolutely free.  When you enable billing for your application, your free limits are raised, and you only pay for resources you use above the free levels.</p>
+<p>App Engine costs nothing to get started. All applications can use up to 500 MB of storage and enough CPU and bandwidth to support an efficient app serving around 5 million page views a month, absolutely free. When you enable billing for your application, your free limits are raised, and you only pay for resources you use above the free levels.</p>
 
 
 <h2 id="The_Application_Environment">The Application Environment</h2>
 
-<p>Google App Engine makes it easy to build an application that runs reliably, even under heavy load and with large amounts of data.  App Engine includes the following features:</p>
+<p>Google App Engine makes it easy to build an application that runs reliably, even under heavy load and with large amounts of data. App Engine includes the following features:</p>
 
 <ul>
   <li>dynamic web serving, with full support for common web technologies</li>
@@ -684,49 +701,49 @@ var logged_in_user_email = null;
   <li>scheduled tasks for triggering events at specified times and regular intervals</li>
 </ul>
 
-<p>Your application can run in one of two runtime environments: the <a href="http://java.sun.com/">Java</a> environment, and the <a href="http://www.python.org/">Python</a> environment.  Each environment provides standard protocols and common technologies for web application development.</p>
+<p>Your application can run in one of two runtime environments: the <a href="http://java.sun.com/">Java</a> environment, and the <a href="http://www.python.org/">Python</a> environment. Each environment provides standard protocols and common technologies for web application development.</p>
 
 
 
 <h3>The Sandbox</h3>
 
-<p>Applications run in a secure environment that provides limited access to the underlying operating system.  These limitations allow App Engine to distribute web requests for the application across multiple servers, and start and stop servers to meet traffic demands.  The sandbox isolates your application in its own secure, reliable environment that is independent of the hardware, operating system and physical location of the web server.</p>  
+<p>Applications run in a secure environment that provides limited access to the underlying operating system. These limitations allow App Engine to distribute web requests for the application across multiple servers, and start and stop servers to meet traffic demands. The sandbox isolates your application in its own secure, reliable environment that is independent of the hardware, operating system and physical location of the web server.</p>  
 
 <p>Examples of the limitations of the secure sandbox environment include:<p>
 
 <ul>
-  <li>An application can only access other computers on the Internet through the provided URL fetch and email services.  Other computers can only connect to the application by making HTTP (or HTTPS) requests on the standard ports.</li>
-  <li>An application cannot write to the file system.  An app can read files, but only files uploaded with the application code.  The app must use the App Engine datastore, memcache or other services for all data that persists between requests.</li>
-  <li>Application code only runs in response to a web request, a queued task, or a scheduled task, and must return response data within 30 seconds in any case.  A request handler cannot spawn a sub-process or execute code after the response has been sent.</li>
+  <li>An application can only access other computers on the Internet through the provided URL fetch and email services. Other computers can only connect to the application by making HTTP (or HTTPS) requests on the standard ports.</li>
+  <li>An application cannot write to the file system. An app can read files, but only files uploaded with the application code. The app must use the App Engine datastore, memcache or other services for all data that persists between requests.</li>
+  <li>Application code only runs in response to a web request, a queued task, or a scheduled task, and must return response data within 30 seconds in any case. A request handler cannot spawn a sub-process or execute code after the response has been sent.</li>
 </ul>
 
 
 <h3>The Java Runtime Environment</h3>
 
-<p>You can develop your application for the Java runtime environment using common Java web development tools and API standards.  Your app interacts with the environment using <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a>, and can use common web application technologies such as <a href="http://java.sun.com/products/jsp/">JavaServer Pages</a> (JSPs).</p>
+<p>You can develop your application for the Java runtime environment using common Java web development tools and API standards. Your app interacts with the environment using <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a>, and can use common web application technologies such as <a href="http://java.sun.com/products/jsp/">JavaServer Pages</a> (JSPs).</p>
 
-<p>The Java runtime environment uses Java 6.  The App Engine Java SDK supports developing apps using either Java 5 or 6.</p>
+<p>The Java runtime environment uses Java 6. The App Engine Java SDK supports developing apps using either Java 5 or 6.</p>
 
-<p>The environment includes the <a href="http://java.sun.com/javase/technologies/index.jsp">Java SE Runtime Environment (JRE) 6 platform</a> and libraries.  The restrictions of the sandbox environment are implemented in the JVM.  An app can use any JVM bytecode or library feature, as long as it does not exceed the sandbox restrictions.  For instance, bytecode that attempts to open a socket or write to a file will throw a runtime exception.</p>
+<p>The environment includes the <a href="http://java.sun.com/javase/technologies/index.jsp">Java SE Runtime Environment (JRE) 6 platform</a> and libraries. The restrictions of the sandbox environment are implemented in the JVM. An app can use any JVM bytecode or library feature, as long as it does not exceed the sandbox restrictions. For instance, bytecode that attempts to open a socket or write to a file will throw a runtime exception.</p>
 
-<p>Your app accesses most App Engine services using Java standard APIs.  For the App Engine datastore, the Java SDK includes implementations of the <a href="http://java.sun.com/jdo/index.jsp">Java Data Objects</a> (JDO) and <a href="http://java.sun.com/developer/technicalArticles/J2EE/jpa/">Java Persistence API</a> (JPA) interfaces.  Your app can use <a href="http://java.sun.com/products/javamail/">the JavaMail API</a> to send email messages with the App Engine Mail service.  The <code>java.net</code> HTTP APIs access the App Engine URL fetch service.  App Engine also includes low-level APIs for its services to implement additional adapters, or to use directly from the application.  See the documentation for <a href="java/datastore/index.html">the datastore</a>, <a href="java/memcache/index.html">memcache</a>, <a href="java/urlfetch/index.html">URL fetch</a>, <a href="java/mail/index.html">mail</a>, <a href="java/images/index.html">images</a> and <a href="java/users/index.html">Google Accounts</a> APIs.</p>
+<p>Your app accesses most App Engine services using Java standard APIs. For the App Engine datastore, the Java SDK includes implementations of the <a href="http://java.sun.com/jdo/index.jsp">Java Data Objects</a> (JDO) and <a href="http://java.sun.com/developer/technicalArticles/J2EE/jpa/">Java Persistence API</a> (JPA) interfaces. Your app can use <a href="http://java.sun.com/products/javamail/">the JavaMail API</a> to send email messages with the App Engine Mail service. The <code>java.net</code> HTTP APIs access the App Engine URL fetch service. App Engine also includes low-level APIs for its services to implement additional adapters, or to use directly from the application. See the documentation for <a href="java/datastore/index.html">the datastore</a>, <a href="java/memcache/index.html">memcache</a>, <a href="java/urlfetch/index.html">URL fetch</a>, <a href="java/mail/index.html">mail</a>, <a href="java/images/index.html">images</a> and <a href="java/users/index.html">Google Accounts</a> APIs.</p>
 
-<p>Typically, Java developers use the Java programming language and APIs to implement web applications for the JVM.  With the use of JVM-compatible compilers or interpreters, you can also use other languages to develop web applications, such as JavaScript, Ruby, or Scala.</p>
+<p>Typically, Java developers use the Java programming language and APIs to implement web applications for the JVM. With the use of JVM-compatible compilers or interpreters, you can also use other languages to develop web applications, such as JavaScript, Ruby, or Scala.</p>
 
 <p>For more information about the Java runtime environment, see <a href="java/runtime.html">The Java Runtime Environment</a>.</p>
 
 
 <h3>The Python Runtime Environment</h3>
 
-<p>With App Engine's Python runtime environment, you can implement your app using the Python programming language, and run it on an optimized Python interpreter.  App Engine includes rich APIs and tools for Python web application development, including a feature rich data modeling API, an easy-to-use web application framework, and tools for managing and accessing your app's data.  You can also take advantage of a wide variety of mature libraries and frameworks for Python web application development, such as <a href="http://www.djangoproject.com/">Django</a>.</p>
+<p>With App Engine's Python runtime environment, you can implement your app using the Python programming language, and run it on an optimized Python interpreter. App Engine includes rich APIs and tools for Python web application development, including a feature rich data modeling API, an easy-to-use web application framework, and tools for managing and accessing your app's data. You can also take advantage of a wide variety of mature libraries and frameworks for Python web application development, such as <a href="http://www.djangoproject.com/">Django</a>.</p>
 
-<p>The Python runtime environment uses Python version 2.5.2.  Additional support for Python 3 is being considered for a future release.</p>
+<p>The Python runtime environment uses Python version 2.5.2. Additional support for Python 3 is being considered for a future release.</p>
 
-<p>The Python environment includes <a href="http://www.python.org/doc/2.5.2/lib/lib.html">the Python standard library</a>.  Of course, not all of the library's features can run in the sandbox environment.  For instance, a call to a method that attempts to open a socket or write to a file will raise an exception.  For convenience, several modules in the standard library whose core features are not supported by the runtime environment have been disabled, and code that imports them will raise an error.</p>
+<p>The Python environment includes <a href="http://www.python.org/doc/2.5.2/lib/lib.html">the Python standard library</a>. Of course, not all of the library's features can run in the sandbox environment. For instance, a call to a method that attempts to open a socket or write to a file will raise an exception. For convenience, several modules in the standard library whose core features are not supported by the runtime environment have been disabled, and code that imports them will raise an error.</p>
 
-<p>Application code written for the Python environment must be written exclusively in Python.  Extensions written in the C language are not supported.</p>
+<p>Application code written for the Python environment must be written exclusively in Python. Extensions written in the C language are not supported.</p>
 
-<p>The Python environment provides rich Python APIs for <a href="python/datastore/index.html">the datastore</a>, <a href="python/users/index.html">Google Accounts</a>, <a href="python/urlfetch/index.html">URL fetch</a>, and <a href="python/mail/index.html">email</a> services.  App Engine also provides a simple Python web application framework called <a href="python/tools/webapp/index.html">webapp</a> to make it easy to start building applications.</p>
+<p>The Python environment provides rich Python APIs for <a href="python/datastore/index.html">the datastore</a>, <a href="python/users/index.html">Google Accounts</a>, <a href="python/urlfetch/index.html">URL fetch</a>, and <a href="python/mail/index.html">email</a> services. App Engine also provides a simple Python web application framework called <a href="python/tools/webapp/index.html">webapp</a> to make it easy to start building applications.</p>
 
 <p>You can upload other third-party libraries with your application, as long as they are implemented in pure Python and do not require any unsupported standard library modules.</p>
 
@@ -735,24 +752,24 @@ var logged_in_user_email = null;
 
 <h3>The Datastore</h3>
 
-<p>App Engine provides a powerful distributed data storage service that features a query engine and transactions.  Just as the distributed web server grows with your traffic, the distributed datastore grows with your data.</p>
+<p>App Engine provides a distributed data storage service that features a query engine and transactions. Just as the distributed web server grows with your traffic, the distributed datastore grows with your data. You have the choice between <a href="java/datastore/hr/index.html">two different data storage options</a> differentiated by their availability and consistency guarantees. </p>
 
-<p>The App Engine datastore is not like a traditional relational database.  Data objects, or "entities," have a kind and a set of properties.  Queries can retrieve entities of a given kind filtered and sorted by the values of the properties.  Property values can be of any of the supported <a href="python/datastore/typesandpropertyclasses.html">property value types</a>.</p>
+<p>The App Engine datastore is not like a traditional relational database. Data objects, or "entities," have a kind and a set of properties. Queries can retrieve entities of a given kind filtered and sorted by the values of the properties. Property values can be of any of the supported <a href="python/datastore/typesandpropertyclasses.html">property value types</a>.</p>
 
-<p>Datastore entities are "schemaless."  The structure of data entities is provided by and enforced by your application code.  The Java JDO/JPA interfaces and the Python datastore interface include features for applying and enforcing structure within your app.  Your app can also access the datastore directly to apply as much or as little structure as it needs.</p>
+<p>Datastore entities are "schemaless."  The structure of data entities is provided by and enforced by your application code. The Java JDO/JPA interfaces and the Python datastore interface include features for applying and enforcing structure within your app. Your app can also access the datastore directly to apply as much or as little structure as it needs.</p>
 
-<p>The datastore is strongly <a href="http://en.wikipedia.org/wiki/Consistency_model">consistent</a> and uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic concurrency control</a>.  An update of a entity occurs in a transaction that is retried a fixed number of times if other processes are trying to update the same entity simultaneously.  Your application can execute multiple datastore operations in a single transaction which either all succeed or all fail, ensuring the integrity of your data.</p>
+<p>The datastore is strongly <a href="http://en.wikipedia.org/wiki/Consistency_model">consistent</a> and uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic concurrency control</a>. An update of a entity occurs in a transaction that is retried a fixed number of times if other processes are trying to update the same entity simultaneously. Your application can execute multiple datastore operations in a single transaction which either all succeed or all fail, ensuring the integrity of your data.</p>
 
-<p>The datastore implements transactions across its distributed network using "entity groups."  A transaction manipulates entities within a single group.  Entities of the same group are stored together for efficient execution of transactions.  Your application can assign entities to groups when the entities are created.</p>
+<p>The datastore implements transactions across its distributed network using "entity groups." A transaction manipulates entities within a single group. Entities of the same group are stored together for efficient execution of transactions. Your application can assign entities to groups when the entities are created.</p>
 
 
 <h3>Google Accounts</h3>
 
-<p>App Engine supports integrating an app with Google Accounts for user authentication.  Your application can allow a user to sign in with a Google account, and access the email address and displayable name associated with the account.  Using Google Accounts lets the user start using your application faster, because the user may not need to create a new account.  It also saves you the effort of implementing a user account system just for your application.</p>
+<p>App Engine supports integrating an app with Google Accounts for user authentication. Your application can allow a user to sign in with a Google account, and access the email address and displayable name associated with the account. Using Google Accounts lets the user start using your application faster, because the user may not need to create a new account. It also saves you the effort of implementing a user account system just for your application.</p>
 
 <p>If your application is running under Google Apps, it can use the same features with members of your organization and Google Apps accounts.</p>
 
-<p>The Users API can also tell the application whether the current user is a registered administrator for the application.  This makes it easy to implement admin-only areas of your site.</p>
+<p>The Users API can also tell the application whether the current user is a registered administrator for the application. This makes it easy to implement admin-only areas of your site.</p>
 
 <p>For more information about integrating with Google Accounts, see <a href="python/users/index.html">the Users API reference</a>.</p>
 
@@ -762,51 +779,51 @@ var logged_in_user_email = null;
 <p>App Engine provides a variety of services that enable you to perform common operations when managing your application. The following APIs are provided to access these services:</p>
 
 <h4>URL Fetch</h4>
-<p>Applications can access resources on the Internet, such as web services or other data, using App Engine's URL fetch service.  The URL fetch service retrieves web resources using the same high-speed Google infrastructure that retrieves web pages for many other Google products.</p>
+<p>Applications can access resources on the Internet, such as web services or other data, using App Engine's URL fetch service. The URL fetch service retrieves web resources using the same high-speed Google infrastructure that retrieves web pages for many other Google products.</p>
 
 <h4>Mail</h4>
-<p>Applications can send email messages using App Engine's mail service.  The mail service uses Google infrastructure to send email messages.</p>
+<p>Applications can send email messages using App Engine's mail service. The mail service uses Google infrastructure to send email messages.</p>
 
 <h4>Memcache</h4>
-<p>The Memcache service provides your application with a high performance in-memory key-value cache that is accessible by multiple instances of your application.  Memcache is useful for data that does not need the persistence and transactional features of the datastore, such as temporary data or data copied from the datastore to the cache for high speed access.</p>
+<p>The Memcache service provides your application with a high performance in-memory key-value cache that is accessible by multiple instances of your application. Memcache is useful for data that does not need the persistence and transactional features of the datastore, such as temporary data or data copied from the datastore to the cache for high speed access.</p>
 
 <h4>Image Manipulation</h4>
-<p>The Image service lets your application manipulate images.  With this API, you can resize, crop, rotate and flip images in JPEG and PNG formats.</p>
+<p>The Image service lets your application manipulate images. With this API, you can resize, crop, rotate and flip images in JPEG and PNG formats.</p>
 
 
 <h3>Scheduled Tasks and Task Queues</h3>
 
-<p>An application can perform tasks outside of responding to web requests.  Your application can perform these tasks on a schedule that you configure, such as on a daily or hourly basis.  Or, the application can perform tasks added to a queue by the application itself, such as a background task created while handling a request.</p>
+<p>An application can perform tasks outside of responding to web requests. Your application can perform these tasks on a schedule that you configure, such as on a daily or hourly basis. Or, the application can perform tasks added to a queue by the application itself, such as a background task created while handling a request.</p>
 
-<p>Scheduled tasks are also known as "cron jobs," handled by the Cron service.  For more information on using the Cron service, see the <a href="python/config/cron.html">Python</a> or <a href="java/config/cron.html">Java</a> cron documentation.</p>
+<p>Scheduled tasks are also known as "cron jobs," handled by the Cron service. For more information on using the Cron service, see the <a href="python/config/cron.html">Python</a> or <a href="java/config/cron.html">Java</a> cron documentation.</p>
 
-<p>Task queues are currently released as an experimental feature.  At this time, only the Python runtime environment can use task queues.  A task queue interface for Java applications will be released in the near future.  For information about the task queue service and the Python API, see <a href="python/taskqueue/index.html">the Python documentation</a>.</p>
+<p>Task queues are currently released as an experimental feature. At this time, only the Python runtime environment can use task queues. A task queue interface for Java applications will be released in the near future. For information about the task queue service and the Python API, see <a href="python/taskqueue/index.html">the Python documentation</a>.</p>
 
 
 <h2>Development Workflow</h2>
 
-<p><a href="../downloads.html">The App Engine software development kits</a> (SDKs) for Java and Python each include a web server application that emulates all of the App Engine services on your local computer.  Each SDK includes all of the APIs and libraries available on App Engine.  The web server also simulates the secure sandbox environment, including checks for attempts to access system resources disallowed in the App Engine runtime environment.</p>
+<p><a href="../downloads.html">The App Engine software development kits</a> (SDKs) for Java and Python each include a web server application that emulates all of the App Engine services on your local computer. Each SDK includes all of the APIs and libraries available on App Engine. The web server also simulates the secure sandbox environment, including checks for attempts to access system resources disallowed in the App Engine runtime environment.</p>
 
-<p>Each SDK also includes a tool to upload your application to App Engine.  Once you have created your application's code, static files and configuration files, you run the tool to upload the data.  The tool prompts you for your Google account email address and password.</p>
+<p>Each SDK also includes a tool to upload your application to App Engine. Once you have created your application's code, static files and configuration files, you run the tool to upload the data. The tool prompts you for your Google account email address and password.</p>
 
-<p>When you build a new major release of an application that is already running on App Engine, you can upload the new release as a new version.  The old version will continue to serve users until you switch to the new version.  You can test the new version on App Engine while the old version is still running.</p>
+<p>When you build a new major release of an application that is already running on App Engine, you can upload the new release as a new version. The old version will continue to serve users until you switch to the new version. You can test the new version on App Engine while the old version is still running.</p>
 
-<p>The Java SDK runs on any platform with Java 5 or Java 6.  The SDK is available as a Zip file.  If you use the Eclipse development environment, you can use the <a href="java/tools/eclipse.html">Google Plugin for Eclipse</a> to create, test and upload App Engine applications.  The SDK also includes command-line tools for running the development server and uploading your app.</p>
+<p>The Java SDK runs on any platform with Java 5 or Java 6. The SDK is available as a Zip file. If you use the Eclipse development environment, you can use the <a href="java/tools/eclipse.html">Google Plugin for Eclipse</a> to create, test and upload App Engine applications. The SDK also includes command-line tools for running the development server and uploading your app.</p>
 
-<p>The Python SDK is implemented in pure Python, and runs on any platform with Python 2.5, including Windows, Mac OS X and Linux.  The SDK is available as a Zip file, and installers are available for Windows and Mac OS X.</p>
+<p>The Python SDK is implemented in pure Python, and runs on any platform with Python 2.5, including Windows, Mac OS X and Linux. The SDK is available as a Zip file, and installers are available for Windows and Mac OS X.</p>
 
-<p><a href="theadminconsole.html">The Administration Console</a> is the web-based interface for managing your applications running on App Engine.  You can use it to create new applications, configure domain names, change which version of your application is live, examine access and error logs, and browse an application's datastore.</p>
+<p><a href="adminconsole/index.html">The Administration Console</a> is the web-based interface for managing your applications running on App Engine.  You can use it to create new applications, configure domain names, change which version of your application is live, examine access and error logs, and browse an application's datastore.</p>
 
 
 <h2>Quotas and Limits</h2>
 
-<p>Not only is creating an App Engine application easy, it's free!  You can create an account and publish an application that people can use right away at no charge, and with no obligation.  An application on a free account can use up to 500MB of storage and up to 5 million page views a month.  When you are ready for more, you can enable billing, set a maximum daily budget, and allocate your budget for each resource according to your needs.</p>
+<p>Not only is creating an App Engine application easy, it's free!  You can create an account and publish an application that people can use right away at no charge, and with no obligation. An application on a free account can use up to 500MB of storage and up to 5 million page views a month. When you are ready for more, you can enable billing, set a maximum daily budget, and allocate your budget for each resource according to your needs.</p>
 
 <p>You can register up to 10 applications per developer account.</p>
 
-<p>Each app is allocated resources within limits, or "quotas."  A quota determines how much of a given resource an app can use during a calendar day.  In the near future, you will be able to adjust some of these quotas by purchasing additional resources.</p>
+<p>Each app is allocated resources within limits, or "quotas."  A quota determines how much of a given resource an app can use during a calendar day. In the near future, you will be able to adjust some of these quotas by purchasing additional resources.</p>
 
-<p>Some features impose limits unrelated to quotas to protect the stability of the system.  For example, when an application is called to serve a web request, it must issue a response within 30 seconds.  If the application takes too long, the process is terminated and the server returns an error code to the user.  The request timeout is dynamic, and may be shortened if a request handler reaches its timeout frequently to conserve resources.</p>
+<p>Some features impose limits unrelated to quotas to protect the stability of the system. For example, when an application is called to serve a web request, it must issue a response within 30 seconds. If the application takes too long, the process is terminated and the server returns an error code to the user. The request timeout is dynamic, and may be shortened if a request handler reaches its timeout frequently to conserve resources.</p>
 
 <p>Attempts to subvert or abuse quotas, such as by operating applications on multiple accounts that work in tandem, are a violation of the <a href="../terms.html">Terms of Service</a>, and could result in apps being disabled or accounts being closed.</p>
 
@@ -862,7 +879,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -

@@ -78,13 +78,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -202,17 +202,31 @@ var logged_in_user_email = null;
     <li><a href="index.html">Storing Data</a>
       <ul>
             <li><a href="overview.html">Overview</a></li>
-    <li><a href="hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="usingjdo.html">Using JDO</a></li>
-    <li><a href="dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="entities.html">Entities</a></li>
+    <li><a href="queries.html">Queries</a></li>
     <li><a href="transactions.html">Transactions</a></li>
-    <li><a href="relationships.html">Relationships</a></li>
+    <li><a href="hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="metadataqueries.html">Metadata Queries</a></li>
     <li><a href="stats.html">Statistics</a></li>
-    <li><a href="usingjpa.html">Using JPA</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="async.html">Async API</a></li>
+    <li><a href="jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="jdo/overview.html">Overview</a></li>
+    <li><a href="jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -261,14 +275,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="../oauth/index.html">OAuth</a>
           <ul>
@@ -281,7 +295,7 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
-     <li><a href="../javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="../javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -340,7 +354,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="../tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
@@ -365,31 +379,32 @@ var logged_in_user_email = null;
     <li><a href="../../python/runtime.html">CGI Environment</a></li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
-             <li><a href="../../python/datastore/overview.html">Overview</a></li>
-     <li><a href="../../python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="../../python/datastore/entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="../../python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="../../python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="../../python/datastore/queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
-     <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
-    <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="../../python/datastore/stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../../python/datastore/modelclass.html">Model</a></li>
-         <li><a href="../../python/datastore/expandoclass.html">Expando</a></li>
-         <li><a href="../../python/datastore/polymodelclass.html">PolyModel</a></li>
-         <li><a href="../../python/datastore/propertyclass.html">Property</a></li>
-         <li><a href="../../python/datastore/queryclass.html">Query</a></li>
-         <li><a href="../../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="../../python/datastore/keyclass.html">Key</a></li>
-         <li><a href="../../python/datastore/functions.html">Functions</a></li>
-         <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="../../python/datastore/entities.html">Entities</a></li>
+      <li><a href="../../python/datastore/queries.html">Queries</a></li>
+      <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
+      <li><a href="../../python/datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="../../python/datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="../../python/datastore/modelclass.html">Model</a></li>
+          <li><a href="../../python/datastore/expandoclass.html">Expando</a></li>
+          <li><a href="../../python/datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../../python/datastore/propertyclass.html">Property</a></li>
+          <li><a href="../../python/datastore/queryclass.html">Query</a></li>
+          <li><a href="../../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="../../python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../../python/datastore/keyclass.html">Key</a></li>
+          <li><a href="../../python/datastore/functions.html">Functions</a></li>
+          <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -615,6 +630,8 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -668,116 +685,114 @@ var logged_in_user_email = null;
 
 
 
-<p>The App Engine datastore supports <i>transactions</i>.  A transaction is an operation or set of operations that either succeeds completely, or fails completely.  An application can perform multiple operations and calculations in a single transaction.</p>
+<p>The App Engine datastore supports <i>transactions</i>. A transaction is an operation or set of operations that either succeeds completely, or fails completely. An application can perform multiple operations and calculations in a single transaction.</p>
 
 <ul>
   <li><a href="#Using_Transactions">Using Transactions</a></li>
   <li><a href="#What_Can_Be_Done_In_a_Transaction">What Can Be Done In a Transaction</a></li>
   <li><a href="#Isolation_and_Consistency">Isolation and Consistency</a></li>
-  <li><a href="#Uses_For_Transactions">Uses For Transactions</a></li>
-
-  <li><a href="#Disabling_Transactions_and_Porting_Existing_JDO_Apps">Disabling Transactions and Porting Existing JDO Apps</a></li>
-
+  <li><a href="#Uses_for_Transactions">Uses for Transactions</a></li>
+  <li><a href="#Transactional_Task_Enqueuing">Transactional Task Enqueuing</a></li>
 </ul>
 
 <h2 id="Using_Transactions">Using Transactions</h2>
 
-<p>A <i>transaction</i> is a datastore operation or a set of datastore operations that either succeed completely, or fail completely.  If the transaction succeeds, then all of its intended effects are applied to the datastore.  If the transaction fails, then none of the effects are applied.</p>
+<p>A <i>transaction</i> is a datastore operation or a set of datastore operations that either succeed completely, or fail completely. If the transaction succeeds, then all of its intended effects are applied to the datastore. If the transaction fails, then none of the effects are applied.</p>
 
-<p>Every datastore write operation is atomic.  An attempt to create, update or delete an entity either happens, or it doesn't.  An operation may fail due to a high rate of contention, with too many users trying to modify an entity at the same time.  Or an operation may fail due to the application reaching a quota limit.  Or there may be an internal error with the datastore.  In all cases, the operation's effects are not applied, and the datastore API raises an exception.</p>
+<p>Every datastore write operation is atomic; that is, an attempt to create, update, or delete an entity either happens&mdash;or it doesn't. An operation may fail due to a high rate of contention, with too many users trying to modify an entity at the same time. Or an operation may fail due to the application reaching a quota limit. Or there may be an internal error with the datastore. In all cases, the operation's effects are not applied, and the datastore API raises an exception.</p>
+
+<p>Transactions are an optional feature of the datastore; you're not required to use transactions to perform datastore operations.</p>
 
 
-<p>Here is an example of incrementing a field named <code>counter</code> in an object named <code>ClubMembers</code> (class not shown) using the JDO transaction API:</p>
+<p>Here is an example of updating field named <code>vacationDays</code> in an entity of kind <code>Employee</code> named <code>Joe</code>:</p>
 
 <pre class="prettyprint">
-import javax.jdo.Transaction;
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService()
+Transaction txn = datastore.beginTransaction();
+try {
+    Key employeeKey = KeyFactory.createKey("Employee", "Joe");
+    Entity employee = datastore.get(employeeKey);
+    employee.setProperty("vacationDays", 10);
 
-import ClubMembers;   // not shown
+    datastore.put(employee);
 
-// ...
-        // PersistenceManager pm = ...;
-
-        Transaction tx = pm.currentTransaction();
-
-        try {
-            tx.begin();
-    
-            ClubMembers members = pm.getObjectById(ClubMembers.class, "k12345");
-            members.incrementCounterBy(1);
-            pm.makePersistent(members);
-    
-            tx.commit();
-        } finally {
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-        }
+    txn.commit();
+} finally {
+    if (txn.isActive()) {
+        txn.rollback();
+    }
+}
 </pre>
 
+<p>Note that in order to keep our examples more succinct we sometimes omit the <code>finally</code> block that performs a rollback if the transaction is still active.  In production code it is important to ensure that every transaction is either explicitly committed or rolled back.</p>
 
 <h3 id="Entity_Groups">Entity Groups</h3>
 
-<p>Every entity belongs to an <i>entity group</i>, a set of one or more entities that can be manipulated in a single transaction.  Entity group relationships tell App Engine to store several entities in the same part of the distributed network.  A transaction sets up datastore operations for an entity group, and all of the operations are applied as a group, or not at all if the transaction fails.</p>
+<p>Every entity belongs to an <i>entity group</i>, a set of one or more entities that can be manipulated in a single transaction. Entity group relationships tell App Engine to store several entities in the same part of the distributed network. A transaction sets up datastore operations for an entity group, and all of the operations are applied as a group, or not at all if the transaction fails.</p>
 
-<p>When the application creates an entity, it can assign another entity as the <i>parent</i> of the new entity.  Assigning a parent to a new entity puts the new entity in the same entity group as the parent entity.</p>
+<p>When the application creates an entity, it can assign another entity as the <i>parent</i> of the new entity. Assigning a parent to a new entity puts the new entity in the same entity group as the parent entity.</p>
 
-<p>An entity without a parent is a <i>root</i> entity.  An entity that is a parent for another entity can also have a parent.  A chain of parent entities from an entity up to the root is the <i>path</i> for the entity, and members of the path are the entity's <i>ancestors</i>.  The parent of an entity is defined when the entity is created, and cannot be changed later.</p>
+<p>An entity without a parent is a <i>root</i> entity. An entity that is a parent for another entity can also have a parent. A chain of parent entities from an entity up to the root is the <i>path</i> for the entity, and members of the path are the entity's <i>ancestors</i>. The parent of an entity is defined when the entity is created, and cannot be changed later.</p>
 
-<p>Every entity with a given root entity as an ancestor is in the same entity group.  All entities in a group are stored in the same datastore node.  A single transaction can modify multiple entities in a single group, or add new entities to the group by making the new entity's parent an existing entity in the group.</p>
+<p>Every entity with a given root entity as an ancestor is in the same entity group. All entities in a group are stored in the same datastore node. A single transaction can modify multiple entities in a single group, or add new entities to the group by making the new entity's parent an existing entity in the group. The following code snippet demonstrates transactions on various types of entities:</p>
+<pre class="prettyprint">
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+Entity person = new Entity("Person", "tom");
+datastore.put(person);
+
+// Transactions on root entities
+Transaction tx = datastore.beginTransaction();
+
+Entity tom = datastore.get(person.getKey());
+tom.setProperty("age", 40);
+datastore.put(tom);
+tx.commit();
+
+// Transactions on child entities
+tx = datastore.beginTransaction();
+tom = datastore.get(person.getKey());
+Entity photo = new Entity("Photo", tom.getKey());
+
+// Create a Photo that is a child of the Person entity named "tom"
+photo.setProperty("photoUrl", "http://domain.com/path/to/photo.jpg");
+datastore.put(photo);
+tx.commit();
+
+// Transactions on entities in different entity groups
+tx = datastore.beginTransaction();
+tom = datastore.get(person.getKey());
+Entity photoNotAChild = new Entity("Photo");
+photoNotAChild.setProperty("photoUrl", "http://domain.com/path/to/photo.jpg");
+datastore.put(photoNotAChild);
+
+// Throws IllegalArgumentException because the Person entity
+// and the Photo entity belong to different entity groups.
+tx.commit();</pre>
 
 
+<h3>Creating an Entity in a Specific Entity Group</h3>
 
-
-<h3>Creating Entities With Entity Groups</h3>
-
-<p>The App Engine implementation of the JDO interface represents owned one-to-one or one-to-many relationships using entity groups.  This allows changes to an object and changes to its child objects to occur in the same transaction.  See <a href="relationships.html">Relationships</a>.</p>
-
-<p>For other situations, you can create an entity with an explicit entity group parent by setting the object's primary key field to the complete key, including the parent's key.  The object's primary key field must be either a Key instance or an encoded key string (not a simple Long or String key name).</p>
-
-<p>When using app-assigned string IDs, you can create an object with an entity group parent by setting its key field to the complete key value, which includes the key of the parent.  To create a key value using an entity group parent, use the KeyFactory.Builder class, as follows:</p>
+<p>When your application constructs a new entity, you can assign it to an entity group by supplying the key of another entity. The example below constructs the key of a MessageBoard entity, then uses that key to create and persist a Message entity that resides in the same entity group as the MessageBoard:</p>
 
 <pre class="prettyprint">
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
-@PersistenceCapable
-public class AccountInfo {
-    @PrimaryKey
-    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
-    private Key key;
+String messageTitle = req.getParameter("title");
+String messageText = req.getParameter("body");
+Date postDate = new Date();
 
-    public void setKey(Key key) {
-        this.key = key;
-    }
-}
+Transaction txn = datastore.beginTransaction();
 
-// ...
-        KeyFactory.Builder keyBuilder = new KeyFactory.Builder(Customer.class.getSimpleName(), "custid985135");
-        keyBuilder.addChild(AccountInfo.class.getSimpleName(), "acctidX142516");
-        Key key = keyBuilder.getKey();
+Key messageBoardKey = KeyFactory.createKey("MessageBoard", boardName);
 
-        AccountInfo acct = new AccountInfo();
-        acct.setKey(key);
-        pm.makePersistent(acct);
+Entity message = new Entity("Message", messageBoardKey);
+message.setProperty("message_title", messageTitle);
+message.setProperty("message_text", messageText);
+message.setProperty("post_date", postDate);
+datastore.put(message);
+
+txn.commit();
 </pre>
-
-<p>You can access the entity group parent key separately from the object's key using a field, as follows:</p>
-
-<pre class="prettyprint">
-// ...
-    @Persistent
-    @Extension(vendorName="datanucleus", key="gae.parent-pk", value="true")
-    private Key customerKey;
-</pre>
-
-<p>To create an object with a system-generated numeric ID and an entity group parent, you must use an entity group parent key field (such as <code>customerKey</code>, above).  Assign the key of the parent to the parent key field, then leave the object's key field set to null.  When the object is saved, the datastore populates the key field with the complete key, including the entity group parent.</p>
-
-<p>If a class has an entity group parent field, you can use an equality filter in a query on the parent field. (Inequality filters on parent keys are not supported.)</p>
-
 
 
 
@@ -785,169 +800,135 @@ public class AccountInfo {
 
 <p>The datastore imposes several restrictions on what can be done inside a single transaction.</p>
 
-<p>All datastore operations in a transaction must operate on entities in the same entity group.  This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities.  Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity.
-For an explanation of entity groups, see
+<p>All datastore operations in a transaction must operate on entities in the same entity group. This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities. Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity.</p>
+
+<p>While an app is applying changes to entities in an entity group, all other attempts to update any entity in the group fail at commit time. Because of this design, using entity groups limits the number of concurrent writes you can do on any entity in that group. When a transaction starts, App Engine uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic concurrency control</a> by checking the last update time for the entity group. Upon commiting a transaction for an entity group, App Engine again checks the last update time for the entity group. If it has changed since our initial check, we throw an exception. For an explanation of entity groups, see
 <a href="transactions.html#Entity_Groups">Entity Groups</a>.</p>
 
 <p>An app can perform a
-<a href="queriesandindexes.html">query</a> during a transaction, but only if it includes an ancestor filter.  An app can also get datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
-
-<p>An application cannot insert more than five <a href="../../python/taskqueue/overview.html#Task_Within_Transactions">transactional tasks</a> into <a href="../../python/taskqueue/overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
-
-
-<p>JDO performs all actions between the call to <code>tx.begin()</code> and the call to <code>tx.commit()</code> in a single transaction.  If any action fails due to the requested entity group being in use by another process, JDO throws a JDODataStoreException or a JDOException, cause by a java.util.ConcurrentModificationException.</p>
-
-<p>In a system with optimistic concurrency, it is typical for an application to try the transaction again several times before giving up.  JDO only performs the transaction once; the application must repeat the transaction, if desired.  For example:</p>
-
-<pre class="prettyprint">
-        for (int i = 0; i < NUM_RETRIES; i++) {
-            pm.currentTransaction().begin();
-
-            ClubMembers members = pm.getObjectById(ClubMembers.class, "k12345");
-            members.incrementCounterBy(1);
-
-            try {
-                pm.currentTransaction().commit();
-                break;
-
-            } catch (JDOCanRetryException ex) {
-                if (i == (NUM_RETRIES - 1)) { 
-                    throw ex;
-                }
-            }
-        }
-</pre>
-
-<p>An attempt to update more than one entity group in the same transaction will throw a JDOFatalUserException.  Notice that each object that doesn't have an entity group parent resides in its own entity group, so you cannot create multiple parent-less entities in a single transaction.</p>
-
-<p>An attempt to update the same entity multiple times in a single transaction (such as with repeated <code>makePersistent()</code> calls) will throw a JDOFatalUserException.  Instead, just modify the persistent objects within the transaction, and allow the call to <code>commit()</code> to apply the changes.</p>
-
+<a href="queriesandindexes.html">query</a> during a transaction, but only if it includes an ancestor filter. (You can actually perform a query without an ancestor filter, but the results won't reflect any particular transactionally consistent state). An app can also get datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
 
 
 <h2 id="Isolation_and_Consistency">Isolation and Consistency</h2>
 
 <p>The datastore's isolation level outside of transactions is closest to READ_COMMITTED. Inside transactions, on the other hand, the isolation level is SERIALIZABLE, specifically a form of <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>. See the <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> article for more information on isolation levels.</p>
 
-<p>Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the datastore as of the beginning of the transaction. In particular, entities and index rows in the transaction's entity group are fully updated so that queries will return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside transactions.</p>
+<p>Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the datastore as of the beginning of the transaction. In particular, entities and index rows in the transaction's entity group are fully updated so that queries return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside of transactions.</p>
 
-<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get will return the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
-
-
-<h2 id="Uses_For_Transactions">Uses For Transactions</h2>
-
-<p>This example demonstrates one use of transactions: updating an entity with a new property value relative to its current value.</p>
+<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get returns the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
 
 
+<h2 id="Uses_for_Transactions">Uses for Transactions</h2>
+
+
+
+<p>This example demonstrates one use of transactions: updating an entity with a new property value relative to its current value. Since the Datastore API does not retry transactions, we can add logic for the transaction to be retried in case another request updates the same MessageBoard or any of its Messages at the same time.</p>
 
 <pre class="prettyprint">
-        Key k = KeyFactory.createKey("Employee", "k12345");
-        Employee e = pm.getObjectById(Employee.class, k);
-        e.counter += 1;
-        pm.makePersistent(e);
+int retries = 3;
+while (true) {
+    Transaction txn = datastore.beginTransaction();
+    try {
+        Key boardKey = KeyFactory.createKey("MessageBoard", boardName);
+        Entity messageBoard = datastore.get(boardKey);
+
+        long count = (Long) messageBoard.getProperty("count");
+        ++count;
+        messageBoard.setProperty("count", count);
+        datastore.put(messageBoard);
+
+        txn.commit();
+        break;
+    } catch (ConcurrentModificationException e) {
+        if (retries == 0) {
+            throw e;
+        }
+        // Allow retry to occur
+        --retries;
+    } finally {
+        if (txn.isActive()) {
+            txn.rollback();
+        }
+    }
+}
 </pre>
 
 
-<p>This requires a transaction because the value may be updated by another user after this code fetches the object, but before it saves the modified object.  Without a transaction, the user's request will use the value of <code>counter</code> prior to the other user's update, and the save will overwrite the new value.  With a transaction, the application is told about the other user's update.  If the entity is updated during the transaction, then the transaction fails with an exception.  The application can repeat the transaction to use the new data.</p>
+<p class="warning"><strong>Warning!</strong> The above sample depicts transactionally incrementing a counter only for the sake of simplicity. If your app has counters that are updated frequently, you should not increment them transactionally, or even within a single entity. A best practice for working with counters is to use a technique known as <a href="../../../articles/sharding_counters.html">counter-sharding</a>.</p>
+
+<p>This requires a transaction because the value may be updated by another user after this code fetches the object, but before it saves the modified object. Without a transaction, the user's request uses the value of <code>count</code> prior to the other user's update, and the save overwrites the new value. With a transaction, the application is told about the other user's update. If the entity is updated during the transaction, then the transaction fails with a <code>ConcurrentModificationException</code>. The application can repeat the transaction to use the new data.</p>
 
 <p>Another common use for transactions is to update an entity with a named key, or create it if it doesn't yet exist:</p>
 
 
 
 <pre class="prettyprint">
-        // PersistenceManager pm = ...;
-
-        Transaction tx = pm.currentTransaction();
-
-        String id = "jj_industrial";
-        String companyName = "J.J. Industrial";
-
-        try {
-            tx.begin();
-
-            Key k = KeyFactory.createKey("SalesAccount", id);
-            SalesAccount account;
-            try {
-                account = pm.getObjectById(Employee.class, k);
-            } catch (JDOObjectNotFoundException e) {
-                account = new SalesAccount();
-                account.setId(id);
-            }
-
-            account.setCompanyName(companyName);
-            pm.makePersistent(account);
-
-            tx.commit();
-
-        } finally {
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-        }
+Transaction txn = datastore.beginTransaction();
+try {
+    Key boardKey = KeyFatory.createKey("MessageBoard", "Foo");
+    Entity messageBoard = datastore.get(boardKey);
+} catch (EntityNotFoundException e) {
+    messageBoard = new Entity("MessageBoard", boardName);
+    messageBoard.setProperty("count", 0L);
+    boardKey = datastore.put(messageBoard);
+}
+txn.commit();
 </pre>
 
 
-<p>As before, a transaction is necessary to handle the case where another user is attempting to create or update an entity with the same string ID.  Without a transaction, if the entity does not exist and two users attempt to create it, the second will overwrite the first without knowing that it happened.  With a transaction, the second attempt will fail atomically, and can be retried by the application to fetch the new entity and update it.</p>
+<p>As before, a transaction is necessary to handle the case where another user is attempting to create or update an entity with the same string ID. Without a transaction, if the entity does not exist and two users attempt to create it, the second overwrites the first without knowing that it happened. With a transaction, the second attempt fails atomically.  If it makes sense to do, the application can try again to fetch the entity and update it.</p>
+
+<p>When a transaction fails, you can have your app retry the transaction until it succeeds, or you can let your users deal with the error by propagating it to your app's user interface level. You do not have to create a retry loop around every transaction.</p>
 
 
 
-<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, requiring the transaction be retried.  As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state.  The application should prepare keys for objects used inside the transaction, then fetch the entities inside the transaction.</p>
+<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, causing the transaction to fail. As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state. The application should prepare keys for objects used outside the transaction, then fetch the entities inside the transaction.</p>
 
-<p>Finally, a transaction can be used to read a consistent snapshot of the datastore. This can be useful when multiple reads gets are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Committing and rolling back a read-only transaction are both no-ops.</p>
+<p>Finally, you can use a transaction to read a consistent snapshot of the datastore. This can be useful when multiple reads are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Read-only transactions never fail due to concurrent modifications, so you don't have to implement retries. Committing and rolling back a read-only transaction are both no-ops.</p>
 
 
 
 <pre class="prettyprint">
-        // PersistenceManager pm = ...;
-        Transaction tx = pm.currentTransaction();
-        User user = userService.currentUser();
-        List&lt;Account&gt; accounts = new ArrayList&lt;Account&gt;();
+DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
 
-        try {
-            tx.begin();
+// Display information about a message board and its first 10 messages.
+Key boardKey = KeyFactory.createKey("MessageBoard", boardName);
 
-            Query query = pm.newQuery("select from Customer " +
-                                      "where user == userParam " +
-                                      "parameters User userParam");
-            List&lt;Customer&gt; customers = (List&lt;Customer&gt;)
-            query.execute(user);
+Transaction txn = datastore.beginTransaction();
 
-            query = pm.newQuery("select from Account " +
-                                "where parent-pk == keyParam " +
-                                "parameters Key keyParam");
-            for (Customer customer : customers) {
-                accounts.addAll((List&lt;Account&gt;)
-                query.execute(customer.key));
-            }
+Entity messageBoard = datastore.get(boardKey);
+long count = (Long) messageBoard.getProperty("count");
 
-        } finally {
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-        }
+Query q = new Query("Message", boardKey);
+
+// This is an ancestor query.
+PreparedQuery pq = datastore.prepare(q);
+List&lt;Entity&gt; messages = pq.asList(FetchOptions.Builder.withLimit(10)));
+  
+txn.commit();
 </pre>
 
+<h2 id="Transactional_Task_Enqueuing">Transactional Task Enqueuing</h2>
 
 
-<h2 id="Disabling_Transactions_and_Porting_Existing_JDO_Apps">Disabling Transactions and Porting Existing JDO Apps</h2>
-<p>The JDO configuration we recommend using sets a property named <code>datanucleus.appengine.autoCreateDatastoreTxns</code> to <code>true</code>.  This is an App Engine-specific property that tells the JDO implementation to associate datastore transactions with the JDO transactions that are managed in application code.  If you are building a new app from scratch, this is probably what you want.  However, if you have an existing, JDO-based application that you want to get running on App Engine, you may want to use an alternate persistence configuration which sets the value of this property to <code>false</code>:</p>
+<p>You can enqueue a task as part of a datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. If the transaction does get committed, the task is guaranteed to be enqueued. Once enqueued, the task is not guaranteed to execute immediately and any operations performed within the task execute independent of the original transaction. The task retries until it succeeds. This applies to any task enqueued in the context of a transaction.</p>
+
+<p>Transactional tasks are useful because they allow you to enlist non-datastore actions in a datastore transaction (such as sending an email to confirm a purchase). You can also tie datastore actions to the transaction, such as committing changes to additional entity groups outside of the transaction if and only if the transaction succeeds.</p>
+
+<p>An application cannot insert more than five <a href="../../python/taskqueue/overview.html#Task_Within_Transactions">transactional tasks</a> into <a href="../taskqueue/overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
+
 <pre class="prettyprint">
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;jdoconfig xmlns="http://java.sun.com/xml/ns/jdo/jdoconfig"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="http://java.sun.com/xml/ns/jdo/jdoconfig"&gt;
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+Queue queue = QueueFactory.getDefaultQueue();
+Transaction txn = datastore.beginTransaction();
+// ...
 
-    &lt;persistence-manager-factory name="transactions-optional"&gt;
-        &lt;property name="javax.jdo.PersistenceManagerFactoryClass"
-            value="org.datanucleus.store.appengine.jdo.DatastoreJDOPersistenceManagerFactory"/&gt;
-        &lt;property name="javax.jdo.option.ConnectionURL" value="appengine"/&gt;
-        &lt;property name="javax.jdo.option.NontransactionalRead" value="true"/&gt;
-        &lt;property name="javax.jdo.option.NontransactionalWrite" value="true"/&gt;
-        &lt;property name="javax.jdo.option.RetainValues" value="true"/&gt;
-        &lt;property name="datanucleus.appengine.autoCreateDatastoreTxns" value="false"/&gt;
-    &lt;/persistence-manager-factory&gt;
-&lt;/jdoconfig&gt;
+queue.add(TaskOptions.Builder.url("/path/to/queue"));
+
+// ...
+
+txn.commit();
 </pre>
-<p>In order to understand why this may be useful, remember that you can only operate on objects that belong to the same entity group within a transaction.  Applications built using traditional databases typically assume the availability of global transactions, which allow you to update any set of records inside a transaction.  Since the App Engine datastore does not support global transactions, code that assumes the availability of global transactions will yield exceptions.  Instead of going through your (potentially large) codebase and removing all your transaction management code, you can simply disable datastore transactions.  This of course does nothing to address assumptions your code makes about atomicity of multi-record modifications, but it allows you to get your app working so that you can then focus on refactoring your transactional code incrementally and as needed, rather than all at once.</p>
 
 
 
@@ -986,7 +967,7 @@ For an explanation of entity groups, see
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -

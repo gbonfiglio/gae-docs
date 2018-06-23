@@ -78,13 +78,13 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
   <div id="search">
-    <div id="searchForm" class="searchForm">
-      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
       <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
@@ -202,17 +202,31 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
-    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-    <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
-    <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
-    <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-    <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../../java/datastore/entities.html">Entities</a></li>
+    <li><a href="../../java/datastore/queries.html">Queries</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
-    <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="../../java/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
     <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
-    <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+    <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="../../java/datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="../../java/datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
 
       </ul>
     </li>
@@ -261,14 +275,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
-          <ul>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
+          <ul>	
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
-
-          </ul>
+	
+          </ul>	
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -281,7 +295,7 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -340,7 +354,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
         <ul>
-            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+            <li><a href="../../java/tools/localunittesting/javadoc">Testing Javadoc</a></li>
         </ul>    
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
@@ -365,31 +379,32 @@ var logged_in_user_email = null;
     <li><a href="../runtime.html">CGI Environment</a></li>
     <li><a href="index.html">Storing Data</a>
       <ul>
-             <li><a href="overview.html">Overview</a></li>
-     <li><a href="hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
-     <li><a href="entitiesandmodels.html">Entities and Models</a></li>
-     <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
-     <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
-     <li><a href="queriesandindexes.html">Queries and Indexes</a></li>
-     <li><a href="transactions.html">Transactions</a></li>
-     <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
-     <li><a href="gqlreference.html">GQL Reference</a></li>
-    <li><a href="metadataqueries.html">Metadata Queries</a></li>
-     <li><a href="stats.html">Statistics</a></li>
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="modelclass.html">Model</a></li>
-         <li><a href="expandoclass.html">Expando</a></li>
-         <li><a href="polymodelclass.html">PolyModel</a></li>
-         <li><a href="propertyclass.html">Property</a></li>
-         <li><a href="queryclass.html">Query</a></li>
-         <li><a href="gqlqueryclass.html">GqlQuery</a></li>
-         <li><a href="keyclass.html">Key</a></li>
-         <li><a href="functions.html">Functions</a></li>
-         <li><a href="exceptions.html">Exceptions</a></li>
-       </ul>
-     </li>
+              <li><a href="overview.html">Datastore Overview</a></li>
+      <li><a href="entities.html">Entities</a></li>
+      <li><a href="queries.html">Queries</a></li>
+      <li><a href="transactions.html">Transactions</a></li>
+      <li><a href="datamodeling.html">Data Modeling</a></li>
+      <li><a href="gqlreference.html">GQL Reference</a></li>
+      <li><a href="hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="gqlreference.html">GQL Reference</a></li>
+          <li><a href="modelclass.html">Model</a></li>
+          <li><a href="expandoclass.html">Expando</a></li>
+          <li><a href="polymodelclass.html">PolyModel</a></li>
+          <li><a href="propertyclass.html">Property</a></li>
+          <li><a href="queryclass.html">Query</a></li>
+          <li><a href="gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="keyclass.html">Key</a></li>
+          <li><a href="functions.html">Functions</a></li>
+          <li><a href="exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
 
       </ul>
     </li>
@@ -615,6 +630,8 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -668,21 +685,25 @@ var logged_in_user_email = null;
 
 
 
-<p>The App Engine datastore supports <i>transactions</i>.  A transaction is an operation or set of operations that either succeeds completely, or fails completely.  An application can perform multiple operations and calculations in a single transaction.</p>
+
+
+<p>The App Engine datastore supports <i>transactions</i>. A transaction is an operation or set of operations that either succeeds completely, or fails completely. An application can perform multiple operations and calculations in a single transaction.</p>
 
 <ul>
   <li><a href="#Using_Transactions">Using Transactions</a></li>
   <li><a href="#What_Can_Be_Done_In_a_Transaction">What Can Be Done In a Transaction</a></li>
   <li><a href="#Isolation_and_Consistency">Isolation and Consistency</a></li>
-  <li><a href="#Uses_For_Transactions">Uses For Transactions</a></li>
-
+  <li><a href="#Uses_for_Transactions">Uses for Transactions</a></li>
+  <li><a href="#Transactional_Task_Enqueuing">Transactional Task Enqueuing</a></li>
 </ul>
 
 <h2 id="Using_Transactions">Using Transactions</h2>
 
-<p>A <i>transaction</i> is a datastore operation or a set of datastore operations that either succeed completely, or fail completely.  If the transaction succeeds, then all of its intended effects are applied to the datastore.  If the transaction fails, then none of the effects are applied.</p>
+<p>A <i>transaction</i> is a datastore operation or a set of datastore operations that either succeed completely, or fail completely. If the transaction succeeds, then all of its intended effects are applied to the datastore. If the transaction fails, then none of the effects are applied.</p>
 
-<p>Every datastore write operation is atomic.  An attempt to create, update or delete an entity either happens, or it doesn't.  An operation may fail due to a high rate of contention, with too many users trying to modify an entity at the same time.  Or an operation may fail due to the application reaching a quota limit.  Or there may be an internal error with the datastore.  In all cases, the operation's effects are not applied, and the datastore API raises an exception.</p>
+<p>Every datastore write operation is atomic; that is, an attempt to create, update, or delete an entity either happens&mdash;or it doesn't. An operation may fail due to a high rate of contention, with too many users trying to modify an entity at the same time. Or an operation may fail due to the application reaching a quota limit. Or there may be an internal error with the datastore. In all cases, the operation's effects are not applied, and the datastore API raises an exception.</p>
+
+<p>Transactions are an optional feature of the datastore; you're not required to use transactions to perform datastore operations.</p>
 
 
 <p>An application can execute a set of statements and datastore operations in a single transaction, such that if any statement or operation raises an exception, none of the datastore operations in the set are applied. The application defines the actions to perform in the transaction using a Python function, then calls <a href="functions.html#run_in_transaction">db.run_in_transaction()</a> with the function as an argument:</p>
@@ -704,7 +725,7 @@ acc = q.get()
 db.run_in_transaction(increment_counter, acc.key(), 5)
 </pre>
 
-<p>db.run_in_transaction() takes the function object, and positional and keyword arguments to pass to the function. If the function returns a value, db.run_in_transaction() will return the value.</p>
+<p>db.run_in_transaction() takes the function object, and positional and keyword arguments to pass to the function. If the function returns a value, db.run_in_transaction() returns that value.</p>
 
 <p>If the function returns, the transaction is committed, and all effects of datastore operations are applied. If the function raises an exception, the transaction is "rolled back," and the effects are not applied.</p>
 
@@ -716,35 +737,28 @@ db.run_in_transaction(increment_counter, acc.key(), 5)
 
 <p>The datastore imposes several restrictions on what can be done inside a single transaction.</p>
 
-<p>All datastore operations in a transaction must operate on entities in the same entity group.  This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities.  Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity.
-For an explanation of entity groups, see
+<p>All datastore operations in a transaction must operate on entities in the same entity group. This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities. Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity.</p>
+
+<p>While an app is applying changes to entities in an entity group, all other attempts to update any entity in the group fail at commit time. Because of this design, using entity groups limits the number of concurrent writes you can do on any entity in that group. When a transaction starts, App Engine uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic concurrency control</a> by checking the last update time for the entity group. Upon commiting a transaction for an entity group, App Engine again checks the last update time for the entity group. If it has changed since our initial check, we throw an exception. For an explanation of entity groups, see
 <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
 
 <p>An app can perform a
-<a href="queriesandindexes.html">query</a> during a transaction, but only if it includes an ancestor filter.  An app can also get datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
-
-<p>An application cannot insert more than five <a href="../taskqueue/overview.html#Task_Within_Transactions">transactional tasks</a> into <a href="../taskqueue/overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
-
-
-<p>All other Python code is allowed inside a transaction function. You can determine if the current scope is nested in a transaction function using <a href="functions.html#is_in_transaction">db.is_in_transaction()</a>. The transaction function should not have side effects other than the datastore operations. The transaction function may be called multiple times if a datastore operation fails due to another user updating entities in the entity group at the same time. When this happens, the datastore API retries the transaction a fixed number of times. If they all fail, db.run_in_transaction() raises a <a href="exceptions.html#TransactionFailedError">TransactionFailedError</a>. You can adjust the number of times the transaction is retried using <a href="functions.html#run_in_transaction_custom_retries">db.run_in_transaction_custom_retries()</a> instead of db.run_in_transaction().</p>
-
-<p>Similarly, the transaction function should not have side effects that depend on the success of the transaction, unless the code that calls the transaction function knows to undo those effects. For example, if the transaction stores a new datastore entity, saves the created entity's ID for later use, then the transaction fails, the saved ID does not refer to the intended entity because the entity's creation was rolled back. The calling code would have to be careful not to use the saved ID in this case.</p>
-
+<a href="queriesandindexes.html">query</a> during a transaction, but only if it includes an ancestor filter. (You can actually perform a query without an ancestor filter, but the results won't reflect any particular transactionally consistent state). An app can also get datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
 
 
 <h2 id="Isolation_and_Consistency">Isolation and Consistency</h2>
 
 <p>The datastore's isolation level outside of transactions is closest to READ_COMMITTED. Inside transactions, on the other hand, the isolation level is SERIALIZABLE, specifically a form of <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>. See the <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> article for more information on isolation levels.</p>
 
-<p>Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the datastore as of the beginning of the transaction. In particular, entities and index rows in the transaction's entity group are fully updated so that queries will return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside transactions.</p>
+<p>Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the datastore as of the beginning of the transaction. In particular, entities and index rows in the transaction's entity group are fully updated so that queries return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside of transactions.</p>
 
-<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get will return the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
+<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get returns the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
 
 
-<h2 id="Uses_For_Transactions">Uses For Transactions</h2>
+<h2 id="Uses_for_Transactions">Uses for Transactions</h2>
+
 
 <p>This example demonstrates one use of transactions: updating an entity with a new property value relative to its current value.</p>
-
 
 <pre class="prettyprint">
 def increment_counter(key, amount):
@@ -755,7 +769,9 @@ def increment_counter(key, amount):
 
 
 
-<p>This requires a transaction because the value may be updated by another user after this code fetches the object, but before it saves the modified object.  Without a transaction, the user's request will use the value of <code>counter</code> prior to the other user's update, and the save will overwrite the new value.  With a transaction, the application is told about the other user's update.  If the entity is updated during the transaction, then the transaction is retried until all steps are completed without interruption.</p>
+<p class="warning"><strong>Warning!</strong> The above sample depicts transactionally incrementing a counter only for the sake of simplicity. If your app has counters that are updated frequently, you should not increment them transactionally, or even within a single entity. A best practice for working with counters is to use a technique known as <a href="../../../articles/sharding_counters.html">counter-sharding</a>.</p>
+
+<p>This requires a transaction because the value may be updated by another user after this code fetches the object, but before it saves the modified object. Without a transaction, the user's request uses the value of <code>count</code> prior to the other user's update, and the save overwrites the new value. With a transaction, the application is told about the other user's update. If the entity is updated during the transaction, then the transaction is retried until all steps are completed without interruption.</p>
 
 <p>Another common use for transactions is to update an entity with a named key, or create it if it doesn't yet exist:</p>
 
@@ -781,15 +797,17 @@ def create_or_update(parent_obj, account_id, address, phone_number):
 
 
 
-<p>As before, a transaction is necessary to handle the case where another user is attempting to create or update an entity with the same string ID.  Without a transaction, if the entity does not exist and two users attempt to create it, the second will overwrite the first without knowing that it happened.  With a transaction, the second attempt will retry, notice that the entity now exists, and update the entity instead.</p>
+<p>As before, a transaction is necessary to handle the case where another user is attempting to create or update an entity with the same string ID. Without a transaction, if the entity does not exist and two users attempt to create it, the second overwrites the first without knowing that it happened. With a transaction, the second attempt retries, notices that the entity now exists, and updates the entity instead.</p>
+
+<p>When a transaction fails, you can have your app retry the transaction until it succeeds, or you can let your users deal with the error by propagating it to your app's user interface level. You do not have to create a retry loop around every transaction.</p>
 
 
-<p>Create-or-update is so useful that there is a built-in method for it: <a href="modelclass.html#Model_get_or_insert">Model.get_or_insert()</a> takes a key name, an optional parent, and arguments to pass to the model constructor if an entity of that name and path does not exist.  The get attempt and the create happen in one transaction, so (if the transaction is successful) the method always returns a model instance that represents an actual entity.</p>
+<p>Create-or-update is so useful that there is a built-in method for it: <a href="modelclass.html#Model_get_or_insert">Model.get_or_insert()</a> takes a key name, an optional parent, and arguments to pass to the model constructor if an entity of that name and path does not exist. The get attempt and the create happen in one transaction, so (if the transaction is successful) the method always returns a model instance that represents an actual entity.</p>
 
 
-<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, requiring the transaction be retried.  As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state.  The application should prepare keys for objects used inside the transaction, then fetch the entities inside the transaction.</p>
+<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, causing the transaction to fail. As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state. The application should prepare keys for objects used outside the transaction, then fetch the entities inside the transaction.</p>
 
-<p>Finally, a transaction can be used to read a consistent snapshot of the datastore. This can be useful when multiple reads gets are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Committing and rolling back a read-only transaction are both no-ops.</p>
+<p>Finally, you can use a transaction to read a consistent snapshot of the datastore. This can be useful when multiple reads are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Read-only transactions never fail due to concurrent modifications, so you don't have to implement retries. Committing and rolling back a read-only transaction are both no-ops.</p>
 
 
 <pre class="prettyprint">
@@ -810,7 +828,21 @@ def get_all_accounts():
 </pre>
 
 
+<h2 id="Transactional_Task_Enqueuing">Transactional Task Enqueuing</h2>
 
+
+<p>You can enqueue a task as part of a datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. If the transaction does not get committed, the task is guaranteed not to be enqueued. If the transaction does get committed, the task is guaranteed to be enqueued. Once enqueued, the task is not guaranteed to execute immediately, so the task is not atomic with the transaction. Still, once enqueued, the task will retry until it succeeds. This applies to any task enqueued during a <code>run_in_transaction()</code> function.</p>
+
+<p>Transactional tasks are useful because they allow you to combine non-datastore actions to a transaction that depend on the transaction succeeding (such as sending an email to confirm a purchase). You can also tie datastore actions to the transaction, such as to commit changes to entity groups outside of the transaction if and only if the transaction succeeds.</p>
+<p>An application cannot insert more than five <a href="../taskqueue/overview.html#Task_Within_Transactions">transactional tasks</a> into <a href="../taskqueue/overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
+
+<pre class="prettyprint">
+def do_something_in_transaction(...)
+  taskqueue.add(url='/path/to/my/worker', transactional=True)
+  ...
+
+db.run_in_transaction(do_something_in_transaction, ....)
+ </pre>
 
 
 
@@ -849,7 +881,7 @@ def get_all_accounts():
 </div>
 Java is a registered trademark of Oracle and/or its affiliates</div>
     
-    &copy;2010 Google -
+    ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
