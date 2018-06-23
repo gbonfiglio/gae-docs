@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -616,7 +624,7 @@ to include your name with greetings you post.&lt;/p&gt;
 
 <p>Edit <code>war/WEB-INF/web.xml</code> and replace the current <code>&lt;welcome-file&gt;</code> element in the <code>&lt;welcome-file-list&gt;</code>.  Be sure to remove <code>index.html</code> from the list, as static files take precedence over JSP and servlets.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;welcome-file-list&gt;
         <b>&lt;welcome-file&gt;guestbook.jsp&lt;/welcome-file&gt;</b>
     &lt;/welcome-file-list&gt;
@@ -626,7 +634,7 @@ to include your name with greetings you post.&lt;/p&gt;
 
 <p>Stop then start the development server.  Visit the following URL:</p>
 
-<ul class="nolist"><li><a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a></li></ul>
+<ul class="nolist"><li><a target="_blank" href="http://localhost:8888/">http://localhost:8888/</a></li></ul>
 
 <p>The app displays the contents of <code>guestbook.jsp</code>, including the user nickname if the user is signed in.</p>
 
@@ -689,7 +697,7 @@ public class SignGuestbookServlet extends HttpServlet {
 
 <p>Edit <code>war/WEB-INF/web.xml</code> and add the following lines to declare the <code>SignGuestbookServlet</code> servlet and map it to the the <code>/sign</code> URL:</p>
 
-<pre>
+<pre class="prettyprint">
 &lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"&gt;
     ...
 
@@ -710,7 +718,7 @@ public class SignGuestbookServlet extends HttpServlet {
 
 <p>If you are not using Eclipse, you must set up the Logger configuration file manually.  Copy the example file from the SDK <code>appengine-java-sdk/config/user/logging.properties</code> to your app's <code>war/WEB-INF/</code> directory.  Then edit the app's <code>war/WEB-INF/appengine-web.xml</code> file as indicated:</p>
 
-<pre>
+<pre class="prettyprint">
 &lt;appengine-web-app xmlns="http://appengine.google.com/ns/1.0"&gt;
     ...
 
@@ -732,7 +740,7 @@ public class SignGuestbookServlet extends HttpServlet {
 
 <p class="note"><b>Tip:</b> When your app logs messages using the <a href="http://java.sun.com/javase/6/docs/api/java/util/logging/Logger.html">java.util.logging.Logger</a> API while running on App Engine, App Engine records the messages and makes them available for browsing in <a href="../../theadminconsole.html">the Admin Console</a>, and available for downloading using the <a href="../tools/uploadinganapp.html">AppCfg</a> tool.  The Admin Console lets you browse messages by log level.</p>
 
-<p>Rebuild and restart, then test <a target="_blank" href="http://localhost:8080/">http://localhost:8080/</a>.  The form displays.  Enter some text in the form, and submit.  The browser sends the form to the app, then redirects back to the empty form.  The greeting data you entered is logged to the console by the server.</p>
+<p>Rebuild and restart, then test <a target="_blank" href="http://localhost:8888/">http://localhost:8888/</a>.  The form displays.  Enter some text in the form, and submit.  The browser sends the form to the app, then redirects back to the empty form.  The greeting data you entered is logged to the console by the server.</p>
 
 
 <h2>Next...</h2>
@@ -777,7 +785,7 @@ public class SignGuestbookServlet extends HttpServlet {
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -639,12 +647,13 @@ import java.io.IOException;
 
 <p>To prevent an app from causing an endless recursion of requests, a request handler is not allowed to fetch its own URL.  It is still possible to cause an endless recursion with other means, so exercise caution if your app can be made to fetch requests for URLs supplied by the user.</p>
 
-<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds.  When using the URLConnection interface, the service uses the connection timeout (<code>setConnectTimeout()</code>) or the read timeout (<code>setReadTimeout()</code>) as the deadline, whichever is greater.</p>
+<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds.  When using the URLConnection interface, the service uses the connection timeout (<code>setConnectTimeout()</code>) plus the read timeout (<code>setReadTimeout()</code>) as the deadline.</p>
 
+<p>The URL Fetch service supports both synchronous requests and asynchronous requests.  With a synchronous request, the API call to fetch a URL waits until the remote host returns a result, then returns control to the application.  The app can specify the maximum amount of time to wait when it makes the call.  If the maximum wait time is exceeded, the call raises an exception.</p>
 
+<p>An asynchronous request to the URL Fetch service starts the request, then returns immediately with an object.  The application can perform other tasks while the URL is being fetched.  When the application needs the results, it calls a method on the object, which waits for the request to finish if necessary, then returns the result.  The app can have up to 10 simultaneous asynchronous URL Fetch calls.  If any URL Fetch requests are pending when the request handler exits, the application server waits for all remaining requests to either return or reach their deadline before returning a response to the user.</p>
 
-<p>The Java API for the URL Fetch service only supports synchronous requests.  A synchronous call to the service will not return until the service receives a response from the remote host.  Your app's request timer may elapse before the remote host responds.  There is no way to cancel the request after it has been issued.</p>
-
+<p>In Java, the asynchronous interface is only available when using the low-level API directly.  The <code>fetchAsync()</code> method returns a <code>java.util.concurrent.Future&lt;HTTPResponse&gt;</code>.</p>
 
 
 <h2 id="Secure_Connections_and_HTTPS">Secure Connections and HTTPS</h2>
@@ -799,7 +808,7 @@ import java.net.URL;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

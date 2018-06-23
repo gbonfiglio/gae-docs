@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="python/howto/index.html">How-To</a>
       <ul>
               <li><a href="python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="theadminconsole.html">The Admin Console</a></li>
       <li><a href="quotas.html">Quotas</a></li>
       <li><a href="billing.html">Billing</a></li>
-    </ul>
+      <li><a href="domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -583,6 +591,7 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="#Requests">Requests</a></li>
       <li><a href="#Datastore">Datastore</a></li>
+      <li><a href="#Blobstore">Blobstore</a></li>
       <li><a href="#Mail">Mail</a></li>
       <li><a href="#UrlFetch">URL Fetch</a></li>
       <li><a href="#XMPP">XMPP</a></li>
@@ -746,7 +755,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -796,6 +805,9 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <dt>Datastore API Calls</dt>
   <dd>The total number of times the app retrieved, created, updated or deleted an entity, or performed a query in the datastore.</dd>
 
+  <dt>Datastore Queries</dt>
+  <dd>The total number of times the app has performed a datastore query.  Note that some query interface operations (IN and !=) perform multiple datastore queries; each individual query counts toward this quota.</dd>
+
   <dt>Stored Data (billable)</dt>
   <dd>
   <p>The total amount of data stored in datastore entities and corresponding indexes, in the memcache, and in the Blobstore.</p> 
@@ -817,13 +829,33 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
   <dt>Datastore CPU Time</dt>
   <dd>The time spent performing datastore operations.  Datastore CPU cycles also count toward the CPU Time quota.  See CPU Time, above, for details on how CPU time is calculated.</dd>
+
+  <dt>Number of Indexes</dt>
+  <dd>The number of datastore indexes that exist for the application.  This includes indexes that were created in the past and no longer appear in the application's configuration but have not been deleted using AppCfg's <code>vacuum_indexes</code> command.</dd>
 </dl>
+
+<table width="75%">
+  <tr>
+    <th width="30%">Resource</th>
+    <th width="35%">Free Default Quota</th>
+    <th width="35%">Billing Enabled Default Quota</th>
+  </tr>
+  <tr>
+    <td>Stored Data (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
+    <td>1 gigabyte</td>
+    <td>1 gigabyte free; no maximum</td>
+  </tr>
+  <tr>
+    <td>Number of Indexes</td>
+    <td>100</td>
+    <td>200</td>
+</table>
 
 <table width="75%">
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -839,11 +871,11 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td width="17.5%">129,000 calls/minute</td>
   </tr>
   <tr>
-    <td>Stored Data (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>1 gigabyte</td>
-    <td><i>None</i></td>
-    <td>1 gigabytes free; no maximum</td>
-    <td><i>None</i></td>
+    <td>Datastore Queries</td>
+    <td>10,000,000 queries</td>
+    <td>57,000 queries/minute</td>
+    <td>200,000,000 queries</td>
+    <td>129,000 queries/minute</td>
   </tr>
   <tr>
     <td>Data Sent to API</td>
@@ -868,6 +900,49 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+  </tr>
+</table>
+
+<h3 id="Blobstore">Blobstore</h3>
+
+<p>Data stored in the blobstore counts toward the <b>Stored Data (billable)</b> quota, described above.  The following quotas apply specifically to use of the blobstore.</p>
+
+<dl>
+  <dt>Blobstore API Calls</dt>
+  <dd>The total number of times the app called the blobstore API, such as to create upload URLs.</dd>
+
+  <dt>Blobstore Stored Data</dt>
+  <dd>The total amount of data stored in the blobstore.  Also counts toward the <b>Stored Data (billable)</b> quota.</dd>
+</dl>
+
+<p class="note"><b>Note:</b> The Blobstore API is only available for apps with billing enabled.  You still get an amount of quota for free, but billing must be enabled to use it.</p>
+
+<table width="75%">
+  <tr>
+    <th width="30%">Resource</th>
+    <th width="35%">Free Default Quota</th>
+    <th width="35%">Billing Enabled Default Quota</th>
+  </tr>
+  <tr>
+    <td>Blobstore Stored Data</td>
+    <td>1 gigabyte</td>
+    <td>1 gigabyte free; no maximum</td>
+  </tr>
+</table>
+
+<table width="75%">
+  <tr>
+    <th width="30%" rowspan="2">Resource</th>
+    <th width="70%" colspan="2">Billing Enabled Default Quota</th>
+  </tr>
+  <tr>
+    <th width="35%">Daily Limit</th>
+    <th width="35%">Maximum Rate</th>
+  </tr>
+  <tr>
+    <td width="30%">Blobstore API Calls</td>
+    <td width="17.5%">140,000,000 calls</td>
+    <td width="17.5%">72,000 calls/minute</td>
   </tr>
 </table>
 
@@ -897,7 +972,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -969,7 +1044,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -986,16 +1061,16 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>UrlFetch Data Sent</td>
-    <td>4 gigabytes</td>
+    <td>up to the outgoing bandwidth limit</td>
     <td>22 megabytes/minute</td>
-    <td>1,046 gigabytes</td>
+    <td>up to the outgoing bandwidth limit</td>
     <td>740 megabytes/minute</td>
   </tr>
   <tr>
     <td>UrlFetch Data Received</td>
-    <td>4 gigabytes</td>
+    <td>up to the incoming bandwidth limit</td>
     <td>22 megabytes/minute</td>
-    <td>1,046 gigabytes</td>
+    <td>up to the incoming bandwidth limit</td>
     <td>740 megabytes/minute</td> 
   </tr>
   <tr>
@@ -1023,7 +1098,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1085,7 +1160,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1142,7 +1217,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1186,7 +1261,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <tr>
     <th width="30%" rowspan="2">Resource</th>
     <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
   </tr>
   <tr>
     <th width="17.5%">Daily Limit</th>
@@ -1248,7 +1323,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

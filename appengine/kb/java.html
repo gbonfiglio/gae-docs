@@ -55,6 +55,8 @@ var logged_in_user_email = null;
 
     <link href="../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
     <link href="../css/local_extensions.css" rel="stylesheet" type="text/css" />
+    <script src="../js/customtabs.js" type="text/javascript"></script>
+    <script src="../js/ui.tabs.js" type="text/javascript"></script>
   </head>
 
   <body class="gc-documentation">
@@ -64,7 +66,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -105,7 +108,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -287,7 +290,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../docs/java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../docs/java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../docs/java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../docs/java/config/index.html">Configuration</a>
       <ul>
@@ -305,12 +308,17 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../docs/java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../docs/java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../docs/java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../docs/java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../docs/java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../docs/java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -510,6 +518,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -517,6 +526,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../docs/python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../docs/python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -531,7 +541,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/theadminconsole.html">The Admin Console</a></li>
       <li><a href="../docs/quotas.html">Quotas</a></li>
       <li><a href="../docs/billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../docs/domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -588,7 +598,7 @@ var logged_in_user_email = null;
 
 <h2>Performance</h2>
 <ul>
-<li><a href="What_Is_A_Loading_Req">What is a loading request?</a></li>
+<li><a href="#What_Is_A_Loading_Request">What is a loading request?</a></li>
 <li><a href="#What_Causes_Loading_Requests">What causes loading requests?</a></li>
 <li><a href="#How_To_Detect_Loading_Requests">How do I distinguish normal requests from loading requests in my application logs?</a></li>
 <li><a href="#Do_I_Need_To_Be_Concerned_About_High_CPU_Warnings">Do I need to be concerned about high CPU warnings in the admin console for my loading requests?</a></li>
@@ -681,13 +691,13 @@ var logged_in_user_email = null;
 &lt;/listener&gt;
 
 // LogLoadingRequest.java
-public class LogLoadingRequest implements HttpSessionListener {
+public class LogLoadingRequest implements ServletContextListener {
   private static final Logger logger = Logger.getLogger(LogLoadingRequest.class.getName());
-  public void sessionCreated(HttpSessionEvent se) {
+  public void contextInitialized(ServletContextEvent sce) {
     logger.log(Level.INFO, "Loading request occuring.");
   }
 
-  public void sessionDestroyed(HttpSessionEvent se) {
+  public void contextDestroyed(ServletContextEvent sce) {
   }
 }
 </pre>
@@ -735,11 +745,11 @@ Given that, your time is most often better spent focusing on optimizing other hi
 <p>You may want to change the port on which the dev server will listen for incoming connections. You can set the port with the following argument:</p>
 <pre>--port=<i>desired-port-number</i></pre>
 <p>If you are using an ant target with a <code>dev_appserver</code> element, you can specify the port argument by adding the <code>port</code> attribute as follows.</p>
-<pre>&lt;dev_appserver war=&quot;war&quot; port=&quot;<i>desired-port-number</i>&quot;/&gt;</pre>
+<pre class="prettyprint">&lt;dev_appserver war=&quot;war&quot; port=&quot;<i>desired-port-number</i>&quot;/&gt;</pre>
 
 <h4 id="googledata">Can I use the Google Data API library on App Engine?</h4>
 <p>Yes, the <a href="http://code.google.com/p/gdata-java-client/">Google Data Java client library</a> can be used in App Engine, but you need to set a configuration option to avoid a runtime permissions error. Add the following to your <code>appengine-web.xml</code> file:</p>
-<pre>&lt;system-properties&gt;
+<pre class="prettyprint">&lt;system-properties&gt;
   &lt;property name=&quot;com.google.gdata.DisableCookieHandler&quot; value=&quot;true&quot;/&gt;
 &lt;/system-properties&gt;</pre>
 <p>If the following is not included, you may see the following exception:</p>
@@ -879,7 +889,7 @@ public class FileUpload extends HttpServlet {
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

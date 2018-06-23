@@ -64,7 +64,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -105,7 +106,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -286,7 +287,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../config/index.html">Configuration</a>
       <ul>
@@ -304,12 +305,17 @@ var logged_in_user_email = null;
     <li><a href="uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="ant.html">Using Apache Ant</a></li>
+    <li><a href="localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -509,6 +515,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -516,6 +523,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -530,7 +538,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -672,7 +680,9 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
 ./appengine-java-sdk/bin/appcfg.sh request_logs myapp/war mylogs.txt
 </pre>
 
-<p>By default, the command downloads log messages from the current calendar day (since midnight Pacific Time) with a log level of INFO or higher (omitting DEBUG level messages).  The command overwrites the local log file.  You can adjust the number of days, the minimum log level, and whether to overwrite or append to the local log file using command-line options.  See below for more information on these options.</p>
+<p>By default, the command downloads log messages from the current calendar day (since midnight Pacific Time) with a log level of INFO or higher (omitting DEBUG level messages).  You can adjust the number of days, the minimum log level, and whether to overwrite or append to the local log file using command-line options.</p>
+
+<p>By default, the command overwrites the local log file.  You can tell it to append the downloaded data to the file instead by specifying the <code>--append</code> argument.  This simply appends the requested log data to the file, it doesn't guarantee that the file doesn't contain duplicate log messages.</p>
 
 
 <h2 id="Using_an_HTTP_Proxy">Using an HTTP Proxy</h2>
@@ -736,6 +746,10 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
       <dt><code>--severity=<i>...</i></code></dt>
       <dd>
         <p>The minimum log level for the log messages to retrieve.  The value is a number corresponding to the log level: 4 for CRITICAL, 3 for ERROR, 2 for WARNING, 1 for INFO, 0 for DEBUG.  All messages at the given log level and above will be retrieved.  Default is 1 (INFO).</p>
+      </dd>
+      <dt><code>--append</code></dt>
+      <dd>
+        <p>Tells AppCfg to append logs to the log output file instead of overwriting the file.  This simply appends the requested data, it does not guarantee the file won't contain duplicate error messages.  If this argument is not specified, AppCfg will overwrite the log output file.</p>
       </dd>
     </dl>
   </dd>
@@ -826,7 +840,7 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

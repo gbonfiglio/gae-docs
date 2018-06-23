@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -648,7 +656,18 @@ class LogSenderHandler(InboundMailHandler):
 
 
 
-<p>The <code>InboundEmailMessage</code> object contains the email message and includes attributes for the following message fields:</p>
+<p>The <code>InboundEmailMessage</code> object contains the email message.  Its <code>bodies()</code> method returns the message body, or possibly multiple message bodies. If you call <code>bodies()</code> without arguments, it returns an iterator that returns HTML bodies first, then plain text bodies. If you want just HTML or just plain text, you can pass an argument to <code>bodies()</code>, as follows:</p>
+
+<pre class="prettyprint">
+    plaintext_bodies = message.bodies('text/plain')
+    html_bodies = message.bodies('text/html')
+
+    for content_type, body in html_bodies:
+        decoded_html = body.decode()
+        # ...
+</pre>
+
+<p>The <code>InboundEmailMessage</code> object includes attributes to access other message fields:</p>
 
 <ul>
   <li><code>subject</code> contains the message subject.</li>
@@ -656,16 +675,21 @@ class LogSenderHandler(InboundMailHandler):
   <li><code>to</code> is a list of the message's primary recipients.</li>
   <li><code>cc</code> contains a list of the cc recipients.</li>
   <li><code>date</code> returns the message date.</li>
-  <li><code>bodies</code> is a list of message bodies, possibly including both plain text and HTML types. You can use the <code>bodies()</code> method to extract each body (see below).</li>
-  <li><code>attachments</code> is a list of element pairs containing file types and contents.</li>
-</ul>
-
-<p>The <code>bodies()</code> method is useful for extracting individual message bodies. If you call <code>bodies()</code> without arguments, it returns an iterator that returns HTML bodies first, then plain text bodies. If you want just HTML or just plain text, you can pass an argument to <code>bodies()</code>, as follows:
-
+  <li><code>attachments</code> is a list of file attachments.  If there is only one attachment, this value is a list containing the filename and the file contents.  If there is more than one attachment, each value in the list is a tuple of two elements: the filename and the file contents.
 <pre class="prettyprint">
-  plaintext = message.bodies(content_type='text/plain')
-  html = message.bodies(content_type='text/html')
+attachments = []
+if message.attachments:
+    if isinstance(message.attachments[0], basestring):
+        attachments = [message.attachments]
+    else:
+        attachments = message.attachments
+
+for filename, content in attachments:
+    # ...
 </pre>
+  </li>
+  <li><code>original</code> is the complete message, including data not exposed by the other fields such as email headers, as a Python <a href="http://docs.python.org/library/email.message.html">email.message.Message</a>.</li>
+</ul>
 
 <p>Once you set up your app to handle incoming email, you can use the development server console to simulate incoming email messages. You can access the development server by going to <a href="http://localhost:8080/_ah/admin/">http://localhost:8080/_ah/admin/</a> (or if your app is running on a port other than 8080, use that value instead). In the development server, click Inbound Mail on the left side, fill out the form that appears, and click Send Email. To learn more, including how to get the development server running, see <a href="http://code.google.com/appengine/docs/python/tools/devserver.html">The Python Development Server</a>.</p>
 
@@ -704,7 +728,7 @@ class LogSenderHandler(InboundMailHandler):
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
@@ -736,4 +760,5 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
   </body>
 </html>
+
 

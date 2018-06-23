@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -571,7 +579,7 @@ var logged_in_user_email = null;
 
 <p>You create and manage applications in App Engine using the Administration Console.  Once you have registered an application ID for your application, you upload it to your website using <code>appcfg.py</code>, a command-line tool provided in the SDK. Or, if you're using Google App Engine Launcher, you can upload your application by clicking the Deploy button.</p>
 
-<p class="note"><b>Note:</b> There is no way to delete an application in App Engine.  You can register up to 10 application IDs per Google account.  If you do not want to use one of your allotted application IDs for the tutorial, you can just read this section, and refer to it later when you are ready to upload your first application.</p>
+<p class="note"><b>Note:</b> Once you register an application ID, you can delete it, but you can't re-register that same application ID after it has been deleted. You can skip these next steps if you don't want to register an ID at this time.</p>
 
 
 <h2>Registering the Application</h2>
@@ -645,7 +653,7 @@ appcfg.py update helloworld/
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

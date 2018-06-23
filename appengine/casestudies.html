@@ -64,7 +64,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -105,7 +106,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -286,7 +287,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="docs/java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="docs/java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="docs/java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="docs/java/config/index.html">Configuration</a>
       <ul>
@@ -304,12 +305,17 @@ var logged_in_user_email = null;
     <li><a href="docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="docs/java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="docs/java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="docs/java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="docs/java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="docs/java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="docs/java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -509,6 +515,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -516,6 +523,7 @@ var logged_in_user_email = null;
     <li><a href="docs/python/howto/index.html">How-To</a>
       <ul>
               <li><a href="docs/python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="docs/python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -530,7 +538,7 @@ var logged_in_user_email = null;
       <li><a href="docs/theadminconsole.html">The Admin Console</a></li>
       <li><a href="docs/quotas.html">Quotas</a></li>
       <li><a href="docs/billing.html">Billing</a></li>
-    </ul>
+      <li><a href="docs/domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -574,7 +582,7 @@ var logged_in_user_email = null;
 <p>App Engine makes it easy to build and scale web applications with Google's robust and reliable infrastructure. Learn how businesses are taking advantage of App Engine to quickly scale their applications to millions of users.
 <ul>
   <li><a href="#socialwok">Socialwok</a></li>
-  <li><a href="#whitehouse">WhiteHouse.gov Open For Questions</a></li>
+  
   <li><a href="#giftag">Best Buy's Giftag</a></li>
   <li><a href="#gigapan">Gigapan</a></li>
   <li><a href="#lingospot">LingoSpot</a></li>
@@ -602,14 +610,7 @@ users.
 <p><a href="http://www.youtube.com/watch?v=k22gziqBFiM">View video</a> | <a href="http://socialwok.com/">Visit Socialwok</a></p>
 </div>
 
-<h2 id="whitehouse">WhiteHouse.gov Open For Questions</h2>
-<div style="padding-top:20px; line-height:13pt">
-  <div style="float:left; width:200px; padding:0 0 20px 50px">
-    <img src="images/whitehouse.jpg"/>
-  </div>
-President Obama hosted the first online Town Hall meeting with questions submitted and voted on via the internet. Google Moderator, built with App Engine and Google Web Toolkit, allowed users to submit and vote on questions collaboratively. Originally developed for Google company meetings, it's now available for anyone to use -- but being featured on WhiteHouse.gov offered an unprecedented level of potential traffic and attention.
-<p><a href="http://googlecode.blogspot.com/2009/04/google-developer-products-help.html">Read the blog post</a> | <a href="http://www.whitehouse.gov/OpenForQuestions">Visit WhiteHouse.gov Open For Questions</a></p>
-</div>
+
 
 <h2 id="giftag">Best Buy's Giftag</h2>
 <div style="padding-top:20px; line-height:13pt">
@@ -742,7 +743,7 @@ CloudStatus BETA provides visibility into two of the world's most popular clouds
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

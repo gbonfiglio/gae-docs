@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -578,13 +586,15 @@ var logged_in_user_email = null;
   <li><a href="#Configuring_Secure_URLs__SSL_">Configuring Secure URLs (SSL)</a></li>
   <li><a href="#Enabling_Sessions">Enabling Sessions</a></li>
   <li><a href="#Inbound_Services">Inbound Services</a></li>
+  <li><a href="#Disabling_Precompilation">Disabling Precompilation</a></li>
+  <li><a href="#Administration_Console_Custom_Pages">Administration Console Custom Pages</a></li>
 </ul>
 
 <h2 id="About_appengine_web_xml">About appengine-web.xml</h2>
 
 <p>An App Engine Java app must have a file named <code>appengine-web.xml</code> in its WAR, in the directory <code>WEB-INF/</code>.  This is an XML file whose root element is <code>&lt;appengine-web-app&gt;</code>.  A minimal file that specifies the application ID, a version identifier, and no static files or resource files looks like this:</p>
 
-<pre>
+<pre class="prettyprint">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;appengine-web-app xmlns="http://appengine.google.com/ns/1.0"&gt;
   &lt;application&gt;<i>application-id</i>&lt;/application&gt;
@@ -617,7 +627,7 @@ var logged_in_user_email = null;
 
 <p>For example, to specify that all files whose names end in <code>.png</code> are static files (but never those in <code>WEB-INF/</code>) except those in the <code>data/</code> directory and all subdirectories:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;static-files&gt;
         &lt;include path="/**.png" /&gt;
         &lt;exclude path="/data/**.png" /&gt;
@@ -626,7 +636,7 @@ var logged_in_user_email = null;
 
 <p>Similarly, to specify that all files whose names end in <code>.xml</code> are resource files (including those outside of <code>WEB-INF/</code>) except those in the <code>feeds/</code> directory and all subdirectories:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;resource-files&gt;
         &lt;include path="/**.xml" /&gt;
         &lt;exclude path="/feeds/**.xml" /&gt;
@@ -635,7 +645,7 @@ var logged_in_user_email = null;
 
 <p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code>&lt;static-files&gt;&lt;include ... &gt;</code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;static-files&gt;
         &lt;include path="/**.png" expiration="4d 5h" /&gt;
     &lt;/static-files&gt;
@@ -648,7 +658,7 @@ var logged_in_user_email = null;
 
 <p>The <code>appengine-web.xml</code> file can define system properties and environment variables that are set when the application is running.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;system-properties&gt;
         &lt;property name="myapp.maximum-message-length" value="140" /&gt;
         &lt;property name="myapp.notify-every-n-signups" value="1000" /&gt;
@@ -667,7 +677,7 @@ var logged_in_user_email = null;
 
 <p>If you want to disallow the use of HTTPS for the application, put the following in the <code>appengine-web.xml</code> file:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;ssl-enabled&gt;false&lt;/ssl-enabled&gt;
 </pre>
 
@@ -676,29 +686,60 @@ var logged_in_user_email = null;
 
 <h2 id="Enabling_Sessions">Enabling Sessions</h2>
 
-<p>App Engine includes an implementation of sessions, using <a href="http://java.sun.com/products/servlet/2.2/javadoc/javax/servlet/http/HttpSession.html">the servlet session interface</a>.  The implementation uses the App Engine datastore and memcache to store session data.</p>
+<p>App Engine includes an implementation of sessions, using <a href="http://java.sun.com/products/servlet/2.2/javadoc/javax/servlet/http/HttpSession.html">the servlet session interface</a>.  The implementation stores session data in the App Engine datastore for persistence, and also uses memcache for speed.  As with most other servlet containers, the session attributes that are set with <code>session.setAttribute()</code> during the request are saved to the datastore at the end of the request.</p>
 
 <p>This feature is off by default.  To turn it on, add the following to <code>appengine-web.xml</code>:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;sessions-enabled&gt;true&lt;/sessions-enabled&gt;
 </pre>
 
 <p>The implementation creates datastore entities of the kind <code>_ah_SESSION</code>, and memcache entries using keys with a prefix of <code>_ahs</code>.</p>
 
+<p class="note"><b>Note:</b> Because App Engine stores session data in the datastore and memcache, all values stored in the session must implement the <code>java.io.Serializable</code> interface.</p>
+
 
 <h2 id="Inbound_Services">Inbound Services</h2>
 
-<p>Before an application can receive XMPP messages, the application must be configured to enable those services.  You enable these services for a Python app by including an <code>&lt;inbound-services&gt;</code> element in the <code>appengine-web.xml</code> file.</p>
+<p>Before an application can receive email and XMPP messages, the application must be configured to enable those services.  You enable these services for a Python app by including an <code>&lt;inbound-services&gt;</code> element in the <code>appengine-web.xml</code> file.</p>
 
-<p>To enable incoming XMPP messages, add the following to <code>appengine-web.xml</code>:</p>
+<p>To enable incoming email and XMPP messages, add the following to <code>appengine-web.xml</code>:</p>
 
-<pre>
+<pre class="prettyprint">
   &lt;inbound-services&gt;
     &lt;service&gt;xmpp_message&lt;/service&gt;
+    &lt;service&gt;mail&lt;/service&gt;
   &lt;/inbound-services&gt;
 </pre>
 
+
+<h2 id="Disabling_Precompilation">Disabling Precompilation</h2>
+
+<p>App Engine uses a "precompilation" process with the Java bytecode of an app to enhance the performance of the app in the Java runtime environment.  Precompiled code functions identically to the original bytecode.</p>
+
+<p>If for some reason you prefer that your app not use precompilation, you can turn it off by adding the following to your <code>appengine-web.xml</code> file:</p>
+
+<pre class="prettyprint">
+  &lt;precompilation-enabled&gt;true&lt;/precompilation-enabled&gt;
+</pre>
+
+
+<h2 id="Administration_Console_Custom_Pages">Administration Console Custom Pages</h2>
+
+<p>If you have administrator-only pages in your application that are used to administer the app, you can have those pages appear in the Administration Console.  The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML <a href="https://developer.mozilla.org/en/HTML/Element/iframe">iframe</a>.  To add a page to the Administration Console, add an <code>&lt;admin_console&gt;</code> section in your app's <code>appengine-web.xml</code> file, like so:</p>
+
+<pre>
+  &lt;admin-console&gt;
+    &lt;page name="Blog Comment Admin" url="/blog/admin/comments" /&gt;
+    &lt;page name="Create a Blog Post" url="/blog/admin/newentry" /&gt;
+  &lt;/admin-console&gt;
+</pre>
+
+<p>Each <code>&lt;page&gt;</code> represents a custom page.  The <code>name</code> appears in the Administration Console navigation, and the <code>url</code> is the URL path to the page.</p>
+
+<p>At this time, page names must contain only characters in the ASCII character set.</p>
+
+<p>You can use configuration in the <code>web.xml</code> file to restrict access to custom administration pages to only users that are administrators of the app.  See <a href="webxml.html#Security_and_Authentication">Security and Authentication</a>.</p>
 
 
 
@@ -736,7 +777,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

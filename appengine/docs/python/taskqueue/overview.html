@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -590,6 +598,7 @@ var logged_in_user_email = null;
   <li><a href="#Worker_URLs_and_Task_Names">Worker URLs and Task Names</a></li>
   <li><a href="#Task_Request_Headers">Task Request Headers</a></li>
   <li><a href="#Securing_URLs_for_Tasks">Securing URLs for Tasks</a></li>
+  <li><a href="#Task_Within_Transactions">Tasks Within Transactions</a></li>
   <li><a href="#Task_Execution">Task Execution</a></li>
   <li><a href="#Queue_Concepts">Queue Concepts</a></li>
   <li><a href="#The_Default_Queue">The Default Queue</a></li>
@@ -613,11 +622,11 @@ var logged_in_user_email = null;
 <p>The following example defines a task handler (<code>CounterWorker</code>) that increments a counter in the datastore, mapped to the URL <code>/worker</code>.  It also defines a user-accessible request handler that displays the current value of the counter for a GET request, and for a POST request enqueues a task and returns. Please note that the task in this example should run at a rate no greater than once per second.</p>
 
 <pre class="prettyprint">
-import wsgiref.handlers
 from google.appengine.api.labs import taskqueue
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
+from google.appengine.ext.webapp.util import run_wsgi_app
 
 class Counter(db.Model):
     count = db.IntegerProperty(indexed=False)
@@ -648,7 +657,7 @@ class CounterWorker(webapp.RequestHandler):
         db.run_in_transaction(txn)
 
 def main():
-    wsgiref.handlers.CGIHandler().run(webapp.WSGIApplication([
+    run_wsgi_app(webapp.WSGIApplication([
         ('/', CounterHandler),
         ('/worker', CounterWorker),
     ]))
@@ -814,9 +823,28 @@ handlers:
   login: admin
 </pre>
 
+<p class="note"><b>Note:</b> While task queues can use URL paths restricted with <code>login: admin</code>, they <i>cannot</i> use URL paths restricted with <code>login: required</code>.</p>
+
 <p>For more information see <a href="../config/appconfig.html#Requiring_Login_or_Administrator_Status">Python Application Configuration: Requiring Login or Administrator Status</a>.</p>
 
 <p>To test a task web hook, sign in as an administrator and visit the URL of the handler in your browser.</p>
+
+
+<h2 id="Task_Within_Transactions">Tasks Within Transactions</h2>
+
+<p>You can enqueue a task as part of a datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. Tasks added within a <a href="../datastore/transactions.html">transaction</a> are considered to be a part of it and have the same level of <a href="../datastore/transactions.html#Isolation_and_Consistency">isolation and consistency</a>.</p>
+
+<p>An application cannot insert more than five <a href="overview.html#Task_Within_Transactions">transactional tasks</a> into <a href="overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
+
+
+<pre class="prettyprint">
+def do_something_in_transaction(...)
+  taskqueue.add(url='/path/to/my/worker', transactional=True)
+  ...
+
+db.run_in_transaction(do_something_in_transaction, ....)
+ </pre>
+
 
 
 <h2 id="Task_Execution">Task Execution</h2>
@@ -886,9 +914,7 @@ handlers:
 
 
 
-<pre>
-http://localhost:8080/_ah/admin/taskqueue
-</pre>
+<pre>http://localhost:8080/_ah/admin/taskqueue</pre>
 
 <p>To execute tasks, select the queue by clicking on its name, then select the tasks to execute.  To clear a queue without executing any tasks, click the "Flush Queue" button.</p>
 
@@ -942,7 +968,7 @@ and the "Quota Details" section of
 
 <h2 id="Status_of_the_Task_Queue_API">Status of the Task Queue API</h2
 
-<p>The App Engine Task Queue API is currently in an experimental state, release as an App Engine Labs feature. We are eager to get your feedback so that we may improve the API. During this initial, experimental phase, the API will be located under the App Engine Labs package:</p>
+<p>The App Engine Task Queue API is currently in an experimental state, released as an App Engine Labs feature. We are eager to get your feedback so that we may improve the API. During this initial, experimental phase, the API will be located under the App Engine Labs package:</p>
 
 
 <p><code>google.appengine.api.labs.taskqueue</code></p>
@@ -971,9 +997,9 @@ and the "Quota Details" section of
 
 <p>Of course, we'll give multiple weeks worth of notice before this happens and we'll work with developers on the best transition possible. Please keep in mind that the following may change before the Task Queue API leaves Labs:</p>
 <ul>
-  <li>Quotas and Limits - most likely, we'll increase the number of Tasks your app can use in a given day</li>
-  <li>The API itself - we may need to make changes to the API, due to usability or bugs</li>
-  <li>Billing - we may change how we charge for usage of the Task Queue API.</li>
+  <li>quotas and limits, most likely, we'll increase the number of tasks your app can use in a given day</li>
+  <li>the API itself; we may need to make changes to the API, due to usability or bugs</li>
+  <li>billing; we may change how we charge for usage of the Task Queue API</li>
 </ul>
 
 
@@ -1012,7 +1038,7 @@ and the "Quota Details" section of
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

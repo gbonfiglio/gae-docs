@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -594,7 +602,7 @@ var logged_in_user_email = null;
 
 <p>Here is a simple <code>web.xml</code> example that maps all URL paths (<code>/*</code>) to the servlet class <code>mysite.server.ComingSoonServlet</code>:</p>
 
-<pre>
+<pre class="prettyprint">
 &lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"&gt;
     &lt;servlet&gt;
         &lt;servlet-name&gt;comingsoon&lt;/servlet-name&gt;
@@ -616,7 +624,7 @@ var logged_in_user_email = null;
 
 <p>The <code>&lt;servlet&gt;</code> element declares the servlet, including a name used to refer to the servlet by other elements in the file, the class to use for the servlet, and initialization parameters.  You can declare multiple servlets using the same class with different initialization parameters.  The name for each servlet must be unique across the deployment descriptor.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;servlet&gt;
         &lt;servlet-name&gt;redteam&lt;/servlet-name&gt;
         &lt;servlet-class&gt;mysite.server.TeamServlet&lt;/servlet-class&gt;
@@ -646,7 +654,7 @@ var logged_in_user_email = null;
 
 <p>The <code>&lt;servlet-mapping&gt;</code> element specifies a URL pattern and the name of a declared servlet to use for requests whose URL matches the pattern.  The URL pattern can use an asterisk (<code>*</code>) at the beginning or end of the pattern to indicate zero or more of any character.  (The standard does not support wildcards in the middle of a string, and does not allow multiple wildcards in one pattern.)  The pattern matches the full path of the URL, starting with and including the forward slash (<code>/</code>) following the domain name.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;servlet-mapping&gt;
         &lt;servlet-name&gt;redteam&lt;/servlet-name&gt;
         &lt;url-pattern&gt;/red/*&lt;/url-pattern&gt;
@@ -677,7 +685,7 @@ var logged_in_user_email = null;
 
 <p>If you want more control over how the JSP is mapped to a URL, you can specify the mapping explicitly by declaring it with a <code>&lt;servlet&gt;</code> element in the deployment descriptor.  Instead of a <code>&lt;servlet-class&gt;</code> element, you specify a <code>&lt;jsp-file&gt;</code> element with the path to the JSP file from the WAR root.  The <code>&lt;servlet&gt;</code> element for the JSP can contain initialization parameters.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;servlet&gt;
         &lt;servlet-name&gt;register&lt;/servlet-name&gt;
         &lt;jsp-file&gt;/register/start.jsp&lt;/jsp-file&gt;
@@ -693,7 +701,7 @@ var logged_in_user_email = null;
 
 <p>You can install JSP tag libraries with the <code>&lt;taglib&gt;</code> element.  A tag library has a path to the JSP Tag Library Descriptor (TLD) file (<code>&lt;taglib-location&gt;</code>) and a URI that JSPs use to select the library for loading (<code>&lt;taglib-uri&gt;</code>).  Note that App Engine provides the <a href="http://java.sun.com/products/jsp/jstl/">JavaServer Pages Standard Tag Library</a> (JSTL), and you do not need to install it.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;taglib&gt;
         &lt;taglib-uri&gt;/escape&lt;/taglib-uri&gt;
         &lt;taglib-location&gt;/WEB-INF/escape-tags.tld&lt;/taglib-location&gt;
@@ -709,7 +717,7 @@ var logged_in_user_email = null;
 
 <p>A security constraint includes an authorization constraint that specifies which Google Accounts users can access the path.  If the authorization constraint specifies a user role of <code>*</code>, then any users signed in with a Google Account can access the URL.  If the constraint specifies a user role of <code>admin</code>, then only registered developers (administrators) of the application can access the URL.  The <code>admin</code> role makes it easy to build administrator-only sections of your site.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;security-constraint&gt;
         &lt;web-resource-collection&gt;
             &lt;url-pattern&gt;/profile/*&lt;/url-pattern&gt;
@@ -742,7 +750,7 @@ var logged_in_user_email = null;
 
 <p>To declare that HTTPS should be used for a URL, you set up a security constraint in the deployment descriptor (as described in <a href="#Security_and_Authentication">Security and Authentication</a>) with a <code>&lt;user-data-constraint&gt;</code> whose <code>&lt;transport-guarantee&gt;</code> is <code>CONFIDENTIAL</code>, as follows:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;security-constraint&gt;
         &lt;web-resource-collection&gt;
             &lt;url-pattern&gt;/profile/*&lt;/url-pattern&gt;
@@ -772,7 +780,7 @@ var logged_in_user_email = null;
 
 <p>For example, if the user accesses the URL path <code>/help/accounts/</code>, the following <code>&lt;welcome-file-list&gt;</code> element in the deployment descriptor tells the server to check for <code>help/accounts/index.jsp</code> and <code>help/accounts/index.html</code> before reporting that the URL does not exist:</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;welcome-file-list&gt;
         &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
         &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
@@ -826,7 +834,7 @@ public class LogFilterImpl implements Filter {
 
 <p>The <code>&lt;filter&gt;</code> element contains a <code>&lt;filter-name&gt;</code>, <code>&lt;filter-class&gt;</code>, and optional <code>&lt;init-param&gt;</code> elements.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;filter&gt;
         &lt;filter-name&gt;logSpecial&lt;/filter-name&gt;
         &lt;filter-class&gt;mysite.server.LogFilterImpl&lt;/filter-class&gt;
@@ -839,7 +847,7 @@ public class LogFilterImpl implements Filter {
 
 <p>The <code>&lt;filter-mapping&gt;</code> element contains a <code>&lt;filter-name&gt;</code> that matches the name of a declared filter, and either a <code>&lt;url-pattern&gt;</code> element for applying the filter to URLs, or a <code>&lt;servlet-name&gt;</code> element that matches the name of a declared servlet for applying the filter whenever the servlet is called.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;!-- Log for all URLs ending in ".special" --&gt;
     &lt;filter-mapping&gt;
         &lt;filter-name&gt;logSpecial&lt;/filter-name&gt;
@@ -860,7 +868,7 @@ public class LogFilterImpl implements Filter {
 
 <p>The <code>&lt;error-page&gt;</code> element contains either an <code>&lt;error-code&gt;</code> element with an HTTP error code value (such as <code>500</code>), or an <code>&lt;exception-type&gt;</code> element with the class name of the expected exception (such as <code>java.io.IOException</code>).  It also contains a <code>&lt;location&gt;</code> element containing the URL path of the resource to show when the error occurs.</p>
 
-<pre>
+<pre class="prettyprint">
     &lt;error-page&gt;
         &lt;error-code&gt;500&lt;/error-code&gt;
         &lt;location&gt;/errors/servererror.jsp&lt;/location&gt;
@@ -920,7 +928,7 @@ public class LogFilterImpl implements Filter {
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

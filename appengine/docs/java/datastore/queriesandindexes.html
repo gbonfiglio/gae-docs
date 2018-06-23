@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../howto/index.html">How-To</a>
       <ul>
-              <li><a href="../howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -584,6 +592,8 @@ var logged_in_user_email = null;
 
 
 
+
+
 <p>Every datastore query uses an index, a table that contains the results for the query in the desired order.  An App Engine application defines its indexes in a configuration file named <code>datastore-indexes.xml</code>.  The development web server can automatically generate suggestions for this file as it encounters queries that do not yet have indexes configured.</p>
 
 <p>The index-based query mechanism supports most common kinds of queries, but it does not support some queries you may be used to from other database technologies.  Restrictions on queries, and their explanations, are described below.</p>
@@ -597,6 +607,7 @@ var logged_in_user_email = null;
   <li><a href="#Restrictions_on_Queries">Restrictions on Queries</a></li>
   <li><a href="#Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</a></li>
   <li><a href="#Delete_By_Query">Deleting Entities By Query</a></li>
+  <li><a href="#Query_Cursors">Query Cursors</a></li>
 </ul>
 
 
@@ -715,7 +726,7 @@ import javax.jdo.Query;
     // legal, all filters separated by || are on the same field
     Query query = pm.newQuery(Employee.class,
                               "(lastName == 'Smith' || lastName == 'Jones')" +
-                              " && firstName == 'Harold');
+                              " && firstName == 'Harold'");
 
     // not legal, filters separated by || are on different fields
     Query query = pm.newQuery(Employee.class,
@@ -727,7 +738,7 @@ import javax.jdo.Query;
 
 <h3>Query Sort Orders</h3>
 
-<p>A <b>sort order</b> specifies a property and a direction, either ascending or descending.  The results are returned sorted by the given orders, in the order they were specified.  If no sort orders are specified for the query, the results are ordered by their entity keys.</p>
+<p>A <b>sort order</b> specifies a property and a direction, either ascending or descending.  The results are returned sorted by the given orders, in the order they were specified.  If no sort orders are specified for the query, the ordering of the results is undefined and will be returned as they are retrieved from the datastore.</p>
 
 <p>Due to the way the App Engine datastore executes queries, if a query specifies inequality filters on a property and sort orders on other properties, the property used with the inequality filters must be ordered <i>before</i> the other properties.  See <a href="#Restrictions_on_Queries">Restrictions on Queries</a>.</p>
 
@@ -769,7 +780,7 @@ import javax.jdo.Extent;
     extent.closeAll();
 </pre>
 
-<p>An extent retrieves results in batches, and can exceed the 1,000-result limit that applies to queries.</p>
+<p>An extent retrieves results in batches, as needed.</p>
 
 
 
@@ -900,10 +911,9 @@ select from Person where lastName = 'Smith'
 
 <p>The configuration for the index needed by this query would appear in <code>datastore-indexes.xml</code> as follows:</p>
 
-<pre>
+<pre class="prettyprint">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;datastore-indexes
-  xmlns="http://appengine.google.com/ns/datastore-indexes/1.0"
   autoGenerate="true"&gt;
     &lt;datastore-index kind="Person" ancestor="false"&gt;
         &lt;property name="lastName" direction="asc" /&gt;
@@ -932,8 +942,6 @@ select from Person where lastName = 'Smith'
 <p class="note"><b>Note:</b> Queries that return keys are faster and cost less CPU than queries that return entities, since the keys themselves are already in the index, so the query doesn't need to fetch the actual entities. If you only need the keys from your query results consider using a keys only query.</p>
 
 <p>Because an entity key is unique across all entities in the system, key queries make it easy to retrieve entities of a given kind in batches, such as for a batch dump of the contents of the datastore.  Unlike JDOQL ranges, this works efficiently for any number of entities.</p>
-
-
 
 
 <p>Keys are ordered first by parent path, then by kind, then by key name or ID.  Kinds and key names are strings and are ordered by byte value.  IDs are integers and are ordered numerically.  If entities of the same parent and kind use a mix of key name strings and numeric IDs, entities with numeric IDs are considered to be less than entities with key name strings.  Elements of the parent path are compared similarly: by kind (string), then by key name (string) or ID (number).</p>
@@ -1042,13 +1050,16 @@ select from Person where birthYear &gt;= minBirthYearParam
 with query filters and sort orders in specific and sometimes surprising
 ways.</p>
 
-<p>First, if a query has multiple filters on a given property, an entity will
+<p>First, if a query has multiple inequality filters on a given property, an entity will
 only match the query if it has an individual value for that property that
-matches <i>all</i> of the filters. For example, if an entity has the
+matches <i>all</i> of the inequality filters. For example, if an entity has the
 values <code>[1, 2]</code> for property <code>x</code>, it will not match
 the query <code>WHERE x > 1 AND x < 2</code>. Each filter does match one
 of <code>x</code>'s values, but there's no single value that matches both
 filters.</p>
+
+<p>(Note that this does not apply to <code>=</code> filters. For example, the
+query <code>WHERE x = 1 AND x = 2</code> will return the above entity.)</p>
 
 <p>Similarly, the sort order for multiply valued properties is unusual:</p>
 
@@ -1056,7 +1067,6 @@ filters.</p>
   <li>If the entities are sorted by a multi-valued property in ascending order, the value used for ordering is the smallest value.</li>
   <li>If the entities are sorted by a multi-valued property in descending order, the value used for ordering is the greatest value.</li>
   <li>Other values do not affect the sort order, nor does the number of values.</li>
-  <li>In the case of a tie, the key of the entity is used as the tie-breaker.</li>
 </ul>
 
 <p>This sort order has the unusual consequence that <code>[1, 9]</code> comes before <code>[4, 5, 6, 7]</code> in both ascending <i>and</i> descending order.</p>
@@ -1074,6 +1084,10 @@ is disregarded, the query results may be returned in a different order than if
 the sort order were applied. (Restoring the dropped sort order would be
 expensive and require extra indices, and this use case is rare, so the query
 planner leaves it off.)</p>
+
+<h3 id="Query_Ordering_When_Sort_Order_is_Unspecified">Query Ordering When Sort Order is Unspecified</h3>
+
+<p>When a query does not specify an order, the datastore returns the results in the order which they are retrieved.  As we make changes to the datastore implementation, the order of results in an unordered query may change as well.  Therefore, if you require a specific sort ordering for your query results, be sure to specify it in the query.  If no sort order is specified, the ordering of results is undefined and may change over time.</p>
 
 <h3 id="Only_Ancestor_Queries_in_Transactions">Only Ancestor Queries in Transactions</h3>
 
@@ -1136,8 +1150,99 @@ planner leaves it off.)</p>
     query.declareParameters("int maxHeightParam");
     query.deletePersistentAll(maxHeight);
 </pre>
-<p>You'll notice that the only difference here is that instead of calling <code>query.execute(...)</code> we are instead calling <code>query.deletePersistentAll(...)</code>.  All of the rules and restrictions relating to filters, sort orders, and indexes explained above apply to queries whether you are selecting or deleting the result set.  Note, however, that just as if you had deleted these Person entities with <code>pm.deletePersistent(...)</code>, any dependent children of the entities deleted by the query will also be deleted.  For more information on dependent children please see <a href="relationships.html#Dependent_Children_and_Cascading_Deletes">.</p>
+<p>You'll notice that the only difference here is that instead of calling <code>query.execute(...)</code> we are instead calling <code>query.deletePersistentAll(...)</code>.  All of the rules and restrictions relating to filters, sort orders, and indexes explained above apply to queries whether you are selecting or deleting the result set.  Note, however, that just as if you had deleted these Person entities with <code>pm.deletePersistent(...)</code>, any dependent children of the entities deleted by the query will also be deleted.  For more information on dependent children please see <a href="relationships.html#Dependent_Children_and_Cascading_Deletes">Dependent Children and Cascading Deletes</a>.</p>
 
+
+
+<h2 id="Query_Cursors">Query Cursors</h2>
+
+<p>Query cursors allow an app to perform a query and retrieve a batch of results, then fetch additional results for the same query in a subsequent web request without the overhead of a query offset.  After the app fetches some results for a query, it can ask for an encoded string that represents the location in the result set after the last result fetched (the "cursor").  The app can use the cursor to fetch additional results starting from that point at a later time.</p>
+
+<p>A cursor is a base64-encoded string that represents the next starting position of a query after a fetch operation.  The app can store the cursor in the datastore or memcache, or in a task queue task payload.  A future request handler can perform the same query and include the cursor with the query to tell the datastore to start returning results from the location represented by the cursor.  A cursor can only be used by the app that performed the original query, and can only be used to continue the same query.</p>
+
+<p class="note"><b>Tip:</b> It is generally safe to pass a datastore cursor to a client, such as in a web form, and accept a cursor value from a client.  A client cannot change the cursor value to access results outside of the original query.  However, the base64-encoded value can be decoded to expose information about result entities, such as the key (app ID, kind, key name or ID, and all ancestor keys) and properties used in the query (including filters and sort orders).  If you don't want users to have access to that information, you can encrypt the cursor, or store it and provide the user with an opaque key.</p>
+
+
+<p>In the Java low-level API, the app can use cursors via the <code>QueryResultList</code>, <code>QueryResultIterable</code>, and <code>QueryResultIterator</code> interfaces, which are returned by methods of a <code>PreparedQuery</code> (<code>asQueryResultList()</code>, <code>asQueryResultIterable()</code>, and <code>asQueryResultIterator()</code>, respectively).  These result objects provide a <code>getCursor()</code> method, which returns a <code>Cursor</code> object.  The app can get a web-safe string by calling the <code>Cursor</code> object's <code>toWebSafeString()</code> method, and can create a <code>Cursor</code> object from a web-safe string using the <code>Cursor.fromWebSafeString()</code> static method.</p>
+
+<pre class="prettyprint">
+import com.google.appengine.api.datastore.Cursor;
+import com.google.appengine.api.datastore.FetchOptions.Builder.*;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.QueryResultList;
+
+// ...
+        // PreparedQuery pq = ...
+        QueryResultList qrl = pq.asQueryResultList(withLimit(20));
+        // Use 20 results...
+
+        Cursor cursor = qrl.getCursor();
+        String cursorString = cursor.toWebSafeString();
+        // Store the cursorString...
+
+        // ...
+
+        // PreparedQuery pq = from a Query with the same options as the previous query
+        // String cursorString = the string from storage
+        Cursor cursor = Cursor.fromWebSafeString(cursorString);
+        QueryResultList qrl = pq.asQueryResultList(withLimit(20).cursor(cursor));
+        // Use the next 20 results...
+</pre>
+
+<p>In JDO, you can use an extension and the <code>JDOCursorHelper</code> class to use cursors with JDO queries.  Cursors work when fetching results as a list or using an iterator.  To get a <code>Cursor</code>, you pass either the result <code>List</code> or <code>Iterator</code> to the <code>JDOCursorHelper.getCursor()</code> static method:</p>
+
+<pre class="prettyprint">
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.jdo.Query;
+import com.google.appengine.api.datastore.Cursor;
+import org.datanucleus.store.appengine.query.JDOCursorHelper;
+
+// ...
+        Query query = pm.newQuery(Employee.class);
+        query.setRange(0, 20);
+        // ...
+
+        List&lt;Employee&gt; results = (List&lt;Employee&gt;) query.execute();
+        // Use the first 20 results...
+
+        Cursor cursor = JDOCursorHelper.getCursor(results);
+        String cursorString = cursor.toWebSafeString();
+        // Store the cursorString...
+
+        // ...
+
+        // Query query = the same query that produced the cursor
+        // String cursorString = the string from storage
+        Cursor cursor = Cursor.fromWebSafeString(cursorString);
+        Map&lt;String, Object&gt; extensionMap = new HashMap&lt;String, Object&gt;();
+        extensionMap.put(JDOCursorHelper.CURSOR_EXTENSION, cursor);
+        query.setExtensions(extensionMap);
+        query.setRange(0, 20);
+
+        List&lt;Employee&gt; results = (List&lt;Employee&gt;) query.execute();
+        // Use the next 20 results...
+</pre>
+
+
+
+<h3>Cursors and Data Updates</h3>
+
+<p>The cursor's position is defined as the location in the result list after the last result returned.  A cursor is not a relative position in the list (it's not an offset); it's a marker to which the datastore can jump when starting an index scan for results.  If the results for a query change between uses of a cursor, only changes that occur in results after the cursor will be noticed by the app.  If a new result appears before the cursor's position for the query, it will not be returned when the results after the cursor are fetched.  Similarly, if an entity is no longer a result for a query but had appeared before the cursor, the results that appear after the cursor do not change.  If the last result returned is removed from the result set, the cursor still knows how to locate the next result.</p>
+
+<p>An interesting application of cursors is to monitor entities for unseen changes.  If the app sets a timestamp property with the current date and time every time an entity changes, the app can use a query sorted by the timestamp property, ascending, with a datastore cursor to check when entities are moved to the end of the result list.  If an entity's timestamp is updated, the query with the cursor returns the updated entity.  If no entities were updated since the last time the query was performed, no results are returned, and the cursor does not move.</p>
+
+<h3>Limitations of Cursors</h3>
+
+<p>A few things to know about cursors:</p>
+
+<ul>
+  <li>You cannot use cursors with queries that use the <code>IN</code> or <code>!=</code> filter operators.</li>
+  <li>To use a cursor, the app must perform the same query that provided the cursor, including the same kind, filters and filter values, ancestor filter, and sort orders.  There is no way to fetch results using a cursor without setting up the same query.</li>
+  <li>A query with a cursor does not always work as expected when the query uses an inequality filter or a sort order on a property with multiple values.  Logic that de-duplicates the multivalued property for the query does not persist between queries, and may return a result more than once.</li>
+  <li>A cursor is dependent upon the index configuration that supports the query. In cases where multiple index configurations can support the same query, changing the index configuration for the query will invalidate cursors for that query. (For example, a query of only equality filters and no sort orders can be supported by the built-in indexes in most cases, and can also use a custom index if one is provided.)  At this time, cursors are also dependent upon implementation details that may change with a new App Engine release and invalidate cursors.  If an app attempts to use a cursor that is no longer valid, the datastore raises an exception.  In Java, it raises an <code>IllegalArgumentException</code> (low-level API), a <code>JDOFatalUserException</code> (JDO), or a <code>PersistenceException</code> (JPA).</li>
+</ul>
 
 
 
@@ -1175,7 +1280,7 @@ planner leaves it off.)</p>
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

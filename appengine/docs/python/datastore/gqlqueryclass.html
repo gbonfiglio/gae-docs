@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -582,6 +590,8 @@ var logged_in_user_email = null;
       <li><a href="#GqlQuery_get">get()</a></li>
       <li><a href="#GqlQuery_fetch">fetch()</a></li>
       <li><a href="#GqlQuery_count">count()</a></li>
+      <li><a href="#GqlQuery_cursor">cursor()</a></li>
+      <li><a href="#GqlQuery_with_cursor">with_cursor()</a></li>
     </ul>
   </li>
 </ul>
@@ -615,6 +625,8 @@ query = Song.gql("WHERE composer = 'Lennon, John'")
 for song in q:
     print song.title
 </pre>
+
+<p><code>OFFSET</code> must be less than 1,000.  <code>LIMIT</code> does not have a maximum.</p>
 
 <p>See also <a href="queryclass.html">Query</a>, a query class that uses objects and methods to prepare queries instead of GQL.</p>
 
@@ -680,7 +692,7 @@ for song in q:
       <li>The fetch() method skips the first <span class="argname">offset</span> results, then returns the rest (<span class="argname">limit</span> results).</li>
       <li>The query has performance characteristics that correspond linearly with the offset amount plus the limit.</li>
     </ul>
-    <p class="note"><b>Note:</b> fetch() returns a maximum of 1000 results.  If more than 1000 entities match the query, and either no limit is specified or a limit larger than 1000 is used, only the first 1000 results are returned by fetch().</p>
+    <p><span class="argname">offset</span> must be less than 1,000.  (<span class="argname">limit</span> does not have a maximum.)</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">limit</span></dt>
@@ -698,12 +710,34 @@ for song in q:
   <dd>
     <p>Returns the number of results this query fetches.</p>
     <p><span class="itemname">count()</span> is somewhat faster than retrieving all of the data by a constant factor, but the running time still grows with the size of the result set.  It's best to only use <span class="itemname">count()</span> in cases where the count is expected to be small, or specify a <span class="argname">limit</span>.</p>
-    <p class="note"><b>Note:</b> count() returns a maximum of 1000.  If the actual number of entities that match the query criteria exceeds the maximum, count() returns a count of 1000.</p>
+    <p><span class="itemname">count()</span> has a maximum limit of 1,000 results.  If <span class="argname">limit</span> is not specified or is greater than 1,000, it uses a limit of 1,000.  (The 1,000 result limit does not apply to fetching actual results, but still applies to <span class="itemname">count()</span>.)</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">limit</span></dt>
       <dd>
         <p>The maximum number of results to count.  This value overrides the <code>LIMIT</code> clause in the GQL query statement, if any.</p>
+      </dd>
+    </dl>
+  </dd>
+
+  <dt id="GqlQuery_cursor"><span class="itemname">cursor</span>()</dt>
+  <dd>
+     <p>Returns an encoded cursor that represents the location in the result set after the last result fetched.  A future invocation of the same query can provide this cursor using <a href="#GqlQuery_with_cursor">with_cursor()</a> to start fetching results from this location.</p>
+     <p>You must fetch results (using either <a href="#GqlQuery_fetch">fetch()</a> or the iterator interface) before you can get a cursor.</p>
+     <p>The cursor is a base64-encoded string.  It is safe to use in HTTP GET and POST parameters, and can also be stored in the datastore or memcache.</p>
+     <p class="note"><b>Note:</b> Not all queries are compatible with cursors.  See <a href="queriesandindexes.html#Query_Cursors">Query Cursors</a> for more information.</p>
+  </dd>
+
+  <dt id="GqlQuery_with_cursor"><span class="itemname">with_cursor</span>(<span class="argname">cursor</span>)</dt>
+  <dd>
+    <p>Tells the datastore to start returning results from the location associated with the given encoded cursor.  An app gets the cursor for a location in a list of results by calling <a href="#GqlQuery_cursor">cursor()</a> after fetching results.</p>
+    <p>The query must be identical to the query that generated the cursor, including the kind, property filters, ancestor filters, and sort orders.</p>
+    <p>The app must call this method before fetching any results (i.e. before executing the query).</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">cursor</span></dt>
+      <dd>
+        <p>The base64-encoded cursor returned by the <a href="#GqlQuery_cursor">cursor()</a> method in a previous invocation of the query.</p>
       </dd>
     </dl>
   </dd>
@@ -745,7 +779,7 @@ for song in q:
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

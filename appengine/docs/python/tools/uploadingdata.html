@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="appstats.html">Appstats</a></li>
     <li><a href="libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -577,7 +585,6 @@ var logged_in_user_email = null;
 
 <ul>
   <li><a href="#Setting_Up_remote_api">Setting Up remote_api</a></li>
-  <li><a href="#Installing_Sqlite">Installing Sqlite (recommended)</a></li>
   <li><a href="#Downloading_and_Uploading_All_Data">Downloading and Uploading All Data</a></li>
   <li><a href="#Creating_Loader_Classes">Creating Loader Classes</a></li>
   <li><a href="#Preparing_Your_Data">Preparing Your Data</a></li>
@@ -591,7 +598,9 @@ var logged_in_user_email = null;
 
 <h2 id="Setting_Up_remote_api">Setting Up remote_api</h2>
 
-<p>The data loader feature communicates with your application running on App Engine using remote_api, a request handler included with the App Engine Python library that allows remote applications with the proper credentials to access the datastore remotely.  To use remote_api, you must map a URL to it in your <code>app.yaml</code> file.</p>
+<p>The data loader feature communicates with your application running on App Engine using remote_api, a request handler included with the App Engine runtime environment that allows remote applications with the proper credentials to access the datastore remotely.  To use remote_api, you must map a URL to it.</p>
+
+<p class="note"><b>Tip:</b> If you have a Java app, you can use the Python <code>bulkloader.py</code> tool by installing the Java version of the remote_api handler, which is included with the Java runtime environment.  The handler servlet class is <code>com.google.apphosting.utils.remoteapi.RemoteApiServlet</code>.</p>
 
 <p>Edit your <code>app.yaml</code>, and add the following lines to the <code>handlers:</code> section:</p>
 
@@ -610,30 +619,21 @@ appcfg.py update <i>&lt;app-directory&gt;</i>
 </pre>
 
 
-<h2 id="Installing_Sqlite">Installing Sqlite (recommended)</h2>
-
-<p><code>appcfg.py</code> uses a data file to keep track of its progress while uploading or downloading data, in case the process is interrupted and needs to be resumed.  This feature requires the Sqlite 3 library to manage the progress file.  If you do not have Sqlite 3 installed on your system, see <a href="http://www.sqlite.org/download.html">the Sqlite web site</a> for information on downloading and installing Sqlite 3.</p>
-
-<p class="note"><b>Note:</b> If you installed Python on your system by compiling it from source code, you will need to recompile Python with Sqlite support after installing Sqlite.</p>
-
-<p>You can test if Sqlite is installed for Python by entering the following command:</p>
-
-<pre>python -c 'import sqlite3'</pre>
-
-<p>If the command does nothing, then Sqlite 3 is installed.  If Sqlite 3 is not installed, it prints: <code>ImportError: No module named sqlite3</code></p>
-
-<p>If you do not wish to install Sqlite 3, you can disable the use of a progress file.  To do so, give <code>appcfg.py</code> this argument: <code>--db_filename=skip</code>  If you disable the progress file and an upload or download is interrupted, the process must be restarted from the beginning.</p>
-
-
 <h2 id="Downloading_and_Uploading_All_Data">Downloading and Uploading All Data</h2>
 
-<p>You can download and upload every entity of a kind in a format suitable for backup and restore, all without writing any additional code or configuration.  To download all entities of a kind, run the folowing command:</p>
+<p>You can download and upload every entity of a kind in a format suitable for backup and restore, all without writing any additional code or configuration.  To download all entities of all kinds, run the folowing command:</p>
 
-<pre>bulkloader.py --dump --kind=<i>&lt;kind&gt;</i> --url=http://<i>&lt;appname&gt;</i>.appspot.com/remote_api --filename=<i>&lt;data-filename&gt;</i> <i>&lt;app-directory&gt;</i></pre>
+<pre>bulkloader.py --dump --app_id=<i>&lt;app-id&gt; --url=http://<i>&lt;appname&gt;</i>.appspot.com/remote_api --filename=<i>&lt;data-filename&gt;</i></pre>
+
+<p>You can also use the <code>--kind=...</code> argument to download all entities of a specific kind:</p>
+
+<pre>bulkloader.py --dump --app_id=<i>&lt;app-id&gt; --kind=<i>&lt;kind&gt;</i> --url=http://<i>&lt;appname&gt;</i>.appspot.com/remote_api --filename=<i>&lt;data-filename&gt;</i></pre>
+
+<p class="note"><b>Note:</b> Downloading all entities of all kinds only works on App Engine, and does not work with the development server.</p>
 
 <p>To upload data to the app's datastore from a file created by <code>bulkloader.py --dump</code>, run the following command:</p>
 
-<pre>bulkloader.py --restore --kind=<i>&lt;kind&gt;</i> --filename=<i>&lt;data-filename&gt;</i> <i>&lt;app-directory&gt;</i></pre>
+<pre>bulkloader.py --restore --app_id=<i>&lt;app-id&gt; --kind=<i>&lt;kind&gt;</i> --filename=<i>&lt;data-filename&gt;</i> <i>&lt;app-directory&gt;</i></pre>
 
 <p>When data is downloaded, the entities are stored along with their original keys.  When the data is restored, the original keys are used.  If an entity exists in the datastore with the same key as an entity being restored, the entity in the datastore is replaced.</p>
 
@@ -939,7 +939,7 @@ appcfg.py download_data --config_file=album_loader.py --filename=album_data_arch
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

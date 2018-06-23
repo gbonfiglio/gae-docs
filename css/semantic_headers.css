@@ -1,5 +1,9 @@
-/* The transitional CSS fix-file to make headers semantic
-   Copyright 2007 Google Inc. All rights reserved. */
+/**
+ * Licensed under the Apache License, v. 2.0
+ * (http://www.apache.org/licenses/)
+ *
+ * The transitional CSS fix-file to make headers semantic.
+ */
 
 #gc-pagecontent h1 {
   line-height: 130%;

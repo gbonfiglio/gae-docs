@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -608,13 +616,17 @@ var logged_in_user_email = null;
 <h2>Constructor</h2>
 
 <dl class="apireference">
-  <dt id="Image"><span class="type">class</span>&nbsp;<span class="itemname">Image</span>(<span class="argname">image_data</span>)</dt>
+  <dt id="Image"><span class="type">class</span>&nbsp;<span class="itemname">Image</span>(<span class="argname">image_data</span>=<span class="argdefault">None</span>, <span class="argname">blob_key</span>=<span class="argdefault">None</span>)</dt>
+  <p>The <span class="itemname">Image</span> constructor takes either the data of the image to transform as a bytestring (the <span class="argname">image_data</span> argument) or the <a href="../blobstore/blobkeyclass.html">BlobKey</a> of a Blobstore value to use as the image to transform.  Only one or the other should be provided.</p>
   <dd>
     <p>An image to be transformed.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">image_data</span></dt>
       <dd>The image data, as a bytestring (<code>str</code>). The image data can be encoded in JPEG, PNG, GIF (including animated), BMP, TIFF, or ICO format. </dd>
+
+      <dt><span class="argname">blob_key</span></dt>
+      <dd>The <a href="../blobstore/blobkeyclass.html">BlobKey</a> object or string key of a Blobstore value containing the image data.</dd>
     </dl>
   </dd>
 </dl>
@@ -640,7 +652,7 @@ var logged_in_user_email = null;
 <dl class="apireference">
   <dt id="Image_resize"><span class="itemname">resize</span>(<span class="argname">width</span>=<span class="argdefault">0</span>, <span class="argname">height</span>=<span class="argdefault">0</span>)</dt>
   <dd>
-    <p>Resizes an image, scaling down or up to the given width and height.</p>
+    <p>Resizes an image, scaling down or up to the given width and height.  The resize transform preserves the aspect ratio of the image.  If both the <span class="argname">width</span> and the <span class="argname">height</span> arguments are provided, the transform uses the dimension that results in a smaller image.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">width</span></dt>
@@ -748,7 +760,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

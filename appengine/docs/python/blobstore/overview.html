@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -584,6 +592,7 @@ var logged_in_user_email = null;
 
 
 
+
 <p>The Blobstore API allows your app to serve data objects, called blobs, that are much larger than the size allowed for objects in the Datastore service. Blobs are created by uploading a file through an HTTP request. Typically, your apps will do this by presenting a form with a file upload field to the user. When the form is submitted, the Blobstore creates a blob from the file's contents and returns an opaque reference to the blob, called a blob key, which you can later use to serve the blob.</p>
 
 <div class="special">
@@ -596,6 +605,7 @@ var logged_in_user_email = null;
   <li><a href="#Uploading_a_Blob">Uploading a Blob</a></li>
   <li><a href="#Serving_a_Blob">Serving a Blob</a></li>
   <li><a href="#Complete_Sample_App">Complete Sample App</a></li>
+  <li><a href="#Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</a></li>
   <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
   <li><a href="#Status_of_the_Blobstore_API">Status of the Blobstore API</a></li>
 </ul>
@@ -631,6 +641,7 @@ var logged_in_user_email = null;
 <p>Apps can use the Blobstore to accept large files as uploads from users and to serve those files. Files are called blobs once they're uploaded. Apps don't access blobs directly. Instead, apps work with blobs through blob info entities (represented by the <code>BlobInfo</code> class) in the datastore.</p>
 
 <p>The user creates a blob by submitting an HTML form that includes one or more file input fields. Your app calls <code>create_upload_url()</code> to get the destination (action) of this form, passing the function a URL path of a handler in your app. When the user submits the form, the user's browser uploads the specified files directly to the Blobstore. The Blobstore rewrites the user's request and stores the uploaded file data, replacing the uploaded file data with one or more corresponding blob keys, then passes the rewritten request to the handler at the URL path you provided to <code>create_upload_url()</code>.  This handler can do additional processing based on the blob key. Finally, the handler must return a headers-only, redirect response (301, 302, or 303), typically a browser redirect to another URL handler.</p>
+
 
 
 
@@ -673,6 +684,7 @@ class UploadHandler(blobstore_handlers.BlobstoreUploadHandler):
 
 <p>If you don't specify a content type, the Blobstore will try to infer content type from the file extension. If no content type can be determined, the newly created blob is assigned content type <code>application/octet-stream</code>.</p>
 
+
 <h2 id="Serving_a_Blob">Serving a Blob</h2>
 
 <p>To serve blobs, you must include a blob download handler as a path in your app. The app serves a blob by setting a header on the outgoing response. Our sample uses the <code>webapp</code> framework. When using <code>webapp</code>, the handler should pass the blob key for the desired blob to <code>self.send_blob()</code>.
@@ -692,6 +704,7 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
 
 <p>Blobs can be served from any app URL. To serve a blob in your app, you put a special header in the response containing the blob key. App Engine replaces the body of the response with the content of the blob.</p>
 
+
 <h2 id="Complete_Sample_App">Complete Sample App</h2>
 
 <p>In our sample application, the app's main URL loads the form that asks the user for a file to upload, and the upload handler immediately calls the download handler to serve the data. This is to simplify the sample app. In practice, you would probably not use the main URL to request upload data, nor would you immediately serve a blob you had just uploaded.</p>
@@ -703,13 +716,11 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
 import os
 import urllib
 
-import wsgiref.handlers
-
 from google.appengine.ext import blobstore
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import blobstore_handlers
 from google.appengine.ext.webapp import template
-
+from google.appengine.ext.webapp.util import run_wsgi_app
 
 class MainHandler(webapp.RequestHandler):
     def get(self):
@@ -737,12 +748,20 @@ def main():
            ('/upload', UploadHandler),
            ('/serve/([^/]+)?', ServeHandler),
           ], debug=True)
-    wsgiref.handlers.CGIHandler().run(application)
+    run_wsgi_app(application)
 
 if __name__ == '__main__':
   main()
 </pre>
 
+
+
+
+<h2 id="Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</h2>
+
+<p>The Images service can use a Blobstore value as the source of a transformation.  The source image can be as large as the maximum size for a Blobstore value.  The Image service still returns the transformed image to the application, so the transformed image must be smaller than 1 megabyte.  This is useful for making thumbnail images of large photographs uploaded by users.</p>
+
+<p>For information on using the Images service with Blobstore values, see <a href="../images/overview.html">the Images Service documentation</a>.</p>
 
 
 <h2 id="Quotas_and_Limits">Quotas and Limits</h2>
@@ -816,7 +835,7 @@ if __name__ == '__main__':
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

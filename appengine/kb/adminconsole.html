@@ -55,6 +55,8 @@ var logged_in_user_email = null;
 
     <link href="../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
     <link href="../css/local_extensions.css" rel="stylesheet" type="text/css" />
+    <script src="../js/customtabs.js" type="text/javascript"></script>
+    <script src="../js/ui.tabs.js" type="text/javascript"></script>
   </head>
 
   <body class="gc-documentation">
@@ -64,7 +66,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -105,7 +108,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -287,7 +290,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../docs/java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../docs/java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../docs/java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../docs/java/config/index.html">Configuration</a>
       <ul>
@@ -305,12 +308,17 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../docs/java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../docs/java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../docs/java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../docs/java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../docs/java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../docs/java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -510,6 +518,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -517,6 +526,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/howto/index.html">How-To</a>
       <ul>
               <li><a href="../docs/python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../docs/python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -531,7 +541,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/theadminconsole.html">The Admin Console</a></li>
       <li><a href="../docs/quotas.html">Quotas</a></li>
       <li><a href="../docs/billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../docs/domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -579,6 +589,7 @@ var logged_in_user_email = null;
 <ul>
 <li><a href="#delete_app">How can I delete my app?</a></li>
 <li><a href="#datastore_stats">How can I get more information about my datastore usage?</a></li>
+<li><a href="#maintenance">How can my app handle scheduled maintenance outages?</a></li>
 </ul>
 
 <h2 id="delete_app">How can I delete my app?</h2>
@@ -605,6 +616,12 @@ var logged_in_user_email = null;
 <p>The space consumed by the statistics data increases in proportion to the number of different entity kinds and property types used by your app. The more different entities and properties used by your app, the more likely you are to reach the 1 megabyte limit.</p>
 
 <p>For information on accessing datastore statistics programatically, see the <a href="../docs/python/datastore/stats.html">Python</a> and <a href="../docs/java/datastore/stats.html">Java</a> documentation on that subject.</p>
+
+<h2 id="maintenance">How can my app handle scheduled maintenance outages?</h2>
+
+<p>App Engine applications can gracefully degrade during schedule maintenance periods by handling special Capability errors.</p>
+
+<p>For more information, see the <a href="../docs/python/howto/maintenance.html">Python</a> and <a href="../docs/java/howto/maintenance.html">Java</a> documentation on graceful degradation during scheduled maintenance.</p>
 
 </div>
 </div>
@@ -645,7 +662,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

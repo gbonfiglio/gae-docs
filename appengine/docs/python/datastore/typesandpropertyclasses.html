@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -641,7 +649,7 @@ var logged_in_user_email = null;
     <td>By path elements (kind, ID or name, kind, ID or name...)</td>
   </tr>
   <tr>
-    <td><a href="#BlobReferenceProperty">BlobReferenceProperty</a></td>
+    <td><a href="#BlobReferenceProperty">blobstore.BlobReferenceProperty</a></td>
     <td><a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></td>
     <td>byte order</td>
   </tr>
@@ -713,9 +721,9 @@ var logged_in_user_email = null;
 
   <dt id="str"><code>str</code> or <code>unicode</code></dt>
   <dd>
-    <p>A short string value, less than 500 bytes in length.</p>
+    <p>A short string value, less than 500 characters in length.</p>
     <p>A <code>str</code> value is assumed to be text encoded with the <code>ascii</code> codec, and is converted to a <code>unicode</code> value before being stored.  The value is returned by the datastore as a <code>unicode</code> value.  For short strings using other codecs, use a <code>unicode</code> value.</p>
-    <p>Short strings are indexed by the datastore, and can be used in filters and sort orders.  For text strings longer than 500 bytes (which are not indexed), use a <a href="#Text">Text</a> instance.  For unencoded byte strings longer than 500 bytes (also not indexed), use a <a href="#Blob">Blob</a> instance.</p>
+    <p>Short strings are indexed by the datastore, and can be used in filters and sort orders.  For text strings longer than 500 characters (which are not indexed), use a <a href="#Text">Text</a> instance.  For unencoded byte strings longer than 500 bytes (also not indexed), use a <a href="#Blob">Blob</a> instance.  For non-textual unencoded byte strings up to 500 bytes (not characters) that should be indexed, use a <a href="#ByteString">ByteString</a> instance.</p>
     <p><i>Model property:</i> <a href="#StringProperty">StringProperty</a></p>
   </dd>
 
@@ -803,7 +811,7 @@ e = Employee(name="Jennifer", manager=m_key)
   <dt id="blobstore_BlobKey"><a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></dt>
   <dd>
     <p>The key for a Blobstore value, generated by the Blobstore when the value is uploaded.</p>
-    <p><i>Model properties:</i> <a href="#BlobReferenceProperty">BlobReferenceProperty</a></p>
+    <p><i>Model properties:</i> <a href="#BlobReferenceProperty">blobstore.BlobReferenceProperty</a></p>
   </dd>
 
   <dt id="users_User"><a href="../users/userclass.html">users.User</a></dt>
@@ -824,7 +832,7 @@ class MyModel(db.Model):
     blob = db.BlobProperty()
 
 m = MyModel()
-m.blob = db.Blob(open("image.png").read())
+m.blob = db.Blob(open("image.png", "rb").read())
 </pre>
     <p>In XML, blobs are base-64 encoded whether or not they contain binary data.</p>
   </dd>
@@ -840,7 +848,7 @@ m.blob = db.Blob(open("image.png").read())
   <dd>
     <p>A long string.  This is a subclass of the built-in <code>unicode</code> type.</p>
     <p><span class="argname">arg</span> a <code>unicode</code> or <code>str</code> value.  If <span class="argname">arg</span> is a <code>str</code>, then it is parsed with the encoding specified by <span class="argname">encoding</span>, or <code>ascii</code> if no encoding is specified.  See <a href="http://www.python.org/doc/2.5.2/lib/standard-encodings.html">the list of standard encodings</a> for possible values for <span class="argname">encoding</span>.</p>
-    <p>Unlike an entity property whose value is a simple <code>str</code> or <code>unicode</code>, a Text property can be more than 500 bytes long.  However, Text properties are not indexed, and cannot be used in filters or sort orders.</p>
+    <p>Unlike an entity property whose value is a simple <code>str</code> or <code>unicode</code>, a Text property can be more than 500 characters long.  However, Text properties are not indexed, and cannot be used in filters or sort orders.</p>
     <p><i>Model property:</i> <a href="#TextProperty">TextProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
@@ -1127,7 +1135,7 @@ author_name = story.author.name
     <p><i>Value type:</i> <a href="keyclass.html">db.Key</a> (<a href="#db_Key">see above</a>)</p>
   </dd>
 
-  <dt id="BlobReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">BlobReferenceProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, ...)</dt>
+  <dt id="BlobReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">blobstore.BlobReferenceProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
     <p>A reference to the <a href="../blobstore/blobinfoclass.html">BlobInfo</a> entity that corresponds with a Blobstore value.  See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
     <p>The value stored in the reference property is the Blobstore key.  When the property is de-referenced, the corresponding <a href="../blobstore/blobinfoclass.html">BlobInfo</a> object is fetched and behaves as the value of the property.  As with a <a href="#ReferenceProperty">ReferenceProperty</a> and model instance values, a BlobReferenceProperty must be assigned a BlobInfo object as its value.</p>
@@ -1142,7 +1150,7 @@ author_name = story.author.name
 
   <dt id="StringProperty"><span class="type">class</span>&nbsp;<span class="itemname">StringProperty</span>(<span class="argname">verbose_name</code>=<span class="argdefault">None</span>, <span class="argname">multiline</code>=<span class="argdefault">False</span>, ...)</dt>
   <dd>
-    <p>A short string property.  Takes a Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) value of 500 bytes or less.</p>
+    <p>A short string property.  Takes a Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) value of 500 characters or less.</p>
     <p>StringProperty property values are indexed, and can be used in filters and sort orders.</p>
     <p>If <span class="argname">multiline</span> is <code>False</code>, then the value cannot include linefeed characters.  The <code>djangoforms</code> library uses this to enforce a difference between text fields and textarea fields in the data model, and others can use it for a similar purpose.</p>
     <p>If the StringProperty is required, the value cannot be an empty string.</li>
@@ -1152,7 +1160,7 @@ author_name = story.author.name
   <dt id="TextProperty"><span class="type">class</span>&nbsp;<span class="itemname">TextProperty</span>()</dt>
   <dd>
     <p>A long string.</p>
-    <p>Unlike <a href="#StringProperty">StringProperty</a>, a TextProperty value can be more than 500 bytes long.  However, TextProperty values are not indexed, and cannot be used in filters or sort orders.</p>
+    <p>Unlike <a href="#StringProperty">StringProperty</a>, a TextProperty value can be more than 500 characters long.  However, TextProperty values are not indexed, and cannot be used in filters or sort orders.</p>
     <p>TextProperty values store text with a text encoding.  For binary data, use <a href="#BlobProperty">BlobProperty</a>.</p>
     <p>If the TextProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#Text">Text</a></p>
@@ -1211,7 +1219,7 @@ author_name = story.author.name
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

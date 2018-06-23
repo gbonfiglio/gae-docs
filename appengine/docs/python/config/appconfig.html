@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="../../java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="../../java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="../howto/index.html">How-To</a>
       <ul>
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="../../theadminconsole.html">The Admin Console</a></li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -582,6 +590,7 @@ var logged_in_user_email = null;
   <li><a href="#Referring_to_the_Python_Library_Directory">Referring to the Python Library Directory</a></li>
   <li><a href="#Reserved_URLs">Reserved URLs</a></li>
   <li><a href="#Inbound_Services">Inbound Services</a></li>
+  <li><a href="#Administration_Console_Custom_Pages">Administration Console Custom Pages</a></li>
 </ul>
 
 
@@ -991,16 +1000,35 @@ handlers:
 
 <h2 id="Inbound_Services">Inbound Services</h2>
 
-<p>Before an application can receive XMPP messages, the application must be configured to enable the service.  You enable the service for a Python app by including an <code>inbound_services</code> section in the <code>app.yaml</code> file.</p>
+<p>Before an application can receive email or XMPP messages, the application must be configured to enable the service.  You enable the service for a Python app by including an <code>inbound_services</code> section in the <code>app.yaml</code> file.</p>
 
-<p>To enable incoming XMPP messages, add the following to <code>app.yaml</code>:</p>
+<p>To enable incoming email and XMPP messages, add the following to <code>app.yaml</code>:</p>
 
 <pre>
 inbound_services:
 - xmpp_message
+- mail
 </pre>
 
 
+<h2 id="Administration_Console_Custom_Pages">Administration Console Custom Pages</h2>
+
+<p>If you have administrator-only pages in your application that are used to administer the app, you can have those pages appear in the Administration Console.  The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML <a href="https://developer.mozilla.org/en/HTML/Element/iframe">iframe</a>.  To add a page to the Administration Console, add an <code>admin_console:</code> section in your app's <code>app.yaml</code> file, like so:</p>
+
+<pre>
+admin_console:
+  pages:
+  - name: Blog Comment Admin
+    url: /blog/admin/comments
+  - name: Create a Blog Post
+    url: /blog/admin/newentry
+</pre>
+
+<p>This has an inner <code>pages:</code> section, with an entry for each page.  The <code>name</code> appears in the Administration Console navigation, and the <code>url</code> is the URL path to the page.</p>
+
+<p>At this time, page names must contain only characters in the ASCII character set.</p>
+
+<p>You can use configuration to restrict access to custom administration pages to only users that are administrators of the app.  See <a href="#Requiring_Login_or_Administrator_Status">Requiring Login or Administrator Status</a>.</p>
 
 
 
@@ -1038,7 +1066,7 @@ inbound_services:
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

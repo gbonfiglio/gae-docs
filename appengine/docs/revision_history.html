@@ -63,7 +63,8 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../images/globe2_small.png"
+     ><u><span>English</span></u> <small>&#9660;</small></a>
   
  </span>
 </div>
@@ -104,7 +105,7 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -285,7 +286,7 @@ var logged_in_user_email = null;
         </li>
       </ul>
     </li>
-    <li><a href="java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="java/javadoc/index.html">Services Javadoc</a></li>
     <li><a href="java/jrewhitelist.html">JRE Class White List</a></li>
     <li><a href="java/config/index.html">Configuration</a>
       <ul>
@@ -303,12 +304,17 @@ var logged_in_user_email = null;
     <li><a href="java/tools/uploadinganapp.html">Uploading and Managing</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
 
       </ul>
     </li>
     <li><a href="java/howto/index.html">How-To</a>
       <ul>
-              <li><a href="java/howto/unittesting.html">Unit Testing</a></li>
+              <li><a href="java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -508,6 +514,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
 
       </ul>
@@ -515,6 +522,7 @@ var logged_in_user_email = null;
     <li><a href="python/howto/index.html">How-To</a>
       <ul>
               <li><a href="python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
       </ul>
     </li>
@@ -529,7 +537,7 @@ var logged_in_user_email = null;
       <li><a href="theadminconsole.html">The Admin Console</a></li>
       <li><a href="quotas.html">Quotas</a></li>
       <li><a href="billing.html">Billing</a></li>
-    </ul>
+      <li><a href="domain.html">Using a Custom Domain</a></li>    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -572,6 +580,33 @@ var logged_in_user_email = null;
 <p>The documentation for Google App Engine available on this website is revised regularly.  This page describes notable changes made to the documentation.</p>
 
 <p>For information about changes to the App Engine API, the runtime environment, or the SDK, see <a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">the release notes</a>.</p>
+
+<p><b>2010-02-09</b></p>
+<ul>
+  <li>App Engine 1.3.1 SDKs are <a href="../downloads.html">now available</a> for Python and Java.</li>
+  <li>Datastore queries now have persistent cursors that let you fetch some results during one web request, store a cursor, then use the cursor to fetch additional results from where the last query left off.  This is now the most efficient way to implement pagination, and can also be used for maintaining checkpoints and querying for "new" results.</li>
+  <li>The Java URL Fetch low-level interface now supports asynchronous calls, using <code>java.util.concurrent.Future</code>.</li>
+  <li>The Java SDK now includes helper classes for writing unit tests that use local services.  Added <a href="java/tools/localunittesting.html">Local Unit Testing</a> describing how to use these new classes and updated <a href="java/howto/unittesting.html">the original unit testing article</a> to point to this new page.</li>
+  <li>The Python SDK now includes Appstats, a suite of tools for profiling the performance of an application.  See the <a href="python/tools/appstats.html">Appstats documentation</a>.</li>
+  <li>The JCache interface is now implemented in the package <code>net.sf.jsr107</code>, instead of <code>javax.cache</code>, to avoid confusion about the status of this proposed standard.  <code>javax.cache</code> will continue to be supported throughout this major version (1.x.x) of the Java runtime environment, but the documentation now recommends <code>net.sf.jsr107</code>.  (You may find <a href="java/javadoc/com/google/appengine/api/memcache/package-summary.html">the low-level memcache API</a> more to your liking.)</li>
+  <li>Schedule task configuration now supports "synchronized" interval scheduling, which starts a job on an interval synchronized from midnight of the current day regardless of how long it takes the previous job to finish, as in <code>every 2 hours synchronized</code>.  It also now supports calendar scheduling for specific days of every month, as in <code>1,8,15,22 of month 09:00</code>.</li>
+  <li>Java AppCfg now supports an <code>--append</code> option for the <code>request_logs</code> action, which appends the requested log data to the end of the log file instead of overwriting the file.</li>
+  <li>The quotas documentation has been updated to clarify that URL Fetch is limited by the incoming and outgoing bandwidth limits.  Previously, the documentation indicated a limit of 4 GB for URL Fetch bandwidth, but this is higher than the incoming and outgoing bandwidth limits (currently 1 GB).</li>
+  <li>App Engine now uses a "precompilation" process to enhance the performance of Java bytecode.  If you prefer that precompilation not be used with your app, you can turn this off in your <code>appengine-web.xml</code> file.</li>
+  <li>All Python examples now recommend using the <code>run_wsgi_app()</code> function from the <code>google.appengine.ext.webapp.util</code> module to start a WSGI app.  Older versions of the docs used the <code>CGIHandler</code> class from the <code>wsgiref</code> module in the standard library, but this class doesn't fully accommodate long running processes and may leak data between requests through environment variables.  <code>run_wsgi_app()</code> properly resets the environment between requests, and is the recommended way to start a WSGI app on App Engine.</li>
+  <li>The bulk loader tools can now download all entities of all kinds.  It uses the datastore statistics entities to determine the kinds to download.  The bulk loader documentation has also been clarified to mention the Java remote API servlet, remove the sqlite3 installation instructions (this was only required for Python 2.4), and to correct the <code>bulkloader.py</code> command line.</li>
+  <li>Datastore queries can now return as many results as the app can fetch within the 30 second request handler limit.  A query is no longer constrained to returning 1,000 results.</li>
+</ul>
+
+<p><b>2010-02-01</b></p>
+<ul>
+  <li>Corrected documentation that described the ordering of datastore query results when no ordering is specified.  Previously, the documentation said that the order was key by default which is not always correct.  The documenation now states that when no sort order is specified, the datastore ordering is undefined and may change over time.</li>
+</ul>
+
+<p><b>2010-01-19</b></p>
+<ul>
+  <li>Added instructions on <a href="../kb/adminconsole.html#maintenance">how to gracefully degrade memcache and datastore operations during a scheduled outage</a>.</li>
+</ul>
 
 <p><b>2009-12-14</b></p>
 <ul>
@@ -1104,7 +1139,7 @@ var logged_in_user_email = null;
 </div>
 Java is a registered trademark of Sun Microsystems, Inc.</div>
     
-    &copy;2009 Google -
+    &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
