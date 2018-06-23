@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -509,9 +514,6 @@ _gaq.push(
   <ul>
     <li><a href="../../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -556,7 +558,7 @@ _gaq.push(
      <li><a href="../../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -641,6 +643,19 @@ _gaq.push(
          <li><a href="../../images/imageclass.html">Image</a></li>
          <li><a href="../../images/functions.html">Functions</a></li>
          <li><a href="../../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../../logservice/functions.html">Functions</a></li>
+         <li><a href="../../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1018,6 +1033,7 @@ _gaq.push(
           <li><a href="../../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1036,6 +1052,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../../articles/index.html">Articles</a></li>
+      <li><a href="../../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1066,143 +1083,183 @@ _gaq.push(
 
 
 
+<p>App Engine offers two data storage options with different reliability and consistency guarantees:</p>
 
-<p>App Engine offers two data storage options with different reliability and consistency guarantees. This page contrasts the two options and describes how to specify a datastore for your application.</p>
+  <ul>
 
-<div class="special"><p><a href=" http:/www.google.com/events/io/2011/sessions/more-9s-please-under-the-covers-of-the-high-replication-datastore.html">Watch a video demonstration</a></p></div>
+    <li>In the <strong>High-Replication Datastore (HRD),</strong> data is replicated across multiple data centers using a system based on the
+      <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a>.
+This provides the highest level of availability for reads and writes, at the cost of higher latency on writes due to the propagation of data. Most queries are
+      <a href="http://en.wikipedia.org/wiki/Eventual_consistency">eventually consistent</a>.
+    </li>
+
+    <li>The <strong>Master/Slave Datastore</strong> designates one data center to hold the master copy of all data. Data written to the master data center is replicated asynchronously to all other (slave) data centers. Since only one data center is the master for writing at any given time, this option offers strong consistency for all reads and queries, at the cost of periods of temporary unavailability during data center issues or planned downtime.</li>
+
+  </ul>
+
+
+  <p class="note"><strong>Note:</strong> The Python 2.7 runtime does not support the Master/Slave Datastore.</p>
+
+
+<p>This page compares the two options and describes how to specify one of them for your application.</p>
+
 
 <ul>
-  <li><a href="#Comparing_the_Data_Storage_Options">Comparing the Data Storage Options</a></li>
-  <li><a href="#Selecting_a_Datastore">Selecting a Datastore</a></li>
+  <li><a href="#Data_Storage_Options_Compared">Data Storage Options Compared</a></li>
+  <li><a href="#Selecting_a_Data_Storage_Option">Selecting a Data Storage Option</a></li>
 </ul>
 
 
-<h2 id="Comparing_the_Data_Storage_Options">Comparing the Data Storage Options</h2>
-<p>You can select one of two data storage options when you create your application:</p>
-<dl>
-  <dt>The High Replication Datastore</dt>
-  <dd>The High Replication datastore (HRD) is the default for new applications. The HRD is a highly available, highly reliable storage solution. It remains available for reads and writes during planned downtime and is extremely resilient in the face of catastrophic failure&mdash;but it costs more than the master/slave option.</dd>
-  <dd>Data in the HRD is replicated across data centers using a system based on the <a href="http://research.google.com/pubs/pub33002.html">Paxos algorithm</a>. It provides the highest level of availability for reads and writes and uses approximately three times the <a href="../../../quotas.html#Datastore">storage and CPU cost</a> of the master/slave option.</dd>
-  <dd>Entity groups are much more important in HRD. They are now a unit of consistency as well as a unit of transactionality. In other words, queries that require strongly consistent results must contain an ancestor filter, which restricts the results to a single entity group. Queries that span multiple entity groups are not guaranteed to return up-to-date results. See the <a href="overview.html">Using the High Replication Datastore</a> for more information about using ancestor queries in this context.</dd>
-  <dd><p class="note"><strong>Note:</strong> In HRD, all strongly consistent operations (for example, put or get by key) occur within a transaction.</p></dd>
 
-  <dt>The Master/Slave Datastore</dt>
-  <dd><p class="warning"><strong>Warning!</strong> The master/slave datastore is not supported in the Python 2.7 runtime.</p>
-  <p>You can also select a master-slave replication system, which asynchronously replicates data to other data centers as you write it. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime.</dd>
-  <dd>The master/slave datastore is suitable only for a limited class of applications that:</p>
-    <ul>
-      <li>Do not require high availability of data</li>
-      <li>Can tolerate spikes in datastore latency</li>
-    </ul>
-  </dd>
-</dl>
-<p>The following table illustrates the differences between the HRD and master/slave datastores:</p>
-<dl>
-<dd>
-<table width=600>
-  <tr>
-    <td width=200></td>
-    <th width=200>High Replication</th>
-    <th width=200>Master/Slave</th>
-  </tr>
-  <tr>
-    <td><strong>Cost</strong></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Storage</td>
-    <td>1x</td>
-    <td>1/3x</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Put/Delete CPU</td>
-    <td>1x</td>
-    <td>5/8x</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Get CPU</td>
-    <td>1x</td>
-    <td>1x</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Query CPU</td>
-    <td>1x</td>
-    <td>1x</td>
-  </tr>
-  <tr>
-    <td><strong>Performance</strong></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Put/Delete Latency</td>
-    <td>1/2x&ndash;1x</td>
-    <td>1x</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Get Latency</td>
-    <td>1x</td>
-    <td>1x</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Query Latency</td>
-    <td>1x</td>
-    <td>1x</td>
-  </tr>
-  <tr>
-    <td><strong>Consistency</strong></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Get/Put/Delete</td>
-    <td>Strong</td>
-    <td>Strong</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;Most Queries</td>
-    <td>Eventual</td>
-    <td>Strong</td>
-  </tr>
-  <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../queries.html#Ancestor_Queries">Ancestor Queries</a></td>
-    <td>Strong</td>
-    <td>Strong</td>
-  </tr>
-  <tr>
-    <td><strong>Occasional Planned Read-Only Period</strong></td>
-    <td>No</td>
-    <td>Yes</td>
-  </tr>
-  <tr>
-    <td><strong>Unplanned Downtime</strong></td>
-    <td>Extremely rare. No data loss.</td>
-    <td>Rare. Possible to lose a small % of writes that occurred near the downtime (recoverable after event).</td>
-  </tr>
-  <tr>
-    <td><strong>Python 2.7 support</strong></td>
-    <td>The only supported datastore in Python 2.7</td>
-    <td>Not supported in Python 2.7</td>
-  </tr>
-</table>
-</dd>
-</dl>
+<h2 id="Data_Storage_Options_Compared">Data Storage Options Compared</h2>
 
-<h2 id="Selecting_a_Datastore">Selecting a Datastore</h2>
-<p>The HRD is the default for all new applications. Existing apps must migrate to the HRD by <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copying entities to a new application</a>.  If you prefer to use the master/slave datastore, you can select it as follows:</p>
+<div class="special">
+  <p>
+      <a href=" http:/www.google.com/events/io/2011/sessions/more-9s-please-under-the-covers-of-the-high-replication-datastore.html">
+        Watch a video comparing the High-Replication and Master/Slave Datastores
+      </a></p>
+</div>
 
-<h3 id="For_a_New_Application">For a New Application</h3>
-<p>When you create a new application on <a href="http://appengine.google.com/">appengine.google.com</a>, the application uses the HRD by default. To choose the master/slave option, select it on the <strong>Create an Application</strong> screen.</p>
+<p>The High Replication Datastore (HRD) is a highly available, highly reliable storage solution that remains available for reads and writes during routine maintenance and unplanned events, and is extremely resilient in the face of catastrophic failure. The Master/Slave Datastore, by contrast, is suitable only for a limited class of applications that</p>
 
-<p>To select master/slave, click <strong>Edit</strong> and select the <strong>Master/Slave</strong> radio button. Then click <strong>Create Application</strong> to configure your app to serve data from the master/slave datastore.</p>
+  <ul>
+    <li>do not require high availability of data</li>
+    <li>can tolerate spikes in Datastore latency</li>
+  </ul>
 
-<p class="warning"><strong>Warning!</strong> This option is irreversible; if you choose master/slave and then wish to migrate to HR, you'll need to create a new application and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
+<p>In the HRD, all strongly consistent operations (such as get by key or put) occur within a transaction.
+  <a href="../../../java/datastore/entities.html#Entity_Groups_and_Ancestor_Paths">Entity groups</a>
+are a unit of consistency as well as of transactionality: queries that require strongly consistent results must contain an ancestor filter, which restricts the results to a single entity group. Queries that span multiple entity groups are not guaranteed to return up-to-date results. For more information about using ancestor queries in this context, see
+  <a href="overview.html">Using the High Replication Datastore</a>.
+</p>
 
-<h3 id="For_an_Existing_Application">For an Existing Application</h3>
+<p>The following table summarizes the differences between the High-Resolution and Master/Slave Datastores:</p>
 
-<p>If wish to migrate an HRD application to the master/slave datastore, you'll need to create a new application using the instructions above and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
+  <table width=600>
 
+    <tr>
+      <td width=200></td>
+      <th width=200>High Replication</th>
+      <th width=200>Master/Slave</th>
+    </tr>
+
+    <tr>
+      <td colspan = "3"><center><strong>Performance</strong></center></td>
+    </tr>
+
+    <tr>
+      <td>Put/delete latency</td>
+      <td>1/2x&ndash;1x</td>
+      <td>1x</td>
+    </tr>
+
+    <tr>
+      <td>Get latency</td>
+      <td>1x</td>
+      <td>1x</td>
+    </tr>
+
+    <tr>
+      <td>Query latency</td>
+      <td>1x</td>
+      <td>1x</td>
+    </tr>
+
+    <tr>
+      <td colspan = "3"><center><strong>Consistency</strong></center></td>
+    </tr>
+
+    <tr>
+      <td>Put/get/delete</td>
+      <td>Strong</td>
+      <td>Strong</td>
+    </tr>
+
+    <tr>
+      <td>Most queries</td>
+      <td>Eventual</td>
+      <td>Strong</td>
+    </tr>
+
+    <tr>
+      <td>
+        <a href="../queries.html#Ancestor_Queries">
+          Ancestor queries</a>
+      </td>
+      <td>Strong</td>
+      <td>Strong</td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><center><strong>Occasional planned read-only period</strong></center></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><center><strong>Unplanned downtime</strong></center></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>Extremely rare; no data loss.</td>
+      <td>Rare; possible to lose a small % of writes occurring near downtime (recoverable after event)</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="3"><center><strong>Python 2.7 support</strong></center></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>Only supported Datastore</td>
+      <td>Not supported</td>
+    </tr>
+
+
+  </table>
+
+
+
+<h2 id="Selecting_a_Data_Storage_Option">Selecting a Data Storage Option</h2>
+
+<p>The HRD is the default for all new applications. Existing applications must migrate to the HRD by
+  <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">
+    copying entities to a new application</a>.
+If you prefer to use the Master/Slave Datastore, you can select it as follows:</p>
+
+  <dl>
+    <dt>For a new application:</dt>
+      <dd>
+        <ol>
+          <li>On the <strong>Create an Application</strong> screen, click <strong>Edit.</strong></li>
+          <li>Select the <strong>Master/Slave</strong> radio button.</li>
+          <li>Click <strong>Create Application.</strong></li>
+            <p class="warning"><strong>Warning!</strong> This option is irreversible; if you choose the Master/Slave Datastore and later want to migrate to the HRD, you'll need to create a new application and
+              <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">
+                copy your current Datastore</a>
+to the new application.</p>
+        </ol>
+      </dd>
+
+    <dt>For an existing application:</h3>
+      <dd>
+        <ol>
+          <li>Create a new application using the steps above.</li>
+          <li>
+            <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">
+              Copy your current Datastore</a>
+to the new application.</li>
+
+
+        </ol>
+      </dd>
+  </dl>
 
 
 
@@ -1240,7 +1297,7 @@ _gaq.push(
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

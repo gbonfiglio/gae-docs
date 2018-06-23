@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../logservice/functions.html">Functions</a></li>
+         <li><a href="../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1076,7 +1088,7 @@ _gaq.push(
 
 
 
-<p>The App Engine datastore supports <i>transactions</i>. A transaction is an operation or set of operations that is atomic&mdash;either all of the operations in the transaction occur, or none of them occur. An application can perform multiple operations and calculations in a single transaction.</p>
+<p>The App Engine Datastore supports <i>transactions</i>. A transaction is an operation or set of operations that is atomic&mdash;either all of the operations in the transaction occur, or none of them occur. An application can perform multiple operations and calculations in a single transaction.</p>
 
 <ul>
   <li><a href="#Using_Transactions">Using Transactions</a></li>
@@ -1088,27 +1100,27 @@ _gaq.push(
 
 <h2 id="Using_Transactions">Using Transactions</h2>
 
-<p>A <i>transaction</i> is a set of datastore operations on one or more entity. Each transaction is guaranteed to be atomic, which means that transactions are never partially applied. Either all of the operations in the transaction are applied, or none of them are applied.</p>
+<p>A <i>transaction</i> is a set of Datastore operations on one or more entity. Each transaction is guaranteed to be atomic, which means that transactions are never partially applied. Either all of the operations in the transaction are applied, or none of them are applied.</p>
 
 <p>An operation may fail when:</p>
 <ul>
   <li>Too many users try to modify an entity group simultaneously.</li>
   <li>The application reaches a resource limit.</li>
-  <li>The datastore encounters an internal error.</li>
+  <li>The Datastore encounters an internal error.</li>
 </ul>
-<p>In all cases, the datastore API raises an exception.</p>
+<p>In all cases, the Datastore API raises an exception.</p>
 
 
 <p class="note"><strong>Note:</strong> If your app receives an exception when submitting a transaction, it does not always mean that the transaction failed. You can receive <code>Timeout</code>, <code>TransactionFailedError</code>, or <code>InternalError</code> 
 <a href="exceptions.html">exceptions</a>  in cases where transactions have been committed and eventually will be applied
-successfully. Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
+successfully. Whenever possible, make your Datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
 
 
 
-<p>Transactions are an optional feature of the datastore; you're not required to use transactions to perform datastore operations.</p>
+<p>Transactions are an optional feature of the Datastore; you're not required to use transactions to perform Datastore operations.</p>
 
 
-<p>An application can execute a set of statements and datastore operations in a single transaction, such that if any statement or operation raises an exception, none of the datastore operations in the set are applied. The application defines the actions to perform in the transaction using a Python function. The application starts the transaction using one of the <code>run_in_transaction</code> methods, depending on whether the transaction accesses entities within a single entity group or whether the transaction is a <a href="overview.html#Cross_Group_Transactions">cross-group (XG) transaction</a>.(For XG transactions, see <a href="#Using_Cross_Group_Transactions">Using Cross-Group Transactions</a>.)
+<p>An application can execute a set of statements and Datastore operations in a single transaction, such that if any statement or operation raises an exception, none of the Datastore operations in the set are applied. The application defines the actions to perform in the transaction using a Python function. The application starts the transaction using one of the <code>run_in_transaction</code> methods, depending on whether the transaction accesses entities within a single entity group or whether the transaction is a <a href="overview.html#Cross_Group_Transactions">cross-group (XG) transaction</a>.(For XG transactions, see <a href="#Using_Cross_Group_Transactions">Using Cross-Group Transactions</a>.)
 
 For transactions on entities within a single entity group, an app calls <a href="functions.html#run_in_transaction">db.run_in_transaction()</a> with the function as an argument:</p>
 
@@ -1131,7 +1143,7 @@ db.run_in_transaction(increment_counter, acc.key(), 5)
 
 <p>db.run_in_transaction() takes the function object, and positional and keyword arguments to pass to the function. If the function returns a value, db.run_in_transaction() returns that value.</p>
 
-<p>If the function returns, the transaction is committed, and all effects of datastore operations are applied. If the function raises an exception, the transaction is "rolled back," and the effects are not applied. See the note above about exceptions.</p>
+<p>If the function returns, the transaction is committed, and all effects of Datastore operations are applied. If the function raises an exception, the transaction is "rolled back," and the effects are not applied. See the note above about exceptions.</p>
 
 <h3 id="Using_Cross_Group_Transactions">Using Cross-Group (XG) Transactions</h3>
 <p>The <a href="overview.html#Cross_Group_Transactions">XG transactions</a>, which operate across multiple entity groups, behave similarly as the single-group transaction described above. The main difference is the use of the transaction options as shown in the following snippet:</p>
@@ -1156,9 +1168,9 @@ to true: <code>xg_on = db.create_transaction_options(xg=true)</code>. Then, run 
 
 <h2 id="What_Can_Be_Done_In_a_Transaction">What Can Be Done In a Transaction</h2>
 
-<p>The datastore imposes several restrictions on what can be done inside a single transaction.</p>
+<p>The Datastore imposes several restrictions on what can be done inside a single transaction.</p>
 
-<p>All datastore operations in a transaction must operate on entities in the same entity group if the transaction is a single group transaction, or on entities in a maximum of five entity groups if the transaction is a <a href="overview.html#Cross_Group_Transactions">cross-group (XG) transaction</a>. This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities. Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity unless it is an XG transaction.</p>
+<p>All Datastore operations in a transaction must operate on entities in the same entity group if the transaction is a single group transaction, or on entities in a maximum of five entity groups if the transaction is a <a href="overview.html#Cross_Group_Transactions">cross-group (XG) transaction</a>. This includes querying for entities by ancestor, retrieving entities by key, updating entities, and deleting entities. Notice that each root entity belongs to a separate entity group, so a single transaction cannot create or operate on more than one root entity unless it is an XG transaction.</p>
 
 <p>When two or more transactions simultaneously attempt to modify entities in one or more common entity groups, only one of those transactions can succeed.
 While an app is applying changes to entities in one or more entity group, all other attempts to update any entity in the group or groups fail at commit time. Because of this design, using entity groups limits the number of concurrent writes you can do on any entity in the groups. When a transaction starts, App Engine uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic concurrency control</a> by checking the last update time for the entity groups used in the transaction. Upon commiting a transaction for the entity groups, App Engine again checks the last update time for the entity groups used in the transaction. If it has changed since our initial check, App Engine throws an exception. For an explanation of entity groups, see
@@ -1166,16 +1178,16 @@ While an app is applying changes to entities in one or more entity group, all ot
 
 
 <p>An app can perform a
-<a href="queries.html">query</a> during a transaction, but only if it includes an ancestor filter. (You can actually perform a query without an ancestor filter, but the results won't reflect any particular transactionally consistent state). An app can also get datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
+<a href="queries.html">query</a> during a transaction, but only if it includes an ancestor filter. (You can actually perform a query without an ancestor filter, but the results won't reflect any particular transactionally consistent state). An app can also get Datastore entities by key during a transaction. You can prepare keys prior to the transaction, or you can build keys inside the transaction with key names or IDs.</p>
 
 
 <h2 id="Isolation_and_Consistency">Isolation and Consistency</h2>
 
-<p>The datastore's isolation level outside of transactions is closest to READ_COMMITTED. Inside transactions, on the other hand, the isolation level is SERIALIZABLE, specifically a form of <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>. See the <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> article for more information on isolation levels.</p>
+<p>The Datastore's isolation level outside of transactions is closest to READ_COMMITTED. Inside transactions, on the other hand, the isolation level is SERIALIZABLE, specifically a form of <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>. See the <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> article for more information on isolation levels.</p>
 
-<p>In a transaction, all reads reflect the current, consistent state of the datastore at the time the transaction started. This does not include previous puts and deletes inside the transaction. Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the datastore as of the beginning of the transaction. Entities and index rows in the transaction's entity group are fully updated so that queries return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside of transactions.</p>
+<p>In a transaction, all reads reflect the current, consistent state of the Datastore at the time the transaction started. This does not include previous puts and deletes inside the transaction. Queries and gets inside a transaction are guaranteed to see a single, consistent snapshot of the Datastore as of the beginning of the transaction. Entities and index rows in the transaction's entity group are fully updated so that queries return the complete, correct set of result entities, without the false positives or false negatives described in <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> that can occur in queries outside of transactions.</p>
 
-<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get returns the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
+<p>This consistent snapshot view also extends to reads after writes inside transactions. Unlike with most databases, queries and gets inside a Datastore transaction do <i>not</i> see the results of previous writes inside that transaction. Specifically, if an entity is modified or deleted within a transaction, a query or get returns the <i>original</i> version of the entity as of the beginning of the transaction, or nothing if the entity did not exist then.</p>
 
 
 <h2 id="Uses_for_Transactions">Uses for Transactions</h2>
@@ -1230,9 +1242,9 @@ def create_or_update(parent_key, account_id, address, phone_number):
 <p>Create-or-update is so useful that there is a built-in method for it: <a href="modelclass.html#Model_get_or_insert">Model.get_or_insert()</a> takes a key name, an optional parent, and arguments to pass to the model constructor if an entity of that name and path does not exist. The get attempt and the create happen in one transaction, so (if the transaction is successful) the method always returns a model instance that represents an actual entity.</p>
 
 
-<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, causing the transaction to fail. As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state. The application should prepare keys for objects used outside the transaction, then fetch the entities inside the transaction.</p>
+<p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, causing the transaction to fail. As much as possible, prepare data outside of the transaction, then execute the transaction to perform Datastore operations that depend on a consistent state. The application should prepare keys for objects used outside the transaction, then fetch the entities inside the transaction.</p>
 
-<p>Finally, you can use a transaction to read a consistent snapshot of the datastore. This can be useful when multiple reads are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Read-only single-group transactions never fail due to concurrent modifications, so you don't have to implement retries upon failure. However, XG transactions can fail due to concurrent modifications, so these should have retries. Committing and rolling back a read-only transaction are both no-ops.</p>
+<p>Finally, you can use a transaction to read a consistent snapshot of the Datastore. This can be useful when multiple reads are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Read-only single-group transactions never fail due to concurrent modifications, so you don't have to implement retries upon failure. However, XG transactions can fail due to concurrent modifications, so these should have retries. Committing and rolling back a read-only transaction are both no-ops.</p>
 
 
 
@@ -1257,9 +1269,9 @@ def get_all_accounts():
 <h2 id="Transactional_Task_Enqueuing">Transactional Task Enqueuing</h2>
 
 
-<p>You can enqueue a task as part of a datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. If the transaction does not get committed, the task is guaranteed not to be enqueued. If the transaction does get committed, the task is guaranteed to be enqueued. Once enqueued, the task is not guaranteed to execute immediately, so the task is not atomic with the transaction. Still, once enqueued, the task will retry until it succeeds. This applies to any task enqueued during a <code>run_in_transaction()</code> function.</p>
+<p>You can enqueue a task as part of a Datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. If the transaction does not get committed, the task is guaranteed not to be enqueued. If the transaction does get committed, the task is guaranteed to be enqueued. Once enqueued, the task is not guaranteed to execute immediately, so the task is not atomic with the transaction. Still, once enqueued, the task will retry until it succeeds. This applies to any task enqueued during a <code>run_in_transaction()</code> function.</p>
 
-<p>Transactional tasks are useful because they allow you to combine non-datastore actions to a transaction that depend on the transaction succeeding (such as sending an email to confirm a purchase). You can also tie datastore actions to the transaction, such as to commit changes to entity groups outside of the transaction if and only if the transaction succeeds.</p>
+<p>Transactional tasks are useful because they allow you to combine non-Datastore actions to a transaction that depend on the transaction succeeding (such as sending an email to confirm a purchase). You can also tie Datastore actions to the transaction, such as to commit changes to entity groups outside of the transaction if and only if the transaction succeeds.</p>
 <p>An application cannot insert more than five <a href="../taskqueue/overview.html#Tasks_within_Transactions">transactional tasks</a> into <a href="../taskqueue/overview.html#Queue_Concepts">task queues</a> during a single transaction. Transactional tasks must not have user-specified names.</p>
 
 <pre class="prettyprint">
@@ -1307,7 +1319,7 @@ db.run_in_transaction(do_something_in_transaction, ....)
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

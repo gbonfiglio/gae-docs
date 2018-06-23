@@ -512,9 +512,6 @@ _gaq.push(
   <ul>
     <li><a href="../docs/python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../docs/python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../docs/python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../docs/python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../docs/python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -559,7 +556,7 @@ _gaq.push(
      <li><a href="../docs/python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../docs/python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../docs/python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../docs/python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -644,6 +641,19 @@ _gaq.push(
          <li><a href="../docs/python/images/imageclass.html">Image</a></li>
          <li><a href="../docs/python/images/functions.html">Functions</a></li>
          <li><a href="../docs/python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../docs/python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../docs/python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../docs/python/logservice/functions.html">Functions</a></li>
+         <li><a href="../docs/python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1021,6 +1031,7 @@ _gaq.push(
           <li><a href="../docs/adminconsole/instances.html">Instances</a></li>
 <li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../docs/adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../docs/adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1039,6 +1050,7 @@ _gaq.push(
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="index.html">Articles</a></li>
+      <li><a href="../docs/features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../docs/videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1237,7 +1249,7 @@ pm.makePersistent(myTodo);</pre>
 <h2>The Return Value</h2>
 <p>We've seen the steps executed by the datastore behind the scenes, but how does this relate to the code that you've written for the app? More specifically, at what point in the list of items does the datastore server respond telling your app that the put succeeded or failed?</p>
 
-<p>If you are using the <a href="http://googleappengine.blogspot.com/2011/01/announcing-high-replication-datastore.html">High Replication Datastore</a>, the datastore
+<p>If you are using the <a href="../docs/python/datastore/hr/overview.html">High Replication Datastore</a>, the datastore
 returns after the commit and does the apply asynchronously.</p>
 <p>If you are using the master/slave datastore, the datastore returns after applying all changes, so if you receive a success response, all data and index rows should have been written to disk. If there is a failure either in the commit phase or the apply phase, the backend will automatically retry several times, but if failures continue, the datastore will return an error message that is converted to an exception.</p> 
 
@@ -1266,7 +1278,6 @@ returns after the commit and does the apply asynchronously.</p>
 </ul>
 
 <p>Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
-
 
 <h2>Conclusions</h2>
 
@@ -1324,7 +1335,7 @@ returns after the commit and does the apply asynchronously.</p>
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
@@ -1354,5 +1365,6 @@ Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
 
   </body>
 </html>
+
 
 

@@ -509,9 +509,6 @@ _gaq.push(
   <ul>
     <li><a href="../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -556,7 +553,7 @@ _gaq.push(
      <li><a href="../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -641,6 +638,19 @@ _gaq.push(
          <li><a href="../python/images/imageclass.html">Image</a></li>
          <li><a href="../python/images/functions.html">Functions</a></li>
          <li><a href="../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1018,6 +1028,7 @@ _gaq.push(
           <li><a href="instances.html">Instances</a></li>
 <li><a href="roles.html">Roles</a></li>
 <li><a href="applicationsettings.html">Application Settings</a></li>
+<li><a href="experiments.html">Experiments</a></li>
 <li><a href="datastoreadmin.html">Datastore</a></li>
 <li><a href="performancesettings.html">Performance Settings</a></li>
 
@@ -1036,6 +1047,7 @@ _gaq.push(
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
+      <li><a href="../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1071,6 +1083,7 @@ _gaq.push(
 <ul>
   <li><a href="#Copying_Entities_to_Another_Application">Copying Entities to Another Application</a></li>
   <li><a href="#Deleting_Entities_in_Bulk">Deleting Entities in Bulk</a></li>
+  <li><a href="#Backup_And_Restore">Backup and Restore</a></li>
 </ul>
 
 <h2 id="Copying_Entities_to_Another_Application">Copying Entities to Another Application</h2>
@@ -1116,17 +1129,6 @@ _gaq.push(
 <img src="../images/datastore_admin_enable.png" />
 <br />
 
-<p>If you want to enable the <code>datastore_admin</code> at a custom URI, specify that path in <code>app.yaml</code> using the url handler instead of the builtin handler:</p>
-<pre class="prettyprint">
-- url: /datastore_admin
-  script: $PYTHON_LIB/google/appengine/ext/datastore_admin/main.py
-</pre>
-
-<p>This maps the <code>datastore_admin</code> handler to the URL <code>/datastore_admin</code>. You can replace <code>/datastore_admin</code> with any URL you choose.</p>
-]
-
-
-
 <h4 id="Enable_remote_api_in_the_Target_Application">2. Enable remote_api in the Target Application</h4>
 <p>In order for the target application to receive data from the source, you need to enable its <code>remote_api</code> builtin by adding the following to <code>app.yaml</code>:</p>
 
@@ -1166,7 +1168,7 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 <h3>Caveats</h3>
 
 <ul>
-  <li>This feature is currently experimental.</li>
+  <li>This feature is currently <a href="../features.html">experimental</a>.</li>
   <li>Copying entities in bulk happens within your applications, and thus counts against your quota.</li>
   <li>Once you've copied entities, you may wish to re-enable writes in your source application.</li>
   <li>Copying entities overwrites all entities with the same keys in the target datastore. You can perform the copying operations multiple times without the risk of creating duplicates. If you are performing multiple copy operations, be aware that the copy function does not delete extra data in the target datastore.</li>
@@ -1174,11 +1176,16 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 </ul>
 
 <h2 id="Deleting_Entities_in_Bulk">Deleting Entities in Bulk</h2>
-<p>You can use the Datastore Admin tab of the Admin Console to delete all entities of a kind, or all entities of all kinds, in the default namespace. To enable this feature, simply <a href="#Enabling_Datastore_Admin">enable Datastore Admin</a> in the Administration Console.</p>
+<p>You can use the Datastore Admin tab of the Admin Console to delete all entities of a kind, or all entities of all kinds. To enable this feature, simply <a href="#Enable_datastore_admin_in_the_Source_Application">enable Datastore Admin</a> in the Administration Console.</p>
 <p>Adding this builtin enables the Datastore Admin screen in the <b>Data</b> section of the Administration Console. From this screen, you can select the entity kind(s) to delete individually or in bulk, and delete them using the <b>Delete Entities</b> button.</p>
 <p class="warning"><strong>Warning!</strong> Deleting entities in bulk happens within your application, and thus counts against your <a href="../quotas.html#Datastore">quota</a>.</p>
-<p>This feature is currently experimental. We believe this feature is currently the fastest way to bulk-delete data, but it is not yet stable and you may encounter occasional bugs.</p>
+<p>This feature is currently <a href="../features.html">experimental</a>. We believe this feature is currently the fastest way to bulk-delete data, but it is not yet stable and you may encounter occasional bugs.</p>
 
+<h2 id="Backup_And_Restore">Backup and Restore</h2>
+<p>You can use the Datastore Admin tab of the Admin Console to backup entities of selected kinds and when needed restore from a selected backup. To enable this feature, simply <a href="#Enable_datastore_admin_in_the_Source_Application">enable Datastore Admin</a> in the Administration Console.</p>
+<p>Adding this builtin enables the Datastore Admin screen in the <b>Data</b> section of the Administration Console. From this screen, you can select the entity kind(s) to backup, and initiate the backup using the <b>Backup Entities</b> button.</p>
+<p class="warning"><strong>Warning!</strong> Backup and Restore happens within your application, and thus counts against your <a href="../quotas.html#Datastore">quota</a>.</p>
+<p>This feature is currently <a href="../features.html">experimental</a>.</p>
 
       </div><!-- end gc-pagecontent -->
    </div><!-- end gooey wrapper -->
@@ -1214,7 +1221,7 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

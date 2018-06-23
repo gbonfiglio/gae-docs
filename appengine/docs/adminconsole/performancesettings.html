@@ -509,9 +509,6 @@ _gaq.push(
   <ul>
     <li><a href="../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -556,7 +553,7 @@ _gaq.push(
      <li><a href="../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -641,6 +638,19 @@ _gaq.push(
          <li><a href="../python/images/imageclass.html">Image</a></li>
          <li><a href="../python/images/functions.html">Functions</a></li>
          <li><a href="../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1018,6 +1028,7 @@ _gaq.push(
           <li><a href="instances.html">Instances</a></li>
 <li><a href="roles.html">Roles</a></li>
 <li><a href="applicationsettings.html">Application Settings</a></li>
+<li><a href="experiments.html">Experiments</a></li>
 <li><a href="datastoreadmin.html">Datastore</a></li>
 <li><a href="performancesettings.html">Performance Settings</a></li>
 
@@ -1036,6 +1047,7 @@ _gaq.push(
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
+      <li><a href="../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1301,6 +1313,7 @@ _gaq.push(
 
 
 
+
 <table>
   <tr>
     <th>Frontend class</th>
@@ -1334,7 +1347,7 @@ _gaq.push(
 
   <p>The upper slider sets the <em>minimum</em> number of idle instances:</p>
 <p class="note"><strong>Note:</strong> In order to specify the minimum number of idle instances, you must have a <a
-href="../billing.html#Enabling_Billing">paid app</a>.</p>
+href="../billing.html#Enabling_Paid_Apps">paid app</a>.</p>
   <ul>
     <li>A low minimum helps keep your running costs down during idle periods, but means that fewer instances may be immediately available to respond to a sudden load spike.</li>
 
@@ -1358,7 +1371,7 @@ href="../billing.html#Enabling_Billing">paid app</a>.</p>
 
 <p class="note"><strong>Note:</strong> In order to specify the maximum pending latency, you must
 have a <a
-href="../billing.html#Enabling_Billing">paid
+href="../billing.html#Enabling_Paid_Apps">paid
 app</a>."</p>
 
   <p><em>Pending request latency</em> arises when all of your application's available instances are too busy to serve new requests. When this happens, incoming requests go to a <em>pending request queue</em>. The scheduler automatically starts new instances for pending requests, but you can also specify minimum and maximum latency settings manually. These settings control how long a request waits in the pending queue when there are no available instances: no less than the minimum, and no more than the maximum.</p>
@@ -1421,7 +1434,7 @@ app</a>."</p>
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="backends/functions.html">Backends API Functions</a></li>
     <li><a href="backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="backends/applog.html">AppLog Class</a></li>
-    <li><a href="backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="images/imageclass.html">Image</a></li>
          <li><a href="images/functions.html">Functions</a></li>
          <li><a href="images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="logservice/applogclass.html">AppLog</a></li>
+         <li><a href="logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="logservice/functions.html">Functions</a></li>
+         <li><a href="logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../adminconsole/instances.html">Instances</a></li>
 <li><a href="../adminconsole/roles.html">Roles</a></li>
 <li><a href="../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
+      <li><a href="../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1062,6 +1074,7 @@ _gaq.push(
 
       <div class="g-unit" id="gc-pagecontent">
         <h1 class="page_title">Python Runtime Environment</h1>
+
 
 
 
@@ -1345,8 +1358,8 @@ api_version: 1
 <ul>
   <li><code>python</code></li>
   <li><code>python27</code> &ndash; This runtime is experimental. See the <a href="python27/newin27.html">Python 2.7 documentation</a> for more information.</li>
-  <li><code>java</code> &ndash; See the <a href="../java/runtime.html">Java runtime documentation</a> for more information.</p>
-  <li><code>go</code> &ndash; See the <a href="../go/runtime.html">Go runtime documentation</a> for more information.</p>
+  <li><code>java</code> &ndash; See the <a href="../java/runtime.html">Java runtime documentation</a> for more information.</li>
+  <li><code>go</code> &ndash; See the <a href="../go/runtime.html">Go runtime documentation</a> for more information.</li>
 </ul>
 
 <p>The second element, <code>api_version</code>, selects which version of the Python runtime environment to use. As of this writing, App Engine only has one version of the Python environment, <code>1</code>. If the App Engine team ever needs to release changes to the environment that may not be compatible with existing code, they will do so with a new version identifier. Your app will continue to use the selected version until you change the <code>api_version</code> setting and upload your app.</p>
@@ -1374,15 +1387,15 @@ api_version: 1
 
 <h2 id="Requests">Requests</h2>
 
-<p>When App Engine receives a web request for your application, it calls the handler script that corresponds to the URL, as described in the application's <a href="config/appconfig.html">app.yaml</a> configuration file. The two Python runtimes handle these requests differently. The default Python runtime uses the <a href="http://www.w3.org/CGI/">CGI standard</a>. In the Python 2.7 runtime, you can use CGI, but the <a href="http://www.wsgi.org">WSGI standard</a> is preferred, and some features of Python 2.7 do not work without it. 
-
-<h3 id="Requests_and_CGI">Requests and CGI</h3>
-
-The Python 2.5 runtime uses <a href="http://www.w3.org/CGI/">the CGI standard</a> to communicate the request data to the handler, and receive the response. If your application uses <a href="backends/index.html">backends</a>, it calls the handler script defined in <code>backends.yaml</code>. See <a href="config/backends.html">Backend Configuration</a> for more information.</p>
+<p>When App Engine receives a web request for your application, it calls the handler script that corresponds to the URL, as described in the application's <a href="config/appconfig.html">app.yaml</a> configuration file. If your application uses <a href="backends/index.html">backends</a>, it may also call the handler script defined in <code>backends.yaml</code>. See <a href="config/backends.html">Backend Configuration</a> for more information.</p>
 
 <p>App Engine uses multiple web servers to run your application, and automatically adjusts the number of servers it is using to handle requests reliably. A given request may be routed to any server, and it may not be the same server that handled a previous request from the same user.</p>
 
-<p>The server determines which Python handler script to run by comparing the URL of the request to the URL patterns in the app's configuration file. It then runs the handler in a CGI environment populated with the request data. As described in <a href="http://www.w3.org/CGI/">the CGI standard</a>, the server puts the request data in environment variables and the standard input stream. The script performs actions appropriate to the request, then prepares a response and puts it on the standard output stream.</p>
+<p>The Python 2.5 runtime always uses the <a href="http://www.w3.org/CGI/">CGI standard</a>. The Python 2.7 runtime supports the <a href="http://www.wsgi.org">WSGI standard</a> and CGI for backwards compatibility. WSGI is preferred, and some features of Python 2.7 do not work without it. The configuration of your application's <a href="config/appconfig.html#Script_Handlers">script handlers</a> determines whether a request is handled using WSGI or CGI.</p>
+
+<h3 id="Requests_and_CGI">Requests and CGI</h3>
+
+<p>The server determines which Python handler script to run by comparing the URL of the request to the URL patterns in the app's configuration file. It then runs the script in a CGI environment populated with the request data. As described in the <a href="http://www.w3.org/CGI/">CGI standard</a>, the server puts the request data in environment variables and the standard input stream. The script performs actions appropriate to the request, then prepares a response and puts it on the standard output stream.</p>
 
 <p>Most applications use a library to parse CGI requests and return CGI responses, such as <a href="http://www.python.org/doc/2.5.2/lib/module-cgi.html">the cgi module</a> from the Python standard library, or a web framework that knows the CGI protocol (such as <a href="tools/webapp/index.html">webapp</a>). You can refer to the CGI documentation for details about the environment variables and the format of the input stream data.</p>
 
@@ -1394,6 +1407,11 @@ print ""
 print "Hello, world!"
 </pre>
 
+<h3 id="Requests_and_WSGI">Requests and WSGI</h3>
+
+<p>The server determines which Python application object to call by comparing the URL of the request to the URL patterns in the app's configuration file. It then calls the application object using the arguments as defined in the <a href="http://www.wsgi.org">WSGI standard</a>. The application object performs actions appropriate to the request, then prepares a response and returns it as a list of strings.</p>
+
+<p>Most applications use a framework, such as <a href="http://webapp-improved.appspot.com/">webapp2</a>, to handle WSGI requests. <code>webapp2</code> is included as part of the Python 2.7 runtime.</p>
 
 
 
@@ -1535,9 +1553,9 @@ class MainPage(webapp.RequestHandler):
 
 <h2 id="App_Caching">App Caching</h2>
 
-<p>The Python runtime environment caches imported modules between requests on a single web server, similar to how a standalone Python application loads a module only once even if the module is imported by multiple files. If a handler script provides a <code>main()</code> routine, the runtime environment also caches the script. Otherwise, the handler script is loaded for every request.</p>
+<p>The Python runtime environment caches imported modules between requests on a single web server, similar to how a standalone Python application loads a module only once even if the module is imported by multiple files. The runtime also caches WSGI handlers while CGI handler scripts are only cached if they provide a <code>main()</code> routine. Otherwise, the CGI handler script is loaded for every request. See <a href="#Requests">Requests</a> for more information about the differences between CGI and WSGI.</p>
 
-<p>App caching provides a significant benefit in response time. We recommend that all applications use a <code>main()</code> routine, as described below.</p>
+<p>App caching provides a significant benefit in response time. We recommend that all CGI handler scripts use a main() routine, as described below.
 
 <h3>Imports Are Cached</h3>
 
@@ -1567,9 +1585,9 @@ print "My number: " + str(mymodule.increment())
 <p>This outputs <code>My number: <i>#</i></code> where <code><i>#</i></code> is the number of times this handler has been called by the web server that handled the request.</p>
 
 
-<h3>Handler Scripts Can Also Be Cached</h3>
+<h3>CGI Handler Scripts Can Also Be Cached</h3>
 
-<p>You can tell App Engine to cache the handler script itself, in addition to imported modules. If the handler script defines a function named <code>main()</code>, then the script and its global environment will be cached like an imported module. The first request for the script on a given web server evaluates the script normally. For subsequent requests, App Engine calls the <code>main()</code> function in the cached environment.</p>
+<p>You can tell App Engine to cache the CGI handler script itself, in addition to imported modules. If the handler script defines a function named <code>main()</code>, then the script and its global environment will be cached like an imported module. The first request for the script on a given web server evaluates the script normally. For subsequent requests, App Engine calls the <code>main()</code> function in the cached environment.</p>
 
 <p>To cache a handler script, App Engine must be able to call <code>main()</code> with no arguments. If the handler script does not define a <code>main()</code> function, or the <code>main()</code> function requires arguments (that don't have defaults), then App Engine loads and evaluates the entire script for every request.</p>
 
@@ -1608,7 +1626,7 @@ if __name__ == "__main__":
 
 <p class="note"><b>Note:</b> Be careful to not "leak" user-specific information between requests. Avoid global variables unless caching is desired, and always initialize request-specific data inside the <code>main()</code> routine.</p>
 
-<p>App caching with <code>main()</code> provides a significant improvement in your application's response time. We recommend it for all applications.</p>
+<p>App caching with <code>main()</code> provides a significant improvement in your CGI handler's response time. We recommend it for all applications that use CGI.</p>
 
 
 
@@ -1722,7 +1740,7 @@ class PrintEnvironmentHandler(webapp.RequestHandler):
   </tr>
   <tr>
     <td>maximum total size of all application and static files</td>
-    <td>32 megabytes</td>
+    <td>150 megabytes</td>
   </tr>
 </table>
 
@@ -1762,7 +1780,7 @@ class PrintEnvironmentHandler(webapp.RequestHandler):
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

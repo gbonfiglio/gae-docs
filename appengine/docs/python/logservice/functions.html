@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -29,13 +30,13 @@
 <html>
   <head>
     <script type="text/javascript" language="JavaScript">
-    ORIGINAL_PAGE_PATH = "/appengine/docs/python/backends/requestlog.html";
+    ORIGINAL_PAGE_PATH = "/appengine/docs/python/logservice/functions.html";
     </script>
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<title>The RequestLog Class - Google App Engine - Google Code</title>
+<title>Functions - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
@@ -501,17 +502,14 @@ _gaq.push(
 
       </ul>
     </li>
-    <li><a href="index.html">Backends</a>
+    <li><a href="../backends/index.html">Backends</a>
       <ul>
-        <li><a href="overview.html">Overview</a></li>
+        <li><a href="../backends/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="functions.html">Backends API Functions</a></li>
-    <li><a href="exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="logserviceapi.html">LogService API</a></li>
-    <li><a href="applog.html">AppLog Class</a></li>
-    <li><a href="requestlog.html">RequestLog Class</a></li>
-    <li><a href="runtimeapi.html">Runtime API</a></li>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
 
@@ -555,7 +553,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +638,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="applogclass.html">AppLog</a></li>
+         <li><a href="requestlogclass.html">RequestLog</a></li>
+         <li><a href="functions.html">Functions</a></li>
+         <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1028,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1047,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1061,168 +1074,89 @@ _gaq.push(
       </div>
 
       <div class="g-unit" id="gc-pagecontent">
-        <h1 class="page_title">The RequestLog Class</h1>
+        <h1 class="page_title">Functions</h1>
 
 
 
-<p>
-This class is a representation of the complete log data available for a single request, including all application logs for that request.
-</p>
+<p>The <code>google.appengine.api.logservice</code> package provides functions allowing applications to periodically flush logs during long-running requests and to examine an application's request logs and application logs.</p>
 
-<p><code>RequestLog</code> is provided by the <code>google.appengine.api.logservice</code> module.</p>
-
-<ul>
-  <li><a href="#Introduction">Introduction</a></li>
-  <li>Properties
-    <ul>
-<li><a href="#RequestLog_api_mcycles">api_mcycles</a></li>
-<li><a href="#RequestLog_app_id">app_id</a></li>
-<li><a href="#RequestLog_app_logs">app_logs</a></li>
-<li><a href="#RequestLog_combined">combined</a></li>
-<li><a href="#RequestLog_cost">cost</a></li>
-<li><a href="#RequestLog_end_time">end_time</a></li>
-<li><a href="#RequestLog_finished">finished</a></li>
-<li><a href="#RequestLog_host">host</a></li>
-<li><a href="#RequestLog_http_version">http_version</a></li>
-<li><a href="#RequestLog_instance_key">instance_key</a></li>
-<li><a href="#RequestLog_ip">ip</a></li>
-<li><a href="#RequestLog_latency">latency</a></li>
-<li><a href="#RequestLog_mcycles">mcycles</a></li>
-<li><a href="#RequestLog_method">method</a></li>
-<li><a href="#RequestLog_nickname">nickname</a></li>
-<li><a href="#RequestLog_offset">offset</a></li>
-<li><a href="#RequestLog_pending_time">pending_time</a></li>
-<li><a href="#RequestLog_referrer">referrer</a></li>
-<li><a href="#RequestLog_replica_index">replica_index</a></li>
-<li><a href="#RequestLog_request_id">request_id</a></li>
-<li><a href="#RequestLog_resource">resource</a></li>
-<li><a href="#RequestLog_response_size">response_size</a></li>
-<li><a href="#RequestLog_start_time">start_time</a></li>
-<li><a href="#RequestLog_status">status</a></li>
-<li><a href="#RequestLog_task_name">task_name</a></li>
-<li><a href="#RequestLog_task_queue_name">task_queue_name</a></li>
-<li><a href="#RequestLog_url_map_entry">url_map_entry</a></li>
-<li><a href="#RequestLog_user_agent">user_agent</a></li>
-<li><a href="#RequestLog_version_id">version_id</a></li>
-<li><a href="#RequestLog_was_loading_request">was_loading_request</a></li>
-    </ul>
-  </li>
-</ul>
-
-
-<h2 id="Introduction">Introduction</h2>
-
-<p>A large set of log data is written during the handling of a request. The RequestLog class contains all of this data with the different types of data represented as properties. Because one or more application logs can be written during the handling of an incoming client request, there is a property containing a list of <a href="applog.html">AppLog</a> objects, each of which contains one application log.
-</p>
-<p>
-  You don't instantiate this class. Instead, you obtain this information by invoking <a href="logserviceapi.html#fetch">logservice.fetch()</a> to get the filtered list of <code>RequestLog</code> objects, each of which contains all the log information for that request, incuding application logs. You then get the list of <a href="applog.html">AppLog</a> objects from each RequestLog object using the <code>app_logs</code> property to return a list of AppLog objects. (This list can be empty, if no app log was written during the request.)
-</p>
-
-<h2 id="Instance_Properties">Instance Properties</h2>
+<p>This package has the following functions:</p>
 
 <dl class="apireference">
+  <dt><span class="itemname">fetch</span>(<span class="argname">start_time</span>=<span class="argdefault">None</span>, <span class="argname">end_time</span>=<span class="argdefault">None</span>, <span class="argname">offset</span>=<span class="argdefault">None</span>, <span class="argname">minimum_log_level</span>=<span class="argdefault">None</span>, <span class="argname">include_incomplete</span>=<span class="argdefault">False</span>, <span class="argname">include_app_logs</span>=<span class="argdefault">False</span>, <span class="argname">version_ids</span>=<span class="argdefault">None</span>, <span class="argname">batch_size</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Fetches an application's request and application logs. (Only logs for requests to the application making the fetch() request can be retrieved.) Returns an iterator that returns <a href="requestlogclass.html">RequestLog</a> objects, each of which contains the full log data for a request, both the request logs and any application logs for that request. Raises an <code>InvalidArgumentError</code> if any of the input parameters are not of the correct type.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">start_time</span></dt>
+      <dd>The earliest request completion or last-update time that results should be fetched for, in seconds since the Unix epoch.</dd>
+      <dt><span class="argname">end_time</span></dt>
+      <dd>The latest request completion or last-update time that results should be fetched for, in seconds since the Unix epoch.</dd>
+      <dt><span class="argname">offset</span></dt>
 
-  <dt id="RequestLog_app_id"><span class="itemname">app_id</span></dt>
-  <dd>Returns the application id of the application that handled the request as a string.</dd>
+      <dd>An offset value from a <a href="requestlogclass.html">RequestLog</a> object returned in a previous fetch call. May be used to continue a <code>fetch()</code> across multiple HTTP requests, for instance to display pages of results.  Subsequent fetch() calls made with the same parameters plus an offset will continue immediately after the RequestLog from which the offset was retrieved.</dd>
+      <dt><span class="argname">minimum_log_level</span></dt>
+      <dd>An application log level that serves as a filter on the requests returned. Requests with no application log at or above the specified level will be omitted. This argument takes effect even if <code>include_app_logs</code> is not set to True.  In ascending order, the available log levels are:
+<ul>
+<li><code>logservice.LOG_LEVEL_DEBUG</code></li>
+<li><code>logservice.LOG_LEVEL_INFO</code></li>
+<li><code>logservice.LOG_LEVEL_WARNING</code></li>
+<li><code>logservice.LOG_LEVEL_ERROR</code></li>
+<li><code>logservice.LOG_LEVEL_CRITICAL</code></li>
+</ul>
+</dd>
+      <dt><span class="argname">include_incomplete</span></dt>
+      <dd>Specifies whether to include requests that have started but are not yet finished, as a boolean.</dd>
 
-
-  <dt id="RequestLog_app_logs"><span class="itemname">app_logs</span></dt>
-  <dd>Returns a list of <a href="applog.html">AppLog</a> objects containing any log messages emitted by the application while serving this request, or an empty list if there were no application logs written.</dd>
-
-
-  <dt id="RequestLog_api_mcycles"><span class="itemname">api_mcycles</span></dt>
-  <dd>The number of machine cycles spent in API calls while processing request (or None if not available) as a long.</dd>
-
-
-  <dt id="RequestLog_combined"><span class="itemname">combined</span></dt>
-  <dd>Returns a string containing an Apache-style log line in the form documented at <a href="http://httpd.apache.org/docs/1.3/logs.html">apache.org</a>. This is the Apache combined log entry for request, which can be constructed from the rest of this message; however, this field is included for convenience.</dd>
-
-
-  <dt id="RequestLog_cost"><span class="itemname">cost</span></dt>
-  <dd>Returns a float value representing the estimated cost of this request in fractional dollars or None if not available.</dd>
-
-  <dt id="RequestLog_end_time"><span class="itemname">end_time</span></dt>
-  <dd>Returns a float value representing the time at which the request completed expressed in seconds since the Unix epoch.</dd>
-
-  <dt id="RequestLog_finished"><span class="itemname">finished</span></dt>
-  <dd>Returns a bool indicating whether this log represents a finished request.</dd>
-
-
-  <dt id="RequestLog_host"><span class="itemname">host</span></dt>
-  <dd>Returns a string containing the Internet host and port number of the resource being requested or None if not available.</dd>
-
-  <dt id="RequestLog_http_version"><span class="itemname">http_version</span></dt>
-  <dd>Returns a string containing the HTTP version used in the request.</dd>
-
-  <dt id="RequestLog_instance_key"><span class="itemname">instance_key</span></dt>
-  <dd>Returns a string containing a mostly-unique identifier for the instance that handled the request, or None if not applicable.</dd>
-
-  <dt id="RequestLog_ip"><span class="itemname">ip</span></dt>
-  <dd>Returns a string containing the origin IP address of the request.</dd>
-
-  <dt id="RequestLog_latency"><span class="itemname">latency</span></dt>
-  <dd>Returns a float value representing the time required to process the request in seconds.</dd>
-
- <dt id="RequestLog_mcycles"><span class="itemname">mcycles</span></dt>
-  <dd>Returns an int value representing the number of machine cycles used to process the request.</dd>
-
-  <dt id="RequestLog_method"><span class="itemname">method</span></dt>
-  <dd>Returns a string containing the request method (GET, PUT, POST, etc).</dd>
-
-  <dt id="RequestLog_nickname"><span class="itemname">nickname</span></dt>
-  <dd>Returns a string containing the nickname of the user that made the request if known and logged-in or None otherwise.</dd>
-
-  <dt id="RequestLog_offset"><span class="itemname">offset</span></dt>
-  <dd>Returns a bytestring containing the binary offset indicating the current position in the active result stream. This value may be submitted to subsequent <code>logservice.fetch()</code> requests (with all other parameters identical except for the offset) to continue reading logs starting immediately after this
-request.</dd>
+      <dt><span class="argname">include_app_logs</span></dt>
+      <dd>Specifies whether to include application logs, as a boolean. By default, application logs are <em>not</em> returned by <code>logservice.fetch()</code>; you have to invoke it with its <code>include_app_logs</code> parameter set to <em>True</em>.
+</dd>
 
 
-  <dt id="RequestLog_pending_time"><span class="itemname">pending_time</span></dt>
-  <dd>Returns a float value representing the amount of time in seconds that this request spent in the pending request queue.</dd>
-
-<dt id="RequestLog_referrer"><span class="itemname">referrer</span></dt>
-  <dd>Returns a string containing the Referrer URL of the request or None if not applicable.</dd>
-
-  <dt id="RequestLog_replica_index"><span class="itemname">replica_index</span></dt>
-  <dd>Returns an int representing the server replica that handled the request, or None if not applicable.</dd>
-
-  <dt id="RequestLog_request_id"><span class="itemname">request_id</span></dt>
-  <dd>Returns a bytestring containing the globally unique identifier for a request, based on request start time. Request ids for requests that started later will compare greater as binary strings than those for requests which started earlier.</dd>
-
-<dt id="RequestLog_resource"><span class="itemname">resource</span></dt>
-  <dd>Returns a string containing the resource path on the server requested by the client (the path component of the request URL). For example, http://nowhere.com/app would have a resource string of '/app'.</dd>
-
- <dt id="RequestLog_response_size"><span class="itemname">response_size</span></dt>
-  <dd>Returns a long value representing the size in bytes sent back to the client by the request.</dd>
-
-  <dt id="RequestLog_start_time"><span class="itemname">start_time</span></dt>
-  <dd>Returns a float value representing the time at which the request began processing expressed in seconds since the Unix epoch.</dd>
-
-  <dt id="RequestLog_status"><span class="itemname">status</span></dt>
-  <dd>Returns an int value representing the response status of the request.</dd>
-
-
-  <dt id="RequestLog_task_name"><span class="itemname">task_name</span></dt>
-  <dd>Returns a string containing the request's task name, if this generated via the Task Queue API, or None otherwise.</dd>
-
-  <dt id="RequestLog_task_queue_name"><span class="itemname">task_queue_name</span></dt>
-  <dd>Returns a string containing the request's queue name, if generated via the Task Queue API, or None otherwise.</dd>
-
-  <dt id="RequestLog_url_map_entry"><span class="itemname">url_map_entry</span></dt>
-  <dd>Returns a string containing the file or class within the URL mapping used for the request. Useful for tracking down the source code which was responsible for managing the request, especially for multiple-mapped handlers.</dd>
-
-  <dt id="RequestLog_user_agent"><span class="itemname">user_agent</span></dt>
-  <dd>Returns a string containing the user agent used to make the request or None if not applicable.</dd>
-
-<dt id="RequestLog_version_id"><span class="itemname">version_id</span></dt>
-  <dd>Returns a string containing the version of the application that handled the request.</dd>
-
-  <dt id="RequestLog_was_loading_request"><span class="itemname">was_loading_request</span></dt>
-  <dd>Returns a bool indicating whether this request was a loading request for an instance.</dd>
-
+      <dt><span class="argname">version_ids</span></dt>
+      <dd>Specifies the version id of the application version to be queried in the fetch call. Currently, you can specify only one version_id per fetch call.</dd>
 </dl>
+  </dd>
 
+  <dt><span class="itemname">flush</span>()</dt>
+    <dd><p>Flushes log lines that are currently buffered.</p></dd>
+  <dt><span class="itemname">flush_time</span>()</dt>
+    <dd><p>Returns the last time that the log buffer was flushed.</p></dd>
+  <dt><span class="itemname">log_buffer_contents</span>()</dt>
+    <dd><p>Returns the contents of the logs buffer.</p></dd>
+  <dt><span class="itemname">log_buffer_bytes</span>()</dt>
+    <dd><p>Returns the size of the log buffer, in bytes.</p></dd>
+  <dt><span class="itemname">log_buffer_lines</span>()</dt>
+    <dd><p>Returns the number of log lines currently buffered.</p></dd>
+  <dt><span class="itemname">auto_flush</span>()</dt>
+    <dd><p>This method is invoked automatically to flush logs in the background. You can tune the autoflush function with the following constants:</p>
+      <ul>
+        <li><code>logservice.AUTOFLUSH_ENABLED</code> &ndash; Controls whether the in-process logs buffer is automatically flushed during a request.  If false, logs are flushed at the end of each request. If true, automatically flushes the log buffer in the background.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_SECONDS</code> &ndash; If auto_flush() is enabled, flushes the logs buffer after this many seconds.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_BYTES</code> &ndash; If auto_flush() is enabled, flushes the logs buffer once this many bytes have been logged.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_LINES</code> &ndash; If auto_flush() is enabled, flushes the logs buffer once this many lines have been logged.</li>
+      </ul><br />
+    <p>These are module-level variables that apps can change directly. For example, you can disable autoflush entirely as follows:</p>
 
+<pre class="prettyprint">
+from google.appengine.api import logservice
+logservice.AUTOFLUSH_ENABLED = False
+
+# When you want to flush manually, do this
+logservice.flush()</pre><br />
+
+<p>To flush every 20 lines, with no limit on time or bytes:</p>
+<pre class="prettyprint">
+from google.appengine.api import logservice
+logservice.AUTOFLUSH_EVERY_SECONDS = None
+logservice.AUTOFLUSH_EVERY_BYTES = None
+logservice.AUTOFLUSH_EVERY_LINES = 20 # The default, but set here for clarity
+</pre></br>
+
+<p>Google recommends that you flush logs regularly. The RPCs are very fast, and not flushing your logs can make debugging difficult.</p>
+
+</dd>
+</dl>
 
 
       </div><!-- end gc-pagecontent -->
@@ -1259,7 +1193,7 @@ request.</dd>
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

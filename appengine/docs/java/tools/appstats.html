@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../../python/images/imageclass.html">Image</a></li>
          <li><a href="../../python/images/functions.html">Functions</a></li>
          <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1065,54 +1077,149 @@ _gaq.push(
 
 
 
-<p>The Java SDK includes a suite of tools for measuring the performance of your application, called Appstats.  Appstats integrates with your app using a servlet filter to record events, and provides a web-based administrative interface for browsing statistics.  (There's also a version of <a href="../../python/tools/appstats.html">Appstats for Python</a>.)</p>
-
-<div class="special"><p><a href="http://www.google.com/events/io/2010/sessions/appstatsrpc-appengine.html">Watch a video demonstration</a></p></div>
-
+<p>
+  The Java SDK includes the Appstats library used for profiling the
+  RPC
+  (<a href="http://en.wikipedia.org/wiki/Remote_procedure_call">Remote Procedure Call</a>)
+  performance of your application.
+  An App Engine RPC is a roundtrip network call between your application and an
+  <a href="../apis.html">App Engine Service API</a>.
+  For example, all of these API calls are RPC calls:
+</p>
 <ul>
-  <li><a href="#Installing_the_Event_Recorder">Installing the Event Recorder</a></li>
-  <li><a href="#Setting_Up_the_Administrative_Interface">Setting Up the Administrative Interface</a></li>
-  <li><a href="#How_It_Works">How It Works</a></li>
+  <li>
+    <a href="../datastore/index.html">Datastore</a>
+    calls such as <code>DatastoreService.get()</code>,
+    <code>DatastoreService.put()</code>,
+    or <code>DatastoreService.query()</code>.
+  </li>
+  <li>
+    <a href="../memcache/index.html">Memcache</a>
+    calls such as <code>MemcacheService.get()</code>,
+    or <code>MemcacheService.getAll()</code>.
+  </li>
+  <li>
+    <a href="../urlfetch/index.html">URL Fetch</a>
+    calls.
+  </li>
+  <li>
+    <a href="../mail/index.html">Mail</a>
+    calls.
+  </li>
 </ul>
+<p>
+  Optimizing or debugging performance of a scalable application can be a challenge
+  because numerous issues can cause poor performance.
+  These issues are very difficult to debug with the usual sources of information,
+  like logs or request time stats.
+  Most application requests spend the majority of their time waiting for network
+  calls to complete as part of satisfying the request.
+</p>
+<p>
+  To keep your application fast, you need to know:
+</p>
+<ul>
+  <li>Is your application making unnecessay RPC calls?</li>
+  <li>Should it be caching data instead of making repeated RPC calls to get the same data?</li>
+  <li>Will your application perform better if multiple requests are executed in parallel rather than serially?</li>
+</ul>
+<p>
+  The Appstats library helps you answer these questions and
+  verify that your application is using RPC calls in the most efficient way
+  by allowing you to profile your RPC calls.
+  Appstats allows you to trace all RPC calls for a given request and reports
+  on the time consumed by each call.
+</p>
+<p>
+  Optimizing your application's RPC usage may also reduce your bill.
+  See the
+  <a href="../../../articles/managing-resources.html">Managing Your App's Resource Usage</a>
+  article.
+</p>
+<div class="special"><p>
+  <a href="http://www.google.com/events/io/2010/sessions/appstatsrpc-appengine.html">Watch a video demonstration</a>
+</p></div>
 
+<h2>Contents:</h2>
+<ol class="toc">
+  <li>
+    <a href="#Setup">Setup</a>
+    <ol>
+      <li><a href="#EventRecorders">Install the Event Recorder</a></li>
+      <li><a href="#ConsolePath">Set the Console Path</a></li>
+      <li><a href="#OptionalConfig">Optional Configuration</a></li>
+      <li><a href="#DevelopmentServerTest">Test Appstats from the Development Server</a></li>
+      <li><a href="#Deploy">Deploy</a></li>
+    </ol>
+  </li>
+  <li><a href="#Tour">A Tour of the Appstats Console</a></li>
+  <li><a href="#How_It_Works">How It Works</a></li>
+  <li><a href="#SpeedTracer">Speed Tracer Integration</a></li>
+</ol>
 
-<h2 id="Installing_the_Event_Recorder">Installing the Event Recorder</h2>
+<h2 id="Setup">Setup</h2>
+<p>
+  There is nothing to download or install to begin using Appstats.
+  You just need to configure your application, redeploy, and access the Appstats
+  console as described in the steps below. The Appstats library takes care of
+  the rest.
+</p>
 
-<p>Appstats gathers information about each request using a servlet filter, a class provided by the SDK.  You install the filter on requests you wish to monitor by adding a <code>&lt;filter&gt;</code> section to your <a href="../config/webxml.html">deployment descriptor</a> (<code>web.xml</code>).</p>
-
-<p>To install the servlet filter, add a section similar to the following to your <code>web.xml</code> file:</p>
-
+<h3 id="EventRecorders">1. Install the Event Recorder</h3>
+<p>
+  Appstats gathers information about each request using a servlet filter,
+  a class provided by the SDK.
+  You install the filter on requests you wish to monitor by adding
+  <code>&lt;filter&gt;</code> and <code>&lt;filter-mapping&gt;</code>
+  elements to your
+  <a href="../config/webxml.html">deployment descriptor</a>
+  (<code>web.xml</code>).
+</p>
+<p>
+  To install the servlet filter, add a section similar to
+  the following in the top-level element of your
+  <code>web.xml</code> file:
+</p>
 <pre class="prettyprint">
     &lt;filter&gt;
         &lt;filter-name&gt;appstats&lt;/filter-name&gt;
         &lt;filter-class&gt;com.google.appengine.tools.appstats.AppstatsFilter&lt;/filter-class&gt;
-        &lt;init-param&gt;
-            &lt;param-name&gt;logMessage&lt;/param-name&gt;
-            &lt;param-value&gt;Appstats available: /appstats/details?time={ID}&lt;/param-value&gt;
-        &lt;/init-param&gt;
     &lt;/filter&gt;
+
     &lt;filter-mapping&gt;
         &lt;filter-name&gt;appstats&lt;/filter-name&gt;
         &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
     &lt;/filter-mapping&gt;
 </pre>
+<p>
+  This installs the filter for all URLs, with the
+  <code>&lt;url-pattern&gt;</code> of <code>/*</code>.
+  (This includes the Appstats web-based console
+  discussed below,
+  which you may prefer to exclude from recording.)
+  You can specify a different pattern to limit Appstats to URLs
+  that match the pattern.
+</p>
 
-<p>This installs the filter for all URLs, with the <code>&lt;url-pattern&gt;</code> of <code>/*</code>.  (This includes the Appstats web-based administration interface discussed in the next section, which you may prefer to exclude from recording.)  You can specify a different pattern to limit Appstats to URLs that match the pattern.</p>
-
-<p>If the <code>logMessage</code> parameter is set, the given message is logged at the end of each request, with <code>{ID}</code> replaced with the ID of the request.  As above, the <code>/appstats/</code> URL in the log message is the URL for the web-based administrative interface for the given request.  The administrative interface is discussed in the next section.</p>
-
-
-<h2 id="Setting_Up_the_Administrative_Interface">Setting Up the Administrative Interface</h2>
-
-<p>You can browse the statistics gathered by Appstats using a web-based administrative interface.  You set up this interface as part of your application, using a servlet class provided by the SDK.</p>
-
-<p>To set up the administrative interface at the URL path <code>/appstats/</code>, secured so that only application administrators can access it, add a section similar to the following to your <code>web.xml</code> file:</p>
-
+<h3 id="ConsolePath">2. Set the Console Path</h2>
+<p>
+  The Appstats console is accessed by visiting a URL for your application
+  in a web browser.
+  You set up this console as part of your application,
+  using a servlet class provided by the SDK.
+</p>
+<p>
+  To set up the console at the URL path <code>/appstats/</code>,
+  secured so that only application administrators can access it, add
+  the following in the top-level element of your
+  <code>web.xml</code> file:
+</p>
 <pre class="prettyprint">
     &lt;servlet&gt;
         &lt;servlet-name&gt;appstats&lt;/servlet-name&gt;
         &lt;servlet-class&gt;com.google.appengine.tools.appstats.AppstatsServlet&lt;/servlet-class&gt;
     &lt;/servlet&gt;
+
     &lt;servlet-mapping&gt;
         &lt;servlet-name&gt;appstats&lt;/servlet-name&gt;
         &lt;url-pattern&gt;/appstats/*&lt;/url-pattern&gt;
@@ -1128,7 +1235,164 @@ _gaq.push(
     &lt;/security-constraint&gt;
 </pre>
 
-<p>To use the Appstats administration interface, visit the URL path <code>/appstats/</code> in your application.</p>
+<h3 id="OptionalConfig">3. Optional Configuration</h3>
+<h4>Custom Console</h4>
+<p>
+  You can use
+  <a href="../config/appconfig.html#Administration_Console_Custom_Pages">Administration Console Custom Pages</a>
+  to add a convenient Appstats console link on the Administration Console.
+  To create a custom link named "Appstats" to the default Appstats console path, add
+  the following in the top-level element of your
+  <code>appengine-web.xml</code> file:
+</p>
+<pre class="prettyprint">
+    &lt;admin-console&gt;
+        &lt;page name="Appstats" url="/appstats" /&gt;
+    &lt;/admin-console&gt;
+</pre>
+<h4>Logging</h4>
+<p>
+  The <code>AppstatsFilter</code> class can be configured to write
+  request-specific information to
+  <a href="../runtime.html#Logging">application logs</a>.
+  To enable this logging, modify the <code>filter</code> element
+  created in <a href="#EventRecorders">step 1</a>
+  to include the <code>logMessage</code> parameter:
+</p>
+<pre class="prettyprint">
+    &lt;filter&gt;
+        &lt;filter-name&gt;appstats&lt;/filter-name&gt;
+        &lt;filter-class&gt;com.google.appengine.tools.appstats.AppstatsFilter&lt;/filter-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;logMessage&lt;/param-name&gt;
+            &lt;param-value&gt;Appstats available: /appstats/details?time={ID}&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/filter&gt;
+</pre>
+<p>
+  The text value of <code>param-value</code> is appended to the log for each
+  request processed by the filter,
+  with <code>{ID}</code> replaced by the ID of the request.
+  The text in this example provides a path to the Appstats details
+  for the request.
+</p>
+<p>
+  These log entries are written at the "INFO" level,
+  so you must also set the log level to "INFO".
+  This can be set specifically for the
+  <code>AppstatsFilter</code> class by adding the following to your
+  <code>logging.properties</code> file:
+</p>
+<pre class="prettyprint">
+com.google.appengine.tools.appstats.AppstatsFilter.level = INFO
+</pre>
+<h4 id="PublicAccess">Public Access</h4>
+<p>
+  By default, only authenticated application administrators
+  can access the Appstats console.
+  To allow public access to the console, you must do two things:
+</p>
+<ul>
+  <li>
+    Modify the <code>servlet</code> element
+    for the <code>AppstatsServlet</code> class created in
+    <a href="#ConsolePath">step 2</a>
+    to include the <code>requireAdminAuthentication</code> parameter set to
+    <code>false</code>:
+<pre class="prettyprint">
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;appstats&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.google.appengine.tools.appstats.AppstatsServlet&lt;/servlet-class&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;requireAdminAuthentication&lt;/param-name&gt;
+            &lt;param-value&gt;false&lt;/param-value&gt;
+        &lt;/init-param&gt;
+    &lt;/servlet&gt;
+</pre>
+  </li>
+  <li>
+    Remove the <code>security-constraint</code> element created in
+    <a href="#ConsolePath">step 2</a>.
+  </li>
+</ul>
+<p class="warning">
+  <strong>Warning!</strong> Enabling public access to Appstats data allows
+  anyone to access potentially sensitive data for your application.
+</p>
+
+<h3 id="DevelopmentServerTest">4. Test Appstats from the Development Server</h3>
+<p>
+  You can test your Appstats setup with the development server:
+</p>
+<ul>
+  <li>
+    If you are using Eclipse,
+    and have not changed the default port,
+    access the console at:
+    <a href="http://localhost:8888/appstats">http://localhost:8888/appstats/</a>.
+  </li>
+  <li>
+    If you are using the <code>dev_appserver</code> command to start the server,
+    and have not changed the default port,
+    access the console at:
+    <a href="http://localhost:8080/appstats">http://localhost:8080/appstats/</a>.
+  </li>
+</ul>
+
+<h3 id="Deploy">5. Deploy</h3>
+<p>
+  Once you are satisfied with your Appstats setup, deploy your application.
+  Access the console at
+  <code>http://<i>your_app_id</i>.appspot.com/appstats</code>.
+</p>
+
+<h2 id="Tour">A Tour of the Appstats Console</h2>
+<p>
+  The Appstats Console provides high-level information on RPC calls made,
+  URL paths requested, a history of recent requests,
+  and details of individual requests:
+</p>
+<br>
+<ul>
+  <li>
+    The <strong>RPC Stats</strong> table shows statistics for
+    each type of RPC made by your application.
+    Clicking a plus button expands the entry to show
+    a breakdown by path request for the RPC:
+    <br><br><img src="../../images/appstats_rpc_stats.png"><br><br>
+  </li>
+  <li>
+    The <strong>Path Stats</strong> table shows statistics for
+    each path request sent to your application.
+    Clicking a plus button expands the entry to show
+    a breakdown by RPC for the path request:
+    <br><br><img src="../../images/appstats_path_stats.png"><br><br>
+  </li>
+  <li>
+    The <strong>Requests History</strong> table shows data pertaining to
+    individual requests.
+    Clicking a plus button expands the entry to show
+    a breakdown by RPC.
+    Clicking on a request link shows a timeline for the request including
+    individual RPC timing:
+    <br><br><img src="../../images/appstats_requests_history.png"><br><br>
+  </li>
+  <li>
+    The RPC <strong>Timeline</strong> graph shows when specific RPC calls were made and
+    how long the requests took to process.
+    The <strong>RPC Total</strong>
+    bar shows the total time spent waiting on RPC calls,
+    and the <strong>Grand Total</strong> bar shows total time spent processing
+    the request.
+    As you can see from the timeline below, the majority of time was spent on RPC calls.
+    This is often the case.
+    The other tabs show additional information about the request.
+    Understanding the impact of RPC calls on your application response time is invaluable
+    when analyzing its performance.
+    <br><br><img src="../../images/appstats_rpc.png"><br><br>
+  </li>
+</ul>
+
 
 
 <h2 id="How_It_Works">How It Works</h2>
@@ -1137,6 +1401,29 @@ _gaq.push(
 
 <p>The Java version of Appstats uses fixed values and behaviors for how data is stored in the memcache and the datastore.  (These cannot be configured as they can with the Python version of Appstats.)</p>
 
+
+<h2 id="SpeedTracer">Speed Tracer Integration</h2>
+<p>
+  Appstats data can be incorporated in the
+  <a href="http://code.google.com/webtoolkit/speedtracer/get-started.html">Speed Tracer</a>
+  Google Chrome extension.
+  Using Speed Tracer and Appstats together gives you a consolidated view
+  of both client-side and server-side performance.
+  Follow the steps on the Speed Tracer
+  <a href="http://code.google.com/webtoolkit/speedtracer/server-side-tracing.html">Server-Side Tracing</a>
+  page.
+</p>
+<p class="note">
+  <strong>Tip:</strong>
+  Speed Tracer attempts to read the Appstats data for your application.
+  By default, this access is limited to authenticated administrators.
+  Therefore, you must log in as an admistrator for your application before
+  using Speed Tracer.
+  Alternatively, you could allow public access to Appstats data by following
+  the steps in the
+  <a href="#PublicAccess">Public Access</a>
+  section above.
+</p>
 
 
       </div><!-- end gc-pagecontent -->
@@ -1173,7 +1460,7 @@ _gaq.push(
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -29,13 +30,13 @@
 <html>
   <head>
     <script type="text/javascript" language="JavaScript">
-    ORIGINAL_PAGE_PATH = "/appengine/docs/python/backends/applog.html";
+    ORIGINAL_PAGE_PATH = "/appengine/docs/python/logservice/exceptions.html";
     </script>
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<title>The AppLog Class - Google App Engine - Google Code</title>
+<title>Exceptions - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
@@ -501,17 +502,14 @@ _gaq.push(
 
       </ul>
     </li>
-    <li><a href="index.html">Backends</a>
+    <li><a href="../backends/index.html">Backends</a>
       <ul>
-        <li><a href="overview.html">Overview</a></li>
+        <li><a href="../backends/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
-    <li><a href="functions.html">Backends API Functions</a></li>
-    <li><a href="exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="logserviceapi.html">LogService API</a></li>
-    <li><a href="applog.html">AppLog Class</a></li>
-    <li><a href="requestlog.html">RequestLog Class</a></li>
-    <li><a href="runtimeapi.html">Runtime API</a></li>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
 
@@ -555,7 +553,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +638,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="applogclass.html">AppLog</a></li>
+         <li><a href="requestlogclass.html">RequestLog</a></li>
+         <li><a href="functions.html">Functions</a></li>
+         <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1028,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1047,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1061,53 +1074,29 @@ _gaq.push(
       </div>
 
       <div class="g-unit" id="gc-pagecontent">
-        <h1 class="page_title">The AppLog Class</h1>
+        <h1 class="page_title">Exceptions</h1>
 
 
 
-<p>
-This class is a representation of application log data, with each object representing one log line for an application written during the processing of a request.</p>
-
-<p><code>AppLog</code> is provided by the <code>google.appengine.api.logservice</code> module.</p>
-
-<ul>
-  <li><a href="#Introduction">Introduction</a></li>
-  <li>Properties
-    <ul>
-      <li><a href="#AppLog_time">time</a></li>
-      <li><a href="#AppLog_level">level</a></li>
-      <li><a href="#AppLog_message">message</a></li>
-    </ul>
-  </li>
-</ul>
-
-
-<h2 id="Introduction">Introduction</h2>
-
-<p>One or more Application logs can be written during the handling of an incoming client request. Each log is represented in an AppLog object, which contains a timestamp, the severity level of the log entry, and the message string written by the app.
-</p>
-<p>
-  You don't instantiate this class. Instead, you obtain this information by invoking <a href="logserviceapi.html#fetch">logservice.fetch()</a> to get the filtered list of <a href="requestlog.html">RequestLog</a> objects, each of which contains all the log information for that request, including application logs. You then get the list of AppLog objects from each RequestLog object using the <code>app_logs</code> property to return a list of AppLog objects. (This list can be empty, if no app log was written during the request.) By default, application logs are <em>not</em> returned by <code>logservice.fetch()</code>; you have to invoke it with its <code>include_app_logs</code> parameter set to <em>True</em>.
-</p>
-
-<h2 id="Instance_Properties">Instance Properties</h2>
+<p>The <code>google.appengine.api.logservice</code> package provides the following exception classes:</p>
 
 <dl class="apireference">
+  <dt id="Error"><span class="type">exception</span> <span class="itemname">Error</span>()</dt>
+  <dd>
+    <p>This is the base class for all exceptions in this package.</p>
+  </dd>
 
-  <dt id="AppLog_time"><span class="itemname">time</span></dt>
-  <dd>Returns a float value representing the time that the log entry was made, in seconds since the Unix epoch.</dd>
+  <dt id="InvalidArgumentError"><span class="type">exception</span> <span class="itemname">InvalidArgumentError</span>()</dt>
+  <dd>
+    <p>Raised if a function argument has an invalid value.</p>
+  </dd>
 
-  <dt id="AppLog_level"><span class="itemname">level</span></dt>
-  <dd>Returns an int value representing the <a href="logserviceapi.html#fetch">level or severity</a> of the log.
-</dd>
-
-  <dt id="AppLog_message"><span class="itemname">message</span></dt>
-  <dd>Returns a string containing the log message written by the application.</dd>
-
+  <dt id="TimeoutError"><span class="type">exception</span> <span class="itemname">TimeoutError</span>()</dt>
+  <dd>
+    <p>Raised if a fetch() call exceeded the timeout value while iterating results.</p>
+  </dd>
 
 </dl>
-
-
 
 
       </div><!-- end gc-pagecontent -->
@@ -1144,7 +1133,7 @@ This class is a representation of application log data, with each object represe
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

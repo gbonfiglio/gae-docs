@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../../python/images/imageclass.html">Image</a></li>
          <li><a href="../../python/images/functions.html">Functions</a></li>
          <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1062,6 +1074,7 @@ _gaq.push(
 
       <div class="g-unit" id="gc-pagecontent">
         <h1 class="page_title">Datastore Overview</h1>
+
 
 
 
@@ -1218,7 +1231,7 @@ Reference</a> for more detail.
 <p>Similar to single entity group transactions, you cannot perform a non ancestor query in an XG transaction. However you can perform ancestor queries on separate entity groups.</p>
 
 
-<p class="note"><strong>Note:</strong> The first read of an entity group in an XG transaction may throw a  exception if there is a conflict with other transactions accessing that entity group. This means that an XG transaction that performs only reads can fail with a concurrency exception.</p>
+<p class="note"><strong>Note:</strong> The first read of an entity group in an XG transaction may return an <code><a href="reference.html">ErrConcurrentTransaction</a></code> error if there is a conflict with other transactions accessing that entity group. This means that an XG transaction that performs only reads can fail with a concurrency exception.</p>
 
 <p>Non transactional (non ancestor) queries may see all, some, or none of the results of a previously committed transaction. (For background on this issue, see <a href="#Understanding_Datastore_Writes">Understanding Datastore Writes: Commit, Apply, and Data Visibility</a>.) However, such non transactional queries are more likely to see the results of a partially committed XG transaction than the results of a partially commited single-entity group transaction.
 </p>
@@ -1243,7 +1256,7 @@ Reference</a> for more detail.
 <p>For App Engine apps, data is written to the datastore in two phases: Commit and Apply. The Commit phase occurs first; in it, the entity data is recorded in certain logs. The Apply phase occurs after the Commit phase. The Apply phase consists of two actions done in parallel: (a) the entity data is written, and (b) the index rows for the entity are written. (Notice that it can take longer for the index rows to be written than for the entity data to be written.) For apps using Master-Slave datastore (not recommended), the datastore usually returns after everything is written, that is, after the end of the Apply phase. For apps using High Replication Datastore (HRD), the datastore returns after the Commit phase and then the Apply phase is done asynchronously.</p>
 
 
-<p>If there is a failure during the Commit phase, there are automatic retries, but if failures continue, the datastore returns an error message that your app receives as an exception. If the Commit phase succeeds but the Apply fails, the Apply is rolled forward to completion when one of the following occurs:</p>
+<p>If there is a failure during the Commit phase, there are automatic retries, but if failures continue, the datastore returns an error message that your app receives as an error. If the Commit phase succeeds but the Apply fails, the Apply is rolled forward to completion when one of the following occurs:</p>
 
 <ul>
 <li>Periodic datastore "sweeps" check for uncompleted Commit jobs and applies them.</li> 
@@ -1339,7 +1352,7 @@ Reference</a> for more detail.
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../../python/images/imageclass.html">Image</a></li>
          <li><a href="../../python/images/functions.html">Functions</a></li>
          <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1093,6 +1105,7 @@ _gaq.push(
 
 
 
+
 <ul>
   <li><a href="#Overview">Overview</a></li>
   <li><a href="#Restrictions_on_Queries">Restrictions on Queries</a></li>
@@ -1100,23 +1113,26 @@ _gaq.push(
   <li><a href="#Introduction_to_Indexes">Introduction to Indexes</a></li>
   <li><a href="#Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</a></li>
 
+  <li><a href="#Queries_on_Keys">Queries on Keys</a></li>
   <li><a href="#Query_Cursors">Query Cursors</a></li>
   <li><a href="#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Setting the Read Policy and Datastore Call Deadline</a></li>
 </ul>
 
+
+
 <h2 id="Overview">Overview</h2>
 
-<p>A query retrieves datastore entities that meet a specified set of conditions. The query specifies an entity kind, zero or more conditions based on entity property values (sometimes called "filters"), and zero or more sort order descriptions. When the query is executed, it fetches all entities of the given kind that meet all of the given conditions, sorted in the order described.</p>
+<p>A <em>query</em> retrieves entities from the datastore that meet a specified set of conditions. The query specifies an entity kind, zero or more <em>filters</em> based on entity property values, and zero or more <em>sort order</em> descriptions. When the query is executed, it retrieves all entities of the given kind that satisfy all of the given filters, sorted in the specified order.</p>
 
 <p>The <a href="hr/index.html">Master/Slave Datastore and the High Replication Datastore</a> have different guarantees when it comes to query consistency. By default:</p>
 <ul>
   <li>The Master/Slave datastore is strongly consistent for all queries.</li>
-  <li>The High Replication datastore is strongly consistent by default for queries within an <a href="entities.html#Entity_Groups_and_Ancestor_Paths">entity group.</a> With the High Replication Datastore, non-ancestor queries are always eventually consistent.</li>
+  <li>The High Replication datastore is strongly consistent by default for queries within an <a href="entities.html#Ancestor_Paths_and_Entity_Groups">entity group</a>. With the High Replication Datastore, non-ancestor queries are always eventually consistent.</li>
 </ul>
 <p>For more information, see <a href="#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Setting the Read Policy and Datastore Call Deadline</a>.</p>
 
 
-<p>The low-level Java API provides a <a href="../javadoc/com/google/appengine/api/datastore/Query.html">Query</a> class for constructing queries and a <a href="../javadoc/com/google/appengine/api/datastore/PreparedQuery.html">PreparedQuery</a> class for fetching and returning entities from the datastore.</p>
+<p>The low-level Java datastore API provides a <a href="../javadoc/com/google/appengine/api/datastore/Query.html">Query</a> class for constructing queries and a <a href="../javadoc/com/google/appengine/api/datastore/PreparedQuery.html">PreparedQuery</a> class for fetching and returning entities from the datastore:</p>
 <pre class="prettyprint">
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
@@ -1144,29 +1160,91 @@ for (Entity result : pq.asIterable()) {
   System.out.println(lastName + " " + firstName + ", " + height.toString() + " inches tall");
 }</pre>
 
-<p>A filter includes a property name, a comparison operator, and a value. An entity passes the filter if it has a property of the given name and its value compares to the given filter value as described by the operator. The entity is a result for the query if it passes all of the query's filters.</p>
 
-<p>The filter operator can be any of the following:</p>
-<ul>
-  <li><code>Query.FilterOperator.LESS_THAN</code></li>
-  <li><code>Query.FilterOperator.LESS_THAN_OR_EQUAL</code></li>
-  <li><code>Query.FilterOperator.EQUAL</code></li>
-  <li><code>Query.FilterOperator.GREATER_THAN</code></li>
-  <li><code>Query.FilterOperator.GREATER_THAN_OR_EQUAL</code></li>
-  <li><code>Query.FilterOperator.NOT_EQUAL</code></li>
-  <li><code>Query.FilterOperator.IN</code> (equal to any of the values in the provided list)</li>
-</ul>
+<p>A filter includes a property name, a comparison operator, and a value. An entity satisfies the filter if it has a property of the given name and the property value compares to the value specified in the filter in the manner described by the comparison operator. The entity is a <em>result</em> for a query if it satisfies all of the query's filters.</p>
 
-<p>The <code>NOT_EQUAL</code> operator actually performs two queries: one where all other filters are the same and the not-equal filter is replaced with a less-than filter, and one where the not-equal filter is replaced with a greater-than filter. The results are merged, in order. As described below in the discussion of inequality filters, a query can only have one not-equal filter, and such a query cannot have other inequality filters.</p>
-
-<p>The <code>IN</code> operator also performs multiple queries, one for each item in the provided list value where all other filters are the same and the <code>IN</code> filter is replaced with an equal-to filter. The results are merged, in the order of the items in the list. If a query has more than one <code>IN</code> filter, the query is performed as multiple queries, one for each combination of values in the <code>IN</code> filters.</p>
-
-<p>A single query containing <code>NOT_EQUAL</code> or <code>IN</code> operators is limited to 30 sub-queries.</p>
-
-<p>For more information about how <code>NOT_EQUAL</code> and <code>IN</code> queries translate to multiple queries in a JDO/JPA framework, check out <a href="http://gae-java-persistence.blogspot.com/2009/12/queries-with-and-in-filters.html">Queries with <code>NOT_EQUAL</code> and <code>IN</code> filters</a>. </p>
+<p>The comparison operator can be any of the following (defined as enumerated constants in the nested class <a href="../javadoc/com/google/appengine/api/datastore/Query.FilterOperator.html">Query.FilterOperator</a>):</p>
 
 
-<p>A query can also return just the keys of the result entities instead of the entities themselves.</p>
+  <table>
+
+    <tr>
+      <th>Operator</th>
+      <th>Meaning</th>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>EQUAL</code>
+      </td>
+      <td>Equal to</td>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>LESS_THAN</code>
+      </td>
+      <td>Less than</td>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>LESS_THAN_OR_EQUAL</code>
+      </td>
+      <td>Less than or equal to</td>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>GREATER_THAN</code>
+      </td>
+      <td>Greater than</td>
+    </tr>
+
+    <tr>
+    <td>
+      
+      <code>GREATER_THAN_OR_EQUAL</code>
+    </td>
+    <td>Greater than or equal to</td>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>NOT_EQUAL</code>
+      </td>
+      <td> Not equal to</td>
+    </tr>
+
+    <tr>
+      <td>
+        
+        <code>IN</code>
+      </td>
+      <td> Member of (equal to any of the values in a specified list)</td>
+    </tr>
+
+  </table>
+
+<p>The <code>NOT_EQUAL</code> operator actually performs two queries: one in which all other filters are the same and the <code>NOT_EQUAL</code> filter is replaced with a <code>LESS_THAN</code> filter, and one where it is replaced with a <code>GREATER_THAN</code> filter. The results are merged, in order. As described below under <a href=#Restrictions_on_Queries>Restrictions on Queries</a>, a query can have no more than one <code>NOT_EQUAL</code> filter, and a query that has one cannot have any other inequality filters.</p>
+
+<p>The <code>IN</code> operator also performs multiple queries, one for each item in the specified list, with all other filters the same and the <code>IN</code> filter replaced with an <code>EQUAL</code> filter. The results are merged, in the order of the items in the list. If a query has more than one <code>IN</code> filter, it is performed as multiple queries, one for each possible combination of values in the <code>IN</code> lists.</p>
+
+<p>A single query containing <code>NOT_EQUAL</code> or <code>IN</code> operators is limited to no more than 30 sub-queries.</p>
+
+
+<p>For more information about how <code>NOT_EQUAL</code> and <code>IN</code> queries translate to multiple queries in a JDO/JPA framework, see the article
+  <a href="http://gae-java-persistence.blogspot.com/2009/12/queries-with-and-in-filters.html">
+    Queries with != and IN filters</a>.
+</p>
+
+
+<p>A query can also return just the keys of the result entities instead of the entities themselves:</p>
 
 
 
@@ -1175,9 +1253,11 @@ for (Entity result : pq.asIterable()) {
 Query q = new Query(&quot;Person&quot;).setKeysOnly();</pre>
 
 
+
 <h3 id="Kindless_Queries">Kindless Queries</h3>
 
 <p>A query with no kind and no ancestor or key filters returns every entity in the datastore for the application. This includes entities created and managed by other App Engine features, including <a href="stats.html">statistics entities</a> (which exist for all apps) and <a href="../javadoc/com/google/appengine/api/blobstore/package-summary.html">Blobstore metadata entities</a> (if any). Kindless queries cannot include filters on properties. They can, however, filter by Entity Key by passing <a href="../javadoc/com/google/appengine/api/datastore/Entity.html#KEY_RESERVED_PROPERTY">Entity.KEY_RESERVED_PROPERTY</a> as the property name for the filter. Ascending sorts on Entity.KEY_RESERVED_PROPERTY are also supported.</p>
+
 
 
 <h3 id="Ancestor_Queries">Ancestor Queries</h3>
@@ -1192,22 +1272,21 @@ Entity person = new Entity("Person", "tom");
 
 Entity weddingPhoto = new Entity("Photo", person.getKey());
 weddingPhoto.setProperty("imageUrl",
-    "http://domain.com/some/path/to/wedding_photo.jpg");
+                         "http://domain.com/some/path/to/wedding_photo.jpg");
 
 Entity babyPhoto = new Entity("Photo", person.getKey());
 babyPhoto.setProperty("imageUrl",
-    "http://domain.com/some/path/to/baby_photo.jpg");
+                      "http://domain.com/some/path/to/baby_photo.jpg");
 
 Entity dancePhoto = new Entity("Photo", person.getKey());
 dancePhoto.setProperty("imageUrl",
-    "http://domain.com/some/path/to/dance_photo.jpg");
+                       "http://domain.com/some/path/to/dance_photo.jpg");
 
 Entity campingPhoto = new Entity("Photo");
 campingPhoto.setProperty("imageUrl",
-    "http://domain.com/some/path/to/camping_photo.jpg");
+                         "http://domain.com/some/path/to/camping_photo.jpg");
 
-datastore.put(Arrays.asList(person, weddingPhoto, babyPhoto, dancePhoto,
-    campingPhoto));
+datastore.put(Arrays.asList(person, weddingPhoto, babyPhoto, dancePhoto, campingPhoto));
 
 Query userPhotosQuery = new Query("Photo");
 userPhotosQuery.setAncestor(person.getKey());
@@ -1216,6 +1295,7 @@ userPhotosQuery.setAncestor(person.getKey());
 // not campingPhoto because tom is not an ancestor.
 List&lt;Entity&gt; results = datastore.prepare(userPhotosQuery).asList(
     FetchOptions.Builder.withDefaults());</pre>
+
 
 
 <h3 id="Kindless_Ancestor_Queries">Kindless Ancestor Queries</h3>
@@ -1240,11 +1320,11 @@ Entity person = new Entity("Person", "tom");
 
 Entity weddingPhoto = new Entity("Photo", person.getKey());
 weddingPhoto.setProperty("imageUrl",
-    "http://domain.com/some/path/to/wedding_photo.jpg");
+                         "http://domain.com/some/path/to/wedding_photo.jpg");
 
 Entity weddingVideo = new Entity("Video", person.getKey());
 weddingVideo.setProperty("videoUrl",
-    "http://domain.com/some/path/to/wedding.avi");
+                         "http://domain.com/some/path/to/wedding.avi");
 
 datastore.put(Arrays.asList(person, weddingPhoto, weddingVideo));
 
@@ -1253,8 +1333,9 @@ userMediaQuery.setAncestor(person.getKey());
     
 // Ancestor queries return ancestors by default. This filter
 // excludes the ancestor from query results.
-userMediaQuery.addFilter(Entity.KEY_RESERVED_PROPERTY, Query.FilterOperator.GREATER_THAN,
-    person.getKey());
+userMediaQuery.addFilter(Entity.KEY_RESERVED_PROPERTY,
+                         Query.FilterOperator.GREATER_THAN,
+                         person.getKey());
 
 // Returns both weddingPhoto and weddingVideo even though they are
 // different entity kinds.
@@ -1262,17 +1343,25 @@ List&lt;Entity&gt; results = datastore.prepare(userMediaQuery).asList(
     FetchOptions.Builder.withDefaults());</pre>
 
 
+
+
 <h2 id="Restrictions_on_Queries">Restrictions on Queries</h2>
 
 <p>The nature of the index query mechanism imposes a few restrictions on what a query can do. These restrictions are described in this section.</p>
 
-<h3 id="Filtering_Or_Sorting_On_a_Property_Requires_That_the_Property_Exists">
- Filtering Or Sorting On a Property Requires That the Property Exists</h3>
+
+<h3 id="Filtering_or_Sorting_on_a_Property_Requires_That_the_Property_Exist">
+ Filtering or Sorting on a Property Requires That the Property Exist</h3>
 
 <p>If a property has a query filter condition or sort order, the query returns only those datastore entities that have a value (including null) for that property.</p>
 
 <p>Entities of a kind need not have the same properties. A filter on a property can only match an entity with a value for that property. If an entity has no value for a property used in a filter or sort order, that entity is omitted from the index built for the query.</p>
 
+
+<h3 id="No_Use_of_Filters_That_Match_Entities_Missing_a_Property">
+ No Use of Filters That Match Entities Missing a Property</h3>
+
+<p>It is not possible to query for entities that are missing a given property. One alternative is to create a fixed (modeled) property with a default value of <code>null</code>, then create a filter for entities with <code>null</code> as the property value.</p>
 
 
 <h3 id="Inequality_Filters_Are_Allowed_on_One_Property_Only">Inequality Filters Are Allowed on One Property Only</h3>
@@ -1280,6 +1369,8 @@ List&lt;Entity&gt; results = datastore.prepare(userMediaQuery).asList(
 <p>A query may only use inequality filters (<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>!=</code>) on one property across all of its filters.</p>
 
 <p>For example, this query is allowed:</p>
+
+
 
 
 <pre class="prettyprint">
@@ -1295,6 +1386,8 @@ q.addFilter(&quot;birthYear&quot;, FilterOperator.LESS_THAN_OR_EQUAL, maxBirthYe
 <p>However, the following query is <i>not</i> allowed, because it uses inequality filters on two different properties in the same query:</p>
 
 
+
+
 <pre class="prettyprint">
 Query q = new Query(&quot;Person&quot;);
 q.addFilter(&quot;birthYear&quot;, FilterOperator.GREATER_THAN_OR_EQUAL, minBirthYearParam);
@@ -1303,6 +1396,8 @@ q.addFilter(&quot;height&quot;, FilterOperator.GREATER_THAN_OR_EQUAL, minHeightP
 
 
 <p>Filters can combine equal (<code>==</code>) comparisons for different properties in the same query, including queries with one or more inequality conditions on a property. This is allowed:</p>
+
+
 
 
 <pre class="prettyprint">
@@ -1322,6 +1417,8 @@ q.addFilter(&quot;birthYear&quot;, FilterOperator.GREATER_THAN_OR_EQUAL, minBirt
 
 <p>This query is <i>not</i> valid, because it uses an inequality filter and does not order by the filtered property:</p>
 
+
+
 <pre class="prettyprint">
 Query q = new Query(&quot;Person&quot;);
 q.addFilter(&quot;birthYear&quot;, FilterOperator.GREATER_THAN_OR_EQUAL, minBirthYearParam);
@@ -1330,6 +1427,9 @@ q.addSort(&quot;lastName&quot;, SortDirection.ASCENDING); // ERROR</pre>
 
 
 <p>Similarly, the following query is not valid because it does not order by the filtered property before ordering by other properties:</p>
+
+
+
 
 <pre class="prettyprint">
 Query q = new Query(&quot;Person&quot;);
@@ -1340,6 +1440,9 @@ q.addSort(&quot;birthYear&quot;, SortDirection.ASCENDING);</pre>
 
 <p>This query is valid:</p>
 
+
+
+
 <pre class="prettyprint">
 Query q = new Query(&quot;Person&quot;);
 q.addFilter(&quot;birthYear&quot;, FilterOperator.GREATER_THAN_OR_EQUAL, minBirthYearParam);
@@ -1349,7 +1452,8 @@ q.addSort(&quot;lastName&quot;, SortDirection.ASCENDING);</pre>
 
 <p>To get all results that match an inequality filter, a query scans the index table for the first matching row, then returns all consecutive results until it finds a row that doesn't match. For the consecutive rows to represent the complete result set, the rows must be ordered by the inequality filter before other sort orders.</p>
 
-<h3 id="Properties_With_Multiple_Values_Can_Have_Surprising_Behaviors">Properties With Multiple Values Can Have Surprising Behaviors</h3>
+
+<h3 id="Properties_with_Multiple_Values_Can_Have_Surprising_Behaviors">Properties with Multiple Values Can Have Surprising Behaviors</h3>
 
 <p>Due to the way they're indexed, properties with multiple values interact with query filters and sort orders in specific and sometimes surprising ways.</p>
 
@@ -1372,7 +1476,12 @@ query <code>WHERE x = 1 AND x = 2</code> will return the above entity.)</p>
 
 <p>This sort order has the unusual consequence that <code>[1, 9]</code> comes before <code>[4, 5, 6, 7]</code> in both ascending <i>and</i> descending order.</p>
 
-<h3 id="Sort_Orders_Are_Ignored_on_Properties_with_Equality_Filters">Sort Orders Are Ignored on Properties With Equality Filters</h3>
+
+<h3 id="Filtering_on_Unindexed_Properties_Returns_No_Results">Filtering on Unindexed Properties Returns No Results</h3>
+<p>Queries can't find property values that aren't indexed. (You also cannot sort on unindexed properties.) For a detailed discussion, see <a href="#Unindexed_Properties">Unindexed Properties</a>.</p>
+
+
+<h3 id="Sort_Orders_Are_Ignored_on_Properties_with_Equality_Filters">Sort Orders Are Ignored on Properties with Equality Filters</h3>
 
 <p>One important caveat is queries with both an equality filter and a sort
 order on a multi-valued property. In those queries, the sort order is disregarded.
@@ -1386,15 +1495,19 @@ the sort order were applied. (Restoring the dropped sort order would be
 expensive and require extra indices, and this use case is rare, so the query
 planner leaves it off.)</p>
 
-<h3 id="Query_Ordering_when_Sort_Order_Is_Unspecified">Query Ordering when Sort Order Is Unspecified</h3>
+
+<h3 id="Query_Ordering_When_Sort_Order_Is_Unspecified">Query Ordering When Sort Order Is Unspecified</h3>
 
 <p>When a query does not specify an order, the datastore returns the results in the order of retrieval. As we make changes to the datastore implementation, the order of results in an unordered query may change as well. Therefore, if you require a specific sort ordering for your query results, be sure to specify it in the query. If you don't specify a sort order, the ordering of results is undefined and may change over time.</p>
+
 
 <h3 id="Queries_Inside_Transactions_Must_Include_Ancestor_Filters">Queries Inside Transactions Must Include Ancestor Filters</h3>
 
 <p>Queries are only supported inside
 <a href="transactions.html">transactions</a> if they include an ancestor filter. The query's ancestor must be in the same
 <a href="transactions.html#Entity_Groups">entity group</a> as the other operations in the transaction. This preserves the restriction that a transaction can only operate on entities in a single entity group.</p>
+
+
 
 <h2 id="Fetching_Results">Fetching Results</h2>
 
@@ -1408,38 +1521,68 @@ planner leaves it off.)</p>
 This will return the first result that matches the query. If there is more than one matching result, the system throws a <a href="../javadoc/com/google/appengine/api/datastore/PreparedQuery.TooManyResultsException.html">TooManyResultsException</a> exception.</p>
 
 <p>Key-only queries return just the keys to the entities that match your query from the datastore. Key-only queries run faster than queries that return complete entities. To return only the keys,
-
-
-use the <code>Query.setKeysOnly()</code> method.
+  
+  
+  use the <code>Query.setKeysOnly()</code> method.
+  
 </p>
 
-<p>You can specify a limit and offset with your query to control the number and range of results returned in one batch. Specifying an integer limit returns up to that number of results that match the query. Using an integer offset will skip that number of results and return the rest, up to the limit specified.
+<p>You can specify a limit and offset with your query to control the number and range of results returned in one batch. Specifying an integer limit returns up to that number of results that match the query. Using an integer offset will skip that number of results and return the rest, up to the limit specified. For example, to fetch the tallest five people from your datastore, you would construct your query as:</p>
 
 
-For example, to fetch the tallest five people from your datastore, you would construct your query as:
-<pre class="prettyprint">// Construct then prepare your query
+
+
+<pre class="prettyprint">
+// Construct then prepare your query
 List&lt;Entity&gt; get5TallestPeople() {
-    DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-    Query q = new Query(&quot;Person&quot;);
-    q.addSort(&quot;height&quot;, SortDirection.DESCENDING);
-    PreparedQuery pq = ds.prepare(q);
-    return pq.asList(FetchOptions.Builder.withLimit(5));
+  DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+  Query q = new Query(&quot;Person&quot;);
+  q.addSort(&quot;height&quot;, SortDirection.DESCENDING);
+  PreparedQuery pq = ds.prepare(q);
+  return pq.asList(FetchOptions.Builder.withLimit(5));
 }
-</pre></p>
-<p>If you wanted the 6th through 10th tallest people, you would instead use:
-<pre class="prettyprint">return pq.asList(FetchOptions.Builder.withLimit(5).offset(5)));</pre>
-</p>
+</pre>
 
 
-<p>When iterating through the results using PreparedQuery.asIterable() and PreparedQuery.asIterator(), the datastore fetches the results in batches. By default, each batch contains 20 results, but you can change this value using <a href="../javadoc/com/google/appengine/api/datastore/FetchOptions.html#chunkSize(int)">FetchOptions.chunkSize(int)</a>. You can continue iterating through query results until all are returned or the request times out.</p>
+<p>If you wanted the 6th through 10th tallest people, you would instead use:</p>
+
+
+
+
+<pre class="prettyprint">
+return pq.asList(FetchOptions.Builder.withLimit(5).offset(5)));
+</pre>
+
+
+<p>When iterating through the results of your query using <code>PreparedQuery.asIterable()</code> and <code>PreparedQuery.asIterator()</code>, the datastore fetches the results in batches. By default, each batch contains 20 results,
+  
+  
+    but you can change this value using <a href="../javadoc/com/google/appengine/api/datastore/FetchOptions.html#chunkSize(int)">FetchOptions.chunkSize(int)</a>. 
+  
+You can continue iterating through query results until all are returned or the request times out.</p>
 
 
 
 <h2 id="Introduction_to_Indexes">Introduction to Indexes</h2>
+
 <p class="note"><strong>Note:</strong> For an in-depth discussion of indexes and querying, see the article <a href="../../../articles/indexselection.html">Index Selection and Advanced Search</a>.</p>
 <p>Every datastore query uses an index, a table containing the results for the query in the desired order. An App Engine application defines its indexes in a configuration file named <code>datastore-indexes.xml</code>. The development web server automatically adds suggestions to this file as it encounters queries that do not yet have indexes configured. You can tune indexes manually by editing the file before uploading the application.</p>
 
-<p class="note"><strong>Note:</strong> You can get the list of indexes for your application at runtime by calling the<a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#getIndexes()"> getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html"> DatastoreService</a> class or the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html#getIndexes()">getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html">AsyncDatastoreService</a> class. 
+<p class="note"><strong>Note:</strong> You can get the list of indexes for your application at runtime by calling
+
+  
+    
+  
+    the <code>getIndexes</code> method of class
+      <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#getIndexes()"> 
+        DataStoreService
+      </a>
+    or
+      <a href="../javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html#getIndexes()">
+        AsyncDataStoreService
+      </a>
+  .
+</p>
 
 <p>The index-based query mechanism supports most common kinds of queries, but it does not support some queries common in other database technologies. Restrictions on queries, and their explanations, are described below.</p>
 
@@ -1468,17 +1611,22 @@ List&lt;Entity&gt; get5TallestPeople() {
 
 <p>Note that the App Engine datastore makes a distinction between an entity that does not possess a property and an entity that possesses a property with a value of  <code>null</code>. If you want every entity of a kind to be a potential result for a query, you can use a JDO or JPA data class, which always assigns a value to every property that corresponds to a field in the class.</p>
 
-<h3>Unindexed Properties</h3>
 
-<p>Queries can't find property values that aren't indexed. This includes properties that are marked as not indexed, as well as properties with values of the long text value type (<code>Text</code>) or the long binary value type (<code>Blob</code>).</p>
+<h3 id="Unindexed_Properties">Unindexed Properties</h3>
 
-<p>A query with a filter or sort order on a property will never match an entity whose value for the property is a <code>Text</code> or <code>Blob</code>, or which was written with that property marked as not indexed. Properties with such values behave as if the property is not set with regard to query filters and sort orders.</p>
+<p>In some cases, you will never have to filter or sort on a particular property. When this happens, you can make the property an <em>unindexed property</em>. This type of property includes those that are explicitly marked as unindexed, as well as those with values of the long text value type
+(<a href="../javadoc/com/google/appengine/api/datastore/Text.html">Text</a> ) or the long binary value type (<a href="../javadoc/com/google/appengine/api/datastore/Blob.html">Blob</a> ). Using unindexed properties allows you to reduce the cost of your application by decreasing the number of datastore writes needed, because the datastore will not need to maintain index entries for the property.</p>
+
+<p>A query with a filter or sort order on a property will never match an entity with that property unindexed. Properties with such values behave as if the
+property is not set with regard to query filters and sort orders. </p>
+
+<p>To specify that a property not be indexed
 
 
-<p>If you have a property that you know you will not need to filter or sort by, make it an unindexed property. This will decrease the number of datastore writes needed, because the datastore will not need to maintain index entries for the property. To specify that a property not be indexed, 
+for the low level API, set the property value using <a href="../javadoc/com/google/appengine/api/datastore/Entity.html#setUnindexedProperty(java.lang.String,%20java.lang.Object)">Entity.setUnindexedProperty()</a>, as shown here:</p>
 
-use <a href="../javadoc/com/google/appengine/api/datastore/Entity.html#setUnindexedProperty(java.lang.String,%20java.lang.Object)">Entity.setUnindexedProperty()</a>:</p>
-<pre class="prettyprint">DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+<pre class="prettyprint">
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 Key acmeKey = KeyFactory.createKey(&quot;Company&quot;, &quot;acme&quot;);
 Entity tom = new Entity(&quot;Person&quot;, &quot;tom&quot;, acme);
 tom.setProperty(&quot;age&quot;, 32);
@@ -1496,14 +1644,88 @@ query.addFilter(&quot;age&quot;, FilterOperator.GREATER_THAN, 25);
 List&lt;Entity&gt; results = datastore.prepare(query).asList(FetchOptions.Builder.withDefaults());
 </pre>
 
-<h3>Mixed Types</h3>
+<p>For JDO or JPA, you must change the class definition for the property, adding the line <code>@Extension(vendorName="datanucleus", key="gae.unindexed", value="true")</code> above the property:</p>
+
+<pre class="prettyprint">
+JPA:
+@Entity
+public class Book {
+  @Id
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
+
+  // The @Extension line below causes coverImageUrl to be unindexed. Remove this line to make the property indexed.
+  @Extension(vendorName="datanucleus", key="gae.unindexed", value="true")
+  private Link coverImageUrl;
+
+  private String title;
+
+  // getters and setters
+}
+</pre>
+
+
+<h4>Indexing Formerly Unindexed Properties</h4>
+
+<p>For JDO or JPA, if  you have existing records created with an unindexed property, that property continues to be unindexed for those records even after you change the entity (class) definition to make the property indexed again. Consequently, those records will not be returned by queries filtering on that property. To change this, you must rewrite those records, that is, do a fetch then a put on each one. The act of rewriting creates new index rows for those formerly unindexed properties. You can use   <a href="../taskqueue/index.html">task queues</a> and <a href="queries.html#Query_Cursors">query cursors</a> to simplify this work.</p>
+
+
+<p class="note"><strong>Note:</strong> For the datastore low-level API, you don't change any entity definition as you do with JDO/JPA. Instead, you specify whether a property is indexed or not on a per-record basis by the method you use when setting the property value. Unindexed properties are specified when you set the property value using <a href="../javadoc/com/google/appengine/api/datastore/Entity.html#setUnindexedProperty(java.lang.String,%20java.lang.Object)">Entity.setUnindexedProperty()</a>. To make that property value indexed again, you must reset the property value using <a href="../javadoc/com/google/appengine/api/datastore/Entity.html#setProperty(java.lang.String, java.lang.Object)">Entity.setProperty()</a>.</p>
+
+
+<p>To make a formerly unindexed property be indexed 
+
+
+
+
+for JDO and JPA,</p>
+<ol>
+<li>Remove the @Extension tag above the unindexed property that you want to be indexed. The tag line you must remove is <code>@Extension(vendorName="datanucleus", key="gae.unindexed", value="true")</code>, as shown below:
+
+<pre class="prettyprint">
+JPA:
+@Entity
+public class Book {
+  @Id
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
+
+  // The @Extension line below causes coverImageUrl to be unindexed. Remove this line to make the property indexed.
+  @Extension(vendorName="datanucleus", key="gae.unindexed", value="true")
+  private Link coverImageUrl;
+
+  private String title;
+
+  // getters and setters
+}
+</pre>
+</li>
+<li>After you change the entity definition to make the property indexed, you need to process all of the existing records with the unindexed property as follows:
+<ol class="alpha">
+<li>Fetch a record.</li>
+<li>Using a <a href="callbacks.html#PrePut">PrePut callback</a>, change the timestamp. (If you don't actually change something in the record, it won't get re-written and the required new property indexes won't be created.)</li>
+<li>Put the record.</li>
+</ol>
+
+</li>
+</ol>
+
+
+
+<h4>Unindexing Formerly Indexed Properties</h4>
+
+<p>If you change a property from indexed to unindexed, the index records for all existing entities with that property will continue to exist until you update (or delete) the entity associated with those index records. Any new entities are created without the index records for the now unindexed property. So you need to purge your code of all queries that filter or sort by the property that is now unindexed.
+</p>
+
+
+<h3 id="Mixed_Types">Mixed Types</h3>
 
 <p>When two entities have properties of the same name but of different value types, an index of the property sorts the entities first by value type, then by an order appropriate to the type. For example, if two entities each have a property named "age," one with an integer value and one with a string value, the entity with the integer value always appears before the entity with the string value when sorted by the "Age" property, regardless of the values themselves.</p>
 
 <p>This is especially worth noting in the case of integers and floating point numbers, which are treated as separate types by the datastore. A property with the integer value <code>38</code> is sorted before a property with the floating point value <code>37.5</code>, because all integers are sorted before floats.</p>
 
-<a name="which_queries_need_indexes"></a>
-<h3>Which Queries Need Indexes</h3>
+
+<h3 id="Which_Queries_Need_Indexes">Which Queries Need Indexes</h3>
 
 <p>App Engine builds indexes for several simple queries by default. For other queries, the application must specify the indexes it needs in a configuration file named <code>datastore-indexes.xml</code>. If the application running under App Engine tries to perform a query for which there is no corresponding index (either provided by default or described in <code>datastore-indexes.xml</code>), the query will fail with a <a href="../javadoc/com/google/appengine/api/datastore/DatastoreNeedIndexException.html">DatastoreNeedIndexException</a>.</p>
 
@@ -1533,6 +1755,7 @@ List&lt;Entity&gt; results = datastore.prepare(query).asList(FetchOptions.Builde
 <p>The development web server makes managing index configuration easy: Instead of failing to execute a query that does not have an index and requires it, the development web server can generate configuration for an index that would allow the query to succeed. If your local testing of an application calls every possible query the application will make, using every combination of filter and sort order, the generated entries will represent a complete set of indexes. If your testing does not exercise every possible query form, you can review and adjust the index configuration before uploading the application.</p>
 
 
+
 <h2 id="Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</h2>
 
 <p class="note"><strong>Note:</strong> One way to avoid big entities and exploding indexes is described in detail in the article <a href="../../../articles/indexselection.html">Index Selection and Advanced Search</a>.</p>
@@ -1556,16 +1779,18 @@ List&lt;Entity&gt; results = datastore.prepare(query).asList(FetchOptions.Builde
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;datastore-indexes&gt;
-    &lt;datastore-index kind="MyModel"&gt;
-        &lt;property name="x" direction="asc" /&gt;
-        &lt;property name="y" direction="asc" /&gt;
-        &lt;property name="date" direction="asc" /&gt;
-    &lt;/datastore-index&gt;
+  &lt;datastore-index kind="MyModel"&gt;
+    &lt;property name="x" direction="asc" /&gt;
+    &lt;property name="y" direction="asc" /&gt;
+    &lt;property name="date" direction="asc" /&gt;
+  &lt;/datastore-index&gt;
 &lt;/datastore-indexes&gt;
 </pre>
 
 
 <p>The following code creates an entity with four values for the property <code>x</code>, three values for the property <code>y</code>, and sets the <code>date</code> to the current date:</p>
+
+
 
 
 <pre class="prettyprint">
@@ -1593,149 +1818,188 @@ date = &lt;now&gt;
 
 <p>This index stores the following permutations:</p>
 
-<p><strong>Table 1.</strong> Property values saved to the datastore in an exploding index defined by the SDK.</p>
-<table>
-  <tr>
-    <th><code>x</code> value</th>
-    <th><code>y</code> value</th>
-    <th><code>date</code> value</th>
-  </tr>
-  <tr>
-    <td><code>1</code></td>
-    <td><code>'blue'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>1</code></td>
-    <td><code>'green'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>1</code></td>
-    <td><code>'red'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>2</code></td>
-    <td><code><code>'blue'</code></code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>2</code></td>
-    <td><code>'green'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>2</code></td>
-    <td><code>'red'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>3</code></td>
-    <td><code><code>'blue'</code></code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>3</code></td>
-    <td><code>'green'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>3</code></td>
-    <td><code>'red'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>4</code></td>
-    <td><code><code>'blue'</code></code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>4</code></td>
-    <td><code>'green'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td><code>4</code></td>
-    <td><code>'red'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td colspan="3"><strong>Total:</strong> 12 values saved to the datastore.</td>
-  </tr>
-</table>
 
-<p>You can avoid exploding indexes by defining these indexes instead in <code>datastore-indexes.xml</code>:</p>
+  <table>
+
+    <tr>
+      <th><code>x</code> value</th>
+      <th><code>y</code> value</th>
+      <th><code>date</code> value</th>
+    </tr>
+
+    <tr>
+      <td><code>1</code></td>
+      <td><code>'blue'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>1</code></td>
+      <td><code>'green'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>1</code></td>
+      <td><code>'red'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>2</code></td>
+      <td><code><code>'blue'</code></code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>2</code></td>
+      <td><code>'green'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>2</code></td>
+      <td><code>'red'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>3</code></td>
+      <td><code><code>'blue'</code></code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>3</code></td>
+      <td><code>'green'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>3</code></td>
+      <td><code>'red'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>4</code></td>
+      <td><code><code>'blue'</code></code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>4</code></td>
+      <td><code>'green'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>4</code></td>
+      <td><code>'red'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td colspan="3"><strong>Total:</strong> 12 values saved to the datastore.</td>
+    </tr>
+
+  </table>
+
+<p>You can avoid exploding indexes by defining these indexes instead in 
+<code>datastore-indexes.xml</code>:</p>
+
+
+
+
 
 <pre class="prettyprint">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;datastore-indexes&gt;
-    &lt;datastore-index kind="MyModel"&gt;
-        &lt;property name="x" direction="asc" /&gt;
-        &lt;property name="date" direction="asc" /&gt;
-    &lt;/datastore-index&gt;
-    &lt;datastore-index kind="MyModel"&gt;
-        &lt;property name="y" direction="asc" /&gt;
-        &lt;property name="date" direction="asc" /&gt;
-    &lt;/datastore-index&gt;
+  &lt;datastore-index kind="MyModel"&gt;
+    &lt;property name="x" direction="asc" /&gt;
+    &lt;property name="date" direction="asc" /&gt;
+  &lt;/datastore-index&gt;
+  &lt;datastore-index kind="MyModel"&gt;
+    &lt;property name="y" direction="asc" /&gt;
+    &lt;property name="date" direction="asc" /&gt;
+  &lt;/datastore-index&gt;
 &lt;/datastore-indexes&gt;
 </pre>
 
 
-
-<p>With the above index, the number of values stored for the same query is <em>additive</em>:</p>
+<p>With the index above, the number of values stored for the same query is <em>additive</em>:</p>
 
 <pre>index_value_count = |x| * |date| + |y| * |date|</pre>
 
 
-<p><strong>Table 2.</strong> Property values saved to the datastore in a normal index defined in <code>datastore-indexes.xml</code>.</p>
 
-<table>
-  <tr>
-    <th><code>x</code> value</th>
-    <th><code>date</code> value</th>
-    <th style="border-left:solid 3px #888;"><code>y</code> value</th>
-    <th><code>date</code> value</th>
-  </tr>
-  <tr>
-    <td><code>1</code></td>
-    <td><code>&lt;now&gt;</code></td>
-    <td style="border-left:solid 3px #888;"><code>'red'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td><code>&lt;now&gt;</code></td>
-    <td style="border-left:solid 3px #888;"><code>'green'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td><code>&lt;now&gt;</code></td>
-    <td style="border-left:solid 3px #888;"><code>'blue'</code></td>
-    <td><code>&lt;now&gt;</code></td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td><code>&lt;now&gt;</code></td>
-    <td style="border-left:solid 3px #888;">&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="4"><strong>Total:</strong> 7 values saved to the datastore.</td>
-  </tr>
-</table>
+  <table>
 
-<p>The App Engine SDK can only detect exploding indexes when the same property is repeated multiple times. In this case, the SDK suggests an alternative index. However, in all other circumstances (such as indexes generated for queries like the one in this example), the SDK generates an exploding index. In this circumstance, you can manually configure an index in <code>datastore-indexes.xml</code> to circumvent the exploding index.</p>
+    <tr>
+      <th><code>x</code> value</th>
+      <th><code>date</code> value</th>
+      <th style="border-left:solid 3px #888;"><code>y</code> value</th>
+      <th><code>date</code> value</th>
+    </tr>
+
+    <tr>
+      <td><code>1</code></td>
+      <td><code>&lt;now&gt;</code></td>
+      <td style="border-left:solid 3px #888;"><code>'red'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>2</code></td>
+      <td><code>&lt;now&gt;</code></td>
+      <td style="border-left:solid 3px #888;"><code>'green'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>3</code></td>
+      <td><code>&lt;now&gt;</code></td>
+      <td style="border-left:solid 3px #888;"><code>'blue'</code></td>
+      <td><code>&lt;now&gt;</code></td>
+    </tr>
+
+    <tr>
+      <td><code>4</code></td>
+      <td><code>&lt;now&gt;</code></td>
+      <td style="border-left:solid 3px #888;">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><strong>Total:</strong> 7 values saved to the datastore.</td>
+    </tr>
+
+  </table>
+
+<p>The App Engine SDK can detect exploding indexes only when the same property is repeated multiple times. In this case, the SDK suggests an alternative index. However, in all other circumstances (such as indexes generated for queries like the one in this example), the SDK generates an exploding index. In this circumstance, you can manually configure an index in <code>datastore-indexes.xml</code> to circumvent the exploding index.</p>
 
 <p>If a <code>put()</code> would result in a number of index entries that exceeds the limit, the call fails with an exception. If you create a new index that would contain a number of index entries that exceeds the limit for any entity when built, queries against the index fail, and the index appears in the "Error" state in the Admin Console.</p>
+
+
+
+
 
 
 
 <p>You can avoid exploding indexes by avoiding queries that would require a custom index using a list property. As described above, this includes queries with multiple sort orders or queries with a mix of equality and inequality filters.</p>
 
 
- does. As with all queries, the development server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
+
+
+
+
+
+<h2 id="Queries_on_Keys">Queries on Keys</h2>
+
+<p>Keys are ordered first by parent path, then by kind, then by key name or ID. Kinds and key names are strings and are ordered by byte value. IDs are integers and are ordered numerically. If entities of the same parent and kind use a mix of key name strings and numeric IDs, entities with numeric IDs are considered to be less than entities with key name strings. Elements of the parent path are compared similarly: by kind (string), then by key name (string), or ID (number).</p>
+
+<p>Queries involving keys use indexes just like queries involving properties. Queries on keys require custom indexes in the same cases as with properties, with a couple of exceptions: inequality filters or an ascending sort order on <code><a href="../javadoc/com/google/appengine/api/datastore/Entity.html#KEY_RESERVED_PROPERTY">Entity.KEY_RESERVED_PROPERTY</a></code> do not require a custom index, but a descending sort order on <code>Entity.KEY_RESERVED_PROPERTY</code> does. As with all queries, the development server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
+
 
 
 <h2 id="Query_Cursors">Query Cursors</h2>
@@ -1746,7 +2010,8 @@ date = &lt;now&gt;
 
 <p class="note"><b>Tip:</b> It is generally safe to pass a datastore cursor to a client, such as in a web form, and accept a cursor value from a client. A client cannot change the cursor value to access results outside of the original query. However, the base64-encoded value can be decoded to expose information about result entities, such as the key (app ID, kind, key name or ID, and all ancestor keys) and properties used in the query (including filters and sort orders). If you don't want users to have access to that information, you can encrypt the cursor, or store it and provide the user with an opaque key.</p>
 
-<h3>Cursors and Data Updates</h3>
+
+<h3 id="Cursors_and_Data_Updates">Cursors and Data Updates</h3>
 
 <p>The cursor's position is defined as the location in the result list after the last result returned. A cursor is not a relative position in the list (it's not an offset); it's a marker to which the datastore can jump when starting an index scan for results. If the results for a query change between uses of a cursor, the query notices only changes that occur in results after the cursor. If a new result appears before the cursor's position for the query, it will not be returned when the results after the cursor are fetched. Similarly, if an entity is no longer a result for a query but had appeared before the cursor, the results that appear after the cursor do not change. If the last result returned is removed from the result set, the cursor still knows how to locate the next result.</p>
 
@@ -1775,42 +2040,43 @@ import com.google.appengine.api.datastore.QueryResultList;
 
 public class ListPeopleServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-          throws ServletException, IOException {
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+                   throws ServletException, IOException {
 
-        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-        Query q = new Query("Person");
-        PreparedQuery pq = datastore.prepare(q);
-        int pageSize = 15;
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Query q = new Query("Person");
+    PreparedQuery pq = datastore.prepare(q);
+    int pageSize = 15;
 
-        resp.setContentType("text/html");
-        resp.getWriter().println("&lt;ul&gt;");
+    resp.setContentType("text/html");
+    resp.getWriter().println("&lt;ul&gt;");
 
-        FetchOptions fetchOptions = FetchOptions.Builder.withLimit(pageSize);
-        String startCursor = req.getParameter("cursor");
+    FetchOptions fetchOptions = FetchOptions.Builder.withLimit(pageSize);
+    String startCursor = req.getParameter("cursor");
 
-        // If this servlet is passed a cursor parameter, let's use it
-        if (startCursor != null) {
-            fetchOptions.startCursor(Cursor.fromWebSafeString(startCursor));
-        }
-
-        QueryResultList&lt;Entity&gt; results = pq.asQueryResultList(fetchOptions);
-        for (Entity entity : results) {
-            resp.getWriter().println("&lt;li&gt;" + entity.getProperty("name") + "&lt;/li&gt;");
-        }
-        resp.getWriter().println("&lt;/ul&gt;");
-
-        String cursor = results.getCursor().toWebSafeString();
-
-        // Assuming this servlet lives at '/people'
-        resp.getWriter().println(
-            "&lt;a href='/people?cursor=" + cursor + "'&gt;Next page&lt;/a&gt;");
+    // If this servlet is passed a cursor parameter, let's use it
+    if (startCursor != null) {
+      fetchOptions.startCursor(Cursor.fromWebSafeString(startCursor));
     }
+
+    QueryResultList&lt;Entity&gt; results = pq.asQueryResultList(fetchOptions);
+    for (Entity entity : results) {
+      resp.getWriter().println("&lt;li&gt;" + entity.getProperty("name") + "&lt;/li&gt;");
+    }
+    resp.getWriter().println("&lt;/ul&gt;");
+
+    String cursor = results.getCursor().toWebSafeString();
+
+    // Assuming this servlet lives at '/people'
+    resp.getWriter().println(
+      "&lt;a href='/people?cursor=" + cursor + "'&gt;Next page&lt;/a&gt;");
+  }
 }</pre>
 
 
-<h3>Limitations of Cursors</h3>
+
+<h3 id="Limitations_of_Cursors">Limitations of Cursors</h3>
 
 <p>A few things to know about cursors:</p>
 
@@ -1820,6 +2086,8 @@ public class ListPeopleServlet extends HttpServlet {
   <li>A query with a cursor does not always work as expected when the query uses an inequality filter or a sort order on a property with multiple values. Logic that de-duplicates the multivalued property for the query does not persist between queries, and may return a result more than once.</li>
   <li>Cursors depend on the index configuration that supports the query. In cases where multiple index configurations can support the same query, changing the index configuration for the query will invalidate cursors for that query. (For example, a query of only equality filters and no sort orders can be supported by the built-in indexes in most cases, and can also use a custom index if one is provided.)  Cursors also depend on implementation details that may change with a new App Engine release that invalidates them. If an app attempts to use a cursor that is no longer valid, the datastore raises an exception. In Java, it raises an <code>IllegalArgumentException</code> (low-level API), a <code>JDOFatalUserException</code> (JDO), or a <code>PersistenceException</code> (JPA).</li>
 </ul>
+
+
 
 <h2 id="Setting_the_Read_Policy_and_Datastore_Call_Deadline">Setting the Read Policy and Datastore Call Deadline</h2>
 
@@ -1883,7 +2151,7 @@ DatastoreService datastore = DatastoreServiceFactory.getDatastoreService(datasto
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../logservice/functions.html">Functions</a></li>
+         <li><a href="../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1160,9 +1172,11 @@ In your configuration file, you must create mappings from URL paths that represe
 
 <p>For security purposes, the sender address of a message must be the email address of an administrator for the application or any valid email receiving address for the app (see <a href="#Receiving_Mail">Receiving Mail</a>). The sender can also be the Google Account email address of the current user who is signed in, if the user's account is a Gmail account or is on a domain managed by Google Apps.
 
-<p>The message can also include a "reply to" address, which is not subject to the above restrictions.</p>
+<p>If you want to send email on behalf of the application but do not want to use a single administrator's personal Google Account as the sender, you can <a href="https://www.google.com/accounts/NewAccount">create a new Google Account</a> for the application using any valid email address, then add the new account as an administrator for the application.  To add an account as an administrator, see the "Developers" section of the <a href="../../adminconsole/index.html">Admin Console</a>.</p>
 
-<p>If you want to send email on behalf of the application but do not want to use a single administrator's personal Google Account as the sender, you can <a href="https://www.google.com/accounts/NewAccount">create a new Google Account</a> for the application using any valid email address, then add the new account as an administrator for the application. To add an account as an administrator, see the "Developers" section of <a href="../../adminconsole/index.html">the Admin Console</a>.</p>
+<p>You can also send mail using a domain account by adding the domain account as a Developer in the <a href="../../adminconsole/index.html">Admin Console</a>. Domain accounts are accounts outside of the Google domain with email addresses that do not end in @gmail.com or @APP-ID.appspotmail.com. It is possible that when you send emails from a domain account using Google servers, automated spam classifiers might believe the email address is being spoofed. If you run into this issue, set the SPF records for the domain to indicate that Google is a trusted source for your email. For instructions on how to do this, see <a href="http://www.google.com/support/a/bin/answer.py?answer=33786">SPF records</a> in the Google Apps help articles.</p>
+
+<p class="note"><strong>Note:</strong> Your domain (e.g. example.com) needs to be explictly registered with Google Apps and verified before you can create and use domain accounts (e.g. user@example.com). Domain accounts do not need to be explicitly verified, since you will have verified the domain during the registration process. For more information about registering a domain, see <a href="http://support.google.com/a/bin/answer.py?hl=en&answer=53929&topic=20897&ctx=topic">Register a new domain</a>.</p>
 
 <p>You can use any email address for a recipient. A recipient can be in the message's "to" field or the "cc" field, or the recipient can be hidden from the message header (a "blind carbon copy" or "bcc").</p>
 
@@ -1184,7 +1198,7 @@ In your configuration file, you must create mappings from URL paths that represe
 
 <pre>/_ah/mail/<i>address</i></pre>
 
-<p>where <i>address</i> is a full email address, including domain name.
+<p>where <i>address</i> is a full email address, including domain name.</p>
 
 
 <p>The ability to receive mail in your app is disabled by default. To enable your app to receive mail, you must specify that you want this service enabled in your <code>app.yaml</code> file by including this:</p>
@@ -1359,6 +1373,8 @@ inbound_services:
 
 
 
+
+
       </div><!-- end gc-pagecontent -->
    </div><!-- end gooey wrapper -->
 
@@ -1393,7 +1409,7 @@ inbound_services:
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

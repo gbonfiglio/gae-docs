@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -509,9 +514,6 @@ _gaq.push(
   <ul>
     <li><a href="../../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../../python/backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../../../python/backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../../../python/backends/applog.html">AppLog Class</a></li>
-    <li><a href="../../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -556,7 +558,7 @@ _gaq.push(
      <li><a href="../../../python/dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../../../python/dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../../../python/dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -641,6 +643,19 @@ _gaq.push(
          <li><a href="../../../python/images/imageclass.html">Image</a></li>
          <li><a href="../../../python/images/functions.html">Functions</a></li>
          <li><a href="../../../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../../python/logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../../python/logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../../../python/logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../../../python/logservice/functions.html">Functions</a></li>
+         <li><a href="../../../python/logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1018,6 +1033,7 @@ _gaq.push(
           <li><a href="../../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1036,6 +1052,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../../articles/index.html">Articles</a></li>
+      <li><a href="../../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1066,80 +1083,128 @@ _gaq.push(
 
 
 
+<p>The High Replication Datastore provides higher availability for your reads and writes because it stores data synchronously in multiple data centers. The back end changes, but the Datastore API does not change at all. You'll use the same programming interfaces no matter which Datastore you're using.</p>
 
-<p>The High Replication Datastore provides higher availability for your reads and writes because it stores data synchronously in multiple data centers. The back end changes, but the datastore API does not change at all. You'll use the same programming interfaces no matter which datastore you're using.</p>
-
-<p>However, in the High Replication datastore, queries across entity groups (in other words, non-ancestor queries) may return stale results. In order to return strongly consistent query results in the High Replication environment, you need to query over a single entity group. This type of query is called an <a href="../queries.html#Ancestor_Queries">ancestor query</a>.</p>
+<p>However, in the High Replication Datastore, queries across entity groups (in other words, non-ancestor queries) may return stale results. In order to return strongly consistent query results in the High Replication environment, you need to query over a single entity group. This type of query is called an
+  <a href="../queries.html#Ancestor_Queries">
+    ancestor query</a>.
+</p>
 
 <p>Ancestor queries work because entity groups are a unit of consistency: all operations are applied to the entire group. Ancestor queries won't return data until the entire entity group is up to date. Thus, the data returned from ancestor queries on entity groups is strongly consistent.</p>
 
 <p>If your application relies on strongly consistent results for certain queries, you may have to change the way your application stores entities. This page discusses best practices for working with data stored in the High
 Replication Datastore. Let's look at how this works using the sample guestbook applications for Master/Slave and High Replication Datastores, respectively.</p>
 
-<div class="special"><p><a href=" http:/www.google.com/events/io/2011/sessions/more-9s-please-under-the-covers-of-the-high-replication-datastore.html">Watch a video demonstration</a></p></div>
+<div class="special">
+  <p>
+    <a href="http://www.google.com/events/io/2011/sessions/more-9s-please-under-the-covers-of-the-high-replication-datastore.html">
+      Watch a video demonstration.</a>
+  </p>
+</div>
+
 
 <h3>In the Master/Slave Datastore</h3>
-<p>In the Master/Slave Datastore, the  sample guestbook application (available in /google/apphosting/demos/guestbook/src/guestbook/) creates a new root entity for each greeting:  </p>
+
+<p>In the Master/Slave Datastore, the
+
+  
+    sample guestbook application (available in <code>/google/apphosting/demos/guestbook/src/guestbook/</code>)
+  
+
+  
+
+creates a new root entity for each greeting:</p>
+
+  
+
+    <pre class="prettyprint">
+Entity greeting = new Entity(&quot;Greeting&quot;);
+// No parent key specified, so the Entity is a root.
+greeting.setProperty(&quot;user&quot;, user);
+greeting.setProperty(&quot;date&quot;, date);
+greeting.setProperty(&quot;content&quot;, content);</pre>
+
+  
+
+  
+
+<p>We then query
+
+  
+
+for the ten most recent greetings:</p>
+
+  
+
+    <pre class="prettyprint">
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+Query query = new Query(&quot;Greeting&quot;).addSort(&quot;date&quot;, Query.SortDirection.DESCENDING);
+List&lt;Entity&gt; greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));</pre>
+
+  
+
+  
+
+<p>This scheme works well because the Master/Slave Datastore defaults to strongly consistent results for all queries. The Master/Slave Datastore provides strongly consistent results because the Datastore reads and writes only from the master replica by default.</p>
+
+<p>If you attempt this query in the High Replication Datastore, the data center used to execute the query may not have seen the new <code>Greeting</code> when the query was executed.</p>
 
 
-
-<pre class="prettyprint">
-        Entity greeting = new Entity(&quot;Greeting&quot;);
-        // No parent key specified, so the Entity is a root.
-        greeting.setProperty(&quot;user&quot;, user);
-        greeting.setProperty(&quot;date&quot;, date);
-        greeting.setProperty(&quot;content&quot;, content);
-</pre>
-
-
-
-
-<p>We then query for the ten most recent greetings:</p>
-<pre class="prettyprint">DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    Query query = new Query(&quot;Greeting&quot;).addSort(&quot;date&quot;, Query.SortDirection.DESCENDING);
-    List&lt;Entity&gt; greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));</pre>
-
-
-<p>
-This scheme works well because the Master/Slave datastore defaults to strongly
-consistent results for all queries. The Master/Slave datastore
-provides strongly consistent results because the datastore reads and writes only
-from the master replica by default.</p>
-<p>If you attempt this query in the High Replication datastore, the data center used to execute the query may not have seen the new <code>Greeting</code> when the query was executed.</p>
 <h3>In the High Replication Datastore</h3>
-<p>In the High Replication Datastore, the sample guestbook application uses a parent key for the kind <code>Guestbook</code> with <code>guestbookName</code> as the key name and saves subsequent greetings in the entity group defined by the parent key.</p>
 
+<p>In the High Replication Datastore, the
 
+  
+    sample guestbook application
+  
 
-<pre class="prettyprint">
-        String guestbookName = req.getParameter(&quot;guestbookName&quot;);
-        Key guestbookKey = KeyFactory.createKey(&quot;Guestbook&quot;, guestbookName);
-        String content = req.getParameter(&quot;content&quot;);
-        Date date = new Date();
-        // Places the greeting in the same entity group as the guestbook
-        Entity greeting = new Entity(&quot;Greeting&quot;, guestbookKey);
-        greeting.setProperty(&quot;user&quot;, user);
-        greeting.setProperty(&quot;date&quot;, date);
-        greeting.setProperty(&quot;content&quot;, content);
-</pre>
+  
 
-<p>Queries for greetings use the parent <code>Guestbook</code> key to perform an ancestor query which will find only <code>Greetings</code> added to that specific guestbook:</p>
+uses a parent key for the kind <code>Guestbook</code> with
 
+  <code>guestbookName</code>
 
+  
 
-<pre class="prettyprint">
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    Key guestbookKey = KeyFactory.createKey(&quot;Guestbook&quot;, guestbookName);
-    Query query = new Query(&quot;Greeting&quot;, guestbookKey).addSort(&quot;date&quot;, Query.SortDirection.DESCENDING);
-    query.setAncestor(guestbookKey);
-    List&lt;Entity&gt; greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));</pre>
+as the key name and saves subsequent greetings in the entity group defined by the parent key:</p>
+
+  
+
+    <pre class="prettyprint">
+String guestbookName = req.getParameter(&quot;guestbookName&quot;);
+Key guestbookKey = KeyFactory.createKey(&quot;Guestbook&quot;, guestbookName);
+String content = req.getParameter(&quot;content&quot;);
+Date date = new Date();
+// Places the greeting in the same entity group as the guestbook
+Entity greeting = new Entity(&quot;Greeting&quot;, guestbookKey);
+greeting.setProperty(&quot;user&quot;, user);
+greeting.setProperty(&quot;date&quot;, date);
+greeting.setProperty(&quot;content&quot;, content);</pre>
+
+  
+
+  
+
+<p>Queries for greetings use the parent <code>Guestbook</code> key to perform an ancestor query which will find only <code>Greeting</code> entities added to that specific guestbook:</p>
+
+  
+
+    <pre class="prettyprint">
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+Key guestbookKey = KeyFactory.createKey(&quot;Guestbook&quot;, guestbookName);
+Query query = new Query(&quot;Greeting&quot;, guestbookKey).addSort(&quot;date&quot;, Query.SortDirection.DESCENDING);
+query.setAncestor(guestbookKey);
+List&lt;Entity&gt; greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));</pre>
+
+  
+
+  
+
 
 
 <h2 id="Usage_Notes">Usage Notes</h2>
-<p>The High Replication code sample above writes to a single entity group per guestbook. This allows queries on a single guestbook to be strongly consistent,
-but also limits changes to the guestbook to 1 write per second (the supported limit for entity groups). Therefore, writing to a single entity group per guestbook is not ideal when high usage is expected. If your app is likely to
-encounter heavy write usage, consider using another means. For example, you can put recent posts in memcache with an expiration, and then display a mix of
-recent posts from memcache and posts retrieved from the datastore.</p>
+
+<p>The High Replication code sample above writes to a single entity group per guestbook. This allows queries on a single guestbook to be strongly consistent, but also limits changes to the guestbook to 1 write per second (the supported limit for entity groups). Therefore, writing to a single entity group per guestbook is not ideal when high usage is expected. If your app is likely to encounter heavy write usage, consider using another means. For example, you can put recent posts in memcache with an expiration, and then display a mix of recent posts from memcache and posts retrieved from the Datastore.</p>
 
 <p>With eventual consistency, more than 99.9% of your writes are available for queries within a few seconds. The goal is to find a caching solution for your application that provides the data for the current user for the period of time in which they're posting to your app. The caching solution might involve memcache, a cache in a cookie, some state you put in the URL, or something else entirely. The point is that, if the solution provides the data for the current user in context of their posts, it will likely be sufficient to make the eventual consistency of High Replication completely acceptable. Remember, if you do a <code>get()</code>, <code>put()</code>, or a transaction, you will always see the most recently written data.</p>
 
@@ -1179,7 +1244,7 @@ recent posts from memcache and posts retrieved from the datastore.</p>
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

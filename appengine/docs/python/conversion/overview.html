@@ -509,9 +509,6 @@ _gaq.push(
   <ul>
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -556,7 +553,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -641,6 +638,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../logservice/functions.html">Functions</a></li>
+         <li><a href="../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1018,6 +1028,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1036,6 +1047,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1108,13 +1120,17 @@ _gaq.push(
   <p>This document has the following sections:</p>
 
   <ul>
-    <li><a href="Getting_Started">Getting Started</a></li>
+    <li><a href="#Getting_Started">Getting Started</a></li>
 
-    <li><a href="Performing_Conversions_Synchronously">Performing Conversions Synchronously</a></li>
+    <li><a href="#Performing_Conversions_Synchronously">Performing Conversions Synchronously</a></li>
 
-    <li><a href="Performing_Conversions_Asynchronously">Performing Conversions Asynchronously</a></li>
+    <li><a href="#Performing_Conversions_Asynchronously">Performing Conversions Asynchronously</a></li>
 
-    <li><a href="Additional_Functions">Additional Functions</a></li>
+    <li><a href="#Additional_Functions">Additional Functions</a></li>
+
+    <li><a href="#Conversion_Paths">Conversion Paths</a></li>
+
+    <li><a href="#Limits">Limits</a></li>
   </ul>
 
   <h2 id="Getting_Started">Getting Started</h2>
@@ -1139,9 +1155,9 @@ from google.appengine.api import conversion
 
 # Create a conversion request from HTML to PNG.
 asset = conversion.Asset("text/html", "&lt;b&gt;some data&lt;/b&gt;", "test.html")
-conversion = conversion.Conversion(asset, "image/png")
+conversion_obj = conversion.Conversion(asset, "image/png")
 
-result = conversion.convert(conversion)
+result = conversion.convert(conversion_obj)
 if result.assets:
   # Note: in most cases, we will return data all in one asset.
   # Except that we return multiple assets for multiple pages image.
@@ -1159,10 +1175,10 @@ from google.appengine.api import conversion
 
 # Create a conversion request from HTML to PNG.
 asset = conversion.Asset("text/html", "&lt;b&gt;some data&lt;/b&gt;", "test.html")
-conversion = conversion.Conversion(asset, "image/png")
+conversion_obj = conversion.Conversion(asset, "image/png")
 
 rpc = conversion.create_rpc()
-conversion.make_convert_call(rpc, conversion)
+conversion.make_convert_call(rpc, conversion_obj)
 
 # ... Perform another task
 
@@ -1374,7 +1390,7 @@ conversion = conversion.Conversion(
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../logservice/functions.html">Functions</a></li>
+         <li><a href="../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1069,6 +1081,24 @@ _gaq.push(
 
 <dl class="apireference">
 
+  <dt id="get_presence"><span class="itemname">get_presence</span>(<span class="argname">jid</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>, <span class="argname">get_show</span>=<span class="argdefault">False</span>)</dt>
+  <dd>
+    <p>Queries the presence status of a Google Talk user.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">jid</span></dt>
+      <dd>The XMPP address (JID) whose presence status to check. Must be the bare JID of a Google Talk user, such as <code>example@gmail.com</code>. Can be a <code>@gmail.com</code> JID, or a JID using a Google Apps domain.</dd>
+
+      <dt><span class="argname">from_jid</span></dt>
+      <dd>A custom XMPP address from which to request the presence status. Must either be <code><i>app-id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>app-id</i>.appspotchat.com</code>. If <code>None</code>, defaults to <code><i>app-id</i>@appspot.com</code>.</dd>
+
+      <dt><span class="argname">get_show</span></dt>
+      <dd>If <code>True</code>, this function will return a tuple consisting of (<code>availability</code>, <code>show</code>). The first value in the tuple will be <code>True</code> if the user is online and available, and <code>False</code> if the user is not online or away. The second value is a String corresponding to a <code>PRESENCE_SHOW_</code> value as defined in the <code>xmpp</code> module and XMPP RFC 3921.
+      <p>If <code>False</code> this function will return <code>True</code> if the user is online and available, <code>False</code> if the user is not online or away.</p></dd>
+
+    </dl>
+  </dd>
+
   <dt id="send_invite"><span class="itemname">send_invite</span>(<span class="argname">jid</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>Sends an invitation to a user to chat.</p>
@@ -1078,7 +1108,7 @@ _gaq.push(
       <dd>The XMPP address to invite.</dd>
 
       <dt><span class="argname">from_jid</span></dt>
-      <dd>A custom XMPP address from which to send the invitation.  Must either be <code><i>your_app_id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>your_app_id</i>.appspotchat.com</code>.  If <code>None</code>, defaults to <code><i>your_app_id</i>@appspot.com</code>.</dd>
+      <dd>A custom XMPP address from which to send the invitation. Must either be <code><i>your_app_id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>your_app_id</i>.appspotchat.com</code>. If <code>None</code>, defaults to <code><i>your_app_id</i>@appspot.com</code>.</dd>
     </dl>
   </dd>
 
@@ -1094,11 +1124,11 @@ _gaq.push(
       <dd>The body content of the message.</dd>
 
       <dt><span class="argname">from_jid</span></dt>
-      <dd>A custom XMPP address from which to send the message.  Must either be <code><i>your_app_id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>your_app_id</i>.appspotchat.com</code>.  If <code>None</code>, defaults to <code><i>your_app_id</i>@appspot.com</code>.</dd>
+      <dd>A custom XMPP address from which to send the message. Must either be <code><i>your_app_id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>your_app_id</i>.appspotchat.com</code>. If <code>None</code>, defaults to <code><i>your_app_id</i>@appspot.com</code>.</dd>
 
       <dt><span class="argname">message_type</span></dt>
       <dd>
-        <p>The type of the message, one of the types allowed by <a href="http://www.ietf.org/rfc/rfc3921.txt">RFC 3921</a>.  The allowed values are defined by the following constants:</p>
+        <p>The type of the message, one of the types allowed by <a href="http://www.ietf.org/rfc/rfc3921.txt">RFC 3921</a>. The allowed values are defined by the following constants:</p>
         <ul>
           <li><code>xmpp.MESSAGE_TYPE_CHAT</code>: a one-to-one chat message</li>
           <li><code>xmpp.MESSAGE_TYPE_ERROR</code>: an error message, in response to an incoming message</li>
@@ -1106,14 +1136,14 @@ _gaq.push(
           <li><code>xmpp.MESSAGE_TYPE_HEADLINE</code>: an announcement message</li>
           <li><code>xmpp.MESSAGE_TYPE_NORMAL</code>: a message expecting a reply, but is not a one-to-one chat or group chat message</li>
         </ul>
-        <p class="note"><b>Note:</b> An app can only receive messages of the "chat" and "normal" types.  In particular, this means that apps cannot participate in group chats.  An app can otherwise send messages of any of the supported types.</p>
+        <p class="note"><b>Note:</b> An app can only receive messages of the "chat" and "normal" types. In particular, this means that apps cannot participate in group chats. An app can otherwise send messages of any of the supported types.</p>
       </dd>
 
       <dt><span class="argname">raw_xml</span></dt>
-      <dd>If <code>True</code>, the <span class="argname">body</span> is expected to be valid XML that is included verbatim in the XMPP message stanza.  If <code>False</code>, the <span class="argname">body</span> is treated as plain text (XML characters are escaped before being inserted into the XMPP message).</dd>
+      <dd>If <code>True</code>, the <span class="argname">body</span> is expected to be valid XML that is included verbatim in the XMPP message stanza. If <code>False</code>, the <span class="argname">body</span> is treated as plain text (XML characters are escaped before being inserted into the XMPP message).</dd>
 
     </dl>
-    <p>Returns a list of status values, one for each intended recipient in <span class="argname">jids</span>.  Each status value is one of the following:</p>
+    <p>Returns a list of status values, one for each intended recipient in <span class="argname">jids</span>. Each status value is one of the following:</p>
     <ul>
       <li><code>xmpp.NO_ERROR</code>: the message was sent successfully to this user</li>
       <li><code>xmpp.INVALID_JID</code>: this XMPP address was invalid</li>
@@ -1176,7 +1206,7 @@ _gaq.push(
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -

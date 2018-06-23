@@ -508,9 +508,6 @@ _gaq.push(
   <ul>
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
-    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
-    <li><a href="../backends/applog.html">AppLog Class</a></li>
-    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -555,7 +552,7 @@ _gaq.push(
      <li><a href="../dataprocessing/helloworld.html">Hello World</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipline</a></li>
+         <li><a href="../dataprocessing/mapreducepipelineclass.html">Mapreduce Pipeline</a></li>
          <li><a href="../dataprocessing/readers_writers.html">Standard Input Readers and Output Writers</a></li>
        </ul>
      </li>
@@ -640,6 +637,19 @@ _gaq.push(
          <li><a href="../images/imageclass.html">Image</a></li>
          <li><a href="../images/functions.html">Functions</a></li>
          <li><a href="../images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../logservice/index.html">LogService</a>
+          <ul>
+                 <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../logservice/applogclass.html">AppLog</a></li>
+         <li><a href="../logservice/requestlogclass.html">RequestLog</a></li>
+         <li><a href="../logservice/functions.html">Functions</a></li>
+         <li><a href="../logservice/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -1017,6 +1027,7 @@ _gaq.push(
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
+<li><a href="../../adminconsole/experiments.html">Experiments</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -1035,6 +1046,7 @@ _gaq.push(
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="../../features.html">Feature List</a><sup class="new">New!</sup></li>
       <li><a href="../../videoresources.html">Video Resources</a><sup class="new">New!</sup></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
@@ -1083,7 +1095,7 @@ _gaq.push(
 
 
 
-
+ 
 
 <p>The Google Cloud Storage API allows your application to store and serve your data as opaque blobs known as "objects". While Cloud Storage offers a <a href="http://code.google.com/apis/storage/docs/developer-guide.html#overview">RESTful API</a>, this documentation describes how to use Cloud Storage on App Engine.</p>
 
@@ -1131,7 +1143,10 @@ You can interact with the Google Cloud Storage API using the <a href="http://cod
 <p>The samples in this document describe how to create new objects in Cloud Storage. To be able to create new objects, you need to give <code>WRITE</code> permission for your App Engine application to your Cloud Storage bucket using the following steps:</p>
 
 <ol>
-<li>Use the App Identity <a href="../appidentity/overview.html#Asserting_Identity_to_Google_APIs">get_service_account_name()</a> method (Python) or the <a href="../../java/appidentity/overview.html#Asserting_Identity_to_Google_APIs">getServiceAccountName()</a> method (Java) to get the service account name of your App Engine application. Typically, the service account name is in the format <em>application-id</em>@appspot.gserviceaccount.com. If you are using an <a href="../../premier/index.html">App Engine Premier Account</a>, the service account name for your application is in the format <em>application-id.example.com</em>@appspot.gserviceaccount.com</a>.</li>
+<li>Log into the <a href="https://appengine.google.com">App Engine Admin Console</a>.</li>
+<li>Click on the application you want to authorize for your Cloud Storage bucket.</li>
+<li>Click on <strong>Application Settings</strong> under the <strong>Administration</strong> section on the left-hand side.</li></li>
+<li>Copy the value under <strong>Service Account Name</strong>. This is the service account name of your application, in the format <em>application-id</em>@appspot.gserviceaccount.com. If you are using an <a href="../../premier/index.html">App Engine Premier Account</a>, the service account name for your application is in the format <em>application-id.example.com</em>@appspot.gserviceaccount.com</a>.</li>
 <li><a href="http://code.google.com/apis/console-help/#DifferentRoles">Add the service account</a> as a project editor to the <a href="https://code.google.com/apis/console">Google APIs Console project</a> that the bucket belongs to. For information about permissions in Cloud Storage, see  <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#scopes">Scopes and Permissions</a> on the Cloud Storage documentation.</li>
 </ol><br />
 <p><strong><code>READ-ONLY</code> Access for Objects</strong></p>
@@ -1642,7 +1657,7 @@ if __name__ == '__main__':
 </div>
 Java is a registered trademark of Oracle Corporation and/or its affiliates</div>
     
-    ©2011 Google -
+    ©2012 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
