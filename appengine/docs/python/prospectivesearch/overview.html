@@ -34,6 +34,7 @@
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <title>Prospective Search Overview (Python) - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
@@ -70,7 +71,6 @@ _gaq.push(
 
     ['siteTracker._setAccount', 'UA-18071-1'],
     ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', cookiePath],
     ['siteTracker._trackPageview']
 );
 (function() {
@@ -188,6 +188,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
+  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -210,7 +211,7 @@ _gaq.push(
 
         </ul>
       </li>
-      <li><a href="../gettingstarted/index.html">Python</a>
+      <li><a href="../gettingstarted/index.html">Python 2.5</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -222,6 +223,20 @@ _gaq.push(
   <li><a href="../gettingstarted/templates.html">Using Templates</a></li>
   <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
   <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstartedpython27/index.html">Python 2.7</a>
+        <ul>
+            <li><a href="../gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstartedpython27/helloworld.html">Hello, World!</a></li>
+  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
+  <li><a href="../gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
+  <li><a href="../gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="../gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../gettingstartedpython27/templates.html">Using Templates</a></li>
+  <li><a href="../gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
 
         </ul>
       </li>
@@ -291,6 +306,7 @@ _gaq.push(
         <li><a href="../../java/appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+
 <li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
 
           </ul>
@@ -361,6 +377,14 @@ _gaq.push(
 
 
           </ul>
+        </li>
+        <li><a href="../../java/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../java/prospectivesearch/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -451,7 +475,14 @@ _gaq.push(
   <li><h2>Python</h2>
     <ul>
           <li><a href="../overview.html">Overview</a></li>
-    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../runtime.html">Runtime Environment</a></li>
+    <li><a href="../python27/index.html">Python 2.7</a>
+      <ul>
+            <li><a href="../python27/newin27.html">What's New in Python 2.7</a></li>
+    <li><a href="../python27/using27.html">Using Python 2.7</a></li>
+
+      </ul>
+    </li>
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
@@ -500,7 +531,7 @@ _gaq.push(
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li>App Identity
+        <li><a href="../appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../appidentity/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -635,6 +666,16 @@ _gaq.push(
 </li> 
 
           </ul> 
+        </li>
+         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -794,7 +835,8 @@ _gaq.push(
     </li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
-    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+    <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
+    <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
 
       </ul>
     </li>
@@ -909,6 +951,7 @@ _gaq.push(
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
+      <li><a href="../../premier/index.html">Premier Accounts</a></li>
       <li><a href="../../domain.html">Using a Custom Domain</a></li>
     </ul>
   </li>
@@ -961,14 +1004,21 @@ _gaq.push(
   <li><a href="#Using_Prospective_Search">Using Prospective Search</a></li>
   <li><a href="#Topics_and_Result_Keys">Topics and Result Keys</a></li>
   <li><a href="#Creating_Documents">Creating Documents</a></li>
+  <li><a href="#Supported_Types_in_dbModel">Supported Types in db.Model</a></li>
   <li><a href="#Query_Language_Overview">Query Language Overview</a>
     <ul>
       <li><a href="#Simple_Queries">Simple Queries</a></li>
       <li><a href="#Queries_on_Fields">Queries on Fields</a></li>
       <li><a href="#Boolean_Operators_and_Grouping">Boolean Operators and Grouping</a></li>
+      <li><a href="#Numeric_Operators">Numeric Operators</a></li>
     </ul>
   </li>
-  <li><a href="#Numeric_Operators">Numeric Operators</a></li>
+  
+  
+  <li><a href="#Receiving_Match_Responses">Receiving Match Responses</a></li>
+  
+   </ul>
+  </li>
 </ul>
 
 <h2 id="Overview">Overview</h2>
@@ -1000,7 +1050,7 @@ separately against a potentially large index.</p>
 <ol>
   <li>You decide on the appropriate <a href="#Creating_Documents">document schema</a>. Your choice will depend on the type of source data that the application is designed to handle.</li>
   <li>The application uses the <a href="functions.html#subscribe">subscribe()</a> call to register query subscriptions with prospective search using the <a href="#Query_Language_Overview">query language</a>.</li>
-  <li>The application converts items in the streaming source data into <em>documents</em>, which are instances of <code>db.Model</code> subclasses.</li>
+  <li>The application converts items in the streaming source data into <em>documents</em>, which are instances of <code>db.Model</code>.</li>
   <li>The application uses the <a href="functions.html#match">match()</a> call to present documents to prospective search for matching against subscribed queries.</li>
   <li>Prospective search returns matching subscription IDs and documents in the task queue. These results are subject to the usual <a href="../../quotas.html">Quotas and Limits</a>.</li>
 </ol>
@@ -1048,12 +1098,15 @@ separately against a potentially large index.</p>
 
 <p>Documents are assigned to a particular topic when calling <code>match()</code>. The topic name can either be explicitly specified to <code>match()</code> or is taken from the class name of the document. See <a href="#Creating_Documents">Creating Documents</a>.</p>
 
+
+
 <p>Use <code>list_topics()</code> to list all topics that currently exist.</p>
 
-<p>Developers may also specify a <code>result_key</code> argument in the <code>match()</code> call that is returned with the matching results. A <code>result_key</code> can be useful if you know, for example, that returned documents are too large for the task queue. In this case, you can choose to store the documents in a database and use the identifying <code>result_key</code> to retrieve them later.</p>
+<p>You may also specify a <code>result_key</code> argument in the <code>match()</code> call that is returned with the matching results. A <code>result_key</code> can be useful if you know, for example, that returned documents are too large for the task queue. In this case, you can choose to store the documents in a database and use the identifying <code>result_key</code> to retrieve them later.</p>
 
 
 <h2 id="Creating_Documents">Creating Documents</h2>
+
 
 <p>The document is a class derived from <code>db.Model</code>. It contains a set of properties which correspond to fields, and queries can match against these fields. For example, the following code sample creates a definition using <code>db.Model</code>.</p>
 
@@ -1079,7 +1132,7 @@ comment.length = len(comment.body)
 
 <p>This example stores a string, text, and an integer in the appropriate fields.</p>
 
-<h3 id="Supported_Types_in_dbModel">Supported Types in db.Model</h3>
+<h2 id="Supported_Types_in_dbModel">Supported Types in db.Model</h2>
 
 <p>Prospective search matches the following properties:
 
@@ -1104,14 +1157,17 @@ comment.length = len(comment.body)
   <li>str</li>
   <li>unicode</li>
   <li>bool</li>
-  <li>int  (32 bit int range only)</li>
+  <li>int (32 bit int range only)</li>
   <li>float</li>
   <li>db.Text</li>
 </ul>
 
+
+
+
 <h2 id="Query_Language_Overview">Query Language Overview</h2>
 
-<p>Prospective search uses a simple query language allowing you to query the contents of a document's fields. This query language supports numeric and text expressions and uses a <code>field:value</code> syntax. The <em>field</em> identifies the name of a property defined as part of the <code>db.Model</code>-derived document class. The <em>value</em> defines the query on the specified field&mdash;a string or numerical value. Text fields and queries can be unicode strings.</p>
+<p>Prospective search uses a simple query language allowing you to query the contents of a document's fields. This query language supports numeric and text expressions and uses a <code>field:value</code> syntax. The <em>field</em> identifies the name of a property defined as part of the <code>Entity</code> or derived document class. The <em>value</em> defines the query on the specified field&mdash;a string or numerical value. Text fields and queries can be unicode strings.</p>
 
 <p>Prospective search supports all space-delimited languages. Prospective search supports some languages not segmented by spaces (specifically, Chinese, Japanese, Korean, and Thai). For these languages, prospective search segments the text automatically.</p>
 
@@ -1177,7 +1233,7 @@ author:rose AND body:"any other name"
 <p>Use the <code>OR</code> operator if you only want to know if any of the two values matches. You can use more than one OR in a query. For example:</p>
 
 <pre>
-author:"bob" OR (("rose" OR "tom") AND "jones")
+author:("bob" OR ("rose" OR "tom") AND "jones")
 </pre>
 
 <p>This example matches any document whose <code>author</code> field contains either "Rose Jones", "Tom Jones", or "Bob".</p>
@@ -1209,12 +1265,11 @@ author:rose NOT body:filligree</pre>
 &lt;=
 &gt;=
 =
-==
 </pre>
 
 <p>For "not equal to", use the Boolean NOT with a numeric field name such as <code>length</code>. For example:</p>
 
-<pre>NOT length == 15</pre>
+<pre>NOT length = 15</pre>
 
 <p>This example returns documents whose <code>length</code> is not 15.</p>
 
@@ -1226,6 +1281,44 @@ author:"Rose Jones" length > 15
 
 <p>This query matches comments whose <code>body</code> field is longer than 15 characters in length and whose <code>author</code> field is "Rose Jones".</p>
 
+
+
+
+<h2 id="Receiving_Match_Responses">Receiving Match Responses</h2>
+<p>The Prospective Search API returns match results by creating events on the TaskQueue. This section describes how to process the match events.</p>
+
+<p>The Match method defines which TaskQueue to use, how many subscription ids per TaskQueue task, and what additional information to send (such as the document itself, or a key to identify the document).</p>
+
+<p>To receive the resulting matching subscription ids, first, you must map the request handler to your match response handler:</p>
+
+<pre class="prettyprint">
+def main(argv):
+  application = webapp.WSGIApplication([('/', MainHandler),
+                                        ('/_ah/prospective_search', MatchResponseHandler)],
+                                        debug=True)
+  util.run_wsgi_app(application)</pre>
+
+
+<p>In MatchResponseHandler you can access parameters of the POST request which includes the matching subscription IDs and the document sent for matching:</p>
+
+<pre class="prettyprint">class MatchResponseHandler(webapp.RequestHandler):
+   """MatchResponseHandler receives match results from TaskQueue."""
+   def post(self):
+      # List of subscription ids that matched for match.
+      sub_ids = self.request.get_all('id')
+      # document from match request, either a python dict or db.Model
+      # if result_return_document = true in Match call 
+      doc = prospective_search.get_document(self.request)
+      # topic from match request
+      topic = self.request.get('topic')
+      # Key specified in match call.
+      key = self.request.get_all('key')
+      # Number of total matching subscriptions from match request
+      # which generated this result event.
+      results_count = self.request.get_all('results_count')
+      # Index of 1st subscription in this match result batch.
+      # 0 <= result_offset < results_count.
+      results_offset = self.request.get_all('results_offset')</pre>
 
 
       </div><!-- end gc-pagecontent -->

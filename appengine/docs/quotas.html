@@ -33,6 +33,7 @@
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <title>Quotas - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
@@ -69,7 +70,6 @@ _gaq.push(
 
     ['siteTracker._setAccount', 'UA-18071-1'],
     ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', cookiePath],
     ['siteTracker._trackPageview']
 );
 (function() {
@@ -187,6 +187,7 @@ _gaq.push(
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
+  <li><a href="glossary.html">Glossary</a><sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -209,7 +210,7 @@ _gaq.push(
 
         </ul>
       </li>
-      <li><a href="python/gettingstarted/index.html">Python</a>
+      <li><a href="python/gettingstarted/index.html">Python 2.5</a>
         <ul>
             <li><a href="python/gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="python/gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -221,6 +222,20 @@ _gaq.push(
   <li><a href="python/gettingstarted/templates.html">Using Templates</a></li>
   <li><a href="python/gettingstarted/staticfiles.html">Using Static Files</a></li>
   <li><a href="python/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="python/gettingstartedpython27/index.html">Python 2.7</a>
+        <ul>
+            <li><a href="python/gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="python/gettingstartedpython27/helloworld.html">Hello, World!</a></li>
+  <li><a href="python/gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
+  <li><a href="python/gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
+  <li><a href="python/gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
+  <li><a href="python/gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="python/gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="python/gettingstartedpython27/templates.html">Using Templates</a></li>
+  <li><a href="python/gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
 
         </ul>
       </li>
@@ -290,6 +305,7 @@ _gaq.push(
         <li><a href="java/appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="java/appidentity/overview.html">Overview</a></li>
+
 <li><a href="java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
 
           </ul>
@@ -360,6 +376,14 @@ _gaq.push(
 
 
           </ul>
+        </li>
+        <li><a href="java/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="java/prospectivesearch/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
         </li>
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -450,7 +474,14 @@ _gaq.push(
   <li><h2>Python</h2>
     <ul>
           <li><a href="python/overview.html">Overview</a></li>
-    <li><a href="python/runtime.html">CGI Environment</a></li>
+    <li><a href="python/runtime.html">Runtime Environment</a></li>
+    <li><a href="python/python27/index.html">Python 2.7</a>
+      <ul>
+            <li><a href="python/python27/newin27.html">What's New in Python 2.7</a></li>
+    <li><a href="python/python27/using27.html">Using Python 2.7</a></li>
+
+      </ul>
+    </li>
     <li><a href="python/backends/index.html">Backends</a>
       <ul>
         <li><a href="python/backends/overview.html">Overview</a></li>
@@ -499,7 +530,7 @@ _gaq.push(
     </li>
     <li><a href="python/apis.html">Services</a>
       <ul>
-        <li>App Identity
+        <li><a href="python/appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="python/appidentity/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -634,6 +665,16 @@ _gaq.push(
 </li> 
 
           </ul> 
+        </li>
+         <li><a href="python/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="python/googlestorage/overview.html">Overview</a></li>
+<li><a href="python/googlestorage/functions.html">Functions</a></li>
+<li><a href="python/googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+          </ul>
         </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -793,7 +834,8 @@ _gaq.push(
     </li>
     <li><a href="python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="python/tools/appstats.html">Appstats</a></li>
-    <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
+    <li><a href="python/tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
+    <li><a href="python/tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
 
       </ul>
     </li>
@@ -908,6 +950,7 @@ _gaq.push(
       </li>
       <li><a href="quotas.html">Quotas</a></li>
       <li><a href="billing.html">Billing</a></li>
+      <li><a href="premier/index.html">Premier Accounts</a></li>
       <li><a href="domain.html">Using a Custom Domain</a></li>
     </ul>
   </li>
@@ -1140,7 +1183,7 @@ _gaq.push(
   <li><a href="#How_Resources_are_Replenished">How Resources are Replenished</a></li>
   <li><a href="#Per-minute_Quotas">Per-minute Quotas</a></li>
   <li><a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a></li>
-  <li><a href="#Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in a Request</a></li>
+  <li><a href="#Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in Java</a></li>
   <li><a href="#Resources">Resources</a>
     <ul>
       <li><a href="#Blobstore">Blobstore</a></li>
@@ -1219,30 +1262,9 @@ except apiproxy_errors.OverQuotaError, message:
 <p>If you're going over your system resource quota unexpectedly, consider <a href="../kb/commontasks.html#profiling">profiling your app's performance</a>.</p>
 
 
-<h2 id="Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in a Request</h2>
+<h2 id="Monitoring_CPU_Usage_in_a_Request">Monitoring CPU Usage in a Java</h2>
 
-<p>An application can determine how much CPU time the current request has taken so far by calling the Quota API. This is useful for profiling CPU-intensive code, and finding places where CPU efficiency can be improved for greater cost savings. You can measure the CPU used for the entire request, or call the API before and after a section of code then subtract to determine the CPU used between those two points.</p>
-
-<h3>The Quota API in Python</h3>
-
-<p>In the Python API, the <code>google.appengine.api.quota</code> package provides the <code>get_request_cpu_usage()</code> function. This function returns the amount of CPU resources that the current request has spent so far, as a number of megacycles. This number is proportional to the "CPU Time" quota measurement, but does not include the CPU speed multiplier. This number does not include CPU used by API calls.</p>
-
-<p>In the development server, this function returns 0.</p>
-
-<pre class="prettyprint">
-import logging
-from google.appengine.api import quota
-
-start = quota.get_request_cpu_usage()
-do_something_expensive()
-end = quota.get_request_cpu_usage()
-
-logging.info(&quot;do_something_expensive() cost %d megacycles.&quot; % (end - start))
-</pre>
-
-<h3>The Quota API in Java</h3>
-
-<p>In the Java API, the <code>com.google.appengine.api.quota</code> package provides the <code>QuotaService</code> interface (with an implementation and factory) with several methods. See <a href="java/javadoc/com/google/appengine/api/quota/package-summary.html">the Javadoc</a> for details.</p>
+<p>In the Java environment, the <code>com.google.appengine.api.quota</code> package provides the <code>QuotaService</code> interface (with an implementation and factory) with several methods. See <a href="java/javadoc/com/google/appengine/api/quota/package-summary.html">the Javadoc</a> for details.</p>
 
 <pre class="prettyprint">
 import com.google.appengine.api.quota.QuotaService;
@@ -1318,21 +1340,21 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td width="30%">Channel API Calls</td>
     <td width="17.5%">657,000 calls</td>
     <td width="17.5%">3,000 calls/minute</td>
-    <td width="17.5%">46,000,000 calls</td>
+    <td width="17.5%">91,995,495 calls</td>
     <td width="17.5%">32,000 calls/minute</td>
   </tr>
   <tr>
     <td>Channels Created</dt>
     <td>8640 creations</td>
     <td>6 creations/minute</td>
-    <td>86,400 creations</td>
+    <td>95,040 creations</td>
     <td>60 creations/minute</td>
   </tr>
   <tr>
     <td>Channel Data Sent</td>
     <td>up to the Outgoing Bandwidth limit</td>
     <td>22 MB/minute</td>
-    <td>up to the Outgoing Bandwidth limit</td>
+    <td>2 GB</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
@@ -1447,16 +1469,16 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td width="30%">Mail API Calls</td>
-    <td width="17.5%">7,000 calls</td>
+    <td width="17.5%">100 calls</td>
     <td width="17.5%">32 calls/minute</td>
     <td width="17.5%">1,700,000 calls</td>
     <td width="17.5%">4,900 calls/minute</td>
   </tr>
   <tr>
     <td>Recipients Emailed (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>100 recipients</td>
+    <td>2000 recipients</td>
     <td>8 recipients/minute</td>
-    <td>100 recipients free; 7,400,000 recipients maximum</td>
+    <td>2000 recipients free; 7,400,000 recipients maximum</td>
     <td>5,100 recipients/minute</td>
   </tr>
   <tr>

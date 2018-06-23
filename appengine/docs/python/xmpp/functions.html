@@ -32,6 +32,7 @@
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <title>Functions - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
@@ -68,7 +69,6 @@ _gaq.push(
 
     ['siteTracker._setAccount', 'UA-18071-1'],
     ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', cookiePath],
     ['siteTracker._trackPageview']
 );
 (function() {
@@ -186,6 +186,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
+  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -208,7 +209,7 @@ _gaq.push(
 
         </ul>
       </li>
-      <li><a href="../gettingstarted/index.html">Python</a>
+      <li><a href="../gettingstarted/index.html">Python 2.5</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -220,6 +221,20 @@ _gaq.push(
   <li><a href="../gettingstarted/templates.html">Using Templates</a></li>
   <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
   <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstartedpython27/index.html">Python 2.7</a>
+        <ul>
+            <li><a href="../gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstartedpython27/helloworld.html">Hello, World!</a></li>
+  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
+  <li><a href="../gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
+  <li><a href="../gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="../gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../gettingstartedpython27/templates.html">Using Templates</a></li>
+  <li><a href="../gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
 
         </ul>
       </li>
@@ -289,6 +304,7 @@ _gaq.push(
         <li><a href="../../java/appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+
 <li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
 
           </ul>
@@ -359,6 +375,14 @@ _gaq.push(
 
 
           </ul>
+        </li>
+        <li><a href="../../java/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../java/prospectivesearch/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -449,7 +473,14 @@ _gaq.push(
   <li><h2>Python</h2>
     <ul>
           <li><a href="../overview.html">Overview</a></li>
-    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../runtime.html">Runtime Environment</a></li>
+    <li><a href="../python27/index.html">Python 2.7</a>
+      <ul>
+            <li><a href="../python27/newin27.html">What's New in Python 2.7</a></li>
+    <li><a href="../python27/using27.html">Using Python 2.7</a></li>
+
+      </ul>
+    </li>
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
@@ -498,7 +529,7 @@ _gaq.push(
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li>App Identity
+        <li><a href="../appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../appidentity/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -633,6 +664,16 @@ _gaq.push(
 </li> 
 
           </ul> 
+        </li>
+         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -792,7 +833,8 @@ _gaq.push(
     </li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
-    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+    <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
+    <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
 
       </ul>
     </li>
@@ -907,6 +949,7 @@ _gaq.push(
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
+      <li><a href="../../premier/index.html">Premier Accounts</a></li>
       <li><a href="../../domain.html">Using a Custom Domain</a></li>
     </ul>
   </li>
@@ -950,34 +993,6 @@ _gaq.push(
 
 <dl class="apireference">
 
-  <dt id="get_presence"><span class="itemname">get_presence</span>(<span class="argname">jid</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>)</dt>
-  <dd>
-    <p>Queries the presence status of a Google Talk user.</p>
-    <p class="note"><b>Note:</b> Unless you need to know a user's presence status at a given moment, it is preferable to track presence using the <a href="overview.html#Handling_User_Presence">notification handlers</a>.
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">jid</span></dt>
-      <dd>The XMPP address (JID) whose presence status to check.  Must be the bare JID of a Google Talk user, such as <code>example@gmail.com</code>.  Can be a <code>@gmail.com</code> JID, or a JID using a Google Apps domain.</dd>
-
-      <dt><span class="argname">from_jid</span></dt>
-      <dd>A custom XMPP address from which to request the presence status.  Must either be <code><i>app-id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>app-id</i>.appspotchat.com</code>.  If <code>None</code>, defaults to <code><i>app-id</i>@appspot.com</code>.</dd>
-    </dl>
-    <p>Returns <code>True</code> if the user is online and available, <code>False</code> if the user is not online or away.</p>
-  </dd>
-
-  <dt id="send_invite"><span class="itemname">send_invite</span>(<span class="argname">jid</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>)</dt>
-  <dd>
-    <p>Sends an invitation to a user to chat.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">jid</span></dt>
-      <dd>The XMPP address to invite.</dd>
-
-      <dt><span class="argname">from_jid</span></dt>
-      <dd>A custom XMPP address from which to send the invitation.  Must either be <code><i>app-id</i>@appspot.com</code> or match the pattern <code><i>anything</i>@<i>app-id</i>.appspotchat.com</code>.  If <code>None</code>, defaults to <code><i>app-id</i>@appspot.com</code>.</dd>
-    </dl>
-  </dd>
-
   <dt id="send_message"><span class="itemname">send_message</span>(<span class="argname">jids</span>, <span class="argname">body</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>, <span class="argname">message_type</span>=<span class="argdefault">MESSAGE_TYPE_CHAT</span>, <span class="argname">raw_xml</span>=<span class="argdefault">False</span>)</dt>
   <dd>
     <p>Sends a message to a user.</p>
@@ -1019,7 +1034,7 @@ _gaq.push(
 
 
   <dt id="send_presence"><span class="itemname">send_presence</span>(<span class="argname">jid</span>, <span class="argname">status</span>=<span class="argdefault">None</span>, <span class="argname">from_jid</span>=<span class="argdefault">None</span>, <span class="argname">presence_type</span>=<span class="argdefault">PRESENCE_TYPE_AVAILABLE</span>, <span class="argname">presence_show</span>=<span class="argdefault">PRESENCE_SHOW_NONE</span>)</dt>
-  <dd>Sends the presence status of a Google talk user to the given JID.</dd>
+  <dd>Sends presence information to the given user, or, if <code>presence_type</code> is <code>PRESENCE_TYPE_PROBE</code>, requests presence information from the given user.</dd>
   <dd>Arguments:
     <dl>
       <dt><span class="argname">jid</span></dt>
@@ -1030,6 +1045,7 @@ _gaq.push(
         <dd>The optional custom JID to use for sending. Currently, the default is <code>&lt;appid&gt;@appspot.com</code>. This is supported as a value. Custom JIDs can be of the form <code>&lt;anything&gt;@&lt;appid&gt;.appspotchat.com</code>.</dd>
       <dt><span class="argname">presence_type</span></dt>
         <dd>Optional type of the presence. This argument accepts a subset of the types specified in <a href="http://xmpp.org/rfcs/rfc3921.html#stanzas">RFC 3921, section 2.2.1</a>. An empty string results in a presence stanza without a <code>type</code> attribute. For convenience, all of the valid types are in the <code>PRESENCE_TYPE_*</code> constants list in the <code>google.appengine.api.xmpp</code> package. The default is <code>PRESENCE_TYPE_AVAILABLE</code>. Any other values throw an exception.</dd>
+        <dd>If this parameter is set to <code>PRESENCE_TYPE_PROBE</code>, this method requests presence information from the specified XMPP address. Presence information will be sent via POST to <code>/_ah/xmpp/presence/available</code> or <code>/_ah/xmpp/presence/unavailable</code> as appropriate. See the overview of <a href="overview.html">user presence</a> for more information.
     <dt><span class="argname">presence_show</span></dt>
       <dd>Optional value that sets the current status for the presence. Restricted to the values specified in <a href="http://xmpp.org/rfcs/rfc3921.html#stanzas">RFC 3921, section 2.2.2.1</a>. You can find the valid types in the <code>PRESENCE_SHOW_*</code> constants in the google.api.xmpp package. The default is <code>PRESENCE_SHOW_NONE</code>. Any other values throw an exception.</dd>
   </dd>

@@ -38,7 +38,8 @@ gaearticles.tags['Datastore'] = [
   'dd35e1ef1646376de18faf8b54ea3314ed928e97',
   'e8d48f6d69fdcfb1f582f9e9c90eda8463d277b9',
   'eba5a43a073414ae2ff46a01d806bf2e2c6a6a4b',
-  'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a'
+  'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a',
+  'aa7d6fb1ac292403a80b380306de22f7cda13e53'
 ];
 gaearticles.tags['Django'] = [
   '7f508b242272025d39aa6cad6072f65c081cd14d',
@@ -80,7 +81,8 @@ gaearticles.tags['Indexes'] = [
 gaearticles.tags['Java runtime'] = [
   '57e8905cbff23a7c5355c3b47900ca1e3f4934ba',
   'cecfc81f689dee8da589df46eec11384678d1aee',
-  '572378e7f337019618f07cb90a8d18009cea2663'
+  '572378e7f337019618f07cb90a8d18009cea2663',
+  'aa7d6fb1ac292403a80b380306de22f7cda13e53'
 ];
 gaearticles.tags['Mapper API'] = [
   '5d610542a50ec20e4f8846ea7c9f61c3f56c1226',
@@ -134,7 +136,8 @@ gaearticles.tags['Python runtime'] = [
   'e97069d33c6f0a297dcc81b41f598d68043cebcb',
   'eba5a43a073414ae2ff46a01d806bf2e2c6a6a4b',
   'f6914db4d87162edb9430996362501c33f5004b4',
-  '0d131a6dfb591287dc03005d84ddb2d478c50f4d'
+  '0d131a6dfb591287dc03005d84ddb2d478c50f4d',
+  'aa7d6fb1ac292403a80b380306de22f7cda13e53'
 ];
 gaearticles.tags['remote_api'] = [
   'eba5a43a073414ae2ff46a01d806bf2e2c6a6a4b',

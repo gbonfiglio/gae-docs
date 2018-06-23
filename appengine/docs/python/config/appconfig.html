@@ -43,6 +43,7 @@
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 <title>Python Application Configuration - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
@@ -79,7 +80,6 @@ _gaq.push(
 
     ['siteTracker._setAccount', 'UA-18071-1'],
     ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', cookiePath],
     ['siteTracker._trackPageview']
 );
 (function() {
@@ -197,6 +197,7 @@ _gaq.push(
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
+  <li><a href="../../glossary.html">Glossary</a><sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
 </ul>
@@ -219,7 +220,7 @@ _gaq.push(
 
         </ul>
       </li>
-      <li><a href="../gettingstarted/index.html">Python</a>
+      <li><a href="../gettingstarted/index.html">Python 2.5</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -231,6 +232,20 @@ _gaq.push(
   <li><a href="../gettingstarted/templates.html">Using Templates</a></li>
   <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
   <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstartedpython27/index.html">Python 2.7</a>
+        <ul>
+            <li><a href="../gettingstartedpython27/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstartedpython27/helloworld.html">Hello, World!</a></li>
+  <li><a href="../gettingstartedpython27/uploading.html">Uploading Your Application</a></li>
+  <li><a href="../gettingstartedpython27/usingwebapp.html">Explaining the webapp2 Framework</a></li>
+  <li><a href="../gettingstartedpython27/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../gettingstartedpython27/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="../gettingstartedpython27/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../gettingstartedpython27/templates.html">Using Templates</a></li>
+  <li><a href="../gettingstartedpython27/staticfiles.html">Using Static Files</a></li>
 
         </ul>
       </li>
@@ -300,6 +315,7 @@ _gaq.push(
         <li><a href="../../java/appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+
 <li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
 
           </ul>
@@ -370,6 +386,14 @@ _gaq.push(
 
 
           </ul>
+        </li>
+        <li><a href="../../java/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../java/prospectivesearch/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/prospectivesearch/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
         </li>
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
@@ -460,7 +484,14 @@ _gaq.push(
   <li><h2>Python</h2>
     <ul>
           <li><a href="../overview.html">Overview</a></li>
-    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../runtime.html">Runtime Environment</a></li>
+    <li><a href="../python27/index.html">Python 2.7</a>
+      <ul>
+            <li><a href="../python27/newin27.html">What's New in Python 2.7</a></li>
+    <li><a href="../python27/using27.html">Using Python 2.7</a></li>
+
+      </ul>
+    </li>
     <li><a href="../backends/index.html">Backends</a>
       <ul>
         <li><a href="../backends/overview.html">Overview</a></li>
@@ -509,7 +540,7 @@ _gaq.push(
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li>App Identity
+        <li><a href="../appidentity/index.html">App Identity</a>
           <ul>
             <li><a href="../appidentity/overview.html">Overview</a></li>
 <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -644,6 +675,16 @@ _gaq.push(
 </li> 
 
           </ul> 
+        </li>
+         <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../googlestorage/functions.html">Functions</a></li>
+<li><a href="../googlestorage/exceptions.html">Exceptions</a></li>
+    </li>
+
+
+          </ul>
         </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
@@ -803,7 +844,8 @@ _gaq.push(
     </li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
-    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+    <li><a href="../tools/libraries.html">Included Libraries </a>(Python 2.5)</li>
+    <li><a href="../tools/libraries27.html">Included Libraries</a>(Python 2.7)</li>
 
       </ul>
     </li>
@@ -918,6 +960,7 @@ _gaq.push(
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
+      <li><a href="../../premier/index.html">Premier Accounts</a></li>
       <li><a href="../../domain.html">Using a Custom Domain</a></li>
     </ul>
   </li>
@@ -977,6 +1020,7 @@ _gaq.push(
   <li><a href="#Precompilation">Python Precompilation</a></li>
   <li><a href="#Administration_Console_Custom_Pages">Administration Console Custom Pages</a></li>
   <li><a href="#Custom_Error_Responses">Custom Error Responses</a></li>
+  <li><a href="#Using_Concurrent_Requests">Using Concurrent Requests</a></li>
 </ul>
 
 <h2 id="About_app_yaml">About app.yaml</h2>
@@ -1064,6 +1108,7 @@ handlers:
   </dd>
  <dt><code>api_version</code></dt>
   <dd>
+    <p class="authornote">With Py27, is there still only one api_version?</p>
     <p>The version of the API in the given runtime environment used by this application. When Google releases a new version of a runtime environment's API, your application will continue to use the one for which it was written. To upgrade your application to the new API, you change this value and upload the upgraded code.</p>
     <p>At this time, App Engine has one version of the <code>python</code> runtime environment: <code>1</code></p>
     <pre class="prettyprint lang-yaml">api_version: 1</pre>
@@ -1071,31 +1116,59 @@ handlers:
 
     
   
+
+  <dt id="threadsafe">threadsafe</dt>
+    <dd><p>Configures your application to use concurrent requests.</p>
+    <pre class="prettyprint">threadsafe: [true | false]</pre>
+    <p class="note"><strong>Note:</strong> The <code>threadsafe</code> directive is required for Python 2.7 applications.</p>
+    </dd>
 </dl>
 
 
 
 <h2 id="Script_Handlers">Script Handlers</h2>
 
-<p>A script handler executes a Python script to handle the request that matches the URL pattern. The mapping defines a URL pattern to match, and the script to be executed.</p>
+<p>A script handler executes a Python script to handle the request that matches the URL pattern. The mapping defines a URL pattern to match, and the script to be executed. In Python 2.5, CGI is the preferred method of defining script handlers. In Python 2.7, WSGI is the preferred method. CGI works in Python 2.7, but some features of the runtime, such as concurrent requests, are available only if your app uses WSGI.</p>
+
 
 <dl>
   <dt><code>url</code></dt>
   <dd>
-    <p>The URL pattern, as a regular expression. The expression can contain groupings that can be referred to in the file path to the script with regular expression back-references.</p>
-    <p>For example, <code>/profile/(.*?)/(.*)</code> would match the URL <code>/profile/edit/manager</code> and use <code>edit</code> and <code>manager</code> as the first and second groupings.</p>
-    <pre class="prettyprint lang-yaml">handlers:
-- url: /profile/(.*?)/(.*)
-  script: /employee/\2/\1.py
-</pre>
+    <p>The URL pattern, as a regular expression. The expression can contain groupings that can be referred to in the file path to the script with regular expression back-references. For example, <code>/profile/(.*?)/(.*)</code> would match the URL <code>/profile/edit/manager</code> and use <code>edit</code> and <code>manager</code> as the first and second groupings.</p>
   </dd>
 
   <dt><code>script</code></dt>
   <dd>
-    <p>The path to the script, from the application root directory.</p>
-    <p>As in the previous example, with the groupings <code>edit</code> and <code>manager</code>, the script path <code>/employee/\2/\1.py</code> uses the full path <code>/employee/manager/edit.py</code>.</p>
+    <p>If CGI, specifies the path to the script from the application root directory (if CGI):</p>
+      <pre class="prettyprint lang-yaml">...
+handlers:
+- url: /profile/(.*?)/(.*)
+  script: /employee/\2/\1.py   # CGI apps specify a script
+</pre>
+
+<p>As in the previous example, with the groupings <code>edit</code> and <code>manager</code>, the script path <code>/employee/\2/\1.py</code> uses the full path <code>/employee/manager/edit.py</code>.</p>
+
+<p>If WSGI, specifies the WSGI application (Python 2.7 only):</p>
+
+<pre class="prettyprint">...
+handlers:
+- url: /profile/(.*?)/(.*)
+  script: myapp.app
+...</pre>
+
+<p>You also must move your WSGI application object to the global scope:</p>
+
+<pre class="prettyprint">import webapp2
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.out.write('Hello, webapp World!')
+
+app = webapp2.WSGIApplication([('/', MainPage)])</pre>
   </dd>
 </dl>
+
 
 <p>The following examples map URLs to scripts:</p>
 
@@ -1104,11 +1177,11 @@ handlers:
 
 # The root URL (/) is handled by the index.py script. No other URLs match this pattern.
 - url: /
-  script: index.py
+  script: index.py   # or myapp.app
 
 # The URL /index.html is also handled by the index.py script.
 - url: /index\.html
-  script: index.py
+  script: index.py   # or myapp.app
 
 # A regular expression can map parts of the URL to the file path of the script.
 - url: /browse/(books|videos|tools)
@@ -1116,7 +1189,7 @@ handlers:
 
 # All other URLs use the not_found.py script.
 - url: /.*
-  script: not_found.py
+  script: not_found.py   # or myapp.app
 </pre>
 
 
@@ -1471,7 +1544,6 @@ handlers:
   <li><code>warmup</code> &ndash; enables <a href="../../adminconsole/instances.html#Warmup_Requests">warmup requests</a></li>
 </ul>
 
-
 <p>For example, you can enable mail and warmup by specifying the following in <code>app.yaml</code>:</p>
 
 <pre class="prettyprint lang-yaml">
@@ -1560,8 +1632,13 @@ error_handlers:
 <p>You can optionally specify a <code>mime_type</code> to use when serving the custom error. See <a href="http://www.iana.org/assignments/media-types/">http://www.iana.org/assignments/media-types/</a> for a complete list of MIME types.</p>
 
 
+<h2 id="Using_Concurrent_Requests">Using Concurrent Requests (Python 2.7 only)</h2>
 
+<p>By default, App Engine sends requests serially to a given web server. If you are using the <a href="../python27/newin27.html">Python 2.7 runtime</a>, you can configure App Engine to send multiple, parallel requests by adding the <code>threadsafe: true</code> element to the header of <code>app.yaml</code>. All handlers in the app must be WSGI handlers, and the <code>threadsafe</code> element is required.</p>
 
+<pre class="prettyprint">
+threadsafe: true
+</pre>
 
 
       </div><!-- end gc-pagecontent -->
