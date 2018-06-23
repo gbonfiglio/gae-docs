@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -155,7 +157,6 @@ var logged_in_user_email = null;
   <li><a href="tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -169,7 +170,7 @@ var logged_in_user_email = null;
     <li><a href="docs/java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="docs/java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="docs/java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="docs/java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="docs/java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="docs/java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="docs/java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -190,6 +191,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="docs/go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="docs/go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="docs/go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="docs/go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="docs/go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="docs/go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="docs/go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="docs/go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -199,6 +213,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="docs/java/overview.html">Overview</a></li>
     <li><a href="docs/java/runtime.html">Servlet Environment</a></li>
+    <li><a href="docs/java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="docs/java/backends/overview.html">Overview</a></li>
+<li><a href="docs/java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="docs/java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="docs/java/datastore/overview.html">Overview</a></li>
@@ -302,8 +324,10 @@ var logged_in_user_email = null;
         <li><a href="docs/java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="docs/java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="docs/java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="docs/java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="docs/java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="docs/java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="docs/java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="docs/java/urlfetch/index.html">URL Fetch</a>
@@ -336,6 +360,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="docs/java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="docs/java/config/appconfig.html">App Config</a></li>
+    <li><a href="docs/java/config/backends.html">Backends Config</a></li>
     <li><a href="docs/java/config/indexconfig.html">Index Config</a></li>
     <li><a href="docs/java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="docs/java/config/queue.html">Task Queue Config</a></li>
@@ -346,6 +371,7 @@ var logged_in_user_email = null;
     <li><a href="docs/java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="docs/java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="docs/java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="docs/java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="docs/java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="docs/java/configyaml/queue.html">Task Queue Config</a></li>
@@ -385,6 +411,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="docs/python/overview.html">Overview</a></li>
     <li><a href="docs/python/runtime.html">CGI Environment</a></li>
+    <li><a href="docs/python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="docs/python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="docs/python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="docs/python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="docs/python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="docs/python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="docs/python/datastore/overview.html">Datastore Overview</a></li>
@@ -544,10 +584,14 @@ var logged_in_user_email = null;
         <li><a href="docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="docs/python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="docs/python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="docs/python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="docs/python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="docs/python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="docs/python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="docs/python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="docs/python/taskqueue/functions.html">Functions</a></li>
          <li><a href="docs/python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -604,6 +648,7 @@ var logged_in_user_email = null;
     <li><a href="docs/python/config/index.html">Configuration</a>
       <ul>
             <li><a href="docs/python/config/appconfig.html">App Config</a></li>
+    <li><a href="docs/python/config/backends.html">Backends Config</a></li>
     <li><a href="docs/python/config/indexconfig.html">Index Config</a></li>
     <li><a href="docs/python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="docs/python/config/queue.html">Task Queue Config</a></li>
@@ -650,6 +695,73 @@ var logged_in_user_email = null;
               <li><a href="docs/python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="docs/python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="docs/go/overview.html">Overview</a></li>
+    <li><a href="docs/go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="docs/go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="docs/go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="docs/go/datastore/overview.html">Overview</a></li>
+     <li><a href="docs/go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="docs/go/apis.html">Services</a>
+      <ul>
+        <li><a href="docs/go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="docs/go/blobstore/overview.html">Overview</a></li>
+<li><a href="docs/go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="docs/go/mail/overview.html">Overview</a></li>
+     <li><a href="docs/go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="docs/go/memcache/overview.html">Overview</a></li>
+     <li><a href="docs/go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="docs/go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="docs/go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="docs/go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="docs/go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="docs/go/users/overview.html">Overview</a></li>
+     <li><a href="docs/go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -748,6 +860,32 @@ var logged_in_user_email = null;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="jd-content">
 
 <ul>
@@ -756,6 +894,7 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="#Google_App_Engine_SDK_for_Python">Google App Engine SDK for Python</a></li>
       <li><a href="#Google_App_Engine_SDK_for_Java">Google App Engine SDK for Java</a></li>
+      <li><a href="#Google_App_Engine_SDK_for_Go">Google App Engine SDK for Go</a></li>
       <li><a href="#Open_Source">Open Source</li>
     </ul>
   </li>
@@ -783,24 +922,24 @@ var logged_in_user_email = null;
    </tr>
    <tr>
      <td>Windows</td>
-     <td>1.4.2 - 2011-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngine-1.4.2.msi">GoogleAppEngine-1.4.2.msi</a></td>
-     <td>16.4 MB</td>
-     <td>d8a8038e9899df9604422883e2385fb0c62523ae</td>
+     <td>1.5.0 - 2011-05-10</td>
+     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngine-1.5.0.msi">GoogleAppEngine-1.5.0.msi</a></td>
+     <td>16.6 MB</td>
+     <td>11e88548d3cb6a390c054a345996f32a2aa7865a</td>
    </tr>
    <tr class="alt">
      <td>Mac OS X</td>
-     <td>1.4.2 - 2011-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngineLauncher-1.4.2.dmg">GoogleAppEngineLauncher-1.4.2.dmg</a></td>
-     <td>12.0 MB</td>
-     <td>a17465f650fdea3a04e4dc6cf3d27dffe704cad1</td>
+     <td>1.5.0 - 2011-05-10</td>
+     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngineLauncher-1.5.0.dmg">GoogleAppEngineLauncher-1.5.0.dmg</a></td>
+     <td>12.1 MB</td>
+     <td>12f087f00bfb5a3dcadc6a56a3167c09ba7f42f4</td>
    </tr>
    <tr>
      <td>Linux/Other Platforms</td>
-     <td>1.4.2 - 2011-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/google_appengine_1.4.2.zip">google_appengine_1.4.2.zip</a></td>
-     <td>11.3 MB</td>
-     <td>132d50710b1337169981cd78914d36df29aea722</td>
+     <td>1.5.0 - 2011-05-10</td>
+     <td><a href="http://googleappengine.googlecode.com/files/google_appengine_1.5.0.zip">google_appengine_1.5.0.zip</a></td>
+     <td>11.2 MB</td>
+     <td>1598200d03a006010e6187c23b174df5df7fbaec</td>
    </tr>
  </table>
  <p>For more information on the SDK for Python:</p>
@@ -818,16 +957,60 @@ var logged_in_user_email = null;
     <th>SHA1 Checksum</th>
   </tr>
   <tr>
-    <td>1.4.2 - 2011-02-16</td>
-    <td><a href="http://googleappengine.googlecode.com/files/appengine-java-sdk-1.4.2.zip">appengine-java-sdk-1.4.2.zip</a></td>
-    <td>32.7 MB</td>
-    <td>915808a17c88c4afc159a66299ba06c68eb681b5</td>
+    <td>1.5.0 - 2011-05-10</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine-java-sdk-1.5.0.zip">appengine-java-sdk-1.5.0.zip</a></td>
+    <td>37.4 MB</td>
+    <td>cc6ead54e170b33be2cf52c970915648e922f05b</td>
   </tr>
 </table>
 <p>For more information on the Google App Engine SDK for Java:</p>
 <ul>
   <li><a href="docs/java/overview.html">Overview</a></li>
   <li><a href="docs/java/gettingstarted/index.html">Getting Started Guide</a></li>
+</ul>
+
+<h3 id="Google_App_Engine_SDK_for_Go">Google App Engine SDK for Go</h3>
+<table> 
+  <tr>
+    <th>Platform</th>
+    <th>Version</th>
+    <th>Package</th>
+    <th>Size</th>
+    <th>SHA1 Checksum</th>
+  </tr>
+  <tr>
+    <td>Linux 64-bit</td>
+    <td>1.5.0 - 2011-05-10</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine_go_sdk_linux_amd64-1.5.0.zip">appengine_go_sdk_linux_amd64-1.5.0.zip</a></td>
+    <td>14.0 MB</td>
+    <td>0b855571ac6b2073a26d9d97ad9988832d7f27b4</td>
+  </tr>
+  <tr>
+    <td>Linux 32-bit</td>
+    <td>1.5.0 - 2011-05-10</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine_go_sdk_linux_386-1.5.0.zip">appengine_go_sdk_linux_386-1.5.0.zip</a></td>
+    <td>14.1 MB</td>
+    <td>815943b73989a7c4a85f12cdc82cb6905f5a07f1</td>
+  </tr>
+  <tr>
+    <td>Mac OS X 64-bit</td>
+    <td>1.5.0 - 2011-05-10</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine_go_sdk_darwin_amd64-1.5.0.zip">appengine_go_sdk_darwin_amd64-1.5.0.zip</a></td>
+    <td>13.4 MB</td>
+    <td>f7f5c4931d184fafbe9de71f381aca9bc1bd000b</td>
+  </tr>
+  <tr>
+    <td>Mac OS X 32-bit</td>
+    <td>1.5.0 - 2011-05-10</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine_go_sdk_darwin_386-1.5.0.zip">appengine_go_sdk_darwin_386-1.5.0.zip</a></td>
+    <td>13.5 MB</td>
+    <td>76bbe6b67bc441c70bb1f687345eb0664f42030a</td>
+  </tr>
+</table>
+<p>For more information on the Google App Engine SDK for Go:</p>
+<ul>
+  <li><a href="docs/go/overview.html">Overview</a></li>
+  <li><a href="docs/go/gettingstarted/index.html">Getting Started Guide</a></li>
 </ul>
 
 <h3 id="Open_Source">Open Source</h3>
@@ -852,9 +1035,9 @@ var logged_in_user_email = null;
    </tr>
    <tr>
      <td>Google App Engine documentation</td>
-     <td>2011-02-11</td>
-     <td><a href="http://googleappengine.googlecode.com/files/google-appengine-docs-20110211.zip">google-appengine-docs-20110211.zip</a></td>
-     <td>7.3 MB</td>
+     <td>2011-05-10</td>
+     <td><a href="http://googleappengine.googlecode.com/files/google-appengine-docs-20110510.zip">google-appengine-docs-20110510.zip</a></td>
+     <td>2.2 MB</td>
    </tr>
  </table>
 
@@ -920,7 +1103,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -958,10 +1141,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

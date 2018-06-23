@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="index.html">Task Queues</a>
           <ul>
                  <li><a href="overview.html">Overview</a></li>
+     <li><a href="overview-push.html">Using Push Queues</a></li>
+     <li><a href="overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="tasks.html">Task Class</a></li>
+         <li><a href="taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="queues.html">Queue Class</a></li>
+         <li><a href="rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="functions.html">Functions</a></li>
          <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -726,10 +838,10 @@ Engine.
   </li>
   <li>Instance methods:
     <ul>
-      <li><a href="#Queue_add">add</a></li>
-    </ul>
-    <ul>
-      <li><a href="#Queue_purge">purge</a></li>
+      <li><a href="#Queue_add">add()</a></li>
+      <li><a href="#Queue_delete_tasks">delete_tasks()</a></li>
+      <li><a href="#Queue_lease_tasks">lease_tasks()</a></li>
+      <li><a href="#Queue_purge">purge()</a></li>
     </ul>
   </li>
 </ul>
@@ -738,10 +850,9 @@ Engine.
 <h2 id="Introduction">Introduction</h2>
 
 <p>
-A Queue object is instantiated by name; the name must correspond either to the
+A Queue object is instantiated by nam. The name must correspond either to the
 default queue (provided by the system) or a user-defined queue as specified in
-the application's <a href="../config/queue.html">queue.yaml</a>. The Queue object may then be
-used to insert new Task instances for offline execution by App Engine.
+the application's <a href="../config/queue.html">queue.yaml</a>. The Queue object may then be used to insert new Task instances for offline execution by App Engine.
 </p>
 
 <p>
@@ -761,9 +872,7 @@ However, a single Task object may only be added to one Queue.
     <p>
       Instantiates a Queue object which corresponds to either the default queue
       (automatically available to all applications) or a user-created queue
-      defined in <a href="../config/queue.html">queue.yaml</a>. Once instantiated, a Queue
-      object may be used to insert new Tasks into the system for offline
-      execution.
+      defined in <a href="../config/queue.html">queue.yaml</a>. Once instantiated, a Queue object may be used to insert new Tasks into the system for offline execution.
    </p>
 
     <p>Arguments:</p>
@@ -787,9 +896,7 @@ However, a single Task object may only be added to one Queue.
   <dt id="Queue_name"><code>name</code></dt>
   <dd>
     <p>
-      The name of this Queue. Will be a user-defined value corresponding to an
-      active queue in queue.yaml or, if the default queue, will be
-      'default'.
+      The name of this Queue, either <code>default</code> (if the <a href="overview.html#The_Default_Queue">default queue</a>) or a user-defined value corresponding to an active queue in <code>queue.yaml</code>.
      </p>
    </dd>
 </dl>
@@ -820,7 +927,7 @@ However, a single Task object may only be added to one Queue.
       <dt><span class="argname">transactional</span>=<span class="argdefault">False</span></dt>
       <dd>
         Relevant when this method is called inside <a href="../datastore/functions.html#run_in_transaction">db.run_in_transaction()</a>.
-        Indicates that this <a href="overview.html#Tasks_Within_Transactions">transactional task</a> should be added only
+        Indicates that this <a href="overview.html#Tasks_within_Transactions">transactional task</a> should be added only
         if an enclosing <a href="../datastore/overview.html#Transactions_and_Entity_Groups">datastore transaction</a> is applied successfully.
         Note that this task must not have a user-specified name in this case.
       </dd>
@@ -832,7 +939,7 @@ However, a single Task object may only be added to one Queue.
       If any Task has already been added to a queue, this method raises a <a href="exceptions.html#BadTaskStateError">BadTaskStateError</a>.
     </p>
     <p>
-      If <span class="argname">transactional</span>=<span class="argdefault">True</span> but this method is not called during a datastore transaction, is raises a <a href="exceptions.html#BadTransactionStateError">BadTransactionStateError</a>.
+      If <span class="argname">transactional</span>=<span class="argdefault">True</span>, but this method is not called during a datastore transaction, is raises a <a href="exceptions.html#BadTransactionStateError">BadTransactionStateError</a>.
     </p>
     <p>
       If the list of Task objects exceeds the limit for tasks added in a bulk call (see <a href="overview.html#Quotas_and_Limits">Quotas and Limits</a>), this method raises a <a href="exceptions.html#TooManyTasksError">TooManyTasksError</a>.
@@ -840,6 +947,35 @@ However, a single Task object may only be added to one Queue.
     <p>
       If the list of Task objects contains two tasks with the same name, this method raises a <a href="exceptions.html#DuplicateTaskNameError">DuplicateTaskNameError</a>.
     </p>
+  </dd>
+
+
+  <dt id="Queue_delete_tasks"><span class="itemname">delete_tasks</span>(<span class="argname">task</span>)</dt>
+  <dd>
+    <p>Deletes a Task or list of Tasks in this Queue. Task name is the only task attribute used to select tasks for deletion. If there is any task with was_deleted property set to True, or without a task name, a <a href="exceptions.html#BadTaskStateError" id="u">BadTaskStateError</a> is raised immediately.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">task</span></dt>
+      <dd>A <a href="tasks.html#Task_name">Task name</a> or a list of Task names to delete from the Queue.</dd>
+    </dl>
+  </dd>
+
+
+  <dt id="Queue_lease_tasks"><span class="itemname">lease_tasks</span>(<span class="argname">lease_seconds</span>, <span class="argname">max_tasks</span>)</dt>
+  <dd>
+  <p>Leases a number of tasks from the Queue for a period of time. This method can only be performed on a pull Queue. Attempts to lease tasks from a push Queue result in a <a href="exceptions.html#InvalidQueueModeError">InvalidQueueModeError</a>. All non-pull tasks in the pull Queue will be converted into pull tasks when leased. If fewer than <span class="argname">max_tasks</span> are available, all available tasks are returned. The <span class="argname">lease_tasks</span> method supports leasing at most 1000 tasks for no longer than a week in a single call.</p>
+  <p>Arguments:</p>
+
+  <dl>
+    <dt><span class="argname">lease_seconds</span></dt>
+      <dd>
+        <p>Number of seconds to lease this task, up to one week (604,800 seconds).</p>
+      </dd>
+    <dt><span class="argname">max_tasks</span></dt>
+      <dd>
+        <p>Maximum number of tasks to lease from the pull Queue, up to 1,000 tasks.</p>
+      </dd>
+  </dl>
   </dd>
 
   <dt id="Queue_purge"><span class="itemname">purge</span>()</dt>
@@ -885,7 +1021,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -923,10 +1059,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

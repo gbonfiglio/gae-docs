@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="java/overview.html">Overview</a></li>
     <li><a href="java/runtime.html">Servlet Environment</a></li>
+    <li><a href="java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="java/backends/overview.html">Overview</a></li>
+<li><a href="java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="java/config/appconfig.html">App Config</a></li>
+    <li><a href="java/config/backends.html">Backends Config</a></li>
     <li><a href="java/config/indexconfig.html">Index Config</a></li>
     <li><a href="java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="python/overview.html">Overview</a></li>
     <li><a href="python/runtime.html">CGI Environment</a></li>
+    <li><a href="python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="python/datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="python/taskqueue/functions.html">Functions</a></li>
          <li><a href="python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="python/config/index.html">Configuration</a>
       <ul>
             <li><a href="python/config/appconfig.html">App Config</a></li>
+    <li><a href="python/config/backends.html">Backends Config</a></li>
     <li><a href="python/config/indexconfig.html">Index Config</a></li>
     <li><a href="python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="python/config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="go/overview.html">Overview</a></li>
+    <li><a href="go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="go/datastore/overview.html">Overview</a></li>
+     <li><a href="go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="go/apis.html">Services</a>
+      <ul>
+        <li><a href="go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="go/blobstore/overview.html">Overview</a></li>
+<li><a href="go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="go/mail/overview.html">Overview</a></li>
+     <li><a href="go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="go/memcache/overview.html">Overview</a></li>
+     <li><a href="go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="go/users/overview.html">Overview</a></li>
+     <li><a href="go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -713,7 +825,7 @@ var logged_in_user_email = null;
 
 <p>You can serve your app from your own domain name (such as <code>http://www.example.com/</code>) using <a href="http://www.google.com/a/">Google Apps</a>. Or, you can serve your app using a free name on the <code>appspot.com</code> domain. You can share your application with the world, or limit access to members of your organization.</p>
 
-<p>Google App Engine supports apps written in several programming languages. With App Engine's Java runtime environment, you can build your app using standard Java technologies, including the JVM, Java servlets, and the Java programming language&mdash;or any other language using a JVM-based interpreter or compiler, such as JavaScript or Ruby. App Engine also features a dedicated Python runtime environment, which includes a fast Python interpreter and the Python standard library. The Java and Python runtime environments are built to ensure that your application runs quickly, securely, and without interference from other apps on the system.</p>
+<p>Google App Engine supports apps written in several programming languages. With App Engine's Java runtime environment, you can build your app using standard Java technologies, including the JVM, Java servlets, and the Java programming language&mdash;or any other language using a JVM-based interpreter or compiler, such as JavaScript or Ruby. App Engine also features a dedicated Python runtime environment, which includes a fast Python interpreter and the Python standard library, and a Go runtime environment that runs natively compiled Go code. These runtime environments are built to ensure that your application runs quickly, securely, and without interference from other apps on the system.</p>
 
 <p>With App Engine, you only pay for what you use. There are no set-up costs and no recurring fees. The resources your application uses, such as storage and bandwidth, are measured by the gigabyte, and billed at competitive rates. You control the maximum amounts of resources your app can consume, so it always stays within your budget.</p>
 
@@ -734,7 +846,7 @@ var logged_in_user_email = null;
   <li>scheduled tasks for triggering events at specified times and regular intervals</li>
 </ul>
 
-<p>Your application can run in one of two runtime environments: the <a href="http://java.sun.com/">Java</a> environment, and the <a href="http://www.python.org/">Python</a> environment. Each environment provides standard protocols and common technologies for web application development.</p>
+<p>Your application can run in one of three runtime environments: the <a href="http://golang.org/">Go</a> environment, the <a href="http://java.sun.com/">Java</a> environment, and the <a href="http://www.python.org/">Python</a> environment. Each environment provides standard protocols and common technologies for web application development.</p>
 
 
 
@@ -749,6 +861,21 @@ var logged_in_user_email = null;
   <li>An application cannot write to the file system. An app can read files, but only files uploaded with the application code. The app must use the App Engine datastore, memcache or other services for all data that persists between requests.</li>
   <li>Application code only runs in response to a web request, a queued task, or a scheduled task, and must return response data within 30 seconds in any case. A request handler cannot spawn a sub-process or execute code after the response has been sent.</li>
 </ul>
+
+
+<h3>The Go Runtime Environment</h3>
+
+<p>App Engine's Go runtime environment provides a convenient way to implement and deploy web applications written in the <a href="http://golang.org/">Go Programming Language</a>.</p>
+
+<p>The Go runtime environment uses Go <a href="http://golang.org/doc/devel/release.html#r57">release r57.1</a>. The SDK includes the Go compiler and standard library, so it has no additional dependencies. As with the Java and Python environments, not all the standard library's functionality is available inside the sandbox. For example, attempts to open a socket or write to a file will return an <code>os.EINVAL</code> error.</p>
+
+<p>The SDK includes an automated build service to compile your app, so you'll never need to invoke the compiler yourself. And&mdash;as with the Python SDK&mdash;your app will be automatically re-built whenever you change the source. This keeps you productive by making the edit-compile-run cycle refreshingly short.</p>
+
+<p>The Go environment provides idiomatic <a href="go/apis.html">Go APIs</a> for most of the App Engine services.</p>
+
+<p>You can upload other third-party libraries with your application, as long as they are implmented in pure Go.</p>
+
+<p>For more information about the Go runtime environment, see <a href="go/runtime.html">The Go Runtime Environment</a>.</p>
 
 
 <h3>The Java Runtime Environment</h3>
@@ -830,12 +957,12 @@ var logged_in_user_email = null;
 
 <p>Scheduled tasks are also known as "cron jobs," handled by the Cron service. For more information on using the Cron service, see the <a href="python/config/cron.html">Python</a> or <a href="java/config/cron.html">Java</a> cron documentation.</p>
 
-<p>Task queues are currently released as an experimental feature. At this time, only the Python runtime environment can use task queues. A task queue interface for Java applications will be released in the near future. For information about the task queue service and the Python API, see <a href="python/taskqueue/index.html">the Python documentation</a>.</p>
+<p>Task queues are currently released as an experimental feature. At this time, only the Python and Go runtime environments can use task queues. A task queue interface for Java applications will be released in the near future. For information about the task queue service, see <a href="python/taskqueue/index.html">the Python API documentation</a> or the <a href="go/taskqueue/index.html">the Go API documentation</a>.</p>
 
 
 <h2>Development Workflow</h2>
 
-<p><a href="../downloads.html">The App Engine software development kits</a> (SDKs) for Java and Python each include a web server application that emulates all of the App Engine services on your local computer. Each SDK includes all of the APIs and libraries available on App Engine. The web server also simulates the secure sandbox environment, including checks for attempts to access system resources disallowed in the App Engine runtime environment.</p>
+<p><a href="../downloads.html">The App Engine software development kits</a> (SDKs) for Java, Python, and Go each include a web server application that emulates all of the App Engine services on your local computer. Each SDK includes all of the APIs and libraries available on App Engine. The web server also simulates the secure sandbox environment, including checks for attempts to access system resources disallowed in the App Engine runtime environment.</p>
 
 <p>Each SDK also includes a tool to upload your application to App Engine. Once you have created your application's code, static files and configuration files, you run the tool to upload the data. The tool prompts you for your Google account email address and password.</p>
 
@@ -844,6 +971,8 @@ var logged_in_user_email = null;
 <p>The Java SDK runs on any platform with Java 5 or Java 6. The SDK is available as a Zip file. If you use the Eclipse development environment, you can use the <a href="java/tools/eclipse.html">Google Plugin for Eclipse</a> to create, test and upload App Engine applications. The SDK also includes command-line tools for running the development server and uploading your app.</p>
 
 <p>The Python SDK is implemented in pure Python, and runs on any platform with Python 2.5, including Windows, Mac OS X and Linux. The SDK is available as a Zip file, and installers are available for Windows and Mac OS X.</p>
+
+<p>The Go SDK features an idiomatic, native Go API for using the App Engine services, and uses the same tools as the Python SDK (with some additional machinery for automatically compiling your Go apps). The Go SDK is stand-alone&mdash;you do not need to install Go separately&mdash;and is available as a Zip file for both Mac OS X and Linux (a Windows version will be available soon).</p>
 
 <p><a href="adminconsole/index.html">The Administration Console</a> is the web-based interface for managing your applications running on App Engine.  You can use it to create new applications, configure domain names, change which version of your application is live, examine access and error logs, and browse an application's datastore.</p>
 
@@ -914,7 +1043,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -952,10 +1081,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

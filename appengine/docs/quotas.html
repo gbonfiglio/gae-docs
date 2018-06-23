@@ -100,6 +100,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -155,7 +157,6 @@ var logged_in_user_email = null;
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -169,7 +170,7 @@ var logged_in_user_email = null;
     <li><a href="java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -190,6 +191,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -199,6 +213,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="java/overview.html">Overview</a></li>
     <li><a href="java/runtime.html">Servlet Environment</a></li>
+    <li><a href="java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="java/backends/overview.html">Overview</a></li>
+<li><a href="java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="java/datastore/overview.html">Overview</a></li>
@@ -302,8 +324,10 @@ var logged_in_user_email = null;
         <li><a href="java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="java/urlfetch/index.html">URL Fetch</a>
@@ -336,6 +360,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="java/config/appconfig.html">App Config</a></li>
+    <li><a href="java/config/backends.html">Backends Config</a></li>
     <li><a href="java/config/indexconfig.html">Index Config</a></li>
     <li><a href="java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="java/config/queue.html">Task Queue Config</a></li>
@@ -346,6 +371,7 @@ var logged_in_user_email = null;
     <li><a href="java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="java/configyaml/queue.html">Task Queue Config</a></li>
@@ -385,6 +411,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="python/overview.html">Overview</a></li>
     <li><a href="python/runtime.html">CGI Environment</a></li>
+    <li><a href="python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="python/datastore/overview.html">Datastore Overview</a></li>
@@ -544,10 +584,14 @@ var logged_in_user_email = null;
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="python/taskqueue/functions.html">Functions</a></li>
          <li><a href="python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -604,6 +648,7 @@ var logged_in_user_email = null;
     <li><a href="python/config/index.html">Configuration</a>
       <ul>
             <li><a href="python/config/appconfig.html">App Config</a></li>
+    <li><a href="python/config/backends.html">Backends Config</a></li>
     <li><a href="python/config/indexconfig.html">Index Config</a></li>
     <li><a href="python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="python/config/queue.html">Task Queue Config</a></li>
@@ -650,6 +695,73 @@ var logged_in_user_email = null;
               <li><a href="python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="go/overview.html">Overview</a></li>
+    <li><a href="go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="go/datastore/overview.html">Overview</a></li>
+     <li><a href="go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="go/apis.html">Services</a>
+      <ul>
+        <li><a href="go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="go/blobstore/overview.html">Overview</a></li>
+<li><a href="go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="go/mail/overview.html">Overview</a></li>
+     <li><a href="go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="go/memcache/overview.html">Overview</a></li>
+     <li><a href="go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="go/users/overview.html">Overview</a></li>
+     <li><a href="go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -908,9 +1020,7 @@ var logged_in_user_email = null;
       <li><a href="#Channel">Channel</a></li>
       <li><a href="#Datastore">Datastore</a></li>
       <li><a href="#Deployments">Deployments</a></li>
-      <li><a href="#Image_Manipulation">Image Manipulation</a></li>
       <li><a href="#Mail">Mail</a></li>
-      <li><a href="#Memcache">Memcache</a></li>
       <li><a href="#Requests">Requests</a></li>
       <li><a href="#Task_Queue">Task Queue</a></li>
       <li><a href="#UrlFetch">URL Fetch</a></li>
@@ -942,13 +1052,13 @@ var logged_in_user_email = null;
 
 <h2 id="Per-minute_Quotas">Per-minute Quotas</h2>
 
-<p>In addition to the daily quotas described above, App Engine moderates how quickly an app can consume a resource, using <em>per-minute quotas</em>. This protects the app from consuming all of its quota in very short periods of time, and keeps other apps from affecting your app by monopolizing a given resource.</p>
+<p>In addition to the daily quotas described above, App Engine moderates how quickly an app can consume some resources, using <em>per-minute quotas</em>. This protects the app from consuming all of its quota in very short periods of time, and keeps other apps from affecting your app by monopolizing a given resource.</p>
 
 <p>If your application consumes a resource too quickly and depletes one of the per-minute limits, the word "Limited" will appear by the appropriate quota on the <strong>Quota Details</strong> screen in the Admin Console. Requests for resources that have hit their per-minute maximum will be denied. See <a href="#When_a_Resource_is_Depleted">When a Resource is Depleted</a> for details.</p>
 
 <p>As with the daily fixed quotas, there are two levels of per-minute quotas, depending on whether billing has been enabled or not. See the quota tables in the <a href="#Resources">Resources</a> section for details.</p>
 
-<p class="note"><b>Tip:</b> The maximum per-minute quotas with billing enabled can accommodate around 500 requests per second for many applications, enough to handle a spike in traffic from your site getting mentioned in news stories. In extreme cases, you can <a href="http://code.google.com/appengine/kb/billing.html#cpu">request an increase in the maximums</a>.</p>
+<p class="note"><b>Tip:</b> The maximum per-minute quotas with billing enabled can accommodate high traffic levels for most applications, enough to handle a spike in traffic from your site getting mentioned in news stories. In extreme cases, you can <a href="http://code.google.com/appengine/kb/billing.html#cpu">request an increase in the maximums</a>.</p>
 
 
 <h2 id="When_a_Resource_is_Depleted">When a Resource is Depleted</h2>
@@ -957,7 +1067,6 @@ var logged_in_user_email = null;
 
 <p>For resources that are required to initiate a request, when the resource is depleted, App Engine by default returns an HTTP 403 Forbidden status code for the request instead of calling a request handler. The following resources have this behavior:</p>
 <ul>
-  <li>Requests</li>
   <li>CPU Time</li>
   <li>Bandwidth, incoming and outgoing</li>
 </ul>
@@ -1034,8 +1143,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <p>Data stored in the blobstore counts toward the <b>Stored Data (billable)</b> quota, described above. The following quotas apply specifically to use of the blobstore.</p>
 
 <dl>
-  <dt>Blobstore API Calls</dt>
-  <dd>The total number of times the app called the blobstore API, such as to create upload URLs.</dd>
   <dt>Blobstore Stored Data</dt>
   <dd>The total amount of data stored in the blobstore. Also counts toward the <b>Stored Data (billable)</b> quota.</dd>
 </dl>
@@ -1055,33 +1162,17 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
 </table>
 
-<table width="75%">
-  <tr>
-    <th width="30%" rowspan="2">Resource</th>
-    <th width="70%" colspan="2">Billing Enabled Default Quota</th>
-  </tr>
-  <tr>
-    <th width="35%">Daily Limit</th>
-    <th width="35%">Maximum Rate</th>
-  </tr>
-  <tr>
-    <td width="30%">Blobstore API Calls</td>
-    <td width="17.5%">140,000,000 calls</td>
-    <td width="17.5%">72,000 calls/minute</td>
-  </tr>
-</table>
-
 
 <h3 id="Channel">Channel</h3>
 <dl>
   <dt>Channel API Calls</dt>
-  <dd>The total number of times the app accessed the Channel service to perform a <code>POST</code>.</dd>
+  <dd>The total number of times the app accessed the Channel service.</dd>
+
+  <dt>Channels Created</dt>
+  <dd>The number of channels created by the app.</dd>
 
   <dt>Channel Data Sent</dt>
-  <dd>The amount of data sent to the Channel service in requests. This also counts toward the Outgoing Bandwidth quota.</dd>
-
-  <dt>Channel Data Received</dt>
-  <dd>The amount of data received from the Channel service in responses. This also counts toward the Incoming Bandwidth quota.</dd>
+  <dd>The amount of data sent over the Channel service. This also counts toward the Outgoing Bandwidth quota.</dd>
 </dl>
 
 <table width="75%">
@@ -1104,17 +1195,17 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td width="17.5%">32,000 calls/minute</td>
   </tr>
   <tr>
+    <td>Channels Created</dt>
+    <td>8640 creations</td>
+    <td>6 creations/minute</td>
+    <td>86,400 creations</td>
+    <td>60 creations/minute</td>
+  </tr>
+  <tr>
     <td>Channel Data Sent</td>
     <td>up to the Outgoing Bandwidth limit</td>
     <td>22 MB/minute</td>
     <td>up to the Outgoing Bandwidth limit</td>
-    <td>740 MB/minute</td>
-  </tr>
-  <tr>
-    <td>Channel Data Received</td>
-    <td>up to the Incoming Bandwidth limit</td>
-    <td>22 MB/minute</td>
-    <td>up to the Incoming Bandwidth limit</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
@@ -1129,12 +1220,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 <p>The <b>Stored Data (billable)</b> quota refers to data stored for the app in the Master/Slave Datastore, the task queue and the Blobstore. The <b>High Replication Storage (billable)</b> quota refers to data stored for the app in the High Replication Datstore. Other quotas in the "Datastore" section of the Quota Details screen in the Administration Console refer to the Datastore service specifically.</p>
 
 <dl>
-  <dt>Datastore API Calls</dt>
-  <dd>The total number of times the app retrieved, created, updated or deleted an entity, or performed a query in the datastore.</dd>
-
-  <dt>Datastore Queries</dt>
-  <dd>The total number of times the app has performed a datastore query. Note that some query interface operations (IN and !=) perform multiple datastore queries; each individual query counts toward this quota.</dd>
-
   <dt>Stored Data (billable)</dt>
   <dd>
   <p>The total amount of data stored in datastore entities and corresponding indexes, in the task queue, and in the Blobstore.</p>
@@ -1161,15 +1246,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <p>See <a href="../articles/storage_breakdown.html">How Entities and Indexes are Stored</a> for a complete breakdown of the metadata required to store entities and indexes at the Bigtable level and <a href="../articles/index_building.html">How Index Building Works</a> for a detailed explanation of how datastore indexes are managed.</p>
   </dd>
 
-  <dt>Data Sent to API</dt>
-  <dd>The amount of data sent to the datastore when creating or updating an entity, or performing a query.</dd>
-
-  <dt>Data Received from API</dt>
-  <dd>The amount of data returned by the datastore when retrieving an entity or performing a query.</dd>
-
-  <dt>Datastore CPU Time</dt>
-  <dd>The time spent performing datastore operations. Datastore CPU cycles also count toward the CPU Time quota. See CPU Time, above, for details on how CPU time is calculated.</dd>
-
   <dt>Number of Indexes</dt>
   <dd>The number of datastore indexes that exist for the application. This includes indexes that were created in the past and no longer appear in the application's configuration but have not been deleted using AppCfg's <code>vacuum_indexes</code> command.</dd>
 </dl>
@@ -1194,54 +1270,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>Number of Indexes</td>
     <td>200</td>
     <td>200</td>
-</table>
-
-<table width="75%">
-  <tr>
-    <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
-  </tr>
-  <tr>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-  </tr>
-  <tr>
-    <td width="30%">Datastore API Calls</td>
-    <td width="17.5%">141,241,791 calls</td>
-    <td width="17.5%">784,676 calls/minute</td>
-    <td width="17.5%">141,241,791 calls</td>
-    <td width="17.5%">784,676 calls/minute</td>
-  </tr>
-  <tr>
-    <td>Datastore Queries</td>
-    <td>417,311,168 queries</td>
-    <td>2,318,395 queries/minute</td>
-    <td>417,311,168 queries</td>
-    <td>2,318,395 queries/minute</td>
-  </tr>
-  <tr>
-    <td>Data Sent to API</td>
-    <td>72 GB</td>
-    <td>409 MB/minute</td>
-    <td>72 GB</td>
-    <td>409 MB/minute</td>
-  </tr>
-  <tr>
-    <td>Data Received from API</td>
-    <td>695 GB</td>
-    <td>3.86 GB/minute</td>
-    <td>695 GB</td>
-    <td>3.86 GB/minute</td>
-  </tr>
-  <tr>
-    <td>Datastore CPU Time</td>
-    <td>2,487 CPU-hours</td>
-    <td>829 CPU-minutes/minute</td>
-    <td>2,487 CPU-hours</td>
-    <td>829 CPU-minutes/minute</td>
   </tr>
   <tr>
     <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
@@ -1255,64 +1283,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <dt>Deployments</dt>
   <dd>The number of times the app has been uploaded by a developer. The current limit is 1,000.</dd>
 </dl>
-
-<h3 id="Image_Manipulation">Image Manipulation</h3>
-
-<dl>
-  <dt>Image Manipulation API Calls</dt>
-  <dd>The total number of times the app access the image service.</dd>
-  <dt>Data Sent to API</dt>
-  <dd>The amount of data sent to the image service.</dd>
-  <dt>Data Received from API</dt>
-  <dd>The amount of data received from the image service.</dd>
-  <dt>Transformations executed</dt>
-  <dd>The number of times the service performed an image transformation for the app.</dd>
-</dl>
-
-<table width="75%">
-  <tr>
-    <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
-  </tr>
-  <tr>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-  </tr>
-  <tr>
-    <td width="30%">Image Manipulation API Calls</td>
-    <td width="17.5%">45,000,000 calls</td>
-    <td width="17.5%">251,520 calls/minute</td>
-    <td width="17.5%">45,000,000 calls</td>
-    <td width="17.5%">251,520 calls/minute</td>
-  </tr>
-  <tr>
-    <td>Data Sent to API</td>
-    <td>560 GB</td>
-    <td>3.12 GB/minute</td>
-    <td>560 GB</td>
-    <td>3.12 GB/minute</td>
-  </tr>
-  <tr>
-    <td>Data Received from API</td>
-    <td>427 GB</td>
-    <td>2.37 GB/minute</td>
-    <td>427 GB</td>
-    <td>2.37 GB/minute</td>
-  </tr>
-  <tr>
-    <td>Transformations executed</td>
-    <td>47,000,000 transforms</td>
-    <td>261,120 transforms/minute</td>
-    <td>47,000,000 transforms</td>
-    <td>261,120 transforms/minute</td>
-  </tr>
-  <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
-  </tr>
-</table>
 
 <h3 id="Mail">Mail</h3>
 
@@ -1395,61 +1365,9 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
 </table>
 
-<h3 id="Memcache">Memcache</h3>
-
-<dl>
-  <dt>Memcache API Calls</dt>
-  <dd>The total number of times the app accessed the memcache service to get, set or expire values.</dd>
-
-  <dt>Data Sent to API</dt>
-  <dd>The amount of data sent to the memcache.</dd>
-
-  <dt>Data Received from API</dt>
-  <dd>The amount of data received from the memcache.</dd>
-</dl>
-
-<table width="75%">
-  <tr>
-    <th width="30%" rowspan="2">Resource</th>
-    <th width="35%" colspan="2">Free Default Quota</th>
-    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
-  </tr>
-  <tr>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-    <th width="17.5%">Daily Limit</th>
-    <th width="17.5%">Maximum Rate</th>
-  </tr>  <tr>
-    <td width="30%">Memcache API Calls</td>
-    <td width="17.5%">192,672,000 calls</td>
-    <td width="17.5%">1,070,400 calls/minute</td>
-    <td width="17.5%">192,672,000 calls</td>
-    <td width="17.5%">1,070,400 calls/minute</td>
-  </tr>
-  <tr>
-    <td>Data Sent to API</td>
-    <td>558 GB</td>
-    <td>3.09 GB/minute</td>
-    <td>558 GB</td>
-    <td>3.09 GB/minute</td>
-  </tr>
-  <tr>
-    <td>Data Received from API</td>
-    <td>640 GB</td>
-    <td>3 GB/minute</td>
-    <td>640 GB</td>
-    <td>3 GB/minute</td>
-  </tr>
-  <tr>
-    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
-  </tr>
-</table>
-
 <h3 id="Requests">Requests</h3>
 
 <dl>
-  <dt>Requests</dt>
-  <dd>The total number of requests to the app. The per-minute quotas for application with billing enabled allow for up to 500 requests per second&mdash;more than one billion requests per month. If your application requires even higher quotas than the "billing-enabled" values listed below, you can request an increase in these limits <a href="../kb/billing.html#cpu">here</a>.</dd>
   <dt>Outgoing Bandwidth (billable)</dt>
   <dd>
     <p>The amount of data sent by the app in response to requests.</p>
@@ -1484,8 +1402,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
       <li>For the most part, queries are equally efficient, since all queries use indexes. However, fetching results requires additional CPU Time.</li>
     </ul>
   </dd>
-  <dt>Secure Requests</dt>
-  <dd>The number of requests that used a secure connection (HTTPS). Secure requests also count towards the Requests quota.</dd>
   <dt>Secure Outgoing Bandwidth</dt>
   <dd>The amount of data sent by the app over a secure connection in response to requests. Secure outgoing bandwidth also counts toward the Outgoing Bandwidth quota.</dd>
   <dt>Secure Incoming Bandwidth</dt>
@@ -1503,13 +1419,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <th width="17.5%">Maximum Rate</th>
     <th width="17.5%">Daily Limit</th>
     <th width="17.5%">Maximum Rate</th>
-  </tr>
-  <tr>
-    <td width="30%">Requests (includes HTTPS)</td>
-    <td width="17.5%">43,200,000 requests</td>
-    <td width="17.5%">45,200 requests/minute</td>
-    <td width="17.5%">43,200,000 requests</td>
-    <td width="17.5%">45,200 requests/minute</td>
   </tr>
   <tr>
     <td>Outgoing Bandwidth (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>, includes HTTPS)</td>
@@ -1744,7 +1653,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1782,10 +1691,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

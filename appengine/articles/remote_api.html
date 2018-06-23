@@ -102,6 +102,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,7 +160,6 @@ var logged_in_user_email = null;
   <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -172,7 +173,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../docs/java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../docs/java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../docs/java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../docs/java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../docs/java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../docs/java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -193,6 +194,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../docs/go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../docs/go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../docs/go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../docs/go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../docs/go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../docs/go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../docs/go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../docs/go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -202,6 +216,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../docs/java/overview.html">Overview</a></li>
     <li><a href="../docs/java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../docs/java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../docs/java/backends/overview.html">Overview</a></li>
+<li><a href="../docs/java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../docs/java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../docs/java/datastore/overview.html">Overview</a></li>
@@ -305,8 +327,10 @@ var logged_in_user_email = null;
         <li><a href="../docs/java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../docs/java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../docs/java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../docs/java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../docs/java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../docs/java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../docs/java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../docs/java/urlfetch/index.html">URL Fetch</a>
@@ -339,6 +363,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../docs/java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../docs/java/config/appconfig.html">App Config</a></li>
+    <li><a href="../docs/java/config/backends.html">Backends Config</a></li>
     <li><a href="../docs/java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../docs/java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../docs/java/config/queue.html">Task Queue Config</a></li>
@@ -349,6 +374,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../docs/java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../docs/java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../docs/java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../docs/java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../docs/java/configyaml/queue.html">Task Queue Config</a></li>
@@ -388,6 +414,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../docs/python/overview.html">Overview</a></li>
     <li><a href="../docs/python/runtime.html">CGI Environment</a></li>
+    <li><a href="../docs/python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../docs/python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../docs/python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../docs/python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../docs/python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../docs/python/datastore/overview.html">Datastore Overview</a></li>
@@ -547,10 +587,14 @@ var logged_in_user_email = null;
         <li><a href="../docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../docs/python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../docs/python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../docs/python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../docs/python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../docs/python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../docs/python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../docs/python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../docs/python/taskqueue/functions.html">Functions</a></li>
          <li><a href="../docs/python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -607,6 +651,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/config/index.html">Configuration</a>
       <ul>
             <li><a href="../docs/python/config/appconfig.html">App Config</a></li>
+    <li><a href="../docs/python/config/backends.html">Backends Config</a></li>
     <li><a href="../docs/python/config/indexconfig.html">Index Config</a></li>
     <li><a href="../docs/python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../docs/python/config/queue.html">Task Queue Config</a></li>
@@ -653,6 +698,73 @@ var logged_in_user_email = null;
               <li><a href="../docs/python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../docs/python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../docs/go/overview.html">Overview</a></li>
+    <li><a href="../docs/go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../docs/go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../docs/go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../docs/go/datastore/overview.html">Overview</a></li>
+     <li><a href="../docs/go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../docs/go/apis.html">Services</a>
+      <ul>
+        <li><a href="../docs/go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../docs/go/blobstore/overview.html">Overview</a></li>
+<li><a href="../docs/go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../docs/go/mail/overview.html">Overview</a></li>
+     <li><a href="../docs/go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../docs/go/memcache/overview.html">Overview</a></li>
+     <li><a href="../docs/go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../docs/go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../docs/go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../docs/go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../docs/go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../docs/go/users/overview.html">Overview</a></li>
+     <li><a href="../docs/go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -715,7 +827,11 @@ var logged_in_user_email = null;
 
 
 <i>Nick Johnson</i><br>
-<i>February 27, 2009</i>
+<i>February 27, 2009</i><br>
+<i>Updated <em>April 2011</em> by Johan Euphrosine</i><br>
+<p class="note">
+  <strong>Note:</strong>This article uses the Python runtime. Documentation is also available for the <a href="http://code.google.com/appengine/docs/java/tools/remoteapi.html">Java runtime</a>
+</p>
 
 <div id="jd-content">
 <div class="jd-descr">
@@ -759,88 +875,34 @@ var logged_in_user_email = null;
     Installing the handler is easy. Simply add the following lines to your
     <code>app.yaml</code> under the 'handlers' key:
   </p>
-  <pre>handlers:
-    - url: /remote_api
-      script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
-      login: admin
+  <pre>builtins:
+- remote_api: on
   </pre>
   <p>
-    This installs the remote_api handler under the url '<code>/remote_api</code>
-    '. You can choose a different endpoint, if you wish, but you'll need to
-    change the examples below. Note that the handler specifies "login: admin".
-    This is extremely important, since we don't want to give just anyone
-    unfettered access to our datastore!
+    This installs the remote_api handler under the url '<code>/_ah/remote_api</code>.
   </p>
   <p>
     Once you've updated the <code>app.yaml</code> file, you'll need to execute
     <code>appcfg.py update</code> for your app to upload the new mapping.
   </p>
 
-  <h2 id="console">
-    Creating an interactive console
-  </h2>
-  <p>
-    One of the simplest and most useful things you can do with remote_api is to
-    set up an interactive Python console that has access to your production
-    datastore. Create a new Python file called "appengine_console.py" and put
-    the following text in it:
-  </p>
-  <pre class="prettyprint">#!/usr/bin/python
-import code
-import getpass
-import sys
-
-sys.path.append("~/google_appengine")
-sys.path.append("~/google_appengine/lib/yaml/lib")
-
-from google.appengine.ext.remote_api import remote_api_stub
-from google.appengine.ext import db
-
-def auth_func():
-    return raw_input('Username:'), getpass.getpass('Password:')
-
-if len(sys.argv) < 2:
-    print "Usage: %s app_id [host]" % (sys.argv[0],)
-app_id = sys.argv[1]
-if len(sys.argv) > 2:
-    host = sys.argv[2]
-else:
-    host = '%s.appspot.com' % app_id
-
-remote_api_stub.ConfigureRemoteDatastore(app_id, '/remote_api', auth_func, host)
-
-code.interact('App Engine interactive console for %s' % (app_id,), None, locals())
-  </pre>
-  <p>
-    The code here should be fairly self explanatory. On line 6, we add the SDK
-    directory to the Python path. The example given here will work fine if
-    you're using Linux or OS X and installed the SDK in your home directory. In
-    windows, change this to the path where you installed the SDK such as
-    "<code>c:\google_appengine</code>". If you're using the launcher in OS X,
-    you need to set the path to
-    "<code>/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine</code>".
-  </p>
-  <p>
-    On line 11, we define a function for getting credentials from the user when
-    they're required. In our example, we simply prompt for them over the
-    console, but this could use any method you like. Starting on line 14, we
-    extract the app ID and optional hostname from the command line, and on line
-    22, we use a helper function provided by remote_api to set up the
-    environment to send all datastore requests to the remote datastore. Finally,
-    we call code.Interact, which starts an interactive Python interpreter.
-  </p>
-
   <h2 id="running">
-    Running the interactive console
+    Running the remote api shell
   </h2>
+  <p>
+    By running <code>remote_api_shell.py</code> from the command line, you can
+    interact with a Python shell that has access to your production
+    datastore.
+  </p>
+
   <p>
     Since you will probably want to access modules defined by your app, such as
     the model definitions, we need to make sure that your app is in the Python
     path. The easiest way to do this is to change directory to your app's root
-    directory (the one with app.yaml in it) before running our new command.
+    directory (the one with app.yaml in it) before running the remote api shell.
     Then, just execute:
   </p>
-  <pre>python appengine_console.py myapp</pre>
+  <pre>python $GAE_SDK_ROOT/remote_api_shell.py -s myapp.appspot.com</pre>
   <p>
     Replace 'myapp' with the app ID of your app, and you should get a Python
     interactive console prompt.
@@ -1168,7 +1230,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1206,10 +1268,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

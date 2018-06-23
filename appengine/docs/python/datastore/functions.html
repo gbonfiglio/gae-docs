@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../taskqueue/functions.html">Functions</a></li>
          <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -768,9 +880,12 @@ assert another_instance.key().id() not in second_range
 
   <dt id="allocate_id_range"><span class="itemname">allocate_id_range</span>(<span class="argname">model</span>, <span class="argname">start</span>, <span class="argname">end</span>, **<span class="argname">kwargs</span>)</dt>
   <dd>
-    <p>Allocates a range of IDs in the datastore for a datastore kind and parent combination.</p>
-    <p>IDs allocated in this manner will not be used by the datastore's automatic ID sequence generator and may be used in <a href="keyclass.html">Keys</a> without conflict.</a>.</p>
-    <p>Arguments:</p>
+  <p>Allocates a range of IDs with specific endpoints. Once these IDs have been allocated, you can manually assign them to newly created entities.</p>
+
+  <p>The datastore's automatic ID allocator never assigns a key belonging to an existing entity to a new entity. As a result, entities written to the given key range will never be overwritten. However, writing entities with manually assigned keys in this range may overwrite existing entities (or new entities written by a separate request), depending on the key range state returned.</p>
+
+  <p>Use this method only if you have an existing numeric id range that you want to reserve (for example, bulk loading entities that already have IDs). If you don't care about which IDs you receive, use <a href="#allocate_ids">allocate_ids()</a> instead.</p>
+  <p>Arguments:</p>
     <dl>
       <dt><span class="argname">model</span></dt>
       <dd>A <a href="modelclass.html#Model">db.Model</a> instance, <a href="keyclass.html">Key</a>, or string to serve as a template specifying the ID sequence in which to allocate IDs. Returned ids should only be used in entities with the same parent (if any) and kind as this key.</dd>
@@ -781,40 +896,35 @@ assert another_instance.key().id() not in second_range
       <dt><span class="argname">end</span></dt>
       <dd>The last ID to allocate, a number.</dd>
     </dl>
-    <p>Returns a sequence of ID numbers.</p>
-    <p>Raises a <code>db.BadRequestError</code> if any ID in the range is already in use for the given kind and parent combination.</p>
-    <p>See <a href="#allocate_ids">allocate_ids()</a> for examples of using allocated IDs.</p>
+    <p>Returns one of (<code>KEY_RANGE_EMPTY</code>, <code>KEY_RANGE_CONTENTION</code>, <code>KEY_RANGE_COLLISION</code>). If not
+    <code>KEY_RANGE_EMPTY</code>, this represents a potential issue with using the allocated key range.</p>
   </dd>
 
 
-  <dt id="create_rpc"><span class="itemname">create_rpc</span>(<span class="argname">deadline</span>=<span class="argdefault">None</span>, <span class="argname">callback</span>=<span class="argdefault">None</span>, <span class="argname">read_policy</span>=<span class="argdefault">STRONG_CONSISTENCY</span>)</dt>
+  <dt id="create_rpc"><span class="itemname">create_config</span>(<span class="argname">deadline</span>=<span class="argdefault">None</span>, <span class="argname">on_completion</span>=<span class="argdefault">None</span>, <span class="argname">read_policy</span>=<span class="argdefault">STRONG_CONSISTENCY</span>)</dt>
   <dd>
-    <p>Creates a remote procedure call (RPC) configuration object for setting the read policy and datastore call deadline for some API calls.</p>
-    <p>The read policy determines whether read operations use <i>strong consistency</i> or <i>eventual consistency</i>. With strong consistency, read operations always use the primary storage location for the app, and will wait for primary storage to become available if there is a failure. With eventual consistency, if there is a failure in primary storage, a read operation will switch to an alternate location, which may not be consistent with the primary. A read operation with eventual consistency may return sooner than one with strong consistency in the case of failure, and may be appropriate for some uses. Strong consistency is the default.</p>
-    <p>The datastore call deadline specifies an amount of time the application runtime environment will wait for the datastore to return a result before aborting with an error. By default, the runtime environment waits until the request handler deadline has elapsed. You can specify a shorter time to wait so your app can return a faster response to the user, retry the operation, try a different operation, or add the operation to a task queue.</p>
-    <p>To specify these options to a datastore API call, call <span class="itemname">create_rpc()</span> to create an RPC object, then pass that object to the function using an argument named <code>rpc</code>. For example:</p>
-    <pre class="prettyprint">
-rpc = db.create_rpc(deadline=10, read_policy=db.EVENTUAL_CONSISTENCY)
+  <p>Creates a configuration object for setting the read policy and datastore call deadline for API calls. You can pass this configuration to most datastore calls using the <code>config=...</code> argument, for example:</p>
 
-# Employee is a db.Model class
-q = Employee.all().fetch(10, rpc=rpc)
+  <pre class="prettyprint"># Faster get but may retrive stale data.
+entity = db.get(key, 
+             config=db.create_config(read_policy=db.EVENTUAL_CONSISTENCY))</pre>
 
-for results in q:
-    # ...
-    </pre>
-    <p>An RPC object can only be used once. You must create a separate RPC object for each datastore call that uses it.</p>
-    <p>See the API references for other functions, and methods of <a href="modelclass.html">The Model Class</a> and <a href="queryclass.html">The Query Class</a>, for information on which functions accept the <code>rpc</code> argument. See also <a href="queries.html#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Queries and Indexes: Setting the Read Policy and Datastore Call Deadline</a>. Note that in most cases, the <code>rpc</code> argument is accepted as a keyword argument only, and does not appear explicitly in the function signature.</p>
-    <p class="note"><b>Note:</b> Datastore calls are synchronous: the methods do not return until the remote procedure call is complete. This is unlike the URL Fetch asynchronous API, which also uses an RPC object.</p>
-    <p>Arguments:</p>
+  <p>The datastore call deadline specifies an amount of time the application runtime environment will wait for the datastore to return a result before aborting with an error. By default, the runtime environment waits until the request handler deadline has elapsed. You can specify a shorter time to wait so your app can return a faster response to the user, retry the operation, try a different operation, or add the operation to a task queue.</p>
+
+  <p>The read policy determines whether read operations use <i>strong consistency</i> (the default)  or <i>eventual consistency</i>. Note that the <a href="hr/overview.html">high replication datastore</a> (HRD) cannot deliver strong consistency for queries across entity groups. For example, queries across entity groups may return stale results. In order to return strongly consistent query results in the HRD, use <a href="http://code.google.com/appengine/docs/python/datastore/queries.html#Ancestor_Queries">ancestor queries</a>.</p>
+
+  <p>A read operation with eventual consistency may return sooner than one with strong consistency in the case of failure, and may be appropriate for some uses. However, if you use eventual consistency, recent writes may not immediately appear in query results.</p>
+
+  <p>See the function descriptions in this API reference, as well as methods of <a href="modelclass.html">The Model Class</a> and <a href="queryclass.html">The Query Class</a>, for information on which functions accept the <code>config</code> argument. See also <a href="queries.html#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Queries and Indexes: Setting the Read Policy and Datastore Call Deadline</a>. Note that, in most cases, the <code>config</code> argument is accepted as a keyword argument only, and does not appear explicitly in the function signature.</p>
+
+  <p>Arguments:</p>
     <dl>
-      <dt><span class="argname">deadline</span></dt>
-      <dd>The datastore call deadline, as a number of seconds. Accepts a <code>float</code>. If <code>None</code> (or if no RPC object is passed to the call), the call uses no deadline, and is only interrupted by the request handler deadline.</dd>
-
-      <dt><span class="argname">callback</span></dt>
-      <dd>A callable object to call when the remote procedure call completes.</dd>
-
+      <dt><span class="itemname">deadline</span>=<span class="argdefault">None</span></dt>
+        <dd><p>An optional datastore call deadline, specified as a number of seconds. Accepts a <code>float</code>. If <code>None</code>, the call uses no deadline, and is only interrupted by the request handler deadline.</p></dd>
+      <dt><span class="itemname">on_completion</span>=<span class="argdefault">None</span></dt>
+        <dd>An optional callback function. This method defaults to None, but if specified, it will be called with a UserRPC object as an argument when an RPC completes.</dd>
       <dt><span class="argname">read_policy</span></dt>
-      <dd>The read policy, either <code>db.STRONG_CONSISTENCY</code> or <code>db.EVENTUAL_CONSISTENCY</code>. The default is <code>db.STRONG_CONSISTENCY</code>, and strong consistency is used if a read operation is not passed an RPC object.</dd>
+        <dd>The read policy, either <code>db.STRONG_CONSISTENCY</code> or <code>db.EVENTUAL_CONSISTENCY</code>. The default is <code>db.STRONG_CONSISTENCY</code>, and strong consistency is used if a read operation is not passed an RPC object.</dd>  
     </dl>
   </dd>
 
@@ -825,22 +935,51 @@ for results in q:
     <dl>
       <dt><span class="argname">models</span></dt>
       <dd>A model instance, a <a href="keyclass.html">Key</a> for an entity, or a list (or other iterable) of model instances or keys of entities to delete.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+      <dt><span class="argname">config</span></dt>
+      <dd>datastore_rpc.Configuration to use for this request, specified as a keyword argument.</dd>
     </dl>
     <p>As with <a href="#put">Model.put()</a>, if multiple keys are given, they may be in more than one entity group. Within each entity group, all entities belonging to that group will be deleted in a single transaction. See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
     <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were deleted. This may happen if the keys in the call span multiple entity groups. If the call returns without raising an exception, then all of the entities were deleted successfully.</p>
   </dd>
 
+  <dt id="delete_async"><span class="itemname">delete_async</span>(<span class="argname">models</span>)</dt>
+  <dd>
+    <p>Asynchronously deletes one or more model instances from the datastore. This method is identical to <a href="#delete">db.delete()</a>, except it returns an asynchronous object. Call <a href="../urlfetch/asynchronousrequests.html#get_result">get_result()</a> in the return value to block on the call.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">models</span></dt>
+      <dd>A model instance, a <a href="keyclass.html">Key</a> for an entity, or a list (or other iterable) of model instances or keys of entities to delete.</dd>
+      <dt><span class="argname">config</span></dt>
+      <dd>datastore_rpc.Configuration to use for this request, specified as a keyword argument.</dd>
+    </dl>
+    <p>As with <a href="#put">Model.put()</a>, if multiple keys are given, they may be in more than one entity group. Within each entity group, all entities belonging to that group will be deleted in a single transaction. See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
+    <p>This method returns an object that lets you block on the result of the call.</p>
+    <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were deleted. This may happen if the keys in the call span multiple entity groups. If the call returns without raising an exception, then all of the entities were deleted successfully.</p>
+  </dd>
+
   <dt id="get"><span class="itemname">get</span>(<span class="argname">keys</span>)</dt>
   <dd>
-    <p>Gets the entity or entities for the given key or keys, of any Model.</p>
+    <p>Fetch the specific Model instance with the given key from the datastore. We support Key objects and string keys (we convert them to Key objects automatically).</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">keys</span></dt>
+      <dd>Key you wish to find within the datastore entity collection; or a string key; or a list of Keys or string keys.</dd>
+      <dt><span class="argname">config</span></dt>
+      <dd>The datastore_rpc.Configuration to use for this request.</dd>
+    </dl>
+    <p>If a single key was given, this method returns a Model instance associated with the key if the key exists in the datastore, otherwise None. If a list of keys was given, this method returns a list whose items are either a Model instance or None.</p>
+    <p>See also <a href="modelclass.html#Model_get">Model.get()</a>.</p>
+  </dd>
+
+  <dt id="get_async"><span class="itemname">get_async</span>(<span class="argname">keys</span>)</dt>
+  <dd>
+    <p>Asynchronously fetches the specified Model instance(s) from the datastore. Identical to <a href="#get">db.get()</a>, except it returns an asynchronous object. You can call <a href="../urlfetch/asynchronousrequests.html#get_result">get_result()</a> on the return value to block and the call and get the results.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">keys</span></dt>
       <dd>A <a href="keyclass.html">Key</a> object or a list of <a href="keyclass.html">Key</a> objects.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+      <dt><span class="argname">config</span></dt>
+      <dd>The datastore_rpc.Configuration to use for this request.</dd>
     </dl>
     <p>If one Key is provided, the return value is an instance of the appropriate <a href="modelclass.html">Model</a> class, or <code>None</code> if no entity exists with the given Key. If a list of Keys is provided, the return value is a corresponding list of model instances, with <code>None</code> values when no entity exists for a corresponding Key.</p>
     <p>See also <a href="modelclass.html#Model_get">Model.get()</a>.</p>
@@ -876,19 +1015,31 @@ for results in q:
     <p class="note"><b>Note:</b> If the object's key uses a system-assigned ID and that ID has not already been allocated for the given path and kind, the save will succeed, but the ID is not reserved. An object created in the future may be assigned that ID, and would overwrite the earlier object. For safety, only restore objects in the same application where they existed when they were serialized.</p>
   </dd>
 
-  <dt id="put"><span class="itemname">put</span>(<span class="argname">models</span>)</dt>
+
+
+  <dt id="put_async"><span class="itemname">put_async</span>(<span class="argname">models</span>)</dt>
   <dd>
-    <p>Puts one or more model instances into the datastore.</p>
+    <p>Puts one or more model instances into the datastore. Identical to <a href="#put">db.put()</a>, except it returns an asynchronous object. You can call <a href="../urlfetch/asynchronousrequests.html#get_result">get_result()</a> on the return value to block on the call and get the results.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">models</span></dt>
       <dd>A model instance or a list of model instances to store.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+      <dt><span class="argname">config</span></dt>
+      <dd>The datastore_rpc.Configuration to use for this request,       specified as a keyword argument.</dd>
     </dl>
     <p>If multiple model instances are given, they may be in more than one entity group. Within each entity group, all entities belonging to that group will be written in a single transaction. See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
     <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were written. This may happen if the entities in the call span multiple entity groups. If the call returns without raising an exception, then all of the entities were written successfully.</p>
-    <p>Returns the <a href="keyclass.html">Key</a> object (if one model instance is given) or a list of <a href="keyclass.html">Key</a> objects (if a list of instances is given) that correspond with the stored model instances.</p>
+    <p>This method returns an asynchronous object containing the result of calling <a href="../urlfetch/asynchronousrequests.html#get_result">get_result()</a>.</p>
+  </dd>
+
+  <dt id="put"><span class="itemname">query_descendants</span>(<span class="argname">model_instance</span>)</dt>
+  <dd>
+    <p>Returns a query for all the descendants of a model instance.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">model_instance</span></dt>
+      <dd>The model instance whose descendants you want to find.</dd>
+    </dl>
   </dd>
 
   <dt id="run_in_transaction"><span class="itemname">run_in_transaction</span>(<span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
@@ -920,8 +1071,7 @@ def decrement(key, amount=1):
 
 q = db.GqlQuery("SELECT * FROM Counter WHERE name = :1", "foo")
 counter = q.get()
-db.run_in_transaction(decrement, counter.key(), amount=5)
-</pre>
+db.run_in_transaction(decrement, counter.key(), amount=5)</pre>
   </dd>
 
   <dt id="run_in_transaction_custom_retries"><span class="itemname">run_in_transaction_custom_retries</span>(<span class="argname">retries</span>, <span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
@@ -983,7 +1133,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1021,10 +1171,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

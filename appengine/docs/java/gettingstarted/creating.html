@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="creating.html">Creating a Project</a></li>
     <li><a href="usingusers.html">Using the Users Service</a></li>
     <li><a href="usingjsps.html">Using JSPs</a></li>
-    <li><a href="usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="usingdatastore.html">Using the Datastore</a></li>
     <li><a href="staticfiles.html">Using Static Files</a></li>
     <li><a href="uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">Servlet Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><a href="../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
-     <li><a href="../javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../configyaml/backends.html">Backends Config</a></li>
         <li><a href="../configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../python/overview.html">Overview</a></li>
     <li><a href="../../python/runtime.html">CGI Environment</a></li>
+    <li><a href="../../python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../../python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../../python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../../python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../../python/taskqueue/functions.html">Functions</a></li>
          <li><a href="../../python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/config/index.html">Configuration</a>
       <ul>
             <li><a href="../../python/config/appconfig.html">App Config</a></li>
+    <li><a href="../../python/config/backends.html">Backends Config</a></li>
     <li><a href="../../python/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../python/config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -709,12 +821,12 @@ var logged_in_user_email = null;
 
 
 
-<p>App Engine Java applications use <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a> for interacting with the web server environment.  An application's files, including compiled classes, JARs, static files and configuration files, are arranged in a directory structure using the <a href="http://java.sun.com/j2ee/tutorial/1_3-fcs/doc/WCC3.html">WAR</a> standard layout for Java web applications.  You can use any development process you like to develop web servlets and produce a WAR directory.  (WAR archive files are not yet supported by the SDK.)</p>
+<p>App Engine Java applications use <a href="http://java.sun.com/products/servlet/">the Java Servlet standard</a> for interacting with the web server environment. An application's files, including compiled classes, JARs, static files and configuration files, are arranged in a directory structure using the <a href="http://java.sun.com/j2ee/tutorial/1_3-fcs/doc/WCC3.html">WAR</a> standard layout for Java web applications. You can use any development process you like to develop web servlets and produce a WAR directory. (WAR archive files are not yet supported by the SDK.)</p>
 
 
 <h2>The Project Directory</h2>
 
-<p>For this tutorial, we will use a single directory named <code>Guestbook/</code> for all project files.  A subdirectory named <code>src/</code> contains the Java source code, and a subdirectory named <code>war/</code> contains the complete application arranged in the WAR format.  Our build process compiles the Java source files and puts the compiled classes in the appropriate location in <code>war/</code>.</p>
+<p>For this tutorial, we will use a single directory named <code>Guestbook/</code> for all project files. A subdirectory named <code>src/</code> contains the Java source code, and a subdirectory named <code>war/</code> contains the complete application arranged in the WAR format. Our build process compiles the Java source files and puts the compiled classes in the appropriate location in <code>war/</code>.</p>
 
 <p>The complete project directory looks like this:</p>
 
@@ -734,22 +846,22 @@ Guestbook/
         <i>...compiled classes...</i>
 </pre>
 
-<p>If you are using Eclipse, create a new project by clicking the New Web Application Project button in the toolbar: <img src="../tools/eclipse/new_app_button.png" width="20" height="20" alt="The New Web Application Project button." />  Give the project a "Project name" of <code>Guestbook</code> and a "Package" of <code>guestbook</code>.  Uncheck "Use Google Web Toolkit," and ensure "Use Google App Engine" is checked.  See <a href="../tools/eclipse.html">Using the Google Plugin for Eclipse</a> for more information.  The wizard creates the directory structure, and the files described below.</p>
+<p>If you are using Eclipse, create a new project by clicking the New Web Application Project button in the toolbar: <img src="../tools/eclipse/new_app_button.png" width="20" height="20" alt="The New Web Application Project button." />  Give the project a "Project name" of <code>Guestbook</code> and a "Package" of <code>guestbook</code>. Uncheck "Use Google Web Toolkit," and ensure "Use Google App Engine" is checked. See <a href="../tools/eclipse.html">Using the Google Plugin for Eclipse</a> for more information. The wizard creates the directory structure, and the files described below.</p>
 
-<p>If you are not using Eclipse, create the directory structure described above.  As you read each of the files described in this section, create the files using the given locations and names.</p>
+<p>If you are not using Eclipse, create the directory structure described above. As you read each of the files described in this section, create the files using the given locations and names.</p>
 
 <p>You can also copy the new project template included with the SDK, in the <code>appengine-java-sdk/demos/new_project_template/</code> directory.</p>
 
 
 <h2>The Servlet Class</h2>
 
-<p>App Engine Java applications use <a href="http://java.sun.com/products/servlet/">the Java Servlet API</a> to interact with the web server.  An HTTP servlet is an application class that can process and respond to web requests.  This class extends either the <a href="http://java.sun.com/products/servlet/2.5/docs/servlet-2_5-mr2/javax/servlet/GenericServlet.html">javax.servlet.GenericServlet</a> class or the <a href="http://java.sun.com/products/servlet/2.5/docs/servlet-2_5-mr2/javax/servlet/http/HttpServlet.html">javax.servlet.http.HttpServlet</a> class.</p>
+<p>App Engine Java applications use <a href="http://java.sun.com/products/servlet/">the Java Servlet API</a> to interact with the web server. An HTTP servlet is an application class that can process and respond to web requests. This class extends either the <a href="http://java.sun.com/products/servlet/2.5/docs/servlet-2_5-mr2/javax/servlet/GenericServlet.html">javax.servlet.GenericServlet</a> class or the <a href="http://java.sun.com/products/servlet/2.5/docs/servlet-2_5-mr2/javax/servlet/http/HttpServlet.html">javax.servlet.http.HttpServlet</a> class.</p>
 
 <p>Our guest book project begins with one servlet class, a simple servlet that displays a message.</p>
 
 <p>If you are not using the Eclipse plugin, create the directories for the path <code>src/guestbook/</code>, then create the servlet class file described below.</p>
 
-<p>In the directory <code>src/guestbook/</code>, a file named <code>GuestbookServlet.java</code> has the following contents:</p>
+<p>In the directory <code>src/guestbook/</code>, make a file named GuestbookServlet.java with the following contents:</p>
 
 <pre class="prettyprint">
 package guestbook;
@@ -769,7 +881,7 @@ public class GuestbookServlet extends HttpServlet {
 
 <h2>The web.xml File</h2>
 
-<p>When the web server receives a request, it determines which servlet class to call using a configuration file known as the "web application deployment descriptor."  This file is named <code>web.xml</code>, and resides in the <code>war/WEB-INF/</code> directory in the WAR.  <code>WEB-INF/</code> and <code>web.xml</code> are part of the servlet specification.</p>
+<p>When the web server receives a request, it determines which servlet class to call using a configuration file known as the "web application deployment descriptor."  This file is named <code>web.xml</code>, and resides in the <code>war/WEB-INF/</code> directory in the WAR. <code>WEB-INF/</code> and <code>web.xml</code> are part of the servlet specification.</p>
 
 <p>In the directory <code>war/WEB-INF/</code>, a file named <code>web.xml</code> has the following contents:</p>
 
@@ -794,12 +906,11 @@ public class GuestbookServlet extends HttpServlet {
 &lt;/web-app&gt;
 </pre>
 
-<p>This <code>web.xml</code> file declares a servlet named <code>guestbook</code>, and maps it to the URL path <code>/guestbook</code>.  It also says that whenever the user fetches a URL path that is not already mapped to a servlet and represents a directory path inside the application's WAR, the server should check for a file named <code>index.html</code> in that directory and serve it if found.</p>
-
+<p>This <code>web.xml</code> file declares a servlet named <code>guestbook</code>, and maps it to the URL path <code>/guestbook</code>. It also says that, whenever the user fetches a URL path that is not already mapped to a servlet and represents a directory path inside the application's WAR, the server should check for a file named <code>index.html</code> in that directory and serve it if found.</p>
 
 <h2>The appengine-web.xml File</h2>
 
-<p>App Engine needs one additional configuration file to figure out how to deploy and run the application.  This file is named <code>appengine-web.xml</code>, and resides in <code>WEB-INF/</code> alongside <code>web.xml</code>.  It includes the registered ID of your application (Eclipse creates this with an empty ID for you to fill in later), the version number of your application, and lists of files that ought to be treated as static files (such as images and CSS) and resource files (such as JSPs and other application data).</p>
+<p>App Engine needs one additional configuration file to figure out how to deploy and run the application. This file is named <code>appengine-web.xml</code>, and resides in <code>WEB-INF/</code> alongside <code>web.xml</code>. It includes the registered ID of your application (Eclipse creates this with an empty ID for you to fill in later), the version number of your application, and lists of files that ought to be treated as static files (such as images and CSS) and resource files (such as JSPs and other application data).</p>
 
 <p>In the directory <code>war/WEB-INF/</code>, a file named <code>appengine-web.xml</code> has the following contents:</p>
 
@@ -811,21 +922,21 @@ public class GuestbookServlet extends HttpServlet {
 &lt;/appengine-web-app&gt;
 </pre>
 
-<p><code>appengine-web.xml</code> is specific to App Engine, and is not part of the servlet standard.  You can find XML schema files describing the format of this file in the SDK, in the <code>appengine-java-sdk/docs/</code> directory.  See <a href="../config/appconfig.html">Configuring an App</a> for more information about this file.</p>
+<p><code>appengine-web.xml</code> is specific to App Engine, and is not part of the servlet standard. You can find XML schema files describing the format of this file in the SDK, in the <code>appengine-java-sdk/docs/</code> directory. See <a href="../config/appconfig.html">Configuring an App</a> for more information about this file.</p>
 
 
 <h2>Running the Project</h2>
 
-<p>The App Engine SDK includes a web server application you can use to test your application.  The server simulates the App Engine environment and services, including sandbox restrictions, the datastore, and the services.</p>
+<p>The App Engine SDK includes a web server application you can use to test your application. The server simulates the App Engine environment and services, including sandbox restrictions, the datastore, and the services.</p>
 
-<p>If you are using Eclipse, you can start the development server within the Eclipse debugger.  Make sure the project ("Guestbook") is selected, then in the <b>Run</b> menu, select <b>Debug As &gt; Web Application</b>.  See <a href="../tools/eclipse.html">Using the Google Plugin for Eclipse</a> for details on creating the debug configuration.</p>
+<p>If you are using Eclipse, you can start the development server within the Eclipse debugger. Make sure the project ("Guestbook") is selected, then in the <b>Run</b> menu, select <b>Debug As &gt; Web Application</b>. See <a href="../tools/eclipse.html">Using the Google Plugin for Eclipse</a> for details on creating the debug configuration.</p>
 
-<p>If you are not using Eclipse, see <a href="../tools/ant.html">Using Apache Ant</a> for a build script that can build the project and start the development server.  To start the server with this build script, enter the following command: <code>ant runserver</code>  To stop the server, hit Control-C.</p>
+<p>If you are not using Eclipse, see <a href="../tools/ant.html">Using Apache Ant</a> for a build script that can build the project and start the development server. To start the server with this build script, enter the following command: <code>ant runserver</code>  To stop the server, hit Control-C.</p>
 
 
 <h2>Testing the Application</h2>
 
-<p>Start the server, then visit the server's URL in your browser.  If you're using Eclipse and the Google Eclipse plugin, the server runs using port 8888 by default:</p>
+<p>Start the server, then visit the server's URL in your browser. If you're using Eclipse and the Google Eclipse plugin, the server runs using port 8888 by default:</p>
 
 <ul class="nolist"><li><a target="_blank" href="http://localhost:8888/guestbook">http://localhost:8888/guestbook</a></li></ul>
 
@@ -842,7 +953,7 @@ public class GuestbookServlet extends HttpServlet {
 
 <p>You now have a complete App Engine application! You could deploy this simple greeting right now and share it with users worldwide.</p>
 
-<p>This app displays a generic greeting to all users.  Let's add a feature to customize the greeting for each visitor using Google Accounts.</p>
+<p>This app displays a generic greeting to all users. Let's add a feature to customize the greeting for each visitor using Google Accounts.</p>
 
 <p>Continue to <a href="usingusers.html">Using the Users Service</a>.</p>
 
@@ -884,7 +995,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -922,10 +1033,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../taskqueue/functions.html">Functions</a></li>
          <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -738,9 +850,11 @@ var logged_in_user_email = null;
 
 <h2 id="Overview">Overview</h2>
 
-<p>Objects in the App Engine datastore are known as <i>entities</i>. Each entity in the datastore has a <i>key</i>, an identifier unique to the entity across all entities. A key has several components: a <i>path</i>, an optional part that specifies another entity as this entity's parent, the <i>kind</i> of the entity, and either a <i>name</i> assigned to the entity by the app or a <i>numeric ID</i> assigned by the datastore.</p>
-
-<p>Each entity has one or more <i>properties</i>, named values of one of several data types. Supported data types include integers, floating point values, strings, dates, binary data, and others. A property can have one or more values, and a property with multiple values can have values of mixed types.</p>
+<p>Objects in the App Engine datastore are known as <i>entities</i>. Each entity in the datastore has a <i>key</i> that uniquely identifies the entity across all entities. A key has several components:</p>
+<ul><li>The <i>kind</i> of the entity. (See <a href="#Kinds_IDs_and_Names">Kinds, IDs, and Names</a>.)</li>
+<li>An identifier that is either a <i>name</i> assigned to the entity by the app or a <i>numeric ID</i> assigned by the datastore. (See <a href="#Kinds_IDs_and_Names">Kinds, IDs, and Names</a>.)</li>
+<li>A <i>path</i>, an optional part that specifies another entity as this entity's parent. (See <a href="#Entity_Groups_and_Ancestor_Paths">Entity Groups and Ancestor Paths</a>.)</li></ul>
+<p>Each entity has one or more <i>properties</i>, named values of one of several data types. Supported data types include integers, floating point values, strings, dates, binary data, and others. A property can have one or more values, and a property with multiple values can have values of mixed types. For details, see <a href="#Properties_and_Value_Types">Properties and Value Types</a>.</p>
 
 <p>An app can fetch an entity from the datastore using its key, or it can perform a query based on the entity's key or property values. After an entity has been created, its key can't be changed. For more information on queries, see the <a href="queries.html">Queries and Indexes</a> section.</p>
 
@@ -785,7 +899,23 @@ class Employee(db.Model):
 
 <p>Each datastore entity is of a particular kind, which is simply a name specified by the app. A kind categorizes the entity for the purpose of queries. For example, a Human Resources application might represent each employee at a company with an entity of the kind "Employee."  Unlike rows in a table, two entities of the same kind need not have the same properties. If required, an app can establish such a restriction in its data model.</p>
 
-<p>Part of each entity's unique key is its identifier. An app can assign its own identifier (called the <i>key name</i>) for use in the key, or it can have the datastore assign a numeric ID when the entity is first stored. Because the identifier is part of the key, once the entity has been created, its ID or name cannot be changed.</p>
+<p>In addition to a kind, each entity has an identifier. The identifier is assigned in one of two ways:</p>
+<ul><li>An app can assign its own identifier (called the <i>key name</i>) for use in the key.</li>
+<li>An app can have the datastore assign a numeric ID when the entity is first stored. The datastore will never pick the same ID for two entities with the
+same parent, or for two entities without a parent. Be aware, however,
+that the datastore is not guaranteed to avoid app-assigned IDs. It is
+possible, though unlikely, that the datastore will assign a numeric ID
+that will cause a conflict with an entity with an app-assigned ID.
+
+The only way to avoid this problem is to have
+ your app use <a href="functions.html">allocate_ids()</a>
+ to obtain a batch of IDs. The datastore's automatic ID generator will
+ not use IDs that have been obtained using <code>allocate_ids()</code>, so your app can use these IDs without conflict.
+
+
+ </li></ul>
+
+<p>Because the identifier is part of the key, you cannot change the key name (or datastore-assigned ID) once the entity has been created.</p>
 
 
 
@@ -810,16 +940,13 @@ class Employee(db.Model):
 <p class="note"><b>Note:</b> In addition to arguments such as <code>key_name</code>, the <code>Model</code> constructor accepts initial values for properties as keyword arguments. This makes it inconvenient to have a property named <code>key_name</code>. For more information, see <a href="modelclass.html#Disallowed_Property_Names">The Model Class: Disallowed Property Names</a>.</p>
 
 
-
-
-
 <h2 id="Entity_Groups_and_Ancestor_Paths">Entity Groups and Ancestor Paths</h2>
 
 <p>When you use the App Engine datastore, every attempt to create, update, or delete an entity happens in a <i>transaction</i>. A transaction ensures that every change made to the entity is saved to the datastore, or, in the case of failure, none of the changes are made. This ensures consistency of data within an entity. This section discusses transactions briefly. Details on transactions are available in the <a href="transactions.html">Transactions</a> section.</p>
  
 <p>You can perform a single transaction with multiple entities as long as the entities belong to the same <i>entity group</i>. When you design your data model, you should determine which entities you want to be able to process in the same transaction. Then, when you create each entity, you declare that it belongs to the same group as another entity. This tells App Engine that the entities will be updated together, so they can be stored in a way that supports transactions. You define entity groups by specifying a hierarchy among entities. All the entities fetched, created, updated, or deleted in a single transaction must be in the same entity group.
 
-<p>In the High Replication Datastore, entity groups are also a unit of consistency. The only way to guarantee that the results of a query are strongly consistent is to use an ancestor query.</p>
+<p>In the <a href="hr/overview.html">High Replication Datastore</a>, entity groups are also a unit of consistency. The only way to guarantee that the results of a query are strongly consistent is to use an ancestor query.</p>
  
 <p>To create an entity in a group, you declare that another entity is the <i>parent</i> of the new entity when you create it. An entity created without a parent is a <i>root entity</i>. A root entity without any children is an entity group by itself. Each entity's key contains a path of entities starting with the entity group root, which is just the entity itself when the entity has no parent. This path is an essential part of the entity's complete key. A complete key can be represented by the kind and ID (or key name) of each entity in the path.</p> 
 
@@ -1198,7 +1325,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1236,10 +1363,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

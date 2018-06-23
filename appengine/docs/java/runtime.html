@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="overview.html">Overview</a></li>
     <li><a href="runtime.html">Servlet Environment</a></li>
+    <li><a href="backends/index.html">Backends</a>
+      <ul>
+        <li><a href="backends/overview.html">Overview</a></li>
+<li><a href="com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="taskqueue/overview.html">Overview</a></li>
-     <li><a href="javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="config/appconfig.html">App Config</a></li>
+    <li><a href="config/backends.html">Backends Config</a></li>
     <li><a href="config/indexconfig.html">Index Config</a></li>
     <li><a href="config/cron.html">Scheduled Tasks</a></li>
     <li><a href="config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="configyaml/backends.html">Backends Config</a></li>
         <li><a href="configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../python/overview.html">Overview</a></li>
     <li><a href="../python/runtime.html">CGI Environment</a></li>
+    <li><a href="../python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../python/datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../python/taskqueue/functions.html">Functions</a></li>
          <li><a href="../python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../python/config/index.html">Configuration</a>
       <ul>
             <li><a href="../python/config/appconfig.html">App Config</a></li>
+    <li><a href="../python/config/backends.html">Backends Config</a></li>
     <li><a href="../python/config/indexconfig.html">Index Config</a></li>
     <li><a href="../python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../python/config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../go/overview.html">Overview</a></li>
+    <li><a href="../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../go/mail/overview.html">Overview</a></li>
+     <li><a href="../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../go/users/overview.html">Overview</a></li>
+     <li><a href="../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -769,7 +881,7 @@ var logged_in_user_email = null;
 
 <p>App Engine knows to use the Java runtime environment for your application when you use the AppCfg tool from the Java SDK to upload the app.</p>
 
-<p>As of this writing, there is only one version of the App Engine Java API. This API is represented by the <code>appengine-api-*.jar</code> included with the SDK (where <code>*</code> represents the version of the API and the SDK). You select the version of the API your application uses by including this JAR in the application's <code>WEB-INF/lib/</code> directory. If a new version of the Java runtime environment is released that introduces changes that are not compatible with existing apps, that environment will have a new version number. Your application will continue to use the previous version until you replace the JAR with the new version (from a newer SDK) and re-upload the app.</p>
+<p>There is only one version of the App Engine Java API. This API is represented by the <code>appengine-api-*.jar</code> included with the SDK (where <code>*</code> represents the version of the API and the SDK). You select the version of the API your application uses by including this JAR in the application's <code>WEB-INF/lib/</code> directory. If a new version of the Java runtime environment is released that introduces changes that are not compatible with existing apps, that environment will have a new version number. Your application will continue to use the previous version until you replace the JAR with the new version (from a newer SDK) and re-upload the app.</p>
 
 
 
@@ -786,15 +898,16 @@ var logged_in_user_email = null;
 
 <p>The domain name used for the request is included in the request data passed to the application. If you want your app to respond differently depending on the domain name used to access it (such as to restrict access to certain domains, or redirect to an official domain), you can check the request data (such as the <code>Host</code> request header) for the domain from within the application code and respond accordingly.</p>
 
+<p>If your app uses <a href="backends/index.html">backends</a>, you can address requests to a specific backend and a specific instance with that backend. For more information about backend addressability, please see <a href="backends/overview.html#/appengine/docs/python/backends/overview.html#Properties_of_Backends">Properties of Backends</a>.</p>
 
 
 <h2 id="Requests_and_Servlets">Requests and Servlets</h2>
 
-<p>When App Engine receives a web request for your application, it invokes the servlet that corresponds to the URL, as described in the application's <a href="config/webxml.html">deployment descriptor</a> (the <code>web.xml</code> file in the <code>WEB-INF/</code> directory). It uses the <a href="http://java.sun.com/products/servlet/">Java Servlet API</a> to provide the request data to the servlet, and accept the response data.</p>
+<p>When App Engine receives a web request for your application, it invokes the servlet that corresponds to the URL, as described in the application's <a href="config/webxml.html">deployment descriptor</a> (the <code>web.xml</code> file in the <code>WEB-INF/</code> directory). It uses the <a href="http://java.sun.com/products/servlet/">Java Servlet API</a> to provide the request data to the servlet, and accept the response data. If your application uses <a href="backends/index.html">backends</a>, it invokes the servlet defined in <code>backends.xml</code> or <code>backends.yaml</code>, depending on which configuration file your application uses. See <a href="config/backends.html">Backend Configuration</a> for more information.</p>
 
 <p>App Engine uses multiple web servers to run your application, and automatically adjusts the number of servers it is using to handle requests reliably. A given request may be routed to any server, and it may not be the same server that handled a previous request from the same user.</p>
 
-<p>By default, each web server processes only one request at a time. If you mark your application as thread-safe, App Engine may dispatch multiple requests to each web server in parallel. To do so, simply add a <code>&lt;threadsafe&gt;true&lt;/threadsafe&gt;</code> element to <code>appengine-web.xml</code> as described in <a href="Using_Concurrent_Requests">Using Concurrent Requests</a>.</p>
+<p>By default, each web server processes only one request at a time. If you mark your application as thread-safe, App Engine may dispatch multiple requests to each web server in parallel. To do so, simply add a <code>&lt;threadsafe&gt;true&lt;/threadsafe&gt;</code> element to <code>appengine-web.xml</code> as described in <a href="config/appconfig.html#Using_Concurrent_Requests">Using Concurrent Requests</a>.</p>
 
 <p>The following example servlet class displays a simple message on the user's browser.</p>
 
@@ -842,6 +955,9 @@ public class MyServlet extends HttpServlet {
 <p>While a request can take as long as 30 seconds to respond, App Engine is optimized for applications with short-lived requests, typically those that take a few hundred milliseconds. An efficient app responds quickly for the majority of requests. An app that doesn't will not scale well with App Engine's infrastructure.</p>
 
 
+<p><a href="backends/index.html">Backends</a> allow you to avoid this request timer; with backends, there is no time limit for generating and returning a request.</p>
+
+
 <h2 id="The_Sandbox">The Sandbox</h2>
 
 <p>To allow App Engine to distribute requests for applications across multiple web servers, and to prevent one application from interfering with another, the application runs in a restricted "sandbox" environment. In this environment, the application can execute code, store and query data in the App Engine datastore, use the App Engine mail, URL fetch and users services, and examine the user's web request and prepare the response.</p>
@@ -850,11 +966,8 @@ public class MyServlet extends HttpServlet {
 <ul class="doublespace">
 
 <li>write to the filesystem. Applications must use <a href="datastore/index.html">the App Engine datastore</a> for storing persistent data. Reading from the filesystem is allowed, and all application files uploaded with the application are available.</li>
-
 <li>open a socket or access another host directly. An application can use <a href="urlfetch/index.html">the App Engine URL fetch service</a> to make HTTP and HTTPS requests to other hosts on ports 80 and 443, respectively.</li>
-
 <li>spawn a sub-process or thread. A web request to an application must be handled in a single process within a few seconds. Processes that take a very long time to respond are terminated to avoid overloading the web server.</li>
-
 <li>make other kinds of system calls.</li>
 
 </ul>
@@ -958,10 +1071,10 @@ public class MyServlet extends HttpServlet {
 
 <p>App Engine sets two system properties that identify the runtime environment:</p>
 
-<ul>
+<ol>
   <li><code>com.google.appengine.runtime.environment</code> is <code>"Production"</code> when running on App Engine, and <code>"Development"</code> when running in the development server.</li>
   <li><code>com.google.appengine.runtime.version</code> is the version ID of the runtime environment, such as <code>"1.3.0"</code>.
-</ul>
+</ol>
 
 <p>In addition to using <code>System.getProperty()</code>, you can access system properties using our <a href="javadoc/com/google/appengine/api/utils/SystemProperty.html">type-safe API</a>. For example:</p>
 
@@ -1023,7 +1136,7 @@ if (SystemProperty.environment.value() ==
   </tr>
   <tr>
     <td>request size</td>
-    <td>10 megabytes</td>
+    <td>32 megabytes</td>
   </tr>
   <tr>
     <td>response size</td>
@@ -1089,7 +1202,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1127,10 +1240,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../taskqueue/functions.html">Functions</a></li>
          <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -1059,22 +1171,10 @@ results = q.fetch(limit=5, offest=5)</pre>
 
 <p>A query with a filter or sort order on a property will never match an entity whose value for the property is a <code>Text</code> or <code>Blob</code>, or which was written with that property marked as not indexed. Properties with such values behave as if the property is not set with regard to query filters and sort orders.</p>
 
-<p>If you have a property that you know you will not need to filter or sort by, make it an unindexed property. This will decrease the amount of CPU your writes consume because the datastore will not need to maintain index entries for the property. To specify that a property not be indexed, use <a href="../../java/javadoc/com/google/appengine/api/datastore/Entity.html#setUnindexedProperty(java.lang.String,%20java.lang.Object)">Entity.setUnindexedProperty()</a>:</p>
-<pre class="prettyprint">
-DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-Entity tom = new Entity("Person", "tom");
-tom.setProperty("age", 32);
 
-Entity lucy = new Entity("Person", "lucy");
-lucy.setUnindexedProperty("age", 29);
+<p>If you have a property that you know you will not need to filter or sort by, make it an unindexed property. This will decrease the amount of CPU your writes consume because the datastore will not need to maintain index entries for the property. To specify that a property not be indexed, set <code>index=False</code> in the <a href="propertyclass.html#Property">Property constructor</a>.</p>
 
-datastore.put(Arrays.asList(tom, lucy));
 
-Query query = new Query("Person");
-query.addFilter("age", FilterOperator.GREATER_THAN, 25);
-
-// Returns tom but not lucy because her age is unindexed
-List&lt;Entity&gt; results = datastore.prepare(query).asList(	FetchOptions.Builder.withDefaults());</pre>
 
 <h3>Mixed Types</h3>
 
@@ -1085,7 +1185,7 @@ List&lt;Entity&gt; results = datastore.prepare(query).asList(	FetchOptions.Build
 <a name="which_queries_need_indexes"></a>
 <h3>Which Queries Need Indexes</h3>
 
-<p>App Engine builds indexes for several simple queries by default. For other queries, the application must specify the indexes it needs in a configuration file named <code>index.yaml</code>. If the application running under App Engine tries to perform a query for which there is no corresponding index (either provided by default or described in <code>index.yaml</code>), the query will fail with a <a href="../../java/javadoc/com/google/appengine/api/datastore/DatastoreNeedIndexException.html">DatastoreNeedIndexException</a>.</p>
+<p>App Engine builds indexes for several simple queries by default. For other queries, the application must specify the indexes it needs in a configuration file named <code>index.yaml</code>. If the application running under App Engine tries to perform a query for which there is no corresponding index (either provided by default or described in <code>index.yaml</code>), the query will fail <a href="exceptions.html#NeedIndexError">NeedIndexError</a>.</p>
 
 
 
@@ -1194,7 +1294,7 @@ SELECT * FROM Person WHERE last_name = "Blair"
 
 <p>Keys are ordered first by parent path, then by kind, then by key name or ID. Kinds and key names are strings and are ordered by byte value. IDs are integers and are ordered numerically. If entities of the same parent and kind use a mix of key name strings and numeric IDs, entities with numeric IDs are considered to be less than entities with key name strings. Elements of the parent path are compared similarly: by kind (string), then by key name (string), or ID (number).</p>
 
-<p>Queries involving keys use indexes just like queries involving properties. Queries on keys require custom indexes in the same cases as with properties, with a couple of exceptions: inequality filters or an ascending sort order on <a href="../../java/javadoc/com/google/appengine/api/datastore/Entity.html#KEY_RESERVED_PROPERTY">Entity.KEY_RESERVED_PROPERTY</a> do not require a custom index, but a descending sort order on <code>Entity.KEY_RESERVED_PROPERTY</code> does. As with all queries, the development web server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
+<p>Queries involving keys use indexes just like queries involving properties. Queries on keys require custom indexes in the same cases as with properties, with a couple of exceptions: inequality filters or an ascending sort order on <code>__key__</code> do not require a custom index, but a descending sort order on <code>Entity.KEY_RESERVED_PROPERTY</code><code>__key__</code> does. As with all queries, the development server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
 
 
 <h2 id="Query_Cursors">Query Cursors</h2>
@@ -1258,7 +1358,7 @@ for person in people:
 
 <p>You can set the read policy (strong consistency vs. eventual consistency) and the datastore call deadline when you execute a query. To do this, create a configuration object with these options set, then pass the object to the method that performs the query.</p>
 
-<p>To create the configuration object, you call the function <a href="functions.html#create_rpc">create_rpc()</a> in the <code>google.appengine.ext.db</code> module. The <code>read_policy</code> argument specifies the read policy, as either <code>db.EVENTUAL_CONSISTENCY</code> or <code>db.STRONG_CONSISTENCY</code>. (The default is strong consistency.) The <code>deadline</code> argument specifies the datastore call deadline, as a number of seconds.</p>
+<p>To create the configuration object, you call the function <a href="functions.html#create_config">create_config()</a> in the <code>google.appengine.ext.db</code> module. The <code>read_policy</code> argument specifies the read policy, as either <code>db.EVENTUAL_CONSISTENCY</code> or <code>db.STRONG_CONSISTENCY</code>. (The default is strong consistency.) The <code>deadline</code> argument specifies the datastore call deadline, as a number of seconds.</p>
 
 <pre class="prettyprint">
 config = db.create_config(deadline=5, read_policy=db.EVENTUAL_CONSISTENCY)
@@ -1322,7 +1422,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1360,10 +1460,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

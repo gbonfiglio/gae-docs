@@ -95,6 +95,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -230,6 +232,35 @@ var logged_in_user_email = null;
 
 
 
+<iframe id="forum_embed_google-appengine-go"
+        src="javascript:void(0)"
+        scrolling="no"
+        frameborder="0"
+        width="100%"
+        height="175">
+</iframe>
+<script type="text/javascript">
+
+  var contentUrl = window.location.protocol + "//" + window.location.host +
+      encodeURIComponent('/appengine/forum/go-forum.html');
+  document.getElementById('forum_embed_google-appengine-go').src =
+      'https://groups.google.com/forum/embed/toc?forums=google-appengine-go' +
+      '&domain=&topiccount=5&contenturl=' + contentUrl;
+ 
+</script>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 <iframe id="forum_embed_google-appengine-java"
         src="javascript:void(0)"
@@ -249,7 +280,6 @@ var logged_in_user_email = null;
 </script>
  
  
-
 
 
 
@@ -356,7 +386,7 @@ The schedule is as follows:
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -394,10 +424,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

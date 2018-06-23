@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="index.html">Task Queues</a>
           <ul>
                  <li><a href="overview.html">Overview</a></li>
+     <li><a href="overview-push.html">Using Push Queues</a></li>
+     <li><a href="overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="tasks.html">Task Class</a></li>
+         <li><a href="taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="queues.html">Queue Class</a></li>
+         <li><a href="rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="functions.html">Functions</a></li>
          <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -710,9 +822,15 @@ var logged_in_user_email = null;
 
 
 <p>
-An instance of the Task class describes a unit of offline work, consisting of
-data payload and worker URL, which will be executed asynchronously by App
-Engine.
+  Enables an application to queue background work. Work is done through webhooks that process tasks pushed from a <a href="../../appengine/python/taskqueue/overview-push.html">push queue</a>, or workers that manually pull tasks from a <a href="../../appengine/python/taskqueue/overview-pull.html">pull queue</a>.
+</p>
+<p>
+  In push queues, Tasks execute in best-effort order of ETA. Webhooks that fail cause tasks to be retried at a later time. You can <a href="../config/queue.html#Configuring_Retry_Attempts_for_Failed_Tasks">configure the rate and number</a> of retries for failed tasks. You can specify webhook URLs directly for push tasks. You can also use the default URL scheme, which translates task names into URLs relative to a queue's base path. A default queue is also provided for simple usage.
+<p>
+  In pull queues, workers are responsible for leasing tasks, processing them, and deleting them after processing. You can <a href="../config/queue.html#Configuring_Retry_Attempts_for_Failed_Tasks">configure the number of task retries</a>, which is based on how many times the task has been leased. You can <a href="../config/queue.html">define multiple queues</a> with independent throttling controls.
+</p>
+<p>
+
 </p>
 
 <p><code>Task</code> is provided by the <code>google.appengine.api.taskqueue</code> module.</p>
@@ -723,6 +841,7 @@ Engine.
   <li>Properties
     <ul>
       <li><a href="#Task_on_queue_url">on_queue_url</a></li>
+      <li><a href="#Task_eta_posix">eta_posix</a></li>
       <li><a href="#Task_eta">eta</a></li>
       <li><a href="#Task_headers">headers</a></li>
       <li><a href="#Task_method">method</a></li>
@@ -730,12 +849,16 @@ Engine.
       <li><a href="#Task_payload">payload</a></li>
       <li><a href="#Task_size">size</a></li>
       <li><a href="#Task_url">url</a></li>
+      <li><a href="#Task_retry_options">retry_options</a></li>
+      <li><a href="#Task_retry_count">retry_count</a></li>
       <li><a href="#Task_was_enqueued">was_enqueued</a></li>
+      <li><a href="#Task_was_deleted">was_deleted</a></li>
     </ul>
   </li>
   <li>Instance methods:
     <ul>
       <li><a href="#Task_add">add</a></li>
+      <li><a href="Task_extract_params">extract_params</a></li>
     </ul>
   </li>
 </ul>
@@ -744,27 +867,11 @@ Engine.
 <h2 id="Introduction">Introduction</h2>
 
 <p>
-The Task class encapsulates a description of offline work, modeled as a web
-hook. This description includes two components:
-  <ul>
-    <li>
-      <i>data payload</i> - parameters for the work, modeled as an HTTP
-      request body.
-    </li>
-    <li>
-      <i>code reference</i> - a worker URL which, when invoked, will execute the
-        code to implement the request.
-    </li>
-   </ul>
- </p>
+The Task class encapsulates a description of offline work in a <a href="overview-push.html">push queue</a> or a <a href="overview-push.html">pull queue</a>. In push queues, this work is modeled as a web hook and includes a URL endpoint in your application, and an optional task payload.
 
-<p>
-You set the various properties for a Task in the constructor, describing
-the input (via headers, payload) and the URL to which the input must be sent to
-achieve the work. Once the Task object is instantiated, you insert that task into a Queue. A
-particular Task instance may only be inserted into one queue. At some point
-after insertion, App Engine will execute the Task.
-</p>
+<p>In pull queues, the task's payload is fetched from the queue by the task consumer when the task is leased.</p>
+
+<p>You set the various properties for a task in the constructor. Once the Task object is instantiated, you insert that task into a queue. A Task instance can be inserted into one queue only.</p>
 
 <h2>Constructor</h2>
 
@@ -776,123 +883,178 @@ after insertion, App Engine will execute the Task.
 
   <dd>
     <p>
-      Instantiates a Task object which will
-      describe a unit of offline work. The instance may be inserted into a
-      queue, so that it will be executed asynchronously by App Engine.
+      Instantiates a Task object which describes a unit of offline work. The instance may be inserted into a push or pull queue for processing based on the requirements of the application.
     </p>
 
     <p>
-      All arguments are optional.
+      All arguments are optional. Some arguments have different meanings in push queues and pull queues. The following table summarizes the meaning of each  argument in each type of queue.
     <p>
 
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">payload</span></dt>
-      <dd>
-       The payload data for this Task that will be delivered to the webhook as
-       the HTTP request body. May be a string containing binary data.
-      </dd>
-      <dt><span class="argname">countdown</span></dt>
-      <dd>
-        Number of seconds into the future that this Task should execute,
-        measured from time of insertion. Currently defaults to zero.
-      </dd>
-      <dt><span class="argname">eta</span></dt>
-      <dd>
-        Absolute time when the Task should execute. May not be
-        specified if 'countdown' is also supplied. Must be a
-        datetime.datetime object. If no time zone is specified in the
-        datetime object, UTC is assumed.
-      </dd>
-      <dt><span class="argname">headers</span></dt>
-      <dd>
-        <p>
-          Dictionary of headers to pass to the webhook. Values in the dictionary
-          may be iterable to indicate repeated header fields.
-        </p>
-        <p>
-          If a <code>Content-Type</code> header is not specified, a default of <code>text/plain</code> will be used.
-        </p>
-      </dd>
-      <dt><span class="argname">method</span></dt>
-      <dd>
-        Method to use when accessing the webhook. Defaults to 'POST'.
-      </dd>
-      <dt><span class="argname">name</span></dt>
-      <dd>
-        Name to give the Task; if not specified, a name will be auto-generated
-        when added to a queue and assigned to this object. Task name may only
-        contain the following characters: letters, numbers, hyphen.  A task name can be up to 500 characters in length.
-      </dd>
-      <dt><span class="argname">params</span></dt>
-      <dd>
-        Dictionary of parameters to use for this Task. Values in the dictionary
-        may be iterable to indicate repeated parameters. May not be specified for
-        a POST request if <span class="argname">payload</span> is already
-        specified. For POST requests, these params will be encoded as
-        'application/x-www-form-urlencoded' and set to the payload; for all
-        other methods, the parameters will be converted to a query string. May
-        not be specified if the URL already contains a query string and the
-        <span class="argname">method</span> is GET.
-      </dd>
-      <dt><span class="argname">url</span></dt>
-      <dd>
-        Relative URL where the webhook that should handle this task is located
-        for this application. May have a query string unless
-        <span class="argname">method</span> is POST.
-      </dd>
-    </dl>
 
-  </dd>
+<table width=900>
+  <tr>
+    <th>Task class argument</th>
+    <th>Description</th>
+    <th>Functionality in Push Queues</th>
+    <th>Functionality in Pull Queues</th>
+  <tr>
+    <td id="payload_arg"><p><code>payload</code></p></td>
+    <td><p>The data payload providing the parameters for this task's work. Allowed only for <code>POST</code>, <code>PUT</code>, and <code>PULL</code> methods.</p></td>
+    <td><p>Payload is delivered to the webhook or backend in the body of an HTTP request.</p></td>
+    <td><p>Payload is fetched by workers as part of the response from <a href="queues.html#Queue_lease_tasks">lease_tasks()</a>.</p></td>
+  </tr>
+  <tr>
+    <td id="name_arg"><p><code>name</code></p></td>
+    <td><p>The task's name.</p></td>
+    <td><p>If you don't specify a task name, App Engine auto-generates the name when your application adds the task to a queue.</p></td>
+    <td><p>If you don't specify a task name, App Engine auto-generates the name when your application adds the task to a queue.</p></td>
+  </tr>
+  <tr>
+    <td id="method_arg"><p><code>method</code></p></td>
+    <td><p>The method of task execution, either <code>POST</code> (default) or <code>PULL</code>.</p></td>
+    <td><p>Do not specify a <code>method</code> for push tasks. This argument defaults to <code>POST</code>, which posts assigned tasks to the web hook at the specified <code>url</code>.</p></td>
+    <td><p>Set the <code>method</code> to <code>PULL</code>. This setting prevents the task from being delivered to the web hook so a worker can be lease it from the pull queue.</p></td>
+  </tr>
+  <tr>
+    <td id="url_arg"><p><code>url</code></p></td>
+    <td><p>URL for the webhook that should handle this task.</p></td>
+    <td><p>The <code>url</code> is usually a path relative to your application's root directory. May have a query string unless the <code>method</code> is <code>POST</code>.</p>
+    <p>If you are using <a href="../backends/index.html">backends</a>, you can specify the URL of the instance and backend that you want to perform the work.</p></td>
+    <td><p>Do not specify a <code>url</code> for pull queue tasks.</p></td>
+  </tr>
+  <tr>
+    <td id="headers_arg"><p><code>headers</code></p></td>
+    <td><p>Dictionary of headers to pass to the webhook.</p></td>
+    <td><p>Values in the dictionary may be iterable to indicate repeated header fields. If a <code>Content-Type</code> header is not specified, a default of <code>text/plain</code> is used.</p></td>
+    <td><p>Do not specify <code>headers</code> for pull queue tasks.</p></td>
+  </tr>
+  <tr>
+    <td id="params_arg"><p><code>params</code></p></td>
+    <td><p>Dictionary of parameters to use for this task.</p></td>
+    <td><p>Values in the dictionary may be iterable to indicate repeated parameters. In <code>POST</code> requests,
+    <ul>
+      <li>Do not specify params if you already specified a <code>payload</code>.</li>
+      <li>Params are encoded as <code>application/x-www-form-urlencoded</code> and set to the <code>payload</code>.</li> 
+    </ul></p>
+    <p>In <code>PUT</code> requests,
+      <ul>
+        <li>Params are converted to a query string if the URL contains a query string, or the task already has a <code>payload</code>.</li>
+        <li>Do not specify params if the URL already contains a query string and the <code>method</code> is <code>GET</code>.</li>
+      </ul></p>
+    </td>
+    <td><p>Values in the dictionary may be iterable to indicate repeated parameters. In <code>PULL</code> requests,
+    <ul>
+      <li>Do not specify params if you already specified a <code>payload</code>.</li>
+      <li>Params are encoded as <code>application/x-www-form-urlencoded</code> and set to the <code>payload</code>.</li>
+    </ul></p>
+    </td>
+  </tr>
+  <tr>
+    <td id="countdown_arg"><p><code>countdown</code></p></td>
+    <td><p>Minimum time to wait before executing this task, in seconds. Defaults to zero. Do not specify a countdown if you specified an <code>eta</code>.</p></td>
+    <td><p>Minimum time to wait before executing this task, in seconds.</p></td>
+    <td><p>Designates how long to wait, in seconds, before allowing the task to be leased.</p></td>
+  </tr>
+  <tr>
+    <td id="eta_arg"><p><code>eta</code></p></td>
+    <td><p>Earliest time of task execution. If None, defaults to now.</p></td>
+    <td><p>Earliest time to execute the task. May be timezone-aware or timezone-naive.</p></td>
+    <td><p>Designates the earliest time that a worker can lease a task. No worker can lease a task before the <code>eta</code>.</p></td>
+  </tr>
+  <tr>
+    <td id="retry_options_arg"><p><code>retry_options</code></p></td>
+    <td><p><a href="taskretryoptions.html">TaskRetryOptions</a> used to retry failed tasks.</p></td>
+    <td><p>Includes <code>min_backoff_seconds</code>, <code>max_backoff_seconds</code>, <code>task_age_limit</code>, <code>max_doublings</code>, and <code>task_retry_limit</code>.</p></td>
+    <td><p>Only the <code>task_retry_limit</code> option is allowed. It indicates the number of times a task may be leased before it is automatically deleted from the queue.</p></td>
+  </tr>
+  <tr>
+    <td id="target_arg"><p><code>target</code></p></td>
+    <td><p>The alternate application version, or backend, on which to execute this task.</p></td>
+    <td><p>No push-specific details.</p></td>
+    <td><p>No pull-specific details.</p></td>
+  </tr>
+</table>
 </dl>
+
 
 <h2>Properties</h2>
 
-<p>A Task instance has the following properties:</p>
+<p>The following table describes properties of a Task instance. These properties differ slightly in push and pull queues, as described in the following table:</p>
 
-<dl class="apireference">
-  <dt id="Task_on_queue_url"><code>on_queue_url</code></dt>
-  <dd><p>True if this Task will run on the queue's default URL; False if not.</p></dd>
 
-  <dt id="Task_eta"><code>eta</code></dt>
-  <dd><p>A datetime.datetime object which provides an estimate of when this Task will execute.</p></dd>
+<table>
+  <tr>
+    <th>Task instance property</th>
+    <th>Meaning for Push Tasks</th>
+    <th>Meaning for Pull Tasks</th>
+  <tr>
+    <td id="Task_on_queue_url"><p><code>on_queue_url</code></p></td>
+    <td><p>True if this task will run on the queue's default URL; false if not.</p></td>
+    <td><p>Not applicable</p></td>
+  </tr>
+  <tr>
+    <td id="Task_eta_posix"><p><code>eta_posix</code></p></td>
+    <td><p>A <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> timestamp giving an estimate of when this task will execute.</p></td>
+    <td><p>A <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> timestamp representing the earliest time this task can be leased.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_eta"><p><code>eta</code></p></td>
+    <td><p>A datetime.datetime object which provides the earliest time when this task will execute.</p></td>
+    <td><p>A datetime.datetime object representing the earliest time this task can be leased.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_headers"><p><code>headers</code></p></td>
+    <td><p>The HTTP headers which will be used when invoking this task.</p></td>
+    <td><p>Not applicable</p></td>
+  </tr>
+  <tr>
+    <td id="Task_method"><p><code>method</code></p></td>
+    <td><p>The HTTP method used to invoke this task, one of <code>GET</code>, <code>POST</code>, <code>HEAD</code>, <code>PUT</code>, or <code>DELETE</code>.</p></td>
+    <td><code>PULL</code> only. All other methods are illegal for pull tasks.</td>
+  </tr>
+  <tr>
+    <td id="Task_name"><p><code>name</code></p></td>
+    <td><p>The name of this task. Will be <code>None</code> if using auto-assigned task names and this task has not yet been added to a queue.</p></td>
+    <td><p>The name of this task. Will be <code>None</code> if using auto-assigned task names and this task has not yet been added to a queue.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_payload"><p><code>payload</code></p></td>
+    <td><p>The payload which will be used when invoking this task; may be None.</p></td>
+    <td><p>The payload which will be used when invoking this task; may be None.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_size"><p><code>size</code></p></td>
+    <td><p>Size of this task in bytes.</p></td>
+    <td><p>Size of this task in bytes.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_url"><p><code>url</code></p></td>
+    <td><p>The URL handler for this task relative to your application's root directory.</p>
+    </td>
+    <td><p>Pull queues have no url.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_retry_options"><p><code>retry_options</code></p></td>
+    <td><p>Any or all of the <a href="../taskretryoptions.html">TaskRetryOptions</a> for this task, which may be None.</p></td>
+    <td><p>May be only the <code>task_retry_limit</code> parameter of the <a href="../taskretryoptions.html">TaskRetryOptions</a> class, or None.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_retry_count"><p><code>retry_count</code></p></td>
+    <td><p>The number of times this task has been retried.</p></td>
+    <td><p>The number of times this task has been leased.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_was_enqueued"><p><code>was_enqueued</code></p></td>
+    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
+    <td><p>Not queue specific. True if this task has been inserted into a queue. Does not check if this task already exists in the queue.</p></td>
+  </tr>
+  <tr>
+    <td id="Task_was_deleted"><p><code>was_deleted</code></p></td>
+    <td><p>True if this task has been successfully deleted.</p></td>
+    <td><p>True if this task has been successfully deleted.</p></td>
+  </tr>
+</table>
 
-  <dt id="Task_headers"><code>headers</code></dt>
-  <dd><p>The HTTP headers which will be used when invoking this Task.</p></dd>
-
-  <dt id="Task_method"><code>method</code></dt>
-  <dd>
-    <p>
-      The HTTP method which will be used when invoking this Task. Will be one of
-      'GET', 'POST', 'HEAD', 'PUT', or 'DELETE'.
-    </p>
-  </dd>
-
-  <dt id="Task_name"><code>name</code></dt>
-  <dd>
-    <p>
-      The name of this task. Will be None if using auto-assigned Task names and
-      this Task has not yet been added to a Queue.
-    </p>
-  </dd>
-
-  <dt id="Task_payload"><code>payload</code></dt>
-  <dd><p>The payload which will be used when invoking this Task; may be None.</p></dd>
-
-  <dt id="Task_size"><code>size</code></dt>
-  <dd><p>Size of this task in bytes.</p></dd>
-
-  <dt id="Task_url"><code>url</code></dt>
-  <dd><p>The relative worker URL for this Task.</p></dd>
-
-  <dt id="Task_was_enqueued"><code>was_enqueued</code></dt>
-  <dd>
-    <p>
-      Returns True if this Task has been inserted into a Queue. This will not
-      check if this task already exists in the queue.
-    </p>
-  </dd>
-</dl>
 
 
 <h2>Instance Methods</h2>
@@ -904,27 +1066,39 @@ after insertion, App Engine will execute the Task.
                     <span class="argname">transactional</span>=<span class="argdefault">False</span>)</dt>
   <dd>
     <p>
-      Adds this Task to a queue. The queue is specified by name. A single Task
+      Adds this task to a queue. The queue is specified by name. A single Task
       instance may only be added to one queue.  </p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">queue_name</span></dt>
       <dd>
-        Name of the queue to which this Task will be added. The name should
+        Name of the queue to which this task will be added. The name should
         correspond to a user-created entry in the queue.yaml configuration
-        file.  If not supplied, the Task will be added to the default
+        file.  If not supplied, the task will be added to the default
         queue.
       </dd>
       <dt><span class="argname">transactional</span>=<span class="argdefault">False</span></dt>
       <dd>
         Relevant when this method is called inside <a href="../datastore/functions.html#run_in_transaction">db.run_in_transaction()</a>.
-        Indicates that this <a href="overview.html#Tasks_Within_Transactions">transactional task</a> should be added only
+        Indicates that this <a href="overview.html#Tasks_within_Transactions">transactional task</a> should be added only
         if an enclosing <a href="../datastore/overview.html#Transactions_and_Entity_Groups">datastore transaction</a> is committed successfully.
         Note that this task must not have a user-specified name in this case.
       </dd>
     </dl>
     <p>
-      The return value is the Task itself.
+      The return value is the task itself.
+    </p>
+  </dd>
+  <dt id="Task_extract_params"><span class="itemname">extract_params</span>()</dt>
+  <dd>
+    <p>
+      Returns a dictionary of strings mapping parameter names to their values as strings. If the same name parameter has several values, then the value is a list of strings. For <code>POST</code> and <code>PULL</code> requests,, the parameters are extracted from the task payload; for all other methods, the parameters are extracted from the URL query string. </p>
+    <p>
+      Raises a ValueError if:
+      <ul>
+        <li>The payload for <code>PULL</code> or <code>POST</code> does not contain <code>application/x-www-form-urlencoded</code> data.</li>
+        <li>The payload for all other methods does not contain a query.</li>
+      </ul>
     </p>
   </dd>
 
@@ -968,7 +1142,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -1006,10 +1180,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

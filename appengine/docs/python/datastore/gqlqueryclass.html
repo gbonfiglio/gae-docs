@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../taskqueue/functions.html">Functions</a></li>
          <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -719,10 +831,10 @@ var logged_in_user_email = null;
   <li>Instance methods:
     <ul>
       <li><a href="#GqlQuery_bind">bind()</a></li>
-      <li><a href="#GqlQuery_get">get()</a></li>
-      <li><a href="#GqlQuery_fetch">fetch()</a></li>
       <li><a href="#GqlQuery_count">count()</a></li>
       <li><a href="#GqlQuery_cursor">cursor()</a></li>
+      <li><a href="#GqlQuery_fetch">fetch()</a></li>
+      <li><a href="#GqlQuery_get">get()</a></li>
       <li><a href="#GqlQuery_with_cursor">with_cursor()</a></li>
     </ul>
   </li>
@@ -808,10 +920,28 @@ for song in q:
     </dl>
   </dd>
 
-  <dt id="GqlQuery_get"><span class="itemname">get</span>()</dt>
+  <dt id="GqlQuery_count"><span class="itemname">count</span>(<span class="argname">limit</span>=<span class="argdefault">1000</span>)</dt>
   <dd>
-    <p>Executes the query, then returns the first result, or <code>None</code> if the query returned no results.</p>
-    <p>get() implies a "limit" of 1, and overrides the <code>LIMIT</code> clause of the GQL query, if any. At most 1 result is fetched from the datastore.</p>
+    <p>Returns the number of results this query fetches.</p>
+    <p><span class="itemname">count()</span> is somewhat faster than retrieving all of the data by a constant factor, but the running time still grows with the size of the result set. It's best to only use <span class="itemname">count()</span> in cases where the count is expected to be small, or specify a <span class="argname">limit</span>.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">limit</span></dt>
+      <dd>
+        <p>The maximum number of results to count, with a default of 1,000. The default value does not override the <code>LIMIT</code> clause in the GQL query statement: If <code>limit</code> is not specified in <code>count()</code>, but the GQL does specify a limit, then <code>count()</code> counts up to the GQL limit. </p>
+        <p>If <code>limit</code> is specified, then <code>count()</code> counts up to that limit. </p>
+        <p>If <code>limit</code> is specified as <code>None</code>, then <code>count()</code> continues until it finishes counting or <a href=
+     "../runtime.html#The_Request_Timer">times out</a>.</p>
+      </dd>
+    </dl>
+  </dd>
+
+  <dt id="GqlQuery_cursor"><span class="itemname">cursor</span>()</dt>
+  <dd>
+     <p>Returns an encoded cursor that represents the location in the result set after the last result fetched. A future invocation of the same query can provide this cursor using <a href="#GqlQuery_with_cursor">with_cursor()</a> to start fetching results from this location.</p>
+     <p>You must fetch results (using either <a href="#GqlQuery_fetch">fetch()</a> or the iterator interface) before you can get a cursor.</p>
+     <p>The cursor is a base64-encoded string. It is safe to use in HTTP GET and POST parameters, and can also be stored in the datastore or memcache.</p>
+     <p class="note"><b>Note:</b> Not all queries are compatible with cursors. See <a href="queries.html#GqlQuery_Cursors">Query Cursors</a> for more information.</p>
   </dd>
 
   <dt id="GqlQuery_fetch"><span class="itemname">fetch</span>(<span class="argname">limit</span>, <span class="argname">offset</span>=<span class="argdefault">0</span>)</dt>
@@ -835,28 +965,11 @@ for song in q:
     </dl>
     <p>The return value is a list of model instances, possibly an empty list.</p>
   </dd>
-
-  <dt id="GqlQuery_count"><span class="itemname">count</span>(<span class="argname">limit</span>)</dt>
+  
+   <dt id="GqlQuery_get"><span class="itemname">get</span>()</dt>
   <dd>
-    <p>Returns the number of results this query fetches.</p>
-    <p><span class="itemname">count()</span> is somewhat faster than retrieving all of the data by a constant factor, but the running time still grows with the size of the result set. It's best to only use <span class="itemname">count()</span> in cases where the count is expected to be small, or specify a <span class="argname">limit</span>.</p>
-    <p><span class="itemname">count()</span> has no maximum limit. If you don't specify a <code>limit</code>, the datastore continues counting until it finishes counting or <a href=
-     "../runtime.html#The_Request_Timer">times out</a>.
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">limit</span></dt>
-      <dd>
-        <p>The maximum number of results to count. This value overrides the <code>LIMIT</code> clause in the GQL query statement, if any.</p>
-      </dd>
-    </dl>
-  </dd>
-
-  <dt id="GqlQuery_cursor"><span class="itemname">cursor</span>()</dt>
-  <dd>
-     <p>Returns an encoded cursor that represents the location in the result set after the last result fetched. A future invocation of the same query can provide this cursor using <a href="#GqlQuery_with_cursor">with_cursor()</a> to start fetching results from this location.</p>
-     <p>You must fetch results (using either <a href="#GqlQuery_fetch">fetch()</a> or the iterator interface) before you can get a cursor.</p>
-     <p>The cursor is a base64-encoded string. It is safe to use in HTTP GET and POST parameters, and can also be stored in the datastore or memcache.</p>
-     <p class="note"><b>Note:</b> Not all queries are compatible with cursors. See <a href="queries.html#GqlQuery_Cursors">Query Cursors</a> for more information.</p>
+    <p>Executes the query, then returns the first result, or <code>None</code> if the query returned no results.</p>
+    <p>get() implies a "limit" of 1, and overrides the <code>LIMIT</code> clause of the GQL query, if any. At most 1 result is fetched from the datastore.</p>
   </dd>
 
   <dt id="GqlQuery_with_cursor"><span class="itemname">with_cursor</span>(<span class="argname">start_cursor, end_cursor</span>=<span class="argdefault">None</span>)</dt>
@@ -868,11 +981,11 @@ for song in q:
     <dl>
       <dt><span class="argname">start_cursor</span></dt>
       <dd>
-        <p>The base64-encoded cursor returned by the <a href="#Query_cursor">cursor()</a> method in a previous invocation of the query. Indicates where to start the query.</p>
+        <p>The base64-encoded cursor returned by the <a href="#GqlQuery_cursor">cursor()</a> method in a previous invocation of the query. Indicates where to start the query.</p>
       </dd>
       <dt><span class="argname">end_cursor</span></dt>
       <dd>
-        <p>The base64-encoded cursor returned by the <a href="#Query_cursor">cursor()</a> method in a previous invocation of the query. Indicates where to end the query.</p>
+        <p>The base64-encoded cursor returned by the <a href="#GqlQuery_cursor">cursor()</a> method in a previous invocation of the query. Indicates where to end the query.</p>
       </dd>
     </dl>
   </dd>
@@ -916,7 +1029,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -954,10 +1067,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

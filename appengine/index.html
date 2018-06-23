@@ -98,6 +98,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -204,13 +206,13 @@ var logged_in_user_email = null;
 
 <!-- Logo and Header -->
 <div style="margin-top: 0px; display:table">
-  <img src="images/appengine_lowres.gif" style="float: left; padding-right: 25px" />
+  <img src="images/appengine_lowres.png" style="float: left; padding-right: 25px" />
   <div style="display: table-cell; vertical-align: middle;">
     <span style="font-size: 170%; font-weight: bold; padding-top: 20px;">
-      Run your web apps on Google's infrastructure.<br/>
+      Run your web apps on Google's infrastructure<br/>
     </span>
     <span style="font-size: 120%; padding-top: 10px;">
-      Easy to build, easy to maintain, easy to scale.
+      Easy to build, easy to maintain, easy to scale
     </span>
   </div>
 </div>
@@ -223,34 +225,31 @@ var logged_in_user_email = null;
       Google App Engine enables you to build and host web apps on the same
       systems that power Google applications. App Engine offers fast
       development and deployment; simple administration, with no need to
-      worry about hardware, patches or backups; and effortless scalability.
+      worry about hardware, patches or backups; and effortless scalability.<br><br>
       <a href="whyappengine.html">Discover why</a> developers are choosing App Engine.
     </div></td></tr>
     <tr><td colspan="2">
       <img src="images/features-48.png" style="float: left; border: 0;" height="48" width="48" />
       <div style="margin-left: 60px; margin-bottom: 25px;">
       <div style="padding-top: 15px; padding-bottom: 15px; font-size: 150%; font-weight: bold;">
-        Google App Engine for Business
-        <sup><span style="color: red; font-size: 90%">New!</span></sup>
+        Focus on your app, leave the rest to us
       </div>
-      Run your enterprise applications on Google’s infrastructure.
+      All the power of Google in one, simple platform.
       <ul style="padding-top: 5px; padding-bottom: 5px;">
-        <li><b>Centralized administration:</b> A new, company-focused administration console lets you manage all the applications in your domain.</li>
-        <li><b>Reliability and support:</b> 99.9% uptime service level agreement, with premium developer support available.</li>
-        <li><b>Secure by default:</b> Only users from your <a href="http://www.google.com/a/">Google Apps</a> domain can access applications by default.</li>
-        <li><b>Pricing that makes sense:</b> Each application costs just $8 per user, per month up to a maximum of $1000 a month. Pay only for what you use.</li>
-        <li><b>Enterprise features:</b> Coming later this year - hosted SQL databases, SSL on your company’s domain for secure communications, and access to advanced Google services.</li>
+        <li><b>Zero to sixty:</b> App Engine enables your application to scale automatically without worrying about managing machines.</li>
+        <li><b>Supercharged APIs:</b> The App Engine platform provides amazing services such as Task Queue, XMPP, and Propsective search, all powered by the same infrastructure that powers Google's applications.</li>
+        <li><b>You're in control:</b> The simple, web-based dashboard makes it easy to manage your application without having to babysit it.</li>
       </ul>
-      <a href="business/index.html">Learn more about the preview of App Engine for Business</a>.
     </div></td></tr>
     <tr><td style="width: 50%; padding-right: 15px;">
         <img src="images/arrow-48.png" style="float: left; border: 0;" height="48" width="48" />
         <div style="margin-left: 55px; margin-bottom: 10px;">
           <div style="margin-top: 15px; font-size: 120%; font-weight: bold;">Download</div>
           <div style="padding-top: 5px; line-height: 125%;">
-            Download the App Engine SDKs for Python or Java.
+            Download the App Engine SDKs for Python, Java, or Go.
             <ul>
-              <li><a href="downloads.html#Google_App_Engine_SDK_for_Java">Google App Engine SDK for Java</a></li>
+              <li><a href="downloads.html#Google_App_Engine_SDK_for_Go">Google App Engine SDK for Go</a> <sup class="new">Experimental</sup></li>
+              <li><a href="downloads.html#Google_AppEngine_SDK_for_Java">Google App Engine SDK for Java</a></li>
               <li><a href="downloads.html#Google_App_Engine_SDK_for_Python">Google App Engine SDK for Python</a></li>
               <li><a href="downloads.html#Download_the_Google_Plugin_for_Eclipse">Google Plugin for Eclipse</a></li>
             </ul>
@@ -263,7 +262,9 @@ var logged_in_user_email = null;
           <div style="padding-top: 5px; line-height: 125%;">
             Everything you need to know to grok App Engine.
             <ul>
-              <li><a href="docs/whatisgoogleappengine.html">What is App Engine?</a></li>
+              <li><a href="docs/whatisgoogleappengine.html">Learn more about Google App Engine</a></li>
+              <li><a href="http://googleappengine.blogspot.com">App Engine Blog</a></li>
+              <li><a href="docs/go/overview.html">Go Documentation</a></li>
               <li><a href="docs/java/overview.html">Java Documentation</a></li>
               <li><a href="docs/python/overview.html">Python Documentation</a></li>
             </ul> 
@@ -333,7 +334,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -371,10 +372,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();
@@ -385,5 +385,4 @@ _gaq.push(
 
   </body>
 </html>
-
 

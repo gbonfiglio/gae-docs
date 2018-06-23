@@ -1,0 +1,1380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+  
+  
+
+
+<html>
+  <head>
+    <script type="text/javascript" language="JavaScript">
+    ORIGINAL_PAGE_PATH = "/appengine/docs/go/datastore/reference.html";
+    </script>
+    
+    
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>The datastore package - Google App Engine - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '/appengine/docs/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
+//--></script>
+<link href="../../../../css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="../../../../js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml">
+
+<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css"><![endif]-->
+
+    <link href="../../../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/local_extensions.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="gc-documentation">
+
+    
+    
+    <div id="gb">
+ <span>
+  
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
+  
+ </span>
+</div>
+
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
+
+<div id="gc-container">
+<a id="top"></a>
+<div id="skipto">
+  <a href="#gc-pagecontent">Skip to page content</a>
+  <a href="#gc-toc">Skip to main navigation</a>
+</div>
+
+<div id="gc-header">
+  <div id="logo"><a href="http://code.google.com">
+  
+  
+     <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+  
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
+      </noscript>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "templates" or "datastore"</div>
+      </div>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+
+
+
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
+
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a id="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1 style="padding:0 0 0 6px;">Google App Engine</h1>
+  <ul id="docs" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="../../../index.html" title="Google App Engine home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="../../index.html" class="selected" title="Official Google App Engine documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="../../../kb/index.html" title="Answers to frequently asked questions about Google App Engine">FAQ</a>
+    </li>
+  
+    <li id="articles_link">
+      <a href="../../../articles/index.html" title="Focused articles and tutorials for Google App Engine developers">Articles</a>
+    </li>
+  
+    <li>
+      <a href="http://googleappengine.blogspot.com/" title="Official Google App Engine blog">Blog</a>
+    </li>
+  
+    <li>
+      <a href="../../../community.html" title="Community home for Google App Engine">Community</a>
+    </li>
+  
+    <li>
+      <a href="../../../terms.html" title="Google App Engine terms of service">Terms</a>
+    </li>
+  
+    <li>
+      <a href="../../../downloads.html" title="Download Google App Engine">Download</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+    <div class="g-section g-tpl-170">
+
+      <div class="g-unit g-first" id="gc-toc">
+        <ul>
+  <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
+  <li><a href="http://code.google.com/status/appengine">System Status</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Getting Started</h2>
+    <ul>
+      <li><a href="../../whatisgoogleappengine.html">What Is Google App Engine?</a></li>
+      <li><a href="../../java/gettingstarted/index.html">Java</a>
+        <ul>
+              <li><a href="../../java/gettingstarted/introduction.html">Introduction</a></li>
+    <li><a href="../../java/gettingstarted/installing.html">Installing the Java SDK</a></li>
+    <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
+    <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
+    <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+    <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
+    <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../../python/gettingstarted/index.html">Python</a>
+        <ul>
+            <li><a href="../../python/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../python/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../python/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../python/gettingstarted/usingwebapp.html">Using the webapp Framework</a></li>
+  <li><a href="../../python/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../python/gettingstarted/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="../../python/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../python/gettingstarted/templates.html">Using Templates</a></li>
+  <li><a href="../../python/gettingstarted/staticfiles.html">Using Static Files</a></li>
+  <li><a href="../../python/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Java</h2>
+    <ul>
+          <li><a href="../../java/overview.html">Overview</a></li>
+    <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
+    <li><a href="../../java/datastore/index.html">Storing Data</a>
+      <ul>
+            <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/entities.html">Entities</a></li>
+    <li><a href="../../java/datastore/queries.html">Queries</a></li>
+    <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
+    <li><a href="../../java/datastore/hr/index.html">Choosing a Datastore</a></li>
+    <li><a href="../../java/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
+    <li><a href="../../java/datastore/stats.html">Statistics</a></li>
+    <li><a href="../../java/datastore/async.html">Async API</a></li>
+    <li><a href="../../java/datastore/jdo/index.html">JDO</a>
+      <ul>
+            <li><a href="../../java/datastore/jdo/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/jdo/dataclasses.html">Defining Data Classes with JDO</a></li>
+    <li><a href="../../java/datastore/jdo/creatinggettinganddeletingdata.html">Creating, Getting, and Deleting Data in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/relationships.html">Entity Relationships in JDO</a></li>
+    <li><a href="../../java/datastore/jdo/queries.html">Queries in JDO</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/datastore/jpa/index.html">JPA</a>
+      <ul>
+            <li><a href="../../java/datastore/jpa/overview.html">Overview</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Javadoc Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/apis.html">Services</a>
+      <ul>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../java/capabilities/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/mail/index.html">Mail</a>
+          <ul>
+                <li><a href="../../java/mail/overview.html">Overview</a></li>
+    <li><a href="../../java/mail/usingjavamail.html">Using JavaMail to Send Mail</a></li>
+    <li><a href="../../java/mail/receiving.html">Receiving Mail</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/mail/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
+          <ul>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
+          <ul>	
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
+	
+          </ul>	
+        </li>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
+          <ul>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
+
+          </ul>
+        </li>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
+          </ul>
+        </li>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/index.html">Services Javadoc</a></li>
+    <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
+    <li><a href="../../java/config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
+    <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
+    <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../../java/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+    <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
+    <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+    <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
+        <ul>
+            <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
+        </ul>    
+    </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../../java/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
+
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Python</h2>
+    <ul>
+          <li><a href="../../python/overview.html">Overview</a></li>
+    <li><a href="../../python/runtime.html">CGI Environment</a></li>
+    <li><a href="../../python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
+    <li><a href="../../python/datastore/index.html">Storing Data</a>
+      <ul>
+              <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
+      <li><a href="../../python/datastore/entities.html">Entities</a></li>
+      <li><a href="../../python/datastore/queries.html">Queries</a></li>
+      <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
+      <li><a href="../../python/datastore/datamodeling.html">Data Modeling</a></li>
+      <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+      <li><a href="../../python/datastore/hr/index.html">Choosing a Datastore</a></li>
+      <li><a href="../../python/datastore/hr/overview.html">Using the High Replication Datastore</a></li>
+      <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
+      <li><a href="../../python/datastore/stats.html">Statistics</a></li>
+      <li><span class="tlw-title tlw-expanded">Reference</span>
+        <ul>
+          <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+          <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+          <li><a href="../../python/datastore/modelclass.html">Model</a></li>
+          <li><a href="../../python/datastore/expandoclass.html">Expando</a></li>
+          <li><a href="../../python/datastore/polymodelclass.html">PolyModel</a></li>
+          <li><a href="../../python/datastore/propertyclass.html">Property</a></li>
+          <li><a href="../../python/datastore/queryclass.html">Query</a></li>
+          <li><a href="../../python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+          <li><a href="../../python/datastore/metadataqueryclass.html">Metadata Query</a></li>
+          <li><a href="../../python/datastore/keyclass.html">Key</a></li>
+          <li><a href="../../python/datastore/functions.html">Functions</a></li>
+          <li><a href="../../python/datastore/exceptions.html">Exceptions</a></li>
+        </ul>
+      </li>
+
+      </ul>
+    </li>
+    <li><a href="../../python/apis.html">Services</a>
+      <ul>
+        <li><a href="../../python/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../python/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../../python/blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../../python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../../python/blobstore/functions.html">Functions</a></li>
+    <li><a href="../../python/blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/capabilities/index.html">Capabilities</a>
+          <ul>
+            <li><a href="../../python/capabilities/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
+    <li><a href="../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/channel/index.html">Channel</a>
+          <ul>
+            <li><a href="../../python/channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/channel/functions.html">Functions</a></li>
+    <li><a href="../../python/channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../../python/channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/images/index.html">Images</a>
+          <ul>
+                 <li><a href="../../python/images/overview.html">Overview</a></li>
+     <li><a href="../../python/images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../../python/images/usingimages.html">Using the Images API</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/images/imageclass.html">Image</a></li>
+         <li><a href="../../python/images/functions.html">Functions</a></li>
+         <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../python/mail/overview.html">Overview</a></li>
+     <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
+     <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
+     <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
+         <li><a href="../../python/mail/emailmessagefields.html">Message Fields</a></li>
+         <li><a href="../../python/mail/functions.html">Functions</a></li>
+         <li><a href="../../python/mail/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../python/memcache/overview.html">Overview</a></li>
+      <li><a href="../../python/memcache/usingmemcache.html">Using Memcache</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/memcache/clientclass.html">Client</a></li>
+         <li><a href="../../python/memcache/functions.html">Functions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/multitenancy/index.html">Multitenancy</a>
+          <ul>
+                  <li><a href="../../python/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../python/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../python/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../../python/multitenancy/functions.html">Functions</a></li>
+        <li><a href="../../python/multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../../python/oauth/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/oauth/functions.html">Functions</a></li>
+         <li><a href="../../python/oauth/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
+        <li><a href="../../python/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../../python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
+         <li><a href="../../python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../../python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
+         <li><a href="../../python/taskqueue/functions.html">Functions</a></li>
+         <li><a href="../../python/taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../python/urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../../python/urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../../python/urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../../python/urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../python/users/overview.html">Overview</a></li>
+     <li><a href="../../python/users/userobjects.html">User Objects</a></li>
+     <li><a href="../../python/users/loginurls.html">Login URLs</a></li>
+     <li><a href="../../python/users/adminusers.html">Admin Users</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/users/userclass.html">User</a></li>
+         <li><a href="../../python/users/functions.html">Functions</a></li>
+         <li><a href="../../python/users/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../python/xmpp/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/xmpp/functions.html">Functions</a></li>
+         <li><a href="../../python/xmpp/messageclass.html">Message</a></li>
+         <li><a href="../../python/xmpp/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../../python/config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../../python/config/appconfig.html">App Config</a></li>
+    <li><a href="../../python/config/backends.html">Backends Config</a></li>
+    <li><a href="../../python/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../python/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../python/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../python/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../python/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../../python/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
+    <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
+      <ul>
+             <li><a href="../../python/tools/webapp/overview.html">Overview</a></li>
+     <li><a href="../../python/tools/webapp/running.html">Running the Application</a></li>
+     <li><a href="../../python/tools/webapp/requesthandlers.html">Request Handlers</a></li>
+     <li><a href="../../python/tools/webapp/requestdata.html">Request Data</a></li>
+     <li><a href="../../python/tools/webapp/buildingtheresponse.html">Building the Response</a></li>
+     <li><a href="../../python/tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
+     <li><a href="../../python/tools/webapp/blobstorehandlers.html">Blobstore Handlers</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/tools/webapp/requestclass.html">Request</a></li>
+         <li><a href="../../python/tools/webapp/responseclass.html">Response</a></li>
+         <li><a href="../../python/tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
+         <li><a href="../../python/tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
+         <li><a href="../../python/tools/webapp/utilmodule.html">Utility Functions</a></li>
+         
+       </ul>
+     </li>
+
+      </ul>
+    </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
+    <li><a href="../../python/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../python/howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../../python/howto/usinggdataservices.html">Google Data Services</a></li>
+      <li><a href="../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
+
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../overview.html">Overview</a></li>
+    <li><a href="../runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html">Storing Data</a>
+      <ul>
+             <li><a href="overview.html">Overview</a></li>
+     <li><a href="reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../apis.html">Services</a>
+      <ul>
+        <li><a href="../blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><a href="../blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../mail/overview.html">Overview</a></li>
+     <li><a href="../mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+     <li><a href="../memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><a href="../urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
+          <ul>
+                 <li><a href="../users/overview.html">Overview</a></li>
+     <li><a href="../users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Managing Your App</h2>
+    <ul>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+        </ul>
+      </li>
+      <li><a href="../../quotas.html">Quotas</a></li>
+      <li><a href="../../billing.html">Billing</a></li>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Resources</h2>
+    <ul>
+      <li><a href="../../../kb/index.html">FAQ</a></li>
+      <li><a href="../../../articles/index.html">Articles</a></li>
+      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
+      <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
+      <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
+      <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
+      <li>Launcher Code
+        <ul>
+          <li><a href="http://code.google.com/p/google-appengine-mac-launcher/">Mac</a></li>
+          <li><a href="http://code.google.com/p/google-appengine-wx-launcher/">Windows/wx</a></li>
+        </ul>
+      </li>
+      <li><a href="../../../community.html">Discussion Groups</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><a href="../../roadmap.html">Product Roadmap</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
+  <li><a href="../../revision_history.html">Revision History</a></li>
+</ul>
+
+        <a class="hidden" href="#gc-topnav-anchor">More Google App Engine resource links</a>
+      </div>
+
+      <div class="g-unit" id="gc-pagecontent">
+        <h1 class="page_title">The datastore package</h1>
+
+
+
+
+
+
+  <h2 id="Introduction">Introduction</h2>
+  <p>
+The datastore package provides a client for App Engine&#39;s datastore service.
+</p>
+<p>
+Entities are the unit of storage and are associated with a key. A key
+consists of an optional parent key, a string application ID, a string kind
+(also known as an entity type), and either a StringID or an IntID. A
+StringID is also known as an entity name or key name.
+</p>
+<p>
+It is valid to create a key with a zero StringID and a zero IntID; this is
+called an incomplete key, and does not refer to any saved entity. Putting an
+entity into the datastore under an incomplete key will cause a unique key
+to be generated for that entity, with a non-zero IntID.
+</p>
+<p>
+An entity&#39;s contents are a mapping from case-sensitive field names to values.
+Valid value types are:
+</p>
+<pre>- signed integers (int, int8, int16, int32 and int64),
+- bool,
+- string,
+- float32 and float64,
+- any type whose underlying type is one of the above predeclared types,
+- *Key,
+- appengine.BlobKey,
+- []byte (up to 1 megabyte in length),
+- slices of any of the above (up to 100 elements in length).
+</pre>
+<p>
+The Get and Put functions load and save an entity&#39;s contents to and from
+structs or Maps. Structs are more strongly typed, Maps are more flexible. The
+actual types passed do not have to match between calls or even across different
+App Engine requests. It is valid to put a Map and get that same entity as a
+struct, or put a struct of type T0 and get a struct of type T1. Conceptually,
+an entity is saved from a struct as a map and is loaded into a struct or Map on
+a field-by-field basis. When loading into a struct, an entity that cannot be
+completely represented (such as a missing field) will result in an error but it
+is up to the caller whether this error is fatal, recoverable or ignorable.
+</p>
+<p>
+Example code:
+</p>
+<pre class="prettyprint">type Entity struct {
+    Value string
+}
+
+func handle(w http.ResponseWriter, r *http.Request) {
+    c := appengine.NewContext(r)
+
+    k := datastore.NewKey(&#34;Entity&#34;, &#34;stringID&#34;, 0, nil)
+    e := new(Entity)
+    if err := datastore.Get(c, k, e); err != nil {
+    	serveError(w, err)
+    	return
+    }
+
+    old := e.Value
+    e.Value = r.URL.Path
+
+    if _, err := datastore.Put(c, k, e); err != nil {
+    	serveError(w, err)
+    	return
+    }
+
+    w.SetHeader(&#34;Content-Type&#34;, &#34;text/plain&#34;)
+    fmt.Fprintf(w, &#34;old=%q\nnew=%q\n&#34;, old, e.Value)
+}
+</pre>
+<p>
+To derive example code that saves and loads a Map instead of a struct, replace
+e := new(Entity) and e.Value with e := make(datastore.Map) and e[&#34;Value&#34;].
+</p>
+<p>
+Queries are created using datastore.NewQuery and are configured
+by calling its methods. Running a query yields an iterator of
+results: either an iterator of keys or of (key, entity) pairs. Once
+initialized, query values can be re-used, and it is safe to call
+Query.Run from concurrent goroutines.
+</p>
+<p>
+Example code:
+</p>
+<pre class="prettyprint">type Widget struct {
+    Description string
+    Price       int
+}
+
+func handle(w http.ResponseWriter, r *http.Request) {
+    c := appengine.NewContext(r)
+    q := datastore.NewQuery(&#34;Widget&#34;).
+    	Filter(&#34;Price &lt;&#34;, 1000).
+    	Order(&#34;-Price&#34;)
+    b := bytes.NewBuffer(nil)
+    for t := q.Run(c); ; {
+    	var x Widget
+    	key, err := t.Next(&amp;x)
+    	if err == datastore.Done {
+    		break
+    	}
+    	if err != nil {
+    		serveError(w, err)
+    		return
+    	}
+    	fmt.Fprintf(b, &#34;Key=%v\nWidget=%#v\n\n&#34;, x, key)
+    }
+    w.SetHeader(&#34;Content-Type&#34;, &#34;text/plain&#34;)
+    io.Copy(w, b)
+}
+</pre>
+
+    <h2 id="Variables">Variables</h2>
+      
+      <pre class="prettyprint">var (
+    <span class="comment">// ErrInvalidEntityType is returned when an entity is passed that isn&#39;t</span>
+    <span class="comment">// a struct pointer or a Map.</span>
+    ErrInvalidEntityType = os.NewError(&#34;datastore: invalid entity type was not a struct pointer or a Map&#34;)
+    <span class="comment">// ErrInvalidKey is returned when an invalid key is presented.</span>
+    ErrInvalidKey = os.NewError(&#34;datastore: invalid key&#34;)
+    <span class="comment">// ErrNoSuchEntity is returned when no entity was found for a given key.</span>
+    ErrNoSuchEntity = os.NewError(&#34;datastore: no such entity&#34;)
+)</pre>
+      <p>
+Done is returned when a query iteration has completed.
+</p>
+
+      <pre class="prettyprint">var Done = os.NewError(&#34;datastore: query has no more results&#34;)</pre>
+  <h2>Functions</h2>
+  <dl class="apireference">
+      <dt id="Delete"><span class="type">func</span> <span class="itemname">Delete</span></dt>
+      <dd>
+        <p><code>func Delete(c appengine.Context, k *Key) os.Error</code></p>
+        <p>
+Delete deletes the entity for the given key.
+</p>
+
+      </dd>
+      <dt id="Get"><span class="type">func</span> <span class="itemname">Get</span></dt>
+      <dd>
+        <p><code>func Get(c appengine.Context, k *Key, dst interface{}) os.Error</code></p>
+        <p>
+Get loads the entity stored for k into dst, which may be either a struct
+pointer or a Map. If there is no such entity for the key, Get returns
+ErrNoSuchEntity.
+</p>
+<p>
+The values of dst&#39;s unmatched struct fields or Map entries are not modified.
+In particular, it is recommended to pass either a pointer to a zero valued
+struct or an empty Map on each Get call.
+</p>
+<p>
+ErrFieldMismatch is returned when a field is to be loaded into a different
+type than the one it was stored from, or when a field is missing or
+unexported in the destination struct. ErrFieldMismatch is only returned if
+dst is a struct pointer.
+</p>
+
+      </dd>
+  </dl>
+  <h2>Types</h2>
+  <dl class="apireference">
+      <dt id="ErrFieldMismatch"><span class="type">type</span> <span class="itemname">ErrFieldMismatch</span></dt>
+      <dd>
+      <p>
+ErrFieldMismatch is returned when a field is to be loaded into a different
+type than the one it was stored from, or when a field is missing or
+unexported in the destination struct.
+StructType is the type of the struct pointed to by the destination argument
+passed to Get or to Iterator.Next.
+</p>
+
+      <pre class="prettyprint">type ErrFieldMismatch struct {
+    Key        *Key
+    StructType reflect.Type
+    FieldName  string
+    Reason     string
+}</pre>
+      <dl class="apireference">
+        <dt id="ErrFieldMismatch.String"><span class="type">func</span> <span class="itemname">(*ErrFieldMismatch) String</span></dt>
+        <dd>
+          <p><code>func (e *ErrFieldMismatch) String() string</code></p>
+          <p>
+String returns a string representation of the error.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
+      <dt id="Iterator"><span class="type">type</span> <span class="itemname">Iterator</span></dt>
+      <dd>
+      <p>
+Iterator is the result of running a query.
+</p>
+
+      <pre class="prettyprint">type Iterator struct {
+    <span class="comment">// contains unexported fields</span>
+}</pre>
+      <dl class="apireference">
+        <dt id="Iterator.Next"><span class="type">func</span> <span class="itemname">(*Iterator) Next</span></dt>
+        <dd>
+          <p><code>func (t *Iterator) Next(dst interface{}) (*Key, os.Error)</code></p>
+          <p>
+Next returns the key of the next result. When there are no more results,
+Done is returned as the error.
+If the query is not keys only, it also loads the entity
+stored for that key into the struct pointer or map dst, with the same
+semantics and possible errors as for the Get function.
+If the query is keys only, it is valid to pass a nil interface{} for dst.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
+      <dt id="Key"><span class="type">type</span> <span class="itemname">Key</span></dt>
+      <dd>
+      <p>
+Key represents the datastore key for a stored entity, and is immutable.
+</p>
+
+      <pre class="prettyprint">type Key struct {
+    <span class="comment">// contains unexported fields</span>
+}</pre>
+      <dl class="apireference">
+        <dt id="Key.NewIncompleteKey"><span class="type">func</span> <span class="itemname">NewIncompleteKey</span></dt>
+        <dd>
+          <p><code>func NewIncompleteKey(kind string) *Key</code></p>
+          <p>
+NewIncompleteKey creates a new incomplete key.
+kind cannot be empty.
+</p>
+
+        </dd>
+        <dt id="Key.NewKey"><span class="type">func</span> <span class="itemname">NewKey</span></dt>
+        <dd>
+          <p><code>func NewKey(kind, stringID string, intID int64, parent *Key) *Key</code></p>
+          <p>
+NewKey creates a new key.
+kind cannot be empty.
+Either one or both of stringID and intID must be zero. If both are zero,
+the key returned is incomplete.
+parent must either be a complete key or nil.
+</p>
+
+        </dd>
+        <dt id="Key.Put"><span class="type">func</span> <span class="itemname">Put</span></dt>
+        <dd>
+          <p><code>func Put(c appengine.Context, k *Key, src interface{}) (*Key, os.Error)</code></p>
+          <p>
+Put saves the entity src into the datastore with key k. src may be either a
+struct pointer or a Map; if the former then any unexported fields of that
+struct will be skipped.
+If k is an incomplete key, the returned key will be a unique key
+generated by the datastore.
+</p>
+
+        </dd>
+        <dt id="Key.AppID"><span class="type">func</span> <span class="itemname">(*Key) AppID</span></dt>
+        <dd>
+          <p><code>func (k *Key) AppID() string</code></p>
+          <p>
+AppID returns the key&#39;s application ID.
+An empty value means the ID of the running App Engine application.
+</p>
+
+        </dd>
+        <dt id="Key.Eq"><span class="type">func</span> <span class="itemname">(*Key) Eq</span></dt>
+        <dd>
+          <p><code>func (k *Key) Eq(o *Key) bool</code></p>
+          <p>
+Eq returns whether two keys are equal.
+</p>
+
+        </dd>
+        <dt id="Key.Incomplete"><span class="type">func</span> <span class="itemname">(*Key) Incomplete</span></dt>
+        <dd>
+          <p><code>func (k *Key) Incomplete() bool</code></p>
+          <p>
+Incomplete returns whether the key does not refer to a stored entity.
+In particular, whether the key has a zero StringID and a zero IntID.
+</p>
+
+        </dd>
+        <dt id="Key.IntID"><span class="type">func</span> <span class="itemname">(*Key) IntID</span></dt>
+        <dd>
+          <p><code>func (k *Key) IntID() int64</code></p>
+          <p>
+IntID returns the key&#39;s integer ID, which may be 0.
+</p>
+
+        </dd>
+        <dt id="Key.Kind"><span class="type">func</span> <span class="itemname">(*Key) Kind</span></dt>
+        <dd>
+          <p><code>func (k *Key) Kind() string</code></p>
+          <p>
+Kind returns the key&#39;s kind (also known as entity type).
+</p>
+
+        </dd>
+        <dt id="Key.Parent"><span class="type">func</span> <span class="itemname">(*Key) Parent</span></dt>
+        <dd>
+          <p><code>func (k *Key) Parent() *Key</code></p>
+          <p>
+Parent returns the key&#39;s parent key, which may be nil.
+</p>
+
+        </dd>
+        <dt id="Key.String"><span class="type">func</span> <span class="itemname">(*Key) String</span></dt>
+        <dd>
+          <p><code>func (k *Key) String() string</code></p>
+          <p>
+String returns a string representation of the key.
+</p>
+
+        </dd>
+        <dt id="Key.StringID"><span class="type">func</span> <span class="itemname">(*Key) StringID</span></dt>
+        <dd>
+          <p><code>func (k *Key) StringID() string</code></p>
+          <p>
+StringID returns the key&#39;s string ID (also known as an entity name or key
+name), which may be &#34;&#34;.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
+      <dt id="Map"><span class="type">type</span> <span class="itemname">Map</span></dt>
+      <dd>
+      <p>
+Map is a map representation of an entity&#39;s fields. It is more flexible than
+but not as strongly typed as a struct representation.
+</p>
+
+      <pre class="prettyprint">type Map map[string]interface{}</pre>
+      <dl class="apireference">
+      </dl>
+      </dd>
+      <dt id="Query"><span class="type">type</span> <span class="itemname">Query</span></dt>
+      <dd>
+      <p>
+Query represents a datastore query.
+</p>
+
+      <pre class="prettyprint">type Query struct {
+    <span class="comment">// contains unexported fields</span>
+}</pre>
+      <dl class="apireference">
+        <dt id="Query.NewQuery"><span class="type">func</span> <span class="itemname">NewQuery</span></dt>
+        <dd>
+          <p><code>func NewQuery(kind string) *Query</code></p>
+          <p>
+NewQuery creates a new Query for a specific entity kind.
+The kind must be non-empty.
+</p>
+
+        </dd>
+        <dt id="Query.Count"><span class="type">func</span> <span class="itemname">(*Query) Count</span></dt>
+        <dd>
+          <p><code>func (q *Query) Count(c appengine.Context) (int, os.Error)</code></p>
+          <p>
+Count returns the number of results for the query.
+</p>
+
+        </dd>
+        <dt id="Query.Filter"><span class="type">func</span> <span class="itemname">(*Query) Filter</span></dt>
+        <dd>
+          <p><code>func (q *Query) Filter(filterStr string, value interface{}) *Query</code></p>
+          <p>
+Filter adds a field-based filter to the Query.
+The filterStr argument must be a field name followed by optional space,
+followed by an operator, one of &#34;&gt;&#34;, &#34;&lt;&#34;, &#34;&gt;=&#34;, &#34;&lt;=&#34;, or &#34;=&#34;.
+Fields are compared against the provided value using the operator.
+Multiple filters are AND&#39;ed together.
+The Query is updated in place and returned for ease of chaining.
+</p>
+
+        </dd>
+        <dt id="Query.GetAll"><span class="type">func</span> <span class="itemname">(*Query) GetAll</span></dt>
+        <dd>
+          <p><code>func (q *Query) GetAll(c appengine.Context, dst interface{}) ([]*Key, os.Error)</code></p>
+          <p>
+GetAll runs the query in the given context and appends the result to the
+provided destination slice.
+The dst must be a pointer to a slice of structs, struct pointers, or maps.
+GetAll appends to that slice and returns a corresponding slice of keys.
+If q is a &ldquo;keys-only&rdquo; query, GetAll ignores dst and only returns the keys.
+</p>
+
+        </dd>
+        <dt id="Query.KeysOnly"><span class="type">func</span> <span class="itemname">(*Query) KeysOnly</span></dt>
+        <dd>
+          <p><code>func (q *Query) KeysOnly() *Query</code></p>
+          <p>
+KeysOnly configures the query to return just keys,
+instead of keys and entities.
+</p>
+
+        </dd>
+        <dt id="Query.Limit"><span class="type">func</span> <span class="itemname">(*Query) Limit</span></dt>
+        <dd>
+          <p><code>func (q *Query) Limit(limit int) *Query</code></p>
+          <p>
+Limit sets the maximum number of keys/entities to return.
+</p>
+
+        </dd>
+        <dt id="Query.Offset"><span class="type">func</span> <span class="itemname">(*Query) Offset</span></dt>
+        <dd>
+          <p><code>func (q *Query) Offset(offset int) *Query</code></p>
+          <p>
+Offset sets how many keys to skip over before returning results.
+</p>
+
+        </dd>
+        <dt id="Query.Order"><span class="type">func</span> <span class="itemname">(*Query) Order</span></dt>
+        <dd>
+          <p><code>func (q *Query) Order(fieldName string) *Query</code></p>
+          <p>
+Order adds a field-based sort to the query.
+Orders are applied in the order they are added.
+The default order is ascending; to sort in descending
+order prefix the fieldName with a minus sign (-).
+</p>
+
+        </dd>
+        <dt id="Query.Run"><span class="type">func</span> <span class="itemname">(*Query) Run</span></dt>
+        <dd>
+          <p><code>func (q *Query) Run(c appengine.Context) *Iterator</code></p>
+          <p>
+Run runs the query in the given context.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
+      <dt id="Time"><span class="type">type</span> <span class="itemname">Time</span></dt>
+      <dd>
+      <p>
+Time is the number of microseconds since the Unix epoch,
+January 1, 1970 00:00:00 UTC.
+</p>
+<p>
+It is a distinct type so that loading and saving fields of type Time are
+displayed correctly in App Engine tools like the Admin Console.
+</p>
+
+      <pre class="prettyprint">type Time int64</pre>
+      <dl class="apireference">
+        <dt id="Time.SecondsToTime"><span class="type">func</span> <span class="itemname">SecondsToTime</span></dt>
+        <dd>
+          <p><code>func SecondsToTime(n int64) Time</code></p>
+          <p>
+SecondsToTime converts an int64 number of seconds since to Unix epoch
+to a Time value.
+</p>
+
+        </dd>
+      </dl>
+      </dd>
+  </dl>
+
+
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
+    
+    ©2011 Google -
+    <a href="http://code.google.com">Code Home</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+
+
+  </body>
+</html>
+
+

@@ -101,6 +101,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -156,7 +158,6 @@ var logged_in_user_email = null;
   <li><a href="../../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -170,7 +171,7 @@ var logged_in_user_email = null;
     <li><a href="../../gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -191,6 +192,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -200,6 +214,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../overview.html">Overview</a></li>
     <li><a href="../../runtime.html">Servlet Environment</a></li>
+    <li><a href="../../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../backends/overview.html">Overview</a></li>
+<li><a href="../../com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../index.html">Storing Data</a>
       <ul>
             <li><a href="../overview.html">Overview</a></li>
@@ -303,8 +325,10 @@ var logged_in_user_email = null;
         <li><a href="../../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../urlfetch/index.html">URL Fetch</a>
@@ -337,6 +361,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../config/appconfig.html">App Config</a></li>
+    <li><a href="../../config/backends.html">Backends Config</a></li>
     <li><a href="../../config/indexconfig.html">Index Config</a></li>
     <li><a href="../../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../config/queue.html">Task Queue Config</a></li>
@@ -347,6 +372,7 @@ var logged_in_user_email = null;
     <li><a href="../../configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../configyaml/queue.html">Task Queue Config</a></li>
@@ -386,6 +412,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../../python/overview.html">Overview</a></li>
     <li><a href="../../../python/runtime.html">CGI Environment</a></li>
+    <li><a href="../../../python/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../../python/backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../../python/backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../../../python/backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../../python/backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -545,10 +585,14 @@ var logged_in_user_email = null;
         <li><a href="../../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../../python/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../../python/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../../python/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../../python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../../../python/taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../../../python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../../../python/taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../../../python/taskqueue/functions.html">Functions</a></li>
          <li><a href="../../../python/taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -605,6 +649,7 @@ var logged_in_user_email = null;
     <li><a href="../../../python/config/index.html">Configuration</a>
       <ul>
             <li><a href="../../../python/config/appconfig.html">App Config</a></li>
+    <li><a href="../../../python/config/backends.html">Backends Config</a></li>
     <li><a href="../../../python/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../../python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../../python/config/queue.html">Task Queue Config</a></li>
@@ -651,6 +696,73 @@ var logged_in_user_email = null;
               <li><a href="../../../python/howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../../../python/howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../../go/overview.html">Overview</a></li>
+    <li><a href="../../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -720,25 +832,33 @@ var logged_in_user_email = null;
 <h2 id="Comparing_the_Data_Storage_Options">Comparing the Data Storage Options</h2>
 <p>You can select one of two data storage options when you create your application:</p>
 <dl>
-  <dt>The Master/Slave Datastore</dt>
-  <dd>The Master/Slave Datastore is the default for new applications. It uses a master-slave replication system, which asynchronously replicates data as you write it to another data center. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime. This option also offers the lowest storage and CPU costs for storing data.</dd>
   <dt>The High Replication Datastore</dt>
-  <dd>The High Replication Datastore is a new, highly available, highly reliable storage solution. It remains available for reads and writes during planned downtime and is extremely resilient in the face of catastrophic failure&mdash;but it costs more than the Master/Slave option. Due to the higher cost, we recommend High Replication Datastore primarily for those developers building mission critical applications on App Engine.</dd>
-  <dd>Data in the High Replication Datastore is replicated across data centers using a system based on the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a>. It provides the highest level of availability for reads and writes (at the cost of higher-latency writes), and uses approximately three times the <a href="../../../quotas.html#Datastore">storage and CPU cost</a> of the Master/Slave option.</dd>
-  <dd>Entity groups are much more important in the High Replication Datastore. They are now a unit of consistency as well as a unit of transactionality. In other words, queries that require strongly consistent results must contain an ancestor filter, which restricts the results to a single entity group. Queries that span multiple entity groups are not guaranteed to return up-to-date results. See the <a href="overview.html">Using the High Replication Datastore</a> for more information about using ancestor queries in this context.</dd>
+  <dd>The High Replication datastore (HRD) is the default for new applications. The HRD is a highly available, highly reliable storage solution. It remains available for reads and writes during planned downtime and is extremely resilient in the face of catastrophic failure&mdash;but it costs more than the master/slave option.</dd>
+  <dd>Data in the HRD is replicated across data centers using a system based on the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a>. It provides the highest level of availability for reads and writes and uses approximately three times the <a href="../../../quotas.html#Datastore">storage and CPU cost</a> of the master/slave option.</dd>
+  <dd>Entity groups are much more important in HRD. They are now a unit of consistency as well as a unit of transactionality. In other words, queries that require strongly consistent results must contain an ancestor filter, which restricts the results to a single entity group. Queries that span multiple entity groups are not guaranteed to return up-to-date results. See the <a href="overview.html">Using the High Replication Datastore</a> for more information about using ancestor queries in this context.</dd>
+  <dt>The Master/Slave Datastore</dt>
+  <dd>You can also select a master-slave replication system, which asynchronously replicates data to other data centers as you write it. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime.</dd>
+  <dd>The master/slave datastore is suitable only for a limited class of applications that: 
+    <ul>
+      <li>Do not require high availability of data</li>
+      <li>Can tolerate spikes in datastore latency</li>
+      <li>Need to incur the lowest possible serving cost</li>
+    </ul>
+  </dd>
+
 </dl>
 
-<p>The following table illustrates the differences between the Master/Slave and High Replication Datastores:</p>
+<p>The following table illustrates the differences between the HRD and master/slave datastores:</p>
 
 <dl>
 <dd>
 <table width=600>
   <tr>
     <td width=200></td>
-    <th width=200>Master/Slave</th>
     <th width=200>High Replication</th>
+    <th width=200>Master/Slave</th>
   </tr>
-  <trmondri>
+  <tr>
     <td><b>Cost</b></td>
     <td></td>
     <td></td>
@@ -746,12 +866,12 @@ var logged_in_user_email = null;
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Storage</td>
     <td>1x</td>
-    <td>3x</td>
+    <td>1/3x</td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Put/Delete CPU</td>
     <td>1x</td>
-    <td>3x</td>
+    <td>5/8x</td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Get CPU</td>
@@ -770,8 +890,8 @@ var logged_in_user_email = null;
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Put/Delete Latency</td>
+    <td>1/2x&ndash;1x</td>
     <td>1x</td>
-    <td>1x&ndash;2x</td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Get Latency</td>
@@ -795,8 +915,8 @@ var logged_in_user_email = null;
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;Most Queries</td>
-    <td>Strong</td>
     <td>Eventual</td>
+    <td>Strong</td>
   </tr>
   <tr>
     <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../queries.html#Ancestor_Queries">Ancestor Queries</a></td>
@@ -805,34 +925,31 @@ var logged_in_user_email = null;
   </tr>
   <tr>
     <td><b>Occasional Planned Read-Only Period</b></td>
-    <td>Yes</td>
     <td>No</td>
+    <td>Yes</td>
   </tr>
   <tr>
     <td><b>Unplanned Downtime</b></td>
-    <td>Rare. Possible to lose a small % of writes that occurred near the downtime (recoverable after event).</td>
     <td>Extremely rare. No data loss.</td>
+    <td>Rare. Possible to lose a small % of writes that occurred near the downtime (recoverable after event).</td>
   </tr>
 </table>
 </dd>
 </dl>
 
 <h2 id="Selecting_a_Datastore">Selecting a Datastore</h2>
-<p>The Master/Slave Datastore is the default for all new applications. Only new apps can enroll in High Replication. If you would like to to use High Replication for an existing app, simply create a new application and migrate the existing application. The following sections describe in detail how to select High Replication for your application.</p>
+<p>The HRD is the default for all new applications. Existing apps must migrate to the HRD by <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copying entities to a new application</a>.  If you prefer to use the master/slave datastore, you can select it as follows:</p>
 
 <h3 id="For_a_New_Application">For a New Application</h3>
-<p>When you create a new application on <a href="http://appengine.google.com/">appengine.google.com</a>, the <b>Create an Application </b> screen gives you a choice between Master/Slave and High Replication Datastores:</p>
-<br>
-<img src="../../../images/datastore_options.png" style="border:thin solid black">
-<br>
-<p>The Master/Slave datastore is the default. To select High Replication, click <b>Edit</b> and select the <b>High Replication</b> radio button. Then click <b>Create Application</b>. Your application is then configured to serve data from the HR datastore.</p>
+<p>When you create a new application on <a href="http://appengine.google.com/">appengine.google.com</a>, the application uses the HRD by default. To choose the master/slave option, select it on the <b>Create an Application</b> screen.</p>
 
-<p>The new <b>High Replication</b> datastore is highly replicated across data centers, using a system based on the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a> to synchronously replicate data across multiple data centers simultaneously. High Replication provides the highest level of availability for reads and writes (at the cost of higher-latency writes), eventual consistency for complex queries, and approximately three times the storage and CPU cost of the Master/Slave option.</p>
-<p class="warning"><strong>Warning!</strong> This option is irreversible; if you choose High Replication and then wish to migrate to a Master/Slave datastore, you'll need to create a new application and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
+<p>To select master/slave, click <b>Edit</b> and select the <b>Master/Slave</b> radio button. Then click <b>Create Application</b> to configure your app to serve data from the master/slave datastore.</p>
+
+<p class="warning"><strong>Warning!</strong> This option is irreversible; if you choose master/slave and then wish to migrate to HR, you'll need to create a new application and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
 
 <h3 id="For_an_Existing_Application">For an Existing Application</h3>
 
-<p>If you currently have an App Engine application that you'd like to move to the High Replication Datastore, you'll need to create a new application using the instructions above, disable writes in the source application, and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
+<p>If wish to migrate an HRD application to the master/slave datastore, you'll need to create a new application using the instructions above and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
 
 
 <p class="note"><b>Warning!</b> Datastore copy is currently available only for Python applications. Java developers will need to perform some additional configuration steps. See <a href="../../../adminconsole/datastoreadmin.html#A_Note_for_Java_Developers">A Note for Java Developers</a> for more information.</p>
@@ -875,7 +992,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -913,10 +1030,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();

@@ -99,6 +99,8 @@ var logged_in_user_email = null;
 
 
 
+<h2 id="googlecode-promo"><a onclick="siteTracker._trackEvent('Promos','IOLive2011',this.href);" href="http://www.google.com/events/io/2011/iolive.html">Watch Google I/O LIVE</a> on May 10th and 11th, 2011</h2>
+</h2>
 
 </div> <!-- end gc-header -->
 
@@ -154,7 +156,6 @@ var logged_in_user_email = null;
   <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -168,7 +169,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
     <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
     <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
-    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
 
@@ -189,6 +190,19 @@ var logged_in_user_email = null;
 
         </ul>
       </li>
+      <li><a href="../../go/gettingstarted/index.html">Go</a>
+        <ul>
+          <li><span class="exp-feat">Experimental!</span></li>
+            <li><a href="../../go/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="../../go/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="../../go/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="../../go/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="../../go/gettingstarted/handlingforms.html">Handling Forms</a></li>
+  <li><a href="../../go/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="../../go/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -198,6 +212,14 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../../java/overview.html">Overview</a></li>
     <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../java/backends/overview.html">Overview</a></li>
+<li><a href="../../java/com/google/api/backends/package-summary.html">Javadoc Reference</a></li>
+
+
+      </ul>
+    </li>
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
@@ -301,8 +323,10 @@ var logged_in_user_email = null;
         <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">API Reference</a></li>
-
+     <li><a href="../../java/taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../../java/taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/taskqueue/package-summary.html">Javadoc Reference</a></li>
+     <li><a href="../../java/taskqueue/rest.html">REST reference</a> <span class="exp-feat">(Experimental)</span></li>
           </ul>
         </li>
         <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
@@ -335,6 +359,7 @@ var logged_in_user_email = null;
       <ul>
             <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
     <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/backends.html">Backends Config</a></li>
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
@@ -345,6 +370,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
       <ul>
                 <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/backends.html">Backends Config</a></li>
         <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
         <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
         <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
@@ -384,6 +410,20 @@ var logged_in_user_email = null;
     <ul>
           <li><a href="../overview.html">Overview</a></li>
     <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../backends/functions.html">Backends API Functions</a></li>
+    <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
+    <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
+  </ul>
+</li>
+
+      </ul>
+		</li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -543,10 +583,14 @@ var logged_in_user_email = null;
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><a href="../taskqueue/overview-push.html">Using Push Queues</a></li>
+     <li><a href="../taskqueue/overview-pull.html">Using Pull Queues</a><sup class="new">New!</sup></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/taskretryoptions.html">TaskRetryOptions Class</a></li>
          <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/rest.html">REST</a>  <span class="exp-feat">(Experimental)</span></li>
          <li><a href="../taskqueue/functions.html">Functions</a></li>
          <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
        </ul>
@@ -603,6 +647,7 @@ var logged_in_user_email = null;
     <li><a href="../config/index.html">Configuration</a>
       <ul>
             <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -649,6 +694,73 @@ var logged_in_user_email = null;
               <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
       <li><a href="../howto/maintenance.html">Handling Scheduled Maintenance Periods</a></li>
 
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Go</h2> <span class="exp-feat">Experimental!</span>
+    <ul>
+          <li><a href="../../go/overview.html">Overview</a></li>
+    <li><a href="../../go/runtime.html">Runtime Environment</a>
+      <ul>
+        <li><a href="../../go/reference.html">Reference</a></li>
+      </ul>
+    </li>
+    <li><a href="../../go/datastore/index.html">Storing Data</a>
+      <ul>
+             <li><a href="../../go/datastore/overview.html">Overview</a></li>
+     <li><a href="../../go/datastore/reference.html">Reference</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../go/apis.html">Services</a>
+      <ul>
+        <li><a href="../../go/blobstore/index.html">Blobstore</a>
+          <ul>
+            <li><a href="../../go/blobstore/overview.html">Overview</a></li>
+<li><a href="../../go/blobstore/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="../../go/mail/overview.html">Overview</a></li>
+     <li><a href="../../go/mail/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="../../go/memcache/overview.html">Overview</a></li>
+     <li><a href="../../go/memcache/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../go/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../go/taskqueue/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../go/urlfetch/overview.html">Overview</a></li>
+     <li><a href="../../go/urlfetch/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../go/users/index.html">Users</a>
+          <ul>
+                 <li><a href="../../go/users/overview.html">Overview</a></li>
+     <li><a href="../../go/users/reference.html">Reference</a></li>
+
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -709,82 +821,125 @@ var logged_in_user_email = null;
 
 
 
-<p>Storing data in a scalable web application can be tricky.  A user could be interacting with any of dozens of web servers at a given time, and the user's next request could go to a different web server than the one that handled the previous request.  All web servers need to be interacting with data that is also spread out across dozens of machines, possibly in different locations around the world.</p>
+<p>Storing data in a scalable web application can be tricky. A user could be interacting with any of dozens of web servers at a given time, and the user's next request could go to a different web server than the one that handled the previous request. All web servers need to be interacting with data that is also spread out across dozens of machines, possibly in different locations around the world.</p>
 
-<p>Thanks to Google App Engine, you don't have to worry about any of that.  App Engine's infrastructure takes care of all of the distribution, replication and load balancing of data behind a simple API&mdash;and you get a powerful query engine and transactions as well.</p>
+<p>Thanks to Google App Engine, you don't have to worry about any of that. App Engine's infrastructure takes care of all of the distribution, replication and load balancing of data behind a simple API&mdash;and you get a powerful query engine and transactions as well.</p>
 
+<p>The default datastore for an application is now the <a href="../../java/datastore/hr/index.html">High Replication datastore</a>. This datastore uses the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a> to replicate data across datacenters. The High Replication datastore is extremely resilient in the face of catastrophic failure.</p>
+<p>One of the consequences of this is that the consistency guarantee for the datastore may differ from what you are familiar with. It also differs slightly from the Master/Slave datastore, the other datastore option that App Engine offers. In the example code comments, we highlight some ways this might affect the design of your app. For more detailed information, see <a href="../datastore/hr/overview.html">Using the High Replication Datastore</a> (HRD).</p>
+
+p>The datastore writes data in objects known as <i>entities</i>, and each entity has a <i>key</i> that identifies the entity. Entities can belong to the same <i>entity group</i>, which allows you to perform a single transaction with multiple entities. Entity groups have a <i>parent key</i> that identifies the entire entity group.</p>
+
+<p>In the High Replication Datastore, entity groups are also a unit of consistency. Queries over multiple entity groups may return stale, <a href="http://en.wikipedia.org/wiki/Eventual_consistency">eventually consistent</a> results. Queries over a single entity group return up-to-date, strongly consistent, results. Queries over a single entity group are called <i>ancestor queries</i>.  Ancestor queries use the parent key (instead of a specific entity's key).</p>
+
+<p>The code samples in this guide organize like entities into entity groups, and use ancestor queries on those entity groups to return strongly consistent results. In the example code comments, we highlight some ways this might affect the design of your app. For more detailed information, see <a href="../datastore/hr/overview.html">Using the High Replication Datastore</a>.</p>
+
+<p class="note"><b>Note:</b> If you built your application using an earlier version of this Getting Started Guide, please note that the sample application has changed. You can still find the sample code for the original Guestbook application, which does not use ancestor queries, in the demos directory of the SDK.</p>
 
 <h2>A Complete Example Using the Datastore</h2>
 
-<p>Here is a new version of <code>helloworld/helloworld.py</code> that stores greetings in the datastore.  The rest of this page discusses the new pieces.</p>
+<p>Here is a new version of <code>helloworld/helloworld.py</code> that stores greetings in the datastore. The rest of this page discusses the new pieces.</p>
 
 <pre class="prettyprint">
 import cgi
+import datetime
+import urllib
+import wsgiref.handlers
 
+from google.appengine.ext import db
 from google.appengine.api import users
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
-from google.appengine.ext import db
+
 
 class Greeting(db.Model):
-    author = db.UserProperty()
-    content = db.StringProperty(multiline=True)
-    date = db.DateTimeProperty(auto_now_add=True)
+  """Models an individual Guestbook entry with an author, content, and date."""
+  author = db.UserProperty()
+  content = db.StringProperty(multiline=True)
+  date = db.DateTimeProperty(auto_now_add=True)
+
+
+def guestbook_key(guestbook_name=None):
+  """Constructs a datastore key for a Guestbook entity with guestbook_name."""
+  return db.Key.from_path('Guestbook', guestbook_name or 'default_guestbook')
+
 
 class MainPage(webapp.RequestHandler):
-    def get(self):
-        self.response.out.write('&lt;html&gt;&lt;body&gt;')
+  def get(self):
+    self.response.out.write('&lt;html&gt;&lt;body&gt;')
+    guestbook_name=self.request.get('guestbook_name')
 
-        greetings = db.GqlQuery("SELECT * FROM Greeting ORDER BY date DESC LIMIT 10")
+    # Ancestor Queries, as shown here, are strongly consistent with the High
+    # Replication datastore. Queries that span entity groups are eventually
+    # consistent. If we omitted the ancestor from this query there would be a
+    # slight chance that Greeting that had just been written would not show up
+    # in a query.
+    greetings = db.GqlQuery("SELECT * "
+                            "FROM Greeting "
+                            "WHERE ANCESTOR IS :1 "
+                            "ORDER BY date DESC LIMIT 10",
+                            guestbook_key(guestbook_name))
 
-        for greeting in greetings:
-            if greeting.author:
-                self.response.out.write('&lt;b&gt;%s&lt;/b&gt; wrote:' % greeting.author.nickname())
-            else:
-                self.response.out.write('An anonymous person wrote:')
-            self.response.out.write('&lt;blockquote&gt;%s&lt;/blockquote&gt;' %
-                                    cgi.escape(greeting.content))
+    for greeting in greetings:
+      if greeting.author:
+        self.response.out.write(
+            '&lt;b&gt;%s&lt;/b&gt; wrote:' % greeting.author.nickname())
+      else:
+        self.response.out.write('An anonymous person wrote:')
+      self.response.out.write('&lt;blockquote&gt;%s&lt;/blockquote&gt;' %
+                              cgi.escape(greeting.content))
 
-        # Write the submission form and the footer of the page
-        self.response.out.write("""
-              &lt;form action="/sign" method="post"&gt;
-                &lt;div&gt;&lt;textarea name="content" rows="3" cols="60"&gt;&lt;/textarea&gt;&lt;/div&gt;
-                &lt;div&gt;&lt;input type="submit" value="Sign Guestbook"&gt;&lt;/div&gt;
-              &lt;/form&gt;
-            &lt;/body&gt;
-          &lt;/html&gt;""")
+    self.response.out.write("""
+          &lt;form action="/sign?%s" method="post"&gt;
+            &lt;div&gt;&lt;textarea name="content" rows="3" cols="60"&gt;&lt;/textarea&gt;&lt;/div&gt;
+            &lt;div&gt;&lt;input type="submit" value="Sign Guestbook"&gt;&lt;/div&gt;
+          &lt;/form&gt;
+          &lt;hr&gt;
+          &lt;form&gt;Guestbook name: &lt;input value="%s" name="guestbook_name"&gt;
+          &lt;input type="submit" value="switch"&gt;&lt;/form&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;""" % (urllib.urlencode({'guestbook_name': guestbook_name}),
+                          cgi.escape(guestbook_name)))
+
 
 class Guestbook(webapp.RequestHandler):
-    def post(self):
-        greeting = Greeting()
+  def post(self):
+    # We set the same parent key on the 'Greeting' to ensure each greeting is in
+    # the same entity group. Queries across the single entity group will be
+    # consistent. However, the write rate to a single entity group should
+    # be limited to ~1/second.
+    guestbook_name = self.request.get('guestbook_name')
+    greeting = Greeting(parent=guestbook_key(guestbook_name))
 
-        if users.get_current_user():
-            greeting.author = users.get_current_user()
+    if users.get_current_user():
+      greeting.author = users.get_current_user()
 
-        greeting.content = self.request.get('content')
-        greeting.put()
-        self.redirect('/')
+    greeting.content = self.request.get('content')
+    greeting.put()
+    self.redirect('/?' + urllib.urlencode({'guestbook_name': guestbook_name}))
 
-application = webapp.WSGIApplication(
-                                     [('/', MainPage),
-                                      ('/sign', Guestbook)],
-                                     debug=True)
+
+application = webapp.WSGIApplication([
+  ('/', MainPage),
+  ('/sign', Guestbook)
+], debug=True)
+
 
 def main():
-    run_wsgi_app(application)
+  run_wsgi_app(application)
 
-if __name__ == "__main__":
-    main()
-</pre>
 
-<p>Replace <code>helloworld/helloworld.py</code> with this, then reload <a href="http://localhost:8080/">http://localhost:8080/</a> in your browser.  Post a few messages to verify that messages get stored and displayed correctly.</p>
+if __name__ == '__main__':
+  main()</pre>
+
+<p>Replace <code>helloworld/helloworld.py</code> with this, then reload <a href="http://localhost:8080/">http://localhost:8080/</a> in your browser. Post a few messages to verify that messages get stored and displayed correctly.</p>
 
 
 <h2>Storing the Submitted Greetings</h2>
 
-<p>App Engine includes a data modeling API for Python.  It's similar to <a href="http://www.djangoproject.com/documentation/model-api/">Django's data modeling API</a>, but uses App Engine's scalable datastore behind the scenes.</p>
+<p>App Engine includes a data modeling API for Python. It's similar to <a href="http://www.djangoproject.com/documentation/model-api/">Django's data modeling API</a>, but uses App Engine's scalable datastore behind the scenes.</p>
 
-<p>For the guestbook application, we want to store greetings posted by users.  Each greeting includes the author's name, the message content, and the date and time the message was posted so we can display messages in chronological order.</p>
+<p>For the guestbook application, we want to store greetings posted by users. Each greeting includes the author's name, the message content, and the date and time the message was posted so we can display messages in chronological order.</p>
 
 <p>To use the data modeling API, import the <code>google.appengine.ext.db</code> module:</p>
 
@@ -803,31 +958,34 @@ class Greeting(db.Model):
 
 <p>This defines a <code>Greeting</code> model with three properties: <code>author</code> whose value is a <code>User</code> object, <code>content</code> whose value is a string, and <code>date</code> whose value is a <code>datetime.datetime</code>.</p>
 
-<p>Some property constructors take parameters to further configure their behavior.  Giving the <code>db.StringProperty</code> constructor the <code>multiline=True</code> parameter says that values for this property can contain newline characters.  Giving the <code>db.DateTimeProperty</code> constructor a <code>auto_now_add=True</code> parameter configures the model to automatically give new objects a <code>date</code> of the time the object is created, if the application doesn't otherwise provide a value.  For a complete list of property types and their options, see <a href="../datastore/index.html">the Datastore reference</a>.</p>
+<p>Some property constructors take parameters to further configure their behavior. Giving the <code>db.StringProperty</code> constructor the <code>multiline=True</code> parameter says that values for this property can contain newline characters. Giving the <code>db.DateTimeProperty</code> constructor a <code>auto_now_add=True</code> parameter configures the model to automatically give new objects a <code>date</code> of the time the object is created, if the application doesn't otherwise provide a value. For a complete list of property types and their options, see <a href="../datastore/index.html">the Datastore reference</a>.</p>
 
-<p>Now that we have a data model for greetings, the application can use the model to create new <code>Greeting</code> objects and put them into the datastore.  The following new version of the <code>Guestbook</code> handler creates new greetings and saves them to the datastore:</p>
+<p>Now that we have a data model for greetings, the application can use the model to create new <code>Greeting</code> objects and put them into the datastore. The following new version of the <code>Guestbook</code> handler creates new greetings and saves them to the datastore:</p>
 
 <pre class="prettyprint">
 class Guestbook(webapp.RequestHandler):
     def post(self):
-        greeting = Greeting()
+      guestbook_name = self.request.get('guestbook_name')
+      greeting = Greeting(parent=guestbook_key(guestbook_name))
 
-        if users.get_current_user():
-            greeting.author = users.get_current_user()
+      if users.get_current_user():
+        greeting.author = users.get_current_user()
 
-        greeting.content = self.request.get('content')
-        greeting.put()
-        self.redirect('/')
+      greeting.content = self.request.get('content')
+      greeting.put()
+      self.redirect('/?' + urllib.urlencode({'guestbook_name': guestbook_name}))
+
 </pre>
 
-<p>This new <code>Guestbook</code> handler creates a new <code>Greeting</code> object, then sets its <code>author</code> and <code>content</code> properties with the data posted by the user.  It does not set the <code>date</code> property, so <code>date</code> is automatically set to "now," as we configured the model to do.</p>
+<p>This new <code>Guestbook</code> handler creates a new <code>Greeting</code> object, then sets its <code>author</code> and <code>content</code> properties with the data posted by the user. The parent has an entity kind "Guestbook". There is no need to create the "Guestbook" entity before setting it to be the parent of another entity. In this example, the parent is used as a placeholder for transaction and consistency purposes. See <a href="../datastore/entities.html#Entity_Groups_and_Ancestor_Paths">Entity Groups and Ancestor Paths</a> for more information. Objects that share a common <a href="../datastore/queryclass.html#Query_ancestor">ancestor</a> belong to the same entity group. It does not set the <code>date</code> property, so <code>date</code> is automatically set to "now," as we configured the model to do.</p>
 
-<p>Finally, <code>greeting.put()</code> saves our new object to the datastore.  If we acquired this object from a query, <code>put()</code> would update the existing object.  Since we created this object with the model constructor, <code>put()</code> adds the new object to the datastore.</p>
+<p>Finally, <code>greeting.put()</code> saves our new object to the datastore. If we had acquired this object from a query, <code>put()</code> would have updated the existing object. Since we created this object with the model constructor, <code>put()</code> adds the new object to the datastore.</p>
 
+<p>Because querying in the High Replication datastore is only strongly consistent within entity groups, we assign all Greetings to the same entity group in this example by setting the same parent for each Greeting. This means a user will always see a Greeting immediately after it was written. However, the rate at which you can write to the same entity group is limited to 1 write to the entity group per second. When you design a real application you'll need to keep this fact in mind. Note that by using services such as <a href="../memcache/index.html">Memcache</a>, you can mitigate the chance that a user won't see fresh results when querying across entity groups immediately after a write.</p>
 
 <h2>Retrieving the Stored Greetings With GQL</h2>
 
-<p>The App Engine datastore has a sophisticated query engine for data models.  Because the App Engine datastore is not a traditional relational database, queries are not specified using SQL.  Instead, you can prepare queries using a SQL-like query language we call GQL.  GQL provides access to the App Engine datastore query engine's features using a familiar syntax.</p>
+<p>The App Engine datastore has a sophisticated query engine for data models. Because the App Engine datastore is not a traditional relational database, queries are not specified using SQL. Instead, you can prepare queries using a SQL-like query language we call GQL. GQL provides access to the App Engine datastore query engine's features using a familiar syntax.</p>
 
 <p>The following new version of the <code>MainPage</code> handler queries the datastore for greetings:</p>
 
@@ -835,8 +993,14 @@ class Guestbook(webapp.RequestHandler):
 class MainPage(webapp.RequestHandler):
     def get(self):
         self.response.out.write('&lt;html&gt;&lt;body&gt;')
+        guestbook_name=self.request.get('guestbook_name')
 
-        greetings = db.GqlQuery("SELECT * FROM Greeting ORDER BY date DESC LIMIT 10")
+        greetings = db.GqlQuery("SELECT * "
+                                "FROM Greeting "
+                                "WHERE ANCESTOR IS :1 "
+                                "ORDER BY date DESC LIMIT 10",
+                                guestbook_key(guestbook_name))
+
 
         for greeting in greetings:
             if greeting.author:
@@ -856,41 +1020,48 @@ class MainPage(webapp.RequestHandler):
           &lt;/html&gt;""")
 </pre>
 
-<p>The query happens on this line:</p>
+<p>The query happens here:</p>
 
 <pre class="prettyprint">
-    greetings = db.GqlQuery("SELECT * FROM Greeting ORDER BY date DESC LIMIT 10")
+    greetings = db.GqlQuery("SELECT * "
+                            "FROM Greeting "
+                            "WHERE ANCESTOR IS :1 "
+                            "ORDER BY date DESC LIMIT 10",
+                             guestbook_key(guestbook_name))
 </pre>
 
 <p>Alternatively, you can call the <code>gql(...)</code> method on the <code>Greeting</code> class, and omit the <code>SELECT * FROM Greeting</code> from the query:</p>
 
 <pre class="prettyprint">
-    greetings = Greeting.gql("ORDER BY date DESC LIMIT 10")
+    greetings = Greeting.gql("WHERE ANCESTOR IS :1 ORDER BY date DESC LIMIT 10",
+                             guestbook_key(guestbook_name))
 </pre>
 
-<p>As with SQL, keywords (such as <code>SELECT</code>) are case insensitive.  Names, however, are case sensitive.</p>
+<p>As with SQL, keywords (such as <code>SELECT</code>) are case insensitive. Names, however, are case sensitive.</p>
 
-<p>Because the query returns full data objects, it does not make sense to select specific properties from the model.  All GQL queries start with <code>SELECT * FROM <i>model</i></code> (or are so implied by the model's <i>gql(...)</i> method) so as to resemble their SQL equivalents.</p>
+<p>Because the query returns full data objects, it does not make sense to select specific properties from the model. All GQL queries start with <code>SELECT * FROM <i>model</i></code> (or are so implied by the model's <i>gql(...)</i> method) so as to resemble their SQL equivalents.</p>
 
-<p>A GQL query can have a <code>WHERE</code> clause that filters the result set by one or more conditions based on property values.  Unlike SQL, GQL queries may <i>not</i> contain value constants: Instead, GQL uses parameter binding for all values in queries.  For example, to get only the greetings posted by the current user:</p>
+<p>A GQL query can have a <code>WHERE</code> clause that filters the result set by one or more conditions based on property values. Unlike SQL, GQL queries may <i>not</i> contain value constants: Instead, GQL uses parameter binding for all values in queries. For example, to get only the greetings posted by the current user:</p>
 
 <pre class="prettyprint">
     if users.get_current_user():
-        greetings = Greeting.gql("WHERE author = :1 ORDER BY date DESC",
-                                 users.get_current_user())
+        greetings = Greeting.gql(
+            "WHERE ANCESTOR IS :1 AND author = :2 ORDER BY date DESC",
+            guestbook_key(guestbook_name), users.get_current_user())
 </pre>
 
 <p>You can also use named parameters instead of positional parameters:</p>
 
 <pre class="prettyprint">
-        greetings = Greeting.gql("WHERE author = :author ORDER BY date DESC",
-                                 author=users.get_current_user())
+        greetings = Greeting.gql("WHERE ANCESTOR = :ancestor AND author = :author ORDER BY date DESC",
+                                 ancestor=guestbook_key(guestbook_name), author=users.get_current_user())
 </pre>
 
-<p>In addition to GQL, the datastore API provides another mechanism for building query objects using methods.  The query above could also be prepared as follows:</p>
+<p>In addition to GQL, the datastore API provides another mechanism for building query objects using methods. The query above could also be prepared as follows:</p>
 
 <pre class="prettyprint">
         greetings = Greeting.all()
+        greetings.ancestor(guestbook_key(guestbook_name))
         greetings.filter("author =", users.get_current_user())
         greetings.order("-date")
 </pre>
@@ -900,7 +1071,7 @@ class MainPage(webapp.RequestHandler):
 
 <h2>Clearing the Development Server Datastore</h2>
 
-<p>The development web server uses a local version of the datastore for testing your application, using temporary files.  The data persists as long as the temporary files exist, and the web server does not reset these files unless you ask it to do so.</p>
+<p>The development web server uses a local version of the datastore for testing your application, using temporary files. The data persists as long as the temporary files exist, and the web server does not reset these files unless you ask it to do so.</p>
 
 <p>If you want the development server to erase its datastore prior to starting up, use the <code>--clear_datastore</code> option when starting the server:</p>
 
@@ -911,9 +1082,9 @@ dev_appserver.py --clear_datastore helloworld/
 
 <h2>Next...</h2>
 
-<p>We now have a working guest book application that authenticates users using Google accounts, lets them submit messages, and displays messages other users have left.  Because App Engine handles scaling automatically, we will not need to revisit this code as our application gets popular.</p>
+<p>We now have a working guest book application that authenticates users using Google accounts, lets them submit messages, and displays messages other users have left. Because App Engine handles scaling automatically, we will not need to revisit this code as our application gets popular.</p>
 
-<p>This latest version mixes HTML content with the code for the <code>MainPage</code> handler.  This will make it difficult to change the appearance of the application, especially as our application gets bigger and more complex.  Let's use templates to manage the appearance, and introduce static files for a CSS stylesheet.</p>
+<p>This latest version mixes HTML content with the code for the <code>MainPage</code> handler. This will make it difficult to change the appearance of the application, especially as our application gets bigger and more complex. Let's use templates to manage the appearance, and introduce static files for a CSS stylesheet.</p>
 
 <p>Continue to <a href="templates.html">Using Templates</a>.</p>
 
@@ -955,7 +1126,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
     
     ©2011 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
     <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
     <br> <br>
@@ -993,10 +1164,9 @@ _gaq.push(
 );
 (function() {
   var ga = document.createElement('script');
-
   ga.type = 'text/javascript';
   ga.async = true;
-  ga.src = 'http://www.google-analytics.com/ga.js';
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   (document.getElementsByTagName('head')[0] ||
    document.getElementsByTagName('body')[0]).appendChild(ga);
  })();
