@@ -153,10 +153,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -254,7 +254,7 @@ var logged_in_user_email = null;
         <li><a href="../channel/index.html">Channel</a>
           <ul>
             <li><a href="../channel/overview.html">Overview</a></li>
-<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -288,7 +288,7 @@ var logged_in_user_email = null;
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -357,7 +357,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
@@ -366,6 +366,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
+    <li><a href="../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -529,6 +530,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
@@ -602,7 +615,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -627,6 +640,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -650,6 +664,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -709,7 +724,7 @@ var logged_in_user_email = null;
 <h2 id="About_queue_yaml">About Queues</h2>
 <p>The <code>queue.yaml</code> file allows you to specify queue definitions in <a href="http://www.yaml.org/%22%3E">YAML format</a>. The file specifies a directive named <code>queue</code> within which you can define any number of individual queues.</p>
 
-<p>The app's queue configuration applies to all versions of the app. If a given version of an app enqueues a task, the queue uses the task handler for that version of the app.</p>
+<p>The app's queue configuration applies to all versions of the app. If a given version of an app enqueues a task, the queue uses the task handler for that version of the app. To control this behaviour see the <a href="#target">target paramter</a>.</p>
 
 <p>An app can only add tasks to queues defined in <code>queue.yaml</code> and the <code>default</code> queue. If you upload a new <code>queue.yaml</code> file that removes a queue, but that queue still has tasks, the queue is "paused" (its rate is set to 0) but not deleted. You can re-enable the deleted queue by uploading a new <code>queue.yaml</code> file with the queue defined.</p>
 
@@ -717,9 +732,9 @@ var logged_in_user_email = null;
 <p>You can use <code>queue.yaml</code> to define the total amount of storage that task data can consume over all queues. To define the total storage limit, include a top-level directive named named <code>total_storage_limit</code>: 
 
 <pre>
-queue:
 # Set the total storage limit for all queues to 50MB
-- total_storage_limit: 50M
+total_storage_limit: 50M
+queue:
 ...
 </pre>
 
@@ -835,8 +850,8 @@ queue:
 
   <dt><code>bucket_size</code></dt>
   <dd>
-    <p>Limits the burstiness of the queue's processing, i.e. a higher bucket size allows bigger spikes in the queue's execution rate. For example, consider a queue with a rate of 5/s and a bucket size of 10. If that queue has been inactive for some time (allowing its "token bucket" to fill up), and 20 tasks are suddenly enqueued, it will be allowed to execute 10 tasks immediately. But in the following second, only 5 more tasks will be able to be executed because the token bucket has been depleted and is refilling at the specified rate of 5/s.</p>
-    <p>If no <code>bucket_size</code> is specified for a queue, the default value is 5.</p>
+    <p>Limits the burstiness of the queue's processing. In other words, a higher bucket size allows bigger spikes in the queue's execution rate. For example, consider a queue with a rate of 5/s and a bucket size of 10. If that queue has been inactive for some time (allowing its "token bucket" to fill up), and 20 tasks are suddenly enqueued, it will be allowed to execute 10 tasks immediately. But in the following second, only 5 more tasks will be able to be executed because the token bucket has been depleted and is refilling at the specified rate of 5/s. If no <code>bucket_size</code> is specified for a queue, the default value is 5.</p>
+    <p>The Task Queue periodically fetches tasks from the queue (up to the maximum <code>bucket_size</code>). App Engine fetches as many tasks as can be executed in the next two seconds. Once fetched, App Engine executes as many tasks as there are tokens in the token bucket, then schedules more tasks to be dispatched as new tokens become available. Once all fetched tasks have been dispatched, we fetch again. (In fact, we start fetching a little early to cover for the amount of time consumed by the fetch).</p>
     <p>For more information on the algorithm, see <a href="http://en.wikipedia.org/wiki/Token_Bucket">the Wikipedia article on token buckets</a>.</p>
   </dd>
 
@@ -847,6 +862,15 @@ queue:
     <p>Sets the maximum number of tasks that can be executed at any given time in the specified queue. The value is an integer. By default, this directive is unset and there is no limit on the maximum number of concurrent tasks.</p>
 
     <p>Restricting the maximum number of concurrent tasks gives you more control over your queue's rate of execution. In particular, you can explicitly control the number of instances that a queue consumes. Limiting the number of concurrent requests in a given queue allows you to make resources available for other queues or online processing.</p>
+  </dd>
+
+  <dt id="target">
+    <code>target</code>
+  </dt>
+  <dd>
+    <p>The version of your application on which the tasks in this queue will be invoked.</p>
+
+    <p>If unspecified, then tasks are invoked on the same version of the application where they were enqueued. So, if you enqueued a task from the default application version without specifying a target on the queue, the task is invoked in the default application version.</p>
   </dd>
 
   <dt id="retry_parameters">

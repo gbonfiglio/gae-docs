@@ -155,10 +155,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -256,7 +256,7 @@ var logged_in_user_email = null;
         <li><a href="../docs/java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../docs/java/channel/overview.html">Overview</a></li>
-<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../docs/java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -290,7 +290,7 @@ var logged_in_user_email = null;
                   <li><a href="../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -359,7 +359,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../docs/java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../docs/java/tools/localunittesting.html">Local Unit Testing</a>
@@ -368,6 +368,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../docs/java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../docs/java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -531,6 +532,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../docs/python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../docs/python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../docs/python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../docs/python/taskqueue/overview.html">Overview</a></li>
@@ -604,7 +617,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../docs/python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -629,6 +642,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../docs/python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -652,6 +666,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../docs/adminconsole/instances.html">Instances</a></li>
+<li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -784,8 +799,8 @@ var logged_in_user_email = null;
 <a name="charts" id="charts"></a><h2>How do I read the system usage charts in the admin console for my app?</h2>
 <p>Your Google App Engine dashboard in the Admin Console has six graphs that give you a quick visual reference of your system usage.  The information displayed in these graphs gives you a snapshot of resource consumption per second over a period of up to 30 days. Here are a list of the graphs you will see in the Admin Console:</p>
 <ul>
-<li><i>Requests/Second</i>: The number of URIs requested from your application every second</li>
-<li><i>Milliseconds/Request</i>: The average number of milliseconds your application takes to service a request (latency measure)</li>
+<li><i>Requests/Second</i>: The number of URIs requested from your application every second, including both dynamic and static gcache requests.</li>
+<li><i>Milliseconds/Request</i>: The average number of milliseconds your application takes to service a request (latency measure), including only dynamic requests.</li>
 <li><i>Errors/Second</i>: The number of errors generated by your application every second</li>
 <li><i>Bytes Received/Second</i>: The number of bytes that are received in a request every second</li>
 <li><i>Bytes Sent/Second</i>: The number of bytes sent in a request every second</li>
@@ -793,6 +808,8 @@ var logged_in_user_email = null;
 <li><i>Milliseconds Used/Second</i>: The number of milliseconds per second your app is handling a request</li>
 <li><i>Number of Quota DenialsSecond</i>: The number of times a request to your application was denied due to esceeding quotas; see <a href="../docs/quotas.html">Quotas</a> for a complete overview</li>
 </ul>
+
+<p class="note"><strong>Note:</strong> These charts reflect the time it takes the runtime to process the request. They do not reflect the time it takes to deliver the request to the client. </p>
 
 <a name="currentload" id="currentload"></a><h2>How is the current load report in my application's admin console generated?</h2>
 <p>The current load gives a breakdown of the number of requests for each URI requested from your application as well as some CPU stats for the URI.  The request parameters are omitted from the path.</p>
@@ -820,9 +837,9 @@ var logged_in_user_email = null;
     <div id="favicon_python">
       <span class="snippet-header">app.yaml</span>
       <pre>
-- url: /favicon.ico
+- url: /favicon\.ico
   static_files: static/images/favicon.ico
-  upload: static/images/favicon.ico
+  upload: static/images/favicon\.ico
       </pre>
     </div>
   </div>
@@ -832,15 +849,15 @@ var logged_in_user_email = null;
 <p>GQL is a query language that is used with the App Engine datastore. You can use it to query for entities in both the Python runtime environment as well as the datastore viewer in the Admin Console. It uses a SQL-like syntax to retrieve entire entities from your application's datastore and includes the ability to filter on properties, specify the sorting order of the results, and limit the number of entities returned.  The full GQL language reference can be found <a href="../docs/python/datastore/gqlreference.html">here</a>.</p>
 
 <a id="indexes" name="indexes"></a><h2>Why do my queries need to be covered by indexes, and how do I include them?</h2>
-<p>If you run a query that filters on multiple entity properties or orders results by multiple properties, you will need an index for that query.  You must have an index for every query of that kind that you run with your application.  The datastore index for a query maintains and updates a list of keys sorted in the manner that the query specifies to allow speedy access to the data in your datastore.  A full explanation of datastore indexes can be found in our documentation (<a href="../docs/java/datastore/queriesandindexes.html#Introducing_Indexes">Java</a> | <a href="../docs/python/datastore/queriesandindexes.html#Introducing_Indexes">Python</a>).</p>
-<p>When you develop your application with Google App Engine SDK, every query you run automatically gets indexed when necessary.  If you thoroughly test your application before uploading it to your website, all of the indexes your application will need will be included in your application's <code>datastore-indexes.xml</code> (Java) or <code>index.yaml</code> (Python) files.  You may manually add indexes if you find a query that was not covered by your development testing. For more information on how to write indexes for your application, see the index documentation (<a href="../docs/java/datastore/queriesandindexes.html#Defining_Indexes_With_Configuration">Java</a> | <a href="../docs/python/datastore/queriesandindexes.html#Defining_Indexes_With_Configuration">Python</a>).</p>
+<p>If you run a query that filters on multiple entity properties or orders results by multiple properties, you will need an index for that query.  You must have an index for every query of that kind that you run with your application.  The datastore index for a query maintains and updates a list of keys sorted in the manner that the query specifies to allow speedy access to the data in your datastore.  A full explanation of datastore indexes can be found in our documentation (<a href="../docs/java/datastore/queries.html#Introduction_to_Indexes">Java</a> | <a href="../docs/python/datastore/queries.html#Introduction_to_Indexes">Python</a>).</p>
+<p>When you develop your application with Google App Engine SDK, every query you run automatically gets indexed when necessary.  If you thoroughly test your application before uploading it to your website, all of the indexes your application will need will be included in your application's <code>datastore-indexes.xml</code> (Java) or <code>index.yaml</code> (Python) files.  You may manually add indexes if you find a query that was not covered by your development testing. For more information on how to write indexes for your application, see the index documentation (<a href="../docs/java/datastore/queries.html#Introduction_to_Indexes">Java</a> | <a href="../docs/python/datastore/queries.html#Introduction_to_Indexes">Python</a>).</p>
 
 <a id="error_indexes" name="error_indexes"></a><h2>Why were my indexes marked as <i>Error</i>?</h2>
 <p>They may be
-<a href="../docs/python/datastore/queriesandindexes.html#Big_Entities_and_Exploding_Indexes">exploding indexes</a>, or may have encountered other similar problems when writing particular entities in your datastore. You can vacuum and re-attempt to build them by following the instructions in <a href="../docs/python/datastore/queriesandindexes.html#Big_Entities_and_Exploding_Indexes">Queries and Indexes</a>.</p>
+<a href="../docs/python/datastore/queries.html#Big_Entities_and_Exploding_Indexes">exploding indexes</a>, or may have encountered other similar problems when writing particular entities in your datastore. You can vacuum and re-attempt to build them by following the instructions in <a href="../docs/python/datastore/queries.html#Big_Entities_and_Exploding_Indexes">Queries and Indexes</a>.</p>
 
 <a id="stuck_indexes" name="stuck_indexes"></a><h2>Why do my indexes stay <i>Building</i> or <i>Deleting</i> for long periods of time?</h2>
-<p>Even if you don't have many entities of the corresponding <a href="../docs/python/datastore/keysandentitygroups.html#Kinds_Names_and_IDs">kind</a>(s), the time indexes take to build or delete can vary widely depending on the total amount of data in your datastore, indexes currently building for other apps, and datastore load due to user requests, among other factors. In some cases, index jobs can take hours or even days to complete.</p>
+<p>Even if you don't have many entities of the corresponding <a href="../docs/python/datastore/entities.html#Kinds_IDs_and_Names">kind</a>(s), the time indexes take to build or delete can vary widely depending on the total amount of data in your datastore, indexes currently building for other apps, and datastore load due to user requests, among other factors. In some cases, index jobs can take hours or even days to complete.</p>
 <p>Even so, we can sometimes help with indexes that seem to be stuck. If you think this has happened to your indexes, feel free to ask us on the <a href="http://groups.google.com/group/google-appengine">group</a>.
 <p>In the past, index jobs sometimes slowed down because worker <a href="../articles/index_building.html#Doing Work in Parallel">shards</a> were too large to be completed within the lease period. We initially addressed this by increasing the lease period. Later, we started <a href="../articles/index_building.html#Splitting Within Tablets">splitting individual tablets into shards</a>.</p>
 

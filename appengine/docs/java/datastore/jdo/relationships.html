@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../../channel/index.html">Channel</a>
           <ul>
             <li><a href="../../channel/overview.html">Overview</a></li>
-<li><a href="../../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../../multitenancy/overview.html">Overview</a></li>
     <li><a href="../../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../../tools/index.html">Tools</a>
       <ul>
             <li><a href="../../tools/devserver.html">Development Server</a></li>
-    <li><a href="../../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../../tools/appstats.html">Appstats</a></li>
+    <li><a href="../../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../../python/taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="../../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -757,7 +772,7 @@ public class Employee {
 
 <p>The persistent objects are represented as two distinct entities in the datastore, with two different kinds. The relationship is represented using an entity group relationship: the child's key uses the parent's key as its entity group parent. When the app accesses the child object using the parent object's field, the JDO implementation performs an entity group parent query to get the child.</p>
 
-<p>The child class must have a key field whose type can contain the parent key information: either a Key, or a Key value encoded as a string. See <a href="../creatinggettinganddeletingdata.html#Keys">Creating Data: Keys</a> for information on key field types.</p>
+<p>The child class must have a key field whose type can contain the parent key information: either a Key, or a Key value encoded as a string. See <a href="creatinggettinganddeletingdata.html#Keys">Creating Data: Keys</a> for information on key field types.</p>
 
 <p>You create a bidirectional one-to-one relationship using fields on both classes, with an annotation on the child class's field to declare that the fields represent a bidirectional relationship. The field of the child class must have a <code>@Persistent</code> annotation with the argument <code>mappedBy = "..."</code>, where the value is the name of the field on the parent class. If the field on one object is populated, then the corresponding reference field on the other object is populated automatically.</p>
 
@@ -814,9 +829,9 @@ import Employee;
     private Employee employee;
 </pre>
 
-<p>The collection types listed in <a href="../dataclasses.html#Collections">Defining Data Classes: Collections</a> are supported for one-to-many relationships. However, arrays are <i>not</i> supported for one-to-many relationships.</p>
+<p>The collection types listed in <a href="dataclasses.html#Collections">Defining Data Classes: Collections</a> are supported for one-to-many relationships. However, arrays are <i>not</i> supported for one-to-many relationships.</p>
 
-<p>App Engine does not support join queries: you cannot query a parent entity using an attribute of a child entity. (You can query a property of an embedded class, because embedded classes store properties on the parent entity. See <a href="../dataclasses.html#Embedded_Classes">Defining Data Classes: Embedded Classes</a>.)</p>
+<p>App Engine does not support join queries: you cannot query a parent entity using an attribute of a child entity. (You can query a property of an embedded class, because embedded classes store properties on the parent entity. See <a href="dataclasses.html#Embedded_Classes">Defining Data Classes: Embedded Classes</a>.)</p>
 
 <h3>How Ordered Collections Maintain Their Order</h3>
 
@@ -838,7 +853,7 @@ import javax.jdo.annotations.Persistent;
 
 <p>The <code>@Order</code> annotation (using the <code>list-ordering</code> extension) specifies the desired order of the elements of the collection as a JDOQL ordering clause. The ordering uses values of properties of the elements. As with queries, all elements of a collection must have values for the properties used in the ordering clause.</p>
 
-<p>Accessing a collection performs a query. If the ordering clause of a field uses more than one sort order, the query requires a datastore index. See <a href="../queriesandindexes.html">Queries and Indexes</a> for more information on indexes.</p>
+<p>Accessing a collection performs a query. If the ordering clause of a field uses more than one sort order, the query requires a datastore index. See <a href="../queries.html">Queries and Indexes</a> for more information on indexes.</p>
 
 <p>For efficiency, always use an explicit ordering clause for one-to-many relationships of ordered collection types, if possible.</p>
 

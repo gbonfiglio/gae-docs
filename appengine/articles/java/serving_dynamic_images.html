@@ -155,10 +155,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../downloads.html">Downloads</a></li>
-  <li><a href="../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -256,7 +256,7 @@ var logged_in_user_email = null;
         <li><a href="../../docs/java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../../docs/java/channel/overview.html">Overview</a></li>
-<li><a href="../../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../../docs/java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -290,7 +290,7 @@ var logged_in_user_email = null;
                   <li><a href="../../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -359,7 +359,7 @@ var logged_in_user_email = null;
     <li><a href="../../docs/java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../docs/java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../docs/java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../docs/java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../docs/java/tools/localunittesting.html">Local Unit Testing</a>
@@ -368,6 +368,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../../docs/java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../docs/java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -531,6 +532,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../docs/python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../docs/python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../docs/python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../docs/python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../docs/python/taskqueue/overview.html">Overview</a></li>
@@ -604,7 +617,7 @@ var logged_in_user_email = null;
     <li><a href="../../docs/python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../docs/python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../docs/python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../docs/python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../docs/python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../docs/python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -629,6 +642,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../docs/python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -652,6 +666,7 @@ var logged_in_user_email = null;
       <li><a href="../../docs/adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../docs/adminconsole/instances.html">Instances</a></li>
+<li><a href="../../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -932,7 +947,7 @@ public class GetImageServlet extends HttpServlet {
     //...
 </pre>
 
-<p>The <code>getMovie</code> method uses <a href="../../docs/java/datastore/queriesandindexes.html#Introducing_Queries">JDO's query API</a> to retrieve a <code>Movie</code> object that matches the title.</p>
+<p>The <code>getMovie</code> method uses <a href="../../docs/java/datastore/jdo/queries.html">JDO's query API</a> to retrieve a <code>Movie</code> object that matches the title.</p>
 
 <pre class="prettyprint">
 /**

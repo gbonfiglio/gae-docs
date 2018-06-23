@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../../java/channel/overview.html">Overview</a></li>
-<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -698,145 +713,13 @@ var logged_in_user_email = null;
 
 <dl class="apireference">
 
-  <dt id="create_rpc"><span class="itemname">create_rpc</span>(<span class="argname">deadline</span>=<span class="argdefault">None</span>, <span class="argname">callback</span>=<span class="argdefault">None</span>, <span class="argname">read_policy</span>=<span class="argdefault">STRONG_CONSISTENCY</span>)</dt>
-  <dd>
-    <p>Creates a remote procedure call (RPC) configuration object for setting the read policy and datastore call deadline for some API calls.</p>
-    <p>The read policy determines whether read operations use <i>strong consistency</i> or <i>eventual consistency</i>.  With strong consistency, read operations always use the primary storage location for the app, and will wait for primary storage to become available if there is a failure.  With eventual consistency, if there is a failure in primary storage, a read operation will switch to an alternate location, which may not be consistent with the primary.  A read operation with eventual consistency may return sooner than one with strong consistency in the case of failure, and may be appropriate for some uses.  Strong consistency is the default.</p>
-    <p>The datastore call deadline specifies an amount of time the application runtime environment will wait for the datastore to return a result before aborting with an error.  By default, the runtime environment waits until the request handler deadline has elapsed.  You can specify a shorter time to wait so your app can return a faster response to the user, retry the operation, try a different operation, or add the operation to a task queue.</p>
-    <p>To specify these options to a datastore API call, call <span class="itemname">create_rpc()</span> to create an RPC object, then pass that object to the function using an argument named <code>rpc</code>.  For example:</p>
-    <pre class="prettyprint">
-rpc = db.create_rpc(deadline=10, read_policy=db.EVENTUAL_CONSISTENCY)
-
-# Employee is a db.Model class
-q = Employee.all().fetch(10, rpc=rpc)
-
-for results in q:
-    # ...
-    </pre>
-    <p>An RPC object can only be used once.  You must create a separate RPC object for each datastore call that uses it.</p>
-    <p>See the API references for other functions, and methods of <a href="modelclass.html">The Model Class</a> and <a href="queryclass.html">The Query Class</a>, for information on which functions accept the <code>rpc</code> argument.  See also <a href="queriesandindexes.html#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Queries and Indexes: Setting the Read Policy and Datastore Call Deadline</a>.  Note that in most cases, the <code>rpc</code> argument is accepted as a keyword argument only, and does not appear explicitly in the function signature.</p>
-    <p class="note"><b>Note:</b> Datastore calls are synchronous: the methods do not return until the remote procedure call is complete.  This is unlike the URL Fetch asynchronous API, which also uses an RPC object.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">deadline</span></dt>
-      <dd>The datastore call deadline, as a number of seconds.  Accepts a <code>float</code>.  If <code>None</code> (or if no RPC object is passed to the call), the call uses no deadline, and is only interrupted by the request handler deadline.</dd>
-
-      <dt><span class="argname">callback</span></dt>
-      <dd>A callable object to call when the remote procedure call completes.</dd>
-
-      <dt><span class="argname">read_policy</span></dt>
-      <dd>The read policy, either <code>db.STRONG_CONSISTENCY</code> or <code>db.EVENTUAL_CONSISTENCY</code>.  The default is <code>db.STRONG_CONSISTENCY</code>, and strong consistency is used if a read operation is not passed an RPC object.</dd>
-    </dl>
-  </dd>
-
-  <dt id="get"><span class="itemname">get</span>(<span class="argname">keys</span>)</dt>
-  <dd>
-    <p>Gets the entity or entities for the given key or keys, of any Model.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">keys</span></dt>
-      <dd>A <a href="keyclass.html">Key</a> object or a list of <a href="keyclass.html">Key</a> objects.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
-    </dl>
-    <p>If one Key is provided, the return value is an instance of the appropriate <a href="modelclass.html">Model</a> class, or <code>None</code> if no entity exists with the given Key.  If a list of Keys is provided, the return value is a corresponding list of model instances, with <code>None</code> values when no entity exists for a corresponding Key.</p>
-    <p>See also <a href="modelclass.html#Model_get">Model.get()</a>.</p>
-  </dd>
-
-  <dt id="put"><span class="itemname">put</span>(<span class="argname">models</span>)</dt>
-  <dd>
-    <p>Puts one or more model instances into the datastore.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">models</span></dt>
-      <dd>A model instance or a list of model instances to store.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
-    </dl>
-    <p>If multiple model instances are given, they may be in more than one entity group.  Within each entity group, all entities belonging to that group will be written in a single transaction.  See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
-    <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were written.  This may happen if the entities in the call span multiple entity groups.  If the call returns without raising an exception, then all of the entities were written successfully.</p>
-    <p>Returns the <a href="keyclass.html">Key</a> object (if one model instance is given) or a list of <a href="keyclass.html">Key</a> objects (if a list of instances is given) that correspond with the stored model instances.</p>
-  </dd>
-
-  <dt id="delete"><span class="itemname">delete</span>(<span class="argname">models</span>)</dt>
-  <dd>
-    <p>Deletes one or more model instances from the datastore.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">models</span></dt>
-      <dd>A model instance, a <a href="keyclass.html">Key</a> for an entity, or a list (or other iterable) of model instances or keys of entities to delete.</dd>
-      <dt><span class="argname">rpc</span></dt>
-      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
-    </dl>
-    <p>As with <a href="#put">Model.put()</a>, if multiple keys are given, they may be in more than one entity group.  Within each entity group, all entities belonging to that group will be deleted in a single transaction.  See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
-    <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were deleted.  This may happen if the keys in the call span multiple entity groups.  If the call returns without raising an exception, then all of the entities were deleted successfully.</p>
-  </dd>
-
-  <dt id="run_in_transaction"><span class="itemname">run_in_transaction</span>(<span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
-  <dd>
-    <p>Runs a function containing datastore updates in a single transaction.  If any code raises an exception during the transaction, all datastore updates made in the transaction are rolled back.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">function</span></dt>
-      <dd>The function to run in a datastore transaction.</dd>
-
-      <dt>*<span class="argname">args</span></dt>
-      <dd>Positional arguments to pass to the function.</dd>
-
-      <dt>**<span class="argname">kwargs</span></dt>
-      <dd>Keyword arguments to pass to the function.</dd>
-    </dl>
-    <p>If the function returns a value, run_in_transaction() returns the value to the caller.</p>
-    <p>If the function raises an exception, the transaction is rolled back.  If the function raises a <a href="exceptions.html#Rollback">Rollback</a> exception, the exception is not re-raised.  For any other exception, the exception is re-raised to the caller.</p>
-    <p>The datastore uses optimistic locking and retries for transactions.  If the transaction prepared by the function cannot be committed, <span class="itemname">run_in_transaction</span>() calls the function again, retrying the transaction up to 3 times.  (To use a different number of retries, use <a href="#run_in_transaction_custom_retries">db.run_in_transaction_custom_retries()</a>.)  Because the transaction function may be called more than once for a single transaction, the function should not have side effects, including modifications to arguments.</p>
-    <p>If the transaction cannot be committed, such as due to a high rate of contention, a <a href="exceptions.html#TransactionFailedError">TransactionFailedError</a> is raised.</p>
-    <p>For more information about transactions, see <a href="transactions.html">Transactions</a>.</p>
-    <pre class="prettyprint">
-def decrement(key, amount=1):
-    counter = db.get(key)
-    counter.count -= amount
-    if counter.count < 0:    # don't let the counter go negative
-        raise db.Rollback()
-    db.put(counter)
-
-q = db.GqlQuery("SELECT * FROM Counter WHERE name = :1", "foo")
-counter = q.get()
-db.run_in_transaction(decrement, counter.key(), amount=5)
-</pre>
-  </dd>
-
-  <dt id="run_in_transaction_custom_retries"><span class="itemname">run_in_transaction_custom_retries</span>(<span class="argname">retries</span>, <span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
-  <dd>
-    <p>Runs a function containing datastore updates in a single transaction, retrying the transaction the given number of times in the event of contention.  If any code raises an exception during the transaction, all datastore updates made in the transaction are rolled back.</p>
-    <p>Arguments:</p>
-    <dl>
-      <dt><span class="argname">retries</span></dt>
-      <dd>The maximum number of times to call the transaction function in the event of contention in the entity group (more than one user attempting to modify the group simultaneously).</dd>
-
-      <dt><span class="argname">function</span></dt>
-      <dd>The function to run in a datastore transaction.</dd>
-
-      <dt>*<span class="argname">args</span></dt>
-      <dd>Positional arguments to pass to the function.</dd>
-
-      <dt>**<span class="argname">kwargs</span></dt>
-      <dd>Keyword arguments to pass to the function.</dd>
-    </dl>
-    <p>Other than the ability to specify the number of retries, this function behaves identically to <a href="#run_in_transaction">db.run_in_transaction()</a>.
-  </dd>
-
-  <dt id="is_in_transaction"><span class="itemname">is_in_transaction</span>()</dt>
-  <dd>
-    <p>Returns a boolean indicating whether the current scope is executing in a transaction.</p>
-  </dd>
-
-  <dt id="allocate_ids"><span class="itemname">allocate_ids</span>(<span class="argname">model_key</span>, <span class="argname">count</span>)</dt>
+  <dt id="allocate_ids"><span class="itemname">allocate_ids</span>(<span class="argname">model</span>, <span class="argname">count</span>)</dt>
   <dd>
     <p>Allocates a batch of IDs in the datastore for a datastore kind and parent combination.</p>
     <p>IDs allocated in this manner will not be used by the datastore's automatic ID sequence generator and may be used in <a href="keyclass.html">Keys</a> without conflict.</a>.</p>
     <p>Arguments:</p>
     <dl>
-      <dt><span class="argname">model_key</span></dt>
+      <dt><span class="argname">model</span></dt>
       <dd>The model key for which to allocate an ID batch. This is a regular <a href="keyclass.html">Key</a> but only the parent and kind of the key are necessary to determine which ID sequence to use.</dd>
 
       <dt><span class="argname">count</span></dt>
@@ -870,6 +753,18 @@ assert another_instance.key().id() not in second_range
     </pre>
   </dd>
 
+  <dt id="allocate_ids_async"><span class="itemname">allocate_ids_async</span>(<span class="argname">model</span>, <span class="argname">count</span>)</dt>
+  <dd>
+    <p>Asynchronously allocates a batch of IDs in the datastore for a datastore kind and parent combination. Identical to <a href="#allocate_ids">allocate_ids()</a>, but returns an asynchronous object. You can call <a href="../urlfetch/asynchronousrequests.html#get_result">get_result()</a> on the return value to block on the call and return the result.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">model</span></dt>
+      <dd>A <a href="modelclass.html#Model">db.Model</a> instance, <a href="keyclass.html">Key</a>, or string to serve as a template specifying the ID sequence in which to allocate IDs. Returned ids should only be used in entities with the same parent (if any) and kind as this key.</dd>
+
+      <dt><span class="argname">count</span></dt>
+      <dd>The number of IDs to allocate.</dd>
+    </dl>
+    <p>Returns a sequence of ID numbers.</p>
 
   <dt id="allocate_id_range"><span class="itemname">allocate_id_range</span>(<span class="argname">model</span>, <span class="argname">start</span>, <span class="argname">end</span>, **<span class="argname">kwargs</span>)</dt>
   <dd>
@@ -877,8 +772,8 @@ assert another_instance.key().id() not in second_range
     <p>IDs allocated in this manner will not be used by the datastore's automatic ID sequence generator and may be used in <a href="keyclass.html">Keys</a> without conflict.</a>.</p>
     <p>Arguments:</p>
     <dl>
-      <dt><span class="argname">model_key</span></dt>
-      <dd>The model key for which to allocate an ID batch. This is a regular <a href="keyclass.html">Key</a> but only the parent and kind of the key are necessary to determine which ID sequence to use.</dd>
+      <dt><span class="argname">model</span></dt>
+      <dd>A <a href="modelclass.html#Model">db.Model</a> instance, <a href="keyclass.html">Key</a>, or string to serve as a template specifying the ID sequence in which to allocate IDs. Returned ids should only be used in entities with the same parent (if any) and kind as this key.</dd>
 
       <dt><span class="argname">start</span></dt>
       <dd>The first ID to allocate, a number.</dd>
@@ -891,10 +786,75 @@ assert another_instance.key().id() not in second_range
     <p>See <a href="#allocate_ids">allocate_ids()</a> for examples of using allocated IDs.</p>
   </dd>
 
+
+  <dt id="create_rpc"><span class="itemname">create_rpc</span>(<span class="argname">deadline</span>=<span class="argdefault">None</span>, <span class="argname">callback</span>=<span class="argdefault">None</span>, <span class="argname">read_policy</span>=<span class="argdefault">STRONG_CONSISTENCY</span>)</dt>
+  <dd>
+    <p>Creates a remote procedure call (RPC) configuration object for setting the read policy and datastore call deadline for some API calls.</p>
+    <p>The read policy determines whether read operations use <i>strong consistency</i> or <i>eventual consistency</i>. With strong consistency, read operations always use the primary storage location for the app, and will wait for primary storage to become available if there is a failure. With eventual consistency, if there is a failure in primary storage, a read operation will switch to an alternate location, which may not be consistent with the primary. A read operation with eventual consistency may return sooner than one with strong consistency in the case of failure, and may be appropriate for some uses. Strong consistency is the default.</p>
+    <p>The datastore call deadline specifies an amount of time the application runtime environment will wait for the datastore to return a result before aborting with an error. By default, the runtime environment waits until the request handler deadline has elapsed. You can specify a shorter time to wait so your app can return a faster response to the user, retry the operation, try a different operation, or add the operation to a task queue.</p>
+    <p>To specify these options to a datastore API call, call <span class="itemname">create_rpc()</span> to create an RPC object, then pass that object to the function using an argument named <code>rpc</code>. For example:</p>
+    <pre class="prettyprint">
+rpc = db.create_rpc(deadline=10, read_policy=db.EVENTUAL_CONSISTENCY)
+
+# Employee is a db.Model class
+q = Employee.all().fetch(10, rpc=rpc)
+
+for results in q:
+    # ...
+    </pre>
+    <p>An RPC object can only be used once. You must create a separate RPC object for each datastore call that uses it.</p>
+    <p>See the API references for other functions, and methods of <a href="modelclass.html">The Model Class</a> and <a href="queryclass.html">The Query Class</a>, for information on which functions accept the <code>rpc</code> argument. See also <a href="queries.html#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Queries and Indexes: Setting the Read Policy and Datastore Call Deadline</a>. Note that in most cases, the <code>rpc</code> argument is accepted as a keyword argument only, and does not appear explicitly in the function signature.</p>
+    <p class="note"><b>Note:</b> Datastore calls are synchronous: the methods do not return until the remote procedure call is complete. This is unlike the URL Fetch asynchronous API, which also uses an RPC object.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">deadline</span></dt>
+      <dd>The datastore call deadline, as a number of seconds. Accepts a <code>float</code>. If <code>None</code> (or if no RPC object is passed to the call), the call uses no deadline, and is only interrupted by the request handler deadline.</dd>
+
+      <dt><span class="argname">callback</span></dt>
+      <dd>A callable object to call when the remote procedure call completes.</dd>
+
+      <dt><span class="argname">read_policy</span></dt>
+      <dd>The read policy, either <code>db.STRONG_CONSISTENCY</code> or <code>db.EVENTUAL_CONSISTENCY</code>. The default is <code>db.STRONG_CONSISTENCY</code>, and strong consistency is used if a read operation is not passed an RPC object.</dd>
+    </dl>
+  </dd>
+
+  <dt id="delete"><span class="itemname">delete</span>(<span class="argname">models</span>)</dt>
+  <dd>
+    <p>Deletes one or more model instances from the datastore.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">models</span></dt>
+      <dd>A model instance, a <a href="keyclass.html">Key</a> for an entity, or a list (or other iterable) of model instances or keys of entities to delete.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+    </dl>
+    <p>As with <a href="#put">Model.put()</a>, if multiple keys are given, they may be in more than one entity group. Within each entity group, all entities belonging to that group will be deleted in a single transaction. See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
+    <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were deleted. This may happen if the keys in the call span multiple entity groups. If the call returns without raising an exception, then all of the entities were deleted successfully.</p>
+  </dd>
+
+  <dt id="get"><span class="itemname">get</span>(<span class="argname">keys</span>)</dt>
+  <dd>
+    <p>Gets the entity or entities for the given key or keys, of any Model.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">keys</span></dt>
+      <dd>A <a href="keyclass.html">Key</a> object or a list of <a href="keyclass.html">Key</a> objects.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+    </dl>
+    <p>If one Key is provided, the return value is an instance of the appropriate <a href="modelclass.html">Model</a> class, or <code>None</code> if no entity exists with the given Key. If a list of Keys is provided, the return value is a corresponding list of model instances, with <code>None</code> values when no entity exists for a corresponding Key.</p>
+    <p>See also <a href="modelclass.html#Model_get">Model.get()</a>.</p>
+  </dd>
+
+  <dt id="is_in_transaction"><span class="itemname">is_in_transaction</span>()</dt>
+  <dd>
+    <p>Returns a boolean indicating whether the current scope is executing in a transaction.</p>
+  </dd>
+
   <dt id="model_to_protobuf"><span class="itemname">model_to_protobuf</span>(<span class="argname">model_instance</span>)</dt>
   <dd>
-    <p>Creates the "protocol buffer" serialization of a <code>Model</code> instance.  A protocol buffer is Google's serialization format used for remote procedure calls, and can be useful for serializing datastore objects for backup and restore purposes.</p>
-    <p class="note"><b>Note:</b> This method uses a different (older) format for protobuffers than <a href="http://code.google.com/apis/protocolbuffers/docs/overview.html">the open sourced protocol buffer format</a>.  It is not compatible with the open source implementation.</p>
+    <p>Creates the "protocol buffer" serialization of a <code>Model</code> instance. A protocol buffer is Google's serialization format used for remote procedure calls, and can be useful for serializing datastore objects for backup and restore purposes.</p>
+    <p class="note"><b>Note:</b> This method uses a different (older) format for protobuffers than <a href="http://code.google.com/apis/protocolbuffers/docs/overview.html">the open sourced protocol buffer format</a>. It is not compatible with the open source implementation.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">model_instance</span></dt>
@@ -905,16 +865,83 @@ assert another_instance.key().id() not in second_range
 
   <dt id="model_from_protobuf"><span class="itemname">model_from_protobuf</span>(<span class="argname">pb</span>)</dt>
   <dd>
-    <p>Creates a <code>Model</code> instance based on a "protocol buffer" serialization, as returned by <a href="#model_to_protobuf">model_to_protobuf()</a>.  See that method for more information about protocol buffers.</p>
+    <p>Creates a <code>Model</code> instance based on a "protocol buffer" serialization, as returned by <a href="#model_to_protobuf">model_to_protobuf()</a>. See that method for more information about protocol buffers.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">pb</span></dt>
       <dd>The protobuffer serialization, as returned by <a href="#model_to_protobuf">model_to_protobuf()</a>.</dd>
     </dl>
-    <p>Returns an object of the appropriate kind class.  If the kind class does not exist, raises a <code>db.KindError</code>.  If the object is not valid according to the model, raises a <code>db.BadValueError</code>.</p>
-    <p>You can save the new object to the datastore just like any other <code>Model</code> instance, such as by calling its <a href="modelclass.html#Model_put">put()</a> method.  The object retains the key it had when the protocol buffer was created.  If an object with that key already exists in the datastore, saving the deserialized object overwrites the existing object.</p>
-    <p class="note"><b>Note:</b> If the object's key uses a system-assigned ID and that ID has not already been allocated for the given path and kind, the save will succeed, but the ID is not reserved.  An object created in the future may be assigned that ID, and would overwrite the earlier object.  For safety, only restore objects in the same application where they existed when they were serialized.</p> 
+    <p>Returns an object of the appropriate kind class. If the kind class does not exist, raises a <code>db.KindError</code>. If the object is not valid according to the model, raises a <code>db.BadValueError</code>.</p>
+    <p>You can save the new object to the datastore just like any other <code>Model</code> instance, such as by calling its <a href="modelclass.html#Model_put">put()</a> method. The object retains the key it had when the protocol buffer was created. If an object with that key already exists in the datastore, saving the deserialized object overwrites the existing object.</p>
+    <p class="note"><b>Note:</b> If the object's key uses a system-assigned ID and that ID has not already been allocated for the given path and kind, the save will succeed, but the ID is not reserved. An object created in the future may be assigned that ID, and would overwrite the earlier object. For safety, only restore objects in the same application where they existed when they were serialized.</p>
+  </dd>
 
+  <dt id="put"><span class="itemname">put</span>(<span class="argname">models</span>)</dt>
+  <dd>
+    <p>Puts one or more model instances into the datastore.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">models</span></dt>
+      <dd>A model instance or a list of model instances to store.</dd>
+      <dt><span class="argname">rpc</span></dt>
+      <dd>An <a href="functions.html#create_rpc">RPC object</a> for the API call.</dd>
+    </dl>
+    <p>If multiple model instances are given, they may be in more than one entity group. Within each entity group, all entities belonging to that group will be written in a single transaction. See <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
+    <p>An exception will always be raised if any error occurs during the operation, even if some of the entities actually were written. This may happen if the entities in the call span multiple entity groups. If the call returns without raising an exception, then all of the entities were written successfully.</p>
+    <p>Returns the <a href="keyclass.html">Key</a> object (if one model instance is given) or a list of <a href="keyclass.html">Key</a> objects (if a list of instances is given) that correspond with the stored model instances.</p>
+  </dd>
+
+  <dt id="run_in_transaction"><span class="itemname">run_in_transaction</span>(<span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
+  <dd>
+    <p>Runs a function containing datastore updates in a single transaction. If any code raises an exception during the transaction, all datastore updates made in the transaction are rolled back.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">function</span></dt>
+      <dd>The function to run in a datastore transaction.</dd>
+
+      <dt>*<span class="argname">args</span></dt>
+      <dd>Positional arguments to pass to the function.</dd>
+
+      <dt>**<span class="argname">kwargs</span></dt>
+      <dd>Keyword arguments to pass to the function.</dd>
+    </dl>
+    <p>If the function returns a value, run_in_transaction() returns the value to the caller.</p>
+    <p>If the function raises an exception, the transaction is rolled back. If the function raises a <a href="exceptions.html#Rollback">Rollback</a> exception, the exception is not re-raised. For any other exception, the exception is re-raised to the caller.</p>
+    <p>The datastore uses optimistic locking and retries for transactions. If the transaction prepared by the function cannot be committed, <span class="itemname">run_in_transaction</span>() calls the function again, retrying the transaction up to 3 times. (To use a different number of retries, use <a href="#run_in_transaction_custom_retries">db.run_in_transaction_custom_retries()</a>.)  Because the transaction function may be called more than once for a single transaction, the function should not have side effects, including modifications to arguments.</p>
+    <p>If the transaction cannot be committed, such as due to a high rate of contention, a <a href="exceptions.html#TransactionFailedError">TransactionFailedError</a> is raised.</p>
+    <p>For more information about transactions, see <a href="transactions.html">Transactions</a>.</p>
+    <pre class="prettyprint">
+def decrement(key, amount=1):
+    counter = db.get(key)
+    counter.count -= amount
+    if counter.count < 0:    # don't let the counter go negative
+        raise db.Rollback()
+    db.put(counter)
+
+q = db.GqlQuery("SELECT * FROM Counter WHERE name = :1", "foo")
+counter = q.get()
+db.run_in_transaction(decrement, counter.key(), amount=5)
+</pre>
+  </dd>
+
+  <dt id="run_in_transaction_custom_retries"><span class="itemname">run_in_transaction_custom_retries</span>(<span class="argname">retries</span>, <span class="argname">function</span>, *<span class="argname">args</span>, **<span class="argname">kwargs</span>)</dt>
+  <dd>
+    <p>Runs a function containing datastore updates in a single transaction, retrying the transaction the given number of times in the event of contention. If any code raises an exception during the transaction, all datastore updates made in the transaction are rolled back.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">retries</span></dt>
+      <dd>The maximum number of times to call the transaction function in the event of contention in the entity group (more than one user attempting to modify the group simultaneously).</dd>
+
+      <dt><span class="argname">function</span></dt>
+      <dd>The function to run in a datastore transaction.</dd>
+
+      <dt>*<span class="argname">args</span></dt>
+      <dd>Positional arguments to pass to the function.</dd>
+
+      <dt>**<span class="argname">kwargs</span></dt>
+      <dd>Keyword arguments to pass to the function.</dd>
+    </dl>
+    <p>Other than the ability to specify the number of retries, this function behaves identically to <a href="#run_in_transaction">db.run_in_transaction()</a>.
   </dd>
 </dl>
 

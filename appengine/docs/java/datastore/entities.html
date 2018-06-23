@@ -152,10 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -253,7 +253,7 @@ var logged_in_user_email = null;
         <li><a href="../channel/index.html">Channel</a>
           <ul>
             <li><a href="../channel/overview.html">Overview</a></li>
-<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -287,7 +287,7 @@ var logged_in_user_email = null;
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -356,7 +356,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
@@ -365,6 +365,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
+    <li><a href="../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -528,6 +529,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
@@ -601,7 +614,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -626,6 +639,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -649,6 +663,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -736,7 +751,7 @@ var logged_in_user_email = null;
 
 <p>The Java SDK includes a simple Java API that supports the features of the datastore directly. This API is provided in the package <a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">com.google.appengine.api.datastore</a>. You may choose to use this API directly in your applications, and can use it to build your own data management layer. We will use this API to illustrate the features of the datastore.</p>
 
-<p>The Java SDK also supports two standard interfaces for data storage: Java Data Objects (JDO) and the Java Persistence API (JPA). These interfaces let you model your data objects as Java classes, and make it easier to port your application between the App Engine datastore and other data storage solutions. See <a href="jdo/overview.html">Using JDO</a> and <a href="jap/overview.html">Using JPA</a> for more information on these interfaces.</p>
+<p>The Java SDK also supports two standard interfaces for data storage: Java Data Objects (JDO) and the Java Persistence API (JPA). These interfaces let you model your data objects as Java classes, and make it easier to port your application between the App Engine datastore and other data storage solutions. See <a href="jdo/overview.html">Using JDO</a> and <a href="jpa/overview.html">Using JPA</a> for more information on these interfaces.</p>
 
 <p>Here is a brief example of using the datastore API to create a datastore entity:</p>
 

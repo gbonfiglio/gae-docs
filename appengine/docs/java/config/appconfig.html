@@ -173,10 +173,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -274,7 +274,7 @@ var logged_in_user_email = null;
         <li><a href="../channel/index.html">Channel</a>
           <ul>
             <li><a href="../channel/overview.html">Overview</a></li>
-<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -308,7 +308,7 @@ var logged_in_user_email = null;
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -377,7 +377,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
@@ -386,6 +386,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
+    <li><a href="../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -549,6 +550,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
@@ -622,7 +635,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -647,6 +660,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -670,6 +684,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -797,7 +812,7 @@ var logged_in_user_email = null;
 
 
 <h3 id="Setting_the_Browser_Cache_Expiration">Setting the Browser Cache Expiration</h3>
-<p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code><static-files><include ... ></code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser.</p>
+<p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code><static-files><include ... ></code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser. If the expiration time is omitted, the server defaults to 10 minutes.</p>
 
 
   <pre class="prettyprint">
@@ -870,10 +885,10 @@ var logged_in_user_email = null;
 
 <ul>
   <li><code>mail</code> &ndash; allows your application to <a href="../../python/mail/receivingmail.html">receive mail</a></li>
-  <li><code>xmpp_message</code> &ndash; allows your application to <a href="../../python/xmpp/overview.html#Receiving_Instant_Messages">receive instant messages</a></li>
+  <li><code>xmpp_message</code> &ndash; allows your application to <a href="../../python/xmpp/overview.html#Handling_Incoming_Calls">receive instant messages</a></li>
   <li><code>xmpp_presence</code> &ndash; allows your application to receive a user's chat presence</li>
   <li><code>xmpp_subscribe</code> &ndash; allows your application to receive user subscription POSTs.</li>
-  <li><code>warmup</code> &ndash; enables <a href="../../adminconsole/instances.html#Warming_Requests">warmup requests</a></li>
+  <li><code>warmup</code> &ndash; enables <a href="../../adminconsole/instances.html#Warmup_Requests">warmup requests</a></li>
 </ul>
 
 <p>For example, you can enable mail and warmup by adding the following to <code>web.xml</code>:</p>
@@ -930,6 +945,8 @@ var logged_in_user_email = null;
 
 
 
+<p class="warning"><strong>Warning!</strong>: Make sure that the path to the error response file does not overlap with static file handler paths. </p>
+
 <p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error-code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:
 
 <ul>
@@ -945,7 +962,6 @@ var logged_in_user_email = null;
 <p>The <code>error-code</code> is optional; if it's not specified, the given file is the default error response for your app.</p>
 
 <p>You can optionally specify a <code>mime-type</code> to use when serving the custom error. See <a href="http://www.iana.org/assignments/media-types/">http://www.iana.org/assignments/media-types/</a> for a complete list of MIME types.</p>
-
 
 
 <h2 id="Warmup_Requests">Warmup Requests</h2>
@@ -966,6 +982,7 @@ var logged_in_user_email = null;
   <li><a href="#Using_a_load-on-startup_Servlet">Using a &lt;load-on-startup&gt; Servlet</a></li>
   <li><a href="#Using_a_ServletContextListener">Using a ServletContextListener</a></li>
   <li><a href="#Using_a_Custom_Servlet">Using a Custom Servlet</a></li>
+  <li><a href="#Using_Concurrent_Requests">Using Concurrent Requests</a>
 </ul>
 
 <h3 id="Configuration">Configuration</h3>
@@ -1023,8 +1040,10 @@ to register a <a href="http://download.oracle.com/docs/cd/E17802_01/products/pro
 
 
 
-
-
+<h2 id="Using_Concurrent_Requests">Using Concurrent Requests</h2>
+<p>By default, App Engine sends requests serially to a given web server. You can configure App Engine to send multiple requests in parallel by adding the <code>&lt;threadsafe&gt;</code> element to <code>appengine-web.xml</code>:</p>
+<pre>&lt;threadsafe&gt;true&lt;/threadsafe&gt;</pre>
+<p class="note"><b>Note:</b> If you wish to use concurrent requests, your application code needs to use proper thread synchronization before you enable <code>&lt;threadsafe&gt;</code>.</p>
 
       </div><!-- end gc-pagecontent -->
    </div><!-- end gooey wrapper -->

@@ -155,10 +155,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -256,7 +256,7 @@ var logged_in_user_email = null;
         <li><a href="../docs/java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../docs/java/channel/overview.html">Overview</a></li>
-<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../docs/java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -290,7 +290,7 @@ var logged_in_user_email = null;
                   <li><a href="../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -359,7 +359,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../docs/java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../docs/java/tools/localunittesting.html">Local Unit Testing</a>
@@ -368,6 +368,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../docs/java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../docs/java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -531,6 +532,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../docs/python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../docs/python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../docs/python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../docs/python/taskqueue/overview.html">Overview</a></li>
@@ -604,7 +617,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../docs/python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -629,6 +642,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../docs/python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -652,6 +666,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../docs/adminconsole/instances.html">Instances</a></li>
+<li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -817,7 +832,7 @@ var logged_in_user_email = null;
     <td>
       <p>A path is a concatenation of entity keys. Every path begins with the key of the root entity (which may be the current entity itself) in the current entity group. If the current entity is not the root, then the key of each ancestor is appended to the path, from top to bottom, until the current entity's key is appended.</p>
       <p>The first component of a key is the entity <em>kind</em> &ndash; the model or class name given to a model object (<code>str</code>). The next component is an ID (<code>int64</code>) or key name (<code>str</code>). Note that entities can have a numerical ID or key name but not both. If you manually set the key name, your entities may be physically larger than they would with an App Engine-generated ID.</p>
-      <p>For more on keys, see the documentation (<a href="../docs/python/datastore/keysandentitygroups.html">Python</a> | <a href="../docs/java/datastore/creatinggettinganddeletingdata.html#Keys">Java</a>).</p>
+      <p>For more on keys, see the documentation (<a href="../docs/python/datastore/keysandentitygroups.html">Python</a> | <a href="../docs/java/datastore/jdo/creatinggettinganddeletingdata.html#Keys">Java</a>).</p>
     </td>
   </tr>
 </table>
@@ -963,7 +978,7 @@ var logged_in_user_email = null;
 
 <h3 id="anc-indextables">Index tables</h3>
 
-<p>Four Bigtables are used to store all indexes for every App Engine application. Each table stores data for a particular type of index. The first three of these tables &ndash; <a href="#anc-entitiesbykind">EntitiesByKind</a>, <a href="#anc-entitiesbyproperty">EntitiesByProperty ASC</a>, and <a href="#entitiesbypropertydesc">EntitiesByProperty DESC</a> &ndash; are managed by App Engine automatically as new entities are written. The fourth, <a href="#entitiesbycompositeproperty">EntitiesByCompositeProperty</a>, must be explicitly defined. For more on indexes, see the documentation (<a href="../docs/python/datastore/queriesandindexes.html#Introducing_Indexes">Python</a> | <a href="../docs/java/datastore/queriesandindexes.html#Introducing_Indexes">Java</a>) and this <a href="http://sites.google.com/site/io/under-the-covers-of-the-google-app-engine-datastore ">Google I/O presentation</a>.</p>
+<p>Four Bigtables are used to store all indexes for every App Engine application. Each table stores data for a particular type of index. The first three of these tables &ndash; <a href="#anc-entitiesbykind">EntitiesByKind</a>, <a href="#anc-entitiesbyproperty">EntitiesByProperty ASC</a>, and <a href="#entitiesbypropertydesc">EntitiesByProperty DESC</a> &ndash; are managed by App Engine automatically as new entities are written. The fourth, <a href="#entitiesbycompositeproperty">EntitiesByCompositeProperty</a>, must be explicitly defined. For more on indexes, see the documentation (<a href="../docs/python/datastore/queries.html#Introduction_to_Indexes">Python</a> | <a href="../docs/java/datastore/queries.html#Introduction_to_Indexes">Java</a>) and this <a href="http://sites.google.com/site/io/under-the-covers-of-the-google-app-engine-datastore ">Google I/O presentation</a>.</p>
 
 <p class="note">Typically, the total space needed for <code>str</code> fields is dependent on the length and encoding of the value. For the <code>str</code> columns in the index tables described below, however, a special <em>prefix delta</em> encoding scheme is used which can shave bytes off the total that would otherwise be needed. For estimation purposes, you can treat these at regular <code>str</code> values, but the actual space used is typically smaller.</p>
 
@@ -1136,7 +1151,7 @@ var logged_in_user_email = null;
   </tr>
 </table>
 
-<p>Be very cautious when defining a custom index involving several multi-valued properties (e.g. <a href="../docs/python/datastore/typesandpropertyclasses.html#StringListProperty">StringListProperty</a>) or when defining an ancestor-enabled index that also involves one or more multi-valued properties. As noted <a href="#anc-entitiesbyproperty">above</a>, a single multi-valued property results in several index rows (one row per value), but when multiple multi-valued properties are involved, a row must be included for every permutation of the values of every property. This is relevant for ancestor-enabled indexes as well since ancestors are also "exploded." See the <a href="../docs/python/datastore/queriesandindexes.html#Big_Entities_and_Exploding_Indexes">documentation</a> for more information on exploding indexes.</p>
+<p>Be very cautious when defining a custom index involving several multi-valued properties (e.g. <a href="../docs/python/datastore/typesandpropertyclasses.html#StringListProperty">StringListProperty</a>) or when defining an ancestor-enabled index that also involves one or more multi-valued properties. As noted <a href="#anc-entitiesbyproperty">above</a>, a single multi-valued property results in several index rows (one row per value), but when multiple multi-valued properties are involved, a row must be included for every permutation of the values of every property. This is relevant for ancestor-enabled indexes as well since ancestors are also "exploded." See the <a href="../docs/python/datastore/queries.html#Big_Entities_and_Exploding_Indexes">documentation</a> for more information on exploding indexes.</p>
 
 <h5>Additional metadata</h5>
 

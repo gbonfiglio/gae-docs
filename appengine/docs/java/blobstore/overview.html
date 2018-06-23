@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../channel/index.html">Channel</a>
           <ul>
             <li><a href="../channel/overview.html">Overview</a></li>
-<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
+    <li><a href="../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -708,7 +723,10 @@ var logged_in_user_email = null;
 
 
 
-<p>The Blobstore API allows your app to serve data objects, called blobs, that are much larger than the size allowed for objects in the Datastore service. Blobs are created by uploading a file through an HTTP request. Typically, your apps will do this by presenting a form with a file upload field to the user. When the form is submitted, the Blobstore creates a blob from the file's contents and returns an opaque reference to the blob, called a blob key, which you can later use to serve the blob.  The app can serve the complete blob value in response to a user request, or it can read the value directly using a streaming file-like interface.</p>
+
+
+
+<p>The Blobstore API allows your app to serve data objects, called blobs, that are much larger than the size allowed for objects in the Datastore service. Blobs are created by uploading a file through an HTTP request. Typically, your apps will do this by presenting a form with a file upload field to the user. When the form is submitted, the Blobstore creates a blob from the file's contents and returns an opaque reference to the blob, called a blob key, which you can later use to serve the blob. The app can serve the complete blob value in response to a user request, or it can read the value directly using a streaming file-like interface.</p>
 
 <ul>
   <li><a href="#Introducing_the_Blobstore">Introducing the Blobstore</a></li>
@@ -717,25 +735,26 @@ var logged_in_user_email = null;
   <li><a href="#Serving_a_Blob">Serving a Blob</a></li>
   <li><a href="#Complete_Sample_App">Complete Sample App</a></li>
   <li><a href="#Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</a></li>
+  <li><a href="#Writing_Files_to_the_Blobstore">Writing Files to the Blobstore</a><sup class="new">Experimental!</sup></li>
   <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
 </ul>
 
 
 <h2 id="Introducing_the_Blobstore">Introducing the Blobstore</h2>
 
-<p>Google App Engine includes the Blobstore service, which allows apps to serve data objects that can be up to 2 gigabytes in size. These objects are called Blobstore values, or blobs. Blobstore values are served as responses from request handlers and are created as uploads via web forms. Apps do not create blob data directly; instead, blobs are created indirectly, by a submitted web form or other HTTP POST request.  Blobstore values can be served to the user, or accessed by the app in a file-like stream, using the Blobstore API.</p>
+<p>Google App Engine includes the Blobstore service, which allows apps to serve data objects that can be up to 2 gigabytes in size. These objects are called Blobstore values, or blobs. Blobstore values are served as responses from request handlers and are created as uploads via web forms. Apps do not create blob data directly; instead, blobs are created indirectly, by a submitted web form or other HTTP POST request. Blobstore values can be served to the user, or accessed by the app in a file-like stream, using the Blobstore API.</p>
 
 <p>Blobs as defined by the Blobstore service are not related to blob property values used by the datastore.</p>
 
 <p>Blobs are useful for serving large files, such as video or image files, and for allowing users to upload large data files.</p>
 
-<p>To prompt a user to upload a Blobstore value, your app presents a web form with a file upload field. The app generates the form's action URL by calling the Blobstore API. The user's browser uploads the file directly to the Blobstore via the generated URL. Blobstore then stores the blob, rewrites the request to contain the blob key, and passes it to a path in your app. A request handler at that path in your app can perform additional form processing and return a redirect response.</p>
+<p>To prompt a user to upload a Blobstore value, your app presents a web form with a file upload field. The app generates the form's action URL by calling the Blobstore API. The user's browser uploads the file directly to the Blobstore via the generated URL. Blobstore then stores the blob, rewrites the request to contain the blob key, and passes it to a path in your app. A request handler at that path in your app can perform additional form processing, before returning the required hedaers-only redirect response.</p>
 
 <p>To serve a blob, your app sets a header on the outgoing response, and App Engine replaces the response with the blob value.</p>
 
 <p>Blobs can't be modified after they're created, although they can be deleted. Each blob has a corresponding blob info record, stored in the datastore, that provides details about the blob, such as its creation time and content type. You can use the blob key to fetch blob info records and query their properties.</p>
 
-<p>An app can read a Blobstore value a portion at a time using an API call.  The size of the portion can be up to the maximum size of an API return value.  This size is a little less than 1 megabyte, represented by the constant <code>com.google.appengine.api.blobstore.BlobstoreService.MAX_BLOB_FETCH_SIZE</code> in Java.  An app cannot create or modify Blobstore values except through files uploaded by the user.</p>
+<p>An app can read a Blobstore value a portion at a time using an API call. The size of the portion can be up to the maximum size of an API return value. This size is a little less than 1 megabyte, represented by the constant <code>com.google.appengine.api.blobstore.BlobstoreService.MAX_BLOB_FETCH_SIZE</code> in Java. An app cannot create or modify Blobstore values except through files uploaded by the user.</p>
 
 
 <h2 id="Using_the_Blobstore">Using the Blobstore</h2>
@@ -812,7 +831,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res)
 
 <h3>Blob Byte Ranges</h3>
 
-<p>The Blobstore supports serving part of a large value instead of the full value in response to a request.  To serve a partial value, include the <code>X-AppEngine-BlobRange</code> header in the outgoing response.  Its value is a standard <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP byte range</a>. A blank <code>X-AppEngine-BlobRange</code> instructs the API to ignore the range header and serve the full blob. Example ranges include:</p>
+<p>The Blobstore supports serving part of a large value instead of the full value in response to a request. To serve a partial value, include the <code>X-AppEngine-BlobRange</code> header in the outgoing response. Its value is a standard <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP byte range</a>. A blank <code>X-AppEngine-BlobRange</code> instructs the API to ignore the range header and serve the full blob. Example ranges include:</p>
 
 <ul>
   <li><code>0-499</code> serves the first 500 bytes of the value (bytes 0 through 499, inclusive).</li>
@@ -821,7 +840,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res)
   <li><code>-500</code> serves the last 500 bytes of the value.</li>
 </ul>
 
-<p>If the byte range is valid for the Blobstore value, the Blobstore sends a <code>206 Partial Content</code> status code and the requested byte range to the client.  If the range is not valid for the value, the Blobstore sends a <code>416 Requested Range Not Satisfiable</code>.</p>
+<p>If the byte range is valid for the Blobstore value, the Blobstore sends a <code>206 Partial Content</code> status code and the requested byte range to the client. If the range is not valid for the value, the Blobstore sends a <code>416 Requested Range Not Satisfiable</code>.</p>
 
 <p>The Blobstore does not support multiple byte ranges in a single request (e.g. <code>100-199,200-299</code>), whether or not they overlap.</p>
 
@@ -943,13 +962,75 @@ public void doGet(HttpServletRequest req, HttpServletResponse res)
 </pre>
 
 
-
-
 <h2 id="Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</h2>
 
-<p>The Images service can use a Blobstore value as the source of a transformation.  The source image can be as large as the maximum size for a Blobstore value.  The Image service still returns the transformed image to the application, so the transformed image must be smaller than 1 megabyte.  This is useful for making thumbnail images of large photographs uploaded by users.</p>
+<p>The Images service can use a Blobstore value as the source of a transformation. The source image can be as large as the maximum size for a Blobstore value. The Image service still returns the transformed image to the application, so the transformed image must be smaller than 1 megabyte. This is useful for making thumbnail images of large photographs uploaded by users.</p>
 
 <p>For information on using the Images service with Blobstore values, see <a href="../images/overview.html">the Images Service documentation</a>.</p>
+
+<h2 id="Writing_Files_to_the_Blobstore">Writing Files to the Blobstore <span class="exp-feat">(Experimental)</span></h2>
+
+<p>App Engine allows you to programmatically create blobstore blobs, providing a file-like API that you can use to read and write to blobs. Some common uses of this functionality include exporting data and generating reports&mdash;or any function that involves generating large binary data objects.</p>
+<p>You begin by creating a new (empty) blobstore file using the <code>createNewBlobFile()</code> method. This method creates a writable blobstore file that you can open using the Files API's <code>open()</code> method.</p>
+
+<p>This is a low-level API. You can use the high-level
+<a href="http://mappreduce.appspot.com">mapreduce library</a> to create blobstore files based on datastore data.</p>
+
+
+<p>The following sample shows how to create a new blobstore file and manipulate it using the File API:</p>
+<pre class="prettyprint">  // Get a file service
+  FileService fileService = FileServiceFactory.getFileService();
+
+  // Create a new Blob file with mime-type "text/plain"
+  AppEngineFile file = fileService.createNewBlobFile("text/plain");
+
+  // Open a channel to write to it
+  boolean lock = false;
+  FileWriteChannel writeChannel = fileService.openWriteChannel(file, lock);
+
+  // Different standard Java ways of writing to the channel
+  // are possible. Here we use a PrintWriter:
+  PrintWriter out = new PrintWriter(Channels.newWriter(writeChannel, "UTF8"));
+  out.println("The woods are lovely dark and deep.");
+  out.println("But I have promises to keep.");
+
+  // Close without finalizing and save the file path for writing later
+  out.close();
+  String path = file.getFullPath();
+
+  // Write more to the file in a separate request:
+  file = new AppEngineFile(path);
+
+  // This time lock because we intend to finalize
+  lock = true;
+  writeChannel = fileService.openWriteChannel(file, lock);
+
+  // This time we write to the channel using standard Java
+  writeChannel.write(ByteBuffer.wrap
+            ("And miles to go before I sleep.".getBytes()));
+
+  // Now finalize
+  writeChannel.closeFinally();
+
+  // Later, read from the file using the file API
+  lock = false; // Let other people read at the same time
+  FileReadChannel readChannel = fileService.openReadChannel(file, false);
+
+  // Again, different standard Java ways of reading from the channel.
+  BufferedReader reader =
+          new BufferedReader(Channels.newReader(readChannel, "UTF8"));  
+       String line = reader.readLine();
+  // line = "The woods are lovely dark and deep."
+
+  readChannel.close();
+
+  // Now read from the file using the Blobstore API
+  BlobKey blobKey = fileService.getBlobKey(file);
+  BlobstoreService blobStoreService = BlobstoreServiceFactory.getBlobstoreService();
+  String segment = new String(blobStoreService.fetchData(blobKey, 30, 40));</pre>
+
+
+<p class="note"><b>Note:</b> Each write consumes a minimum CPU quota, even if you only write one byte. You can use your quota more efficiently by batching writes.</p>
 
 
 <h2 id="Quotas_and_Limits">Quotas and Limits</h2>

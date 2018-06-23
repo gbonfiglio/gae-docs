@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -151,10 +162,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +263,7 @@ var logged_in_user_email = null;
         <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../../java/channel/overview.html">Overview</a></li>
-<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +297,7 @@ var logged_in_user_email = null;
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +366,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +375,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +539,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="index.html">Task Queues</a>
           <ul>
                  <li><a href="overview.html">Overview</a></li>
@@ -600,7 +624,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +649,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +673,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -696,14 +722,6 @@ var logged_in_user_email = null;
 
 
 
-
-
-
-
-
-
-
-
 <p>With the Task Queue API, applications can perform work initiated by a user request, outside of that request. If an app needs to execute some background work, it may use the Task Queue API to organize that work into small, discrete units, called <i>tasks</i>. The app then inserts these tasks into one or more <i>queues</i>. App Engine automatically detects new tasks and executes them when system resources permit.</p>
 
 <ul>
@@ -716,6 +734,7 @@ var logged_in_user_email = null;
   <li><a href="#Tasks_Within_Transactions">Tasks within Transactions</a></li>
   <li><a href="#Task_Execution">Task Execution</a></li>
   <li><a href="#Deleting_Tasks_Programmatically">Deleting Tasks Programmatically</a></li>
+  <li><a href="#Deferred_Tasks">Deferred Tasks</a></li>
   <li><a href="#Queue_Concepts">Queue Concepts</a></li>
   <li><a href="#The_Default_Queue">The Default Queue</a></li>
   <li><a href="#Queue_Default_URLs">Queue Default URLs</a></li>
@@ -783,7 +802,6 @@ if __name__ == '__main__':
 <p>(In this example, <code>'counters.html'</code> refers to a Django template that contains the HTML for a page that displays the counter value, and a button to trigger a POST request to the <code>/</code> URL.)</p>
 
 <p>Note that this example is not idempotent.  It is possible for the task queue to execute a task more than once.  In this case, the counter is incremented each time the task is run, possibly skewing the results.</p> 
-
 
 
 
@@ -973,7 +991,7 @@ db.run_in_transaction(do_something_in_transaction, ....)
 
 
 <h2 id="Deleting_Tasks_Programmatically">Deleting Tasks Programmatically</h2>
-<p>You can delete individual tasks from the Admin Console, or you can programmatically purge entire queues using the <a href="functions.html#purge">purge()</a> function:</p>
+<p>You can delete individual tasks from the Admin Console, or you can programmatically purge entire queues using the <a href="queues.html#Queue_purge">purge()</a> function:</p>
 
 <pre class="prettyprint">
 # ...
@@ -982,6 +1000,30 @@ q.purge()
 </pre>
 
 <p>It takes the backends about 20 seconds to notice that the queue has been purged. Tasks continue to execute during this time.</p>
+
+
+<h2 id="Deferred_Tasks">Deferred Tasks</h2>
+
+<p>Setting up a handler for each distinct task (as described in the previous sections) can be cumbersome, as can serializing and deserializing complex arguments for the task&mdash;particularly if you have many diverse but small tasks that you want to run on the queue. The Python SDK includes a library (<code>google.appengine.ext.deferred</code>) exposing a simple function that allows you to bypass all the work of setting up dedicated task handlers and serializing and deserializing your parameters.</p>
+
+<p>To use this library, you need to add the <code>deferred</code> builtin to app.yaml. For more information, please see the <a href="../config/appconfig.html#Builtin_Handlers">Built-in Handlers section</a> of the Python Application Configuration page.</p>
+
+<p>To use the deferred library, simply pass the function and its arguments to deferred.defer():</p>
+
+<pre class="prettyprint">from google.appengine.ext.deferred import defer
+
+  def do_something_expensive(a, b, c=None):
+      logging.info("Doing something expensive!")
+      # Do your work here
+
+  # Somewhere else
+  defer(do_something_expensive, "Hello, world!", 42, c=True)</pre>
+
+<p>The deferred library packages your function call and its arguments, then adds it to the task queue. When the task is executed, the deferred library executes <code>do_something_expensive("Hello, world!", 42)</code>.</p>
+
+<p>For more information about using the deferred library in Python, please refer to <a href="../../../articles/deferred.html">Background Work with the Deferred Library</a>.</p>
+
+
 
 <h2 id="Queue_Concepts">Queue Concepts</h2>
 
@@ -1094,7 +1136,7 @@ and the "Quota Details" section of
   </tr>
   <tr>
     <td>queue execution rate</td>
-    <td>50 task invocations per second per queue</td>
+    <td>100 task invocations per second per queue</td>
   </tr>
   <tr>
     <td>maximum countdown/ETA for a task</td>

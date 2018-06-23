@@ -152,10 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../downloads.html">Downloads</a></li>
-  <li><a href="../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -253,7 +253,7 @@ var logged_in_user_email = null;
         <li><a href="../java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../java/channel/overview.html">Overview</a></li>
-<li><a href="../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -287,7 +287,7 @@ var logged_in_user_email = null;
                   <li><a href="../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -356,7 +356,7 @@ var logged_in_user_email = null;
     <li><a href="../java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../java/tools/localunittesting.html">Local Unit Testing</a>
@@ -365,6 +365,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -528,6 +529,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../python/taskqueue/overview.html">Overview</a></li>
@@ -601,7 +614,7 @@ var logged_in_user_email = null;
     <li><a href="../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -626,6 +639,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -649,6 +663,7 @@ var logged_in_user_email = null;
       <li><a href="index.html">Admin Console</a>
         <ul>
           <li><a href="instances.html">Instances</a></li>
+<li><a href="roles.html">Roles</a></li>
 <li><a href="applicationsettings.html">Application</a></li>
 <li><a href="datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -732,11 +747,11 @@ var logged_in_user_email = null;
   <li><a href="#Enable_datastore_admin_in_the_Source_Application">Enable datastore_admin in the source application</a></li>
   <li><a href="#Enable_remote_api_in_the_Target_Application">Enable remote_api in the target application</a></li>
   <li><a href="#Grant_Permission_to_Write_to_the_Target_App">Grant permission for the source application to write to the target application</a></li>
-  <li><a href="Set_the_Source_Application_to_Read">Set the source application to read-only mode</a></li>
+  <li><a href="#Set_the_Source_Application_to_Read-only_Mode">Set the source application to read-only mode (recommended)</a></li>
   <li><a href="#Copy_Your_Data">Copy your data</a></li>
 </ol>
 
-<p>If you used the demo app described in <a href="A_Note_for_Java_Developers">A Note for Java Developers</a>, you can skip steps 1&ndash;3.</p>
+<p>If you used the demo app described in <a href="#A_Note_for_Java_Developers">A Note for Java Developers</a>, you can skip steps 1&ndash;3.</p>
 
 <h4 id="Enable_datastore_admin_in_the_Source_Application">1. Enable datastore_admin in the Source Application</h4>
 <p>The datastore copy feature relies upon the Datastore Admin tab in the source application's Admin Console. To enable Datastore Admin, specify the <code>datastore_admin</code> builtin handler in the source application's <code>app.yaml</code> as follows:</p>
@@ -769,17 +784,17 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 
 <p>If the source application is not in read-only mode, you can still copy data, but you'll see a <code>notreadonly</code> warning in the Admin Console. The destination datastore is not guaranteed to receive a complete copy of the new data unless <a href="applicationsettings.html#Disable_Datastore_Writes">writes are disabled</a> in source application.</p>
 
-<h4 id="Copy_Your_Data">5. Copy Your Data</h4>
+<h4 id="Copy_Your_Data">5. Copy your data</h4>
 <p>Once you've configured your source and target applications, you can select the entity kind(s) to copy individually or in bulk, and copy them using the <b>Copy To Other App</b> button. On the confirmation screen, enter the remote endpoint of the target app: </p>
 <ul>
-  <li>The typical remote endpoint is  http://yourappid.appspot.com/_ah/remote_api.</li>
-  <li>If you used the sample app to copy your data, the remote endpoint is http://datastore-admin.appspot.com/_ah/remote_api.</li>
-  <li>If you used an alternate major version, the remote endpoint of your target application is http://app_version.yourappid.appspot.com/_ah/datastore_admin.</li>
+  <li>The typical remote endpoint is <code>http://yourtargetappid.appspot.com/_ah/remote_api</code>.</li>
+  <li>If you used the sample app to copy your data, the remote endpoint is <code>http://datastore-admin.yourtargetappid.appspot.com/_ah/remote_api</code>.</li>
+  <li>If you used an alternate major version, the remote endpoint of your target application is <code>http://app_version.yourtargetappid.appspot.com/_ah/remote_api</code>.</li>
 </ul>
 
 <p>The system validates the request. If the remote_api connection can be established, one or more mapreduce operations begins to copy the data. You can follow the link to see the status of the initial set of mapreduce operations. If the application uses the namespace feature, a mapreduce runs for each namespace for each entity kind.</p>
 
-<p>You can view a summary of the copy status from the datastore admin page. To view the individual mapreduce status, you can visit <a href="http://yourappid.appspot.com/_ah/mapreduce/">yourappid.appspot.com/_ah/mapreduce/</a></p>
+<p>You can view a summary of the copy status from the datastore admin page. To view the individual mapreduce status, you can visit <code>http://yourtargetappid.appspot.com/_ah/mapreduce/</code></p>
 
 <h3>Caveats</h3>
 

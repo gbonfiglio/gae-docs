@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../downloads.html">Downloads</a></li>
-  <li><a href="../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../java/channel/overview.html">Overview</a></li>
-<li><a href="../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="tools/index.html">Tools</a>
       <ul>
             <li><a href="tools/devserver.html">Development Server</a></li>
-    <li><a href="tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="tools/appstats.html">Appstats</a></li>
     <li><a href="tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../adminconsole/instances.html">Instances</a></li>
+<li><a href="../adminconsole/roles.html">Roles</a></li>
 <li><a href="../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -760,7 +775,7 @@ runtime: python
 api_version: 1
 </pre>
 
-<p>The first element, <code>runtime</code>, selects the Python runtime environment.  As of this writing, App Engine only supports one kind of runtime environment, <code>python</code>.</p>
+<p>The first element, <code>runtime</code>, selects the Python runtime environment.  As of this writing, App Engine supports two runtime environments: <code>python</code> and <code>java</code> (see the <a href="../java/runtime.html">Java runtime documentation</a> for more information).</p>
 
 <p>The second element, <code>api_version</code>, selects which version of the Python runtime environment to use.  As of this writing, App Engine only has one version of the Python environment, <code>1</code>.  If the App Engine team ever needs to release changes to the environment that may not be compatible with existing code, they will do so with a new version identifier.  Your app will continue to use the selected version until you change the <code>api_version</code> setting and upload your app.</p>
 
@@ -772,11 +787,11 @@ api_version: 1
 
 <p>App Engine determines that an incoming request is intended for your application using the domain name of the request. A request whose domain name is <code><i>application-id</i>.appspot.com</code> is routed to the application whose ID is <code><i>application-id</i></code>. Every application gets an <code>appspot.com</code> domain name for free.</p>
 
-<p><code>appspot.com</code> domains also support subdomains of the form <code><i>subdomain</i>.<i>application-id</i>.appspot.com</code>, where <code>subdomain</code> can be any string allowed in one part of a domain name (not <code>.</code>). Requests sent to any subdomain in this way is routed to your application.</p>
+<p><code>appspot.com</code> domains also support subdomains of the form <code><i>subdomain</i>.<i>application-id</i>.appspot.com</code>, where <code>subdomain</code> can be any string allowed in one part of a domain name (not <code>.</code>). Requests sent to any subdomain in this way are routed to your application.</p>
 
-<p>You can set up a custom top-level domain using Google Apps. With Google Apps, you assign subdomains of your business's domain to various applications, such as Google Mail or Sites. You can also associate an App Engine application with a subdomain. For convenience, you can set up a Google Apps domain when you register your application ID, or later from the Administrator Console. See <a href="../../articles/domains.html">this article</a> for more information.</p>
+<p>You can set up a custom top-level domain using Google Apps. With Google Apps, you assign subdomains of your business's domain to various applications, such as Google Mail or Sites. You can also associate an App Engine application with a subdomain. For convenience, you can set up a Google Apps domain when you register your application ID, or later from the Administrator Console. See <a href="../../articles/domains.html">Deploying your Application on your Google Apps URL</a> for more information.</p>
 
-<p>Requests for these URLs all go to the version of your application that you have selected as the default version in the Administrator Console. Each version of your application also has its own URL, so you can deploy and test a new version before making it the default version. The version-specific URL uses the version identifier from your app's configuration file in addition to the <code>appspot.com</code> domain name, in this pattern: <code><i>version-id</i>.latest.<i>application-id</i>.appspot.com</code>  You can also use subdomains with the version-specific URL: <code><i>subdomain</i>.<i>version-id</i>.latest.<i>application-id</i>.appspot.com</code></p>
+<p>Requests for these URLs all go to the version of your application that you have selected as the default version in the Administration Console. Each version of your application also has its own URL, so you can deploy and test a new version before making it the default version. The version-specific URL uses the version identifier from your app's configuration file in addition to the <code>appspot.com</code> domain name, in this pattern: <code><i>version-id</i>.latest.<i>application-id</i>.appspot.com</code>  You can also use subdomains with the version-specific URL: <code><i>subdomain</i>.<i>version-id</i>.latest.<i>application-id</i>.appspot.com</code></p>
 
 <p>The domain name used for the request is included in the request data passed to the application. If you want your app to respond differently depending on the domain name used to access it (such as to restrict access to certain domains, or redirect to an official domain), you can check the request data (such as the <code>Host</code> request header) for the domain from within the application code and respond accordingly.</p>
 
@@ -788,7 +803,7 @@ api_version: 1
 
 <p>App Engine uses multiple web servers to run your application, and automatically adjusts the number of servers it is using to handle requests reliably.  A given request may be routed to any server, and it may not be the same server that handled a previous request from the same user.</p>
 
-<p>The server determines which Python handler script to run by comparing the URL of the request to the URL patterns in the app's configuration file.  It then runs the handler in a CGI environment populated with the request data.  As described in <a href="http://en.wikipedia.org/wiki/Common_Gateway_Interface">the CGI standard</a>, the server puts the request data in environment variables and the standard input stream.  The script performs actions appropriate to the request, then prepares a response and puts it on the standard output stream.</p>
+<p>The server determines which Python handler script to run by comparing the URL of the request to the URL patterns in the app's configuration file.  It then runs the handler in a CGI environment populated with the request data.  As described in <a href="http://www.w3.org/CGI/">the CGI standard</a>, the server puts the request data in environment variables and the standard input stream.  The script performs actions appropriate to the request, then prepares a response and puts it on the standard output stream.</p>
 
 <p>Most applications use a library to parse CGI requests and return CGI responses, such as <a href="http://www.python.org/doc/2.5.2/lib/module-cgi.html">the cgi module</a> from the Python standard library, or a web framework that knows the CGI protocol (such as <a href="tools/webapp/index.html">webapp</a>).  You can refer to the CGI documentation for details about the environment variables and the format of the input stream data.</p>
 
@@ -1021,7 +1036,7 @@ else:
   <li><code>SERVER_SOFTWARE</code>: In the development web server, this value is "Development/X.Y" where "X.Y" is the version of the runtime.  When running on App Engine, this value is "Google App Engine/X.Y.Z".</li>
 </ul>
 
-<p>Additional environment variables are set according to the CGI standard.  For more information on these variables, see <a href="http://hoohoo.ncsa.uiuc.edu/cgi/env.html">the CGI standard</a>.</p>
+<p>Additional environment variables are set according to the CGI standard.  For more information on these variables, see <a href="http://www.w3.org/CGI/">the CGI standard</a>.</p>
 
 <p class="note"><b>Tip:</b> The following webapp request handler displays every environment variable visible to the application in the browser:
 <pre class="prettyprint">

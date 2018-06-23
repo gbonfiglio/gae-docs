@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="java/channel/index.html">Channel</a>
           <ul>
             <li><a href="java/channel/overview.html">Overview</a></li>
-<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="java/multitenancy/overview.html">Overview</a></li>
     <li><a href="java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="java/tools/index.html">Tools</a>
       <ul>
             <li><a href="java/tools/devserver.html">Development Server</a></li>
-    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="java/tools/appstats.html">Appstats</a></li>
+    <li><a href="java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="python/taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="python/tools/index.html">Tools</a>
       <ul>
             <li><a href="python/tools/devserver.html">Development Server</a></li>
-    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="adminconsole/instances.html">Instances</a></li>
+<li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -699,19 +714,24 @@ var logged_in_user_email = null;
 
 <h3>Features on Deck</h3>
 <ul>
-    <li>SSL for third-party domains</li>
+    <li>SSL access on non-appspot.com domains</li>
+    <li>Full-text Search over Datastore</li>
+    <li>Support for Python 2.7</li>
     <li>Background servers capable of running for longer than 30s</li>
-    <li>Ability to select different availability vs. latency options for Datastore</li>
     <li>Support for running MapReduce jobs across App Engine datasets</li>
     <li>Bulk Datastore Import and Export tool</li>
     <li>Improved monitoring and alerting of application serving</li>
-    <li>Programatic Blob creation in Blobstore</li>
+    <li>Logging system improvements to remove limits on size and storage</li>
+    <li>Raise HTTP request and response size limits</li>
+    <li>Integration with <a href="http://code.google.com/apis/storage/">Google Storage for Developers</a></li>
+    <li>Programmatic Blob creation in Blobstore</li>
     <li>Quota and presence improvements for Channel API</li>
 </ul>
 
 <h3>Major Features That Have Been Implemented</h3>
 <ul>
-    <li>2010-12-2 - <a href="http://googleappengine.blogspot.com/2010/12/happy-holidays-from-app-engine-team-140.html">New, major feature releases</a> including:</li>
+    <li>2011-01-05 - <a href="http://googleappengine.blogspot.com/2011/01/announcing-high-replication-datastore.html">High Replication Datastore</a></li>
+    <li>2010-12-02 - <a href="http://googleappengine.blogspot.com/2010/12/happy-holidays-from-app-engine-team-140.html">New, major feature releases</a> including:</li>
     <ul>
       <li>Always On</a></li>
       <li>Raise request/response size limits for some APIs</li>

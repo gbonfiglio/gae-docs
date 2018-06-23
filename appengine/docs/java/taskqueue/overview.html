@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../channel/index.html">Channel</a>
           <ul>
             <li><a href="../channel/overview.html">Overview</a></li>
-<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
+    <li><a href="../tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../../python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../../python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../../python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../../python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../../python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../../python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../../python/tools/appstats.html">Appstats</a></li>
     <li><a href="../../python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -704,6 +719,8 @@ var logged_in_user_email = null;
 
 
 
+
+
 <p>With the Task Queue API, applications can perform work initiated by a user request, outside of that request. If an app needs to execute some background work, it may use the Task Queue API to organize that work into small, discrete units, called <i>tasks</i>. The app then inserts these tasks into one or more <i>queues</i>. App Engine automatically detects new tasks and executes them when system resources permit.</p>
 
 <ul>
@@ -716,6 +733,7 @@ var logged_in_user_email = null;
   <li><a href="#Tasks_Within_Transactions">Tasks within Transactions</a></li>
   <li><a href="#Task_Execution">Task Execution</a></li>
   <li><a href="#Deleting_Tasks_Programmatically">Deleting Tasks Programmatically</a></li>
+  <li><a href="#Deferred_Tasks">Deferred Tasks</a></li>
   <li><a href="#Queue_Concepts">Queue Concepts</a></li>
   <li><a href="#The_Default_Queue">The Default Queue</a></li>
   <li><a href="#Queue_Default_URLs">Queue Default URLs</a></li>
@@ -742,7 +760,7 @@ import static com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 
 // ...
         Queue queue = QueueFactory.getDefaultQueue();
-        queue.add(url("/worker").param("key", key))
+        queue.add(withUrl("/worker").param("key", key))
 </pre>
 
 <p>The default queue will call the request handler at the URL <code>/worker</code> with the parameter <code>key</code> at the rate set in the <code>queue.xml</code> file, or the default rate of 5 tasks per second.</p>
@@ -864,9 +882,9 @@ import com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 // ...
         Queue queue = QueueFactory.getDefaultQueue();
 
-        queue.add(url("/path/to/my/worker"));
+        queue.add(withUrl("/path/to/my/worker"));
 
-        queue.add(url("/path?a=b&c=d").method(Method.GET));
+        queue.add(withUrl("/path?a=b&c=d").method(Method.GET));
 </pre>
 
 
@@ -925,7 +943,7 @@ import com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 
           // ...
 
-    queue.add(TaskOptions.Builder.url("/path/to/my/worker"));
+          queue.add(TaskOptions.Builder.withUrl("/path/to/my/worker"));
 
           // ...
           txn.commit();
@@ -961,6 +979,44 @@ import com.google.appengine.api.taskqueue.TaskOptions.Builder.*;
 </pre>
 
 <p>It takes the backends about 20 seconds to notice that the queue has been purged. Tasks continue to execute during this time.</p>
+
+
+<h2 id="Deferred_Tasks">Deferred Tasks</h2>
+
+<p>Passing complex arguments and setting up handlers for each distinct task (as described in the previous sections) can be cumbersome, particularly if you have many diverse but small tasks that you want to run on the queue. The Task Queue Java SDK includes an interface called <a href= "../javadoc/com/google/appengine/api/taskqueue/DeferredTask.html">DeferredTask</a> which extends Java's Runnable interface that can simplify the marshaling of tasks.</p>
+
+<p>DeferredTask shares the same semantics as the Java Runnable interface. A normal return from the client-provided <code>run()</code> method is considered success, while any exception thrown from <code>run()</code> is considered failure.</p>
+
+<p class="warning"><strong>Warning!</strong> While the DeferredTask API is a convenient way to handle serialization, you have to carefully control the serialization compatibility of objects passed into <a href="../javadoc/com/google/appengine/api/taskqueue/TaskOptions.html#payload(byte%5B%5D,%20java.lang.String)">payload</a> methods. Careful control is necessary because unprocessed objects remain in the task queue, even after the application code is updated. Tasks based on outdated application code will not deserialize properly when the task is decoded with new revisions of the application.</p>
+
+<p> The <a href="../javadoc/com/google/appengine/api/taskqueue/TaskOptions.html">TaskOptions</a> class has a special payload method that receives a DeferredTask and uses Java serialization to encode the deferred task object into the payload of the TaskOptions. This method also sets the url to <code>/_ah/queue/__deferred__</code>, where a special handler for deferred tasks is preconfigured to deserialize and run the task. The following code sample shows you how to enqueue a task:</p>
+
+<pre class="prettyprint">
+// NOTE: Use of anonymous class objects are more difficult to manage
+// with versions of code. Use of static classes is reccomended.
+QueueFactory.getDefaultQueue().add(TaskOptions.Builder.withPayload(new DeferredTask() {
+        public void run() {
+          // Do some work.
+        }
+      }));
+</pre>
+
+<p>The code above is all that is neccessary to enqueue a deferred task and it will be executed by the preconfgured <code>HttpServlet</code> provided.</p>
+
+<p>Some tasks may need more context, namely headers provided by Task Queue to process the task. You can use <a href="../javadoc/com/google/appengine/api/taskqueue/DeferredTaskContext.html">DeferredTaskContext</a> to access the context of the running task.</p>
+
+<p>The example below shows how to access the <code>HttpServletRequest</code> of the DeferredTask.</p>
+
+<pre class="prettyprint">
+final String taskName = DeferredTaskContext.getCurrentRequest().
+    getHeader("X-AppEngine-TaskName");
+</pre>
+
+<p>The <code>DeferredTaskContext</code> provides access methods to the context of the servlet for deferred tasks executed by the servlet running the DeferredTask built-in. Note that these methods return null if run independently of the built in DeferredTask servlet.</p>
+
+
+
+
 
 <h2 id="Queue_Concepts">Queue Concepts</h2>
 
@@ -1076,7 +1132,7 @@ and the "Quota Details" section of
   </tr>
   <tr>
     <td>queue execution rate</td>
-    <td>50 task invocations per second per queue</td>
+    <td>100 task invocations per second per queue</td>
   </tr>
   <tr>
     <td>maximum countdown/ETA for a task</td>

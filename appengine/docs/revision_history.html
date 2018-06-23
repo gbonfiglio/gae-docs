@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="java/channel/index.html">Channel</a>
           <ul>
             <li><a href="java/channel/overview.html">Overview</a></li>
-<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="java/multitenancy/overview.html">Overview</a></li>
     <li><a href="java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="java/tools/index.html">Tools</a>
       <ul>
             <li><a href="java/tools/devserver.html">Development Server</a></li>
-    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="java/tools/appstats.html">Appstats</a></li>
+    <li><a href="java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="python/taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="python/tools/index.html">Tools</a>
       <ul>
             <li><a href="python/tools/devserver.html">Development Server</a></li>
-    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="adminconsole/instances.html">Instances</a></li>
+<li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -698,10 +713,22 @@ var logged_in_user_email = null;
 
 <p>For information about changes to the App Engine API, the runtime environment, or the SDK, see <a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">the release notes</a>.</p>
 
+<p><b>2011-03-30</b></p>
+<ul>
+  <li>App Engine 1.4.3 SDKs are <a href="../downloads.html">now available</a> for Python and Java.</li>
+  <li>New feature: Prospective Search API. Prospective Search allows your application to match a large number of queries over a stream of input documents.</li>
+  <li>New feature: Java Remote API. The Java SDK includes a library called Remote API that lets you transparently access App Engine services from any Java application.</li>
+  <li>New feature: New unit testing capabilities for Python.</li>
+  <li>New feature: Java support for concurrent requests.</li>
+  <li>New feature: Deferred API for Java uses Java serialization to packagea unit of work into the task queue.</li>
+  <li>New feature: Blobstore writing allows you to programmatically write blobs to the blobstore.</li>
+  <li>New docs for an existing feature: We now provide documentation of roles in the admin console.</li>
+  <li>Bug fixes: Fixed documentation issues related to inconsistent parameter naming, missing or incorrect quotas, broken code samples, broken links, and more.</li> 
+</ul>
+
 <p><b>2011-02-10</b></p>
 <ul>
   <li>App Engine 1.4.2 SDKs are <a href="../downloads.html">now available</a> for Python and Java.</li>
-
   <li>New feature: Capabilities API. The Capabilities API allows you to detect when an App Engine capability is unavailable, so you can avoid latency in your application.</li>
   <li>New feature: XMPP v2. The XMPP service provides new methods to handle presence and send the application's chat status.</li>
   <li>New feature: You can now clear tasks from the task queue programmatically.</li>
@@ -860,7 +887,7 @@ var logged_in_user_email = null;
 
 <p><b>2009-12-11</b></p>
 <ul>
-  <li>Clarified <a href="python/datastore/queriesandindexes.html#Properties_With_Multiple_Values">how query filters interact with list properties.</a></li>
+  <li>Clarified <a href="python/datastore/queries.html#Properties_With_Multiple_Values_Can_Have_Surprising_Behaviors">how query filters interact with list properties.</a></li>
 </ul>
 
 <p><b>2009-12-03</b></p>
@@ -880,7 +907,7 @@ var logged_in_user_email = null;
 <ul>
   <li>Expanded and clarified <a href="python/datastore/modelclass.html#Model_get_or_insert">Model.get_or_insert()</a>.</li>
   <li>Mentioned kindless queries in the <a href="python/datastore/queryclass.html">Query class reference</a>.</li>
-  <li>Added a caveat to <a href="python/datastore/entitiesandmodels.html#Lists">list properties</a>: value order is not preserved between <code>Blob/Text</code> and non-<code>Blob/Text</code> values.</li>
+  <li>Added a caveat to <a href="python/datastore/typesandpropertyclasses.html#lists">list properties</a>: value order is not preserved between <code>Blob/Text</code> and non-<code>Blob/Text</code> values.</li>
   <li>Python code samples now use 4-space indentation widths throughout the documentation.</li>
 </ul>
 
@@ -1081,7 +1108,7 @@ var logged_in_user_email = null;
 <p><b>2008-11-20</b></p>
 <ul>
   <li>SDK version 1.1.6 <a href="../downloads.html">now available</a>.</li>
-  <li>New feature: You can now perform queries, including filters and sort orders, on datastore entity keys, using the special property name <code>__key__</code>.  See <a href="python/datastore/queriesandindexes.html">the documentation</a>.</li>
+  <li>New feature: You can now perform queries, including filters and sort orders, on datastore entity keys, using the special property name <code>__key__</code>.  See <a href="python/datastore/queries.html">the documentation</a>.</li>
 </ul>
 
 <p><b>2008-10-28</b></p>
@@ -1149,9 +1176,9 @@ var logged_in_user_email = null;
 
 <p><b>2008-08-23</b></p>
 <ul>
-  <li>Added a <a href="python/datastore/queriesandindexes.html">
+  <li>Added a <a href="python/datastore/queries.html">
   Sort Orders and List Properties</a> section to 
-  <a href="python/datastore/queriesandindexes.html">Queries and
+  <a href="python/datastore/queries.html">Queries and
   Indexes</a> with details on how list properties and sort orders interact.</li>
 </ul>
 
@@ -1229,7 +1256,7 @@ var logged_in_user_email = null;
   href="python/datastore/modelclass.html#Model">Model constructor</a>
   reference to say that <code>parent</code> must be a <code>Model</code>, not a
   <code>Key</code>.</li>
-  <li>Mentioned that <a href="python/datastore/entitiesandmodels.html#Lists">List properties are order-preserving</a>.</li>
+  <li>Mentioned that <a href="python/datastore/typesandpropertyclasses.html#lists">List properties are order-preserving</a>.</li>
 </ul>
 
 <p><b>2008-05-30</b></p>

@@ -155,10 +155,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -256,7 +256,7 @@ var logged_in_user_email = null;
         <li><a href="../docs/java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../docs/java/channel/overview.html">Overview</a></li>
-<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../docs/java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -290,7 +290,7 @@ var logged_in_user_email = null;
                   <li><a href="../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -359,7 +359,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../docs/java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../docs/java/tools/localunittesting.html">Local Unit Testing</a>
@@ -368,6 +368,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../docs/java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../docs/java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -531,6 +532,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../docs/python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../docs/python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../docs/python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../docs/python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../docs/python/taskqueue/overview.html">Overview</a></li>
@@ -604,7 +617,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/python/tools/index.html">Tools</a>
       <ul>
             <li><a href="../docs/python/tools/devserver.html">Development Server</a></li>
-    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../docs/python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../docs/python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../docs/python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -629,6 +642,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../docs/python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../docs/python/tools/appstats.html">Appstats</a></li>
     <li><a href="../docs/python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -652,6 +666,7 @@ var logged_in_user_email = null;
       <li><a href="../docs/adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../docs/adminconsole/instances.html">Instances</a></li>
+<li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -712,7 +727,7 @@ var logged_in_user_email = null;
 the isolation level of a database management system "defines how/when the
 changes made by one operation become visible to other concurrent operations."
 The goal of this article is to explain
-<a href="../docs/python/datastore/queriesandindexes.html">query</a> and
+<a href="../docs/python/datastore/queries.html">query</a> and
 <a href="../docs/python/datastore/transactions.html">transaction</a>
 isolation in the Google App Engine Datastore. After reading this article
 you should have a better understanding of how concurrent reads and writes
@@ -726,7 +741,7 @@ completely isolated from all other datastore transactions and operations.
 Transactions on a given entity group are executed serially, one after
 another.</p>
 
-<p>Furthermore, queries and <code>get()</code>s inside transactions see a
+<p>Furthermore, queries and <code>get()</code>s <i>inside</i> transactions see a
 single, consistent snapshot of the datastore that lasts for the duration of
 the transaction. See the
 <a href="../docs/python/datastore/transactions.html#Isolation_and_Consistency">Isolation
@@ -738,7 +753,7 @@ isolation article</a>.</p>
 <h2>Outside transactions: Read Committed</h2>
 <p>Datastore operations <i>outside</i> transactions most closely resemble the
 Read Committed isolation level. Entities retrieved from the datastore by
-queries or <code>get()</code>s will only of committed data. A
+queries or <code>get()</code>s will only see committed data. A
 retrieved entity will never have partially committed data (some from before
 a commit and some from after). The interaction between queries and transactions
 is a bit more subtle, though, and in order to understand it we need to look at
@@ -786,14 +801,16 @@ of a lookup by key, fail to satisfy the query predicate. Note that,
 while a query cannot take into account transactions that are in between 
 Milestone A and Milestone B when deciding which entities to return, 
 once a query decides to return a specific entity, it will always return 
-the Milestone A version of that entity.</p>
+the latest version of that entity.</p>
 
-<p><a href="../docs/python/datastore/queries.html#Ancestor_Queries">
-Ancestor queries</a>, either performed in a transaction (or on a 
-<a href="../docs/python/datastore/hr/overview.html">High Replication</a> 
-datastore), are an exception to this rule. In this case, the datastore applies
-any pending modifications before executing the ancestor query so query results
-will always be current and consistent.</p>
+<p>There are scenarios in which any pending modifications are guaranteed to be
+completely applied before the query executes: <i>transactional</i> ancestor
+queries in the
+<a href="../docs/python/datastore/overview.html">Master/Slave</a>
+datastore, and <i>any</i> ancestor queries in the
+<a href="../docs/python/datastore/hr/overview.html">High
+Replication</a> datastore. In both cases, query results will always be current
+and consistent.</p>
 
 <h2>Examples</h2>
 <p>We've provided a general explanation of how concurrent updates and queries 

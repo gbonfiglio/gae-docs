@@ -79,7 +79,8 @@ gaearticles.tags['Indexes'] = [
 ];
 gaearticles.tags['Java runtime'] = [
   '57e8905cbff23a7c5355c3b47900ca1e3f4934ba',
-  'cecfc81f689dee8da589df46eec11384678d1aee'
+  'cecfc81f689dee8da589df46eec11384678d1aee',
+  '572378e7f337019618f07cb90a8d18009cea2663'
 ];
 gaearticles.tags['Mapper API'] = [
   '5d610542a50ec20e4f8846ea7c9f61c3f56c1226',
@@ -101,6 +102,7 @@ gaearticles.tags['Overview'] = [
   'eccedde0959e054d2baa4853eb6c13dd87a0e5c6'
 ];
 gaearticles.tags['Python runtime'] = [
+  '358de5ce2017c9fd3717afcc538ba19d3f879e37',
   '1955ab5899645f932732e94415b964aed5900ddb',
   '2232cbb5b5c441bd48bd983da5bd19a003aeace5',
   '29e91f011545ed4736c28030069daed8a83c9968',
@@ -146,7 +148,8 @@ gaearticles.tags['Samples'] = [
   '9268d2f8d299cf5b8a7c0c26e07399f110a16ad3',
   'b121881899aaf8c94f0700ab2b68e4651087b891',
   'c2b0d2f168dcd0e0d95ad6ae968807878fe5cfa9',
-  'f6914db4d87162edb9430996362501c33f5004b4'
+  'f6914db4d87162edb9430996362501c33f5004b4',
+  '572378e7f337019618f07cb90a8d18009cea2663'
 ];
 gaearticles.tags['Scaling'] = [
   '57e8905cbff23a7c5355c3b47900ca1e3f4934ba',
@@ -156,6 +159,7 @@ gaearticles.tags['Scaling'] = [
   'dd35e1ef1646376de18faf8b54ea3314ed928e97'
 ];
 gaearticles.tags['Task Queue'] = [
+  '358de5ce2017c9fd3717afcc538ba19d3f879e37',
   '0d131a6dfb591287dc03005d84ddb2d478c50f4d'
 ];
 gaearticles.tags['YouTube API'] = [

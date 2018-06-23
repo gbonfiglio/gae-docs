@@ -151,10 +151,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
-  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -252,7 +252,7 @@ var logged_in_user_email = null;
         <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
             <li><a href="../../java/channel/overview.html">Overview</a></li>
-<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -286,7 +286,7 @@ var logged_in_user_email = null;
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -355,7 +355,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/tools/index.html">Tools</a>
       <ul>
             <li><a href="../../java/tools/devserver.html">Development Server</a></li>
-    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="../../java/tools/localunittesting.html">Local Unit Testing</a>
@@ -364,6 +364,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="../../java/tools/appstats.html">Appstats</a></li>
+    <li><a href="../../java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -527,6 +528,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="../prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="../prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="../prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
@@ -600,7 +613,7 @@ var logged_in_user_email = null;
     <li><a href="../tools/index.html">Tools</a>
       <ul>
             <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="../tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -625,6 +638,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="../tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="../tools/appstats.html">Appstats</a></li>
     <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
 
@@ -648,6 +662,7 @@ var logged_in_user_email = null;
       <li><a href="../../adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
+<li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -773,7 +788,7 @@ result = urlfetch.fetch(url=url,
 
 <p>To prevent an app from causing an endless recursion of requests, a request handler is not allowed to fetch its own URL.  It is still possible to cause an endless recursion with other means, so exercise caution if your app can be made to fetch requests for URLs supplied by the user.</p>
 
-<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds.  </p>
+<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds for online requests and 10 minutes for offline requests.  </p>
 
 <p>The URL Fetch service supports both synchronous requests and asynchronous requests.  With a synchronous request, the API call to fetch a URL waits until the remote host returns a result, then returns control to the application.  The app can specify the maximum amount of time to wait when it makes the call.  If the maximum wait time is exceeded, the call raises an exception.</p>
 
@@ -801,6 +816,7 @@ result = urlfetch.fetch(url=url,
 <p>For security reasons, the following headers cannot be modified by the application:</p>
 
 <ul>
+  <li><code>Accept-Encoding</code></li>
   <li><code>Content-Length</code></li>
   <li><code>Host</code></li>
   <li><code>Vary</code></li>

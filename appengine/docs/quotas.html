@@ -152,10 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../downloads.html">Downloads</a></li>
-  <li><a href="../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
+  <li><a href="../tools_tips.html">Tools and Tips</a></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
-  <li><a href="../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
+  <li><a href="../business/index.html">App Engine for Business</a></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -253,7 +253,7 @@ var logged_in_user_email = null;
         <li><a href="java/channel/index.html">Channel</a>
           <ul>
             <li><a href="java/channel/overview.html">Overview</a></li>
-<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</a></li>
 <li><a href="java/channel/javascript.html">JavaScript Reference</a></li>
 
           </ul>
@@ -287,7 +287,7 @@ var logged_in_user_email = null;
                   <li><a href="java/multitenancy/overview.html">Overview</a></li>
     <li><a href="java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
-    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
+    <li><a href="java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
 	
           </ul>	
         </li>
@@ -356,7 +356,7 @@ var logged_in_user_email = null;
     <li><a href="java/tools/index.html">Tools</a>
       <ul>
             <li><a href="java/tools/devserver.html">Development Server</a></li>
-    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="java/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
     <li><a href="java/tools/ant.html">Using Apache Ant</a></li>
     <li><a href="java/tools/localunittesting.html">Local Unit Testing</a>
@@ -365,6 +365,7 @@ var logged_in_user_email = null;
         </ul>    
     </li>
     <li><a href="java/tools/appstats.html">Appstats</a></li>
+    <li><a href="java/tools/remoteapi.html">Remote API</a></li>
 
       </ul>
     </li>
@@ -528,6 +529,18 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
+        <li><a href="python/prospectivesearch/index.html">Prospective Search</a>
+          <ul>
+            <li><a href="python/prospectivesearch/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/prospectivesearch/functions.html">Functions</a></li>
+    <li><a href="python/prospectivesearch/exceptions.html">Exceptions</a></li>
+  </ul>
+</li> 
+
+          </ul> 
+        </li>
         <li><a href="python/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="python/taskqueue/overview.html">Overview</a></li>
@@ -601,7 +614,7 @@ var logged_in_user_email = null;
     <li><a href="python/tools/index.html">Tools</a>
       <ul>
             <li><a href="python/tools/devserver.html">Development Server</a></li>
-    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="python/tools/uploadinganapp.html">Uploading and Managing an App</a></li>
     <li><a href="python/tools/uploadingdata.html">Uploading and Downloading Data</a></li>
     <li><a href="python/tools/webapp/index.html">webapp Framework</a>
       <ul>
@@ -626,6 +639,7 @@ var logged_in_user_email = null;
 
       </ul>
     </li>
+    <li><a href="python/tools/localunittesting.html">Local Unit Testing</a></li>
     <li><a href="python/tools/appstats.html">Appstats</a></li>
     <li><a href="python/tools/libraries.html">Third-party Libraries</a></li>
 
@@ -649,6 +663,7 @@ var logged_in_user_email = null;
       <li><a href="adminconsole/index.html">Admin Console</a>
         <ul>
           <li><a href="adminconsole/instances.html">Instances</a></li>
+<li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
         </ul>
@@ -864,9 +879,22 @@ var logged_in_user_email = null;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>An App Engine application can consume resources up to certain maximums, or <i>quotas</i>. With quotas, App Engine ensures that your application won't exceed your budget, and that other applications running on App Engine won't impact the performance of your app.</p>
-
-
 
 <ul>
   <li><a href="#Billable_Quotas_and_Fixed_Quotas">Billable Quotas and Fixed Quotas</a></li>
@@ -877,6 +905,7 @@ var logged_in_user_email = null;
   <li><a href="#Resources">Resources</a>
     <ul>
       <li><a href="#Blobstore">Blobstore</a></li>
+      <li><a href="#Channel">Channel</a></li>
       <li><a href="#Datastore">Datastore</a></li>
       <li><a href="#Deployments">Deployments</a></li>
       <li><a href="#Image_Manipulation">Image Manipulation</a></li>
@@ -972,7 +1001,7 @@ start = quota.get_request_cpu_usage()
 do_something_expensive()
 end = quota.get_request_cpu_usage()
 
-logging.info("do_something_expensive() cost %d megacycles." % (start - end))
+logging.info("do_something_expensive() cost %d megacycles." % (end - start))
 </pre>
 
 <h3>The Quota API in Java</h3>
@@ -1042,6 +1071,56 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
 </table>
 
+
+<h3 id="Channel">Channel</h3>
+<dl>
+  <dt>Channel API Calls</dt>
+  <dd>The total number of times the app accessed the Channel service to perform a <code>POST</code>.</dd>
+
+  <dt>Channel Data Sent</dt>
+  <dd>The amount of data sent to the Channel service in requests. This also counts toward the Outgoing Bandwidth quota.</dd>
+
+  <dt>Channel Data Received</dt>
+  <dd>The amount of data received from the Channel service in responses. This also counts toward the Incoming Bandwidth quota.</dd>
+</dl>
+
+<table width="75%">
+  <tr>
+    <th width="30%" rowspan="2">Resource</th>
+    <th width="35%" colspan="2">Free Default Quota</th>
+    <th width="35%" colspan="2">Billing Enabled Default Quota</th>
+  </tr>
+  <tr>
+    <th width="17.5%">Daily Limit</th>
+    <th width="17.5%">Maximum Rate</th>
+    <th width="17.5%">Daily Limit</th>
+    <th width="17.5%">Maximum Rate</th>
+  </tr>
+  <tr>
+    <td width="30%">Channel API Calls</td>
+    <td width="17.5%">657,000 calls</td>
+    <td width="17.5%">3,000 calls/minute</td>
+    <td width="17.5%">46,000,000 calls</td>
+    <td width="17.5%">32,000 calls/minute</td>
+  </tr>
+  <tr>
+    <td>Channel Data Sent</td>
+    <td>up to the Outgoing Bandwidth limit</td>
+    <td>22 MB/minute</td>
+    <td>up to the Outgoing Bandwidth limit</td>
+    <td>740 MB/minute</td>
+  </tr>
+  <tr>
+    <td>Channel Data Received</td>
+    <td>up to the Incoming Bandwidth limit</td>
+    <td>22 MB/minute</td>
+    <td>up to the Incoming Bandwidth limit</td>
+    <td>740 MB/minute</td>
+  </tr>
+  <tr>
+    <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
+  </tr>
+</table>
 
 
 
@@ -1322,7 +1401,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <dt>Memcache API Calls</dt>
   <dd>The total number of times the app accessed the memcache service to get, set or expire values.</dd>
 
-  <dt>Data Sent to API</dt>S
+  <dt>Data Sent to API</dt>
   <dd>The amount of data sent to the memcache.</dd>
 
   <dt>Data Received from API</dt>
@@ -1370,16 +1449,27 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
 <dl>
   <dt>Requests</dt>
-  <dd>The total number of requests to the app. The per-minute quotas for application with billing enabled allow for up to 500 requests per second--more than one billion requests per month. If your application requires even higher quotas than the "billing-enabled" values listed below, you can request an increase in these limits <a href="../kb/billing.html#cpu">here</a>.</dd>
+  <dd>The total number of requests to the app. The per-minute quotas for application with billing enabled allow for up to 500 requests per second&mdash;more than one billion requests per month. If your application requires even higher quotas than the "billing-enabled" values listed below, you can request an increase in these limits <a href="../kb/billing.html#cpu">here</a>.</dd>
   <dt>Outgoing Bandwidth (billable)</dt>
   <dd>
     <p>The amount of data sent by the app in response to requests.</p>
-    <p>This includes data sent in response to both secure requests and non-secure requests; requests served by app servers, static file servers, or the Blobstore; data sent in email messages; and data in outgoing HTTP requests sent by the URL fetch service.</p>
+    <p>This includes:</p>
+    <ul>
+      <li>data served in response to both secure requests and non-secure requests by app servers, static file servers, or the Blobstore</li>
+      <li>data sent in email messages</li>
+      <li>data sent over XMPP or the Channel API</li>
+      <li>data in outgoing HTTP requests sent by the URL fetch service.</li>
+    </ul>
   </dd>
   <dt>Incoming Bandwidth (billable)</dt>
   <dd>
     <p>The amount of data received by the app from requests. Each incoming request can be no larger than 10MB.</p>
-    <p>This includes data received by the app in secure requests and non-secure requests, uploads to the Blobstore, and data received in response to HTTP requests by the URL fetch service.</p>
+    <p>This includes:</p>
+    <ul>
+      <li>data received by the app in secure requests and non-secure requests</li>
+      <li>uploads to the Blobstore</li>
+      <li>data received in response to HTTP requests by the URL fetch service</li>
+    </ul>
   </dd>
   <dt>CPU Time (billable)</dt>
   <dd>
@@ -1397,7 +1487,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <dt>Secure Requests</dt>
   <dd>The number of requests that used a secure connection (HTTPS). Secure requests also count towards the Requests quota.</dd>
   <dt>Secure Outgoing Bandwidth</dt>
-  <dd>The amount of data send by the app over a secure connection in response to requests. Secure outgoing bandwidth also counts toward the Outgoing Bandwidth quota.</dd>
+  <dd>The amount of data sent by the app over a secure connection in response to requests. Secure outgoing bandwidth also counts toward the Outgoing Bandwidth quota.</dd>
   <dt>Secure Incoming Bandwidth</dt>
   <dd>The amount of data received by the app over a secure connection from requests. Secure incoming bandwidth also counts toward the Incoming Bandwidth quota.</dd>
 </dl>
@@ -1415,7 +1505,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <th width="17.5%">Maximum Rate</th>
   </tr>
   <tr>
-    <td width="30%">Requests</td>
+    <td width="30%">Requests (includes HTTPS)</td>
     <td width="17.5%">43,200,000 requests</td>
     <td width="17.5%">45,200 requests/minute</td>
     <td width="17.5%">43,200,000 requests</td>
@@ -1425,14 +1515,14 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>Outgoing Bandwidth (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>, includes HTTPS)</td>
     <td>1 GB</td>
     <td>56 MB/minute</td>
-    <td>1 GB free; 1,046 GB maximum</td>
+    <td>1 GB free; 14,400 GB maximum</td>
     <td>10 GB/minute</td>
   </tr>
   <tr>
     <td>Incoming Bandwidth (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>, includes HTTPS)</td>
     <td>1 GB</td>
     <td>56 MB/minute</td>
-    <td>1 GB free; 1,046 GB maximum</td>
+    <td>1 GB free; 14,400 GB maximum</td>
     <td>10 GB/minute</td>
   </tr>
   <tr>
@@ -1440,8 +1530,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
     <td>6.5 CPU-hours</td>
     <td>15 CPU-minutes/minute</td>
     <td>6.5 CPU-hours free; 1,729 CPU-hours maximum</i></td>
-  <td>72 CPU-minutes/minute</td>
-</tr>
+    <td>72 CPU-minutes/minute</td>
+  </tr>
 <tr>
   <td colspan="5" style="text-align: right"><b>Outgrowing the maximums? <a href="http://code.google.com/appengine/kb/billing.html#cpu">Request an increase.</a></b></td>
 </tr>
@@ -1456,6 +1546,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   <dd>The total number of tasks the app has enqueued that are not yet executed.</dd>
   <dt>Task Queue Stored Task Bytes</dt>
   <dd>The bytes consumed by tasks the app has enqueued that are not yet executed. This quota is counted as part of Stored Data (billable).</dd>
+
+<p class="note"><b>Tip:</b> You can configure the Stored Task Bytes Quota by adjusting your queue configuration. See the <a href="python/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Python</a> or <a href="java/config/queue.html#Setting_the_Storage_Limit_for_All_Queues">Java</a> documentation for more details.
 </dl>
 
 <table width="75%">
@@ -1536,16 +1628,16 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>UrlFetch Data Sent</td>
-    <td>up to the outgoing bandwidth limit</td>
+    <td>up to the Outgoing Bandwidth limit</td>
     <td>22 MB/minute</td>
-    <td>up to the outgoing bandwidth limit</td>
+    <td>up to the Outgoing Bandwidth limit</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
     <td>UrlFetch Data Received</td>
-    <td>up to the incoming bandwidth limit</td>
+    <td>up to the Incoming Bandwidth limit</td>
     <td>22 MB/minute</td>
-    <td>up to the incoming bandwidth limit</td>
+    <td>up to the Incoming Bandwidth limit</td>
     <td>740 MB/minute</td>
   </tr>
   <tr>
@@ -1590,7 +1682,7 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>XMPP Data Sent</td>
-    <td>1,046 GB</td>
+    <td>1 GB</td>
     <td>5.81 GB/minute</td>
     <td>1,046 GB</td>
     <td>5.81 GB/minute</td>
