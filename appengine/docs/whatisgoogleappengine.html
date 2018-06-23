@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+
+
+<html>
+  <head>
+    <script type="text/javascript" language="JavaScript">
+    ORIGINAL_PAGE_PATH = "/appengine/docs/whatisgoogleappengine.html";
+    </script>
+    
+    
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>What Is Google App Engine? - Google App Engine - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '/appengine/docs/_toc.ezt';
+//--></script>
+<link href="../../css/codesite.pack.01312008.css" type="text/css" rel="stylesheet"></link>
+<script src="../../js/codesite.pack.01312008.js" type="text/javascript"></script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml" />
+
+<!--[if IE]><link rel="stylesheet" type="text/css" href="../../css/iehacks.css" /><![endif]-->
+
+    <link href="../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
+    <link href="../css/local_extensions.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="gc-documentation">
+
+    
+    
+    <div id="gc-container">
+<a name="top"></a>
+<div id="skipto">
+  <a href="#gc-pagecontent">Skip to page content</a>
+  <a href="#gc-toc">Skip to main navigation</a>
+</div>
+<div id="langpref">
+   <a class="dropdown" href="http://code.google.com">English</a>
+   <span>|</span>
+   <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
+</div>
+<div id="gc-header">
+  <div id="logo"><a href="http://code.google.com">
+  
+     <img src="../../images/cleardot.gif" height="1px" width="1px" alt="Google Code Home Page" id="gc-logo-img"/>
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm" class="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml"/>
+      </noscript>
+        <table class="gsc-search-box" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td class="gsc-input">
+                <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px"/>
+              </td>
+              <td class="gsc-search-button">
+                <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+                <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit"/>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="greytext">e.g. "templates" or "datastore"</td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a name="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1>Google App Engine</h1>
+  <ul id="docs" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="../index.html" title="Google App Engine home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="index.html" class="selected" title="Official Google App Engine documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="../kb/index.html" title="Answers to frequently asked questions about Google App Engine">FAQ</a>
+    </li>
+  
+    <li id="articles_link">
+      <a href="../articles/index.html" title="Focused articles and tutorials for Google App Engine developers">Articles</a>
+    </li>
+  
+    <li>
+      <a href="http://googleappengine.blogspot.com/" title="Official Google App Engine blog">Blog</a>
+    </li>
+  
+    <li>
+      <a href="http://groups.google.com/group/google-appengine" title="Google App Engine developer forum">Group</a>
+    </li>
+  
+    <li>
+      <a href="../terms.html" title="Google App Engine terms of service">Terms</a>
+    </li>
+  
+    <li>
+      <a href="../downloads.html" title="Download Google App Engine">Download</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+    <div class="g-section g-tpl-170">
+
+      <div class="g-unit g-first" id="gc-toc">
+        <ul>
+  <li><a href="../downloads.html">Downloads</a></li>
+  <li><a href="http://code.google.com/status/appengine">System Status</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Introduction</h2>
+    <ul>
+      <li><a href="whatisgoogleappengine.html">What Is Google App Engine?</a></li>
+      <li><a href="python/gettingstarted/index.html">Getting Started: Python</a>
+        <ul>
+            <li><a href="python/gettingstarted/introduction.html">Introduction</a></li>
+  <li><a href="python/gettingstarted/devenvironment.html">The Development Environment</a></li>
+  <li><a href="python/gettingstarted/helloworld.html">Hello, World!</a></li>
+  <li><a href="python/gettingstarted/usingwebapp.html">Using the webapp Framework</a></li>
+  <li><a href="python/gettingstarted/usingusers.html">Using the Users Service</a></li>
+  <li><a href="python/gettingstarted/handlingforms.html">Handling Forms With webapp</a></li>
+  <li><a href="python/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
+  <li><a href="python/gettingstarted/templates.html">Using Templates</a></li>
+  <li><a href="python/gettingstarted/staticfiles.html">Using Static Files</a></li>
+  <li><a href="python/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="quotas.html">Quotas</a></li>
+      <li><a href="theadminconsole.html">The Admin Console</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Python</h2>
+    <ul>
+          
+    <li><a href="python/runtime.html">Runtime</a></li>
+    <li><a href="python/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="python/tools/configuration.html">Configuration</a></li>
+    <li><a href="python/tools/devserver.html">Development Server</a></li>
+    <li><a href="python/tools/uploadinganapp.html">Uploading an App</a></li>
+    <li><a href="python/tools/webapp/index.html">webapp Framework</a>
+      <ul>
+             <li><a href="python/tools/webapp/overview.html">Overview</a></li>
+     <li><a href="python/tools/webapp/running.html">Running the Application</a></li>
+     <li><a href="python/tools/webapp/requesthandlers.html">Request Handlers</a></li>
+     <li><a href="python/tools/webapp/requestdata.html">Request Data</a></li>
+     <li><a href="python/tools/webapp/buildingtheresponse.html">Building the Response</a></li>
+     <li><a href="python/tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
+     
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/tools/webapp/requestclass.html">Request</a></li>
+         <li><a href="python/tools/webapp/responseclass.html">Response</a></li>
+         <li><a href="python/tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
+         <li><a href="python/tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
+         <li><a href="python/tools/webapp/utilmodule.html">Utility Functions</a></li>
+         
+       </ul>
+     </li>
+
+      </ul>
+    </li>
+
+      </ul>
+    </li>
+    <li><a href="python/apis.html">Service APIs</a>
+      <ul>
+        <li><a href="python/datastore/index.html">Datastore</a>
+          <ul>
+                 <li><a href="python/datastore/overview.html">Overview</a></li>
+     <li><a href="python/datastore/entitiesandmodels.html">Entities and Models</a></li>
+     <li><a href="python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
+     <li><a href="python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
+     <li><a href="python/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+     <li><a href="python/datastore/transactions.html">Transactions</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/datastore/modelclass.html">Model</a></li>
+         <li><a href="python/datastore/expandoclass.html">Expando</a></li>
+         <li><a href="python/datastore/polymodelclass.html">PolyModel</a></li>
+         <li><a href="python/datastore/propertyclass.html">Property</a></li>
+         <li><a href="python/datastore/queryclass.html">Query</a></li>
+         <li><a href="python/datastore/gqlqueryclass.html">GqlQuery</a></li>
+         <li><a href="python/datastore/keyclass.html">Key</a></li>
+         <li><a href="python/datastore/functions.html">Functions</a></li>
+         <li><a href="python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
+         <li><a href="python/datastore/gqlreference.html">GQL Reference</a></li>
+         <li><a href="python/datastore/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="python/memcache/index.html">Memcache</a>
+          <ul>
+                 <li><a href="python/memcache/overview.html">Overview</a></li>
+      <li><a href="python/memcache/usingmemcache.html">Using Memcache</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/memcache/clientclass.html">Client</a></li>
+         <li><a href="python/memcache/functions.html">Functions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="python/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="python/urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="python/urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="python/urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="python/mail/index.html">Mail</a>
+          <ul>
+                 <li><a href="python/mail/overview.html">Overview</a></li>
+     <li><a href="python/mail/sendingmail.html">Sending Mail</a></li>
+     <li><a href="python/mail/attachments.html">Attachments</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/mail/emailmessageclass.html">EmailMessage</a></li>
+         <li><a href="python/mail/emailmessagefields.html">Message Fields</a></li>
+         <li><a href="python/mail/functions.html">Functions</a></li>
+         <li><a href="python/mail/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="python/images/index.html">Images</a>
+          <ul>
+                 <li><a href="python/images/overview.html">Overview</a></li>
+     <li><a href="python/images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="python/images/usingimages.html">Using the Images API</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/images/imageclass.html">Image</a></li>
+         <li><a href="python/images/functions.html">Functions</a></li>
+         <li><a href="python/images/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="python/users/index.html">Google Accounts</a>
+          <ul>
+                 <li><a href="python/users/overview.html">Overview</a></li>
+     <li><a href="python/users/userobjects.html">User Objects</a></li>
+     <li><a href="python/users/loginurls.html">Login URLs</a></li>
+     <li><a href="python/users/adminusers.html">Admin Users</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="python/users/userclass.html">User</a></li>
+         <li><a href="python/users/functions.html">Functions</a></li>
+         <li><a href="python/users/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="usinggdataservices.html">Using Google Data Services</a></li>
+      </ul>
+    </li>
+
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Resources</h2>
+    <ul>
+      <li><a href="../kb/index.html">FAQ</a></li>
+      <li><a href="../articles/index.html">Articles</a></li>
+      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
+      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
+      <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
+      <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
+      <li><a href="../groups.html">Discussion Groups</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><a href="roadmap.html">Product Roadmap</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes</a></li>
+  <li><a href="revision_history.html">Revision History</a></li>
+</ul>
+
+        <a class="hidden" href="#gc-topnav-anchor">More Google App Engine resource links</a>
+      </div>
+
+      <div class="g-unit" id="gc-pagecontent">
+        <h1 class="page_title">What Is Google App Engine?</h1>
+
+
+
+<p>Google App Engine lets you run your web applications on Google's infrastructure.  App Engine applications are easy to build, easy to maintain, and easy to scale as your traffic and data storage needs grow.  With App Engine, there are no servers to maintain: You just upload your application, and it's ready to serve your users.</p>
+
+<p>You can serve your app using a free domain name on the <code>appspot.com</code> domain, or use <a href="http://www.google.com/a/">Google Apps</a> to serve it from your own domain.  You can share your application with the world, or limit access to members of your organization.</p>
+
+<p>App Engine costs nothing to get started.  Sign up for a free account, and you can develop and publish your application for the world to see, at no charge and with no obligation.  A free account can use up to 500MB of persistent storage and enough CPU and bandwidth for about 5 million page views a month.</p>
+
+<p>During the preview release of Google App Engine, only free accounts are available.  In the near future, you will be able to purchase additional computing resources.</p>
+
+
+<h2 id="The_Application_Environment">The Application Environment</h2>
+
+<p>Google App Engine makes it easy to build an application that runs reliably, even under heavy load and with large amounts of data.  The environment includes the following features:</p>
+
+<ul>
+  <li>dynamic web serving, with full support for common web technologies</li>
+  <li>persistent storage with queries, sorting and transactions</li>
+  <li>automatic scaling and load balancing</li>
+  <li>APIs for authenticating users and sending email using Google Accounts</li>
+  <li>a fully featured local development environment that simulates Google App Engine on your computer</li>
+</ul>
+
+<p>Google App Engine applications are implemented using <a href="http://www.python.org/">the Python programming language</a>.  The runtime environment includes the full Python language and most of the Python standard library.</p>
+
+<p>Although Python is currently the only language supported by Google App Engine, we look forward to supporting more languages in the future.</p>
+
+
+<h3>The Sandbox</h3>
+
+<p>Applications run in a secure environment that provides limited access to the underlying operating system.  These limitations allow App Engine to distribute web requests for the application across multiple servers, and start and stop servers to meet traffic demands.  The sandbox isolates your application in its own secure, reliable environment that is independent of the hardware, operating system and physical location of the web server.</p>  
+
+<p>Examples of the limitations of the secure sandbox environment include:<p>
+
+<ul>
+  <li>An application can only access other computers on the Internet through the provided URL fetch and email services and APIs.  Other computers can only connect to the application by making HTTP (or HTTPS) requests on the standard ports.</li>
+  <li>An application cannot write to the file system.  An app can read files, but only files uploaded with the application code.  The app must use the App Engine datastore for all data that persists between requests.</li>
+  <li>Application code only runs in response to a web request, and must return response data within a few seconds.  A request handler cannot spawn a sub-process or execute code after the response has been sent.</li>
+</ul>
+
+
+<h3>The Python Runtime Environment</h3>
+
+<p>App Engine provides a runtime environment that uses the Python programming language.  Other programming languages and runtime environment configurations are being considered for future releases.</p>
+
+<p>The Python runtime environment uses Python version 2.5.2.</p>
+
+<p>The environment includes <a href="http://docs.python.org/lib/lib.html">the Python standard library</a>.  Of course, calling a library method that violates a sandbox restriction, such as attempting to open a socket or write to a file, will not succeed.  For convenience, several modules in the standard library whose core features are not supported by the runtime environment have been disabled, and code that imports them will raise an error.</p>
+
+<p>Application code must be written exclusively in Python.  Code with extensions written in C is not supported.</p>
+
+<p>The Python environment provides rich Python APIs for <a href="python/datastore/index.html">the datastore</a>, <a href="python/users/index.html">Google Accounts</a>, <a href="python/urlfetch/index.html">URL fetch</a> and <a href="python/mail/index.html">email</a> services.  App Engine also provides a simple Python web application framework called <a href="python/tools/webapp/index.html">webapp</a> to make it easy to start building applications.</p>
+
+<p>For convenience, App Engine also includes <a href="http://www.djangoproject.com/">the Django web application framework</a>, version 0.96.1.  Note that the App Engine datastore is not a relational database, which is required by some Django components.  Some components, such as the Django template engine, work as documented, while others require a bit more effort.  See the <a href="../articles/index.html">Articles</a> section for tips on using Django with App Engine.</p>
+
+<p>You can upload other third-party libraries with your application, as long as they are implemented in pure Python and do not require any unsupported standard library modules.</p>
+
+<p>For more information about the Python runtime environment, see <a href="python/index.html">The Python Runtime Environment</a>.</p>
+
+
+<h3>The Datastore</h3>
+
+<p>App Engine provides a powerful distributed data storage service that features a query engine and transactions.  Just as the distributed web server grows with your traffic, the distributed datastore grows with your data.</p>
+
+<p>The App Engine datastore is not like a traditional relational database.  Data objects, or "entities," have a kind and a set of properties.  Queries can retrieve entities of a given kind filtered and sorted by the values of the properties.  Property values can be of any of the supported <a href="python/datastore/typesandpropertyclasses.html">property value types</a>.</p>
+
+<p>The Python API for the datastore includes a data modeling interface that can define a structure for datastore entities.  A data model can indicate that a property must have a value within a given range, or provide a default value if none is given.  Your application can provide as much or as little structure to the data as it needs.</p>
+
+<p>The datastore uses <a href="http://en.wikipedia.org/wiki/Optimistic_concurrency_control">optimistic locking</a> for concurrency control.  An update of a entity occurs in a transaction that is retried a fixed number of times if other processes are trying to update the same entity simultaneously.  Your application can execute multiple datastore operations in a single transaction which either all succeed or all fail, ensuring the integrity of your data.</p>
+
+<p>The datastore implements transactions across its distributed network using "entity groups."  A transaction manipulates entities within a single group.  Entities of the same group are stored together for efficient execution of transactions.  Your application can assign entities to groups when the entities are created.</p>
+
+<p>For more information about the datastore, see <a href="python/datastore/index.html">the Datastore API reference</a>.</p>
+
+
+<h3>Google Accounts</h3>
+
+<p>App Engine includes a service API for integrating with Google Accounts.  Your application can allow a user to sign in with a Google account, and access the email address and displayable name associated with the account.  Using Google Accounts lets the user start using your application faster, because the user may not need to create a new account.  It also saves you the effort of implementing a user account system just for your application.</p>
+
+<p>If your application is running under Google Apps, it can use the same features with members of your organization and Google Apps accounts.</p>
+
+<p>The Users API can also tell the application whether the current user is a registered administrator for the application.  This makes it easy to implement admin-only areas of your site.</p>
+
+<p>For more information about integrating with Google Accounts, see <a href="python/users/index.html">the Users API reference</a>.</p>
+
+
+<h3>App Engine Services</h3>
+
+<p>App Engine provides a variety of services that enable you to perform common operations when managing your application. The following APIs are provided to access these services:</p>
+
+<h4>URL Fetch</h4>
+<p>Applications can access resources on the Internet, such as web services or other data, using App Engine's URL fetch service.  The URL fetch service retrieves web resources using the same high-speed Google infrastructure that retrieves web pages for many other Google products. For more information about the URL fetch service, see <a href="python/urlfetch/index.html">the URL Fetch API reference</a>.</p>
+
+<h4>Mail</h4>
+<p>Applications can send email messages using App Engine's mail service.  The mail service uses Google infrastructure to send email messages. For more information about the mail service, see <a href="python/mail/index.html">the Mail API reference</a>.</p>
+
+<h4>Memcache</h4>
+<p>The Memcache service provides your application with a high performance in-memory key-value cache that is accessible by multiple instances of your application.  Memcache is useful for data that does not need the persistence and transactional features of the datastore, such as temporary data or data copied from the datastore to the cache for high speed access. For more information about the Memcache service, see <a href="python/memcache/index.html">the Memcache API reference</a>.</p>
+
+<h4>Image Manipulation</h4>
+<p>The Image service lets your application manipulate images.  With this API, you can resize, crop, rotate and flip images in JPEG and PNG formats. For more information on the image manipulation service, see <a href="python/images/index.html">the Images API reference</a>.</p>
+
+
+<h2>Development Workflow</h2>
+
+<p><a href="../downloads.html">The App Engine software development kit</a> (SDK) includes a web server application that emulates all of the App Engine services on your local computer.  The SDK includes all of the APIs and libraries available on App Engine.  The web server also simulates the secure sandbox environment, including checks for imports of disabled modules and attempts to access disallowed system resources.</p>
+
+<p>The Python SDK is implemented in pure Python, and runs on any platform with Python 2.5, including Windows, Mac OS X and Linux.  You can get Python for your system at <a href="http://www.python.org/">the Python website</a>.  The SDK is available as a Zip file, and installers are available for Windows and Mac OS X.</p>
+
+<p>You can <a href="../downloads.html">download the SDK here</a>.</p> 
+
+<p>The SDK also includes a tool to upload your application to App Engine.  Once you have created your application's code, static files and configuration files, you run the tool to upload the data.  The tool prompts you for your Google account email address and password.</p>
+
+<p>When you build a new major release of an application that is already running on App Engine, you can upload the new release as a new version.  The old version will continue to serve users until you switch to the new version.  You can test the new version on App Engine while the old version is still running.</p>
+
+<p><a href="theadminconsole.html">The Administration Console</a> is the web-based interface for managing your applications running on App Engine.  You can use it to create new applications, configure domain names, change which version of your application is live, examine access and error logs, and browse an application's datastore.</p>
+
+
+<h2>Quotas and Limits</h2>
+
+<p>Not only is creating an App Engine application easy, it's free!  You can create an account and publish an application that people can use right away at no charge, and with no obligation.  An application on a free account can use up to 500MB of storage and up to 5 million page views a month.</p>
+
+<p>During this preview period, only free accounts are available.  In the near future, you will be able to purchase additional computing resources at competitive market prices.  Free accounts will continue to be available after the preview period.</p>
+
+<p>During this preview period, you can register up to 10 applications.</p>
+
+<p>Application resource limits, or "quotas," are refreshed continuously.  If your application reaches a time-based quota, such as bandwidth, the quota will refresh at the beginning of each calendar day.  Fixed quotas such as storage use are only relieved when you decrease usage.</p>
+
+<p>Some features impose limits unrelated to quotas to protect the stability of the system.  For example, when an application is called to serve a web request, it must issue a response within a few seconds.  If the application takes too long, the process is terminated and the server returns an error code to the user.  The request timeout is dynamic, and may be shortened if a request handler reaches its timeout frequently to conserve resources.</p>
+
+<p>Another example of a service limit is the number of results returned by a query.  A query can return at most 1,000 results.  Queries that would return more results only return the maximum.  In this case, a request that performs such a query isn't likely to return a request before the timeout, but the limit is in place to conserve resources on the datastore.</p>
+
+<p>Attempts to subvert or abuse quotas, such as by operating applications on multiple accounts that work in tandem, are a violation of the <a href="../terms.html">Terms of Service</a>, and could result in apps being disabled or accounts being closed.</p>
+
+<p>For a list of quotas and an explanation of the quota system, including which quotas will be adjustable when the billing feature is released, see <a href="quotas.html">Quotas</a>.</p>
+
+
+<h2>For More Information...</h2>
+
+<p>For more information about Google App Engine:</p>
+
+<ul>
+  <li><a href="http://www.youtube.com/watch?v=3Ztr-HhWX1c">Watch the Campfire One video</a> or <a href="../articles/cf1-text.html">read the transcript</a>.</li>
+  <li><a href="http://www.youtube.com/watch?v=bfgO-LXGpTM">Watch the App Engine demo video</a>.</li>
+  <li><a href="../downloads.html">Download the SDK</a>, <a href="http://appengine.google.com/">sign up for an account</a>, then read the <a href="python/gettingstarted/index.html">Getting Started Guide</a> and do the tutorial.</li>
+  <li>Browse the <a href="http://appgallery.appspot.com/">App Gallery</a> for examples of applications built with App Engine.</li>
+  <li>Check out <a href="index.html">the rest of the App Engine documentation</a>.</li>
+</ul>
+
+<p>Welcome to Google App Engine!</p>
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under <a rel="license"
+  href="http://creativecommons.org/licenses/by/2.5/">a Creative Commons
+  license</a>, and examples are licensed under
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">an Apache
+  license</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+</div>
+    
+    &copy;2009 Google -
+    <a href="http://code.google.com">Code Home</a> -
+    <a href="http://www.google.com/accounts/TOS">Terms of Service</a> -
+    <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://moderator.appspot.com/#e%253Dagltb2RlcmF0b3JyDgsSBlNlcmllcxifggIM%252Bv%253D0">Feedback</a> -
+    <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
+     <br />
+     <br />
+    Google Code offered in:
+    <a href="http://code.google.com/intl/zh-CN" onclick="return CODESITE_redirectToI18nContent(this)">中文</a> -
+    <a href="http://code.google.com/intl/en" onclick="return CODESITE_redirectToI18nContent(this)">English</a> -
+    <a href="http://code.google.com/intl/pt-BR" onclick="return CODESITE_redirectToI18nContent(this)">Português</a> -
+    <a href="http://code.google.com/intl/ru" onclick="return CODESITE_redirectToI18nContent(this)">Pусский</a> -
+    <a href="http://code.google.com/intl/es" onclick="return CODESITE_redirectToI18nContent(this)">Español</a> -
+    <a href="http://code.google.com/intl/ja" onclick="return CODESITE_redirectToI18nContent(this)">日本語</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-containter -->
+
+
+
+
+
+  </body>
+</html>
+
+
