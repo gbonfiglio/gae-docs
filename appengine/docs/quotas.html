@@ -178,6 +178,7 @@ var logged_in_user_email = null;
     <li><a href="java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -429,7 +430,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="python/datastore/overview.html">Datastore Overview</a></li>
@@ -464,6 +465,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="python/apis.html">Services</a>
       <ul>
+        <li><a href="python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/appidentity/functions.html">Functions</a></li>
+    <li><a href="python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="python/blobstore/overview.html">Overview</a></li>
@@ -525,6 +537,7 @@ var logged_in_user_email = null;
      <li><a href="python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="python/mail/attachments.html">Attachments</a></li>
+     <li><a href="python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -854,6 +867,8 @@ var logged_in_user_email = null;
 <li><a href="adminconsole/roles.html">Roles</a></li>
 <li><a href="adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="quotas.html">Quotas</a></li>
@@ -1082,6 +1097,8 @@ var logged_in_user_email = null;
 
 
 
+
+
 <p>An App Engine application can consume resources up to certain maximums, or <i>quotas</i>. With quotas, App Engine ensures that your application won't exceed your budget, and that other applications running on App Engine won't impact the performance of your app.</p>
 
 <ul>
@@ -1112,7 +1129,7 @@ var logged_in_user_email = null;
 
 <p>Billable quotas are resource maximums set by you, the application's administrator, to prevent the cost of the application from exceeding your budget. Every application gets an amount of each billable quota for free. You can increase billable quotas for your application by enabling billing, setting a daily budget, then allocating the budget to the quotas. You will be charged only for the resources your app actually uses, and only for the amount of resources used above the free quota thresholds.</p>
 
-<p>After you <a href="billing.html#Enabling_Billing">enable billing</a> for your application, you can set your daily budget and adjust quota allocations for your app using the <a href="https://appengine.google.com">Admin Console</a>. For more information about setting your budget and allocating quotas, see <a href="billing.html">Billing</a>.
+<p>After you <a href="billing.html#Enabling_Billing">enable billing</a> for your application, you can set your daily budget and adjust quota allocations for your app using the <a href="https://appengine.google.com">Admin Console</a>. For more information about setting your budget and allocating quotas, see <a href="billing.html">Billing</a>.</p>
 
 <p>Fixed quotas are resource maximums set by App Engine to ensure the integrity of the system. These resources describe the boundaries of the architecture, and all applications are expected to run within the same limits. They ensure that another app that is consuming too many resources will not affect the performance of your app.</p>
 
@@ -1186,7 +1203,7 @@ start = quota.get_request_cpu_usage()
 do_something_expensive()
 end = quota.get_request_cpu_usage()
 
-logging.info("do_something_expensive() cost %d megacycles." % (end - start))
+logging.info(&quot;do_something_expensive() cost %d megacycles.&quot; % (end - start))
 </pre>
 
 <h3>The Quota API in Java</h3>
@@ -1290,7 +1307,6 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 </table>
 
 
-
 <h3 id="Datastore">Datastore</h3>
 
 <p>The <b>Stored Data (billable)</b> quota refers to data stored for the app in the Master/Slave Datastore, the task queue and the Blobstore. The <b>High Replication Storage (billable)</b> quota refers to data stored for the app in the High Replication Datstore. Other quotas in the "Datastore" section of the Quota Details screen in the Administration Console refer to the Datastore service specifically.</p>
@@ -1357,7 +1373,8 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
 
 <dl>
   <dt>Deployments</dt>
-  <dd>The number of times the app has been uploaded by a developer. The current limit is 1,000.</dd>
+  <dd>The number of times the app has been uploaded by a developer. The current limit is 1,000 per day.
+  <p>Apps are restricted to a maximum size of 10 megabytes or 10,485,760 bytes.</p></dd>
 </dl>
 
 <h3 id="Mail">Mail</h3>
@@ -1403,9 +1420,9 @@ import com.google.appengine.api.quota.QuotaServiceFactory;
   </tr>
   <tr>
     <td>Recipients Emailed (<a href="#Billable_Quotas_and_Fixed_Quotas">billable</a>)</td>
-    <td>2,000 recipients</td>
+    <td>100 recipients</td>
     <td>8 recipients/minute</td>
-    <td>2,000 recipients free; 7,400,000 recipients maximum</td>
+    <td>100 recipients free; 7,400,000 recipients maximum</td>
     <td>5,100 recipients/minute</td>
   </tr>
   <tr>
@@ -1749,7 +1766,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

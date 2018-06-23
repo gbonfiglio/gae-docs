@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -922,7 +937,7 @@ var logged_in_user_email = null;
   <dd>The query string is not a valid query.</dd>
 
   <dt id="BadRequestError"><span class="type">exception</span>&nbsp;<span class="itemname">BadRequestError</span>()</dt>
-  <dd>The request to the datastore service has one or more invalid properties.  This is possible if a subclass of <a href="modelclass.html">Model</a> overrides some methods (such as <a href="modelclass.html#Model_kind">kind()</a>) with an incorrect implementation.</dd>
+  <dd>The request to the datastore service has one or more invalid properties. This is possible if a subclass of <a href="modelclass.html">Model</a> overrides some methods (such as <a href="modelclass.html#Model_kind">kind()</a>) with an incorrect implementation.</dd>
 
   <dt id="BadValueError"><span class="type">exception</span>&nbsp;<span class="itemname">BadValueError</span>()</dt>
   <dd>The property could not be assigned a value because the value is invalid for the property type.</dd>
@@ -934,36 +949,31 @@ var logged_in_user_email = null;
   <dd>A model definition has more than one property with the same name.</dd>
 
   <dt id="InternalError"><span class="type">exception</span>&nbsp;<span class="itemname">InternalError</span>()</dt>
-  <dd>There was an error internal to the datastore service.</dd>
+  <dd>There was an error internal to the datastore service. This exception does not necessarily mean that the operation failed.</dd>
 
   <dt id="KindError"><span class="type">exception</span>&nbsp;<span class="itemname">KindError</span>()</dt>
   <dd>The application attempted to use a data entity with a model class that does not match the entity.</dd>
 
-  <dt id="NeedIndexError"><span class="type">exception</span>&nbsp;<span class="itemname">NeedIndexError</span>()</dt>
-  <dd>No matching index was found for a query that requires an index. Check
-  the Indexes page in the Admin Console and your <code>index.yaml</code> file.</dd>
-
   <dt id="NotSavedError"><span class="type">exception</span>&nbsp;<span class="itemname">NotSavedError</span>()</dt>
   <dd>An action was performed that requires the object to have been saved (put) to the datastore, but the object is not saved.</dd>
-
 
   <dt id="PropertyError"><span class="type">exception</span>&nbsp;<span class="itemname">PropertyError</span>()</dt>
   <dd>The referenced model property does not exist on the data object.</dd>
 
   <dt id="ReferencePropertyResolveError"><span class="type">exception</span>&nbsp;<span class="itemname">ReferencePropertyResolveError</span>()</dt>
-  <dd>The model referenced by a <a href="http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#ReferenceProperty">ReferenceProperty</a> does not exist.  See <a href="datamodeling.html#References">References</a>.</dd>
+  <dd>The model referenced by a <a href="http://code.google.com/appengine/docs/python/datastore/typesandpropertyclasses.html#ReferenceProperty">ReferenceProperty</a> does not exist. See <a href="datamodeling.html#References">References</a>.</dd>
 
   <dt id="ReservedWordError"><span class="type">exception</span>&nbsp;<span class="itemname">ReservedWordError</span>()</dt>
-  <dd>A model defines a property whose name is disallowed.  See <a href="modelclass.html#Disallowed_Property_Names">Disallowed Property Names</a>.</dd>
+  <dd>A model defines a property whose name is disallowed. See <a href="modelclass.html#Disallowed_Property_Names">Disallowed Property Names</a>.</dd>
 
   <dt id="Rollback"><span class="type">exception</span>&nbsp;<span class="itemname">Rollback</span>()</dt>
-  <dd>Indicates that a function in a transaction wants to roll back the transaction instead of committing it.  Any uncaught exception in a transaction will cause the transaction to roll back.  This exception class is for convenience, when a function wants to roll back and no other exception applies.</dd>
+  <dd>Indicates that a function in a transaction wants to roll back the transaction instead of committing it. Any uncaught exception in a transaction will cause the transaction to roll back. This exception class is for convenience, when a function wants to roll back and no other exception applies.</dd>
 
   <dt id="Timeout"><span class="type">exception</span>&nbsp;<span class="itemname">Timeout</span>()</dt>
-  <dd>Raised when the datastore operation exceeds the maximum amount of time allowed for datastore operations.</dd>
+  <dd>Raised when the datastore operation exceeds the maximum amount of time allowed for datastore operations. This exception does not necessarily mean that the operation failed.</dd>
 
   <dt id="TransactionFailedError"><span class="type">exception</span>&nbsp;<span class="itemname">TransactionFailedError</span>()</dt>
-  <dd>The transaction or datastore operation could not be committed, even after retrying.  This is usually caused by a high rate of contention: The data is being updated by many other application instances simultaneously, and this instance could not commit its transaction within a fixed number of retries.  See <a href="transactions.html">Transactions</a>.</dd>
+  <dd>The transaction or datastore operation could not be committed, even after retrying. This is usually caused by a high rate of contention: The data is being updated by many other application instances simultaneously, and this instance could not commit its transaction within a fixed number of retries. See <a href="transactions.html">Transactions</a>.</dd>
 
 </dl>
 
@@ -1035,7 +1045,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

@@ -178,6 +178,7 @@ var logged_in_user_email = null;
     <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -429,7 +430,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -464,6 +465,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -525,6 +537,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -854,6 +867,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -1023,8 +1038,11 @@ Entity employee = new Entity("Employee");
 <h2 id="Entity_Groups_and_Ancestor_Paths">Entity Groups and Ancestor Paths</h2>
 
 <p>When you use the App Engine datastore, every attempt to create, update, or delete an entity happens in a <i>transaction</i>. A transaction ensures that every change made to the entity is saved to the datastore, or, in the case of failure, none of the changes are made. This ensures consistency of data within an entity. This section discusses transactions briefly. Details on transactions are available in the <a href="transactions.html">Transactions</a> section.</p>
- 
-<p>You can perform a single transaction with multiple entities as long as the entities belong to the same <i>entity group</i>. When you design your data model, you should determine which entities you want to be able to process in the same transaction. Then, when you create each entity, you declare that it belongs to the same group as another entity. This tells App Engine that the entities will be updated together, so they can be stored in a way that supports transactions. You define entity groups by specifying a hierarchy among entities. All the entities fetched, created, updated, or deleted in a single transaction must be in the same entity group.
+
+<p class="note"><strong>Note:</strong> If your app receives an exception when submitting a transaction, it does not always mean that the transaction failed. You can receive <code><a href="../javadoc/com/google/appengine/api/datastore/DatastoreTimeoutException.html">DatastoreTimeoutException</a></code>, <code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/ConcurrentModificationException.html">ConcurrentModificationException</a></code>, or <code><a href="../javadoc/com/google/appengine/api/datastore/DatastoreFailureException.html">DatastoreFailureException</a></code> exceptions in cases where transactions have been committed and eventually will be applied
+successfully. Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
+
+<p>You can perform a single transaction with multiple entities as long as the entities belong to the same <i>entity group</i>. When you design your data model, you should determine which entities you want to be able to process in the same transaction. Then, when you create each entity, you declare that it belongs to the same group as another entity. This tells App Engine that the entities will be updated together, so they can be stored in a way that supports transactions. You define entity groups by specifying a hierarchy among entities. All the entities fetched, created, updated, or deleted in a single transaction must be in the same entity group.</p>
 
 <p>In the <a href="hr/overview.html">High Replication Datastore</a>, entity groups are also a unit of consistency. The only way to guarantee that the results of a query are strongly consistent is to use an ancestor query.</p>
  
@@ -1322,7 +1340,7 @@ Entity employee = datastore.get(employeeKey);
 
 <p class="note"><b>Note:</b> The datastore API does not distinguish between creating a new entity and updating an existing entity. If the object's key represents an entity that exists, calling the <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a> method with the object overwrites the entity. You can use a <a href="transactions.html">transaction</a> to test whether an entity with a given key exists before creating one.</p>
 
-<p>To delete an entity with a given key, call the <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Transaction, com.google.appengine.api.datastore.Key...)">delete()</a> method with a <a href="../javadoc/com/google/appengine/api/datastore/Key.html">Key</a> object.</p>
+<p>To delete an entity with a given key, call the <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key)">delete()</a> method with a <a href="../javadoc/com/google/appengine/api/datastore/Key.html">Key</a> object.</p>
 
 
 <pre class="prettyprint">
@@ -1376,7 +1394,7 @@ KeyFactory.keyToString(key).</p>
 
 <h3>Batch Operations</h3>
 
-<p>The <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a>, <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#get(com.google.appengine.api.datastore.Key)">get()</a>, and <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key...)">delete()</a> methods accept <code>java.lang.Iterable</code> <a href="../javadoc/com/google/appengine/api/datastore/Entity.html">Entity</a> objects (for <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a>) and <a href="../javadoc/com/google/appengine/api/datastore/Key.html">Key</a> objects (for <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#get(com.google.appengine.api.datastore.Key)">get()</a> and <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key...)">delete()</a>). This performs the action on multiple entities in a single datastore call. The batch operation groups all the entities/keys by entity group, then performs operations on each entity group in parallel.</p>
+<p>The <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a>, <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#get(com.google.appengine.api.datastore.Key)">get()</a>, and <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key)">delete()</a> methods accept <code>java.lang.Iterable</code> <a href="../javadoc/com/google/appengine/api/datastore/Entity.html">Entity</a> objects (for <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a>) and <a href="../javadoc/com/google/appengine/api/datastore/Key.html">Key</a> objects (for <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#get(com.google.appengine.api.datastore.Key)">get()</a> and <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key)">delete()</a>). This performs the action on multiple entities in a single datastore call. The batch operation groups all the entities/keys by entity group, then performs operations on each entity group in parallel.</p>
 
 <p>A batch call to the datastore is faster than making separate calls for each entity because it only incurs the overhead of one service call, and, if there are multiple entity groups involved, the work for each entity group is performed on the server side in parallel.</p>
 
@@ -1395,10 +1413,7 @@ List&lt;Entity&gt; employees = Arrays.asList(employee1, employee2, employee3);
 datastore.put(employees);
 </pre>
 
-<p>A batch call to the datastore is subject to the same <a href="overview.html#Quotas_and_Limits">limits</a> as any other call. For example, with a batch <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a> call, the total size of all entities being saved must not exceed 1 megabyte. Similarly, a batch <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#get(com.google.appengine.api.datastore.Key)">get()</a> cannot return more than 1 megabyte of data. A batch <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Transaction, com.google.appengine.api.datastore.Key...)">delete()</a> only sends the keys of the entities to delete and does not return data, so the limit applies only to the total size of the keys.</p>
-
-<p>A batch call to <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a> or <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Transaction, com.google.appengine.api.datastore.Key...)">delete()</a> may succeed for some entities but not others. If it is important that the call succeed completely or fail completely, you must use a <a href="transactions.html">transaction</a>, and all affected entities must be in the same entity group. Attempting a batch operation inside a transaction with entities or keys that belong to multiple entity groups results in an IllegalArgumentException.</p>
-
+<p>A batch call to <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#put(com.google.appengine.api.datastore.Entity)">put()</a> or <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#delete(com.google.appengine.api.datastore.Key)">delete()</a> may succeed for some entities but not others. If it is important that the call succeed completely or fail completely, you must use a <a href="transactions.html">transaction</a>, and all affected entities must be in the same entity group. Attempting a batch operation inside a transaction with entities or keys that belong to multiple entity groups results in an IllegalArgumentException.</p>
 
 
 
@@ -1459,7 +1474,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 
@@ -1491,5 +1506,4 @@ _gaq.push(
 
   </body>
 </html>
-
 

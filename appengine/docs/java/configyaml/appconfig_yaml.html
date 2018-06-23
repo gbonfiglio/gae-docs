@@ -200,6 +200,7 @@ var logged_in_user_email = null;
     <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -451,7 +452,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -486,6 +487,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -547,6 +559,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -876,6 +889,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -990,7 +1005,7 @@ var logged_in_user_email = null;
 <p>
   The following is an example of a basic <code>app.yaml</code> file:
 </p>
-<pre>application: myapp
+<pre class="prettyprint lang-yaml">application: myapp
 version: 1
 runtime: java
 
@@ -1013,7 +1028,7 @@ handlers:
     <code>application</code> 
   </dt>
   <dd>
-    The application identifier. This is the identifier you selected when you created the application in the <a href="http://appengine.google.com/">Administration Console</a>. <pre >application: myapp</pre>
+    The application identifier. This is the identifier you selected when you created the application in the <a href="http://appengine.google.com/">Administration Console</a>. <pre class="prettyprint lang-yaml">application: myapp</pre>
   </dd>
   <dt>
     <code>version</code>
@@ -1023,13 +1038,13 @@ handlers:
     <p>
       Each version of an application retains its own copy of <code>app.yaml</code>. When an application is uploaded, the version mentioned in the <code>app.yaml</code> file being uploaded is the version that gets created or replaced by the upload.
     </p>
-<pre>version: 2-0-test</pre>
+<pre class="prettyprint lang-yaml">version: 2-0-test</pre>
   </dd>
   <dt>
     <code>runtime</code>
   </dt>
   <dd>
-    The name of the App Engine runtime environment used by this application. To specify Java, use java. Other runtimes are available; please refer to the runtime's documentation for more info. Other JVM languages can customize <code>app.yaml</code> based on the specified runtime. <pre >runtime: java</pre>
+    The name of the App Engine runtime environment used by this application. To specify Java, use java. Other runtimes are available; please refer to the runtime's documentation for more info. Other JVM languages can customize <code>app.yaml</code> based on the specified runtime. <pre class="prettyprint lang-yaml">runtime: java</pre>
   </dd>
   
     
@@ -1041,7 +1056,7 @@ handlers:
     <dt><span class="itemname">url</span></dt>
       <dd>
         Defines the URL pattern for the mapping. This pattern can use an asterisk (<code>*</code>) at the beginning or end of the pattern to indicate zero or more of any character. The Java runtime does not support wildcards in the middle of a string, and does not allow multiple wildcards in one pattern. The pattern matches the full path of the URL, starting with and including the forward slash (<code>/</code>) following the domain name.
-<pre>handlers:
+<pre class="prettyprint lang-yaml">handlers:
   - <b>url</b>: /red/*</pre>
       </dd>
 <dd>
@@ -1061,7 +1076,7 @@ handlers:
     </dl>
 </dd>
 <dd>The following example demonstrates a handler mapping containing all of these elements:
-<pre>handlers:
+<pre class="prettyprint lang-yaml">handlers:
   - <b>url</b>: /red/*
      <i>servlet</i>: mysite.server.TeamServlet
      <i>init_params</i>:
@@ -1093,7 +1108,7 @@ handlers:
 
 <p>By default, all files in the WAR are treated as both static files and resource files, except for JSP files, which are compiled into servlet classes and mapped to URL paths, and files in the <code>WEB-INF/</code> directory, which are never served as static files and always available to the app as resource files.</p>
 
-<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>app.yaml</code> file.  The <code>static_files</code> element specifies patterns that match file paths to include and exclude from the list of static files, amending the default behavior.  Similarly, the <code>resource_files</code> element specifies which files are considered resource files.</p>
+<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>app.yaml</code> file.  The <code>static_files</code> element specifies patterns that match file paths to include and exclude from the list of static files, overriding or amending the default behavior.  Similarly, the <code>resource_files</code> element specifies which files are considered resource files.</p>
 
 <h3 id="Including_and_Excluding_Files">Including and Excluding Files</h3>
 <p>Path patterns are specified using zero or more <code>include</code> and <code>exclude</code> elements.  In a pattern, <code>*</code> represents zero or more of any character in a file or directory name, and <code>**</code> represents zero or more directories in a path.</p>
@@ -1103,7 +1118,7 @@ handlers:
 <p>The following example demonstrates how to designate all <code>.png</code> files as static files (except those in the <code>data/</code> directory and all of its subdirectories):</p>
 
 
-  <pre>static_files:
+  <pre class="prettyprint lang-yaml">static_files:
   - include: /**.png
   - exclude: /data/**.png</pre>
 
@@ -1111,7 +1126,7 @@ handlers:
 <p>Similarly, the following sample demonstrates how to designate all <code>.xml</code> files as resource files (except those in the <code>feeds/</code> directory and all of its subdirectories):</p>
 
 
-  <pre>resource_files:
+  <pre class="prettyprint lang-yaml">resource_files:
   - include: /**.xml
   - exclude: /feeds/**.xml</pre>
 
@@ -1121,7 +1136,7 @@ handlers:
 <p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code>static_files include ...</code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser. If the expiration time is omitted, the production server defaults to 10 minutes.</p>
 
 
-  <pre>static_files:
+  <pre class="prettyprint lang-yaml">static_files:
   - include: /**.png
     expiration: 4d 5h</pre>
 
@@ -1134,7 +1149,7 @@ handlers:
   Static files are served from the <code>public_root</code> directory. For the <code>java</code> runtime, this defaults to <code>/</code>. The following example changes public root from <code>/static/</code> to <code>/</code>, such that the application file <code>/static/index.html</code> is served as <code>/index.html</code>:
 </p>
 
-  <pre>public_root: /static</pre>
+  <pre class="prettyprint lang-yaml">public_root: /static</pre>
 
 
 
@@ -1142,7 +1157,7 @@ handlers:
 <p>
   The <code>app.yaml</code> file can define system properties, environment variables, and context parameters that are set when the application is running.
 </p>
-<pre>system_properties:
+<pre class="prettyprint lang-yaml">system_properties:
   myapp.maximum-message-length: 140
   myapp.notify-every-n-signups: 1000
   myapp.notify-url: http://www.example.com/signupnotify
@@ -1155,7 +1170,7 @@ context_params:
 <p>
   The <code>listeners</code> element maps a servlet context listener to the specified URL, allowing you to set up a static state independent of your various servlets. Note that App Engine does not implement the <code>contextDestroyed</code> aspect of the listener.
 </p>
-<pre>listeners:
+<pre class="prettyprint lang-yaml">listeners:
    - com.example.MyListener
    - com.example.MyOtherListener</pre>
 
@@ -1189,7 +1204,7 @@ context_params:
 <p>
   The following example shows you how to configure a URL to accept secure connections:
 </p>
-<pre>handlers:
+<pre class="prettyprint lang-yaml">handlers:
 
 - url: /youraccount/*
   login: required
@@ -1197,7 +1212,7 @@ context_params:
 <p>
   To disallow the use of HTTPS for the application, use <code>ssl_enabled</code> as follows:
 </p>
-<pre>ssl_enabled: false</pre>
+<pre class="prettyprint lang-yaml">ssl_enabled: false</pre>
 <p>
   There is no way to disallow HTTPS for some URL paths and not others in the Java runtime environment. The development web server does not support HTTPS connections. It ignores the secure parameter, so paths intended for use with HTTPS can be tested using regular HTTP connections to the development web server.
 </p>
@@ -1241,7 +1256,7 @@ context_params:
 <p>
   The following example requires a login for the <code>/profile/</code> directory and an admin login for the <code>AdminServlet in the </code><code>/admin/</code> directory:
 </p>
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 - url: /profile/*
@@ -1261,7 +1276,7 @@ handlers:
 <p>
   For example, if the user accesses the URL path <code>/help/accounts/</code>, the following <code>welcome_file</code> list in <code>app.yaml</code> tells the server to check for <code>help/accounts/index.jsp</code> and <code>help/accounts/index.html</code> before reporting that the URL does not exist:
 </p>
-<pre>welcome_files:
+<pre class="prettyprint lang-yaml">welcome_files:
   - index.jsp
   - index.html</pre>
 <h2 id="Reserved_URLs">Reserved URLs</h2>
@@ -1286,7 +1301,7 @@ handlers:
 <p>
   To enable incoming email and XMPP messages, add the following to <code>app.yaml</code>:
 </p>
-<pre>
+<pre class="prettyprint lang-yaml">
 inbound_services:
 - xmpp_message
 - mail</pre>
@@ -1303,7 +1318,7 @@ inbound_services:
 
   
 <p>In Java applications configured with <code>app.yaml</code>, warmup requests are disabled by default. To enable them, add the <code>warmup</code> argument to the <code>inbound_services</code> directive:</p>
-<pre>inbound_services:
+<pre class="prettyprint lang-yaml">inbound_services:
 - warmup</pre>
 
 
@@ -1312,7 +1327,7 @@ inbound_services:
 <p>
   You can configure your application so that administrator-only pages appear in the Administration Console. The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML iframe. To add a page to the Administration Console, add an <code>admin_console</code>: section in your app's <code>app.yaml</code> file:
 </p>
-<pre>
+<pre class="prettyprint lang-yaml">
 admin_console:
   pages:
   - name: Blog Comment Admin
@@ -1335,7 +1350,7 @@ admin_console:
 <p>
   This feature is turned off by default. To turn it on, add the following to <code>app.yaml</code>:
 </p>
-<pre>
+<pre class="prettyprint lang-yaml">
     sessions_enabled: true</pre>
 <p>
   The implementation creates datastore entities of the kind <code>_ah_SESSION</code>, and memcache entries using keys with a prefix of <code>_ahs</code>.
@@ -1350,13 +1365,13 @@ admin_console:
 <p>
   To turn off precompilation, add the following to your <code>app.yaml</code> file:
 </p>
-<pre>
+<pre class="prettyprint lang-yaml">
   precompilation_enabled: false</pre>
 <h2 id="Custom_XML_Output">Custom XML Output</h2>
 <p>
   If you need to use features of the Java web.xml which are not directly supported in <code>app.yaml</code>, you can include a block of XML that will be included directly into web.xml
 </p>
-<pre>web_xml: |
+<pre class="prettyprint lang-yaml">web_xml: |
   &lt;error-page&gt;
     &lt;error-code&gt;500&lt;/error-code&gt;
     &lt;location&gt;/errors/servererror.jsp&lt;/location&gt;
@@ -1370,7 +1385,7 @@ admin_console:
 
 
 
-<pre>
+<pre class="prettyprint lang-yaml">
 error_handlers:
   - file: default_error.html
 
@@ -1381,7 +1396,7 @@ error_handlers:
 
 <p class="warning"><strong>Warning!</strong>: Make sure that the path to the error response file does not overlap with static file handler paths. </p>
 
-<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error_code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:
+<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error_code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:</p>
 
 <ul>
   <li>
@@ -1455,7 +1470,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

@@ -178,6 +178,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -429,7 +430,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -464,6 +465,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -525,6 +537,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -854,6 +867,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -914,14 +929,33 @@ var logged_in_user_email = null;
   <dt><span class="itemname">log_buffer_lines</span>()</dt>
     <dd><p>Returns the number of log lines currently buffered.</p></dd>
   <dt><span class="itemname">auto_flush</span>()</dt>
-    <dd><p>Invoked by app_logging.emit() to automatically flush logs. The API includes the following constants that you can use the tune the autoflush function:</p>
+    <dd><p>This method is invoked automatically to flush logs in the background. You can tune the autoflush function with the following constants:</p>
       <ul>
-        <li><code>logservice.AUTOFLUSH_ENABLED</code> &ndash; need description</li>
-        <li><code>logservice.AUTOFLUSH_EVERY_SECONDS</code> &ndash; need description</li>
-        <li><code>logservice.AUTOFLUSH_EVERY_BYTES</code> &ndash; need description</li>
-        <li><code>logservice.AUTOFLUSH_EVERY_LINES</code> &ndash; need description</li>
-      </ul>
-    </dd>
+        <li><code>logservice.AUTOFLUSH_ENABLED</code> &ndash; Controls whether the in-process logs buffer is automatically flushed during a request.  If false, logs are flushed at the end of each request. If true, automatically flushes the log buffer in the background.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_SECONDS</code> &ndash; If auto_flush() is enabled, flushes the logs buffer after this many seconds.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_BYTES</code> &ndash; If auto_flush() is enabled, flushes the logs buffer once this many bytes have been logged.</li>
+        <li><code>logservice.AUTOFLUSH_EVERY_LINES</code> &ndash; If auto_flush() is enabled, flushes the logs buffer once this many lines have been logged.</li>
+      </ul><br />
+    <p>These are module-level variables that apps can change directly. For example, you can disable autoflush entirely as follows:</p>
+
+<pre class="prettyprint">
+from google.appengine.api import logservice
+logservice.AUTOFLUSH_ENABLED = False
+
+# When you want to flush manually, do this
+logservice.flush()</pre><br />
+
+<p>To flush every 20 lines, with no limit on time or bytes:</p>
+<pre class="prettyprint">
+from google.appengine.api import logservice
+logservice.AUTOFLUSH_EVERY_SECONDS = None
+logservice.AUTOFLUSH_EVERY_BYTES = None
+logservice.AUTOFLUSH_EVERY_LINES = 20 # The default, but set here for clarity
+</pre></br>
+
+<p>Google recommends that you flush logs regularly. The RPCs are very fast, and not flushing your logs can make debugging difficult.</p>
+
+</dd>
 </dl>
 
 
@@ -981,7 +1015,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 
@@ -1013,5 +1047,6 @@ _gaq.push(
 
   </body>
 </html>
+
 
 

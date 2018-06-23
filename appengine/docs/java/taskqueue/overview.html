@@ -181,6 +181,7 @@ var logged_in_user_email = null;
     <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -432,7 +433,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -467,6 +468,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -528,6 +540,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -857,6 +870,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -961,6 +976,8 @@ var logged_in_user_email = null;
 
 <p>You can manage task queues for an application using the <b>Task Queue</b> tab of the <a href="../../adminconsole/index.html">Administration Console</a>. The Console lists all of the tasks in a queue, and you can use the Console to manually delete individual tasks or every task in a queue. This is useful if a task in a push queue cannot be completed successfully and is stuck waiting to be retried. You can also pause and resume a queue on this page.</p>
 
+<p>You can view details of individual tasks by clicking the task name from the list of tasks on the <strong>Task Queue Details</strong> page. This page allows you to debug why a task did not run successfully. On this page, you can see information about the previous run of the task as well as the request's body.</p>
+
 <p>The Administration Console provides different options for push and pull queues. To manage either type of queue, sign in to the Administration Console and select "Task Queues." Note that the default queue appears in the Console only after the app has enqueued a task to it for the first time.</p>
 
 <h2 id="Task_Concepts">Task Concepts</h2>
@@ -979,7 +996,7 @@ var logged_in_user_email = null;
 
 <p>If a push task is created successfully, it will eventually be deleted (at most seven days after the task successfully executes). Once deleted, its name can be reused.</p>
 
-<p>If a pull task is created successfully, your application needs to delete the task after processing. The system may take up to three days to recognize that a task has been deleted; during this time, the task name remains unavailable. There is currently no programmatic means of determining whether the name of a deleted pull task is available.</p>
+<p>If a pull task is created successfully, your application needs to delete the task after processing. The system may take up to seven days to recognize that a task has been deleted; during this time, the task name remains unavailable. Attempting to create another task during this time with the same name will result in an &quot;item exists&quot; error. The system offers no method to determine if deleted task names are still in the system. To avoid these issues, we recommend that you let App Engine generate the task name automatically.</p>
 
 <h3 id="Tasks_within_Transactions">Tasks within Transactions</h3>
 
@@ -999,7 +1016,7 @@ try {
 
     // ...
 
-    queue.add(TaskOptions.Builder.withUrl("/path/to/my/worker"));
+    queue.add(TaskOptions.Builder.withUrl(&quot;/path/to/my/worker&quot;));
 
     // ...
     txn.commit();
@@ -1019,13 +1036,13 @@ try {
     queue.purge();</pre>
   It takes the system about 20 seconds to notice that the queue has been purged. In push queues, tasks continue to execute during this time.
   <p class="warning"><strong>Warning!</strong> Do not create new tasks in the same second as the purge call. Tasks created in close temporal proximity to a purge call will also be purged.</p>
-  </li><br>
+  </li><br />
   <li>Programmatically, using <a href="../javadoc/com/google/appengine/api/taskqueue/Queue.html#deleteTask(java.lang.String)">deleteTask()</a> to delete individual tasks.
   
 <pre class="prettyprint">
 // ...
-    Queue q = QueueFactory.getQueue("queue1");
-    q.deleteTask("foo")</pre>
+    Queue q = QueueFactory.getQueue(&quot;queue1&quot;);
+    q.deleteTask(&quot;foo&quot;)</pre>
 </li>
 </ul>
 
@@ -1040,6 +1057,7 @@ try {
 <p><code>com.google.appengine.api.taskqueue</code></p>
 
 <p>The previous location of the App Engine Task Queue API is now deprecated. If  you have used the App Engine Task Queue API while it was a labs feature, please update your code to remove any deprecation warnings.</p>
+
 
 
 
@@ -1099,7 +1117,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

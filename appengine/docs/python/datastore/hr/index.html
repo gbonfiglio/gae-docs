@@ -179,6 +179,7 @@ var logged_in_user_email = null;
     <li><a href="../../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -430,7 +431,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../index.html">Storing Data</a>
       <ul>
               <li><a href="../overview.html">Datastore Overview</a></li>
@@ -465,6 +466,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../apis.html">Services</a>
       <ul>
+        <li><a href="../../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../appidentity/functions.html">Functions</a></li>
+    <li><a href="../../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../blobstore/overview.html">Overview</a></li>
@@ -526,6 +538,7 @@ var logged_in_user_email = null;
      <li><a href="../../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../mail/attachments.html">Attachments</a></li>
+     <li><a href="../../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -855,6 +868,8 @@ var logged_in_user_email = null;
 <li><a href="../../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../../quotas.html">Quotas</a></li>
@@ -912,6 +927,9 @@ var logged_in_user_email = null;
   <dd>The High Replication datastore (HRD) is the default for new applications. The HRD is a highly available, highly reliable storage solution. It remains available for reads and writes during planned downtime and is extremely resilient in the face of catastrophic failure&mdash;but it costs more than the master/slave option.</dd>
   <dd>Data in the HRD is replicated across data centers using a system based on the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a>. It provides the highest level of availability for reads and writes and uses approximately three times the <a href="../../../quotas.html#Datastore">storage and CPU cost</a> of the master/slave option.</dd>
   <dd>Entity groups are much more important in HRD. They are now a unit of consistency as well as a unit of transactionality. In other words, queries that require strongly consistent results must contain an ancestor filter, which restricts the results to a single entity group. Queries that span multiple entity groups are not guaranteed to return up-to-date results. See the <a href="overview.html">Using the High Replication Datastore</a> for more information about using ancestor queries in this context.</dd>
+
+<dd><p class="note"><strong>Note:</strong> In HRD, all strongly consistent operations (for example, put or get by key) occur within a transaction.</p></dd>
+
   <dt>The Master/Slave Datastore</dt>
   <dd>You can also select a master-slave replication system, which asynchronously replicates data to other data centers as you write it. Since only one datacenter is the master for writing at any given time, this option offers strong consistency for all reads and queries, but your data may be temporarily unavailable during data center issues or planned downtime.</dd>
   <dd>The master/slave datastore is suitable only for a limited class of applications that: 
@@ -921,11 +939,8 @@ var logged_in_user_email = null;
       <li>Need to incur the lowest possible serving cost</li>
     </ul>
   </dd>
-
 </dl>
-
 <p>The following table illustrates the differences between the HRD and master/slave datastores:</p>
-
 <dl>
 <dd>
 <table width=600>
@@ -935,7 +950,7 @@ var logged_in_user_email = null;
     <th width=200>Master/Slave</th>
   </tr>
   <tr>
-    <td><b>Cost</b></td>
+    <td><strong>Cost</strong></td>
     <td></td>
     <td></td>
   </tr>
@@ -960,7 +975,7 @@ var logged_in_user_email = null;
     <td>1x</td>
   </tr>
   <tr>
-    <td><b>Performance</b></td>
+    <td><strong>Performance</strong></td>
     <td></td>
     <td></td>
   </tr>
@@ -980,7 +995,7 @@ var logged_in_user_email = null;
     <td>1x</td>
   </tr>
   <tr>
-    <td><b>Consistency</b></td>
+    <td><strong>Consistency</strong></td>
     <td></td>
     <td></td>
   </tr>
@@ -1000,12 +1015,12 @@ var logged_in_user_email = null;
     <td>Strong</td>
   </tr>
   <tr>
-    <td><b>Occasional Planned Read-Only Period</b></td>
+    <td><strong>Occasional Planned Read-Only Period</strong></td>
     <td>No</td>
     <td>Yes</td>
   </tr>
   <tr>
-    <td><b>Unplanned Downtime</b></td>
+    <td><strong>Unplanned Downtime</strong></td>
     <td>Extremely rare. No data loss.</td>
     <td>Rare. Possible to lose a small % of writes that occurred near the downtime (recoverable after event).</td>
   </tr>
@@ -1017,9 +1032,9 @@ var logged_in_user_email = null;
 <p>The HRD is the default for all new applications. Existing apps must migrate to the HRD by <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copying entities to a new application</a>.  If you prefer to use the master/slave datastore, you can select it as follows:</p>
 
 <h3 id="For_a_New_Application">For a New Application</h3>
-<p>When you create a new application on <a href="http://appengine.google.com/">appengine.google.com</a>, the application uses the HRD by default. To choose the master/slave option, select it on the <b>Create an Application</b> screen.</p>
+<p>When you create a new application on <a href="http://appengine.google.com/">appengine.google.com</a>, the application uses the HRD by default. To choose the master/slave option, select it on the <strong>Create an Application</strong> screen.</p>
 
-<p>To select master/slave, click <b>Edit</b> and select the <b>Master/Slave</b> radio button. Then click <b>Create Application</b> to configure your app to serve data from the master/slave datastore.</p>
+<p>To select master/slave, click <strong>Edit</strong> and select the <strong>Master/Slave</strong> radio button. Then click <strong>Create Application</strong> to configure your app to serve data from the master/slave datastore.</p>
 
 <p class="warning"><strong>Warning!</strong> This option is irreversible; if you choose master/slave and then wish to migrate to HR, you'll need to create a new application and <a href="../../../adminconsole/datastoreadmin.html#Copying_Entities_to_Another_Application">copy your current datastore</a> to the new application.</p>
 
@@ -1086,7 +1101,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

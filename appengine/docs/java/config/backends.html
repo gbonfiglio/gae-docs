@@ -180,6 +180,7 @@ var logged_in_user_email = null;
     <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -431,7 +432,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -466,6 +467,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -527,6 +539,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -856,6 +869,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -903,7 +918,7 @@ var logged_in_user_email = null;
 <p>You can add backends to your application in a configuration file called <code>backends.xml</code>, which  declares the name and desired properties of each backend server. The <code>backends.xml</code> file is stored in the application's <code>WEB-INF</code> directory.</p>
 
 <ul>
-  <li><a href="#About_backends_xml">About backends.xml</a></li>
+  <li><a href="#About_backends">About backends.xml</a></li>
   <li><a href="#Types_of_Backends">Types of Backends</a></li>
   <li><a href="#Request_Handling">Request Handling</a></li>
   <li><a href="#Defining_Handlers">Defining Handlers</a></li>
@@ -922,20 +937,20 @@ var logged_in_user_email = null;
 
 <pre class="prettyprint">&lt;backends&gt;
  &lt;backend name="memdb"&gt;
-   &lt;class&gt;b8&lt;/class&gt;
+   &lt;class&gt;B8&lt;/class&gt;
    &lt;instances&gt;5&lt;/instances&gt;
  &lt;/backend&gt;
  &lt;backend name="worker"&gt;
    &lt;options&gt;
      &lt;fail-fast&gt;true&lt;/fail-fast&gt;
    &lt;/options/&gt;
- &lt;backend&gt;
+ &lt;/backend&gt;
  &lt;backend name="cmdline"&gt;
    &lt;name&gt;cmdline&lt;/name&gt;
    &lt;options&gt;
      &lt;dynamic&gt;true&lt;/dynamic&gt;
-   &lt;/options/&gt;
- &lt;backend&gt;
+   &lt;/options&gt;
+ &lt;/backend&gt;
 &lt;/backends&gt;</pre>
 
 
@@ -1108,11 +1123,11 @@ var logged_in_user_email = null;
       An integer between <code>1</code> and <code>20</code> indicating the number of instances to assign to the given backend. Defaults to <code>1</code> if unspecified. The instance number is also referred to as the <code>INSTANCE_ID</code>.
     </p>
     <p>
-      Each instance can handle multiple requests if your application is <a href="../runtime.html#Requests_and_Servlets">marked as threadsafe</a> in <code>appengine-web.xml</code>. You can also configure the <a href="backends.html#Configuring_the_Maximum_Number_of_Concurrent_Requests">maximum number of concurrent requests</a>. This feature is experimental. Backends have pending queues; requests to a busy instance retry for 10 seconds before aborting.
+      Each instance can handle multiple requests if your application is <a href="../runtime.html#Requests_and_Servlets">marked as threadsafe</a> in <code>appengine-web.xml</code>. You can also configure the <a href="appconfig.html#Using_Concurrent_Requests">maximum number of concurrent requests</a>. This feature is experimental. Backends have pending queues; requests to a busy instance retry for 10 seconds before aborting.
     </p>
   </dd>
 
-  <dt><code><code>&lt;max-concurrent-requests&gt;</code></code></dt>
+  <dt><code>&lt;max-concurrent-requests&gt;</code><sup class="new">Experimental!</sup></dt>
   <dd>
     <p>Specifies the maximum number of requests that each instance can handle simultaneously. If unset, App Engine determines the concurrent request limit dynamically.</p>
   </dd>
@@ -1198,7 +1213,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

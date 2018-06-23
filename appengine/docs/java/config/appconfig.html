@@ -199,6 +199,7 @@ var logged_in_user_email = null;
     <li><a href="../gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -450,7 +451,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -485,6 +486,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -546,6 +558,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -875,6 +888,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -970,7 +985,7 @@ var logged_in_user_email = null;
 
 <p>By default, all files in the WAR are treated as both static files and resource files, except for JSP files, which are compiled into servlet classes and mapped to URL paths, and files in the <code>WEB-INF/</code> directory, which are never served as static files and always available to the app as resource files.</p>
 
-<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>appengine-web.xml</code> file.  The <code><static-files></code> element specifies patterns that match file paths to include and exclude from the list of static files, amending the default behavior.  Similarly, the <code><resource-files></code> element specifies which files are considered resource files.</p>
+<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>appengine-web.xml</code> file.  The <code><static-files></code> element specifies patterns that match file paths to include and exclude from the list of static files, overriding or amending the default behavior.  Similarly, the <code><resource-files></code> element specifies which files are considered resource files.</p>
 
 <h3 id="Including_and_Excluding_Files">Including and Excluding Files</h3>
 <p>Path patterns are specified using zero or more <code><include></code> and <code><exclude></code> elements.  In a pattern, <code>*</code> represents zero or more of any character in a file or directory name, and <code>**</code> represents zero or more directories in a path.</p>
@@ -1128,8 +1143,8 @@ var logged_in_user_email = null;
 
 <pre>
   &lt;static-error-handlers&gt;
-    &lt;handler file="default_error.html"/&gt;
-    &lt;handler file="over_quota.html" error-code="over_quota"/&gt;
+    &lt;handler file=&quot;default_error.html&quot;/&gt;
+    &lt;handler file=&quot;over_quota.html&quot; error-code=&quot;over_quota&quot;/&gt;
   &lt;/static-error-handlers&gt;
 </pre>
 
@@ -1137,7 +1152,7 @@ var logged_in_user_email = null;
 
 <p class="warning"><strong>Warning!</strong>: Make sure that the path to the error response file does not overlap with static file handler paths. </p>
 
-<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error-code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:
+<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error-code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:</p>
 
 <ul>
   <li>
@@ -1290,7 +1305,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

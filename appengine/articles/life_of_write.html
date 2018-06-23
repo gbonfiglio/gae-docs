@@ -181,6 +181,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../docs/java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../docs/java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -432,7 +433,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../docs/python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../docs/python/datastore/overview.html">Datastore Overview</a></li>
@@ -467,6 +468,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../docs/python/apis.html">Services</a>
       <ul>
+        <li><a href="../docs/python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../docs/python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../docs/python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../docs/python/blobstore/overview.html">Overview</a></li>
@@ -528,6 +540,7 @@ var logged_in_user_email = null;
      <li><a href="../docs/python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../docs/python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../docs/python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../docs/python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../docs/python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -857,6 +870,8 @@ var logged_in_user_email = null;
 <li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../docs/adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../docs/quotas.html">Quotas</a></li>
@@ -910,13 +925,13 @@ var logged_in_user_email = null;
 
 <p class="note" align="center">This is one of a <a href="datastore/overview.html">series</a> of in-depth articles discussing App Engine's datastore. To see the other articles in the series, see <a href="#related">Related links</a>.</p>
 
-<p>The datastore API provides a simple interface for interacting with a complex distributed data storage system based on Bigtable. Inserting a new entity in the datastore can be as simple as executing <code>MyEntity().put()</code> (Python) or <code>pm.makePersistent(new MyEntity())</code> (Java) but what happens behind-the-scenes when you make that call?</p>
+<p>The datastore API provides a simple interface for interacting with a complex distributed data storage system based on Bigtable. Inserting a new entity in the datastore can be as simple as executing <code>MyEntity().put()</code> for Python, or <code>pm.makePersistent(new MyEntity())</code> for Java. But what happens behind the scenes when you make that call?</p>
 
-<p>We'll dive into a bit more detail on what happens in terms of what new data is placed in the datastore as part of a write operation, inserts, deletions, updates, and transactions. The focus is on the work done in the backend which is common to all of the runtimes. Our hope is to give you a better understanding of the costs and tradeoffs and better equip you to get maximum performance from your code.</p>
+<p>We'll dive into a bit more detail in terms of what new data is placed in the datastore as part of write operations such as inserts, deletions, updates, and transactions. The focus is on the backend work that is common to all of the runtimes. Our hope is to give you a better understanding of the costs and tradeoffs, and better equip you to get maximum performance from your code.</p>
 
 <h2>An Insert</h2>
 
-<p>Lets begin with an example data model item, a ToDo item.</p>
+<p>Let's begin with an example data model item, a ToDo item.</p>
 
 <div class="tabpane">
   <ul>
@@ -988,26 +1003,29 @@ pm.makePersistent(myTodo);</pre>
 <p>When we call <code>put</code> or <code>makePersistent</code>, several things happen behind the scenes before the call returns and sets the entity's key:<p>
 
 <ol>
-  <li>The <code>my_todo</code> object is converted into a <a href="http://code.google.com/p/protobuf/">protocol buffer</a></li>
-  <li>The <a href="http://www.youtube.com/watch?v=oAMMBP_SacA#t=17m31s">appserver</a> makes an RPC call to the datastore server sending the entity data in a protocol buffer</li>
+  <li>The <code>my_todo</code> object is converted into a <a href="http://code.google.com/p/protobuf/">protocol buffer</a>.</li>
+  <li>The <a href="http://www.youtube.com/watch?v=oAMMBP_SacA#t=17m31s">appserver</a> makes an RPC call to the datastore server, sending the entity data in a protocol buffer.</li>
   <li>If a key name is not provided, a unique ID is determined for this entity's key. The entity key is composed of <code>app ID | ancestor keys | kind name | key name or ID</code>.</li>
-  <li>The datastore server processes the request in two phases which are executed in order: commit then apply. In each phase, the datastore server identifies the <a href="http://labs.google.com/papers/bigtable.html">Bigtable</a> tablet servers which should receive the data.</li>
+  <li>The datastore server processes the request in two phases that are executed in order: commit, then apply. In each phase, the datastore server identifies the <a href="http://labs.google.com/papers/bigtable.html">Bigtable</a> tablet servers that should receive the data.</li>
+</ol>
 
-<h3>Commit Phase</h3>
+<h3>The Commit Phase</h3>
 
-<p>The datastore performs two actions in the commit phase: writes the data for the entities to the entity group's log and marks the new log entry as committed.</p>
+<p>The datastore performs two actions in the commit phase:</p>
+<ol><li>It writes the data for the entities to the entity group's log.</li>
+<li>It marks the new log entry as committed.</li></ol>
 
-<h3>Apply Phase</h3>
+<h3>The Apply Phase</h3>
 
-<p>In the apply phase, the entity's data and the index rows are written to disk in parallel. Depending on the properties which are set in the entity, there could be a large number of index entries which need to be added. The datastore checks for matching indexes in the composite indexes which are defined for your application in a config file along with the indexes which are automatically present for all apps (they do not need to be present in a config file). Before stepping through the apply phase, we will look at an example of an app-specific composite index.</p>
+<p>In the apply phase, the entity's data and the index rows are written to disk in parallel. Depending on the properties that are set in the entity, a large number of index entries might need to be added. The datastore checks for matching indexes in the composite indexes that are defined for your application in a config file, along with the indexes that are automatically present for all apps&mdash;these do not need to be present in a config file. Before stepping through the apply phase, we will look at an example of an app-specific composite index.</p>
 
 <h4>Sample Composite Index</h4>
 
-<p>When we want to view a list of the ToDo items which are due the soonest and are also sorted with high priority, we use a query like this:</p>
+<p>When we want to view a list of the ToDo items that are due the soonest and are also sorted with high priority, we use a query like this:</p>
 
 <pre>select * from ToDo order by due desc, priority desc</pre>
 
-<p>This requires a composite index in our index config file which looks like:</p>
+<p>This requires a composite index in our index config file:</p>
 
 <div class="tabpane">
   <ul>
@@ -1039,13 +1057,13 @@ pm.makePersistent(myTodo);</pre>
   </div>
 </div>
 
-<p>The above defines a composite indexes which will be updated in an insert.</p>
+<p>The config file shown above defines a composite index, which is updated in an insert.</p>
 
 <h4>Apply Steps</h4>
-
-<ul>
-  <li>Write the new entity itself. The key for the entity serves as the row name and the entity's data is placed in a single column as a byte-encoded ProtocolBuffer.</li>
-  <li>write a new index row for each of the properties that is indexed. Since each index can live in a separate location in Bigtable, these writes can be fanned out in parallel to multiple tablet servers. In our example above, we'd see index rows that look like the following (<code>key</code> refers to the row name of the row containing the entity's data):
+<p>When the datastore server applies a request, it goes through the following steps:</p>
+<ol>
+  <li>Write the new entity itself. The key for the entity serves as the row name, and the entity's data is placed in a single column as a byte-encoded protocol buffer.</li>
+  <li>Write a new index row for each of the properties that is indexed. Since each index can live in a separate location in Bigtable, these writes can be fanned out in parallel to multiple tablet servers. In our example above, we'd see index rows that look like the following. (The <code>key</code> refers to the row name of the row containing the entity's data.)
     <ul>
       <li>ToDo created &#x25B2: <code>(now) = key</code></li>
       <li>ToDo created &#x25BC: <code>(now) = key</code></li>
@@ -1059,28 +1077,47 @@ pm.makePersistent(myTodo);</pre>
       <li>Add an entry to the index of all entities of a kind: <code>ToDo = key</code></li>
     </ul>
   </li>
-</ul>
-
-<p class="note">Note that in the list above there isn't a single property index for description since it is a large <code>Text</code> property which are not indexed. You can also <a href="../docs/python/datastore/propertyclass.html#Property">explicitly mark</a> properties as unindexed. Also, if an entity does not contain a value for an indexed property, an index row is not created for that property. Index rows are added only if the entity has the required properties.</p>
-
-<h2>The write's return value</h2>
-<p>We've seen the steps executed by the datastore behind the scenes, but how does this relate to the code that you've written for the app? More specifically, at what point in the list of items does the datastore server responds telling your app that the put succeeded or failed?</p>
-
-<p>The datastore replies to the RPC after applying all changes, so if you receive a success response, all data and index rows should have been written to disk.</p>
-
-<p>If there is a failure either in the commit phase or the apply phase, the backend will automatically retry several times, but if failures continue, the datastore will return an error message which is converted to an exception. When a write fails, the entity data and index data are either partially written (some indexes and entities not updated) or not updated at all. If the entity data fails to update, in the commit phase, no index changes are made. For more details, see the article on <a href="transaction_isolation.html">transaction isolation</a>. If the commit phase has succeeded but the apply phase failed, the datastore will roll forward to apply the changes to indexes under two circumstances:</p>
-<ol>
-  <li>The next time you write or start a transaction on this entity group, the datastore will first roll forward and fully apply this committed but unapplied write, based on the data in the log.</li>
-  <li>The datastore continuously sweeps for partially applied jobs and rolls forward writes to indexes and entities which have not yet received the changes to the entity.</li>
 </ol>
 
-<p>There is an expected failure rate on writes as Bigtable tablets are sometimes unavailable, for example, when they are being moved or split. The presence of more indexes increases the probability of hitting an unavailable tablet as an exception will be raised if a write fails for any of the indexes.</p>
+<p class="note">Note that <code>description</code> is not included in the list above, because Text properties are not indexed. You can also <a href="../docs/python/datastore/propertyclass.html#Property">explicitly mark</a> properties as unindexed. Also, if an entity does not contain a value for an indexed property, an index row is not created for that property. Index rows are added only if the entity has the required properties.</p>
 
-<p>In those situations, your application will need to decide how to handle the exception. One option is to add a task to the task queue to retry the write at a later point in time. Another idea would be to respond with an error from the app and have the client retry. This tends to work with things like AJAX requests where there is client side logic which can handle an error message from the server. </p>
+<h2>The Return Value</h2>
+<p>We've seen the steps executed by the datastore behind the scenes, but how does this relate to the code that you've written for the app? More specifically, at what point in the list of items does the datastore server respond telling your app that the put succeeded or failed?</p>
+
+<p>If you are using the <a href="http://googleappengine.blogspot.com/2011/01/announcing-high-replication-datastore.html">High Replication Datastore</a>, the datastore
+returns after the commit and does the apply asynchronously.</p>
+<p>If you are using the master/slave datastore, the datastore returns after applying all changes, so if you receive a success response, all data and index rows should have been written to disk. If there is a failure either in the commit phase or the apply phase, the backend will automatically retry several times, but if failures continue, the datastore will return an error message that is converted to an exception.</p> 
+
+<p>When a write operation fails, the entity data and index data are either partially written (some indexes and entities not updated) or not updated at all. If the entity data fails to update in the commit phase, no index changes are made. For more details, see the article on <a href="transaction_isolation.html">transaction isolation</a>.</p>
+<p>If the commit phase has succeeded but the apply phase failed, the datastore will roll forward to apply the changes to indexes under two circumstances:</p>
+<ol>
+  <li>The next time you write or start a transaction (or read in the High Replication Datastore) on this entity group, the datastore will first roll forward and fully apply this committed but unapplied write, based on the data in the log.</li>
+  <li>The datastore continuously sweeps for partially applied jobs and rolls forward writes to indexes and entities that have not yet received the changes to the entity.</li>
+</ol>
+
+<p>There is an expected failure rate on writes, because Bigtable tablets are sometimes unavailable, for example when they are being moved or split. The presence of more indexes increases the probability of hitting an unavailable tablet, because an exception is raised if a write fails for any of the indexes.</p>
+
+<p>In those situations, your application will need to decide how to handle the exception. One option is to add a task to the task queue to retry the write at a later point in time. Another idea would be to respond with an error from the app and have the client retry. This tends to work with things like AJAX requests where there is client side logic that can handle an error message from the server.</p>
+
+<h4>About transactions</h4>
+
+<p>A datastore transaction (for <a href="../docs/python/datastore/transactions.html">Python</a> or <a href="../docs/java/datastore/transactions.html">Java</a>) is a set of  operations. Each transaction is guaranteed to be atomic, which means that transactions are never partially applied.</p>
+
+<p class="note"><strong>Note:</strong> If your app receives an exception when submitting a transaction, it does not always mean that the transaction failed.</p>
+
+<p>You can receive the following exceptions  in cases where transactions have been committed and eventually will be applied successfully:</p>
+
+<ul>
+  <li>In Python, <code><a href="../docs/python/datastore/exceptions.html">Timeout</a></code>, <code><a href="../docs/python/datastore/exceptions.html">TransactionFailedError</a></code>, or <code><a href="../docs/python/datastore/exceptions.html">InternalError</a></code>.</li>
+  <li>In Java, <code><a href="../docs/java/javadoc/com/google/appengine/api/datastore/DatastoreTimeoutException.html">DatastoreTimeoutException</a></code>, <code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/ConcurrentModificationException.html">ConcurrentModificationException</a></code>, or <code><a href="../docs/java/javadoc/com/google/appengine/api/datastore/DatastoreFailureException.html">DatastoreFailureException</a></code>.</li>
+</ul>
+
+<p>Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
+
 
 <h2>Conclusions</h2>
 
-<p>The App Engine datastore is a distributed system which abstracts many of the complexities of reliably storing and retrieving data with fast read times across a multitude of physical machines. The simplicity of the API intentionally hides the complexity behinds the scenes, but understanding the algorithms being carried out can give you insights into how to optimize your application. Our hope is that this article has illustrated backend operations which occur during a datastore write and illustrated where the costs and potential points of failure lie.</p>
+<p>The App Engine datastore is a distributed system that abstracts many of the complexities of reliably storing and retrieving data with fast read times across a multitude of physical machines. The simplicity of the API intentionally hides the complexity behinds the scenes, but understanding the algorithms being carried out can give you insights into how to optimize your application. Our hope is that this article has illustrated backend operations that occur during a datastore write and illustrated where the costs and potential points of failure lie.</p>
 
 <h2 id="related">Related links</h2>
 
@@ -1155,7 +1192,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

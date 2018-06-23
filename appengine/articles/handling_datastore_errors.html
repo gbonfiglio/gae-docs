@@ -181,6 +181,7 @@ var logged_in_user_email = null;
     <li><a href="../docs/java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../docs/java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../docs/java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -432,7 +433,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../docs/python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../docs/python/datastore/overview.html">Datastore Overview</a></li>
@@ -467,6 +468,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../docs/python/apis.html">Services</a>
       <ul>
+        <li><a href="../docs/python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../docs/python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../docs/python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../docs/python/blobstore/overview.html">Overview</a></li>
@@ -528,6 +540,7 @@ var logged_in_user_email = null;
      <li><a href="../docs/python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../docs/python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../docs/python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../docs/python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../docs/python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -857,6 +870,8 @@ var logged_in_user_email = null;
 <li><a href="../docs/adminconsole/roles.html">Roles</a></li>
 <li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../docs/adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../docs/quotas.html">Quotas</a></li>
@@ -909,156 +924,73 @@ var logged_in_user_email = null;
 <div class="jd-descr">
   <p class="note" align="center">This is one of a <a href="datastore/overview.html">series</a> of in-depth articles discussing App Engine's datastore. To see the other articles in the series, see <a href="#related">Related links</a>.</p>
 
-  <p>Inevitably, a very small percentage of datastore requests will result in
-  errors. We are constantly working to minimize the occurrence of errors,
-  but your application needs to be able to handle them when they do occur in
-  order to present the best experience to users.</p>
+<p>Inevitably, a very small percentage of datastore requests will result in errors. We are constantly working to minimize the occurrence of errors, but your application needs to be able to handle them when they do occur in order to present the best experience to users.</p>
 
-  <p>This article will explain why errors occur, and what you can do when they
-  do, in order to minimize disruption to your users.</p>
+<p>This article will explain why errors occur, and what you can do when they do, in order to minimize disruption to your users.</p>
 
-  <h2>Causes of errors</h2>
+<p class="note"><strong>Note:</strong> If your app receives an exception when submitting a transaction, it does not always mean that the transaction failed.</p>
 
-  <p>There are two major reasons that datastore errors occur.</p>
+<p>You can receive the following exceptions  in cases where transactions have been committed and eventually will be applied successfully:</p>
 
-  <h3>Timeouts due to write contention</h3>
+<ul>
+  <li>In Python, <code><a href="../docs/python/datastore/exceptions.html">Timeout</a></code>, <code><a href="../docs/python/datastore/exceptions.html">TransactionFailedError</a></code>, or <code><a href="../docs/python/datastore/exceptions.html">InternalError</a></code></a>.</li>
+  <li>In Java, <code><a href="../docs/java/javadoc/com/google/appengine/api/datastore/DatastoreTimeoutException.html">DatastoreTimeoutException</a></code>, <code><a href="http://download.oracle.com/javase/1.5.0/docs/api/java/util/ConcurrentModificationException.html">ConcurrentModificationException</a></code>, or <code><a href="../docs/java/javadoc/com/google/appengine/api/datastore/DatastoreFailureException.html">DatastoreFailureException</a></code>.</li>
+</ul>
 
-  <p>The first type of timeout occurs when you attempt to write to a single
-  entity group too quickly. Writes to a single entity group are serialized by the
-  App Engine datastore, and thus there's a limit on how quickly you can update
-  one entity group. In general, this works out to somewhere between 1 and 5
-  updates per second; a good guideline is that you should consider
-  rearchitecting if you expect an entity group to have to sustain more than one
-  update per second for an extended period. Recall that an entity group is a set
-  of entities with the same ancestor &ndash; thus, an entity with no children is its own
-  entity group, and this limitation applies to writes to individual entities,
-  too. For details on how to avoid datastore contention, see
-  <a href="scaling/contention.html">Avoiding datastore
-  contention</a>. Timeout errors that occur during a transaction will be raised
-  as a <code>appengine.ext.db.TransactionFailedError</code> instead of a
-  <code>Timeout</code>.</p>
+<p>Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
 
-  <p>The most common way this limitation gets encountered is when you update an
-  entity with every request &ndash; for example, counting the number of views to a
-  page on your site. There are several approaches you can employ to avoid this:
-  The most common is sharded counters, documented
-  <a href="sharding_counters.html">here</a>. Another approach is to make the
-  updates in memcache, flushing it to the datastore periodically. This risks
-  losing some updates, but greatly improves the efficiency of updates.</p>
+<h2>Causes of errors</h2>
 
-  <p>With the introduction of the Task Queue, another option is to create a task
-  queue item to do the update later; this allows you to make it past high
-  traffic periods without degrading the user experience. In
-  exceptional circumstances, the task queue can also return a transient error &ndash;
-  in which case, you need to handle that, too.</p>
+<p>There are two major reasons that datastore errors occur.</p>
 
-  <h3>Timeouts due to datastore issues</h3>
+<h3>Timeouts due to write contention</h3>
 
-  <p>A very small number of datastore operations &ndash; generally less than 1 in
-  3000 &ndash; will result in a timeout in normal operation. This is due to the
-  distributed nature of
-  <a href="http://labs.google.com/papers/bigtable.html">Bigtable</a>, which the
-  datastore is built on: occasionally your datastore request will happen to
-  occur just as the data it concerns is being moved between servers or is
-  otherwise briefly unavailable. This typically happens for one of several
-  reasons:
+<p>The first type of timeout occurs when you attempt to write to a single entity group too quickly. Writes to a single entity group are serialized by the App Engine datastore, and thus there's a limit on how quickly you can update one entity group. In general, this works out to somewhere between 1 and 5 updates per second; a good guideline is that you should consider rearchitecting if you expect an entity group to have to sustain more than one update per second for an extended period. Recall that an entity group is a set of entities with the same ancestor&mdash;thus, an entity with no children is its own entity group, and this limitation applies to writes to individual entities, too. For details on how to avoid datastore contention, see <a href="scaling/contention.html">Avoiding datastore contention</a>. Timeout errors that occur during a transaction will be raised as a <code>appengine.ext.db.TransactionFailedError</code> instead of a <code>Timeout</code>.</p>
 
-  <ul>
-    <li>The tablet containing some of your data is being moved between Bigtable
-    tablet servers for load-balancing at the time you try to access it.</li>
-    <li>The tablet containing some of your data is being split. This happens
-    when the tablet becomes excessively large &ndash; over about 300MB &ndash; or when it
-    receives more traffic than a single tablet server can handle. As a result of
-    this, you will see slightly elevated timeout rates when your application is
-    writing large amounts of data to the datastore.</li>
-    <li>The tablet is being merged with other tablets. This happens when a lot
-    of data is deleted from your app's datastore.</li>
-  </ul>
-  </p>
+<p>The most common way this limitation gets encountered is when you update an entity with every request&mdash;for example, counting the number of views to a page on your site. There are several approaches you can employ to avoid this: The most common is <a href="sharding_counters.html">sharded counters</a>. Another approach is to make the updates in memcache, flushing it to the datastore periodically. This risks losing some updates, but greatly improves the efficiency of updates.</p>
+
+<p>With the introduction of the Task Queue, another option is to create a task queue item to do the update later; this allows you to make it past high traffic periods without degrading the user experience. In exceptional circumstances, the task queue can also return a transient error, which you also need to handle.</p>
+
+
+<h3>Timeouts due to datastore issues</h3>
+
+<p>A very small number of datastore operations&mdash;generally less than 1 in 3,000&mdash;will result in a timeout in normal operation. This is due to the distributed nature of <a href="http://labs.google.com/papers/bigtable.html">Bigtable</a>, which the datastore is built on: occasionally your datastore request will happen to occur just as the data it concerns is being moved between servers or is otherwise briefly unavailable. This typically happens for one of several reasons:</p>
+
+<ul>
+  <li>The tablet containing some of your data is being moved between Bigtable tablet servers for load-balancing at the time you try to access it.</li>
+  <li>The tablet containing some of your data is being split. This happens when the tablet becomes excessively large&mdash;over about 300MB&mdash;or when it receives more traffic than a single tablet server can handle. As a result of this, you will see slightly elevated timeout rates when your application is writing large amounts of data to the datastore.</li>
+  <li>The tablet is being merged with other tablets. This happens when a lot of data is deleted from your app's datastore.</li>
+</ul>
   
-  <p>Some things your app does can increase the occurrence of tablet
-  unavailability. For example, if you're inserting large amounts of data, that
-  will cause tablet splits, which causes brief bursts of unavailability.
-  Likewise, deleting large amounts of data will result in brief periods of
-  unavailability as tablets are merged.</p>
+<p>Some things your app does can increase the occurrence of tablet unavailability. For example, if you're inserting large amounts of data, that will cause tablet splits, which causes brief bursts of unavailability. Likewise, deleting large amounts of data will result in brief periods of unavailability as tablets are merged.</p>
 
-  <p>Datastore errors due to the above reasons are highly clustered: when a
-  tablet is being moved, split, or merged, it's generally unavailable for anywhere
-  from a few hundred milliseconds to a second or two, and during that period,
-  all reads and writes for that data will fail. During that time, your requests
-  may return immediately with a 'timeout' error - since the tablet is currently
-  not loaded, Bigtable returns an error immediately, which is treated by the
-  datastore identically to a regular timeout. As a result, the exponential
-  backoff strategy we covered above is advisable &ndash; retrying repeatedly as fast
-  as you can will simply waste CPU time. In future, we may provide a way to
-  distinguish regular timeouts from tablet unavailability.</p>
+<p>Datastore errors due to the above reasons are highly clustered: when a tablet is being moved, split, or merged, it's generally unavailable for anywhere from a few hundred milliseconds to a second or two, and during that period, all reads and writes for that data will fail. During that time, your requests may return immediately with a timeout error. (Because the tablet is currently not loaded, Bigtable returns an error immediately, which the datastore treats the same as a regular timeout.) As a result, the exponential backoff strategy we covered above is advisable&mdash;retrying repeatedly as fast as you can will simply waste CPU time. In future, we may provide a way to distinguish regular timeouts from tablet unavailability.</p>
 
-  <p>Another related cause of timeouts is known as 'hot tablets'. Each tablet is
-  hosted on only one Bigtable tablet server at a time, which means that one server
-  is responsible for handling every read and write for the row range covered by
-  that tablet. Too high a rate of updates to the same tablet can cause timeouts
-  as the tablet server struggles to keep up with the requests for that tablet.
-  Bigtable is fairly smart about splitting hot tablets to spread the load, but
-  if all the updates are for a single row, or are consecutive, this isn't enough
-  to relieve the load.</p>
+<p>Another related cause of timeouts is known as "hot tablets." Each tablet is hosted on only one Bigtable tablet server at a time, which means that one server is responsible for handling every read and write for the row range covered by that tablet. Too high a rate of updates to the same tablet can cause timeouts as the tablet server struggles to keep up with the requests for that tablet. Bigtable is fairly smart about splitting hot tablets to spread the load, but if all the updates are for a single row, or are consecutive, this isn't enough to relieve the load.</p>
   
-  <p>The most common example of this occurs when you are rapidly inserting a
-  large number of entities of the same kind, with auto-generated IDs. In this
-  case, most inserts hit the same range of the same tablet, and the single
-  tablet server is overwhelmed with writes. Most apps never have to worry about
-  this: it only becomes a problem at write rates of several hundred Queries
-  Per Second and above. If this does affect your app, the easiest solution is
-  to use more evenly distributed IDs instead of the auto-allocated ones - for
-  example, you can use Python's uuid module to generate a uuid for each entity
-  as its key name.</p>
+<p>The most common example of this occurs when you are rapidly inserting a large number of entities of the same kind, with auto-generated IDs. In this case, most inserts hit the same range of the same tablet, and the single tablet server is overwhelmed with writes. Most apps never have to worry about this: it only becomes a problem at write rates of several hundred queries per second and above. If this does affect your app, the easiest solution is to use more evenly distributed IDs instead of the auto-allocated ones. For example, you can use Python's uuid module to generate a uuid for each entity as its key name.</p>
 
-  <p>The Bigtable behaviours we described above all relate to a single tablet,
-  but many datastore operations involve several tablets at once. For example,
-  when you write a new or updated entity to the datastore, in addition to the
-  entity itself being written, the indexes &ndash; both built in and custom &ndash; have to
-  be updated, which also requires separate Bigtable writes. When you execute a
-  query, the datastore scans the index &ndash; one read &ndash; and then fetches the
-  matching entities from the Entities table, which requires a read for each
-  entity being returned, each of which could be on a separate tablet. All of
-  these operations are performed in parallel, so the operation returns quickly,
-  but tablet unavailability for any of them could cause the operation as a whole
-  to time out.</p>
+<p>The Bigtable behaviors we described above all relate to a single tablet, but many datastore operations involve several tablets at once. For example, when you write a new or updated entity to the datastore, in addition to the entity itself being written, the indexes&mdash;both built-in and custom&mdash;have to be updated, which also requires separate Bigtable writes. When you execute a query, the datastore scans the index&mdash;one read&mdash;and then fetches the matching entities from the Entities table, which requires a read for each entity being returned, each of which could be on a separate tablet. All of these operations are performed in parallel, so the operation returns quickly, but tablet unavailability for any of them could cause the operation as a whole to time out.</p>
 
-  <p>The 1 in 3000 figure we originally mentioned, then, is an average:
-  Simpler operations are less likely to cause a timeout than more involved ones,
-  because they touch fewer tablets in Bigtable. Further, a tablet move can cause
-  a whole cluster of correlated timeouts &ndash; most of which can be avoided by being
-  smart about backing off and trying again.</p>
+<p>The 1 in 3,000 figure we originally mentioned, then, is an average: Simpler operations are less likely to cause a timeout than more involved ones, because they touch fewer tablets in Bigtable. Further, a tablet move can cause a whole cluster of correlated timeouts&mdash;most of which can be avoided by being smart about backing off and trying again.</p>
 
-  <p>Finally, as with any service, occasional issues and downtime will
-  occur; these can also cause elevated rates of errors in your app. When
-  issues occur with the datastore, they'll be reported on our
-  <a href="http://code.google.com/status/appengine">status site</a>.</p>
+<p>Finally, as with any service, occasional issues and downtime will occur; these can also cause elevated rates of errors in your app. When issues occur with the datastore, they'll be reported on our <a href="http://code.google.com/status/appengine">status site</a>.</p>
 
-  <h3>Telling the two apart</h3>
 
-  <p>Determining the cause of errors in your app is generally fairly
-  straightforward. If timeouts happen more frequently when updating a particular
-  entity or group of entities, you're likely running into contention issues. If
-  your timeouts are more randomly distributed, it's likely to be only the
-  'background noise' of low level timeouts.</p>
+<h3>Telling the two apart</h3>
 
-  <h2>Handling Datastore timeouts</h2>
+<p>Determining the cause of errors in your app is generally fairly straightforward. If timeouts happen more frequently when updating a particular entity or group of entities, you're likely running into contention issues. If your timeouts are more randomly distributed, it's likely to be only the "background noise" of low level timeouts.</p>
 
-  <p>Internally, all datastore operations are automatically retried if they time
-  out, but if the timeouts persist, the error will be returned to your code in
-  the form of a <code>google.appengine.ext.db.Timeout</code> exception in
-  Python, or a <code>com.google.appengine.api.datastore.DatastoreTimeoutException</code> in
-  Java. For more details about server-side retries, see the
-  <a href="life_of_write.html">Life of a Datastore Write</a>
-  article. In such a situation, you have three main options:
 
-  <ul>
-    <li>Ignore the exception. This is the default, and results in a 500 Internal
-    Server Error being returned to the user.</li>
-    <li>Catch the exception and return an error response to the user. If you're
-    using the webapp framework, you can do this by extending your handler's
-    handle_exception method:
+<h2>Handling datastore timeouts</h2>
+
+<p>Internally, all datastore operations are automatically retried if they time out, but if the timeouts persist, the error will be returned to your code in the form of a <code>google.appengine.ext.db.Timeout</code> exception in Python, or a <code>com.google.appengine.api.datastore.DatastoreTimeoutException</code> in Java. For more details about server-side retries, see the <a href="life_of_write.html">Life of a Datastore Write</a> article.</p>
+
+<p>You have three main options for handling an exception:</p>
+
+<ul>
+  <li>Ignore the exception. This is the default, and results in a 500 Internal Server Error being returned to the user.</li>
+  <li>Catch the exception and return an error response to the user. If you're using the webapp framework, you can do this by extending your handler's <code>handle_exception</code> method:
     <div class="tabpane">
       <ul>
         <li><a href="#python_timeout_sample"><span>Python</span></a></li>
@@ -1104,11 +1036,7 @@ public class MyServlet extends HttpServlet {
       </div>
     </div></li>
 
-    <li>Retry the datastore operation. Since App Engine already retries
-    operations for you, it's likely that the timeout exception was raised
-    because of a transient issue with the row(s) in question, and retrying
-    further may not help. In certain circumstances, though, it's worth retrying
-    anyway:
+<li>Consider retrying the datastore operation, if it is idempotent. Since App Engine already retries operations for you, it's likely that the timeout exception was raised because of a transient issue with the row(s) in question, and retrying further may not help. In certain circumstances, though, it's worth retrying anyway:
 
     <div class="tabpane">
       <ul>
@@ -1127,7 +1055,7 @@ public class MyServlet extends HttpServlet {
       thread.sleep(timeout_ms)
       timeout_ms *= 2
 except apiproxy_errors.DeadlineExceededError:
-  # Ran out of retries &ndash; display an error message to the user</pre>
+  # Ran out of retries&mdash;display an error message to the user</pre>
         </div>
         <div id="java_retry_sample">
           <pre class="prettyprint">int timeout_ms = 100;
@@ -1144,16 +1072,10 @@ while(true) {
       </div>
     </div></li>
   </ul>
-  </p>
 
-  <p>A further option is to examine your use of the datastore: Can you move some
-  of your work out of the datastore? Memcache is one good candidate for this:
-  by caching your data, you can reduce the number of datastore operations you
-  make, and thus the number of opportunities for a datastore timeout to
-  occur. You can also use the Task Queue to do the write at a later time, which
-  has the added benefit that the Task Queue automatically retries failures.</p>
+<p>A further option is to examine your use of the datastore: Can you move some of your work out of the datastore? Memcache is one good candidate for this: by caching your data, you can reduce the number of datastore operations you make, and thus the number of opportunities for a datastore timeout to occur. You can also use the Task Queue to do the write at a later time, which has the added benefit that the Task Queue automatically retries failures.</p>
 
-  <h2 id="related">Related links</h2>
+<h2 id="related">Related links</h2>
 
 <ul>
   <li><a href="datastore/overview.html">Series Overview</a></li>
@@ -1226,7 +1148,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 
@@ -1258,5 +1180,4 @@ _gaq.push(
 
   </body>
 </html>
-
 

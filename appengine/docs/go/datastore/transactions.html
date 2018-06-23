@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -906,7 +921,7 @@ var logged_in_user_email = null;
 
 
 
-<p>The App Engine datastore supports <i>transactions</i>. A transaction is an operation or set of operations that either succeeds completely, or fails completely. An application can perform multiple operations and calculations in a single transaction.</p>
+<p>The App Engine datastore supports <i>transactions</i>. A transaction is an operation or set of operations that is atomic&mdash;either all of the operations in the transaction occur, or none of them occur. An application can perform multiple operations and calculations in a single transaction.</p>
 
 <ul>
   <li><a href="#Using_Transactions">Using Transactions</a></li>
@@ -918,9 +933,13 @@ var logged_in_user_email = null;
 
 <h2 id="Using_Transactions">Using Transactions</h2>
 
-<p>A <i>transaction</i> is a datastore operation or a set of datastore operations that either succeed completely, or fail completely. If the transaction succeeds, then all of its intended effects are applied to the datastore. If the transaction fails, then none of the effects are applied.</p>
+<p>A <i>transaction</i> is a set of datastore operations. Each transaction is guaranteed to be atomic, which means that transactions are never partially applied. Either all of the operations in the transaction are applied, or none of them are applied.</p>
 
-<p>Every datastore write operation is atomic; that is, an attempt to create, update, or delete an entity either happens&mdash;or it doesn't. An operation may fail due to a high rate of contention, with too many users trying to modify an entity at the same time. Or an operation may fail due to the application reaching a quota limit. Or there may be an internal error with the datastore. In all cases, the operation's effects are not applied, and the datastore API raises an exception.</p>
+<p>An operation may fail due to a high rate of contention when too many users try to modify an entity group at the same time. Or an operation may fail due to the application reaching a quota limit. Or there may be an internal error with the datastore. In all cases, the datastore API raises an exception.</p>
+
+<p class="note"><strong>Note:</strong> If your app receives an exception when submitting a transaction, it does not always mean that the transaction failed. You can receive <code>Timeout</code>, <code>TransactionFailedError</code>, or <code>InternalError</code> 
+<a href="../../python/datastore/exceptions.html">exceptions</a>  in cases where transactions have been committed and eventually will be applied
+successfully. Whenever possible, make your datastore transactions idempotent so that if you repeat a transaction, the end result will be the same.</p>
 
 <p>Transactions are an optional feature of the datastore; you're not required to use transactions to perform datastore operations.</p>
 
@@ -951,7 +970,7 @@ type Counter struct {
 func handler(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
 
-    key := datastore.NewKey("Counter", "mycounter", 0, nil)
+    key := datastore.NewKey(&quot;Counter&quot;, &quot;mycounter&quot;, 0, nil)
     count := new(Counter)
     err := datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
         // Note: this function's argument c shadows the variable c
@@ -964,12 +983,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
         return datastore.Put(c, key, count)
     })
     if err != nil {
-        c.Errorf("Transaction failed: %v", err)
-        http.Error(w, "Internal Server Error", 500)
+        c.Errorf(&quot;Transaction failed: %v&quot;, err)
+        http.Error(w, &quot;Internal Server Error&quot;, 500)
         return
     }
 
-    fmt.Fprintf(w, "Current count: %d", count.Count)
+    fmt.Fprintf(w, &quot;Current count: %d&quot;, count.Count)
 }
 </pre>
 
@@ -1001,7 +1020,6 @@ the same result when executed multiple times).
 
 
 
-
 <h2 id="Isolation_and_Consistency">Isolation and Consistency</h2>
 
 <p>The datastore's isolation level outside of transactions is closest to READ_COMMITTED. Inside transactions, on the other hand, the isolation level is SERIALIZABLE, specifically a form of <a href="http://en.wikipedia.org/wiki/Snapshot_isolation">snapshot isolation</a>. See the <a href="../../../articles/transaction_isolation.html">Transaction Isolation</a> article for more information on isolation levels.</p>
@@ -1012,7 +1030,6 @@ the same result when executed multiple times).
 
 
 <h2 id="Uses_for_Transactions">Uses for Transactions</h2>
-
 
 <p>This example demonstrates one use of transactions: updating an entity with a new property value relative to its current value.</p>
 
@@ -1046,7 +1063,7 @@ type Account struct {
 }
 
 func CreateOrUpdate(c appengine.Context, id, addr, phone string) os.Error {
-    key := datastore.NewKey("Account", id, 0, nil)
+    key := datastore.NewKey(&quot;Account&quot;, id, 0, nil)
     return datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
         acct := new(Account)
         err := datastore.Get(c, key, acct)
@@ -1063,6 +1080,7 @@ func CreateOrUpdate(c appengine.Context, id, addr, phone string) os.Error {
 
 
 
+
 <p>As before, a transaction is necessary to handle the case where another user is attempting to create or update an entity with the same string ID. Without a transaction, if the entity does not exist and two users attempt to create it, the second overwrites the first without knowing that it happened. </p>
 
 <p>When a transaction fails, you can have your app retry the transaction until it succeeds, or you can let your users deal with the error by propagating it to your app's user interface level. You do not have to create a retry loop around every transaction.</p>
@@ -1072,8 +1090,6 @@ func CreateOrUpdate(c appengine.Context, id, addr, phone string) os.Error {
 <p class="note"><b>Tip:</b> A transaction should happen as quickly as possible to reduce the likelihood that the entities used by the transaction will change, causing the transaction to fail. As much as possible, prepare data outside of the transaction, then execute the transaction to perform datastore operations that depend on a consistent state. The application should prepare keys for objects used outside the transaction, then fetch the entities inside the transaction.</p>
 
 <p>Finally, you can use a transaction to read a consistent snapshot of the datastore. This can be useful when multiple reads are needed to render a page or export data that must be consistent. These kinds of transactions are often called <i>read-only</i> transactions, since they perform no writes. Read-only transactions never fail due to concurrent modifications, so you don't have to implement retries. Committing and rolling back a read-only transaction are both no-ops.</p>
-
-
 
 
 
@@ -1106,8 +1122,8 @@ user-specified names.
 
 <pre class="prettyprint">
 datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
-    t := &taskqueue.Task{Path: "/path/to/worker"}
-    if err := taskqueue.Add(c, t, ""); err != nil {
+    t := &taskqueue.Task{Path: &quot;/path/to/worker&quot;}
+    if err := taskqueue.Add(c, t, &quot;&quot;); err != nil {
         return err
     }
     // ...
@@ -1173,7 +1189,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

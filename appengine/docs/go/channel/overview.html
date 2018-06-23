@@ -178,6 +178,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -429,7 +430,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -464,6 +465,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -525,6 +537,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -854,6 +867,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -1023,20 +1038,20 @@ var logged_in_user_email = null;
 package tictactoe
 
 import (
-    "appengine"
-    "appengine/datastore"
-    "appengine/channel"
-    "appengine/user"
-    "http"
-    "os"
-    "strconv"
-    "strings"
-    "template"
+    &quot;appengine&quot;
+    &quot;appengine/datastore&quot;
+    &quot;appengine/channel&quot;
+    &quot;appengine/user&quot;
+    &quot;http&quot;
+    &quot;os&quot;
+    &quot;strconv&quot;
+    &quot;strings&quot;
+    &quot;template&quot;
 )
 
 func init() {
-    http.HandleFunc("/", main)
-    http.HandleFunc("/move", move)
+    http.HandleFunc(&quot;/&quot;, main)
+    http.HandleFunc(&quot;/move&quot;, move)
 }
 
 type Game struct {
@@ -1047,32 +1062,32 @@ type Game struct {
     Winner string
 }
 
-var mainTemplate = template.MustParseFile("main.html", nil)
+var mainTemplate = template.MustParseFile(&quot;main.html&quot;, nil)
 
 func main(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
     u := user.Current(c) // assumes 'login: required' set in app.yaml
     key := r.FormValue("gamekey")
 
-    newGame := key == ""
+    newGame := key == &quot;&quot;
     if newGame {
         key = u.Id
     }
     err := datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
-        k := datastore.NewKey("Game", key, 0, nil)
+        k := datastore.NewKey(&quot;Game&quot;, key, 0, nil)
         g := new(Game)
         if newGame {
             // No game specified.
             // Create a new game and make this user the 'X' player.
             g.UserX = u.Id
             g.MoveX = true
-            g.Board = strings.Repeat(" ", 9)
+            g.Board = strings.Repeat(&quot; &quot;, 9)
         } else {
             // Game key specified, load it from the Datastore.
             if err := datastore.Get(c, k, g); err != nil {
                 return err
             }
-            if g.UserO != "" {
+            if g.UserO != &quot;&quot; {
                 // Both players already in game, skip the Put below.
                 return nil
             }
@@ -1087,25 +1102,25 @@ func main(w http.ResponseWriter, r *http.Request) {
         return err
     })
     if err != nil {
-        http.Error(w, "Couldn't load Game", http.StatusInternalServerError)
-        c.Errorf("setting up: %v", err)
+        http.Error(w, &quot;Couldn't load Game&quot;, http.StatusInternalServerError)
+        c.Errorf(&quot;setting up: %v&quot;, err)
         return
     }
 
     tok, err := channel.Create(c, u.Id+key)
     if err != nil {
-        http.Error(w, "Couldn't create Channel", http.StatusInternalServerError)
-        c.Errorf("channel.Create: %v", err)
+        http.Error(w, &quot;Couldn't create Channel&quot;, http.StatusInternalServerError)
+        c.Errorf(&quot;channel.Create: %v&quot;, err)
         return
     }
 
     err = mainTemplate.Execute(w, map[string]string{
-        "token":    tok,
-        "me":       u.Id,
-        "game_key": key,
+        &quot;token&quot;:    tok,
+        &quot;me&quot;:       u.Id,
+        &quot;game_key&quot;: key,
     })
     if err != nil {
-        c.Errorf("mainTemplate: %v", err)
+        c.Errorf(&quot;mainTemplate: %v&quot;, err)
     }
 }
 </pre>
@@ -1185,15 +1200,15 @@ func move(w http.ResponseWriter, r *http.Request) {
     u := user.Current(c)
     pos, err := strconv.Atoi(r.FormValue("i"))
     if err != nil {
-        http.Error(w, "Invalid move", http.StatusBadRequest)
+        http.Error(w, &quot;Invalid move&quot;, http.StatusBadRequest)
         return
     }
-    key := r.FormValue("gamekey")
+    key := r.FormValue(&quot;gamekey&quot;)
 
     g := new(Game)
     err = datastore.RunInTransaction(c, func(c appengine.Context) os.Error {
         // Retrieve the game from the Datastore.
-        k := datastore.NewKey("Game", key, 0, nil)
+        k := datastore.NewKey(&quot;Game&quot;, key, 0, nil)
         if err := datastore.Get(c, k, g); err != nil {
             return err
         }
@@ -1206,8 +1221,8 @@ func move(w http.ResponseWriter, r *http.Request) {
         return err
     })
     if err != nil {
-        http.Error(w, "Couldn't make move", http.StatusInternalServerError)
-        c.Errorf("move: %v", err)
+        http.Error(w, &quot;Couldn't make move&quot;, http.StatusInternalServerError)
+        c.Errorf(&quot;move: %v&quot;, err)
         return
     }
 
@@ -1215,7 +1230,7 @@ func move(w http.ResponseWriter, r *http.Request) {
     for _, uId := range []string{g.UserX, g.UserO} {
         err := channel.SendJSON(c, uId+key, g)
         if err != nil {
-            c.Errorf("sending Game: %v", err)
+            c.Errorf(&quot;sending Game: %v&quot;, err)
         }
     }
 }
@@ -1327,7 +1342,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

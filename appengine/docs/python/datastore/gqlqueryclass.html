@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="index.html">Storing Data</a>
       <ul>
               <li><a href="overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -1017,7 +1032,7 @@ for song in q:
      <p>Returns an encoded cursor that represents the location in the result set after the last result fetched. A future invocation of the same query can provide this cursor using <a href="#GqlQuery_with_cursor">with_cursor()</a> to start fetching results from this location.</p>
      <p>You must fetch results (using either <a href="#GqlQuery_fetch">fetch()</a> or the iterator interface) before you can get a cursor.</p>
      <p>The cursor is a base64-encoded string. It is safe to use in HTTP GET and POST parameters, and can also be stored in the datastore or memcache.</p>
-     <p class="note"><b>Note:</b> Not all queries are compatible with cursors. See <a href="queries.html#GqlQuery_Cursors">Query Cursors</a> for more information.</p>
+     <p class="note"><b>Note:</b> Not all queries are compatible with cursors. See <a href="queries.html#Query_Cursors">Query Cursors</a> for more information.</p>
   </dd>
 
   <dt id="GqlQuery_fetch"><span class="itemname">fetch</span>(<span class="argname">limit</span>, <span class="argname">offset</span>=<span class="argdefault">0</span>)</dt>
@@ -1125,7 +1140,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

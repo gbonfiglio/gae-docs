@@ -179,6 +179,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -430,7 +431,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -465,6 +466,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -526,6 +538,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -855,6 +868,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -897,6 +912,12 @@ var logged_in_user_email = null;
       <div class="g-unit" id="gc-pagecontent">
         <h1 class="page_title">Prospective Search Overview (Python)</h1>
 
+
+
+<div class="special">
+<h4>Experimental!</h4>
+<p>Prospective Search is an experimental, innovative, and rapidly changing new feature for App Engine. Unfortunately, being on the bleeding edge means that we may make backwards-incompatible changes to Prospective Search. We will inform the community once Prospective Search is no longer experimental.</p>
+</div>
 
 
 
@@ -947,7 +968,7 @@ separately against a potentially large index.</p>
   <li>The application uses the <a href="functions.html#subscribe">subscribe()</a> call to register query subscriptions with prospective search using the <a href="#Query_Language_Overview">query language</a>.</li>
   <li>The application converts items in the streaming source data into <em>documents</em>, which are instances of <code>db.Model</code> subclasses.</li>
   <li>The application uses the <a href="functions.html#match">match()</a> call to present documents to prospective search for matching against subscribed queries.</li>
-  <li>Prospective search returns matching subscription IDs and documents in the task queue. These results are subject to the usual <a href="../taskqueue/overview.html#Quotas_and_Limits">Quotas and Limits</a>.</li>
+  <li>Prospective search returns matching subscription IDs and documents in the task queue. These results are subject to the usual <a href="../../quotas.html">Quotas and Limits</a>.</li>
 </ol>
 
 <p>Here's a summary of the essential function calls:</p>
@@ -1017,8 +1038,8 @@ class Comment(db.Model):
 
 <pre>
 comment = Comment()
-comment.author = "Rose Jones"
-comment.body = "A rose by any other name would smell as sweet."
+comment.author = &quot;Rose Jones&quot;
+comment.body = &quot;A rose by any other name would smell as sweet.&quot;
 comment.length = len(comment.body)
 </pre>
 
@@ -1075,7 +1096,7 @@ rose
 <p>To match a phrase, surround the query in quotes as follows:</p>
 
 <pre>
-"any other name"
+&quot;any other name&quot;
 </pre>
 
 <p class="note"><strong>Note:</strong> Queries built with the <em>value</em> by itself <strong>only</strong> match against string or text type fields.</p>
@@ -1146,7 +1167,7 @@ author:rose NOT body:filligree</pre>
 
 <h3 id="Numeric_Operators">Numeric Operators</h3>
 
-<p>Numeric operators only match against numeric fields. Supported numeric operators are as follows:
+<p>Numeric operators only match against numeric fields. Supported numeric operators are as follows:</p>
 
 <pre>
 &lt;
@@ -1229,7 +1250,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

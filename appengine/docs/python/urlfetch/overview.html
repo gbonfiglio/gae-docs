@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -976,7 +991,7 @@ result = urlfetch.fetch(url=url,
 
 <p>To prevent an app from causing an endless recursion of requests, a request handler is not allowed to fetch its own URL.  It is still possible to cause an endless recursion with other means, so exercise caution if your app can be made to fetch requests for URLs supplied by the user.</p>
 
-<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds for online requests and 10 minutes for offline requests.  </p>
+<p>You can set a deadline for a request, the most amount of time the service will wait for a response.  By default, the deadline for a fetch is 5 seconds.  The maximum deadline is 10 seconds for HTTP requests and 10 minutes for task queue requests.  </p>
 
 
 
@@ -1008,6 +1023,7 @@ result = urlfetch.fetch(url=url,
   <li><code>Vary</code></li>
   <li><code>Via</code></li>
   <li><code>X-Forwarded-For</code></li>
+  <li><code>X-ProxyUser-IP</code></li>
 </ul>
 
 <p>These headers are set to accurate values by App Engine, as appropriate.  For example, App Engine calculates the <code>Content-Length</code> header from the request data and adds it to the request prior to sending.</p>
@@ -1163,7 +1179,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

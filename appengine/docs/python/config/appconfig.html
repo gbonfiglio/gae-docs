@@ -188,6 +188,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -439,7 +440,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -474,6 +475,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -535,6 +547,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -864,6 +877,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -934,7 +949,7 @@ var logged_in_user_email = null;
 
 <p>A Python app specifies runtime configuration, including versions and URLs, in a file named <code>app.yaml</code>. The following is an example of an <code>app.yaml</code> file:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 application: myapp
 version: 1
 runtime: python
@@ -978,7 +993,7 @@ handlers:
     <code>application</code> 
   </dt>
   <dd>
-    The application identifier. This is the identifier you selected when you created the application in the <a href="http://appengine.google.com/">Administration Console</a>. <pre >application: myapp</pre>
+    The application identifier. This is the identifier you selected when you created the application in the <a href="http://appengine.google.com/">Administration Console</a>. <pre class="prettyprint lang-yaml">application: myapp</pre>
   </dd>
   <dt>
     <code>version</code>
@@ -988,13 +1003,13 @@ handlers:
     <p>
       Each version of an application retains its own copy of <code>app.yaml</code>. When an application is uploaded, the version mentioned in the <code>app.yaml</code> file being uploaded is the version that gets created or replaced by the upload.
     </p>
-<pre>version: 2-0-test</pre>
+<pre class="prettyprint lang-yaml">version: 2-0-test</pre>
   </dd>
   <dt>
     <code>runtime</code>
   </dt>
   <dd>
-    The name of the App Engine runtime environment used by this application. To specify Python, use python. Other runtimes are available; please refer to the runtime's documentation for more info. Other JVM languages can customize <code>app.yaml</code> based on the specified runtime. <pre >runtime: java</pre>
+    The name of the App Engine runtime environment used by this application. To specify Python, use python. Other runtimes are available; please refer to the runtime's documentation for more info. Other JVM languages can customize <code>app.yaml</code> based on the specified runtime. <pre class="prettyprint lang-yaml">runtime: java</pre>
   </dd>
   
     
@@ -1005,7 +1020,7 @@ handlers:
     <p>Patterns are evaluated in the order they appear in the <code>app.yaml</code>, from top to bottom. The first mapping whose pattern matches the URL is the one used to handle the request.</p>
     <p>There are two kinds of handlers: script handlers, and static file handlers. A script handler runs a Python script in your application to determine the response for the given URL. A static file handler returns the contents of a file, such as an image, as the response.</p>
     <p>See <a href="#Script_Handlers">Script Handlers</a> and <a href="#Static_File_Handlers">Handlers for Static Files</a> below for more information on this value.</p>
-    <pre>handlers:
+    <pre class="prettyprint lang-yaml">handlers:
 - url: /images
   static_dir: static/images
 
@@ -1017,7 +1032,7 @@ handlers:
   <dd>
     <p>The version of the API in the given runtime environment used by this application. When Google releases a new version of a runtime environment's API, your application will continue to use the one for which it was written. To upgrade your application to the new API, you change this value and upload the upgraded code.</p>
     <p>At this time, App Engine has one version of the <code>python</code> runtime environment: <code>1</code></p>
-    <pre>api_version: 1</pre>
+    <pre class="prettyprint lang-yaml">api_version: 1</pre>
   </dd>
 
     
@@ -1035,7 +1050,7 @@ handlers:
   <dd>
     <p>The URL pattern, as a regular expression. The expression can contain groupings that can be referred to in the file path to the script with regular expression back-references.</p>
     <p>For example, <code>/profile/(.*?)/(.*)</code> would match the URL <code>/profile/edit/manager</code> and use <code>edit</code> and <code>manager</code> as the first and second groupings.</p>
-    <pre>handlers:
+    <pre class="prettyprint lang-yaml">handlers:
 - url: /profile/(.*?)/(.*)
   script: /employee/\2/\1.py
 </pre>
@@ -1050,7 +1065,7 @@ handlers:
 
 <p>The following examples map URLs to scripts:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 # The root URL (/) is handled by the index.py script. No other URLs match this pattern.
@@ -1088,7 +1103,7 @@ handlers:
 </dl>
 
 <p>For example:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 application: myapp
 version: 1
 runtime: python
@@ -1133,7 +1148,7 @@ handlers:
 </dl>
 
 <p>For example:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 # All URLs beginning with /stylesheets are treated as paths to static files in
@@ -1151,7 +1166,7 @@ handlers:
 <p>Static files cannot be the same as application code files. If a static file path matches a path to a script used in a dynamic handler, the script will not be available to the dynamic handler.</p>
 
 <p>The following <code>static_dir</code> and <code>static_files</code> handlers are equivalent:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 - url: /images
   static_dir: static/images
 
@@ -1165,7 +1180,7 @@ handlers:
   <dd>
     <p>The URL pattern, as a regular expression. The expression can contain groupings that can be referred to in the file path to the script with regular expression back-references.</p>
     <p>For example, <code>/item-(.*?)/category-(.*)</code> would match the URL <code>/item-127/category-fruit</code>, and use <code>127</code> and <code>fruit</code> as the first and second groupings.</p>
-    <pre>handlers:
+    <pre class="prettyprint lang-yaml">handlers:
 - url: /item-(.*?)/category-(.*)
   static_files: archives/\2/items/\1
 </pre>
@@ -1198,7 +1213,7 @@ handlers:
 
 <p>For example:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 # All URLs ending in .gif .png or .jpg are treated as paths to static files in
@@ -1212,7 +1227,7 @@ handlers:
 
 <h2 id="Builtin_Handlers">Builtin Handlers</h2>
 <p>The Python SDK includes a number of builtin handlers for common application functions. The <code>builtins</code> directive allows you to include specific handlers in <code>app.yaml</code>. You can declare this directive as follows:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 builtins:
 - datastore_admin: on
 - appstats: on
@@ -1230,7 +1245,7 @@ builtins:
 
 <h2 id="Includes">Includes</h2>
 <p>While the <code>builtins</code> directive allows you to include modules built into the Python SDK, the <code>includes</code> directive allows you to include any library or module throughout your application. For example, you might include a user administration library as follows:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 includes:
 - lib/user_admin.yaml
 </pre>
@@ -1251,12 +1266,12 @@ includes:
 
 <p>The <a href="#Builtin_Handlers">builtins</a> directive is a special instance of the <code>includes</code> directive. Each <code>builtin</code> directive is equivalent, in Python, to an <code>includes</code> directive with an expanded path. For example:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 builtins:
   name: on
 </pre>
 <p>Is equivalent to:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 includes:
   $PYTHON_LIB/google/appengine/ext/builtins/name/
 </pre>
@@ -1270,7 +1285,7 @@ includes:
 
 <p>To configure a URL to accept secure connections, provide a <code>secure</code> parameter for the handler:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 - url: /youraccount/.*
@@ -1313,7 +1328,7 @@ If not, by default, the user is redirected to the Google sign-in page, or
 <p>If an application needs different behavior, the application can implement the user handling itself. See <a href="../users/index.html">the Users API</a> for more information.</p>
 
 <p>An example:</p>
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 - url: /profile/.*
@@ -1330,7 +1345,7 @@ handlers:
 
 <p>You can configure a handler to refuse access to protected URLs when the user is not signed in, instead of redirecting the user to the sign-in page. A rejected user gets an HTTP status code of 401. To configure an app to reject users who are not signed in, add <code>auth_fail_action: unauthorized</code> to the handler's configuration:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 - url: /secure_api/.*
   script: api_handler.py
@@ -1348,7 +1363,7 @@ handlers:
 
 <p><code>skip_files</code> has the following default value:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 skip_files: |
  ^(.*/)?(
  (app\.yaml)|
@@ -1367,7 +1382,7 @@ skip_files: |
 
 <p>If a new value is specified in <code>app.yaml</code>, it overrides this value. To extend this pattern, copy and paste it into your configuration with your extensions. For example, to skip files whose names end in <code>.bak</code> in addition to the default patterns, you can use the following list value for <code>skip_files</code>:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 skip_files:
 - ^(.*/)?app\.yaml
 - ^(.*/)?app\.yml
@@ -1388,7 +1403,7 @@ skip_files:
 
 <p>For example, <code>$PYTHON_LIB/google/appengine/ext/admin</code> is an administrative application similar to the developer console feature of <a href="../tools/devserver.html">the development web server</a> that can run as part of your application on App Engine itself. To set it up, include configuration for a script handler using its path:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 handlers:
 
 - url: /admin/.*
@@ -1425,7 +1440,7 @@ handlers:
 
 <p>For example, you can enable mail and warmup by specifying the following in <code>app.yaml</code>:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 inbound_services:
 - mail
 - warmup
@@ -1443,7 +1458,7 @@ inbound_services:
 
   
 <p>In Python, warmup requests are disabled by default. To enable them, add <code>-warmup</code> to the <code>inbound_services</code> directive in <code>app.yaml</code>:</p>
-<pre>inbound_services:
+<pre class="prettyprint lang-yaml">inbound_services:
 - warmup</pre>
 <p>This causes the App Engine infrastructure to issue <code>GET</code> requests to <code>/_ah/warmup</code>. You can implement handlers in this directory to perform application-specific tasks, such as pre-caching application data.</p>
 
@@ -1460,7 +1475,7 @@ inbound_services:
 
 <p>If you have administrator-only pages in your application that are used to administer the app, you can have those pages appear in the Administration Console. The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML <a href="https://developer.mozilla.org/en/HTML/Element/iframe">iframe</a>. To add a page to the Administration Console, add an <code>admin_console:</code> section in your app's <code>app.yaml</code> file, like so:</p>
 
-<pre>
+<pre class="prettyprint lang-yaml">
 admin_console:
   pages:
   - name: Blog Comment Admin
@@ -1483,7 +1498,7 @@ admin_console:
 
 
 
-<pre>
+<pre class="prettyprint lang-yaml">
 error_handlers:
   - file: default_error.html
 
@@ -1494,7 +1509,7 @@ error_handlers:
 
 <p class="warning"><strong>Warning!</strong>: Make sure that the path to the error response file does not overlap with static file handler paths. </p>
 
-<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error_code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:
+<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error_code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:</p>
 
 <ul>
   <li>
@@ -1571,7 +1586,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

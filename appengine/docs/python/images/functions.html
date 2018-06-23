@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../datastore/overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../appidentity/functions.html">Functions</a></li>
+    <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
+     <li><a href="../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -897,6 +912,8 @@ var logged_in_user_email = null;
 
 
 
+<p class="note"><strong>Note:</strong> The functions described here allow the development server to perform image manipulations similar to those supported in production. In some cases, the SDK may not support some aspect of these functions. These differences are noted where they occur.</p>
+
 <p>The <code>google.appengine.api.images</code> package provides the following functions:</p>
 
 <dl class="apireference">
@@ -927,12 +944,10 @@ var logged_in_user_email = null;
       <dd>The format of the final composite image, either <code>PNG</code> or <code>JPEG</code>. The default is <code>PNG</code>.</dd>
       <dt><span class="argname">quality</span></dt>
       <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
-      <p class="note"><b>Note:</b> The <code>quality</code> argument is not supported in the SDK.</p>
-      </dd>
-    </dl>
-  </dd>
-
-
+   <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK.</p>
+</dd>
+</dl>
+</dd>
   <dt id="Image_crop"><span class="itemname">crop</span>(<span class="argname">image_data</span>, <span class="argname">left_x</span>, <span class="argname">top_y</span>, <span class="argname">right_x</span>, <span class="argname">bottom_y</span>), <span class="argname">output_encoding</span>=<span class="argdefault">images.PNG</span>)</dt>
   <dd>
     <p>Crops an image to a given bounding box. The function takes the image data to crop, and returns the transformed image in the same format.</p>
@@ -951,8 +966,11 @@ var logged_in_user_email = null;
       <dd>The bottom border of the bounding box, as a proportion of the image height specified as a <code>float</code> value from 0.0 to 1.0 (inclusive).</dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-  </dd>
+     <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+   <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK. </p></dd>
+</dl>
+</dd>
 
   <dt id="Image_get_serving_url"><span class="itemname">get_serving_url</span>(<span class="argname">blob_key</span>, <span class="argname">size</span>=<span class="argdefault">None</span>, <span class="argname">crop</span>=<span class="argdefault">False</span>)</dt>
   <dd>
@@ -963,27 +981,27 @@ var logged_in_user_email = null;
     <dl>
       <ul>
         <dt><span class="argname">blob_key</span></dt>
-          <dd><p>The blob key for the image. If not provided, raises <a href="exceptions.html#blobkey">BlobKeyRequiredError</a>.</p></dd>
+          <dd><p>A <a href="../blobstore/blobinfoclass.html">BlobInfo object</a>, a <a href="../blobstore/blobkeyclass.html">BlobKey object</a>, or a str or unicode representation of the blob key for the Blobstore value. If not provided, raises <a href="exceptions.html#blobkey">BlobKeyRequiredError</a>.</p></dd>
         <dt><span class="argname">size</span></dt>
           <dd>
             <p>An integer supplying the size of resulting images.</p>
-            <p>When resizing or cropping an image, you must specify the new size using an integer 0 to 1600. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio. </p>
+            <p>When resizing or cropping an image, you must specify the new size using an integer 0 to 1600. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio.</p>
           </dd>
         <dt><span class="argname">crop</span></dt>
           <dd>
-            <p>Specify <code>true</code> for a cropped image, and <code>false</code> for a resized image. If you specify true, but do not provide a pixel value from 0&ndash;1600, the API raises a <a href="exceptions.html#BadRequestError">BadRequestError</a>.</p>
-          </dd>
-      </dl>
+            <p>Specify <code>true</code> for a cropped image, and <code>false</code> for a resized image. If you specify true, but do not provide a pixel value from 0&ndash;1600, the API raises a <a href="exceptions.html#BadRequestError">BadRequestError</a>.</p> </dd>
     </ul>
+</dl>
     <p>URL Modifications:</p>
     <ul>
       <dl>
         <dt><span class="argname">=s<span class="argdefault">XX</span></dt>
-          <dd><p>To resize an image, append <code>=s<i>XX</i></code> to the end of the image URL, where <code><i>XX</i></code> is an integer from 0&ndash;1600 representing the new image size in pixels. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio. For example, if you use <code>=s32</code> to resize a 1200x1600  image, the resulting image is a 24x32. If that image were 1600x1200, the resized image would be 32x24 pixels.</dd>
+          <dd><p>To resize an image, append <code>=s<em>XX</em></code> to the end of the image URL, where <code><em>XX</em></code> is an integer from 0&ndash;1600 representing the new image size in pixels. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio. For example, if you use <code>=s32</code> to resize a 1200x1600  image, the resulting image is a 24x32. If that image were 1600x1200, the resized image would be 32x24 pixels.</dd>
         <dt><span class="argname">=s<span class="argdefault">XX</span><span class="argname">-c</span></dt>
-          <dd><p>To crop and resize an image, append <code>=s<i>XX</i>-c</code> to the end of the image URL, where <code>XX</code> is an integer from 0&ndash;1600 representing the new image size in pixels. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio. If the image is portrait, the API slices evenly from the top and bottom to make a square. If the image is landscape, the API slices evenly from the left and right to make a square. After cropping, the API resizes the image to the specified size.</p></dd>
+          <dd><p>To crop and resize an image, append <code>=s<em>XX</em>-c</code> to the end of the image URL, where <code>XX</code> is an integer from 0&ndash;1600 representing the new image size in pixels. The maximum size is defined in <code>IMG_SERVING_SIZES_LIMIT</code>. The API resizes the image to the supplied value, applying the specified size to the image's longest dimension and preserving the original aspect ratio. If the image is portrait, the API slices evenly from the top and bottom to make a square. If the image is landscape, the API slices evenly from the left and right to make a square. After cropping, the API resizes the image to the specified size.</p></dd>
       </dl>
     </ul>
+</dd>
 
   <dt id="Image_histogram"><span class="itemname">histogram</span>(<span class="argname">image_data</span>)</dt>
   <dd>
@@ -1000,8 +1018,11 @@ var logged_in_user_email = null;
       <dd>The image to flip, as a bytestring (<code>str</code>) in JPEG, PNG, GIF (including animated), BMP, TIFF, or ICO format. </dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-  </dd>
+      <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+      <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK.</p></dd>
+</dl>
+</dd>
 
   <dt id="Image_im_feeling_lucky"><span class="itemname">im_feeling_lucky</span>(<span class="argname">image_data</span>, <span class="argname">output_encoding</span>=<span class="argdefault">images.PNG</span>)</dt>
   <dd>
@@ -1012,9 +1033,11 @@ var logged_in_user_email = null;
       <dd>The image to adjust, as a bytestring (<code>str</code>) in JPEG, PNG, GIF (including animated), BMP, TIFF, or ICO format. </dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-    <dl><p class="note"><b>Note:</b> The <code>im_feeling_lucky()</code> method is no-op when used locally in the SDK as there is no equivalent method in PIL.<p></dl>
-  </dd>
+      <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+      <p class="note"><strong>Note:</strong> The <code>im_feeling_lucky()</code> method is no-op when used locally in the SDK as there is no equivalent method in PIL.  The <code>quality</code> argument is not supported in the SDK. </p> </dd>
+</dl>
+</dd>
 
   <dt id="Image_resize"><span class="itemname">resize</span>(<span class="argname">image_data</span>, <span class="argname">width</span>=<span class="argdefault">0</span>, <span class="argname">height</span>=<span class="argdefault">0</span>, <span class="argname">output_encoding</span>=<span class="argdefault">images.PNG</span>)</dt>
   <dd>
@@ -1029,8 +1052,11 @@ var logged_in_user_email = null;
       <dd>The desired height, as a number of pixels. Must be an <code>int</code> or <code>long</code>.</dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-  </dd>
+      <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+  <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK. </p></dd>
+</dl>
+</dd>
 
   <dt id="Image_rotate"><span class="itemname">rotate</span>(<span class="argname">image_data</span>, <span class="argname">degrees</span>, <span class="argname">output_encoding</span>=<span class="argdefault">images.PNG</span>)</dt>
   <dd>
@@ -1044,23 +1070,27 @@ var logged_in_user_email = null;
       <dd>The amount to rotate the image, as a number of degrees, in multiples of 90 degrees.</dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-  </dd>
-
+      <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+    <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK. </p></dd>
+</dl>
+</dd>
   <dt id="Image_vertical_flip"><span class="itemname">vertical_flip</span>(<span class="argname">image_data</span>, <span class="argname">output_encoding</span>=<span class="argdefault">images.PNG</span>)</dt>
   <dd>
     <p>Flips an image vertically. The edge that was the top becomes the bottom edge, and vice versa. The function takes the image data to flip, and returns the transformed image in the same format.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">image_data</span></dt>
-      <dd>The image to flip, as a bytestring (<code>str</code>) in JPEG, PNG, GIF (including animated), BMP, TIFF, or ICO format. </dd>
+      <dd>The image to flip, as a bytestring (<code>str</code>) in JPEG, PNG, GIF (including animated), BMP, TIFF, or ICO format.</dd>
       <dt><span class="argname">output_encoding</span></dt>
       <dd>The desired format of the transformed image. This is either <code>images.PNG</code> or <code>images.JPEG</code>. The default is <code>images.PNG</code>.</dd>
-    </dl>
-  </dd>
+
+      <dt><span class="argname">quality</span></dt>
+      <dd>A value between 1 and 100 to specify the quality of the encoding as a percentage of the original image quality. This value is only used for JPEG quality control. The default value is 85.
+      <p class="note"><strong>Note:</strong> The <code>quality</code> argument is not supported in the SDK.</p></dd>
 </dl>
-
-
+</dd>
+</dl>
 
       </div><!-- end gc-pagecontent -->
    </div><!-- end gooey wrapper -->
@@ -1118,7 +1148,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 
@@ -1150,5 +1180,6 @@ _gaq.push(
 
   </body>
 </html>
+
 
 

@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -933,20 +948,21 @@ if err := memcache.Set(c, item1); err != nil {
     <h2 id="Variables">Variables</h2>
       
       <pre class="prettyprint">var (
-    <span class="comment">// ErrCacheMiss means that a Get failed because the item wasn&#39;t present.</span>
+    <span class="comment">// ErrCacheMiss means that an operation failed</span>
+    <span class="comment">// because the item wasn&#39;t present.</span>
     ErrCacheMiss = os.NewError(&#34;memcache: cache miss&#34;)
     <span class="comment">// ErrCASConflict means that a CompareAndSwap call failed due to the</span>
     <span class="comment">// cached value being modified between the Get and the CompareAndSwap.</span>
     <span class="comment">// If the cached value was simply evicted rather than replaced,</span>
     <span class="comment">// ErrNotStored will be returned instead.</span>
     ErrCASConflict = os.NewError(&#34;memcache: compare-and-swap conflict&#34;)
+    <span class="comment">// ErrNoStats means that no statistics were available.</span>
+    ErrNoStats = os.NewError(&#34;memcache: no statistics available&#34;)
     <span class="comment">// ErrNotStored means that a conditional write operation (i.e. Add or</span>
     <span class="comment">// CompareAndSwap) failed because the condition was not satisfied.</span>
     ErrNotStored = os.NewError(&#34;memcache: item not stored&#34;)
-    <span class="comment">// ErrServer means that a server error occurred.</span>
+    <span class="comment">// ErrServerError means that a server error occurred.</span>
     ErrServerError = os.NewError(&#34;memcache: server error&#34;)
-    <span class="comment">// ErrNoStats means that no statistics were available.</span>
-    ErrNoStats = os.NewError(&#34;memcache: no statistics available&#34;)
 )</pre>
       
       <pre class="prettyprint">var (
@@ -994,6 +1010,28 @@ ErrNotStored is returned if the value was evicted in between the calls.
         <p>
 CompareAndSwapMulti is a batch version of CompareAndSwap.
 The returned slice will have the same length as the input slice.
+</p>
+
+      </dd>
+      <dt id="Delete"><span class="type">func</span> <span class="itemname">Delete</span></dt>
+      <dd>
+        <p><code>func Delete(c appengine.Context, key string) os.Error</code></p>
+        <p>
+Delete deletes the item for the given key.
+ErrCacheMiss is returned if the specified item can not be found.
+The key must be at most 250 bytes in length.
+</p>
+
+      </dd>
+      <dt id="DeleteMulti"><span class="type">func</span> <span class="itemname">DeleteMulti</span></dt>
+      <dd>
+        <p><code>func DeleteMulti(c appengine.Context, key []string) []os.Error</code></p>
+        <p>
+DeleteMulti is a batch version of Delete.
+The returned slice will have the same length as the input slice.
+If a given key cannot be found, its corresponding value in the
+returned error slice is set to ErrCacheMiss.
+Each key must be at most 250 bytes in length.
 </p>
 
       </dd>
@@ -1180,7 +1218,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

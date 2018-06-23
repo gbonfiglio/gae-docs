@@ -178,6 +178,7 @@ var logged_in_user_email = null;
     <li><a href="../../../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -429,7 +430,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../../datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../../datastore/overview.html">Datastore Overview</a></li>
@@ -464,6 +465,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../../apis.html">Services</a>
       <ul>
+        <li><a href="../../../appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../../appidentity/functions.html">Functions</a></li>
+    <li><a href="../../../appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../../blobstore/overview.html">Overview</a></li>
@@ -525,6 +537,7 @@ var logged_in_user_email = null;
      <li><a href="../../../mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../../mail/attachments.html">Attachments</a></li>
+     <li><a href="../../../mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../../mail/emailmessageclass.html">EmailMessage</a></li>
@@ -854,6 +867,8 @@ var logged_in_user_email = null;
 <li><a href="../../../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../../../quotas.html">Quotas</a></li>
@@ -902,11 +917,11 @@ var logged_in_user_email = null;
 
 <dl class="apireference">
 
-  <dt id="describe"><span class="itemname">find_definition</span>(<span class="argname">name</span>, <span class="argname">relative_to</span>=<span class="argdefault">None</span>, <span class="argname">importer</span>)</dt>
+  <dt id="describe"><span class="itemname">find_definition</span>(<span class="argname">name</span>, <span class="argname">relative_to</span>=<span class="argdefault">None</span>)</dt>
   <dd>
   <p>Find definition by name in module-space.</p>
 
-  <p>The find algorithm finds definitions by name relative to a message definition or by fully qualified name. If no definition is found relative to the <code>relative_to</code> parameter, it searches against the container of <code>relative_to</code>. If <code>relative_to</code> is a nested Message, it searches its message_definition(). If that message has no message_definition(), it searches its module. If <code>relative_to</code> is a module, the find algorithm searches for the containing module and searches relative to it.  If the module is a top-level module, the find algorithm searches for the a message using a fully qualified name.  If it still finds no message, the search fails and the method raises a <a href="exceptions.html#DefinitionNotFoundError">DefinitionNotFoundError</a>.</p>
+  <p>The find algorithm finds definitions by name relative to a message definition or by fully qualified name. If no definition is found relative to the <code>relative_to</code> parameter, it searches against the container of <code>relative_to</code>. If <code>relative_to</code> is a nested Message, it searches its message_definition(). If that message has no message_definition(), it searches its module. If <code>relative_to</code> is a module, the find algorithm searches for the containing module and searches relative to it. If the module is a top-level module, the find algorithm searches for the a message using a fully qualified name. If it still finds no message, the search fails and the method raises a <a href="exceptions.html#DefinitionNotFoundError">DefinitionNotFoundError</a>.</p>
 
   <p>For example, when looking for any definition <code>foo.bar.ADefinition</code> relative to an actual message definition <code>abc.xyz.SomeMessage</code>:</p>
 
@@ -927,7 +942,7 @@ foo.bar.ADefinition</pre>
 xyz.SomeMessage</pre>
 
   <p>Searching for <code>.xyz.SomeMessage</code> relative to <code>abc</code> resolves to <code>xyz.SomeMessage</code> and not <code>abc.xyz.SomeMessage</code>. For this kind of name,
-  the relative_to parameter is effectively ignored and always set to None.
+  the relative_to parameter is effectively ignored and always set to None.</p>
 
   <p>For more information about package name resolution, please see the <a href="http://code.google.com/apis/protocolbuffers/docs/proto.html#packages">Protocol Buffers Package specifier</a>.</p>
   
@@ -937,8 +952,6 @@ xyz.SomeMessage</pre>
         <dd>Name of a definition to find. May be fully qualified or relative.</dd>
       <dt><span class="argname">relative_to</span></dt>
         <dd>Searches for a definition relative to the message definition or module. If None, causes a fully qualified name search.</dd>
-      <dt><span class="argname">importer</span></dt>
-      <dd>Import function to use for resolving modules.</dd>
     </dl>
     
     <p>Returns an <a href="enumclass.html">Enum</a> or <a href="messageclass.html">Message</a> class definition associated with the name.</p>
@@ -1006,7 +1019,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 

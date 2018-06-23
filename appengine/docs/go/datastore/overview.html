@@ -177,6 +177,7 @@ var logged_in_user_email = null;
     <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore</a></li>
     <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
     <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+    <li><a href="http://googcloudlabs.appspot.com">Codelabs for Getting Started in Java</a></li>
 
         </ul>
       </li>
@@ -428,7 +429,7 @@ var logged_in_user_email = null;
 </li>
 
       </ul>
-		</li>
+    </li>
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
               <li><a href="../../python/datastore/overview.html">Datastore Overview</a></li>
@@ -463,6 +464,17 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
+        <li><a href="../../python/appidentity">App Identity</a>
+          <ul>
+            <li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/appidentity/functions.html">Functions</a></li>
+    <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
         <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../python/blobstore/overview.html">Overview</a></li>
@@ -524,6 +536,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/mail/sendingmail.html">Sending Mail</a></li>
      <li><a href="../../python/mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../../python/mail/attachments.html">Attachments</a></li>
+     <li><a href="../../python/mail/headers.html">Headers</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../../python/mail/emailmessageclass.html">EmailMessage</a></li>
@@ -853,6 +866,8 @@ var logged_in_user_email = null;
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
 <li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
+<li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
+
         </ul>
       </li>
       <li><a href="../../quotas.html">Quotas</a></li>
@@ -923,7 +938,7 @@ var logged_in_user_email = null;
 
 
 <p>The Go Datastore API supports the <b>High Replication</b> datastore, where data is replicated across data centers using a system based on the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a>. High Replication provides very high availability for reads and writes (at the cost of higher-latency writes). Most queries are eventually consistent.</p>
-<p>The Go Runtime <b>cannot be used</b> with applications configured to use the Master/Slave datastore, even if they do not use the datastore.</>
+<p>The Go Runtime <b>cannot be used</b> with applications configured to use the Master/Slave datastore, even if they do not use the datastore.</p>
 
 
 <p>The App Engine datastore saves data objects, known as <i>entities</i>. An entity has one or more <i>properties</i>, named values of one of several supported data types. For instance, a property can be a string, an integer, or even a reference to another entity.</p>
@@ -959,11 +974,11 @@ This example stores and retrieves some data from the data store:
 
 <pre class="prettyprint">
 import (
-    "appengine"
-    "appengine/datastore"
-    "appengine/user"
-    "fmt"
-    "time"
+    &quot;appengine&quot;
+    &quot;appengine/datastore&quot;
+    &quot;appengine/user&quot;
+    &quot;fmt&quot;
+    &quot;time&quot;
 )
 
 type Employee struct {
@@ -977,13 +992,13 @@ func handle(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
 
     e1 := Employee{
-        Name:     "Joe Citizen",
-        Role:     "Manager",
+        Name:     &quot;Joe Citizen&quot;,
+        Role:     &quot;Manager&quot;,
         HireDate: datastore.SecondsToTime(time.Seconds()), // now
         Account:  user.Current().String(),
     }
 
-    key, err := datastore.Put(c, datastore.NewIncompleteKey("employee"), &e1)
+    key, err := datastore.Put(c, datastore.NewIncompleteKey(&quot;employee&quot;), &e1)
     if err != nil {
         http.Error(w, err.String, http.StatusInternalServerError)
         return
@@ -995,7 +1010,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    fmt.Fprintf(w, "Stored and retrieved the Employee named %q", e2.Name)
+    fmt.Fprintf(w, &quot;Stored and retrieved the Employee named %q&quot;, e2.Name)
 }
 </pre>
 
@@ -1159,7 +1174,7 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 
 
