@@ -21,6 +21,10 @@
  
  
  
+
+
+
+
   
   
 
@@ -32,18 +36,21 @@
     </script>
     
     
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Types and Property Classes - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
 var _tocPath_ = '/appengine/docs/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
 //--></script>
-<link href="../../../../css/codesite.pack.01312008.css" type="text/css" rel="stylesheet"></link>
-<script src="../../../../js/codesite.pack.01312008.js" type="text/javascript"></script>
-<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml" />
+<link href="../../../../css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="../../../../js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml">
 
-<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css" /><![endif]-->
+<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css"><![endif]-->
 
     <link href="../../../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
     <link href="../../../css/local_extensions.css" rel="stylesheet" type="text/css" />
@@ -53,56 +60,60 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
     
     
-    <div id="gc-container">
-<a name="top"></a>
+    <div id="gb">
+ <span>
+  
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+  
+ </span>
+</div>
+
+<div class="gbh" style="left: 0pt;"></div>
+<div class="gbh" style="right: 0pt;"></div>
+
+<div id="gc-container">
+<a id="top"></a>
 <div id="skipto">
   <a href="#gc-pagecontent">Skip to page content</a>
   <a href="#gc-toc">Skip to main navigation</a>
 </div>
-<div id="langpref">
-   <a class="dropdown" href="http://code.google.com">English</a>
-   <span>|</span>
-   <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-</div>
+
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-     <img src="../../../../images/cleardot.gif" height="1px" width="1px" alt="Google Code Home Page" id="gc-logo-img"/>
+  
+     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+  
   
   </a></div>
   <div id="search">
     <div id="searchForm" class="searchForm">
       <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
-      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml"/>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
-        <table class="gsc-search-box" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="gsc-input">
-                <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px"/>
-              </td>
-              <td class="gsc-search-button">
-                <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
-                <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit"/>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" class="greytext">e.g. "templates" or "datastore"</td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "templates" or "datastore"</div>
+      </div>
       </form>
     </div> <!-- end searchForm -->
   </div> <!-- end search -->
+
+
+
+<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+
 </div> <!-- end gc-header -->
 
 
 <div id="codesiteContent">
 
-<a name="gc-topnav-anchor"></a>
+<a id="gc-topnav-anchor"></a>
 <div id="gc-topnav">
-  <h1>Google App Engine</h1>
+  <h1 style="padding:0 0 0 6px;">Google App Engine</h1>
   <ul id="docs" class="gc-topnav-tabs">
 
     <li id="home_link">
@@ -126,7 +137,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
     </li>
   
     <li>
-      <a href="http://groups.google.com/group/google-appengine" title="Google App Engine developer forum">Group</a>
+      <a href="../../../community.html" title="Community home for Google App Engine">Community</a>
     </li>
   
     <li>
@@ -151,10 +162,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 </ul>
 <div class="line"></div>
 <ul>
-  <li><h2>Introduction</h2>
+  <li><h2>Getting Started</h2>
     <ul>
       <li><a href="../../whatisgoogleappengine.html">What Is Google App Engine?</a></li>
-      <li><a href="../gettingstarted/index.html">Getting Started: Python</a>
+      <li><a href="../../java/gettingstarted/index.html">Java</a>
+        <ul>
+              <li><a href="../../java/gettingstarted/introduction.html">Introduction</a></li>
+    <li><a href="../../java/gettingstarted/installing.html">Installing the Java SDK</a></li>
+    <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
+    <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
+    <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
+    <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstarted/index.html">Python</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -169,8 +193,126 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
         </ul>
       </li>
-      <li><a href="../../quotas.html">Quotas</a></li>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Java</h2>
+    <ul>
+          <li><a href="../../java/overview.html">Overview</a></li>
+    <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/datastore/index.html">Storing Data</a>
+      <ul>
+            <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
+    <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
+    <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
+    <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
+    <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/stats.html">Statistics</a></li>
+    <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/apis.html">Services</a>
+      <ul>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
+          <ul>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/mail/index.html">Mail</a>
+          <ul>
+                <li><a href="../../java/mail/overview.html">Overview</a></li>
+    <li><a href="../../java/mail/usingjavamail.html">Using JavaMail to Send Mail</a></li>
+    <li><a href="../../java/mail/receiving.html">Receiving Mail</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/mail/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Google Accounts</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
+    <li><a href="../../java/config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
+    <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../../java/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
+    <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+
+      </ul>
+    </li>
+
     </ul>
   </li>
 </ul>
@@ -178,49 +320,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 <ul>
   <li><h2>Python</h2>
     <ul>
-          
-    <li><a href="../runtime.html">Runtime</a></li>
-    <li><a href="../tools/index.html">Tools</a>
+          <li><a href="../overview.html">Overview</a></li>
+    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="index.html">Storing Data</a>
       <ul>
-            <li><a href="../tools/configuration.html">Configuration</a></li>
-    <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading an App</a></li>
-    <li><a href="../tools/webapp/index.html">webapp Framework</a>
-      <ul>
-             <li><a href="../tools/webapp/overview.html">Overview</a></li>
-     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
-     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
-     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
-     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
-     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
-     
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
-         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
-         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
-         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
-         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
-         
-       </ul>
-     </li>
-
-      </ul>
-    </li>
-
-      </ul>
-    </li>
-    <li><a href="../apis.html">Service APIs</a>
-      <ul>
-        <li><a href="index.html">Datastore</a>
-          <ul>
-                 <li><a href="overview.html">Overview</a></li>
+             <li><a href="overview.html">Overview</a></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
      <li><a href="queriesandindexes.html">Queries and Indexes</a></li>
      <li><a href="transactions.html">Transactions</a></li>
+     <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
+     <li><a href="gqlreference.html">GQL Reference</a></li>
+     <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -232,14 +344,14 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="gqlqueryclass.html">GqlQuery</a></li>
          <li><a href="keyclass.html">Key</a></li>
          <li><a href="functions.html">Functions</a></li>
-         <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
-         <li><a href="gqlreference.html">GQL Reference</a></li>
          <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
-          </ul>
-        </li>
+      </ul>
+    </li>
+    <li><a href="../apis.html">Services</a>
+      <ul>
         <li><a href="../memcache/index.html">Memcache</a>
           <ul>
                  <li><a href="../memcache/overview.html">Overview</a></li>
@@ -259,6 +371,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
          <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
          <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
        </ul>
@@ -270,6 +383,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
           <ul>
                  <li><a href="../mail/overview.html">Overview</a></li>
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
+     <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -277,6 +391,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="../mail/emailmessagefields.html">Message Fields</a></li>
          <li><a href="../mail/functions.html">Functions</a></li>
          <li><a href="../mail/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -314,10 +441,94 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
           </ul>
         </li>
-        <li><a href="../../usinggdataservices.html">Using Google Data Services</a></li>
+        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/indexconfig.html">Index Config</a></li>
+    <li><a href="../config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../tools/devserver.html">Development Server</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><a href="../tools/webapp/index.html">webapp Framework</a>
+      <ul>
+             <li><a href="../tools/webapp/overview.html">Overview</a></li>
+     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
+     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
+     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
+     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
+     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
+     <li><a href="../tools/webapp/blobstorehandlers.html">Blobstore Handlers</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
+         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
+         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
+         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
+         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
+         
+       </ul>
+     </li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+
       </ul>
     </li>
 
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Managing Your App</h2>
+    <ul>
+      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../quotas.html">Quotas</a></li>
+      <li><a href="../../billing.html">Billing</a></li>
     </ul>
   </li>
 </ul>
@@ -330,15 +541,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
+      <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
-      <li><a href="../../../groups.html">Discussion Groups</a></li>
+      <li>Launcher Code
+        <ul>
+          <li><a href="http://code.google.com/p/google-appengine-mac-launcher/">Mac</a></li>
+          <li><a href="http://code.google.com/p/google-appengine-wx-launcher/">Windows/wx</a></li>
+        </ul>
+      </li>
+      <li><a href="../../../community.html">Discussion Groups</a></li>
     </ul>
   </li>
 </ul>
 <div class="line"></div>
 <ul>
   <li><a href="../../roadmap.html">Product Roadmap</a></li>
-  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
 </ul>
 
@@ -387,7 +606,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
     <td><a href="#IntegerProperty">IntegerProperty</a></td>
     <td>
       <a href="#int">int</a><br />
-      <a href="#int">long</a><br />
+      <a href="#int">long</a> (64 bits)<br />
     </td>
     <td>Numeric</td>
   </tr>
@@ -420,6 +639,11 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
     </td>
     <td><a href="keyclass.html">db.Key</a></td>
     <td>By path elements (kind, ID or name, kind, ID or name...)</td>
+  </tr>
+  <tr>
+    <td><a href="#BlobReferenceProperty">BlobReferenceProperty</a></td>
+    <td><a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></td>
+    <td>byte order</td>
   </tr>
   <tr>
     <td><a href="#UserProperty">UserProperty</a></td>
@@ -503,8 +727,9 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
   <dt id="int"><code>int</code> or <code>long</code></dt>
   <dd>
-    <p>An integer value.</p>
+    <p>An integer value, up to 64 bits.</p>
     <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage.  A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
+    <p>If a <code>long</code> larger than 64 bits is assigned, only the least significant 64 bits are stored.</p>
     <p><i>Model property:</i> <a href="#IntegerProperty">IntegerProperty</a></p>
   </dd>
 
@@ -516,40 +741,39 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
   <dt id="datetime"><code>datetime.datetime</code></dt>
   <dd>
-    <p>A date and time.  See <a href="http://docs.python.org/lib/module-datetime.html">the datetime module documentation</a>.</p>
+    <p>A date and time.  See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a>.</p>
     <p>If the <code>datetime</code> value has a <code>tzinfo</code> attribute, it will be converted to the UTC time zone for storage.  Values come back from the datastore as UTC, with a <code>tzinfo</code> of <code>None</code>.  An application that needs date and time values to be in a particular time zone must set <code>tzinfo</code> correctly when updating the value, and convert values to the timezone when accessing the value.</p>
     <p>Some libraries use the <code>TZ</code> environment variable to control the time zone applied to date-time values.  App Engine sets this environment variable to <code>"UTC"</code>.  Note that changing this variable in an application will not change the behavior of some datetime functions, because changes to environment variables are not visible outside of the Python code.</p>
     <p>If you only convert values to and from a particular time zone, you can implement a custom <code>datetime.tzinfo</code> to convert values from the datastore:</p>
     <pre class="prettyprint">
 class Pacific_tzinfo(datetime_module.tzinfo):
- """Implementation of the Pacific timezone."""
- def utcoffset(self, dt):
-   return datetime_module.timedelta(hours=-8) + self.dst(dt)
+    """Implementation of the Pacific timezone."""
+    def utcoffset(self, dt):
+        return datetime_module.timedelta(hours=-8) + self.dst(dt)
 
- def _FirstSunday(self, dt):
-   """First Sunday on or after dt."""
-   return dt + datetime_module.timedelta(days=(6-dt.weekday()))
+    def _FirstSunday(self, dt):
+        """First Sunday on or after dt."""
+        return dt + datetime_module.timedelta(days=(6-dt.weekday()))
 
- def dst(self, dt):
-   # 2 am on the second Sunday in March
-   dst_start = self._FirstSunday(datetime_module.datetime(dt.year, 3, 8, 2))
-   # 1 am on the first Sunday in November
-   dst_end = self._FirstSunday(datetime_module.datetime(dt.year, 11, 1, 1))
+    def dst(self, dt):
+        # 2 am on the second Sunday in March
+        dst_start = self._FirstSunday(datetime_module.datetime(dt.year, 3, 8, 2))
+        # 1 am on the first Sunday in November
+        dst_end = self._FirstSunday(datetime_module.datetime(dt.year, 11, 1, 1))
 
-   if dst_start <= dt.replace(tzinfo=None) < dst_end:
-     return datetime_module.timedelta(hours=1)
-   else:
-     return datetime_module.timedelta(hours=0)
-
- def tzname(self, dt):
-   if self.dst(dt) == datetime_module.timedelta(hours=0):
-     return "PST"
-   else:
-     return "PDT"
+        if dst_start <= dt.replace(tzinfo=None) < dst_end:
+            return datetime_module.timedelta(hours=1)
+        else:
+            return datetime_module.timedelta(hours=0)
+    def tzname(self, dt):
+        if self.dst(dt) == datetime_module.timedelta(hours=0):
+            return "PST"
+        else:
+            return "PDT"
 
 pacific_time = utc_time.astimezone(Pacific_tzinfo())
 </pre>
-    <p>See <a href="http://docs.python.org/lib/module-datetime.html">the datetime module documentation</a> (including <a href="http://docs.python.org/lib/datetime-tzinfo.html">datetime.tzinfo</a>).  See also the third-party module <a href="http://pytz.sourceforge.net/">pytz</a>, though note that the pytz distribution has many files.</p>
+    <p>See <a href="http://www.python.org/doc/2.5.2/lib/module-datetime.html">the datetime module documentation</a> (including <a href="http://www.python.org/doc/2.5.2/lib/datetime-tzinfo.html">datetime.tzinfo</a>).  See also the third-party module <a href="http://pytz.sourceforge.net/">pytz</a>, though note that the pytz distribution has many files.</p>
     <p>The <a href="#DateTimeProperty">DateTimeProperty</a> model property class includes features such as the ability to automatically use the date and time a model instance is stored.  These are features of the model, and are not available on the raw datastore value (such as in an <a href="expandoclass.html">Expando</a> dynamic property).</p>
     <p><i>Model properties:</i> <a href="#DateTimeProperty">DateTimeProperty</a>, <a href="#DateProperty">DateProperty</a>, <a href="#TimeProperty">TimeProperty</a></p>
   </dd>
@@ -576,9 +800,16 @@ e = Employee(name="Jennifer", manager=m_key)
     <p><i>Model properties:</i> <a href="#ReferenceProperty">ReferenceProperty</a>, <a href="#SelfReferenceProperty">SelfReferenceProperty</a></p>
   </dd>
 
+  <dt id="blobstore_BlobKey"><a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></dt>
+  <dd>
+    <p>The key for a Blobstore value, generated by the Blobstore when the value is uploaded.</p>
+    <p><i>Model properties:</i> <a href="#BlobReferenceProperty">BlobReferenceProperty</a></p>
+  </dd>
+
   <dt id="users_User"><a href="../users/userclass.html">users.User</a></dt>
   <dd>
     <p>A user with a Google account.</p>
+    <p>A User value in the datastore does not get updated if the user changes her email address.  This may be remedied in a future release.  Until then, you can use the User value's <code>user_id()</code> as the user's stable unique identifier.</p>
     <p><i>Model property:</i> <a href="#UserProperty">UserProperty</a></p>
   </dd>
 
@@ -590,7 +821,7 @@ e = Employee(name="Jennifer", manager=m_key)
     <p><i>Model property:</i> <a href="#BlobProperty">BlobProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  blob = db.BlobProperty()
+    blob = db.BlobProperty()
 
 m = MyModel()
 m.blob = db.Blob(open("image.png").read())
@@ -608,12 +839,12 @@ m.blob = db.Blob(open("image.png").read())
   <dt id="Text"><span class="type">class</span>&nbsp;<span class="itemname">Text</span>(<span class="argname">arg</span>=<span class="argdefault">None</span>, <span class="argname">encoding</span>=<span class="argdefault">None</span>)</dt>
   <dd>
     <p>A long string.  This is a subclass of the built-in <code>unicode</code> type.</p>
-    <p><span class="argname">arg</span> a <code>unicode</code> or <code>str</code> value.  If <span class="argname">arg</span> is a <code>str</code>, then it is parsed with the encoding specified by <span class="argname">encoding</span>, or <code>ascii</code> if no encoding is specified.  See <a href="http://docs.python.org/lib/standard-encodings.html">the list of standard encodings</a> for possible values for <span class="argname">encoding</span>.</p>
+    <p><span class="argname">arg</span> a <code>unicode</code> or <code>str</code> value.  If <span class="argname">arg</span> is a <code>str</code>, then it is parsed with the encoding specified by <span class="argname">encoding</span>, or <code>ascii</code> if no encoding is specified.  See <a href="http://www.python.org/doc/2.5.2/lib/standard-encodings.html">the list of standard encodings</a> for possible values for <span class="argname">encoding</span>.</p>
     <p>Unlike an entity property whose value is a simple <code>str</code> or <code>unicode</code>, a Text property can be more than 500 bytes long.  However, Text properties are not indexed, and cannot be used in filters or sort orders.</p>
     <p><i>Model property:</i> <a href="#TextProperty">TextProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  text = db.TextProperty()
+    text = db.TextProperty()
 
 m = MyModel()
 m.text = db.Text(u"kittens")
@@ -628,7 +859,7 @@ m.text = db.Text("kittens", encoding="latin-1")
     <p><i>Model property:</i> <a href="#CategoryProperty">CategoryProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  category = db.CategoryProperty()
+    category = db.CategoryProperty()
 
 m = MyModel()
 m.category = db.Category("kittens")
@@ -643,7 +874,7 @@ m.category = db.Category("kittens")
     <p><i>Model property:</i> <a href="#EmailProperty">EmailProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  email_address = db.EmailProperty()
+    email_address = db.EmailProperty()
 
 m = MyModel()
 m.email_address = db.Email("larry@example.com")
@@ -679,7 +910,7 @@ m.email_address = db.Email("larry@example.com")
     <p><i>Model property:</i> <a href="#IMProperty">IMProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  im = db.IMProperty()
+    im = db.IMProperty()
 
 m = MyModel()
 m.im = db.IM("http://example.com/", "Larry97")
@@ -693,7 +924,7 @@ m.im = db.IM("http://example.com/", "Larry97")
     <p><i>Model property:</i> <a href="#LinkProperty">LinkProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  link = db.LinkProperty()
+    link = db.LinkProperty()
 
 m = MyModel()
 m.link = db.Link("http://www.google.com/")
@@ -707,7 +938,7 @@ m.link = db.Link("http://www.google.com/")
     <p><i>Model property:</i> <a href="#PhoneNumberProperty">PhoneNumberProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  phone = db.PhoneNumberProperty()
+    phone = db.PhoneNumberProperty()
 
 m = MyModel()
 m.phone = db.PhoneNumber("1 (206) 555-1212")
@@ -721,7 +952,7 @@ m.phone = db.PhoneNumber("1 (206) 555-1212")
     <p><i>Model property:</i> <a href="#PostalAddressProperty">PostalAddressProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  address = db.PostalAddressProperty()
+    address = db.PostalAddressProperty()
 
 m = MyModel()
 m.address = db.PostalAddress("1600 Ampitheater Pkwy., Mountain View, CA")
@@ -735,7 +966,7 @@ m.address = db.PostalAddress("1600 Ampitheater Pkwy., Mountain View, CA")
     <p><i>Model property:</i> <a href="#RatingProperty">RatingProperty</a></p>
     <pre class="prettyprint">
 class MyModel(db.Model):
-  rating = db.RatingProperty()
+    rating = db.RatingProperty()
 
 m = MyModel()
 m.rating = db.Rating(97)
@@ -772,6 +1003,7 @@ m.rating = db.Rating(97)
     <p>A short blob property (a "byte string").  Takes a <a href="#ByteString">ByteString</a> value of 500 bytes or less.</p>
     <p>ByteStringProperty property values are indexed, and can be used in filters and sort orders.</p>
     <p>Like <a href="#StringProperty">StringProperty</a>, except the value is not encoded in any way.  The bytes are stored literally.</p>
+    <p>If the ByteStringProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#ByteString">ByteString</a></p>
   </dd>
 
@@ -823,8 +1055,9 @@ m.rating = db.Rating(97)
 
   <dt id="IntegerProperty"><span class="type">class</span>&nbsp;<span class="itemname">IntegerProperty</span>(...)</dt>
   <dd>
-    <p>An integer property.</p>
+    <p>An integer property, up to 64 bits.</p>
     <p>Python <code>int</code> values are converted to Python <code>long</code> values prior to storage.  A value stored as an <code>int</code> will be returned as a <code>long</code>.</p>
+    <p>If a <code>long</code> larger than 64 bits is assigned, only the least significant 64 bits are stored.</p>
     <p><i>Value type:</i> <a href="#int">int or long</a></p>
   </dd>
 
@@ -840,7 +1073,7 @@ m.rating = db.Rating(97)
     <p>In a query, comparing a list property to a value performs the test against the list members: <code>list_property = value</code> tests if the value appears anywhere in the list, <code>list_property &lt; value</code> tests if any of the members of the list are less than the given value, and so forth.</p>
     <p>A query cannot compare two list values.  There is no way to test two lists for equality without testing each element for membership separately.</p>
     <p><span class="argname">item_type</span> is the type of the items in the list, as a Python type or class.  All items in the list value must be of the given type.  <span class="argname">item_type</span> must be one of the datastore value types, and cannot be <code>list</code>.  See <a href="#Datastore_Value_Types">Datastore Value Types</a>, above.</p>
-    <p>The value of a ListProperty static property cannot be <code>None</code>.  It can, however, be an empty list.</p>
+    <p>The value of a ListProperty cannot be <code>None</code>.  It can, however, be an empty list.  When <code>None</code> is specified for the <span class="argname">default</span> argument (or when the <span class="argname">default</span> argument is not specified), the default value of the property is the empty list.</p>
     <p class="note"><b>Tip:</b> Because ListProperty aggregate types do not use the Property classes, Property class features such as automatic values and validation are not applied automatically to members of the list value.  If you want to validate a member value using a Property class, you can instantiate the class and call its <a href="propertyclass.html#Property_validate">validate()</a> method on the value.</p>
     <p><span class="argname">default</span> is the default value for the list property.  If <code>None</code>, the default is an empty list.  A list property can define a custom <span class="argname">validator</span> to disallow the empty list.</p>
     <p>See <a href="entitiesandmodels.html#Lists">Entities and Models</a> for more information on ListProperty and list values.</p>
@@ -855,13 +1088,13 @@ m.rating = db.Rating(97)
 
   <dt id="PostalAddressProperty"><span class="type">class</span>&nbsp;<span class="itemname">PostalAddressProperty</span>(...)</dt>
   <dd>
-    <p>A postal address.</p> 
+    <p>A postal address.</p>
     <p><i>Value type:</i> <a href="#PostalAddress">PostalAddress</a></p>
   </dd>
 
   <dt id="RatingProperty"><span class="type">class</span>&nbsp;<span class="itemname">RatingProperty</span>()</dt>
   <dd>
-    <p>A user-provided rating for a piece of content, as an integer between 0 and 100.</p> 
+    <p>A user-provided rating for a piece of content, as an integer between 0 and 100.</p>
     <p><i>Value type:</i> <a href="#Rating">Rating</a></p>
   </dd>
 
@@ -874,10 +1107,10 @@ m.rating = db.Rating(97)
     <p>ReferenceProperty automatically references and dereferences model instances as property values: A model instance can be assigned to a ReferenceProperty directly, and its key will be used.  The ReferenceProperty value can be used as if it were a model instance, and the datastore entity will be fetched and the model instance created when it is first used in this way.  Untouched reference properties do not query for unneeded data.</p>
     <pre class="prettyprint">
 class Author(db.Model):
-  name = db.StringProperty()
+    name = db.StringProperty()
 
 class Story(db.Model):
-  author = db.ReferenceProperty(Author)
+    author = db.ReferenceProperty(Author)
 
 story = db.get(story_key)
 author_name = story.author.name
@@ -894,6 +1127,13 @@ author_name = story.author.name
     <p><i>Value type:</i> <a href="keyclass.html">db.Key</a> (<a href="#db_Key">see above</a>)</p>
   </dd>
 
+  <dt id="BlobReferenceProperty"><span class="type">class</span>&nbsp;<span class="itemname">BlobReferenceProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, ...)</dt>
+  <dd>
+    <p>A reference to the <a href="../blobstore/blobinfoclass.html">BlobInfo</a> entity that corresponds with a Blobstore value.  See <a href="#ReferenceProperty">ReferenceProperty</a>.</p>
+    <p>The value stored in the reference property is the Blobstore key.  When the property is de-referenced, the corresponding <a href="../blobstore/blobinfoclass.html">BlobInfo</a> object is fetched and behaves as the value of the property.  As with a <a href="#ReferenceProperty">ReferenceProperty</a> and model instance values, a BlobReferenceProperty must be assigned a BlobInfo object as its value.</p>
+    <p><i>Value type:</i> <a href="../blobstore/blobkeyclass.html">blobstore.BlobKey</a></p>
+  </dd>
+
   <dt id="StringListProperty"><span class="type">class</span>&nbsp;<span class="itemname">StringListProperty</span>(<span class="argname">verbose_name</span>=<span class="argdefault">None</span>, <span class="argname">default</span>=<span class="argdefault">None</span>, ...)</dt>
   <dd>
     <p>Similar to a <a href="#ListProperty">ListProperty</a> of Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) values.  See <a href="#ListProperty">ListProperty</a>.</p>
@@ -905,6 +1145,7 @@ author_name = story.author.name
     <p>A short string property.  Takes a Python <code>str</code> or <code>unicode</code> (<code>basestring</code>) value of 500 bytes or less.</p>
     <p>StringProperty property values are indexed, and can be used in filters and sort orders.</p>
     <p>If <span class="argname">multiline</span> is <code>False</code>, then the value cannot include linefeed characters.  The <code>djangoforms</code> library uses this to enforce a difference between text fields and textarea fields in the data model, and others can use it for a similar purpose.</p>
+    <p>If the StringProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#str">str or unicode</a></p>
   </dd>
 
@@ -913,6 +1154,7 @@ author_name = story.author.name
     <p>A long string.</p>
     <p>Unlike <a href="#StringProperty">StringProperty</a>, a TextProperty value can be more than 500 bytes long.  However, TextProperty values are not indexed, and cannot be used in filters or sort orders.</p>
     <p>TextProperty values store text with a text encoding.  For binary data, use <a href="#BlobProperty">BlobProperty</a>.</p>
+    <p>If the TextProperty is required, the value cannot be an empty string.</li>
     <p><i>Value type:</i> <a href="#Text">Text</a></p>
   </dd>
 
@@ -940,24 +1182,25 @@ author_name = story.author.name
 
     </div> <!-- end codesite content -->
 
+
 <div id="gc-footer" dir="ltr">
   <div class="text">
     
       <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
   Except as otherwise <a
   href="http://code.google.com/policies.html#restrictions">noted</a>,
-  the content of this page is licensed under <a rel="license"
-  href="http://creativecommons.org/licenses/by/2.5/">a Creative Commons
-  license</a>, and examples are licensed under
-  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">an Apache
-  license</a>.
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
 <!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
               xmlns:dc="http://purl.org/dc/elements/1.1/"
               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <Work rdf:about="">
-    <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
   </Work>
-  <License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
     <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
     <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
     <requires rdf:resource="http://web.resource.org/cc/Notice"/>
@@ -966,27 +1209,33 @@ author_name = story.author.name
   </License>
 </rdf:RDF> -->
 </div>
-</div>
+Java is a registered trademark of Sun Microsystems, Inc.</div>
     
     &copy;2009 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://www.google.com/accounts/TOS">Terms of Service</a> -
-    <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
-    <a href="http://moderator.appspot.com/#e%253Dagltb2RlcmF0b3JyDgsSBlNlcmllcxifggIM%252Bv%253D0">Feedback</a> -
-    <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-     <br />
-     <br />
+    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br /> <br />
     Google Code offered in:
-    <a href="http://code.google.com/intl/zh-CN" onclick="return CODESITE_redirectToI18nContent(this)">中文</a> -
-    <a href="http://code.google.com/intl/en" onclick="return CODESITE_redirectToI18nContent(this)">English</a> -
-    <a href="http://code.google.com/intl/pt-BR" onclick="return CODESITE_redirectToI18nContent(this)">Português</a> -
-    <a href="http://code.google.com/intl/ru" onclick="return CODESITE_redirectToI18nContent(this)">Pусский</a> -
-    <a href="http://code.google.com/intl/es" onclick="return CODESITE_redirectToI18nContent(this)">Español</a> -
-    <a href="http://code.google.com/intl/ja" onclick="return CODESITE_redirectToI18nContent(this)">日本語</a>
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
   </div>
 </div><!-- end gc-footer -->
 
 </div><!-- end gc-containter -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
 
 
 

@@ -20,6 +20,11 @@
   background-color: #e5ecf9;
 }
 
+.labs #gc-pagecontent h2 {
+  background-color: #dcf6db;
+  border-top: 1px solid #009900;
+}
+
 #gc-pagecontent h3 {
   font-size: 130%;
   font-weight: bold;

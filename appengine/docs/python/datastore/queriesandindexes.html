@@ -21,6 +21,10 @@
  
  
  
+
+
+
+
   
   
 
@@ -32,18 +36,21 @@
     </script>
     
     
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Queries and Indexes - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
 var _tocPath_ = '/appengine/docs/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
 //--></script>
-<link href="../../../../css/codesite.pack.01312008.css" type="text/css" rel="stylesheet"></link>
-<script src="../../../../js/codesite.pack.01312008.js" type="text/javascript"></script>
-<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml" />
+<link href="../../../../css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="../../../../js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml">
 
-<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css" /><![endif]-->
+<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css"><![endif]-->
 
     <link href="../../../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
     <link href="../../../css/local_extensions.css" rel="stylesheet" type="text/css" />
@@ -53,56 +60,60 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
     
     
-    <div id="gc-container">
-<a name="top"></a>
+    <div id="gb">
+ <span>
+  
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+  
+ </span>
+</div>
+
+<div class="gbh" style="left: 0pt;"></div>
+<div class="gbh" style="right: 0pt;"></div>
+
+<div id="gc-container">
+<a id="top"></a>
 <div id="skipto">
   <a href="#gc-pagecontent">Skip to page content</a>
   <a href="#gc-toc">Skip to main navigation</a>
 </div>
-<div id="langpref">
-   <a class="dropdown" href="http://code.google.com">English</a>
-   <span>|</span>
-   <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-</div>
+
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-     <img src="../../../../images/cleardot.gif" height="1px" width="1px" alt="Google Code Home Page" id="gc-logo-img"/>
+  
+     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+  
   
   </a></div>
   <div id="search">
     <div id="searchForm" class="searchForm">
       <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
-      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml"/>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
-        <table class="gsc-search-box" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="gsc-input">
-                <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px"/>
-              </td>
-              <td class="gsc-search-button">
-                <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
-                <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit"/>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" class="greytext">e.g. "templates" or "datastore"</td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "templates" or "datastore"</div>
+      </div>
       </form>
     </div> <!-- end searchForm -->
   </div> <!-- end search -->
+
+
+
+<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+
 </div> <!-- end gc-header -->
 
 
 <div id="codesiteContent">
 
-<a name="gc-topnav-anchor"></a>
+<a id="gc-topnav-anchor"></a>
 <div id="gc-topnav">
-  <h1>Google App Engine</h1>
+  <h1 style="padding:0 0 0 6px;">Google App Engine</h1>
   <ul id="docs" class="gc-topnav-tabs">
 
     <li id="home_link">
@@ -126,7 +137,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
     </li>
   
     <li>
-      <a href="http://groups.google.com/group/google-appengine" title="Google App Engine developer forum">Group</a>
+      <a href="../../../community.html" title="Community home for Google App Engine">Community</a>
     </li>
   
     <li>
@@ -151,10 +162,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 </ul>
 <div class="line"></div>
 <ul>
-  <li><h2>Introduction</h2>
+  <li><h2>Getting Started</h2>
     <ul>
       <li><a href="../../whatisgoogleappengine.html">What Is Google App Engine?</a></li>
-      <li><a href="../gettingstarted/index.html">Getting Started: Python</a>
+      <li><a href="../../java/gettingstarted/index.html">Java</a>
+        <ul>
+              <li><a href="../../java/gettingstarted/introduction.html">Introduction</a></li>
+    <li><a href="../../java/gettingstarted/installing.html">Installing the Java SDK</a></li>
+    <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
+    <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
+    <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
+    <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstarted/index.html">Python</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -169,8 +193,126 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
         </ul>
       </li>
-      <li><a href="../../quotas.html">Quotas</a></li>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Java</h2>
+    <ul>
+          <li><a href="../../java/overview.html">Overview</a></li>
+    <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/datastore/index.html">Storing Data</a>
+      <ul>
+            <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
+    <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
+    <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
+    <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
+    <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/stats.html">Statistics</a></li>
+    <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/apis.html">Services</a>
+      <ul>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
+          <ul>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/mail/index.html">Mail</a>
+          <ul>
+                <li><a href="../../java/mail/overview.html">Overview</a></li>
+    <li><a href="../../java/mail/usingjavamail.html">Using JavaMail to Send Mail</a></li>
+    <li><a href="../../java/mail/receiving.html">Receiving Mail</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/mail/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Google Accounts</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
+    <li><a href="../../java/config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
+    <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../../java/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
+    <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+
+      </ul>
+    </li>
+
     </ul>
   </li>
 </ul>
@@ -178,49 +320,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 <ul>
   <li><h2>Python</h2>
     <ul>
-          
-    <li><a href="../runtime.html">Runtime</a></li>
-    <li><a href="../tools/index.html">Tools</a>
+          <li><a href="../overview.html">Overview</a></li>
+    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="index.html">Storing Data</a>
       <ul>
-            <li><a href="../tools/configuration.html">Configuration</a></li>
-    <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading an App</a></li>
-    <li><a href="../tools/webapp/index.html">webapp Framework</a>
-      <ul>
-             <li><a href="../tools/webapp/overview.html">Overview</a></li>
-     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
-     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
-     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
-     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
-     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
-     
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
-         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
-         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
-         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
-         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
-         
-       </ul>
-     </li>
-
-      </ul>
-    </li>
-
-      </ul>
-    </li>
-    <li><a href="../apis.html">Service APIs</a>
-      <ul>
-        <li><a href="index.html">Datastore</a>
-          <ul>
-                 <li><a href="overview.html">Overview</a></li>
+             <li><a href="overview.html">Overview</a></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
      <li><a href="queriesandindexes.html">Queries and Indexes</a></li>
      <li><a href="transactions.html">Transactions</a></li>
+     <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
+     <li><a href="gqlreference.html">GQL Reference</a></li>
+     <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -232,14 +344,14 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="gqlqueryclass.html">GqlQuery</a></li>
          <li><a href="keyclass.html">Key</a></li>
          <li><a href="functions.html">Functions</a></li>
-         <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
-         <li><a href="gqlreference.html">GQL Reference</a></li>
          <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
-          </ul>
-        </li>
+      </ul>
+    </li>
+    <li><a href="../apis.html">Services</a>
+      <ul>
         <li><a href="../memcache/index.html">Memcache</a>
           <ul>
                  <li><a href="../memcache/overview.html">Overview</a></li>
@@ -259,6 +371,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
          <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
          <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
        </ul>
@@ -270,6 +383,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
           <ul>
                  <li><a href="../mail/overview.html">Overview</a></li>
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
+     <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -277,6 +391,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="../mail/emailmessagefields.html">Message Fields</a></li>
          <li><a href="../mail/functions.html">Functions</a></li>
          <li><a href="../mail/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -314,10 +441,94 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
           </ul>
         </li>
-        <li><a href="../../usinggdataservices.html">Using Google Data Services</a></li>
+        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/indexconfig.html">Index Config</a></li>
+    <li><a href="../config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../tools/devserver.html">Development Server</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><a href="../tools/webapp/index.html">webapp Framework</a>
+      <ul>
+             <li><a href="../tools/webapp/overview.html">Overview</a></li>
+     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
+     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
+     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
+     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
+     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
+     <li><a href="../tools/webapp/blobstorehandlers.html">Blobstore Handlers</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
+         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
+         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
+         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
+         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
+         
+       </ul>
+     </li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+
       </ul>
     </li>
 
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Managing Your App</h2>
+    <ul>
+      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../quotas.html">Quotas</a></li>
+      <li><a href="../../billing.html">Billing</a></li>
     </ul>
   </li>
 </ul>
@@ -330,15 +541,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
+      <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
-      <li><a href="../../../groups.html">Discussion Groups</a></li>
+      <li>Launcher Code
+        <ul>
+          <li><a href="http://code.google.com/p/google-appengine-mac-launcher/">Mac</a></li>
+          <li><a href="http://code.google.com/p/google-appengine-wx-launcher/">Windows/wx</a></li>
+        </ul>
+      </li>
+      <li><a href="../../../community.html">Discussion Groups</a></li>
     </ul>
   </li>
 </ul>
 <div class="line"></div>
 <ul>
   <li><a href="../../roadmap.html">Product Roadmap</a></li>
-  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
 </ul>
 
@@ -350,6 +569,21 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>Every datastore query uses an index, a table that contains the results for the query in the desired order.  An App Engine application defines its indexes in a configuration file named <code>index.yaml</code>.  The development web server automatically adds suggestions to this file as it encounters queries that do not yet have indexes configured.  You can tune indexes manually by editing the file before uploading the application.</p>
 
 <p>The index-based query mechanism supports most common kinds of queries, but it does not support some queries you may be used to from other database technologies.  Restrictions on queries, and their explanations, are described below.</p>
@@ -357,10 +591,12 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 <ul>
   <li><a href="#Introducing_Queries">Introducing Queries</a></li>
   <li><a href="#Introducing_Indexes">Introducing Indexes</a></li>
-  <li><a href="#Defining_Indexes_With_index_yaml">Defining Indexes With index.yaml</a></li>
+  <li><a href="#Defining_Indexes_With_Configuration">Defining Indexes With Configuration</a></li>
   <li><a href="#Queries_on_Keys">Queries on Keys</a></li>
+  <li><a href="#Kindless_Ancestor_Queries">Kindless Ancestor Queries</a></li>
   <li><a href="#Restrictions_on_Queries">Restrictions on Queries</a></li>
   <li><a href="#Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</a></li>
+
 </ul>
 
 
@@ -368,15 +604,18 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
 <p>A query retrieves entities from the datastore that meet a set of conditions.  The query specifies an entity kind, zero or more conditions based on entity property values (sometimes called "filters"), and zero or more sort order descriptions.  When the query is executed, it fetches all entities of the given kind that meet all of the given conditions, sorted in the order described.</p>
 
-<p>The datastore API provides two interfaces for preparing and executing queries: the <a href="queryclass.html">Query</a> interface, which uses methods to prepare the query, and the <a href="gqlqueryclass.html">GqlQuery</a> interface, which uses a SQL-like query language called GQL to prepare the query from a query string.  These interfaces are described in more detail in <a href="creatinggettinganddeletingdata.html#Getting_Entities_Using_a_Query">Creating, Getting and Deleting Data: Getting Entities Using a Query</a> and the corresponding reference pages.</p>
+<p>A query can also return <a href="#Queries_on_Keys">just the keys</a> of the result entities instead of the entities themselves.</p>
+
+
+<p>The datastore Python API provides two interfaces for preparing and executing queries: the <a href="queryclass.html">Query</a> interface, which uses methods to prepare the query, and the <a href="gqlqueryclass.html">GqlQuery</a> interface, which uses a SQL-like query language called GQL to prepare the query from a query string.  These interfaces are described in more detail in <a href="creatinggettinganddeletingdata.html#Getting_Entities_Using_a_Query">Creating, Getting and Deleting Data: Getting Entities Using a Query</a> and the corresponding reference pages.</p>
 
 <pre class="prettyprint">
 class Person(db.Model):
-  first_name = db.StringProperty()
-  last_name = db.StringProperty()
-  city = db.StringProperty()
-  birth_year = db.IntegerProperty()
-  height = db.IntegerProperty()
+    first_name = db.StringProperty()
+    last_name = db.StringProperty()
+    city = db.StringProperty()
+    birth_year = db.IntegerProperty()
+    height = db.IntegerProperty()
 
 # The Query interface prepares a query using instance methods.
 q = Person.all()
@@ -385,7 +624,7 @@ q.filter("height <", 72)
 q.order("-height")
 
 # The GqlQuery interface prepares a query using a GQL query string.
-q = db.GqlQuery("SELECT * FROM Person " + 
+q = db.GqlQuery("SELECT * FROM Person " +
                 "WHERE last_name = :1 AND height < :2 " +
                 "ORDER BY height DESC",
                 "Smith", 72)
@@ -393,72 +632,113 @@ q = db.GqlQuery("SELECT * FROM Person " +
 # The query is not executed until results are accessed.
 results = q.fetch(5)
 for p in results:
-  print "%s %s, %d inches tall" % (p.first_name, p.last_name, p.height)
+    print "%s %s, %d inches tall" % (p.first_name, p.last_name, p.height)
 </pre>
+
+<p>A filter includes a property name, a comparison operator, and a value.  An entity passes the filter if it has a property of the given name and its value compares to the given value as described by the operator.  The entity is a result for the query if it passes all of its filters.</p>
+
+<p>The filter operator can be any of the following:</p>
+<ul>
+  <li><code>&lt;</code> less than</li>
+  <li><code>&lt;=</code> less than or equal to</li>
+  <li><code>=</code> equal to</li>
+  <li><code>&gt;</code> greater than</li>
+  <li><code>&gt;=</code> greater than or equal to</li>
+  <li><code>!=</code> not equal to</li>
+  <li><code>IN</code> equal to any of the values in the provided list</li>
+</ul>
+
+<p>The <code>!=</code> operator actually performs 2 queries: one where all other filters are the same and the not-equal filter is replaced with a less-than filter, and one where the not-equal filter is replaced with a greater-than filter.  The results are merged, in order.  As described below in the discussion of inequality filters, a query can only have one not-equal filter, and such a query cannot have other inequality filters.</p>
+
+<p>The <code>IN</code> operator also performs multiple queries, one for each item in the provided list value where all other filters are the same and the <code>IN</code> filter is replaced with an equal-to filter.  The results are merged, in the order of the items in the list.  If a query has more than 1 <code>IN</code> filter, the query is performed as multiple queries, one for each combination of values in the <code>IN</code> filters.</p>
+
+<p>A single query containing <code>!=</code> or <code>IN</code> operators is limited to 30 sub-queries.</p> 
+
 
 
 <h2 id="Introducing_Indexes">Introducing Indexes</h2>
 
 <p>The App Engine datastore maintains an index for every query an application intends to make.  As the application makes changes to datastore entities, the datastore updates the indexes with the correct results.  When the application executes a query, the datastore fetches the results directly from the corresponding index.</p>
 
-<p>An application has an index for each combination of kind, filter property and operator, and sort order used in a query.  Consider the example query from above:</p>
+<p>An application has an index for each combination of kind, filter property and operator, and sort order used in a query.  Consider the example query, stated in GQL:</p>
+
 
 <pre>
 SELECT * FROM Person WHERE last_name = "Smith"
-                       AND height < 72
-                     ORDER BY height DESC
+                       AND height &lt; 72
+                  ORDER BY height DESC
 </pre>
+
+
 
 <p>The index for this query is a table of keys for entities of the kind <code>Person</code>, with columns for the values of the <code>height</code> and <code>last_name</code> properties.  The index is sorted by <code>height</code> in descending order.</p>
 
 <p>Two queries of the same form but with different filter values use the same index.  For example, the following query uses the same index as the query above:</p>
 
+
 <pre>
 SELECT * FROM Person WHERE last_name = "Jones"
-                       AND height < 63
+                       AND height &lt; 63
                      ORDER BY height DESC
 </pre>
+
+
 
 <p>The datastore executes a query using the following steps:</p>
 
 <ol>
   <li>The datastore identifies the index that corresponds with the query's kind, filter properties, filter operators, and sort orders.</li>
   <li>The datastore starts scanning the index at the first entity that meets all of the filter conditions using the query's filter values.</li>
-  <li>The datastore continues to scan the index, returning each entity, until it finds the next entity that does not meet the filter conditions, or until it reaches the end of the index.</li>
+  <li>The datastore continues to scan the index, returning each entity, until it finds the next entity that does not meet the filter conditions, until it reaches the end of the index, or until it has collected the maximum number of results requested by the query.</li>
 </ol>
 
 <p>An index table contains columns for every property used in a filter or sort order.  The rows are sorted by the following aspects, in order:</p>
 
 <ul>
   <li>ancestors</li>
-  <li>property values used in equality or <code>IN</code> filters</li>
+  <li>property values used in equality filters</li>
   <li>property values used in inequality filters</li>
   <li>property values used in sort orders</li>
 </ul>
 
+
 <p class="note"><b>Note: </b>For the purposes of indexes, <code>IN</code> filters are handled like <code>=</code> filters, and <code>!=</code> filters are handled like the other inequality filters.</p>
+
 
 <p>This puts all results for every possible query that uses this index in consecutive rows in the table.</p>
 
-<p>This mechanism supports a wide range of queries and is suitable for most applications.  However, it does not support some kinds of queries you may be used to from other database technologies.  See <a href="#Restrictions_on_Queries">Restrictions on Queries</a>, below.</p>
 
 <p class="note"><b>Tip:</b> Query filters do not have an explicit way to match just part of a string value, but you can fake a prefix match using inequality filters:<br /><br />
 <code>db.GqlQuery("SELECT * FROM MyModel WHERE prop >= :1 AND prop < :2", "abc", u"abc" + u"\ufffd")</code><br /><br />
 This matches every <code>MyModel</code> entity with a string property <code>prop</code> that begins with the characters <code>abc</code>.  The unicode string <code>u"\ufffd"</code> represents the largest possible Unicode character.  When the property values are sorted in an index, the values that fall in this range are all of the values that begin with the given prefix.</p>
 
 
+
+<p>This mechanism supports a wide range of queries and is suitable for most applications.  However, it does not support some kinds of queries you may be used to from other database technologies.</p>
+
+
 <h3>Entities Without a Filtered Property Are Never Returned by a Query</h3>
 
-<p>An index only contains entities that have every property referred to by the index.  If an entity does not have a property referred to by an index, the entity will not appear in the index, and will never be the result for the query that uses the index.</p>
+<p>An index only contains entities that have every property referred to by the index.  If an entity does not have a property referred to by an index, the entity will not appear in the index, and will never be a result for the query that uses the index.</p>
 
-<p>Note that the App Engine datastore makes a distinction between an entity that does not possess a property and an entity that possesses the property with a null value (in Python, <code>None</code>).  If you want every entity of a kind to be a potential result for a query, you can use a data model that assigns a default value (such as <code>None</code>) to the properties used by filters in the query.</p>
+<p>Note that the App Engine datastore makes a distinction between an entity that does not possess a property and an entity that possesses the property with a null value (<code>None</code>).  If you want every entity of a kind to be a potential result for a query, you can use a data model that assigns a default value (such as <code>None</code>) to properties used by query filters.</p>
 
 
-<h3>Text and Blob Values are Not Indexed</h3>
+<h3>Properties that Aren't Indexed</h3>
 
-<p>Properties with values of types <a href="typesandpropertyclasses.html#Text">Text</a> or <a href="typesandpropertyclasses.html#Blob">Blob</a> (such as with the <a href="typesandpropertyclasses.html#TextProperty">TextProperty</a> or <a href="typesandpropertyclasses.html#BlobProperty">BlobProperty</a> models) are not included in indexes, and so are not findable by queries.  To filter on short string values, use <a href="typesandpropertyclasses.html#str">str or unicode</a> values (the <a href="typesandpropertyclasses.html#StringProperty">StringProperty</a> model).</p>
+<p>Property values that aren't indexed are not findable by queries. This includes properties that are marked as not indexed, as well as properties with values of the long text value type (Text) or the long binary value type (Blob).</p>
 
-<p>As a consequence of not indexing these property values, a query with a filter or sort order on a property will never match an entity whose value for the property is a Text or Blob.  Properties with such values behave as if the property is not set with regard to query filters and sort orders.</p>
+
+<p>To declare that a property be stored as non-indexed using the Model class, provide the <code>indexed</code> argument to the property model constructor with the value <code>False</code>, as follows:</p>
+
+<pre class="prettyprint">
+class MyModel(db.Model):
+  unindexed_string = db.StringProperty(indexed=False)
+</pre>
+
+
+
+<p>A query with a filter or sort order on a property will never match an entity whose value for the property is a Text or Blob, or which was written with that property marked as not indexed.  Properties with such values behave as if the property is not set with regard to query filters and sort orders.</p>
 
 
 <h3>Property Values of Mixed Types are Ordered By Type</h3>
@@ -468,30 +748,32 @@ This matches every <code>MyModel</code> entity with a string property <code>prop
 <p>This is especially worth noting in the case of integers and floating point numbers, which are treated as separate types by the datastore.  A property with the integer value <code>38</code> is sorted before a property with the floating point value <code>37.5</code>, because all integers are sorted before floats.</p>
 
 
-<h2 id="Defining_Indexes_With_index_yaml">Defining Indexes With index.yaml</h2>
+
+
+<h2 id="Defining_Indexes_With_Configuration">Defining Indexes With Configuration</h2>
 
 <p>App Engine builds indexes for several simple queries by default.  For other queries, the application must specify the indexes it needs in a configuration file named <code>index.yaml</code>.  If the application running under App Engine tries to perform a query for which there is no corresponding index (either provided by default or described in <code>index.yaml</code>), the query will fail.</p>
 
 <p>App Engine provides automatic indexes for the following forms of queries:</p>
 <ul>
-  <li>queries using only equality, <code>IN</code> and ancestor filters</li>
+  <li>queries using only equality and ancestor filters</li>
   <li>queries using only inequality filters (which can only be of a single property)</li>
-  <li>queries with only one sort order, ascending</li>
+  <li>queries with no filters and only one sort order on a property, either ascending or descending</li>
+  <li>queries using equality filters on properties and inequality or range filters on keys</li>
 </ul>
 
 <p>Other forms of queries require their indexes to be specified in <code>index.yaml</code>, including:</p>
 <ul>
-  <li>queries with a descending sort order</li>
   <li>queries with multiple sort orders</li>
-  <li>queries with one or more inequality filters on a property and one or more equality or <code>IN</code> filters over other properties</li>
+  <li>queries with a sort order on keys in descending order</li>
+  <li>queries with one or more inequality filters on a property and one or more equality filters over other properties</li>
   <li>queries with inequality filters and ancestor filters</li>
 </ul>
 
-<p>The development web server (<a href="../tools/devserver.html">dev_appserver.py</a>) makes managing <code>index.yaml</code> easy: Instead of failing to execute a query that does not have index configuration and requires it, the development web server adds an index definition to the file that would allow the query to succeed.</p>
+<p>The development web server makes managing index configuration easy: Instead of failing to execute a query that does not have an index and requires it, the development web server can generate configuration for an index that would allow the query to succeed.  If your local testing of your application calls every possible query the application will make (every combination of kind, ancestor, filter and sort order), the generated entries will represent a complete set of indexes.  If your testing might not exercise every possible query form, you can review and adjust the index configuration before uploading the application.</p>
 
-<p>If your local testing of your application calls every possible query the application will make (every combination of kind, ancestor, filter and sort order), the generated entries will represent a complete set of indexes.  If your testing might not exercise every possible query form, you can review and adjust the index definitions in this file before uploading the application.</p>
 
-<p class="note"><b>Tip:</b> If <code>dev_appserver.py</code> is started with the <code>--require_indexes</code> option, <code>index.yaml</code> generation is disabled and queries that require index configuration that isn't present will raise an error.  Test your application with this option to verify that all the required index configuration is present.</p>
+<p>App Engine builds indexes for several simple queries by default.  For other queries, the application must specify the indexes it needs in a configuration file named <code>index.yaml</code>.  If the application running under App Engine tries to perform a query for which there is no corresponding index (either provided by default or described in <code>index.yaml</code>), the query will fail.</p>
 
 <p><code>index.yaml</code> describes each index table, including the kind, the properties needed for the query filters and sort orders, and whether or not the query uses an ancestor clause (either <a href="queryclass.html#Query_ancestor">Query.ancestor()</a> or a GQL <a href="gqlreference.html">ANCESTOR IS</a> clause).  The properties are listed in the order they are to be sorted: properties used in equality or <code>IN</code> filters first, followed by the property used in inequality filters, then the query results sort orders and their directions.</p>
 
@@ -516,44 +798,73 @@ indexes:
 
 <p>When an entity is created or updated, every appropriate index is updated as well.  The number of indexes that apply to an entity affects the time it takes to create or update the entity.</p>
 
-<p>For more information on the syntax of <code>index.yaml</code>, see <a href="../tools/configuration.html#index_yaml">Configuring Indexes</a>.</p>
+<p>For more information on the syntax of <code>index.yaml</code>, see <a href="../config/indexconfig.html">Configuring Indexes</a>.</p>
+
 
 
 <h2 id="Queries_on_Keys">Queries on Keys</h2>
 
+
 <p>Entity keys can be the subject of a query filter or sort order, using the special name <code>__key__</code> in place of the property name.  The datastore considers the complete key value for such queries, including the entity's parent path, the kind, and the app-assigned key name string or system-assigned numeric ID.</p>
+
+<p>A query can return entity keys instead of full entities. You can trigger this behavior by passing <code>keys_only=True</code> to <a href="queryclass.html">Query</a>, or by using <code>SELECT __key__</code> in <a href="gqlreference.html">GQL</a>.
+
+<p class="note"><b>Note:</b> Queries that return keys are faster and cost less CPU than queries that return entities, since the keys themselves are already in the index, so the query doesn't need to fetch the actual entities. If you only need the keys from your query results &mdash; for example, if you're just going to delete the results &mdash; consider using a keys only query.</p>
 
 <p>Because an entity key is unique across all entities in the system, <code>__key__</code> queries make it easy to retrieve entities of a given kind in batches, such as for a batch dump of the contents of the datastore.  Unlike <a href="gqlqueryclass.html#GqlQuery_fetch">offset</a>, this works efficiently for any number of entities.  For example:</p>
 
 <pre class="prettyprint">
 class MainHandler(webapp.RequestHandler):
-  def get(self):
-    query = Entity.gql('ORDER BY __key__')
+    def get(self):
+        query = Entity.gql('ORDER BY __key__')
 
-    # Use a query parameter to keep track of the last key of the last
-    # batch, to know where to start the next batch.
-    last_key_str = self.request.get('last')
-    if last_key_str:
-      last_key = db.Key(last_key_str)
-      query = Entity.gql('WHERE __key__ > :1 ORDER BY __key__', last_key)
+        # Use a query parameter to keep track of the last key of the last
+        # batch, to know where to start the next batch.
+        last_key_str = self.request.get('last')
+        if last_key_str:
+            last_key = db.Key(last_key_str)
+            query = Entity.gql('WHERE __key__ > :1 ORDER BY __key__', last_key)
 
-    # For batches of 20, fetch 21, then use result #20 as the "last"
-    # if there is a 21st.
-    entities = query.fetch(21)
-    new_last_key_str = None
-    if len(entities) == 21:
-      new_last_key_str = str(entities[19].key())
+        # For batches of 20, fetch 21, then use result #20 as the "last"
+        # if there is a 21st.
+        entities = query.fetch(21)
+        new_last_key_str = None
+        if len(entities) == 21:
+            new_last_key_str = str(entities[19].key())
 
-    # Return the data and new_last_key_str.  Client would use
-    # http://...?last=new_last_key_str to fetch the next batch.
+        # Return the data and new_last_key_str.  Client would use
+        # http://...?last=new_last_key_str to fetch the next batch.
     # ...
 </pre>
 
+
 <p>Keys are ordered first by parent path, then by kind, then by key name or ID.  Kinds and key names are strings and are ordered by byte value.  IDs are integers and are ordered numerically.  If entities of the same parent and kind use a mix of key name strings and numeric IDs, entities with numeric IDs are considered to be less than entities with key name strings.  Elements of the parent path are compared similarly: by kind (string), then by key name (string) or ID (number).</p>
 
-<p>If you want to fetch a specific entity given a complete key, it is always faster to use <a href="functions.html#get">db.get()</a> than to perform a query on <code>__key__</code> with an equality filter.  See <a href="creatinggettinganddeletingdata.html#Getting_an_Entity_Using_a_Key">Getting an Entity Using a Key</a>.</p>
+<p>Queries involving keys use indexes just like queries involving properties.  Queries on keys require custom indexes in the same cases as with properties, with a couple of exceptions: inequality filters or an ascending sort order on <code>__key__</code> do not require a custom index, but a descending sort order on <code>__key__</code> does.  As with all queries, the development web server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
 
-<p>Queries involving <code>__key__</code> use indexes just like queries involving properties, with one minor difference: Unlike with a property, a query with an equality filter on <code>__key__</code> that also has additional filters must use a custom index defined in the app's <code>index.yaml</code> file.  (You're not likely to need this. <code>db.get()</code> is still a better way to fetch a single entity than an equality filter on a key, even if you perform additional tests on the properties of the retrieved entity.)  As with all queries, the development web server creates appropriate configuration entries in this file when a query that needs a custom index is tested.</p>
+
+
+<h2 id="Kindless_Ancestor_Queries">Kindless Ancestor Queries</h2>
+
+<p>Using GQL or the Python query interface, you can perform queries for entities with a given ancestor regardless of kind.  Such queries can also include filters, equality or inequality, on <code>__key__</code>.   Kindless queries cannot include sort orders (other than key, ascending, which is the default) or filters on properties.</p>
+
+<p>To perform a kindless ancestor query using the <code>Query</code> class, call the constructor without a kind class:</p>
+
+<pre class="prettyprint">
+q = db.Query()
+
+q.ancestor(ancestor_key)
+q.filter('__key__ &gt;', last_seen_key)
+</pre>
+
+<p>To perform a kindless ancestor query using GQL (either in the Administrator Console or using the <code>GqlQuery</code> class), omit the <code>FROM Kind</code> clause:</p>
+
+<pre class="prettyprint">
+q = db.GqlQuery('SELECT * WHERE ANCESTOR IS :1 AND __key__ &gt; :2', ancestor_key, last_seen_key)
+</pre>
+
+<p>Kindless ancestor queries do not require custom indexes.</p>
+
 
 
 <h2 id="Restrictions_on_Queries">Restrictions on Queries</h2>
@@ -577,29 +888,38 @@ class MainHandler(webapp.RequestHandler):
 <h3 id="Inequality_Filters_Are_Allowed_On_One_Property_Only">
  Inequality Filters Are Allowed On One Property Only</h3>
 
-<p>A query may only use inequality filters (<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>,<code>&gt;</code> and <code>!=</code>) on one property across all of its filters.</p>
+<p>A query may only use inequality filters (<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>!=</code>) on one property across all of its filters.</p>
 
-<p>For example, this GQL query is allowed:</p>
+<p>For example, this query is allowed:</p>
 
-<pre>
-SELECT * FROM Person WHERE birth_year >= :min
-                       AND birth_year <= :max
-</pre>
-
-<p>However, this GQL query is <i>not</i> allowed, because it uses inequality filters on two different properties in the same query:</p>
 
 <pre>
-SELECT * FROM Person WHERE birth_year >= :min_year
-                       AND height >= :min_height     # ERROR
+SELECT * FROM Person WHERE birth_year &gt;= :min
+                       AND birth_year &lt;= :max
 </pre>
+
+
+
+<p>However, this query is <i>not</i> allowed, because it uses inequality filters on two different properties in the same query:</p>
+
+
+<pre>
+SELECT * FROM Person WHERE birth_year &gt;= :min_year
+                       AND height &gt;= :min_height     # ERROR
+</pre>
+
+
 
 <p>Filters can combine equal (<code>=</code>) comparisons for different properties in the same query, including queries with one or more inequality conditions on a property.  This is allowed:</p>
+
 
 <pre>
 SELECT * FROM Person WHERE last_name = :last_name
                        AND city = :city
-                       AND birth_year >= :min_year
+                       AND birth_year &gt;= :min_year
 </pre>
+
+
 
 <p>The query mechanism relies on all results for a query to be adjacent to one another in the index table, to avoid having to scan the entire table for results.  A single index table cannot represent multiple inequality filters on multiple properties while maintaining that all results are consecutive in the table.</p>
 
@@ -609,64 +929,94 @@ SELECT * FROM Person WHERE last_name = :last_name
 
 <p>If a query has both a filter with an inequality comparison and one or more sort orders, the query must include a sort order for the property used in the inequality, and the sort order must appear <i>before</i> sort orders on other properties.</p>
 
-<p>This GQL query is <i>not</i> valid, because it uses an inequality filter and does not order by the filtered property:</p>
+<p>This query is <i>not</i> valid, because it uses an inequality filter and does not order by the filtered property:</p>
+
 <pre>
-SELECT * FROM Person WHERE birth_year >= :min_year
+SELECT * FROM Person WHERE birth_year &gt;= :min_year
                      ORDER BY last_name              # ERROR
 </pre>
 
-<p>Similarly, this GQL query is not valid because it does not order by the filtered property before ordering by other properties:</p>
+
+
+<p>Similarly, this query is not valid because it does not order by the filtered property before ordering by other properties:</p>
+
 <pre>
-SELECT * FROM Person WHERE birth_year >= :min_year
+SELECT * FROM Person WHERE birth_year &gt;= :min_year
                      ORDER BY last_name, birth_year  # ERROR
 </pre>
 
-<p>This GQL query is valid:</p>
+
+
+<p>This query is valid:</p>
+
 <pre>
-SELECT * FROM Person WHERE birth_year >= :min_year
+SELECT * FROM Person WHERE birth_year &gt;= :min_year
                      ORDER BY birth_year, last_name
 </pre>
 
-<p>To get all results that match an inequality filter, a query scans the index table for the first matching row, then returns all consecutive results until it finds a row that doesn't match.  For the consecutive rows to represent the complete results set, the rows must be ordered by the inequality filter before other sort orders.</p>
 
 
-<h3 id="Sort_Orders_and_List_Properties">Sort Orders and List Properties</h3>
+<p>To get all results that match an inequality filter, a query scans the index table for the first matching row, then returns all consecutive results until it finds a row that doesn't match.  For the consecutive rows to represent the complete result set, the rows must be ordered by the inequality filter before other sort orders.</p>
 
-<p>Due to the way
-<a href="entitiesandmodels.html#Lists">list
-properties</a> are indexed, the sort order for list values is unusual:</p>
+
+<h3 id="Properties_With_Multiple_Values">Properties With Multiple Values</h3>
+
+<p>Due to the way they're indexed, properties with multiple values interact
+with query filters and sort orders in specific and sometimes surprising
+ways.</p>
+
+<p>First, if a query has multiple filters on a given property, an entity will
+only match the query if it has an individual value for that property that
+matches <i>all</i> of the filters. For example, if an entity has the
+values <code>[1, 2]</code> for property <code>x</code>, it will not match
+the query <code>WHERE x > 1 AND x < 2</code>. Each filter does match one
+of <code>x</code>'s values, but there's no single value that matches both
+filters.</p>
+
+<p>Similarly, the sort order for multiply valued properties is unusual:</p>
 
 <ul class="doublespace">
-  <li>If the entities are sorted by a list property in ascending order, the value used for ordering is the smallest element in the list.</li>
-  <li>If the entities are sorted by a list property in descending order, the value used for ordering is the greatest element in the list.</li>
-  <li>Other elements in the list do not affect the sort order, nor does the list's length.</li>
+  <li>If the entities are sorted by a multi-valued property in ascending order, the value used for ordering is the smallest value.</li>
+  <li>If the entities are sorted by a multi-valued property in descending order, the value used for ordering is the greatest value.</li>
+  <li>Other values do not affect the sort order, nor does the number of values.</li>
   <li>In the case of a tie, the key of the entity is used as the tie-breaker.</li>
 </ul>
 
 <p>This sort order has the unusual consequence that <code>[1, 9]</code> comes before <code>[4, 5, 6, 7]</code> in both ascending <i>and</i> descending order.</p>
 
+<h4 id="Sort_Orders_Are_Ignored_on_Properties_With_Equals_Filters">Sort Orders Are Ignored on Properties With Equals Filters</h4>
+
 <p>One important caveat is queries with both an equality filter and a sort
-order on a list property. In those queries, the sort order is disregarded.
-For non-list properties, this is a simple optimization. Every result would
+order on a multi-valued property. In those queries, the sort order is disregarded.
+For single-valued properties, this is a simple optimization. Every result would
 have the same value for the property, so the results do not need to be sorted
 further.</p>
 
-<p>However, list properties may have additional values. Since the sort order
+<p>However, multi-valued properties may have additional values. Since the sort order
 is disregarded, the query results may be returned in a different order than if
 the sort order were applied. (Restoring the dropped sort order would be
 expensive and require extra indices, and this use case is rare, so the query
 planner leaves it off.)</p>
 
+<h3 id="Only_Ancestor_Queries_in_Transactions">Only Ancestor Queries in Transactions</h3>
+
+<p>Queries are only supported inside
+<a href="transactions.html">transactions</a> if they include an ancestor filter. The query's ancestor must be in the same
+<a href="keysandentitygroups.html#Entity_Groups_Ancestors_and_Paths">entity group</a> as the other operations in the transaction. This preserves the restriction that a transaction can only operate on entities in a single entity group.</p>
+
 
 <h2 id="Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</h2>
 
-<p>As described above, every property (that doesn't have a <a href="typesandpropertyclasses.html#Text">Text</a> or <a href="typesandpropertyclasses.html#Blob">Blob</a> value) of every entity is added to at least one index table, including a simple index provided by default, and any indexes described in the application's <code>index.yaml</code> file that refer to the property.  For an entity that has one value for each property, App Engine stores a property value once in its simple index, and once for each time the property is referred to in a custom index.  Each of these index entries must be updated every time the value of the property changes, so the more indexes that refer to the property, the more time it will take for a <code>put()</code> that updates the property to succeed.</p>
+<p>As described above, every property (that doesn't have a Text or Blob value) of every entity is added to at least one index table, including a simple index provided by default, and any indexes described in the application's <code>index.yaml</code> file that refer to the property.  For an entity that has one value for each property, App Engine stores a property value once in its simple index, and once for each time the property is referred to in a custom index.  Each of these index entries must be updated every time the value of the property changes, so the more indexes that refer to the property, the more time it will take to update the property.</p>
 
 <p>To prevent the update of an entity from taking too long, the datastore limits the number of index entries that a single entity can have.  The limit is large, and most applications will not notice.  However, there are some circumstances where you might encounter the limit.  For example, an entity with very many single-value properties can exceed the index entry limit.</p>
 
-<p>Properties with multiple values, such as using a <a href="typesandpropertyclasses.html#list">list</a> value or a <a href="typesandpropertyclasses.html#ListProperty">ListProperty</a> model, store each value as a separate entry in an index.  An entity with a single property with very many values (a very long list) can exceed the index entry limit.</p>
+<p>Properties with multiple values store each value as a separate entry in an index.  An entity with a single property with very many values can exceed the index entry limit.</p>
 
-<p>Custom indexes that refer to multiple properties with multiple values can get very large with only a few values.  To completely record such properties, the index table must include a row for <i>every permutation of the values</i> of every property for the index.  For example, the following index (described in <code>index.yaml</code> syntax) includes the <code>x</code> and <code>y</code> properties for entities of the kind <code>MyModel</code>:</p>
+<p>Custom indexes that refer to multiple properties with multiple values can get very large with only a few values.  To completely record such properties, the index table must include a row for <i>every permutation of the values</i> of every property for the index.</p>
+
+
+<p>For example, the following index (described in <code>index.yaml</code> syntax) includes the <code>x</code> and <code>y</code> properties for entities of the kind <code>MyModel</code>:</p>
 
 <pre class="prettyprint">
 indexes:
@@ -688,13 +1038,20 @@ e2.y = [1, 2]
 e2.put()
 </pre>
 
-<p>To accurately represent these values, the index must store 8 property values: two each for the built-in indexes on <code>x</code> and <code>y</code>, and one for each permutation of <code>x</code> and <code>y</code> in the custom index.  With many list values, this can mean an index must store very many index entries for a single entity.  You could call an index that refers to multiple properties with multiple values an "exploding index," because it can get very large with just a few values.</p>
 
-<p>If a <code>put()</code> would result in a number of index entries that exceeds the limit, the call will fail with a BadRequestError exception.  If you create a new index that would contain a number of index entries that exceeds the limit for any entity when built, queries against the index will fail, and the index will appear in the "Error" state in the Admin Console.</p>
+
+
+<p>To accurately represent these values, the index must store 12 property values: 2 each for the built-in indexes on <code>x</code> and <code>y</code>, and 2 for each of the 4 permutations of <code>x</code> and <code>y</code> in the custom index.  With many values of multi-valued properties, this can mean an index must store very many index entries for a single entity.  You could call an index that refers to multiple properties with multiple values an "exploding index," because it can get very large with just a few values.</p>
+
+<p>If a <code>put()</code> would result in a number of index entries that exceeds the limit, the call will fail with an exception.  If you create a new index that would contain a number of index entries that exceeds the limit for any entity when built, queries against the index will fail, and the index will appear in the "Error" state in the Admin Console.</p>
+
 
 <p>To handle "Error" indexes, first remove them from your <code>index.yaml</code> file and run <code>appcfg.py vacuum_indexes</code>. Then, either reformulate the index definition and corresponding queries or remove the entities that are causing the index to "explode." Finally, add the index back to <code>index.yaml</code> and run <code>appcfg.py update_indexes</code>.</p>
 
-<p>You can avoid exploding indexes by avoiding queries that would require a custom index using a list property.  As described above, this includes queries with descending sort orders, multiple sort orders, a mix of equality and inequality filters, and ancestor filters.</p>
+
+<p>You can avoid exploding indexes by avoiding queries that would require a custom index using a list property.  As described above, this includes queries with multiple sort orders, a mix of equality and inequality filters, and ancestor filters.</p>
+
+
 
 
 
@@ -703,24 +1060,25 @@ e2.put()
 
     </div> <!-- end codesite content -->
 
+
 <div id="gc-footer" dir="ltr">
   <div class="text">
     
       <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
   Except as otherwise <a
   href="http://code.google.com/policies.html#restrictions">noted</a>,
-  the content of this page is licensed under <a rel="license"
-  href="http://creativecommons.org/licenses/by/2.5/">a Creative Commons
-  license</a>, and examples are licensed under
-  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">an Apache
-  license</a>.
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
 <!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
               xmlns:dc="http://purl.org/dc/elements/1.1/"
               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <Work rdf:about="">
-    <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
   </Work>
-  <License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
     <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
     <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
     <requires rdf:resource="http://web.resource.org/cc/Notice"/>
@@ -729,27 +1087,33 @@ e2.put()
   </License>
 </rdf:RDF> -->
 </div>
-</div>
+Java is a registered trademark of Sun Microsystems, Inc.</div>
     
     &copy;2009 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://www.google.com/accounts/TOS">Terms of Service</a> -
-    <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
-    <a href="http://moderator.appspot.com/#e%253Dagltb2RlcmF0b3JyDgsSBlNlcmllcxifggIM%252Bv%253D0">Feedback</a> -
-    <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-     <br />
-     <br />
+    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br /> <br />
     Google Code offered in:
-    <a href="http://code.google.com/intl/zh-CN" onclick="return CODESITE_redirectToI18nContent(this)">中文</a> -
-    <a href="http://code.google.com/intl/en" onclick="return CODESITE_redirectToI18nContent(this)">English</a> -
-    <a href="http://code.google.com/intl/pt-BR" onclick="return CODESITE_redirectToI18nContent(this)">Português</a> -
-    <a href="http://code.google.com/intl/ru" onclick="return CODESITE_redirectToI18nContent(this)">Pусский</a> -
-    <a href="http://code.google.com/intl/es" onclick="return CODESITE_redirectToI18nContent(this)">Español</a> -
-    <a href="http://code.google.com/intl/ja" onclick="return CODESITE_redirectToI18nContent(this)">日本語</a>
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
   </div>
 </div><!-- end gc-footer -->
 
 </div><!-- end gc-containter -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
 
 
 

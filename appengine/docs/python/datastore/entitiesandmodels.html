@@ -21,6 +21,10 @@
  
  
  
+
+
+
+
   
   
 
@@ -32,18 +36,21 @@
     </script>
     
     
-<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Entities and Models - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
 var _tocPath_ = '/appengine/docs/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
 //--></script>
-<link href="../../../../css/codesite.pack.01312008.css" type="text/css" rel="stylesheet"></link>
-<script src="../../../../js/codesite.pack.01312008.js" type="text/javascript"></script>
-<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml" />
+<link href="../../../../css/codesite.pack.04102009.css" type="text/css" rel="stylesheet">
+<script src="../../../../js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="http://code.google.com/osd.xml">
 
-<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css" /><![endif]-->
+<!--[if IE]><link rel="stylesheet" type="text/css" href="../../../../css/iehacks.css"><![endif]-->
 
     <link href="../../../../css/semantic_headers.css" rel="stylesheet" type="text/css" />
     <link href="../../../css/local_extensions.css" rel="stylesheet" type="text/css" />
@@ -53,56 +60,60 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
     
     
-    <div id="gc-container">
-<a name="top"></a>
+    <div id="gb">
+ <span>
+  
+    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif">
+  
+ </span>
+</div>
+
+<div class="gbh" style="left: 0pt;"></div>
+<div class="gbh" style="right: 0pt;"></div>
+
+<div id="gc-container">
+<a id="top"></a>
 <div id="skipto">
   <a href="#gc-pagecontent">Skip to page content</a>
   <a href="#gc-toc">Skip to main navigation</a>
 </div>
-<div id="langpref">
-   <a class="dropdown" href="http://code.google.com">English</a>
-   <span>|</span>
-   <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-</div>
+
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-     <img src="../../../../images/cleardot.gif" height="1px" width="1px" alt="Google Code Home Page" id="gc-logo-img"/>
+  
+     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+  
   
   </a></div>
   <div id="search">
     <div id="searchForm" class="searchForm">
       <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
       <noscript>
-      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml"/>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml">
       </noscript>
-        <table class="gsc-search-box" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="gsc-input">
-                <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px"/>
-              </td>
-              <td class="gsc-search-button">
-                <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
-                <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit"/>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2" class="greytext">e.g. "templates" or "datastore"</td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="gsc-search-box">
+        <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px">
+        <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+        <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit">
+        <div class="greytext">e.g. "templates" or "datastore"</div>
+      </div>
       </form>
     </div> <!-- end searchForm -->
   </div> <!-- end search -->
+
+
+
+<h2 id="googlecode-promo">Faster apps faster - <a href="http://code.google.com/webtoolkit" onclick="siteTracker._trackEvent('Promos','Header-GWT2',this.href);">GWT 2.0 with Speed Tracer</a> <sup>New!</sup></h2>
+
 </div> <!-- end gc-header -->
 
 
 <div id="codesiteContent">
 
-<a name="gc-topnav-anchor"></a>
+<a id="gc-topnav-anchor"></a>
 <div id="gc-topnav">
-  <h1>Google App Engine</h1>
+  <h1 style="padding:0 0 0 6px;">Google App Engine</h1>
   <ul id="docs" class="gc-topnav-tabs">
 
     <li id="home_link">
@@ -126,7 +137,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
     </li>
   
     <li>
-      <a href="http://groups.google.com/group/google-appengine" title="Google App Engine developer forum">Group</a>
+      <a href="../../../community.html" title="Community home for Google App Engine">Community</a>
     </li>
   
     <li>
@@ -151,10 +162,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 </ul>
 <div class="line"></div>
 <ul>
-  <li><h2>Introduction</h2>
+  <li><h2>Getting Started</h2>
     <ul>
       <li><a href="../../whatisgoogleappengine.html">What Is Google App Engine?</a></li>
-      <li><a href="../gettingstarted/index.html">Getting Started: Python</a>
+      <li><a href="../../java/gettingstarted/index.html">Java</a>
+        <ul>
+              <li><a href="../../java/gettingstarted/introduction.html">Introduction</a></li>
+    <li><a href="../../java/gettingstarted/installing.html">Installing the Java SDK</a></li>
+    <li><a href="../../java/gettingstarted/creating.html">Creating a Project</a></li>
+    <li><a href="../../java/gettingstarted/usingusers.html">Using the Users Service</a></li>
+    <li><a href="../../java/gettingstarted/usingjsps.html">Using JSPs</a></li>
+    <li><a href="../../java/gettingstarted/usingdatastore.html">Using the Datastore with JDO</a></li>
+    <li><a href="../../java/gettingstarted/staticfiles.html">Using Static Files</a></li>
+    <li><a href="../../java/gettingstarted/uploading.html">Uploading Your Application</a></li>
+
+        </ul>
+      </li>
+      <li><a href="../gettingstarted/index.html">Python</a>
         <ul>
             <li><a href="../gettingstarted/introduction.html">Introduction</a></li>
   <li><a href="../gettingstarted/devenvironment.html">The Development Environment</a></li>
@@ -169,8 +193,126 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
         </ul>
       </li>
-      <li><a href="../../quotas.html">Quotas</a></li>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Java</h2>
+    <ul>
+          <li><a href="../../java/overview.html">Overview</a></li>
+    <li><a href="../../java/runtime.html">Servlet Environment</a></li>
+    <li><a href="../../java/datastore/index.html">Storing Data</a>
+      <ul>
+            <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
+    <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
+    <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
+    <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
+    <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
+    <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/stats.html">Statistics</a></li>
+    <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/apis.html">Services</a>
+      <ul>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
+          <ul>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/mail/index.html">Mail</a>
+          <ul>
+                <li><a href="../../java/mail/overview.html">Overview</a></li>
+    <li><a href="../../java/mail/usingjavamail.html">Using JavaMail to Send Mail</a></li>
+    <li><a href="../../java/mail/receiving.html">Receiving Mail</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/mail/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Google Accounts</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../../java/javadoc/index.html">Javadoc Reference</a></li>
+    <li><a href="../../java/jrewhitelist.html">JRE Class White List</a></li>
+    <li><a href="../../java/config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../../java/config/webxml.html">Deployment Descriptor</a></li>
+    <li><a href="../../java/config/appconfig.html">App Config</a></li>
+    <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
+    <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../../java/tools/devserver.html">Development Server</a></li>
+    <li><a href="../../java/tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../../java/tools/eclipse.html">Google Plugin for Eclipse</a></li>
+    <li><a href="../../java/tools/ant.html">Using Apache Ant</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../../java/howto/unittesting.html">Unit Testing</a></li>
+
+      </ul>
+    </li>
+
     </ul>
   </li>
 </ul>
@@ -178,49 +320,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 <ul>
   <li><h2>Python</h2>
     <ul>
-          
-    <li><a href="../runtime.html">Runtime</a></li>
-    <li><a href="../tools/index.html">Tools</a>
+          <li><a href="../overview.html">Overview</a></li>
+    <li><a href="../runtime.html">CGI Environment</a></li>
+    <li><a href="index.html">Storing Data</a>
       <ul>
-            <li><a href="../tools/configuration.html">Configuration</a></li>
-    <li><a href="../tools/devserver.html">Development Server</a></li>
-    <li><a href="../tools/uploadinganapp.html">Uploading an App</a></li>
-    <li><a href="../tools/webapp/index.html">webapp Framework</a>
-      <ul>
-             <li><a href="../tools/webapp/overview.html">Overview</a></li>
-     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
-     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
-     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
-     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
-     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
-     
-
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
-         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
-         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
-         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
-         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
-         
-       </ul>
-     </li>
-
-      </ul>
-    </li>
-
-      </ul>
-    </li>
-    <li><a href="../apis.html">Service APIs</a>
-      <ul>
-        <li><a href="index.html">Datastore</a>
-          <ul>
-                 <li><a href="overview.html">Overview</a></li>
+             <li><a href="overview.html">Overview</a></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
      <li><a href="queriesandindexes.html">Queries and Indexes</a></li>
      <li><a href="transactions.html">Transactions</a></li>
+     <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
+     <li><a href="gqlreference.html">GQL Reference</a></li>
+     <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -232,14 +344,14 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="gqlqueryclass.html">GqlQuery</a></li>
          <li><a href="keyclass.html">Key</a></li>
          <li><a href="functions.html">Functions</a></li>
-         <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
-         <li><a href="gqlreference.html">GQL Reference</a></li>
          <li><a href="exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
-          </ul>
-        </li>
+      </ul>
+    </li>
+    <li><a href="../apis.html">Services</a>
+      <ul>
         <li><a href="../memcache/index.html">Memcache</a>
           <ul>
                  <li><a href="../memcache/overview.html">Overview</a></li>
@@ -259,6 +371,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
          <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
          <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
          <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
        </ul>
@@ -270,6 +383,7 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
           <ul>
                  <li><a href="../mail/overview.html">Overview</a></li>
      <li><a href="../mail/sendingmail.html">Sending Mail</a></li>
+     <li><a href="../mail/receivingmail.html">Receiving Mail</a></li>
      <li><a href="../mail/attachments.html">Attachments</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
@@ -277,6 +391,19 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
          <li><a href="../mail/emailmessagefields.html">Message Fields</a></li>
          <li><a href="../mail/functions.html">Functions</a></li>
          <li><a href="../mail/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -314,10 +441,94 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 
           </ul>
         </li>
-        <li><a href="../../usinggdataservices.html">Using Google Data Services</a></li>
+        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+          <ul>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="../config/index.html">Configuration</a>
+      <ul>
+            <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/indexconfig.html">Index Config</a></li>
+    <li><a href="../config/cron.html">Scheduled Tasks</a></li>
+    <li><a href="../config/queue.html">Task Queue Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/index.html">Tools</a>
+      <ul>
+            <li><a href="../tools/devserver.html">Development Server</a></li>
+    <li><a href="../tools/uploadinganapp.html">Uploading and Managing</a></li>
+    <li><a href="../tools/uploadingdata.html">Uploading and Downloading Data</a></li>
+    <li><a href="../tools/webapp/index.html">webapp Framework</a>
+      <ul>
+             <li><a href="../tools/webapp/overview.html">Overview</a></li>
+     <li><a href="../tools/webapp/running.html">Running the Application</a></li>
+     <li><a href="../tools/webapp/requesthandlers.html">Request Handlers</a></li>
+     <li><a href="../tools/webapp/requestdata.html">Request Data</a></li>
+     <li><a href="../tools/webapp/buildingtheresponse.html">Building the Response</a></li>
+     <li><a href="../tools/webapp/redirects.html">Redirects, Headers and Status Codes</a></li>
+     <li><a href="../tools/webapp/blobstorehandlers.html">Blobstore Handlers</a></li>
+
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../tools/webapp/requestclass.html">Request</a></li>
+         <li><a href="../tools/webapp/responseclass.html">Response</a></li>
+         <li><a href="../tools/webapp/requesthandlerclass.html">RequestHandler</a></li>
+         <li><a href="../tools/webapp/wsgiapplicationclass.html">WSGIApplication</a></li>
+         <li><a href="../tools/webapp/utilmodule.html">Utility Functions</a></li>
+         
+       </ul>
+     </li>
+
+      </ul>
+    </li>
+    <li><a href="../tools/libraries.html">Third-party Libraries</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../howto/index.html">How-To</a>
+      <ul>
+              <li><a href="../howto/usinggdataservices.html">Google Data Services</a></li>
+
       </ul>
     </li>
 
+    </ul>
+  </li>
+</ul>
+<div class="line"></div>
+<ul>
+  <li><h2>Managing Your App</h2>
+    <ul>
+      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../quotas.html">Quotas</a></li>
+      <li><a href="../../billing.html">Billing</a></li>
     </ul>
   </li>
 </ul>
@@ -330,15 +541,23 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
+      <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
-      <li><a href="../../../groups.html">Discussion Groups</a></li>
+      <li>Launcher Code
+        <ul>
+          <li><a href="http://code.google.com/p/google-appengine-mac-launcher/">Mac</a></li>
+          <li><a href="http://code.google.com/p/google-appengine-wx-launcher/">Windows/wx</a></li>
+        </ul>
+      </li>
+      <li><a href="../../../community.html">Discussion Groups</a></li>
     </ul>
   </li>
 </ul>
 <div class="line"></div>
 <ul>
   <li><a href="../../roadmap.html">Product Roadmap</a></li>
-  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">Release Notes: Python</a></li>
+  <li><a href="http://code.google.com/p/googleappengine/wiki/SdkForJavaReleaseNotes">Release Notes: Java</a></li>
   <li><a href="../../revision_history.html">Revision History</a></li>
 </ul>
 
@@ -353,7 +572,6 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 <p>A datastore entity has a key and a set of properties.  An application uses the datastore API to define data models, and create instances of those models to be stored as entities.  Models provide a common structure to the entities created by the API, and can define rules for validating property values.</p>
 
 <ul>
-  <li><a href="#Datastore_Entities">Datastore Entities</a></li>
   <li><a href="#The_Model_Interface">The Model Interface</a></li>
   <li><a href="#Expando_Models">Expando Models</a></li>
   <li><a href="#Polymorphic_Models">Polymorphic Models</a></li>
@@ -368,17 +586,6 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 </ul>
 
 
-<h2 id="Datastore_Entities">Datastore Entities</h2>
-
-<p>A data object in the App Engine datastore is known as an <i>entity</i>.  An entity has one or more <i>properties</i>, named values of one of several <a href="typesandpropertyclasses.html">supported data types</a>.</p>
-
-<p>Each entity also has a <i>key</i> that uniquely identifies the entity.  The simplest key has a <i>kind</i> and a unique numeric ID provided by the datastore.  The ID can also be a string provided by the application.  For more information on keys, see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
-
-<p>An application can fetch an entity from the datastore by using its key, or by performing a query that matches the entity's properties.  A query can also match an "ancestor" in the key; see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.  A query can return zero or more entities, and can return the results sorted by property values.  A query can also limit the number of results returned by the datastore to conserve memory and run time.</p>
-
-<p>Unlike relational databases, the App Engine datastore does not require that all entities of a given kind have the same properties.  The application can specify and enforce its data models using the model API.</p>
-
-
 <h2 id="The_Model_Interface">The Model Interface</h2>
 
 <p>An application describes the kinds of data it uses with <i>models</i>.  A model is a Python class that inherits from the <a href="modelclass.html">Model</a> class.  The model class defines a new kind of datastore entity and the properties the kind is expected to take.</p>
@@ -389,12 +596,12 @@ var _tocPath_ = '/appengine/docs/_toc.ezt';
 from google.appengine.ext import db
 
 class Pet(db.Model):
-  name = db.StringProperty(required=True)
-  type = db.StringProperty(required=True, choices=set(["cat", "dog", "bird"]))
-  birthdate = db.DateProperty()
-  weight_in_pounds = db.IntegerProperty()
-  spayed_or_neutered = db.BooleanProperty()
-  owner = db.UserProperty(required=True)
+    name = db.StringProperty(required=True)
+    type = db.StringProperty(required=True, choices=set(["cat", "dog", "bird"]))
+    birthdate = db.DateProperty()
+    weight_in_pounds = db.IntegerProperty()
+    spayed_or_neutered = db.BooleanProperty()
+    owner = db.UserProperty(required=True)
 </pre>
 
 <p>An entity of one of the defined entity kinds is represented in the API by an instance of the corresponding model class.  The application can create a new entity by calling the constructor of the class.  The application accesses and manipulates properties of the entity using attributes of the instance.  The model instance constructor accepts initial values for properties as keyword arguments.</p>
@@ -429,9 +636,9 @@ pet.weight_in_pounds = 24
 
 <pre class="prettyprint">
 class Person(db.Expando):
-  first_name = db.StringProperty()
-  last_name = db.StringProperty()
-  hobbies = db.StringListProperty()
+    first_name = db.StringProperty()
+    last_name = db.StringProperty()
+    hobbies = db.StringListProperty()
 
 p = Person(first_name="Albert", last_name="Johnson")
 p.hobbies = ["chess", "travel"]
@@ -485,17 +692,17 @@ from google.appengine.ext import db
 from google.appengine.ext.db import polymodel
 
 class Contact(polymodel.PolyModel):
-  phone_number = db.PhoneNumberProperty()
-  address = db.PostalAddressProperty()
+    phone_number = db.PhoneNumberProperty()
+    address = db.PostalAddressProperty()
 
 class Person(Contact):
-  first_name = db.StringProperty()
-  last_name = db.StringProperty()
-  mobile_number = db.PhoneNumberProperty()
+    first_name = db.StringProperty()
+    last_name = db.StringProperty()
+    mobile_number = db.PhoneNumberProperty()
 
 class Company(Contact):
-  name = db.StringProperty()
-  fax_number = db.PhoneNumberProperty()
+    name = db.StringProperty()
+    fax_number = db.PhoneNumberProperty()
 </pre>
 
 <p>This model ensures that all <code>Person</code> entities and all <code>Company</code> entities have <code>phone_number</code> and <code>address</code> properties, and queries for <code>Contact</code> entities can return either <code>Person</code> or <code>Company</code> entities.  Only <code>Person</code> entities have <code>mobile_number</code> properties.</p>
@@ -517,21 +724,23 @@ c = Company(phone_number='1-503-555-9123',
 c.put()
 </pre>
 
-<p>A query for <code>Contact</code> entities can return instances of either <code>Contact</code>, <code>Person</code> or <code>Company</code>.  The following code prints information for both animals created above:</p>
+<p>A query for <code>Contact</code> entities can return instances of either <code>Contact</code>, <code>Person</code> or <code>Company</code>.  The following code prints information for both entities created above:</p>
 
 <pre class="prettyprint">
 for contact in Contact.all():
-  print 'Phone: %s\nAddress: %s\n\n'
-        % (contact.phone,
-           contact.address))
+    print 'Phone: %s\nAddress: %s\n\n'
+          % (contact.phone,
+             contact.address))
 </pre>
 
 <p>A query for <code>Company</code> entities returns only instances of <code>Company</code>:</p>
 
 <pre class="prettyprint">
 for company in Company.all()
-  # ...
+    # ...
 </pre>
+
+<p>For now, polymorphic models should not passed to the <a href="queryclass.html">Query</a> class constructor directly. Instead use the <code>all()</code> method, as in the example above.
 
 <p>For more information on how to use polymorphic models, and how they are implemented, see <a href="polymodelclass.html">The PolyModel Class</a>.</p>
 
@@ -550,7 +759,7 @@ for company in Company.all()
 
 <pre class="prettyprint">
 class MyModel(db.Model):
-  string = db.StringProperty()
+    string = db.StringProperty()
 
 obj = MyModel()
 
@@ -571,7 +780,7 @@ results = db.GqlQuery("SELECT * FROM MyModel WHERE string = :1", u"kittens")
 
 <pre class="prettyprint">
 class MyModel(db.Model):
-  text = db.TextProperty()
+    text = db.TextProperty()
 
 obj = MyModel()
 
@@ -596,7 +805,7 @@ obj.text = db.Text(open("a_tale_of_two_cities.txt").read(), "utf-8")
 
 <pre class="prettyprint">
 class MyModel(db.Model):
-  blob = db.BlobProperty()
+    blob = db.BlobProperty()
 
 obj = MyModel()
 
@@ -606,13 +815,15 @@ obj.blob = db.Blob(open("image.png").read())
 
 <h3 id="Lists">Lists</h3>
 
-<p>A property can have multiple values, represented in the datastore API as a Python <code>list</code>.  The list can contain values of any of the value types supported by the datastore. A single list property may even have values of different types. Order is preserved, so when entities are returned by queries and <a href="functions.html#get">get()</a>, list properties will have values in the same order as when they were stored.</p>
+<p>A property can have multiple values, represented in the datastore API as a Python <code>list</code>.  The list can contain values of any of the value types supported by the datastore. A single list property may even have values of different types.</p>
+
+<p>Order is generally preserved, so when entities are returned by queries and <a href="functions.html#get">get()</a>, list properties will have values in the same order as when they were stored. There's one exception to this: <code>Blob</code> and <code>Text</code> values will be moved to the end of the list. They'll still retain their original order relative to each other, though.</p>
 
 <p>The <a href="typesandpropertyclasses.html#ListProperty">ListProperty</a> class models a list, and enforces that all values in the list are of a given type.  For convenience, the library also provides <a href="typesandpropertyclasses.html#StringListProperty">StringListProperty</a>, similar to <code>ListProperty(basestring)</code>.</p>
 
 <pre class="prettyprint">
 class MyModel(db.Model):
-  numbers = db.ListProperty(long)
+    numbers = db.ListProperty(long)
 
 obj = MyModel()
 obj.numbers = [2, 4, 6, 8, 10]
@@ -620,14 +831,19 @@ obj.numbers = [2, 4, 6, 8, 10]
 obj.numbers = ["hello"]  # ERROR: MyModel.numbers must be a list of longs.
 </pre>
 
-<p>A query filter on a list property tests the given value against members of the list.  The condition is true if at least one member of the list meets the condition.</p>
+<p>A query with filters on a list property tests each value in the list
+individually.  The entity will match the query only if some value in the list
+passes <i>all</i> of the filters on that property.
+See <a href="queriesandindexes.html#Properties_With_Multiple_Values">Properties With Multiple Values</a>
+for more.
+</p>
 
 <pre class="prettyprint">
 # Get all entities where numbers contains a 6.
 results = db.GqlQuery("SELECT * FROM MyModel WHERE numbers = 6")
 
 # Get all entities where numbers contains at least one element less than 10.
-results = db.GqlQuery("SELECT * FROM MyModel WHERE numbers < 10")
+results = db.GqlQuery("SELECT * FROM MyModel WHERE numbers &lt; 10")
 </pre>
 
 <p>Query filters only operate on the list members.  There is no way to test two lists for similarity in a query filter.</p>
@@ -642,9 +858,7 @@ results = db.GqlQuery("SELECT * FROM MyModel WHERE numbers < 10")
 
 <p>For storing non-text byte strings, use <a href="typesandpropertyclasses.html#Blob">db.Blob</a> values.  The bytes of a blob string are preserved when they are stored and retrieved.  You can declare a property that is a list of blobs as <code>ListProperty(db.Blob)</code>.</p>
 
-<p>List properties interact in unusual ways with sort orders. See
-<a href="queriesandindexes.html#Sort_Orders_and_List_Properties">Sort Orders and List Properties</a>
-for details.
+<p>List properties interact in unusual ways with sort orders. See <a href="queriesandindexes.html">Queries and Indexes: Sort Orders and Properties With Multiple Values</a> for details.
 
 
 <h3 id="References">References</h3>
@@ -657,10 +871,10 @@ for details.
 
 <pre class="prettyprint">
 class FirstModel(db.Model):
-  prop = db.IntegerProperty()
+    prop = db.IntegerProperty()
 
 class SecondModel(db.Model):
-  reference = db.ReferenceProperty(FirstModel)
+    reference = db.ReferenceProperty(FirstModel)
 
 obj1 = FirstModel()
 obj1.prop = 42
@@ -693,7 +907,7 @@ v = another_obj.reference.prop
 obj1 = obj2.reference
 
 if not obj1:
-  # Referenced entity was deleted.
+    # Referenced entity was deleted.
 </pre>
 
 <p>ReferenceProperty has another handy feature: back-references.  When a model has a ReferenceProperty to another model, each referenced entity gets a property whose value is a <a href="queryclass.html">Query</a> that returns all of the entities of the first model that refer to it.</p>
@@ -702,7 +916,7 @@ if not obj1:
 # To fetch and iterate over every SecondModel entity that refers to the
 # FirstModel instance obj1:
 for obj in obj1.secondmodel_set:
-  # ...
+    # ...
 </pre>
 
 <p>The name of the back-reference property defaults to <code>modelname_set</code> (with the name of the model class in lowercase letters, and "_set" added to the end), and can be adjusted using the <code>collection_name</code> argument to the ReferenceProperty constructor.</p>
@@ -711,27 +925,27 @@ for obj in obj1.secondmodel_set:
 
 <pre class="prettyprint">
 class FirstModel(db.Model):
-  prop = db.IntegerProperty()
+    prop = db.IntegerProperty()
 
 # This class raises a DuplicatePropertyError with the message
 # "Class Firstmodel already has property secondmodel_set"
 class SecondModel(db.Model):
-  reference_one = db.ReferenceProperty(FirstModel)
-  reference_two = db.ReferenceProperty(FirstModel)
+    reference_one = db.ReferenceProperty(FirstModel)
+    reference_two = db.ReferenceProperty(FirstModel)
 </pre>
 
 <p>To avoid this error, you must explicitly set the <code>collection_name</code> argument:
- 
+
 <pre class="prettyprint">
 class FirstModel(db.Model):
-  prop = db.IntegerProperty()
+    prop = db.IntegerProperty()
 
 # This class runs fine
 class SecondModel(db.Model):
-  reference_one = db.ReferenceProperty(FirstModel,
-      collection_name="secondmodel_reference_one_set")
-  reference_two = db.ReferenceProperty(FirstModel,
-      collection_name="secondmodel_reference_two_set") 
+    reference_one = db.ReferenceProperty(FirstModel,
+        collection_name="secondmodel_reference_one_set")
+    reference_two = db.ReferenceProperty(FirstModel,
+        collection_name="secondmodel_reference_two_set")
 </pre>
 
 <p>Automatic referencing and dereferencing of model instances, type checking and back-references are only available using the ReferenceProperty model property class.  Keys stored as values of Expando dynamic properties or ListProperty values do not have these features.</p>
@@ -749,7 +963,7 @@ class SecondModel(db.Model):
 
 <pre class="prettyprint">
 class MyModel(db.Model):
-  obj_key = db.StringProperty(name="key")
+    obj_key = db.StringProperty(name="key")
 </pre>
 
 
@@ -759,24 +973,25 @@ class MyModel(db.Model):
 
     </div> <!-- end codesite content -->
 
+
 <div id="gc-footer" dir="ltr">
   <div class="text">
     
       <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
   Except as otherwise <a
   href="http://code.google.com/policies.html#restrictions">noted</a>,
-  the content of this page is licensed under <a rel="license"
-  href="http://creativecommons.org/licenses/by/2.5/">a Creative Commons
-  license</a>, and examples are licensed under
-  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">an Apache
-  license</a>.
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
 <!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
               xmlns:dc="http://purl.org/dc/elements/1.1/"
               xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <Work rdf:about="">
-    <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
   </Work>
-  <License rdf:about="http://creativecommons.org/licenses/by/2.5/">
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
     <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
     <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
     <requires rdf:resource="http://web.resource.org/cc/Notice"/>
@@ -785,27 +1000,33 @@ class MyModel(db.Model):
   </License>
 </rdf:RDF> -->
 </div>
-</div>
+Java is a registered trademark of Sun Microsystems, Inc.</div>
     
     &copy;2009 Google -
     <a href="http://code.google.com">Code Home</a> -
-    <a href="http://www.google.com/accounts/TOS">Terms of Service</a> -
-    <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
-    <a href="http://moderator.appspot.com/#e%253Dagltb2RlcmF0b3JyDgsSBlNlcmllcxifggIM%252Bv%253D0">Feedback</a> -
-    <a href="http://code.google.com/more/#products-products-android">Site Directory</a>
-     <br />
-     <br />
+    <a href="http://code.google.com/terms.html">Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br /> <br />
     Google Code offered in:
-    <a href="http://code.google.com/intl/zh-CN" onclick="return CODESITE_redirectToI18nContent(this)">中文</a> -
-    <a href="http://code.google.com/intl/en" onclick="return CODESITE_redirectToI18nContent(this)">English</a> -
-    <a href="http://code.google.com/intl/pt-BR" onclick="return CODESITE_redirectToI18nContent(this)">Português</a> -
-    <a href="http://code.google.com/intl/ru" onclick="return CODESITE_redirectToI18nContent(this)">Pусский</a> -
-    <a href="http://code.google.com/intl/es" onclick="return CODESITE_redirectToI18nContent(this)">Español</a> -
-    <a href="http://code.google.com/intl/ja" onclick="return CODESITE_redirectToI18nContent(this)">日本語</a>
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
   </div>
 </div><!-- end gc-footer -->
 
 </div><!-- end gc-containter -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
 
 
 
