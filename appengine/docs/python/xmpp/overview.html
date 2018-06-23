@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1043,6 +1081,7 @@ _gaq.push(
 
 
 
+
 <p>An App Engine application can send and receive chat messages to and from any XMPP-compatible chat messaging service, such as <a href="http://www.google.com/talk/">Google Talk</a>. An app can send and receive chat messages, send chat invites, request a user's chat presence and status, and provide a chat status. Incoming XMPP messages are handled by request handlers, similar to web requests.</p>
 
 <p>Some possible uses of chat messages include automated chat participants ("chat bots"), chat notifications, and chat interfaces to services. A rich client with a connection to an XMPP server (such as Google Talk) can use XMPP to interact with an App Engine application in real time, including receiving messages initiated by the app. (Note that such a client using Google Talk must use the user's password to make an XMPP connection, and cannot use a Google Accounts cookie.)</p>
@@ -1097,6 +1136,7 @@ from google.appengine.api import xmpp
   <li><code>xmpp_message</code> allows your application to receive chat messages from XMPP-compliant chat services.</li>
   <li><code>xmpp_subscribe</code> allows subscriptions between users and your application for the purpose of exchanging data, such as chat messages, presence information, and status messages.</li>
   <li><code>xmpp_presence</code> allows your application to determine a user's chat presence (available or unavailable).</li>
+  <li><code>xmpp_error</code> allows your application to receive error stanzas.</li>
 </ul>
 
 <p>You can <a href="../config/appconfig.html#Inbound_Services">enable these inbound services</a> in <code>app.yaml</code>:</p>
@@ -1107,6 +1147,7 @@ inbound_services:
 - xmpp_message
 - xmpp_presence
 - xmpp_subscribe
+- xmpp_error
 </pre>
 
 
@@ -1116,6 +1157,7 @@ inbound_services:
   <li><a href="#Receiving_Chat_Messages">Chat Messages</a></li>
   <li><a href="#Handling_Subscriptions">User Subscriptions</a></li>
   <li><a href="#Handling_User_Presence">User Presence</a></li>
+  <li><a href="#Handling_Error_Stanzas">XMPP Errors</a></li>
 </ul>
 
 <h3 id="Receiving_Chat_Messages">Chat Messages</h3>
@@ -1228,16 +1270,35 @@ xmpp.send_presence(sender, status=self.request.get('status'), presence_show=self
 </pre>
 
 
+<h3 id="Handling_Error_Stanzas">Error Stanzas</h3>
+
+<p>Enabling the <code>xmpp_error</code> inbound service allows your application to receive XMPP error stanzas. Error stanzas are most commonly sent as a result of sending a message to a user who's offline.</p>
+
+<p>With the error service enabled, App Engine makes an HTTP POST request to the following path when your app receives an error stanza:</p>
+
+<code><p>/_ah/xmpp/error/</p></code>
+
+<p>You can register a handler at this address to be notified of XMPP errors. This handler may be responsible for eg. diagnostics or logging:</p>
+
+
+<pre class="prettyprint">
+# In the handler for _ah/xmpp/error
+# Log an error
+error_sender = self.request.get('from')
+error_stanza = self.request.get('stanza')
+logging.error('XMPP error received from %s (%s)', error_sender, error_stanza)
+</pre>
+
 
 <h2 id="XMPP_Addresses">XMPP Addresses</h2>
 
 <p>An application can send and receive messages using several kinds of addresses, or "JIDs."  One kind of address uses the application ID and the <code>appspot.com</code> domain, as follows:</p>
 
-<p><code><i>app-id</i>@appspot.com</code></p>
+<p><code><i>your_app_id</i>@appspot.com</code></p>
 
 <p>An app can also use a custom address in the following format, where <code><i>anything</i></code> is any string containing letters, numbers and hyphens:</p>
 
-<p><code><i>anything</i>@<i>app-id</i>.appspotchat.com</code></p>
+<p><code><i>anything</i>@<i>your_app_id</i>.appspotchat.com</code></p>
 
 <p>(Notice the different domain name for custom addresses: <code>appspotchat.com</code>)</p>
 
@@ -1247,15 +1308,15 @@ xmpp.send_presence(sender, status=self.request.get('status'), presence_show=self
 
 <h3>Addresses and App Versions</h3>
 
-<p>The <code>@appspot.com</code> address and the <code>@<i>app-id</i>.appspotchat.com</code> addresses all refer to the default version of the app. Messages sent to these addresses are routed to the default version. When the default version of an app sends a message, the requested address is used as the sender of the message. Replies to the app's messages are routed to the default version, even if the default version has changed since the original message was sent.</p>
+<p>The <code>@appspot.com</code> address and the <code>@<i>your_app_id</i>.appspotchat.com</code> addresses all refer to the default version of the app. Messages sent to these addresses are routed to the default version. When the default version of an app sends a message, the requested address is used as the sender of the message. Replies to the app's messages are routed to the default version, even if the default version has changed since the original message was sent.</p>
 
 <p>Each version of an app has its own set of XMPP addresses in the following format:</p>
 
-<p><code><i>anything</i>@<i>version</i>.latest.<i>app-id</i>.appspotchat.com</code></p>
+<p><code><i>anything</i>@<i>version</i>.latest.<i>your_app_id</i>.appspotchat.com</code></p>
 
 <p>If App Engine receives a message for an address in this format, it is routed to the corresponding version of the app (if that version still exists).</p>
 
-<p>If a version of an app sends a message and that version is not the default, the sender address of the message is changed to an address in this format. If the sender is <code><i>app-id</i>@appspot.com</code>, the sender address becomes <code><i>app-id</i>@<i>version</i>.latest.<i>app-id</i>.appspotchat.com</code>. This ensures that replies to a message sent by a specific non-default version of the app are routed back to that version.</p>
+<p>If a version of an app sends a message and that version is not the default, the sender address of the message is changed to an address in this format. If the sender is <code><i>your_app_id</i>@appspot.com</code>, the sender address becomes <code><i>your_app_id</i>@<i>version</i>.latest.<i>your_app_id</i>.appspotchat.com</code>. This ensures that replies to a message sent by a specific non-default version of the app are routed back to that version.</p>
 
 
 <h2 id="JIDs_and_Resources">JIDs and Resources</h2>

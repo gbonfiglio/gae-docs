@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../capabilities/overview.html">Overview</a></li>
 <li><a href="../javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1154,7 +1192,7 @@ import com.google.appengine.api.images.Transform;
 <p>The <a href="../javadoc/com/google/appengine/api/images/ImagesService.html#getServingUrl(com.google.appengine.api.blobstore.BlobKey,%20int,%20boolean)">getServingUrl()</a> method allows you to generate a stable, dedicated URL for serving web-suitable image thumbnails. You simply store a single copy of your original image in Blobstore, and then request a high-performance per-image URL. This special URL can serve that image resized and/or cropped automatically, and serving from this URL does not incur any CPU or dynamic serving load on your application (though bandwidth is still charged as usual). Images are served with low latency from a highly optimized, cookieless infrastructure.</p>
 <p>The URL returned by this method is always public, but not guessable; private URLs are not currently supported. If you wish to stop serving the URL, delete the underlying blob. This takes up to 24 hours to take effect.</p>
 <p>If you supply the arguments, this method returns a URL encoded with the arguments specified. If you do not supply any arguments, this method returns the default URL for the image, for example:</p>
-<pre>http://my-app.appspot.com/randomStringImageId</pre>
+<pre>http://<i>your_app_id</i>.appspot.com/randomStringImageId</pre>
 
 <p>You can then add arguments to this URL to get the desired size and crop parameters. The available arguments are:</p>
 
@@ -1166,10 +1204,10 @@ import com.google.appengine.api.images.Transform;
 
 <pre>
 // Resize the image to 32 pixels (aspect-ratio preserved)
-http://my-app.appspot.com/randomStringImageId<span style="color:maroon"><b>=s32</b></span>
+http://<i>your_app_id</i>.appspot.com/randomStringImageId<span style="color:maroon"><b>=s32</b></span>
 
 // Crop the image to 32 pixels
-http://my-app.appspot.com/randomStringImageId<span style="color:maroon">=s32<b>-c</b></span>
+http://<i>your_app_id</i>.appspot.com/randomStringImageId<span style="color:maroon">=s32<b>-c</b></span>
 </pre>
 
 <h2 id="Development_Server">Images and the Development Server</h2>

@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1031,7 +1069,7 @@ _gaq.push(
 
 <p>Thanks to Google App Engine, you don't have to worry about any of that. App Engine's infrastructure takes care of all of the distribution, replication and load balancing of data behind a simple API&mdash;and you get a powerful query engine and transactions as well.</p>
 
-<p>The default datastore for an application is now the <a href="../datastore/hr/index.html">High Replication datastore</a>. This datastore uses the <a href="http://labs.google.com/papers/paxos_made_live.html">Paxos algorithm</a> to replicate data across datacenters. The High Replication datastore is extremely resilient in the face of catastrophic failure.</p>
+<p>The default datastore for an application is now the <a href="../datastore/hr/index.html">High Replication datastore</a>. This datastore uses the <a href="http://research.google.com/pubs/pub33002.html">Paxos algorithm</a> to replicate data across datacenters. The High Replication datastore is extremely resilient in the face of catastrophic failure.</p>
 <p>One of the consequences of this is that the consistency guarantee for the datastore may differ from what you are familiar with. It also differs slightly from the Master/Slave datastore, the other datastore option that App Engine offers. In the example code comments, we highlight some ways this might affect the design of your app. For more detailed information, see <a href="../datastore/hr/overview.html">Using the High Replication Datastore</a> (HRD).</p>
 
 <p>The datastore writes data in objects known as <i>entities</i>, and each entity has a <i>key</i> that identifies the entity. Entities can belong to the same <i>entity group</i>, which allows you to perform a single transaction with multiple entities. Entity groups have a <i>parent key</i> that identifies the entire entity group.</p>

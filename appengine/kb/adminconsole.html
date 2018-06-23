@@ -109,9 +109,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -180,7 +178,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -329,10 +327,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../docs/java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../docs/java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../docs/java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../docs/java/capabilities/overview.html">Overview</a></li>
 <li><a href="../docs/java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/java/conversion/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -499,6 +513,8 @@ _gaq.push(
     <li><a href="../docs/python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../docs/python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../docs/python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../docs/python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../docs/python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -586,6 +602,20 @@ _gaq.push(
   <ul>
     <li><a href="../docs/python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../docs/python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../docs/python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../docs/python/conversion/functions.html">Functions</a></li>
+    <li><a href="../docs/python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -883,6 +913,13 @@ _gaq.push(
         <li><a href="../docs/go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../docs/go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../docs/go/backends/overview.html">Overview</a></li>
+<li><a href="../docs/go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../docs/go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../docs/go/datastore/overview.html">Overview</a></li>
@@ -955,6 +992,7 @@ _gaq.push(
         <li><a href="../docs/go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../docs/go/config/appconfig.html">App Config</a></li>
+    <li><a href="../docs/go/config/backends.html">Backends Config</a></li>
     <li><a href="../docs/go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../docs/go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../docs/go/config/queue.html">Task Queue Config</a></li>
@@ -1046,6 +1084,8 @@ _gaq.push(
 <h2 id="delete_app">How can I delete my app?</h2>
 <p>You can delete your app, but App Engine provides safety measures to prevent inadvertent deletion. To delete your app, you first disable it, which stops all serving requests but leaves your data and state alone. Once your app is disabled, you can leave it that way, or you can delete it. While your app is disabled, you can still use the Administration Console to manage it. If you delete it, your data and state are destroyed and can't be restored. Even after your application is deleted, its application ID is reserved.</p>
 
+<p class="warning"><strong>Warning:</strong> Disabling your application does not automatically disable billing. If you disable your app but do not <a href="../docs/billing.html#Disabling_Billing">disable billing</a>, your app can continue to incur billing costs even though it is disabled.</p>
+
 <p>To delete your app, go to the Administration Console and click Application Settings on the left side under Administration. Then, click Disable Application, and on the next screen, Disable Application Now. This disables your app. While your app is disabled, it won't serve requests. To continue with deleting your app, click Request Permanent Deletion. After a mandatory 72-hour waiting period, your app will be deleted. To stop the pending deletion, go back to the Application Console, click Application Settings, then Manage Disabled Status, and then Revert Deletion Request.</p>
 
 <p>If billing is enabled for your app, you must disable billing before you can delete the app. See the <a href="billing.html">Billing FAQ</a> for general information about billing.</p>
@@ -1126,12 +1166,12 @@ Settings</a> feature in the <strong>Application Settings</strong> tab of the Adm
 <ul>
 <li>The first time you run this tool (using <strong>Start Migration</strong>), the tool copies all existing data in your master/slave datastore to the datastore used by the deployed "HRD version" of your app, and marks any new or changed data after this copy so that further (incremental) copies can be made to copy that new or changed data into the datastore.</li>
 <li>Run <strong>Launch Incremental Copy</strong> to capture only the new or updated data marked in the datastore. This run of this tool will be faster than the first.</li>
-<li>You may need to repeat <strong>Launch Incremental Copy</strong>) several times if your app has a large number of data writes. The idea is to make the time between incremental copies as short as possible before going read-only.</li>
+<li>You may need to repeat <strong>Launch Incremental Copy</strong>) once or twice if your app has a large number of data writes. The idea is to make the time between incremental copies as short as possible before going read-only.</li>
 <li>When finished with the last incremental copy, click <strong>Go read-only</strong>. No more data can be written to the master/slave application after you do this.</li>
 <li>Immediately after the final incremental copy is made, alias the application over to the HRD app (by clicking <strong>Complete migration</strong>. The new HRD app begins serving incoming requests when you do this.</li>
 </ul>
 
-<p>Currently there is no status monitor indicating progress, nor is there a time estimate provided; however, you can request an email to be sent to you when the migration tool finishes the current run.</p>
+<p>The migration tool provides a status monitor indicating progress and a time estimate. In addition, you can request an email to be sent to you when the migration tool finishes the current run.</p>
 </p>
 <h4>Running the Migration Tool</h4>
 <p class="note"><strong>Note:</strong> Deploy your HRD application before copying data to it. If you start copying data before deploying your application, all of the indexes must be rebuilt.</p>
@@ -1146,7 +1186,7 @@ Settings</a> feature in the <strong>Application Settings</strong> tab of the Adm
 <li>If your master/slave app continues to serve requests during the migration,
 <ol class="alpha">
 <li>Click <strong>Launch Incremental Copy</strong> and wait for it to finish.</li>
-<li>After you run the incremental copy, if your application is writing significant amounts of data, run the incremental copy again. You may need to run <strong>Launch Incremental Copy</strong> several times.</li>
+<li>After you run the incremental copy, if your application is writing significant amounts of data, run the incremental copy again. You may need to run <strong>Launch Incremental Copy</strong> once or twice.</li>
 </ol>
 </li>
 <li>When the data copy phase is complete, click <strong>Go Read-Only</strong>. This stops the original master/slave app from writing new data to the datastore, although it can serve read-only requests. The Go read-only step performs one final sync while the app is read-only.</li>

@@ -107,9 +107,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -178,7 +176,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -326,10 +324,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -496,6 +510,8 @@ _gaq.push(
     <li><a href="functions.html">Backends API Functions</a></li>
     <li><a href="exceptions.html">Backends API Exceptions</a></li>
     <li><a href="logserviceapi.html">LogService API</a></li>
+    <li><a href="applog.html">AppLog Class</a></li>
+    <li><a href="requestlog.html">RequestLog Class</a></li>
     <li><a href="runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -583,6 +599,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -880,6 +910,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -952,6 +989,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1028,11 +1066,51 @@ _gaq.push(
 
 
 
-<p>The <code>google.appengine.api.logservice</code> package provides methods allowing applications to periodically flush logs during long-running requests.</p>
+<p>The <code>google.appengine.api.logservice</code> package provides methods allowing applications to periodically flush logs during long-running requests and to examine an application's request logs and application logs.</p>
 
 <p>This package has the following functions:</p>
 
-<dl>
+<dl class="apireference">
+  <dt><span class="itemname">fetch</span>(<span class="argname">start_time</span>=<span class="argdefault">None</span>, <span class="argname">end_time</span>=<span class="argdefault">None</span>, <span class="argname">offset</span>=<span class="argdefault">None</span>, <span class="argname">minimum_log_level</span>=<span class="argdefault">None</span>, <span class="argname">include_incomplete</span>=<span class="argdefault">False</span>, <span class="argname">include_app_logs</span>=<span class="argdefault">False</span>, <span class="argname">version_ids</span>=<span class="argdefault">None</span>, <span class="argname">batch_size</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Fetches an application's request and application logs. (Only logs for requests to the application making the fetch()
+request can be retrieved.) Raises an <code>InvalidArgumentError</code> if any of the input parameters are not of the correct type.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">start_time</span></dt>
+      <dd>The earliest request completion or last-update time that results should be fetched for, in seconds since the Unix epoch.</dd>
+      <dt><span class="argname">end_time</span></dt>
+      <dd>The latest request completion or last-update time that results should be fetched for, in seconds since the Unix epoch.</dd>
+      <dt><span class="argname">offset</span></dt>
+
+      <dd>An offset value from a <a href="requestlog.html">RequestLog</a> object returned in a previous fetch call. May be used to continue a <code>fetch()</code> across multiple HTTP requests, for instance to display pages of results.  Subsequent fetch() calls made with the same parameters plus an offset will continue immediately after the RequestLog from which the offset was retrieved.</dd>
+      <dt><span class="argname">minimum_log_level</span></dt>
+      <dd>An application log level that serves as a filter on the requests returned. Requests with no application log at or above the specified level will be omitted. This argument takes effect even if <code>include_app_logs</code> is not set to True.  In ascending order, the available log levels are:
+<ul>
+<li><code>logservice.LOG_LEVEL_DEBUG</code></li>
+<li><code>logservice.LOG_LEVEL_INFO</code></li>
+<li><code>logservice.LOG_LEVEL_WARNING</code></li>
+<li><code>logservice.LOG_LEVEL_ERROR</code></li>
+<li><code>logservice.LOG_LEVEL_CRITICAL</code></li>
+</ul>
+</dd>
+      <dt><span class="argname">include_incomplete</span></dt>
+      <dd>Specifies whether to include requests that have started but are not yet finished, as a boolean.</dd>
+
+      <dt><span class="argname">include_app_logs</span></dt>
+      <dd>Specifies whether to include application logs, as a boolean. By default, application logs are <em>not</em> returned by <code>logservice.fetch()</code>; you have to invoke it with its <code>include_app_logs</code> parameter set to <em>True</em>.
+</dd>
+
+
+      <dt><span class="argname">version_ids</span></dt>
+      <dd>Specifies the version id of the application version to be queried in the fetch call. Currently, you can specify only one version_id per fetch call.</dd>
+
+
+    <p>Returns an iterator that returns <a href="requestlog.html">RequestLog</a> objects, each of which contains the full log data for a request, both request logs and any application logs for that request.</p>
+
+  </dd>
+    </dl>
+
   <dt><span class="itemname">flush</span>()</dt>
     <dd><p>Flushes log lines that are currently buffered.</p></dd>
   <dt><span class="itemname">flush_time</span>()</dt>

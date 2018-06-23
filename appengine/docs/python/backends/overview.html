@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="functions.html">Backends API Functions</a></li>
     <li><a href="exceptions.html">Backends API Exceptions</a></li>
     <li><a href="logserviceapi.html">LogService API</a></li>
+    <li><a href="applog.html">AppLog Class</a></li>
+    <li><a href="requestlog.html">RequestLog Class</a></li>
     <li><a href="runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1029,6 +1067,7 @@ _gaq.push(
 
 
 
+
 <p>App Engine Backends are instances of your application that are exempt from request deadlines and have access to more memory (up to 1GB) and CPU (up to 4.8GHz) than normal instances. They are designed for applications that need faster performance, large amounts of addressable memory, and continuous or long-running background processes. Backends come in several sizes and configurations, and are billed for uptime rather than CPU usage.</p>
 
 <p>A backend may be configured as either <em>resident</em> or <em>dynamic</em>. Resident backends run continuously, allowing you to rely on the state of their memory over time and perform complex initialization. Dynamic backends come into existence when they receive a request, and are turned down when idle; they are ideal for work that is intermittent or driven by user activity. For more information about the differences between resident and dynamic backends, see <a href="../config/backends.html#Types_of_Backends">Types of Backends</a> and also the discussion of <a href="#Startup">Startup</a> and <a href="#Shutdown">Shutdown</a>.</p>
@@ -1056,6 +1095,7 @@ href="../config/backends.html">configured</a> using <code>backends.yaml</code>. 
   <li><a href="#Public_and_Private_Backends">Public and Private Backends</a></li>
   <li><a href="#Monitoring_Resource_Usage">Monitoring Resource Usage</a></li>
   <li><a href="#Logging">Periodic Logging</a></li>
+  <li><a href="#Fetching_Request_Logs_and_Application_Logs">Fetching Request Logs and Application Logs</a></li>
   <li><a href="#Administering_Backends">Administering Backends</a></li>
   <li><a href="#Billing_Quotas_and_Limits">Billing, Quotas, and Limits</a></li>
 </ul>
@@ -1102,7 +1142,7 @@ href="../config/backends.html">configured</a> using <code>backends.yaml</code>. 
     <th>Instance Addressability</th>
     <td>Instances are anonymous.</td>
     <td><p>Instances are individually addressable at a URL of this form:</p> 
-    <p><code>[instance].[backend].[app].appspot.com</code></p>
+    <p><code>http://[instance].[backend_name].[your_app_id].appspot.com</code></p>
     <p>You can reliably cache state in each instance and retrieve it in subsequent requests.</p></td>
   </tr>
   <tr>
@@ -1135,9 +1175,9 @@ href="../config/backends.html">configured</a> using <code>backends.yaml</code>. 
   <dt><code>appcfg backends &lt;dir&gt; stop &lt;backend&gt;</code></dt>
     <dd>Sets the backend state to <code>STOP</code> and shuts down any running instances. The stopped backend cannot receive HTTP requests; if it recevies a request, it returns a 404 response. This command has no effect if the backend was already stopped.</dd>
   <dt><code>appcfg backends  &lt;dir&gt; delete &lt;backend&gt;</code></dt>
-    <dd>Deletes the indicated backend. After issuing this command, requests to the deleted backend (for example, <code>backend.app.appspot.com</code>) are routed to the default app version.</dd>
+    <dd>Deletes the indicated backend. After issuing this command, requests to the deleted backend (for example, <code>http://<i>backend_name</i>.<i>your_app_id</i>.appspot.com</code>) are routed to the default app version.</dd>
   <dt><code>appcfg backends &lt;dir&gt; configure</code></dt>
-    <dd>Dynamically updates settings in <code>backends.yaml</code> without having to stop the backend. Does not affect any code or handlers. Supports only the following configuration settings: 
+    <dd>Dynamically updates settings in <code>backends.yaml</code> without having to stop the backend. Does not affect any code or handlers. Supports only the following configuration settings:
     <ul>
       <li><code>instances</code></li>
       <li><code>options: public</code></li>
@@ -1189,11 +1229,15 @@ syntax is experimental.</p>
   <li>App Engine needs to move your backend to a different machine to improve load distribution.</li>
 </ul>
 
-<p>If possible, App Engine notifies the backend 30 seconds before terminating it. There are two ways to receive this notification. First, the <code>is_shutting_down()</code>
-method from 
-<a href="runtimeapi.html">google.appengine.api.runtime</a> begins returning true. Second, if you have registered a shutdown hook, it will be called. It's a good idea to register the shutdown hook in your start request.</p>
+<p>
+If possible, App Engine notifies the backend 30 seconds before terminating it.
 
-<p>If you are handling a request, App Engine pauses that request and runs the hook. If you are not handling a request, App Engine sends an <code>/_ah/stop</code> request, which runs the shutdown hook. The <code>/_ah/stop</code> request bypasses normal handling logic and cannot be handled by user code; its sole purpose is to invoke the shutdown hook. If you raise an exception in your shutdown hook while handling another request, it will bubble up into the request, where you can catch it.</p>
+
+
+
+</p>
+
+
 
 <p>If you are using <a href="../python27/using27.html#Enabling_Threadsafe">threadsafe</a> in Python 2.7, raising a deadline from a shutdown hook copies that exception to all threads.</p>
 
@@ -1220,6 +1264,7 @@ runtime.set_shutdown_hook(my_shutdown_hook)</pre>
 
 
 
+
 <h2 id="Backend_Uptime">Backend Uptime</h2>
 
 <p>App Engine attempts to keep backends running indefinitely. However, at this time there is no guaranteed uptime for backends. Hardware and software failures that cause early termination or frequent restarts can occur without prior warning and may take considerable time to resolve; thus, you should construct your application in a way that tolerates these failures. The App Engine team will provide more guidance on expected backend uptime as statistics become available.</p>
@@ -1240,9 +1285,12 @@ run before a backend terminates. In rare cases, an outage can occur that prevent
 
 <h2 id="Addressing_Backends">Addressing Backends</a></h2>
 
-<p>A backend instance can be targeted with HTTP requests to <code>http://[instance].[backend].[app].appspot.com</code>, or at your application's custom domain. If you target a backend without targeting an instance using <code>http://[backend].[app].appspot.com</code>, App Engine selects the first available instance of the backend.</p>
+<p>A backend instance can be targeted with HTTP requests to <code>http://[instance].[backend_name].[your_app_id].appspot.com</code>, or at your application's custom domain. If you target a backend without targeting an instance using <code>http://[backend_name].[your_app_id].appspot.com</code>, App Engine selects the first available instance of the backend.</p>
 
-<p>The <a href="functions.html">Backends API</a> provides functions to retrieve the address of the current backend or instance, or another backend or instance, in a way that works in both the development and production environments. This allows application versions to target backends with requests, for a backend to target another backend, or for one instance of a backend to target another instance.</p>
+<p>The
+
+
+provides functions to retrieve the address of a backend or instance. This allows application versions to target backends with requests, for a backend to target another backend, or for one instance of a backend to target another instance. This works in both the development and production environments.</p>
 
 
 <p>The <code>BACKEND_ID</code> and <code>INSTANCE_ID</code> environment variables contain the backend name and instance index of the instance handling the request.</p>
@@ -1250,11 +1298,10 @@ run before a backend terminates. In rare cases, an outage can occur that prevent
 
 
 
+
 <h2 id="Public_and_Private_Backends">Public and Private Backends</h2>
 
-<p>Backends are private by default, since they typically function as a component inside an application, rather than acting as its public face. Private backends can be accessed by application administrators, instances of the application, and by App Engine APIs and services (such as Task Queue tasks and Cron jobs) without any special configuration. Backends are not primarily intended for user-facing traffic, but you can <a href="../config/backends.html#options_public">make
-a backend public</a> for testing or for interacting with an external
-system.</p>
+<p>Backends are private by default, since they typically function as a component inside an application, rather than acting as its public face. Private backends can be accessed by application administrators, instances of the application, and by App Engine APIs and services (such as Task Queue tasks and Cron jobs) without any special configuration. Backends are not primarily intended for user-facing traffic, but you can <a href="../config/backends.html#options_public">make a backend public</a> for testing or for interacting with an external system.</p>
 
 <p>A backend that is used for offline processing can typically be
 taken down, updated, or resized without any user-visible effects.
@@ -1267,24 +1314,10 @@ updating it requires more care. Most updates to a backend require existing insta
 <p>The <strong>Instances Console</strong> section of the Administration Console provides visibility into how backend instances are performing. By selecting your backend in the version/backend dropdown, you can see the memory and CPU usage of each instance, uptime, number of requests, and other statistics. You can also manually initiate the <a href="#Shutdown">shutdown</a> process for any instance.</p>
 
 
-<p>You also can use the <a href="runtimeapi.html">Runtime API</a> to access statistics showing the CPU and memory usage of your backend instances. These statistics help you understand how resource usage responds to requests or work performed, and also how to regulate the amount of data stored in memory in order to stay below the memory limit of your backend class.
-</p>
+<p>You also can use the <a href="runtimeapi.html">Runtime API</a> to access statistics showing the CPU and memory usage of your backend instances. These statistics help you understand how resource usage responds to requests or work performed, and also how to regulate the amount of data stored in memory in order to stay below the memory limit of your backend class.</p>
 
 
 
-<h2 id="Logging">Periodic Logging</h2>
-
-<p>Application logs are periodically flushed during backend
-requests. You can tune the flush settings, or force an immediate
-flush, using the <a
-href="logserviceapi.html">LogService
-API</a>. When a flush occurs, a new log entry is
-created at the time of the flush, containing any log messages that had
-not been flushed yet. These entries show up in the <strong>Logs
-Console</strong> marked with <strong>flush</strong>, and include the start time of
-the request that generated the flush:</p>
-
-<img src="../../images/img_logs.png" style="padding:1em;"/>
 
 
 
@@ -1298,6 +1331,214 @@ the request that generated the flush:</p>
 <h2 id="Billing_Quotas_and_Limits">Billing, Quotas, and Limits</h2>
 <h3>Billing</h3>
 <p>Backends are priced based on an hourly rate determined by the backend class. The following table describes the cost for each class:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <table>
   <tr>

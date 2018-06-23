@@ -110,9 +110,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -181,7 +179,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -329,10 +327,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -499,6 +513,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -586,6 +602,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -883,6 +913,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -955,6 +992,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1136,7 +1174,7 @@ appcfg.py update_cron myapp/
 
 <p>You can download an application's source code by running appcfg.py with the <code>download_app</code> action in the Python SDK command-line tool:</p>
 
-<pre>appcfg.py download_app -A &lt;application-id&gt; -V &lt;application-version&gt; &lt;output-dir&gt;</pre>
+<pre>appcfg.py download_app -A <i>&lt;your_app_id&gt;</i> -V <i>&lt;your_app_version&gt;</i> &lt;output-dir&gt;</pre>
 
 <p>Output like the following results if the command is successful:</p>
 <pre>Getting file list...
@@ -1178,7 +1216,7 @@ appcfg.py request_logs myapp/ mylogs.txt
 
 <p>By default, the command downloads log messages from the current calendar day (since midnight Pacific Time) with a log level of INFO or higher (omitting DEBUG level messages).  The command overwrites the local log file.  You can adjust the number of days, the minimum log level, and whether to overwrite or append to the local log file using command-line options.  See below for more information on these options.</p>
 
-<p>You can limit the log messages that are downloaded to just those emitted during request on a given domain name using the <code>--vhost=...</code> option.  You can use this to download the logs for your live app using a Google Apps domain or <code>app-id.appspot.com</code>, excluding log messages emitted by versions you are testing on URLs such as <code>2.latest.app-id.appspot.com</code>.  Or you can use it to download just the log messages for a given test domain.</p>
+<p>You can limit the log messages that are downloaded to just those emitted during request on a given domain name using the <code>--vhost=...</code> option.  You can use this to download the logs for your live app using a Google Apps domain or <code>http://<i>your_app_id</i>.appspot.com</code>, excluding log messages emitted by versions you are testing on URLs such as <code>http://2.latest.<i>your_app_id</i>.appspot.com</code>.  Or you can use it to download just the log messages for a given test domain.</p>
 
 
 <h2 id="Uploading_Data">Uploading Data</h2>
@@ -1278,7 +1316,7 @@ appcfg.py --insecure update myapp
       </dd>
       <dt><code>--vhost=<i>...</i></code></dt>
       <dd>
-        <p>If present, limits the log messages downloaded to just those emitted by requests for a given domain name.  For instance, <code>--vhost=example.com</code> will download just the log messages for the live app at the Google Apps domain <code>example.com</code>, excluding any log messages emitted by a new version being tested at <code>2.latest.myapp.appspot.com</code>.  Similarly, <code>--vhost=2.latest.myapp.appspot.com</code> downloads just the logs for the test version, excluding the live version.</p>
+        <p>If present, limits the log messages downloaded to just those emitted by requests for a given domain name.  For instance, <code>--vhost=example.com</code> will download just the log messages for the live app at the Google Apps domain <code>example.com</code>, excluding any log messages emitted by a new version being tested at <code>http://2.latest.<i>your_app_id</i>.appspot.com</code>.  Similarly, <code>--vhost=2.latest.<i>your_app_id</i>.appspot.com</code> downloads just the logs for the test version, excluding the live version.</p>
         <p>The value is a regular expression that matches the <code>Host</code> header of the incoming requests.  Note that the pattern is case sensitive, even though domain names usually are not.</p>
       </dd>
       <dt><code>--include_vhost</code></dt>

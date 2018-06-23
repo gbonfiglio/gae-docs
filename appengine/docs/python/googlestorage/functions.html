@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1027,6 +1065,7 @@ _gaq.push(
 
 
 
+
 <div class="special">
 <h4>Experimental!</h4>
 <p>Google Cloud Storage API for Google App Engine is an experimental, innovative, and rapidly changing new feature for App Engine. Unfortunately, being on the bleeding edge means that we may make backwards-incompatible changes to Google Cloud Storage API for Google App Engine. We will inform the community once Google Cloud Storage API for Google App Engine is no longer experimental.</p>
@@ -1053,18 +1092,19 @@ _gaq.push(
 
 <h2>Functions</h2>
 <dl class="apireference">
-<dt id="create"><span class="itemname">files.gs.create</span>(<span class="argname">filename</span>, <span class="argname">mime_type</span>=<span class="argdefault">'application/octet'</span>, <span class="argname">acl</span>=<span class="argdefault">'private'</span>, <span class="argname">cache_control</span>=<span class="argdefault">None</span>, <span class="argname">content_encoding</span>=<span class="argdefault">None</span>, <span class="argname">content_disposition</span>=<span class="argdefault">None</span>, <span class="argname">content_encoding</span>=<span class="argdefault">None</span>, <span class="argname">user_metadata</span>=<span class="argdefault">None</span>)</dt>
+<dt id="create"><span class="itemname">files.gs.create</span>(<span class="argname">filename</span>, <span class="argname">mime_type</span>=<span class="argdefault">'application/octet'</span>, <span class="argname">acl</span>=<span class="argdefault">None</span>, <span class="argname">cache_control</span>=<span class="argdefault">None</span>, <span class="argname">content_encoding</span>=<span class="argdefault">None</span>, <span class="argname">content_disposition</span>=<span class="argdefault">None</span>, <span class="argname">content_encoding</span>=<span class="argdefault">None</span>, <span class="argname">user_metadata</span>=<span class="argdefault">None</span>)</dt>
   <dd>
-    <p>Create a Google Storage object in the specified bucket.</p>
+    <p>Create a Google Cloud Storage object in the specified bucket.</p>
     <p><strong>Arguments:</strong></p>
     <dl>
       <dt><span class="argname">filename</span> <span style="text-transform: uppercase; font-size: 8pt">(Required)</span></dt>
-      <dd>The Google Storage file name for the object, in the format <code>/gs/bucket/object_name</code>. The <code>object_name</code> can contain any sequence of Unicode characters, but cannot exceed 1024 bytes when UTF-8 encoded. Avoid using <a href="http://www.w3.org/TR/xml/#charsets">control characters</a> that are considered illegal in XML 1.0 when creating an object name, as Google Storage omits these characters when listing objects. If an object with the same name already exists, the object created by this function will overwrite the existing object.</dd>
+      <dd>The Google Cloud Storage file name for the object, in the format <code>/gs/bucket/object_name</code>. The <code>object_name</code> can contain any sequence of Unicode characters, but cannot exceed 1024 bytes when UTF-8 encoded. Avoid using <a href="http://www.w3.org/TR/xml/#charsets">control characters</a> that are considered illegal in XML 1.0 when creating an object name, as Google Cloud Storage omits these characters when listing objects. If an object with the same name already exists, the object created by this function will overwrite the existing object.</dd>
       <dt><span class="argname">mime_type</span>=<span class="argdefault">'application/octet-stream'</span> <span style="text-transform: uppercase; font-size: 8pt">(Optional)</span></dt>
       <dd>The <a href="http://www.iana.org/assignments/media-types/index.html">MIME type</a> of the object. If you do not specify a MIME type, the default <span class="argdefault">application/octet-stream</span> MIME type will be set for you.</dd>
-      <dt><span class="argname">acl</span>=<span class="argdefault">'private'</span> <span style="text-transform: uppercase; font-size: 8pt">(Optional)</span></dt>
+      <dt><span class="argname">acl</span>=<span class="argdefault">none</span> <span style="text-transform: uppercase; font-size: 8pt">(Optional)</span></dt>
       <dd>
-        <p>Set a <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">predefined ACL</a> on your object. If you do not set this header, the default <code>private</code> ACL is set on the object. This only allows the App Engine application to read the object and not the actual author of the object, such as yourself or another individual. We strongly recommend that you set the <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">project-private></a> instead, allowing project team members access to the object.</p>
+        <p>Set a <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">predefined ACL</a> on your object.</p>
+        <p>If you do not set this parameter, the API sets this parameter as null and uses the <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultobjects">default object ACL</a> for that bucket (by default, this is <code>project-private</code>).</p>
        </dd>
       <dt><span class="argname">cache_control</span>=<span class="argdefault">None</span>  <span style="text-transform: uppercase; font-size: 8pt">(Optional)</span></dt>
       <dd>

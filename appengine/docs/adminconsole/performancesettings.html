@@ -107,9 +107,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -178,7 +176,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -326,10 +324,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../java/conversion/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -496,6 +510,8 @@ _gaq.push(
     <li><a href="../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -583,6 +599,20 @@ _gaq.push(
   <ul>
     <li><a href="../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -880,6 +910,13 @@ _gaq.push(
         <li><a href="../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../go/backends/overview.html">Overview</a></li>
+<li><a href="../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../go/datastore/overview.html">Overview</a></li>
@@ -952,6 +989,7 @@ _gaq.push(
         <li><a href="../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../go/config/backends.html">Backends Config</a></li>
     <li><a href="../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../go/config/queue.html">Task Queue Config</a></li>
@@ -1031,15 +1069,11 @@ _gaq.push(
 
 <p>App Engine's scheduler is responsible for routing incoming requests to be served by your app's <a href="instances.html">instances</a>. Sometimes, the volume of incoming requests exceeds the capacity of the instances currently available to your app. When this happens, incoming requests may have to wait in the Pending Queue until busy instances become available, or until the scheduler starts new instances.</p>
 
-<p>The scheduler is responsible for deciding how to serve your app's request load. Under regular conditions, it may spin up new idle instances to absorb traffic and minimize latency in the event of a <a
-href="http://en.wikipedia.org/wiki/Slashdot_effect">sudden load
-spike</a>. However, because new instances take time to create, unusually heavy surges of traffic may consume all available idle instances faster than the
-scheduler can create new ones. This can cause your users to experience delays
-(latency) in the serving of requests.</p>
+<p>The scheduler is responsible for deciding how to serve your app's request load. Under regular conditions, it may spin up new idle instances to absorb traffic and minimize latency in the event of a <a href="http://en.wikipedia.org/wiki/Slashdot_effect">sudden load spike</a>. However, because new instances take time to create, unusually heavy surges of traffic may consume all available idle instances faster than the scheduler can create new ones. This can cause your users to experience delays (latency) in the serving of requests.</p>
 
 <p>In some cases, you may want to optimize your application to minimize cost. In other cases, you may want to prime it to serve heavy request volume. The Administration Console's <strong>Performance</strong> controls allow you to balance this potential latency against the cost of maintaining additional idle instances to handle the load. These controls allow you to set:</p>
-
 <ul>
+  <li>The <a href="#Setting_the_Frontend_Instance_Class">memory and processing power of the frontend instances</a> used by your app.</li>
   <li>The <a href="#Setting_the_Number_of_Idle_Instances">number of idle instances</a> available your application at any given time.</li>
   <li>The <a href="#Setting_the_Pending_Latency">length of time requests spend waiting</a> to be served.</li>
 </ul>
@@ -1047,12 +1081,260 @@ scheduler can create new ones. This can cause your users to experience delays
 <p>The default settings enable App Engine's scheduling algorithm to scale the number of instances based on your recent request load and latency profile. If you use manual settings instead, you may need to adjust them continually as your request volume changes.</p>
 
 
+<h2 id="Setting_the_Frontend_Instance_Class">Setting the Frontend Instance Class</h2>
+<p>App Engine provides three different classes of frontend instances, each with different memory and and CPU limits. These classes allow you to configure your frontend instance with the processing capacity you need to perform your work. Each class has a specific hourly billing rate. Please see <a href="../billing.html#Billable_Quota_Unit_Cost">Billable Quota Unit Costs</a> for Billing.
+<p>The default class for frontends is F1, which gives you 128MB of memory and 600MHz of CPU capacity. You can change the class of the frontend using the performance settings in the admin console.
+</p>
+<p>The <strong>Frontend Instance Class</strong> setting is selected by choosing one of the values in the dropdown menu. Each value represents a memory size and processing power, with larger memory sizes and processing power providing extra performance but at an increased cost. The value you select is used for all of the instances used by all versions of your app.</p>
+
+<p class="note"><strong>Note:</strong> Specifying the frontend instance class does not affect backend instances.</p> 
+
+<p>You can change the current frontend instance class for your app at any time. Python and Go apps automatically get the new instance class that you choose. A Java app must be restarted to get the new instance class.</p>
+
+<p>Frontend instances are priced based on an hourly rate determined by the frontend class. The following table describes the cost for each class:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <th>Frontend class</th>
+    <th>Memory limit</th>
+    <th>CPU limit</th>
+    <th>Cost per hour per instance</th>
+  </tr>
+  <tr>
+    <td><code>F1 (default)</code></td>
+    <td>128MB</td>
+    <td>600MHz</td>
+    <td>$0.08</td>
+  </tr>
+  <tr>
+    <td><code>F2</code></td>
+    <td>256MB</td>
+    <td>1.2GHz</td>
+    <td>$0.16</td>
+  </tr>
+  <tr>
+    <td><code>F4</code></td>
+    <td>512MB</td>
+    <td>2.4GHz</td>
+    <td>$0.32</td>
+  </tr>
+</table>
+
 <h2 id="Setting_the_Number_of_Idle_Instances">Setting the Number of Idle Instances</h2>
 
   <p>The <strong>Idle Instances</strong> sliders control the minimum and maximum number of idle instances available to your application at any given time.</p>
 
   <p>The upper slider sets the <em>minimum</em> number of idle instances:</p>
-
+<p class="note"><strong>Note:</strong> In order to specify the minimum number of idle instances, you must have a <a
+href="../billing.html#Enabling_Billing">paid app</a>.</p>
   <ul>
     <li>A low minimum helps keep your running costs down during idle periods, but means that fewer instances may be immediately available to respond to a sudden load spike.</li>
 
@@ -1073,6 +1355,11 @@ scheduler can create new ones. This can cause your users to experience delays
 
 
 <h2 id="Setting_the_Pending_Latency">Setting the Pending Latency</h2>
+
+<p class="note"><strong>Note:</strong> In order to specify the maximum pending latency, you must
+have a <a
+href="../billing.html#Enabling_Billing">paid
+app</a>."</p>
 
   <p><em>Pending request latency</em> arises when all of your application's available instances are too busy to serve new requests. When this happens, incoming requests go to a <em>pending request queue</em>. The scheduler automatically starts new instances for pending requests, but you can also specify minimum and maximum latency settings manually. These settings control how long a request waits in the pending queue when there are no available instances: no less than the minimum, and no more than the maximum.</p>
 
@@ -1096,6 +1383,7 @@ scheduler can create new ones. This can cause your users to experience delays
 
     <li>A high maximum means users may wait longer for their requests to be served (if there are pending requests and no idle instances to serve them), but your application will cost less to run.</li>
   </ul>
+
 
 
 

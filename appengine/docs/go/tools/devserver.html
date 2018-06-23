@@ -109,9 +109,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -180,7 +178,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -328,10 +326,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -498,6 +512,8 @@ _gaq.push(
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -585,6 +601,20 @@ _gaq.push(
   <ul>
     <li><a href="../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -882,6 +912,13 @@ _gaq.push(
         <li><a href="../reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><a href="../backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../datastore/overview.html">Overview</a></li>
@@ -954,6 +991,7 @@ _gaq.push(
         <li><a href="../config/index.html">Configuration</a>
           <ul>
                 <li><a href="../config/appconfig.html">App Config</a></li>
+    <li><a href="../config/backends.html">Backends Config</a></li>
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
@@ -1071,13 +1109,6 @@ dev_appserver.py --port=9999 myapp
 <p>If you need to access your App ID, for example to spoof an email address, use the <a href="../reference.html#AppID">appengine.AppID</a> function. To get the hostname of the running app, use the <a href="../reference.html#DefaultVersionHostname">appengine.DefaultVersionHostname</a> function.</p>
 
 <p class="warning"><strong>Warning!</strong> Do not get the App ID from the environment variable. The development server simulates the production App Engine service. One way in which it does this is to prepend a string (<code>dev~</code>) to the <code>APPLICATION_ID</code> environment variable, which is similar to the string prepended in production for applications using the <a href="../../python/datastore/hr/index.html">High Replication Datastore</a>. You can modify this behavior with the <a href="#default_partition">--default_partition</a> flag, choosing a value of <code>""</code> to match the master-slave option in production. Google recommends always getting the application ID using the <a href="../reference.html#AppID">appengine.AppID</a> method, and never using the <code>APPLICATION_ID</code> environment variable.</p>
-
-<h2 id="App_IDs_in_the_Development_Web_Server">Accessing Application IDs in the Development Web Server</h2>
-<p>If you need to access your App ID, for example to create a hostname or spoof an email address, use the <a href="../../python/appidentity/functions.html#get_application_id">get_application_id()</a> and <a href="../../python/appidentity/functions.html#get_default_version_hostname">get_default_version_hostname()</a> methods.</p>
-
-<p class="warning"><strong>Warning!</strong> Do not get the App ID from the environment variable. The Development server simulates the production App Engine service. One way in which it does this is to prepend a string (<code>dev~</code>) to the <code>APPLICATION_ID</code> environment variable, which is similar to the string prepended in production for applications using the <a href="../../python/datastore/hr/index.html">High Replication Datastore</a>. You can modify this behavior with the <a href="#default_partition">--default_partition</a> flag, choosing a value of <code>""</code> to match the master-slave option in production (and
-versions 1.5.1 and earlier of the development server). Google recommends always getting the application ID using the <a href="../../python/appidentity/functions.html#get_application_id">get_application_id()</a> method, and never using the <code>APPLICATION_ID</code> environment variable.</p>
-
 
 <h2 id="Using_the_Datastore">Using the Datastore</h2>
 
@@ -1223,6 +1254,11 @@ dev_appserver.py --enable_sendmail myapp
   <dt><code>--clear_datastore</code></dt>
   <dd>
     <p>Clears the datastore data and history files before starting the web server.</p>
+  </dd>
+
+  <dt><code>--persist_logs</code></dt>
+  <dd>
+    <p>Turns on storage of logs to enable the use of the <a href="../../python/backends/logserviceapi.html#fetch">logservice.fetch()</a> functionality. When this option is used, the logs are stored to the datastore where they persist across dev_appserver restarts. By default, this is turned off.</p>
   </dd>
 
   <dt><code>--require_indexes</code></dt>

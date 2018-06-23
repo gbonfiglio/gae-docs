@@ -108,9 +108,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -179,7 +177,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -327,10 +325,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -497,6 +511,8 @@ _gaq.push(
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -584,6 +600,20 @@ _gaq.push(
   <ul>
     <li><a href="../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -881,6 +911,13 @@ _gaq.push(
         <li><a href="../reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../backends/overview.html">Overview</a></li>
+<li><a href="../backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../datastore/overview.html">Overview</a></li>
@@ -953,6 +990,7 @@ _gaq.push(
         <li><a href="index.html">Configuration</a>
           <ul>
                 <li><a href="appconfig.html">App Config</a></li>
+    <li><a href="backends.html">Backends Config</a></li>
     <li><a href="indexconfig.html">Index Config</a></li>
     <li><a href="cron.html">Scheduled Tasks</a></li>
     <li><a href="queue.html">Task Queue Config</a></li>
@@ -1080,7 +1118,19 @@ queue:
 </pre>
 
 <p>
-  The value is a number followed by a unit: <code>B</code> for bytes, <code>K</code> for kilobytes, <code>M</code> for megabytes, <code>G</code> for gigabytes, <code>T</code> for terabytes. For example, <code>100K</code> specifies a limit of 100 kilobytes. If adding a task would cause the queue to exceed its storage limit, the call to add the task will fail. The default limit is <code>100M</code> (100 megabytes). 
+  The value is a number followed by a unit: <code>B</code> for bytes, <code>K</code> for kilobytes,
+  <code>M</code> for megabytes, <code>G</code> for gigabytes, <code>T</code> for terabytes.
+  For example, <code>100K</code> specifies a limit of 100 kilobytes. If adding a task would
+  cause the queue to exceed its storage limit, the call to add the task will fail. The default limit is
+  <code>500M</code> (500 megabytes) for free apps. For billed apps there is no limit until you
+  explicitly set one. You can use this limit to protect your app from a
+  <a href="http://en.wikipedia.org/wiki/Fork_bomb">fork bomb</a> programming error
+  in which each task adds multiple other tasks during its execution. If your app is receiving
+  errors for insufficient quota when adding tasks, increasing the total storage
+  limit may help. If you are using this feature, we strongly recommend setting a limit that
+  corresponds to the storage required for several days' worth of tasks. In this way, your app is robust to its queues
+  being temporarily backed up and can continue to accept new tasks while working through the backlog while
+  still being protected from a fork bomb programming error.
 </p>
 
 

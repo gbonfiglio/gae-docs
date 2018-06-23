@@ -107,9 +107,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -178,7 +176,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -326,10 +324,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../java/conversion/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -496,6 +510,8 @@ _gaq.push(
     <li><a href="../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -583,6 +599,20 @@ _gaq.push(
   <ul>
     <li><a href="../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -880,6 +910,13 @@ _gaq.push(
         <li><a href="../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../go/backends/overview.html">Overview</a></li>
+<li><a href="../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../go/datastore/overview.html">Overview</a></li>
@@ -952,6 +989,7 @@ _gaq.push(
         <li><a href="../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../go/config/backends.html">Backends Config</a></li>
     <li><a href="../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../go/config/queue.html">Task Queue Config</a></li>
@@ -1075,6 +1113,8 @@ Application button, your application no longer serves requests, but App Engine s
 
 <p>If you wish to permanently delete your application, first click <b>Disable Application</b>, then, in the resulting screen, click <b>Request Permanent Deletion</b>. The application takes approximately three days to be deleted, during which time you can cancel the deletion. Once your application is deleted, you cannot recover its state or data. The application name remains unavailable approximately forever.</p>
 
+<p class="warning"><strong>Warning:</strong> Disabling your application does not automatically disable billing. If you disable your app but do not <a href="../billing.html#Disabling_Billing">disable billing</a>, your app can continue to incur billing costs even though it is disabled.</p>
+
 
 <h2 id="Migrate_from_Master/Slave_to_High_Replication_Datastore">Migrate from Master/Slave to High Replication Datastore</h2>
 
@@ -1126,12 +1166,12 @@ Settings</a> feature in the <strong>Application Settings</strong> tab of the Adm
 <ul>
 <li>The first time you run this tool (using <strong>Start Migration</strong>), the tool copies all existing data in your master/slave datastore to the datastore used by the deployed "HRD version" of your app, and marks any new or changed data after this copy so that further (incremental) copies can be made to copy that new or changed data into the datastore.</li>
 <li>Run <strong>Launch Incremental Copy</strong> to capture only the new or updated data marked in the datastore. This run of this tool will be faster than the first.</li>
-<li>You may need to repeat <strong>Launch Incremental Copy</strong>) several times if your app has a large number of data writes. The idea is to make the time between incremental copies as short as possible before going read-only.</li>
+<li>You may need to repeat <strong>Launch Incremental Copy</strong>) once or twice if your app has a large number of data writes. The idea is to make the time between incremental copies as short as possible before going read-only.</li>
 <li>When finished with the last incremental copy, click <strong>Go read-only</strong>. No more data can be written to the master/slave application after you do this.</li>
 <li>Immediately after the final incremental copy is made, alias the application over to the HRD app (by clicking <strong>Complete migration</strong>. The new HRD app begins serving incoming requests when you do this.</li>
 </ul>
 
-<p>Currently, there is no status monitor indicating progress, nor is there a time estimate provided; however, you can request an email to be sent to you when the migration tool finishes the current run.</p>
+<p>The HRD migration tool provides a status monitor indicating progress, and a time estimate. In addition, you can request an email to be sent to you when the migration tool finishes the current run.</p>
 </p>
 <h4>Running the Migration Tool</h4>
 <p class="note"><strong>Note:</strong> Deploy your HRD application before copying data to it. If you start copying data before deploying your application, all of the indexes must be rebuilt.</p>
@@ -1142,7 +1182,7 @@ Settings</a> feature in the <strong>Application Settings</strong> tab of the Adm
 </li>
 <li>In the <strong>Destination Application</strong> dropdown, select the new HRD application to which you migrating the data.
 </li>
-<li>Click <strong>Start Migration</strong>, and wait until the data is migrated over to HRD. Click the email checkbox shown in the screen capture above if you wish to be emailed when the job is done. There is no status monitor. </li>
+<li>Click <strong>Start Migration</strong>, and wait until the data is migrated over to HRD. Click the email checkbox shown in the screen capture above if you wish to be emailed when the job is done. (The HRD migration tool also provides a time estimate and a status monitor.)</li>
 <li>If your master/slave app continues to serve requests during the migration,
 <ol class="alpha">
 <li>Click <strong>Launch Incremental Copy</strong> and wait for it to finish.</li>

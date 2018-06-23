@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -106,9 +107,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +176,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +324,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="java/capabilities/overview.html">Overview</a></li>
 <li><a href="java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="java/conversion/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +510,8 @@ _gaq.push(
     <li><a href="python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +599,20 @@ _gaq.push(
   <ul>
     <li><a href="python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="python/conversion/functions.html">Functions</a></li>
+    <li><a href="python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +910,13 @@ _gaq.push(
         <li><a href="go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="go/backends/overview.html">Overview</a></li>
+<li><a href="go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="go/datastore/overview.html">Overview</a></li>
@@ -951,6 +989,7 @@ _gaq.push(
         <li><a href="go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="go/config/appconfig.html">App Config</a></li>
+    <li><a href="go/config/backends.html">Backends Config</a></li>
     <li><a href="go/config/indexconfig.html">Index Config</a></li>
     <li><a href="go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="go/config/queue.html">Task Queue Config</a></li>
@@ -1035,6 +1074,7 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
 <ul>
   <li><a href="#Billable_Resource_Unit_Cost">Billable Resource Unit Cost</a></li>
   <li><a href="#Enabling_Paid_Apps">Enabling Paid Apps</a></li>
+  <li><a href="#Disabling_Billing">Disabling Billing</a></li>
   <li><a href="#Setting_a_Daily_Budget">Setting a Daily Budget</a></li>
   <li><a href="#Changing_Your_Daily_Budget">Changing Your Daily Budget</a></li>
   <li><a href="#Billing_Status">Billing Status</a></li>
@@ -1047,6 +1087,215 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
 <h2 id="Billable_Resource_Unit_Cost">Billable Resource Unit Cost</h2>
 
 <p>The cost for computing resources is as follows:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <table>
   <tr>
     <th>Resource</th><th>Unit</th><th>Unit cost</th>
@@ -1056,27 +1305,25 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
     <td>gigabytes</td>
     <td>$0.12</td>
   </tr>
-
   <tr>
-    <td>Stored Data</td>
-    <td>gigabytes per month</td>
-    <td>$0.24</td>
-  </tr>
-  <tr>
-
-    <td>Recipients Emailed</td>
-    <td>email</td>
-    <td>$0.0001</td>
-  </tr>
-  <tr>
-    <td>Frontend Instances</td>
+    <td>Frontend Instances (<code>F1</code>)</td>
     <td>Instance hours</td>
-    <td>$0.04*</td>
+    <td>$0.08</td>
+  </tr>
+  <tr>
+    <td>Frontend Instances (<code>F2</code>)</td>
+    <td>Instance hours</td>
+    <td>$0.16</td>
+  </tr>
+  <tr>
+    <td>Frontend Instances (<code>F4</code>)</td>
+    <td>Instance hours</td>
+    <td>$0.32</td>
   </tr>
   <tr>
     <td>Discounted Instances</td>
     <td>Instance hours</td>
-    <td>$0.025*</td>
+    <td>$0.05</td>
   </tr>
   <tr>
     <td>Backend Instances (<code>B1</code> class)</td>
@@ -1099,18 +1346,59 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
     <td>$0.64</td>
   </tr>
   <tr>
-    <td>XMPP</td>
-    <td>XMPP stanzas</td>
-    <td>$0.000001 ($0.10/100,000 stanzas)</td>
+    <td>Stored Data (Blobstore)</td>
+    <td>gigabytes per month</td>
+    <td>$0.13</td>
+  </tr>
+  <tr>
+    <td>Stored Data (Datastore)</td>
+    <td>gigabytes per month</td>
+    <td>$0.24</td>
+  </tr>
+  <tr>
+    <td>Stored Data (Task Queue)</td>
+    <td>gigabytes per month</td>
+    <td>$0.24</td>
   </tr>
   <tr>
     <td>Channel</td>
     <td>Channel opened</td>
     <td>$0.00001 ($0.01/100 channels)</td>
   </tr>
+  <tr>
+    <td>Recipients Emailed</td>
+    <td>email</td>
+    <td>$0.0001</td>
+  </tr>
+  <tr>
+    <td>XMPP</td>
+    <td>XMPP stanzas</td>
+    <td>$0.000001 ($0.10/100,000 stanzas)</td>
+  </tr>
 </table>
 
-<p>*Note that this is a temporary 50% discount to give customers time to adjust your application for the new pricing. The discount will be available through November 30, 2011.</p>
+<p>There are three types of low-level Datastore operations:
+<table>
+  <tr><th>Operation</th><th>Cost</th></tr>
+  <tr><td>Write</td><td>$0.10 per 100k operations</td></tr>
+  <tr><td>Read</td><td>$0.07 per 100k operations</td></tr>
+  <tr><td>Small</td><td>$0.01 per 100k operations</td></tr>
+</table>
+</p>
+
+<p>
+These low-level operations map to API-level operations as follows:
+<table>
+  <tr><th>High-Level Operation</th><th>Low-Level Operations Required</th></tr>
+  <tr><td>Entity Get (per entity)</td><td>1 Read</td></tr>
+  <tr><td>New Entity Put (per entity, regardless of entity size)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
+  <tr><td>Existing Entity Put (per entity)</td><td>1 Write + 4 Writes per modified indexed property value + 2 Writes per modified composite index value</td></tr>
+  <tr><td>Entity Delete (per entity)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
+  <tr><td>Query</td><td>1 Read + 1 Read per entity returned</td></tr>
+  <tr><td>Query (keys only)</td><td>1 Read + 1 Small per entity returned</td></tr>
+  <tr><td>Key allocation (per key)</td><td>1 Small</td></tr>
+</table>
+</p>
 
 <h2 id="Enabling_Billing">Enabling Paid Apps</h2>
 <p>To set up a paid app:</p>
@@ -1123,14 +1411,24 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
 
 <p>Paid apps cost a minimum of $2.10/week, and this amount counts toward your resource usage for that week. If you spend more than $2.10 in resources, you will be charged for those resources until your <a href="#Setting_a_Daily_Budget">maximum daily budget</a> is exhausted.</p>
 
+<h2 id="Disabling_Billing">Disabling Billing</h2>
+<p>Any application administrator can disable billing by following these steps:</p>
+<ol>
+<li><a href="../kb/general.html#signin">Sign in</a> to your App Engine account.</li>
+<li>Click the name of the application that you want to disable billing for.</li>
+<li>Navigate to the billing settings page by clicking "Billing Settings" in the left nav.</li>
+<li>Click "Disable Billing" under "Billing Status."</li>
+</ol>
+<p>Note that any application administrator can disable billing but only the <a href="#Changing_the_Billing_Administrator"">billed administrator</a> who authorized weekly charges using Google Checkout can cancel this authorization.</p>
+
+<p class="note"><strong>Note:</strong> If you are disabling your app, you should be aware that disabling the app does not automatically disable billing. If you disable your app but do not also disable billing, your app can continue to incur billing costs even though you disabled your app.</p>
+
 <h2 id="Setting_a_Daily_Budget">Setting a Daily Budget</h2>
 <p>Your <strong>Max Daily Budget</strong> controls the amount of extra resources you're willing to purchase each day. You'll never be charged more than allowed by your maximum daily budget, plus any applicable taxes.</p>
-<p>Your daily budget is split between each of the billable resources. Budget amounts will not be shifted automatically between resources if one resource exhausts its quota.</p>
 <p>To specify your daily budget:</p>
 <ol>
   <li>Enter the <strong>Max Daily Budget</strong> in U.S. dollars. This represents the most you're willing to pay over a 24-hour period (starting at 12am PT each day). You'll only be charged for what you actually use.</li>
   <li>If desired, enter the number of <strong>Discounted Instance Hours</strong> you wish to commit to using every week. This setting is optional. If you commit to a certain number of instance hours here, Google charges you a lower rate for those hours. You will be charged for all hours you commit to, regardless of whether you use them. If you use more hours than specified here, you are charged the full rate for those extra hours.</li>
-  <li>By default, your budget is allocated among the billable resources using a preset ratio. You can select a different <strong>Budget Preset</strong>, or  customize the individual allocations by selecting <strong>Custom</strong>.</li>
   <li>Select your country of residence. Your country of residence determines any applicable taxes.</li>
   <li>If applicable, enter your <strong>VAT ID</strong>.</li>
   <li>Click the <strong>Google Checkout</strong> button. You'll be redirected to Google Checkout. From there, follow the prompts to enter your payment information and authorize a charge limit using Google Checkout.</li>
@@ -1143,7 +1441,8 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
 
 <h3>Increasing Your Daily Budget</h3>
 
-<p>When you enable billing for your application, you agree to allow App Engine to charge your Google Checkout account up to a certain amount each week, as determined by your initial Maximum Daily Budget. If you later decide to raise your daily budget above this value, you'll need to authorize a new weekly charge limit with Checkout in order to complete this process.</p> 
+<p>When you enable billing for your application, you agree to allow App Engine to charge your Google Checkout account up to a certain amount each week, as determined by your initial Maximum Daily Budget. If you later decide to raise your daily budget above this value, you'll need to authorize a new weekly charge limit with Checkout in order to complete this process.</p>
+
 <p>To do so, make your changes in the <strong>Billing Settings</strong> page, then click the <strong>Google Checkout</strong> button. Follow the prompts to authorize a new weekly charge limit. Increases in daily budget will take effect 15 to 30 minutes after Google Checkout confirms the authorization.</p>
 
 <h3>Decreasing Your Daily Budget</h3>
@@ -1163,7 +1462,7 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
     <td>Free</td>
     <td>No Checkout account has been linked to this App Engine account. You'll be able to use resources up to the free resource limits.</td>
   </tr>
-  <tr>  
+  <tr>
     <td>Billing Enabled</td>
     <td>An active Google Checkout account is linked to this App Engine account and a weekly charge limit has been authorized.</td>
   </tr>
@@ -1199,6 +1498,9 @@ app you will spend a minimum of $2.10/week. This allows you to purchase addition
 
 <h2 id="A_Note_About_Taxes">A Note About Taxes</h2>
 <p>Some countries require that we charge taxes for purchases of App Engine resources. If taxes apply in your country of residence, your Google Checkout charge limit will be adjusted to accommodate any applicable taxes. <strong>Your daily budget does not include the tax amount.</strong> Amounts shown on your <strong>Billing History</strong> and <strong>Billing Settings</strong> pages do not include taxes, and the final charge to your account, including taxes, may be larger than your daily budget amount.</p>
+
+
+
 
 
       </div><!-- end gc-pagecontent -->

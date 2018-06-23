@@ -36,7 +36,7 @@
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<title>Limits - Google App Engine - Google Code</title>
+<title>Quotas - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
@@ -107,9 +107,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -178,7 +176,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -326,10 +324,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="java/capabilities/overview.html">Overview</a></li>
 <li><a href="java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="java/conversion/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -496,6 +510,8 @@ _gaq.push(
     <li><a href="python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -583,6 +599,20 @@ _gaq.push(
   <ul>
     <li><a href="python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="python/conversion/functions.html">Functions</a></li>
+    <li><a href="python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -880,6 +910,13 @@ _gaq.push(
         <li><a href="go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="go/backends/overview.html">Overview</a></li>
+<li><a href="go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="go/datastore/overview.html">Overview</a></li>
@@ -952,6 +989,7 @@ _gaq.push(
         <li><a href="go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="go/config/appconfig.html">App Config</a></li>
+    <li><a href="go/config/backends.html">Backends Config</a></li>
     <li><a href="go/config/indexconfig.html">Index Config</a></li>
     <li><a href="go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="go/config/queue.html">Task Queue Config</a></li>
@@ -1024,7 +1062,31 @@ _gaq.push(
       </div>
 
       <div class="g-unit" id="gc-pagecontent">
-        <h1 class="page_title">Limits</h1>
+        <h1 class="page_title">Quotas</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1221,6 +1283,7 @@ _gaq.push(
     <ul>
       <li><a href="#Blobstore">Blobstore</a></li>
       <li><a href="#Channel">Channel</a></li>
+      <li><a href="#Conversion">Conversion</a></li>
       <li><a href="#Datastore">Datastore</a></li>
       <li><a href="#Deployments">Deployments</a></li>
       <li><a href="#Mail">Mail</a></li>
@@ -1356,14 +1419,14 @@ except apiproxy_errors.OverQuotaError, message:
   </tr>
   <tr>
     <td>Channels Created</dt>
-    <td>8640 creations</td>
+    <td>100 channels</td>
     <td>6 creations/minute</td>
-    <td>95,040 creations</td>
+    <td>Based on your budget</td>
     <td>60 creations/minute</td>
   </tr>
   <tr>
     <td>Channel Data Sent</td>
-    <td>up to the Outgoing Bandwidth quota</td>
+    <td>Up to the Outgoing Bandwidth quota</td>
     <td>22 MB/minute</td>
     <td>2 GB</td>
     <td>740 MB/minute</td>
@@ -1374,6 +1437,33 @@ except apiproxy_errors.OverQuotaError, message:
 </table>
 
 
+<h3 id="Conversion">Conversion</h3>
+<dl>
+  <dt>Conversions</dt>
+  <dd>The quota for the conversion API is based on the number of conversions. Each application is limited to a number of conversions per API call, and a number of conversions per day:</dd>
+</dl>
+
+<table width="75%">
+  <tr>
+    <th width="30%" rowspan="2">Resource</th>
+    <th width="35%" colspan="2">Free Default Limit</th>
+    <th width="35%" colspan="2">Billing Enabled Default Limit</th>
+  </tr>
+  <tr>
+    <th width="17.5%">Daily Limit</th>
+    <th width="17.5%">Maximum Rate</th>
+    <th width="17.5%">Daily Limit</th>
+    <th width="17.5%">Maximum Rate</th>
+  </tr>
+  <tr>
+    <td width="30%">Conversion API Calls</td>
+    <td width="17.5%">100 conversions</td>
+    <td width="17.5%">10 conversions/API call</td>
+    <td width="17.5%">100 conversions</td>
+    <td width="17.5%">10 conversions/API call</td>
+  </tr>
+</table>
+
 <h3 id="Datastore">Datastore</h3>
 
 <p>The <b>Stored Data (billable)</b> quota refers to data stored for the application in the Master/Slave Datastore, the task queue and the Blobstore. The <b>High Replication Storage (billable)</b> quota refers to data stored for the application in the High Replication Datstore. Other quotas in the "Datastore" section of the <strong>Quota Details</strong> screen in the Administration Console refer to the Datastore service specifically.</p>
@@ -1382,19 +1472,6 @@ except apiproxy_errors.OverQuotaError, message:
   <dt>Stored Data (billable)</dt>
   <dd>
   <p>The total amount of data stored in datastore entities and corresponding indexes, in the task queue, and in the Blobstore.</p>
-
-  <p>It's important to note that data stored in the datastore may incur significant overhead. This overhead depends on the number and types of associated properties, and includes space used by built-in and custom indexes. Each entity stored in the datastore requires the following metadata:</p>
-  <ul>
-    <li>The entity key, including the kind, the ID or key name, and the keys of the entity's ancestors.</li>
-    <li>The name and value of each property. Since the datastore is schemaless, the name of each property must be stored with the property value for any given entity.</li>
-    <li>Any built-in and custom index rows that refer to this entity. Each row contains the entity kind, any number of property values depending on the index definition, and the entity key.</li>
-  </ul>
-  <p>See <a href="../articles/storage_breakdown.html">How Entities and Indexes are Stored</a> for a complete breakdown of the metadata required to store entities and indexes at the Bigtable level and <a href="../articles/index_building.html">How Index Building Works</a> for a detailed explanation of how datastore indexes are managed.</p>
-  </dd>
-
-  <dt>High Replication Storage (billable)</dt>
-  <dd>
-  <p>The total amount of data stored in the High Replication Datastore for datastore entities and corresponding indexes.</p>
 
   <p>It's important to note that data stored in the datastore may incur significant overhead. This overhead depends on the number and types of associated properties, and includes space used by built-in and custom indexes. Each entity stored in the datastore requires the following metadata:</p>
   <ul>
@@ -1430,28 +1507,7 @@ except apiproxy_errors.OverQuotaError, message:
   </tr>
 </table>
 
-<p>There are three types of low-level <a href="quotas.html#Datastore">Datastore operations</a>:
-<table>
-  <tr><th>Operation</th><th>Cost</th></tr>
-  <tr><td>Write</td><td>$0.10 per 100k operations</td></tr>
-  <tr><td>Read</td><td>$0.07 per 100k operations</td></tr>
-  <tr><td>Small</td><td>$0.01 per 100k operations</td></tr>
-</table>
-</p>
 
-<p>
-These low-level operations map to API-level operations as follows:
-<table>
-  <tr><th>High-Level Operation</th><th>Low-Level Operations Required</th></tr>
-  <tr><td>Entity Get (per entity)</td><td>1 Read</td></tr>
-  <tr><td>New Entity Put (per entity, regardless of entity size)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
-  <tr><td>Existing Entity Put (per entity)</td><td>1 Write + 4 Writes per modified indexed property value + 2 Writes per modified composite index value</td></tr>
-  <tr><td>Entity Delete (per entity)</td><td>2 Writes + 2 Writes per indexed property value + 1 Write per composite index value</td></tr>
-  <tr><td>Query</td><td>1 Read + 1 Read per entity returned</td></tr>
-  <tr><td>Query (keys only)</td><td>1 Read + 1 Small per entity returned</td></tr>
-  <tr><td>Key allocation (per key)</td><td>1 Small</td></tr>
-</table>
-</p>
 
 <h3 id="Deployments">Deployments</h3>
 

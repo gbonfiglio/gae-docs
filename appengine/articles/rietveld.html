@@ -109,9 +109,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -180,7 +178,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -329,10 +327,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../docs/java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../docs/java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../docs/java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../docs/java/capabilities/overview.html">Overview</a></li>
 <li><a href="../docs/java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/java/conversion/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -499,6 +513,8 @@ _gaq.push(
     <li><a href="../docs/python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../docs/python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../docs/python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../docs/python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../docs/python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -586,6 +602,20 @@ _gaq.push(
   <ul>
     <li><a href="../docs/python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../docs/python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../docs/python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../docs/python/conversion/functions.html">Functions</a></li>
+    <li><a href="../docs/python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -883,6 +913,13 @@ _gaq.push(
         <li><a href="../docs/go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../docs/go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../docs/go/backends/overview.html">Overview</a></li>
+<li><a href="../docs/go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../docs/go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../docs/go/datastore/overview.html">Overview</a></li>
@@ -955,6 +992,7 @@ _gaq.push(
         <li><a href="../docs/go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../docs/go/config/appconfig.html">App Config</a></li>
+    <li><a href="../docs/go/config/backends.html">Backends Config</a></li>
     <li><a href="../docs/go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../docs/go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../docs/go/config/queue.html">Task Queue Config</a></li>
@@ -1046,11 +1084,11 @@ _gaq.push(
 <p>Fortunately, now that I work for the Google App Engine team, I've been able to write a new web app that incorporates many ideas (and even some code!) from Mondrian, and release it as open source. The Python open source community has been trying out Rietveld for the past few days, and has already been using it to do code reviews for Python (as well as providing valuable feedback in the form of bug reports and feature requests). Of course, the tool is not language-specific: you can use it for code reviews for any language!</p>
 
 <h2>Introducing Rietveld</h2>
-<p>To stick with the naming theme, I gave this new web app the code name Rietveld, after <a href="http://en.wikipedia.org/wiki/Gerrit_Rietveld">Gerrit Rietveld</a>, one of my favorite Dutch architects and the designer of the <a href="http://www.google.com/search?q=zigzag+chair">Zig-Zag chair</a>. However, because most English speakers have trouble spelling his name correctly, the "live" web app is known simply as <a href="http://codereview.appspot.com">codereview.appspot.com</a>.</p>
+<p>To stick with the naming theme, I gave this new web app the code name Rietveld, after <a href="http://en.wikipedia.org/wiki/Gerrit_Rietveld">Gerrit Rietveld</a>, one of my favorite Dutch architects and the designer of the <a href="http://www.google.com/search?q=zigzag+chair">Zig-Zag chair</a>. However, because most English speakers have trouble spelling his name correctly, the "live" web app is known simply as <a href="http://codereview.appspot.com">http://codereview.appspot.com</a>.</p>
 
 <p>The Rietveld app serves several purposes at once: it is a demo of fairly large-scale use of the popular web framework <a href="http://djangoproject.com/">Django</a> with App Engine, it makes some of the trickier (but portable) code we wrote for Mondrian available for reuse under the Apache 2.0 license, and it makes web-based code review available for many projects using <a href="http://subversion.tigris.org/">Subversion</a> repositories. Right now, any project hosted on <a href="http://code.google.com/hosting/">Google Code</a> can use Rietveld, as well as the Python subversion server. Support for arbitrary subversion servers is forthcoming.</p>
 
-<p>While a public instance of Rietveld is running at <a href="http://codereview.appspot.com">codereview.appspot.com</a>, organizations are of course free to run their own instance restricted and/or tailored to their own needs. That's what open source is for!</p>
+<p>While a public instance of Rietveld is running at <a href="http://codereview.appspot.com">http://codereview.appspot.com</a>, organizations are of course free to run their own instance restricted and/or tailored to their own needs. That's what open source is for!</p>
 
 <h2>How Rietveld Manages Code Reviews</h2>
 <p>So what can you do with Rietveld? The basic workflow is:</p>
@@ -1069,7 +1107,7 @@ _gaq.push(
 <p>I'm far from done with this application. Some features found in Mondrian that would be useful in Rietveld as well have not been implemented yet due to time constraints. The first users are also already asking for features I had never dreamed of, thanks to the many different styles of development found in the open source world. I have made the source code available as open source in this early stage in the hope to solicit outside contributions. My intention is to add outside developers to the project as soon as possible. As with Python, I am planning to remain in charge and review contributions carefully.</p>
 
 <h2>Links</h2>
-<p>Once more, <a href="http://codereview.appspot.com">codereview.appspot.com</a> is the live web app, ready for your visits.</p>
+<p>Once more, <a href="http://codereview.appspot.com">http://codereview.appspot.com</a> is the live web app, ready for your visits.</p>
 <p>In the <a href="http://code.google.com/p/rietveld/">project home directory</a> you can find some <a href="http://code.google.com/p/rietveld/w/list">documentation</a> and the complete <a href="http://code.google.com/p/rietveld/source/checkout">source code</a>.</p>
 <p>For discussions, I've set up a Google Group: <a href="http://groups.google.com/group/codereview-discuss">codereview-discuss</a>.</p>
 <p>In the <a href="http://code.google.com/p/rietveld/issues/list">bug tracker</a> you can submit bugs and suggest feature requests.</p>

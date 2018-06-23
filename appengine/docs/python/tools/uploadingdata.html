@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1097,17 +1135,17 @@ appcfg.py update <i>&lt;app-directory&gt;</i>
 <p>If your app uses the <a href="../datastore/hr/index.html">master/slave datastore</a>, you can download and upload every entity of a kind in a format suitable for backup and restore, all without writing any additional code or configuration. If your app uses the High Replication datastore, it is not so simple. If you attempt to download data, you'll see a <code>high_replication_warning</code> error in the Admin Console, and the downloaded data might not include recently saved entities.</p>
 <p>To download all entities of all kinds from an app's master/slave datastore, run the following command:</p>
 
-<pre>appcfg.py download_data --application=<i>&lt;app-id&gt;</i> --url=http://<i>&lt;appname&gt;</i>.appspot.com/[remote_api_path] --filename=<i>&lt;data-filename&gt;</i></pre>
+<pre>appcfg.py download_data --application=<i>&lt;your_app_id&gt;</i> --url=http://<i>your_app_id</i>.appspot.com/[remote_api_path] --filename=<i>&lt;data-filename&gt;</i></pre>
 
 <p>You can also use the <code>--kind=...</code> argument to download all entities of a specific kind:</p>
 
-<pre>appcfg.py download_data --application=<i>&lt;app-id&gt;</i> --kind=<i>&lt;kind&gt;</i> --url=http://<i>&lt;appname&gt;</i>.appspot.com/[remote_api_path] --filename=<i>&lt;data-filename&gt;</i></pre>
+<pre>appcfg.py download_data --application=<i>&lt;your_app_id&gt;</i> --kind=<i>&lt;kind&gt;</i> --url=http://<i>your_app_id</i>.appspot.com/[remote_api_path] --filename=<i>&lt;data-filename&gt;</i></pre>
 
 <p class="note"><b>Note:</b> Downloading all entities of all kinds only works on App Engine, and does not work with the development server.</p>
 
 <p>To upload data to the app's datastore from a file created by <code>appcfg.py download_data</code>, run the following command:</p>
 
-<pre>appcfg.py upload_data --application=<i>&lt;app-id&gt;</i> --kind=<i>&lt;kind&gt;</i> --filename=<i>&lt;data-filename&gt;</i> <i>&lt;app-directory&gt;</i></pre>
+<pre>appcfg.py upload_data --application=<i>&lt;your_app_id&gt;</i> --kind=<i>&lt;kind&gt;</i> --filename=<i>&lt;data-filename&gt;</i> <i>&lt;app-directory&gt;</i></pre>
 
 <p>When data is downloaded, the entities are stored along with their original keys. When the data is uploaded, the original keys are used. If an entity exists in the datastore with the same key as an entity being uploaded, the entity in the datastore is replaced.</p>
 
@@ -1131,7 +1169,7 @@ appcfg.py update <i>&lt;app-directory&gt;</i>
 <pre>appcfg.py create_bulkloader_config --filename=bulkloader.yaml <app-directory></pre>
 
 <p class="note"><b>Tip:</b> If you have a Java app, specify the URL of your app's <code>remote_api</code> handler instead of the app directory:<br/>
-<code>appcfg.py create_bulkloader_config --filename=bulkloader.yaml --url=http://<i>&lt;appname&gt;</i>.appspot.com/remote_api</code></p>
+<code>appcfg.py create_bulkloader_config --filename=bulkloader.yaml --url=http://<i>your_app_id</i>.appspot.com/remote_api</code></p>
 
 <p class="note"><b>Note:</b> Using the bulk loader to generate a configuration file only works on App Engine, and does not work with the development server.</p>
 
@@ -1146,7 +1184,7 @@ appcfg.py update <i>&lt;app-directory&gt;</i>
 [INFO    ] Batch Size: 100
 [INFO    ] Opening database: bulkloader-progress-20100516.144319.sql3
 [INFO    ] Opening database: bulkloader-results-20100516.144319.sql3
-[INFO    ] Connecting to test-app.appspot.com/remote_api
+[INFO    ] Connecting to <i>your_app_id</i>.appspot.com/remote_api
 No handlers could be found for logger "google.appengine.tools.appengine_rpc"
 [INFO    ] Downloading kinds: ['__Stat_PropertyType_PropertyName_Kind__']
 .
@@ -1263,14 +1301,14 @@ python_preamble:
 <pre>appcfg.py upload_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission <app-directory></pre>
 
 <p class="note"><b>Tip:</b> For Java apps:<br/>
-<code>appcfg.py upload_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission --url=http://test-app.appspot.com/remote_api</code></p>
+<code>appcfg.py upload_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission --url=http://<i>your_app_id</i>.appspot.com/remote_api</code></p>
 
 <p>You can use the same <code>bulkloader.yaml</code> file to export data, as in the following example command line:</p>
 
 <pre>appcfg.py download_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission --url=<i>&lt;app-directory&gt;</i></pre>
 
 <p class="note"><b>Tip:</b> For Java apps:<br/>
-<code>appcfg.py download_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission --url=http://test-app.appspot.com/remote_api</code></p>
+<code>appcfg.py download_data --config_file=bulkloader.yaml --filename=users.csv --kind=Permission --url=http://<i>your_app_id</i>.appspot.com/remote_api</code></p>
 
 <p>In this invocation of <code>appcfg.py</code>, data from your app's datastore is exported to a CSV file named <code>exported_data.csv</code>.</p>
 

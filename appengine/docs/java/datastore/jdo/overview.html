@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../googlestorage/overview.html">Overview</a></li>
+<li><a href="../../javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../capabilities/overview.html">Overview</a></li>
 <li><a href="../../javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../conversion/overview.html">Overview</a></li>
+<li><a href="../../javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../../../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../../../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../../../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../../go/config/queue.html">Task Queue Config</a></li>
@@ -1033,14 +1071,16 @@ _gaq.push(
 
 <p>See <a href="http://www.datanucleus.org/products/accessplatform_1_1/index.html">the Access Platform 1.1 documentation</a> for more information about JDO. In particular, see <a href="http://www.datanucleus.org/products/accessplatform_1_1/jdo/index.html">"JDO Mapping"</a> and <a href="http://www.datanucleus.org/products/accessplatform_1_1/jdo/api.html">"JDO API"</a>.</p>
 
+<p class="note"><strong>Note:</strong> The instructions on this page apply to version 1.0 of the App Engine DataNucleus plugin. They also generally apply to version 2.0, which supports DataNucleus v3.x with the differences listed under <a href="#Using_or_Migrating_to_DataNucleus_2.0"">Using or Migrating to DataNucleus Plugin 2.0</a>.</p>
+
 <ul>
   <li><a href="#Setting_Up_JDO">Setting Up JDO</a></li>
   <li><a href="#Enhancing_Data_Classes">Enhancing Data Classes</a></li>
   <li><a href="#Getting_a_PersistenceManager_Instance">Getting a PersistenceManager Instance</a></li>
   <li><a href="#Unsupported_Features_of_JDO">Unsupported Features of JDO</a></li>
   <li><a href="#Disabling_Transactions_and_Porting_Existing_JDO_Apps">Disabling Transactions and Porting Existing JDO Apps</a></li>
+  <li><a href="#Using_or_Migrating_to_DataNucleus_2.0">Using or Migrating to DataNucleus Plugin 2.0</a></li>
 </ul>
-
 
 <h2 id="Setting_Up_JDO">Setting Up JDO</h2>
 
@@ -1244,6 +1284,31 @@ import PMF;
 &lt;/jdoconfig&gt;
 </pre>
 <p>In order to understand why this may be useful, remember that you can only operate on objects that belong to the same entity group within a transaction. Applications built using traditional databases typically assume the availability of global transactions, which allow you to update any set of records inside a transaction. Since the App Engine datastore does not support global transactions, App Engine throws exceptions if your code assumes the availability of global transactions. Instead of going through your (potentially large) codebase and removing all your transaction management code, you can simply disable datastore transactions. This does nothing to address assumptions your code makes about atomicity of multi-record modifications, but it allows you to get your app working so that you can then focus on refactoring your transactional code incrementally and as needed, rather than all at once.</p>
+
+
+<h2 id="Using_or_Migrating_to_DataNucleus_2.0">Using or Migrating to DataNucleus Plugin 2.0</h2>
+<p class="warning"><strong>Warning:</strong> App Engine DataNucleus plugin 2.0 uses DataNucleus v3.x. This new plugin is not a drop-in replacement for the previous plugin. If you rebuild an application using version 2.0 of the plugin, that may require you to update and retest your code.</p>
+
+<p>DataNucleus plugin 2.0 has the following differences from version 1.0:</p>
+<ul>
+<li>JDO <code>PersistenceManagerFactoryClass</code> is now <code>org.datanucleus.api.jdo.JDOPersistenceManagerFactory</code>.</li>
+<li>Level2 Caching is enabled by default. To get the previous default behavior, set the persistence property <code>datanucleus.cache.level2.type</code> to <em>none</em>. (Alternatively include the datanucleus-cache plugin in the classpath, and set the persistence property <code>datanucleus.cache.level2.type</code> to <em>javax.cache</em> to use Memcache for L2 caching.</li>
+<li>Datastore <code>IdentifierFactory</code> now defaults to <em>datanucleus2</em>. To get the previous behavior, set the persistence property <code>datanucleus.identifierFactory</code> to <em>datanucleus1</em>.</li>
+<li>Non-transactional calls to <code>PersistenceManager.makePersistent()</code>, and <code>PersistenceManager.deletePersistent()</code> are now executed atomically. (Previously, execution occurred at the next transaction or upon <code>PersistenceManager.close()</code>.</li>
+
+<li>There is now no longer an exception on duplicate PersistenceManagerFactory (PMF) allocation. Instead, if you have the persistence property <code>datanucleus.singletonPMFForName</code> set to <em>true</em> then it will return the currently allocated singleton PMF for that name.</li>
+
+
+<li>The JDOQL/JPQLQuery <code>setResultClass</code> now works.</li>
+
+<li>Primary Keys can now also be of type <code>long</code>.</li>
+
+<li>Unowned relations are now supported.</li>
+
+</ul>
+
+<p>You can download App Engine DataNucleus plugin 2.0 at the <a href="http://code.google.com/p/datanucleus-appengine/downloads/list">datanucleus-appengine</a> downloads page.</p> 
+
 
 
       </div><!-- end gc-pagecontent -->

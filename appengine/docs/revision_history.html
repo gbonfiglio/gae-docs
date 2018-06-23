@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="java/googlestorage/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="java/capabilities/overview.html">Overview</a></li>
 <li><a href="java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="java/conversion/overview.html">Overview</a></li>
+<li><a href="java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="python/conversion/functions.html">Functions</a></li>
+    <li><a href="python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="go/backends/overview.html">Overview</a></li>
+<li><a href="go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="go/config/appconfig.html">App Config</a></li>
+    <li><a href="go/config/backends.html">Backends Config</a></li>
     <li><a href="go/config/indexconfig.html">Index Config</a></li>
     <li><a href="go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="go/config/queue.html">Task Queue Config</a></li>
@@ -1303,7 +1341,7 @@ _gaq.push(
   <li>You can now include a displayable name with the email address of the sender of an email message.  Previously, you could only use the address without a name.</li>
   <li>The Python Memcache <code>incr()</code> and <code>decr()</code> functions can now set an initial value for a counter if the key does not exist.  Previously, incrementing or decrementing a value that didn't exist did nothing.</li>
   <li>If you access your site while signed in as an administrator, App Engine now includes resource usage information for the request in the response headers, as <code>X-AppEngine-Estimated-CPM-US-Dollars</code> and <code>X-AppEngine-Resource-Usage</code>.</li>
-  <li><code>appspot.com</code> domains now support subdomains.  A request whose domain name matches the pattern <code><i>subdomain</i>.<i>application-id</i>.appspot.com</code>, where <i>subdomain</i> is any string allowed as a part of a domain name (not a <code>.</code>), is routed to the application with the given ID.</li>
+  <li><code>appspot.com</code> domains now support subdomains.  A request whose domain name matches the pattern <code>http://<i>subdomain</i>.<i>your_app_id</i>.appspot.com</code>, where <i>subdomain</i> is any string allowed as a part of a domain name (not a <code>.</code>), is routed to the application with the given ID.</li>
   <li>Indexes for queries on keys have been improved, requiring custom indexes in fewer cases.  Descending sort orders on keys still require a custom index.</li>
   <li>You can now use GQL or the Python query interface to retrieve all entities of a given ancestor of all kinds.  Such queries can also include filters (equality or inequality) on <code>__key__</code>.</li>
   <li>PolyModel now supports multiple inheritance and diamond inheritance.</p>
@@ -1451,7 +1489,7 @@ _gaq.push(
   <li>Updated string prefix search tip to use <code>u'\ufffd'</code>.</li>
   <li>Documented GQL value literal syntax for dates, keys, users, and GeoPt values.</li>
   <li>Added db.Timeout to list of datastore API exceptions.</li>
-  <li>Added note to "Configure an App" about how using HTTPS with the versioned testing URL, such as <code>https://1.latest.app-id.appspot.com/</code>, causes browsers to warn about certificates.  This is harmless, and users will not see the warning.</li>
+  <li>Added note to "Configure an App" about how using HTTPS with the versioned testing URL, such as <code>https://1.latest.<i>your_app_id</i>.appspot.com/</code>, causes browsers to warn about certificates.  This is harmless, and users will not see the warning.</li>
   <li>In the article "Using Django 1.0 on App Engine with Zipimport," improved wording about updating existing Django helper projects.</li>
   <li>In the article "Extending Model Properties," fixed several errors in the code samples.</li>
   <li>Mentioned the specific version of Python that App Engine uses: Python 2.5.2.</li>

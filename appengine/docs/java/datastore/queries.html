@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../googlestorage/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../capabilities/overview.html">Overview</a></li>
 <li><a href="../javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../../python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../../python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../../python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../../python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../../python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../../python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../../python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../../python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../../python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../../python/conversion/functions.html">Functions</a></li>
+    <li><a href="../../python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1398,10 +1436,10 @@ List&lt;Entity&gt; get5TallestPeople() {
 
 
 <h2 id="Introduction_to_Indexes">Introduction to Indexes</h2>
-
+<p class="note"><strong>Note:</strong> For an in-depth discussion of indexes and querying, see the article <a href="../../../articles/indexselection.html">Index Selection and Advanced Search</a>.</p>
 <p>Every datastore query uses an index, a table containing the results for the query in the desired order. An App Engine application defines its indexes in a configuration file named <code>datastore-indexes.xml</code>. The development web server automatically adds suggestions to this file as it encounters queries that do not yet have indexes configured. You can tune indexes manually by editing the file before uploading the application.</p>
 
-<p class="note"><strong>Note:</strong> You can get the list of indexes for your application at runtime by calling the<a href="../javadoc/com/google/appengine/api/datastore/DataStoreService.html#getIndexes()"> getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/DataStoreService.html"> DataStoreService</a> class or the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDataStoreService.html#getIndexes()">getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDataStoreService.html">AsyncDataStoreService</a> class. 
+<p class="note"><strong>Note:</strong> You can get the list of indexes for your application at runtime by calling the<a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html#getIndexes()"> getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/DatastoreService.html"> DatastoreService</a> class or the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html#getIndexes()">getIndexes()</a> method of the <a href="../javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html">AsyncDatastoreService</a> class. 
 
 <p>The index-based query mechanism supports most common kinds of queries, but it does not support some queries common in other database technologies. Restrictions on queries, and their explanations, are described below.</p>
 
@@ -1496,6 +1534,8 @@ List&lt;Entity&gt; results = datastore.prepare(query).asList(FetchOptions.Builde
 
 
 <h2 id="Big_Entities_and_Exploding_Indexes">Big Entities and Exploding Indexes</h2>
+
+<p class="note"><strong>Note:</strong> One way to avoid big entities and exploding indexes is described in detail in the article <a href="../../../articles/indexselection.html">Index Selection and Advanced Search</a>.</p>
 
 <p>As described above, every property (that doesn't have a <code>Text</code> or <code>Blob</code> value) of every entity is added to at least one index table, including a simple index provided by default, and any indexes described in the application's <code>datastore-indexes.xml</code> file that refer to the property. For an entity that has one value for each property, App Engine stores a property value once in its simple index, and once for each time the property is referred to in a custom index. Each of these index entries must be updated every time the value of the property changes.</p>
 

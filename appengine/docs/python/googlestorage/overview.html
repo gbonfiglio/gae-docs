@@ -106,9 +106,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -177,7 +175,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -325,10 +323,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../../java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../../java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../../java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../../java/capabilities/overview.html">Overview</a></li>
 <li><a href="../../java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../../java/conversion/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -495,6 +509,8 @@ _gaq.push(
     <li><a href="../backends/functions.html">Backends API Functions</a></li>
     <li><a href="../backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../backends/applog.html">AppLog Class</a></li>
+    <li><a href="../backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -582,6 +598,20 @@ _gaq.push(
   <ul>
     <li><a href="../capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../conversion/functions.html">Functions</a></li>
+    <li><a href="../conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -879,6 +909,13 @@ _gaq.push(
         <li><a href="../../go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../../go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../../go/backends/overview.html">Overview</a></li>
+<li><a href="../../go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../../go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../go/datastore/overview.html">Overview</a></li>
@@ -951,6 +988,7 @@ _gaq.push(
         <li><a href="../../go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../../go/config/appconfig.html">App Config</a></li>
+    <li><a href="../../go/config/backends.html">Backends Config</a></li>
     <li><a href="../../go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../go/config/queue.html">Task Queue Config</a></li>
@@ -1059,7 +1097,9 @@ _gaq.push(
 
 <h2 id="Introducing_Google_Storage">Introducing Google Cloud Storage</h2>
 
-<p>Google App Engine provides an easier way to read from and write to Google Cloud Storage objects , which allows applications to create and serve data objects. These objects are stored within buckets in Cloud Storage but can be additionally accessed by Google App Engine applications through the Google Cloud Storage API. You can interact with the Google Cloud Storage API using the <a href="http://code.google.com/apis/storage/docs/developer-guide.html#overview">RESTful interface</a> or through the Google Cloud Storage Python API for Google App Engine applications, which is discussed in this document.</p>
+<p>Google App Engine provides an easier way to read from and write to Google Cloud Storage objects , which allows applications to create and serve data objects. These objects are stored within buckets in Cloud Storage but can be additionally accessed by Google App Engine applications through the Google Cloud Storage API.
+
+You can interact with the Google Cloud Storage API using the <a href="http://code.google.com/apis/storage/docs/developer-guide.html#overview">RESTful interface</a> or through the Google Cloud Storage Python API for Google App Engine applications, which is discussed in this document.</p>
 
 <p>Cloud Storage is useful for storing and serving large files because it does not have a size limit for your objects. Additionally, Cloud Storage offers the use of access control lists (ACLs), the ability to resume upload operations if they're interrupted, use of the <code>POST</code> <a href="http://code.google.com/apis/storage/docs/reference-methods.html#policydocument">policy document</a>, and many other features.</p>
 
@@ -1072,6 +1112,12 @@ _gaq.push(
 <p>To use the Cloud Storage API, you must complete the following prerequisites:</p>
 
 <ol class="listhead">
+
+<li>Download and install the App Engine 1.5.5 SDK.
+<p>Google Cloud Storage API for Python is available for App Engine SDKs 1.5.5 and later. For instructions to update or download the App Engine SDK, see the <a href="http://code.google.com/appengine/downloads.html">downloads</a> page.</p></li>
+
+
+
 <li>Activate Cloud Storage.
 <p><a href="http://code.google.com/apis/storage/docs/signup.html">Activate the Cloud Storage service</a> in the Google APIs Console.</p></li>
 
@@ -1085,11 +1131,16 @@ _gaq.push(
 <p>The samples in this document describe how to create new objects in Cloud Storage. To be able to create new objects, you need to give <code>WRITE</code> permission for your App Engine application to your Cloud Storage bucket using the following steps:</p>
 
 <ol>
-<li>Use the App Identity <a href="../appidentity/overview.html#Asserting_Identity_to_Google_APIs">get_service_account_name()</a> method to get the service account name of your App Engine application. Generally, the service account name is in the format <em>application-id</em>@appspot.gserviceaccount.com.</li>
+<li>Use the App Identity <a href="../appidentity/overview.html#Asserting_Identity_to_Google_APIs">get_service_account_name()</a> method (Python) or the <a href="../../java/appidentity/overview.html#Asserting_Identity_to_Google_APIs">getServiceAccountName()</a> method (Java) to get the service account name of your App Engine application. Typically, the service account name is in the format <em>application-id</em>@appspot.gserviceaccount.com. If you are using an <a href="../../premier/index.html">App Engine Premier Account</a>, the service account name for your application is in the format <em>application-id.example.com</em>@appspot.gserviceaccount.com</a>.</li>
 <li><a href="http://code.google.com/apis/console-help/#DifferentRoles">Add the service account</a> as a project editor to the <a href="https://code.google.com/apis/console">Google APIs Console project</a> that the bucket belongs to. For information about permissions in Cloud Storage, see  <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#scopes">Scopes and Permissions</a> on the Cloud Storage documentation.</li>
 </ol><br />
 <p><strong><code>READ-ONLY</code> Access for Objects</strong></p>
-<p>Alternatively, if you want your Google App Engine application to only be able to read certain objects, set the predefined <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultbuckets">project-private</a> ACL on your objects and add the service account as a project viewer in the Google APIs Console. You can also set the predefined <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">public-read</a> ACL, which allows all users, whether or not they are authenticated, access to read your object. You won't need to add your application's service account name as a project viewer, but if you have data you do not want to be publicly accessible, do not set the <code>public-read</code> ACL on your object.</p>
+<p>Alternatively, if you want your Google App Engine application to only be able to read certain objects, you can:
+<ul>
+<li>Set the predefined <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultbuckets">project-private</a> ACL on your objects manually</li>
+<li>Store your objects in a bucket with the <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultobjects">default project-private object ACL</a></li>
+</ul>
+<p>Then, add the service account as a project viewer in the Google APIs Console, giving your App Engine application <code>READ-ONLY</code> access to your objects. You can also set the predefined <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">public-read</a> ACL, which allows all users, whether or not they are authenticated, access to read your object. You won't need to add your application's service account name as a project viewer, but if you have data you do not want to be publicly accessible, do not set the <code>public-read</code> ACL on your object.</p>
 
 <p>Note that setting <code>READ</code> permission only on your buckets does not provide <code>READ</code> permission to any objects inside those buckets. You must set <code>READ</code> permission on objects individually.</p>
 <p class="note"><strong>Tip:</strong> There are various ways to set the permissions for your App Engine application. The steps described here are the most straightforward, but you can also use Cloud Storage's <a href="http://code.google.com/apis/storage/docs/accesscontrol.html">ACLs</a> to exercise more explicit or fine-grained control.</p></li>
@@ -1116,10 +1167,10 @@ from google.appengine.api import files
 <pre class="prettyprint">
 # Create a file
 filename = '/gs/my_bucket/my_file'
-writable_file_name = files.gs.create(filename, mime_type='application/octet-stream', acl='project-private')
+writable_file_name = files.gs.create(filename, mime_type='application/octet-stream', acl='public-read')
 </pre>
 
-<p>In this example, we also pass in the <code>acl='project-private'</code> parameter, as described below. This allows project team members to be able to read the object, as opposed to the default <code>acl='private'</code> which allows only the App Engine application to read the object.</p>
+<p>In this example, we also pass in the <code>acl='public-read'</code> parameter, as described below. If you do not set this parameter, Cloud Storage sets this parameter as null and uses the <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultobjects">default object ACL</a> for that bucket (by default, this is <code>project-private</code>).</p>
 
 <p>You can use the following optional parameters to set ACLs and HTTP headers on your object:</p>
 <table style="border: 1px solid black">
@@ -1131,11 +1182,9 @@ writable_file_name = files.gs.create(filename, mime_type='application/octet-stre
 
 <tr>
 <td><code>acl</code></td>
-<td>Set a <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">predefined ACL</a> on your object.
-
-<p>We strongly recommend that you change your object ACL to <code>project-private</code> or a predefined ACL that is not <code>private</code>. The <code>private</code> ACL provides only the App Engine application the ability to read objects, rather than the author of the object or any other individual.</td>
-<td><code>acl='public_read'</code></td>
-<td><code>'private'</code></td>
+<td>Set a <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#extension">predefined ACL</a> on your object.</td>
+<td><code>acl='public_read'</code><p>If you do not set this parameter, Cloud Storage sets this parameter as null and uses the <a href="http://code.google.com/apis/storage/docs/accesscontrol.html#defaultobjects">default object ACL</a> for that bucket (by default, this is <code>project-private</code>).</p></td>
+<td>None</td>
 </tr>
 
 <tr>
@@ -1238,6 +1287,7 @@ with files.open(filename, 'r') as f:
 
 <p>The following is a sample application that demonstrates one use of the Cloud Storage API within an App Engine application. In order to successfully run the application, you must be an owner or have <code>WRITE</code> access to a bucket.</p>
 
+
 <p>The sample application demonstrates two different use cases of the Cloud Storage API:
 
 <ul class=listhead>
@@ -1245,7 +1295,7 @@ with files.open(filename, 'r') as f:
 <p>The EchoPage function allows you to make a one-time request to create, write, and read to an object using the request format http://myapp.appspot.com/echo?message=Your+Message.</li>
 <li>Making multiple requests over time
 <p>The MainPage, CreatePage, AppendPage, and ReadPage functions create and maintain an event log that stores individual events as objects. This demonstrates how to use the Cloud Storage API to make multiple requests to an object. </p>
-<p>The main page of this application loads a form field with the name <strong>Title</strong> for the title of the event (and the object). After you provide a name and click the <strong>New Event Log</strong> button, the next page provides another form field to enter a message to write to the object. Enter your message and click <strong>Append Field</strong>. If you want to finalize the object, which means you cannot append to it later, check the <strong>Finalize log</strong> box. Your new object will appear on the main page.</li></ul>
+<p>The main page of this application loads a form field with the name <strong>Title</strong> for the title of the event (and the object). After you provide a name and click the <strong>New Event Log</strong> button, the next page provides another form field to enter a message to write to the object. Enter your message and click <strong>Append Field</strong>. If you want to finalize the object, which means you cannot append to it later, check the <strong>Finalize log</strong> box. Your new object will appear on the main page.</p></li></ul>
 
 <p><strong>To set up and run this application:</strong></p>
 
@@ -1254,17 +1304,16 @@ with files.open(filename, 'r') as f:
 <li>Edit your <code>app.yaml</code> file and replace the value of the <code>application:</code> setting with the registered ID of your App Engine application.</li>
 <li>Replace the contents of <code>helloworld.py</code> with the following sample code, replacing the parts where it asks for a bucket name.
 
-
 <pre class="prettyprint">
 # Copyright 2011 Google Inc. All Rights Reserved.
 """Create, Write, Read and Finalize Google Cloud Storage objects.
 
 EchoPage will create, write and read the Cloud Storage object in one request:
-  http://myapp.appspot.com/echo?message=Leeroy+Jenkins
+  http://<i>your_app_id</i>.appspot.com/echo?message=Leeroy+Jenkins
 
 MainPage, CreatePage, AppendPage and ReadPage will do the same in multiple
 requests:
-  http://myapp.appspot.com/
+  http://<i>your_app_id</i>.appspot.com/
 """
 
 from __future__ import with_statement
@@ -1294,7 +1343,7 @@ class EchoPage(webapp.RequestHandler):
     # Create a file that writes to Cloud Storage and is readable by everyone in the 
     # project.
     write_path = files.gs.create(self.READ_PATH, mime_type='text/plain', 
-                                                            acl='project-private')
+                                                            acl='public-read')
     # Write to the file.
     with files.open(write_path, 'a') as fp:
       fp.write(self.request.get('message'))
@@ -1428,7 +1477,7 @@ class AppendPage(webapp.RequestHandler):
     self.response.out.write(
         """
         &lt;html&gt; &lt;body&gt;
-        &lt;h1&gt;Append to %s&gt;/h1&gt;
+        &lt;h1&gt;Append to %s&lt;/h1&gt;
         &lt;div&gt;%s&lt;/div&gt;
         &lt;form method="post"&gt;
         &lt;div&gt;&lt;textarea name="message" rows="5" cols="80"&gt;&lt;/textarea&gt;&lt;/div&gt;
@@ -1542,7 +1591,7 @@ def main():
 
 if __name__ == '__main__':
   main()
-
+</pre>
 
 </li>
 <li>Upload your application using the following command:
@@ -1550,6 +1599,7 @@ if __name__ == '__main__':
 </li>
 <li>View your application at <code>http://<em>application-id</em>.appspot.com</code></li>
 </ol>
+
 
 <h2 id="Quotas_and_Limits">Quotas and Limits</h2>
 <p>Cloud Storage is a pay-to-use service that offers a generous free trial quota. If you exceed the free trial quota, you will be charged according to the <a href="http://code.google.com/apis/storage/docs/pricingandterms.html#pricing">Cloud Storage price sheet</a>.</p>

@@ -109,9 +109,7 @@ _gaq.push(
 <div id="gc-header">
   <div id="logo"><a href="http://code.google.com">
   
-  
      <img src="../../images/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
-  
   
   </a></div>
   <div id="search">
@@ -180,7 +178,7 @@ _gaq.push(
   
   
   
-  <li><g:plusone size="small" count="false"></g:plusone>&nbsp;</li>
+  <li><g:plusone size="small" count="false" source="google:googlecode"></g:plusone>&nbsp;</li>
 </ul>
 </div> <!-- end gc-topnav -->
 
@@ -329,10 +327,26 @@ _gaq.push(
 
           </ul>
         </li>
+        <li><a href="../docs/java/googlestorage/index.html">Google Cloud Storage</a>
+          <ul>
+            <li><a href="../docs/java/googlestorage/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/files/package-summary.html">API Reference</a></li>
+    </li>
+
+
+          </ul>
+        </li>
         <li><a href="../docs/java/capabilities/index.html">Capabilities</a>
           <ul>
             <li><a href="../docs/java/capabilities/overview.html">Overview</a></li>
 <li><a href="../docs/java/javadoc/com/google/appengine/api/capabilities/package-summary.html">Javadoc Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/java/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/java/conversion/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/conversion/package-summary.html">Javadoc Reference</a></li>
 
           </ul>
         </li>
@@ -499,6 +513,8 @@ _gaq.push(
     <li><a href="../docs/python/backends/functions.html">Backends API Functions</a></li>
     <li><a href="../docs/python/backends/exceptions.html">Backends API Exceptions</a></li>
     <li><a href="../docs/python/backends/logserviceapi.html">LogService API</a></li>
+    <li><a href="../docs/python/backends/applog.html">AppLog Class</a></li>
+    <li><a href="../docs/python/backends/requestlog.html">RequestLog Class</a></li>
     <li><a href="../docs/python/backends/runtimeapi.html">Runtime API</a></li>
   </ul>
 </li>
@@ -586,6 +602,20 @@ _gaq.push(
   <ul>
     <li><a href="../docs/python/capabilities/capabilitysetclass.html">CapabilitySet</a></li>
     <li><a href="../docs/python/capabilities/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../docs/python/conversion/index.html">Conversion</a>
+          <ul>
+            <li><a href="../docs/python/conversion/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../docs/python/conversion/conversionclass.html">Conversion Class</a></li>
+    <li><a href="../docs/python/conversion/propertyclasses.html">Property Classes</a></li>
+    <li><a href="../docs/python/conversion/functions.html">Functions</a></li>
+    <li><a href="../docs/python/conversion/exceptions.html">Exceptions</a></li>
   </ul>
 </li>
 
@@ -883,6 +913,13 @@ _gaq.push(
         <li><a href="../docs/go/reference.html">Reference</a></li>
       </ul>
     </li>
+    <li><a href="../docs/go/backends/index.html">Backends</a>
+      <ul>
+        <li><a href="../docs/go/backends/overview.html">Overview</a></li>
+<li><a href="../docs/go/backends/runtime.html">Runtime package</a></li>
+
+      </ul>
+    </li>
     <li><a href="../docs/go/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../docs/go/datastore/overview.html">Overview</a></li>
@@ -955,6 +992,7 @@ _gaq.push(
         <li><a href="../docs/go/config/index.html">Configuration</a>
           <ul>
                 <li><a href="../docs/go/config/appconfig.html">App Config</a></li>
+    <li><a href="../docs/go/config/backends.html">Backends Config</a></li>
     <li><a href="../docs/go/config/indexconfig.html">Index Config</a></li>
     <li><a href="../docs/go/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../docs/go/config/queue.html">Task Queue Config</a></li>
@@ -1033,15 +1071,10 @@ _gaq.push(
 
 
 
-<p class="note"><strong>NOTE</strong>:
-The App Engine team introduced a new authentication option in SDK 1.3.4: federated login via OpenID. To find out more about this, please check out the <a href="openid.html">OpenID article</a> (Jul 2010).
-</p>
-
 <p><em>Marzia Niccolai</em><br>
 <em>August 2008</em><br/>
-<em>SDK: 1.1.1</em>
 </p>
-<p><em>Updated by Rufus, June 2011</em></p>
+<p><em>Updated by Rufus, June 2011</em>. <em>Updated by Matthew Blain, October 2011</em>.</p>
 
 <div id="jd-content">
 <div class="jd-descr">
@@ -1056,9 +1089,9 @@ The App Engine team introduced a new authentication option in SDK 1.3.4: federat
 <p>Google offers three different systems for authenticating your application's users. Only one form of authentication can be used for a given application.
 <ul>
 <li><b>Google Accounts</b>
-<p><a href="https://www.google.com/accounts/ManageAccount">Google Accounts</a> is Google's unified sign-in system. All a user needs is a valid email address (it doesn't need to be a Gmail address!) to sign up for a Google Account.</p></li>
-<li><b>Google Apps for your domain</b>
-<p>Users of <a href="http://www.google.com/a">Google Apps</a> for your domain can choose to restrict all or part of their web application to only those people who have a valid email address on their domain.</p></li>
+<p><a href="https://www.google.com/accounts/ManageAccount">Google Accounts</a> is Google's unified sign-in system. All a user needs is a valid email address (it doesn't need to be a Gmail address!) to sign up for a Google Account. This also includes Google Apps accounts which have <a href="http://www.google.com/support/a/bin/answer.py?answer=182075">transitioned</a> to the new Google Apps infrastructure.</p></li>
+<li><b>Google Apps Accounts</b>
+<p>Users of <a href="http://www.google.com/a">Google Apps</a> for your domain can choose to restrict all or part of their web application to only those people who have a Google Apps account managed by their domain.</p></li>
 <li><b>(Experimental) Open to all users with an OpenID Provider</b>
 <p>If your application uses authentication, anyone who has an account
 with an OpenID Provider may sign in. To find out more about this,
@@ -1067,24 +1100,45 @@ article</a>.</p> </ul>
 </p>
 
 <p class="warning"><b>Warning:</b><br />
-Currently, you cannot switch authentication options for existing App
-Engine apps.<br />
-The option for restricting an application's authentication settings
-can only be set at app creation time.
+Currently, you cannot switch authentication options for existing App Engine apps to or from Google Apps accounts for a domain.
+This option for restricting an application's authentication settings can only be set at app creation time.
 </p>
 
 <h2>Administering your App Engine Application</h2>
-<p>With Google App Engine, you can administer your application using a Google Account or a Google Apps account. Your app's administration account should use the same authentication as the app's users.  For instance, if you set your app's authentication to Google Apps, you should administer that account using a Google Apps email address.  While it is possible to have an account that is both a valid Google Apps account and a valid Google Accounts account, you should avoid using such an account to administer your applications.</p>
-<p>If your App Engine developer account is a Google Account, you can access the Administration Console at <a href="https://appengine.google.com">https://appengine.google.com</a>.  If you are using a Google Apps account, you can access the Administration Console at https://appengine.google.com/a/YOURDOMAIN (substituting YOURDOMAIN with your actual domain name).</p>
+<p>With Google App Engine, you can administer your application using a Google Account or a Google Apps account. Your app's administration account should use the same authentication as the app's users.  For instance, if you set your app's authentication to Google Apps, you should administer that account using a Google Apps email address.</p>
+<p>If your App Engine developer account is a Google Account, you can access the Administration Console at <a href="https://appengine.google.com">https://appengine.google.com</a>.  If you are using a Google Apps account which has not <a href="http://www.google.com/support/a/bin/answer.py?answer=182075">transitioned</a> to the new infrastructure, you can access the Administration Console at https://appengine.google.com/a/YOURDOMAIN (substituting YOURDOMAIN with your actual domain name).</p>
+
 <h2>Restrict your application's authentication to members of your domain</h2>
 <p>The option for restricting an application's authentication settings can only be set at app creation time, so your first step is to <a href="http://appengine.google.com/start/createapp">create a new application.</a></p>
-<p>By default, Google App Engine applications use Google Accounts for authentication, which means that if your application uses authentication, anyone with a valid Google Account will be able to sign in.  This does not include <a href="http://www.google.com/a">Google Apps</a> accounts.</p>
+<p>By default, Google App Engine applications use Google Accounts for authentication, which means that if your application uses authentication, anyone with a valid Google Account will be able to sign in.</p>
 <br><img src="create1.png" />
 <p>If you'd like to restrict your application to members of your Google Apps domain (i.e. only users with accounts on <code>example.com</code>), click on the 'Edit' button at the bottom of the Authentication Options box.</p>
 <br><img src="create_restricted.png">
 <p>Select the radio button next to 'Restricted to the following Google Apps domain:' and enter your Google Apps domain (e.g. <code>example.com</code>) in the text box and click 'Save'.  You will be taken to a confirmation screen indicating your application has been successfully registered.</p>
+
+<h2>Changes from the Google Apps account transition</h3>
+<p>In 2010, Google announced and started the Google Apps <a href="http://www.google.com/support/a/bin/answer.py?answer=182075">transition</a>, which expands the set of Google services available to Google Apps users. Now all Google Accounts, including Apps accounts, use the same authentication mechanisms, so Google Apps users can now sign in to your applications without any additional work on your part. This section describes how this transition appears to App Engine developers.</p>
+
+<p>Applications set to <b>Google Apps Accounts</b> continue to behave as before.</p>
+
+<h3>Signed-in users</h3>
+<p>The <b>Google Accounts</b> setting previously did not allow users with Google Apps accounts to sign in. Now, they can. (Note that this does not include older Google Apps accounts that have not yet transitioned to the new Google Apps infrastructure.) One implication of this is that an application using the login:admin (<a href="http://code.google.com/appengine/docs/python/config/appconfig.html#Requiring_Login_or_Administrator_Status">in Python</a>) or auth-constraint role-name admin (<a href="http://code.google.com/appengine/docs/java/config/webxml.html#Security_and_Authentication">in Java</a>) restriction, including builtins such as remote_api and datastore_admin, can use a Google Apps account to access those pages on applications set to allow access to all Google Accounts.</p>
+
+<p>An application using the <b>Google Accounts</b> setting can deterimine if the currently signed-in user is using a personal Google Account or an account which is managed by a Google Apps domain. This is done by checking the runtime environment. In Python, this can be read using <code>os.getenv['USER_ORGANIZATION']</code>. In Java it can be read using <code>ApiProxy.getCurrentEnvironment().getAttributes().get("com.google.appengine.api.users.UserService.user_organization")</code>. This value will be blank for a Personal Google Account, or if no user is signed in.</p>
+
+
+
+<h3>Conflicting Accounts</h3>
+<p>Some users have created what is known as a <a href="http://www.google.com/support/accounts/bin/static.py?page=guide.cs&guide=29934&topic=29935">conflicting account</a>. A conflicting account is an account hosted on the Google Account infrastructure, created with the same email address as a Google Apps account. To resolve the conflict in account names, the Personal Google Account is renamed with a different account name.
+
+<p>From an App Engine application's perspective, a user with a given user_id may now have a different email address than before. Conversely, a user signing in with a particular email address may represent a different user, as identified by their user_id. As users could previously only use their personal Google Account to sign in to your application, they may be surprised by this behavior: a user with a conflicting account who continues to use the same email address is actually signing in with a different Google Account.<p>
+
+<p>Note that this same pattern appears when a user renames their Google Account, for all types of Google Accounts: the email address may change for a given user_id.</p>
+
+<p>If you have used a User object in the datastore, it has associated the old email address with the user's user_id. This means that equality comparisons will no longer be valid. It is a best practice to use the users user_id as the key to a datastore entity.</p>
+
 <h2 id="AppspotDomainAuth">Configuring Google Apps to Authenticate on Appspot</h2>
-<p>In order to restrict your application to members of a particular Google Apps domain, you will need to add the app id to your Google Apps account through the Google Apps control panel (i.e. open <code>http://google.com/a/<b>YOUR DOMAIN</b></code>).</p>
+<p>In order to restrict your application to members of a particular Google Apps domain, you will need to add the app id to your Google Apps account through the Google Apps control panel (i.e. open <code>http://www.google.com/a/<b>YOUR DOMAIN</b></code>).</p>
 <p>After signing in to your Google Apps Control Panel, click the 'Add more services' link on the Dashboard:</p>
 <img src="img/add-more-services.png" class="topmargin"/>
 
