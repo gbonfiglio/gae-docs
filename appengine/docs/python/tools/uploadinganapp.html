@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
+        <li><a href="../../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../java/blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../appidentity/functions.html">Functions</a></li>
     <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1048,7 +1082,7 @@ You do not have permission to download this app version.
 
 <h2 id="Downloading_Logs">Downloading Logs</h2>
 
-<p>App Engine maintains a log of messages that your application emits using the <code>logging</code> module from the Python standard library, as well as other messages printed to the standard error stream.  App Engine also records each request in the log.  You can browse your app's logs from the "Logs" section of <a href="../../adminconsole/index.html">the Admin Console</a>.</p>
+<p>App Engine maintains a log of messages that your application emits using the <code>logging</code> module from the Python standard library, as well as other messages printed to the standard error stream.  App Engine also records each request in the log. Each <a href="#Command_Line_Arguments_appcfg_request_logs_severity">log level</a> has a fixed buffer size that controls the amount of log information you can access. Normally, you use logging features more at lower log levels; thus, the time window is smaller for log events at these levels. You can browse your app's logs of the last 90 days from the "Logs" section of <a href="../../adminconsole/index.html">the Admin Console</a>.</p>
 
 <p>If you wish to perform more detailed analysis of your application's logs, you can download the log data to a file on your computer.  To download logs to a file named <code>mylogs.txt</code>, use the following command:</p>
 
@@ -1112,7 +1146,7 @@ appcfg.py --insecure update myapp
 
 
 <dl>
-  <dt><code>appcfg.py download_app</code></dt>
+  <dt><code>appcfg.py download_app -A &lt;app_id&gt; -V &lt;version&gt;&lt;output-dir&gt;</code></dt>
     <dd>
       <p>Retrieves the most current version of your application's code using the following options:</p>
 
@@ -1148,7 +1182,7 @@ appcfg.py --insecure update myapp
       <dd>
         <p>The latest date of log data to return, in the form <code>YYYY-MM-DD</code>.  The default is today.  The <code>--num_days</code> option counts backwards from the end date.</p>
       </dd>
-      <dt><code>--severity=<i>...</i></code></dt>
+      <dt id="Command_Line_Arguments_appcfg_request_logs_severity"><code>--severity=<i>...</i></code></dt>
       <dd>
         <p>The minimum log level for the log messages to retrieve.  The value is a number corresponding to the log level: 4 for CRITICAL, 3 for ERROR, 2 for WARNING, 1 for INFO, 0 for DEBUG.  All messages at the given log level and above will be retrieved.  Default is 1 (INFO).</p>
       </dd>
@@ -1357,30 +1391,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

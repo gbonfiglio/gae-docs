@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
+        <li><a href="../../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../java/blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../appidentity/functions.html">Functions</a></li>
     <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1219,7 +1253,7 @@ for p in results:
 If you wanted the 6th through 10th tallest people, you would instead use:
 <pre class="prettyprint"># Prepare a query.
 # The query is not executed until results are accessed.
-results = q.fetch(limit=5, offest=5)</pre>
+results = q.fetch(limit=5, offset=5)</pre>
 
 </p>
 
@@ -1231,6 +1265,8 @@ results = q.fetch(limit=5, offest=5)</pre>
 <h2 id="Introduction_to_Indexes">Introduction to Indexes</h2>
 
 <p>Every datastore query uses an index, a table containing the results for the query in the desired order. An App Engine application defines its indexes in a configuration file named <code>index.yaml</code>. The development web server automatically adds suggestions to this file as it encounters queries that do not yet have indexes configured. You can tune indexes manually by editing the file before uploading the application.</p>
+
+<p class="note"><strong>Note:</strong> You can get the list of indexes for your application at runtime by calling <a href="functions.html#get_indexes">get_indexes</a> or <a href="functions.html#get_indexes_async">get_indexes_async</a>. 
 
 <p>The index-based query mechanism supports most common kinds of queries, but it does not support some queries common in other database technologies. Restrictions on queries, and their explanations, are described below.</p>
 
@@ -1354,7 +1390,7 @@ e2.put()
 
 <pre>index_value_count = |x| * |y| * |date|</pre>
 
-<p>These indexes are called "exploding indexes" because they can become very large with just a few values. Exploding indexes cause entity writes to cost more because because you're writing more data. They can also very easily cause an entity to exceed the <a href="overview.html#Quotas_and_Limits">per-entity index value limit</a>.</p>
+<p>These indexes are called "exploding indexes" because they can become very large with just a few values. Exploding indexes cause entity writes to cost more because you're writing more data. They can also very easily cause an entity to exceed the <a href="overview.html#Quotas_and_Limits">per-entity index value limit</a>.</p>
 
 <p>For example, the code snippet above generates the following values for <code>x</code>, <code>y</code>, and <code>date</code>:</p>
 
@@ -1633,7 +1669,7 @@ for result in Kind.all().run(config=config):
 
 <p>The <a href="queryclass.html#Query_get">get()</a> and <a href="queryclass.html#Query_count">count()</a> methods of <a href="queryclass.html">Query</a> <a href="gqlqueryclass.html">GqlQuery</a> also support the <code>config</code> argument in this way.</p>
 
-<p>A configuration object can be used any number of times. You must create a separate configuration object for each datastore call that uses it.</p>
+<p>A configuration object can be used any number of times.</p>
 
 
 
@@ -1696,30 +1732,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

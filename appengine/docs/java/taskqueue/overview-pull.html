@@ -63,7 +63,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -267,6 +294,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -317,14 +351,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../oauth/index.html">OAuth</a>
           <ul>
@@ -472,9 +506,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
-        <li><a href="../../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -872,7 +907,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -890,7 +925,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -973,7 +1007,7 @@ var logged_in_user_email = null;
 <p>Before you begin, make sure to <a href="../config/queue.html#Defining_Pull_Queues">configure the pull queue</a> in <code>queue.xml</code>.</p>
 
 <h3 id="Adding_Tasks_to_a_Pull_Queue">Adding Tasks to a Pull Queue</h3>
-<p>To add tasks to a pull queue, simply get the queue using the <a href="queues.html#Queue_name">queue name</a> defined in <code>queue.xml</code>, and use <a href="../javadoc/com/google/appengine/api/taskqueue/TaskOptions.Method.html#PULL">TaskOptions.Method.PULL</a>. The following example enqueues tasks in a pull queue named <code>pull-queue</code>:</p>
+<p>To add tasks to a pull queue, simply get the queue using the <a href="../config/queue.html#name">queue name</a> defined in <code>queue.xml</code>, and use <a href="../javadoc/com/google/appengine/api/taskqueue/TaskOptions.Method.html#PULL">TaskOptions.Method.PULL</a>. The following example enqueues tasks in a pull queue named <code>pull-queue</code>:</p>
 
 
 <pre class="prettyprint">Queue q = QueueFactory.getQueue(&quot;pull-queue&quot;);
@@ -1125,6 +1159,19 @@ https://www.googleapis.com/taskqueue/v1beta1/projects/taskqueues</pre>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>In the table below, the first column shows each library's stage of development; note that some are still in early stages.  The second column links to the main page for each  library.</p>
 <p>For libraries that have samples for the Google Task Queue, the third column in the table below links to them directly.  If a library's samples page does not yet include a sample for this API, you can still use that library -- simply adapt one of the existing samples as needed. </p>
 <table border="1">
@@ -1137,7 +1184,7 @@ https://www.googleapis.com/taskqueue/v1beta1/projects/taskqueues</pre>
   <tr>
     <td>Google APIs Client Library for .NET (alpha)</td>
     <td><a href="http://code.google.com/p/google-api-dotnet-client/">google-api-dotnet-client/</a></td>
-    <td><a href="http://code.google.com/p/google-api-dotnet-client/wiki/Samples#Google_Task_Queue">.NET samples</a></td>
+    <td><a href="http://code.google.com/p/google-api-dotnet-client/wiki/APILibraries#Google_Task_Queue">.NET samples</a></td>
   </tr>
   <tr>
     <td>Google API Libraries for Google Web Toolkit (alpha)</td>
@@ -1418,30 +1465,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

@@ -58,7 +58,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -263,6 +290,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../docs/java/apis.html">Services</a>
       <ul>
+        <li><a href="../docs/java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../docs/java/appidentity/overview.html">Overview</a></li>
+<li><a href="../docs/java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../docs/java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../docs/java/blobstore/overview.html">Overview</a></li>
@@ -313,14 +347,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../docs/java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../docs/java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../docs/java/oauth/index.html">OAuth</a>
           <ul>
@@ -468,9 +502,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../docs/python/apis.html">Services</a>
       <ul>
-        <li><a href="../docs/python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../docs/python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../docs/python/appidentity/functions.html">Functions</a></li>
     <li><a href="../docs/python/appidentity/exceptions.html">Exceptions</a></li>
@@ -868,7 +903,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../docs/adminconsole/instances.html">Instances</a></li>
 <li><a href="../docs/adminconsole/roles.html">Roles</a></li>
-<li><a href="../docs/adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../docs/adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../docs/adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -886,7 +921,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../kb/index.html">FAQ</a></li>
       <li><a href="index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1027,4 +1061,348 @@ states:
 The above machine is a 3-state machine with one initial state (<code>InitialState</code>) and two final states (<code>ReviewAndRecoverState</code> and <code>FinalState</code>). <code>InitialState</code> can transition to either <code>ReviewAndRecoverState</code> or <code>FinalState</code>, and <code>ReviewAndRecoverState</code> may optionally transition to <code>FinalState</code> or simply stop.
 <p>
 
-The decisions on how to transition are defined by the events emitted. The events are emitted by developer code housed in the classes <code>InitialStateClass</code>, <code>ReviewAndRecoverStateClass</code> and <code>FinalStateClass</code>. Fantasm takes care of invoking these classes and their methods at the appropriate time. The above diagram can be automatically generated by the Fantasm framework using the URL <code>/fantasm/graphviz/
+The decisions on how to transition are defined by the events emitted. The events are emitted by developer code housed in the classes <code>InitialStateClass</code>, <code>ReviewAndRecoverStateClass</code> and <code>FinalStateClass</code>. Fantasm takes care of invoking these classes and their methods at the appropriate time. The above diagram can be automatically generated by the Fantasm framework using the URL <code>/fantasm/graphviz/[your machine name]/</code>, e.g., <code>/fantasm/graphviz/MyMachine/</code>.
+<p>
+
+
+<h2 id="tq">Understanding Task Queue concepts</h2>
+<p>
+
+Though Fantasm strives to hide Task Queue coding from the developer, it is important to understand some of the key concepts in order to make smart choices in your machine design. Under the hood, Fantasm effectively uses a Task Queue task for each transition between states. This means that if the code in a state action fails (i.e., raises an exception), that transition will be requeued and retried according to the normal Task Queue retry policy. This policy includes an almost immediate retry followed by an exponential backoff; every task in a retry state will be attempted at least once per day.
+<p>
+
+This has some direct implications on machine design. First, and most importantly, you should build a state action that is <a href="http://en.wikipedia.org/wiki/Idempotent">idempotent</a>. Knowing that a state will be retried on a failure, you must write state action code that is safe to be rerun possibly many times. In particular, you need to think about the side-effects of your code &mdash; writing a record to datastore, sending an email, <code>POST</code>ing something to an external server &mdash; and take appropriate precautions.
+<p>
+
+This leads to the second implication on machine design: strive to keep your state action code small and with a single side-effect step that is performed essentially as the last part of your action code. If there is very little or no code after your side-effect action, there is little opportunity for exceptions to be raised which would cause your side-effect to be re-executed on the task retry.
+<p>
+
+There are other techniques to achieve idempotency, but this approach is usually the easiest. It is important to note that any changes to the machine context made in state action code that raises an exception are not present on the retry. So, for example, you can write a boolean flag into the context indicating that an email had been sent, but if an exception is raised later in the state action code, that flag will <em>not</em> be present on the retry. The context is only updated on a successful state execution.
+<p>
+
+As a final note, it is important to know that Task Queue task size is limited to 10kB. Machine context is serialized into the task on each transition. Therefore, your machine context is subject to this 10kB limitation. If you need to pass large contexts between states of a machine, you will likely have to write this context to Datastore and pass a key on the context instead.
+<p>
+
+<h2 id="st">Starting a machine</h2>
+<p>
+
+Once you have your machine built, you need to kick it off. Fantasm machines are started simply by requesting a URL. This URL has the form <code>/fantasm/fsm/<em>YOUR_MACHINE_NAME</em></code>. You can add query args to this URL and these args will be present in your machine context. For example, you could invoke the above machine using <code>/fantasm/fsm/MyMachine?arg1=value</code>. Your state action code has access to this value via the machine context:
+<p>
+
+<pre class="prettyprint">
+class InitialStateClass(object):
+    def execute(self, context, obj): # called by Fantasm
+        arg1 = context['arg1'] # query args become part of the machine context
+        if arg1 == 'something':
+            # execute method returns the event to dispatch, driving the transition
+            return 'ok'
+        else:
+            return 'review'
+</pre>
+<p>
+
+The Task Queue API allows tasks to use either <code>POST</code> or <code>GET</code>. Fantasm will preserve whatever mechanism was used to start the machine, meaning if you start the machine with a <code>GET</code>, all of the machine transitions will use <code>GET</code>. A <code>GET</code> request is helpful when functionally testing a machine because the machine context is present (as query args) in your log files, however, you are subject to URL length restrictions. Due to these restrictions, larger contexts are essentially forced to use <code>POST</code> invocations; you can also indicate the desired method by specifying <code>&method=POST</code> when invoking the machine.
+<p>
+
+<h2 id="fo">Fanning out</h2>
+<p>
+
+At <a href="http://www.google.com/events/io/2010/sessions/high-throughput-data-pipelines-appengine.html">a talk given by Brett Slatkin</a> at <a href="http://www.google.com/events/io/2010/">Google I/O 2010</a>, we were formally introduced to a pair of concepts: fan-in and fan-out. App Engine developers who worked in large scale applications likely recognized the basic underpinnings of these concepts, in particular the most common form of fan-out, <em>continuation</em>. This is a technique where you take a large dataset, typically the results of a datastore query, read a chunk of it and pass the rest of it to another App Engine instance using Task Queue, and then operate over your chunk. On the second App Engine instance, the handler of the task performs the same operation. Using this technique, in particular passing the dataset forward before operating over it, allows many App Engine instances to work in parallel to process the dataset. This is an important and key part of the power of App Engine.
+<p>
+
+Fantasm provides mechanisms to make continuation very easy to implement. In your YAML, you can denote a state as being a continuation. If you do so, in addition to writing code for your state action, you also need to implement a continuation method. While the state action code is responsible for returning an event to dispatch, the continuation method is responsible for returning a token. This token is passed to the next invocation of the continuation method on the next App Engine instance.
+<p>
+
+After the continuation is run (and Fantasm fires up another App Engine instance to handle the next continuation via Task Queue), your state action code is executed. If you need to pass information from your continuation method to your action method, you can use the <code>obj</code> dictionary. The <code>obj</code> dictionary differs from the machine context in that it is scoped to a single task invocation. Items on the <code>obj</code> dictionary are never serialized and are not passed from state to state. A lot of these concepts will be clearer with an example.
+<p>
+
+<h2 id="em">Email subscription example</h2>
+<p>
+
+Imagine that we have a large list of subscribers to whom we would like to send an email. While this is naively a simple loop and a call to the Mail API, we need to consider the unhappy path. What happens if something unexpected happens half way through? Who received the message, and who did not? How do we recover?
+<p>
+
+It is these issues that Fantasm helps to overcome. Imagine we have a simple machine like the following:
+<p>
+
+<pre class="prettyprint">
+state_machines:
+- name: SendSubscriberEmail
+
+states:
+- name: SendEmail
+  action: SendEmail
+  <strong>continuation: True</strong>
+  initial: True
+  final: True
+</pre>
+<p>
+
+The <code>SendEmail</code> state is going to be responsible to send a single email. The <code>continuation</code> flag indicates that this state will implement a continuation method which will cause many App Engine instances to be spun up to process this event. In Fantasm, a continuation effectively causes multiple instances of the finite state machine to be created, one for each continuation token. A continuation state need not be a final state, but be aware that after a continuation, possibly many machines are in-flight; we’ll see below how we can combine these machines back together.
+<p>
+
+To finish the above machine, we need to write a continuation method and an action method. Recall the continuation method is responsible to return a token that will be passed to the next continuation method on a subsequent App Engine instance. The action method will perform our intended side-effect of sending the email. Normally, it is responsible to emit an event to drive the machine instance forward, but in this case the state is denoted as a final state, so no event is emitted.
+<p>
+
+<pre class="prettyprint">
+class SendEmail(object):
+    def continuation(self, context, obj, token=None):
+        """Execute a query using an optional cursor, and
+            store a single result in obj['subscriber']"""
+        query = Subscriber.all()
+        if token:
+            query.with_cursor(token)
+        subscriber = query.fetch(1)
+        obj['subscriber'] = subscriber  # obj dict passes info to execute() method
+        return query.cursor  # return token for next continuation() method
+
+    def execute(self, context, obj):
+        """Send an email to a single subscriber"""
+        subscriber = obj['subscriber']
+        if subscriber:  # possible none were returned
+            # create email contents, perhaps with content from datastore, etc.
+            # . . .
+            mail.send_mail(to=subscriber.email, ...)
+            # note: this 'side-effect' performed as last step for idempotency
+</pre>
+<p>
+
+For a large list of subscribers, you will see a Task Queue for each, and very likely a large number of App Engine instances involved in processing these tasks. Correspondingly, you will see a large, though likely brief, spike on your App Engine dashboard (see tail-end of figure below). To start the machine, we make a request to the machine URL: <code>/fantasm/fsm/SendSubscriberEmail/</code>.
+<p>
+
+<img style="border:1px solid black;" src="img/fantasm-qps.png">
+<p>
+
+Congratulations! You've just unleashed the power of App Engine and fan-out scalability on your large-dataset workflow. Also, because of Fantasm and Task Queue retry mechanisms, if any of the individual emails fails to send, it will be retried until it succeeds.
+<p>
+
+<h2 id="ct">Counting it up</h2>
+<p>
+
+Imagine that we want to count how many emails are sent in the above machine. A naive implementation would add some lines of code after our <code>send_email()</code> invocation to increment a counter in Datastore. Since we know that many machines are processing this dataset, we're going to require a transaction to increment the counter safely. So we might write something like this:
+<p>
+
+<pre class="prettyprint">
+class EmailBatch(db.Model):
+    counter = db.IntegerProperty(default=0)
+
+def execute(self, context, obj):
+    # ...
+    send_mail(to=subscriber.email, ...)
+
+<strong>
+    def tx():
+        batch = EmailBatch.get_by_key_name('1') # key is simplified for example
+        if not batch:
+            batch = EmailBatch(key_name='1')
+        batch.counter += 1
+        batch.put()
+
+    db.run_in_transaction(tx)
+</strong>
+</pre>
+<p>
+
+While this code works fine in the happy path, we need to consider what possible failures may occur. Transactional updates to the Datastore are expensive and slow (use 1 transaction per second as a rule of thumb), so there is a high likelihood of an exception being thrown in the code after the <code>send_email()</code>. When this occurs, our task is requeued, and on the retry, the <code>execute()</code> method is run again, sending another identical email to the same recipient! Not good.
+<p>
+
+Our first step is to address this is to introduce another state to our machine:
+<p>
+
+<pre class="prettyprint">
+state_machines:
+- name: SendSubscriberEmail
+
+states:
+- name: SendEmail
+  action: SendEmail
+  continuation: True
+  initial: True
+  <strong>transitions:
+    - to: CountEmail
+    - event: ok
+
+- name: CountEmail
+  action: CountEmail
+  final: True</strong>
+</pre>
+<p>
+
+In this machine, we've added a second state <code>CountEmail</code>. After sending the email, we will emit the event <code>ok</code> and drive the machine to the second, and final, state <code>CountEmail</code>. Our code becomes:
+<p>
+
+<pre class="prettyprint">
+class SendEmail(object):
+    def continuation(self, context, obj, token=None):
+        # no change to this method
+
+    def execute(self, context, obj):
+        subscriber = obj['subscriber']
+        mail.send_mail(to=subscriber.email, ...)
+<strong>
+        # only change is to emit event ok
+        return 'ok'
+
+class CountEmail(object):
+    def execute(self, context, obj):
+        """Transactionally update our batch counter"""
+        def tx():
+            batch = EmailBatch.get_by_key_name('1') # key simplified for example
+            if not batch:
+                batch = EmailBatch(key_name='1')
+            batch.counter += 1
+            batch.put()
+
+        db.run_in_transaction(tx)
+</strong>
+</pre>
+<p>
+
+We have now separated our two side-effects: sending an email and updating our batch counter. We have idempotent states that are safe to retry without any unintended actions occurring.
+<p>
+
+<h2 id="in">Fanning in</h2>
+<p>
+
+Continuing our example, a final improvement can be made. Recall that fanning out with our continuation method caused many instances of machines to be created, one for each email. Datastore transactions, as mentioned, are expensive; yet we are using one for each email to count up the number of emails sent. It would be more efficient to combine many of these machines together so that we can increment our counter by many multiples in a single transaction. Fantasm provides tools to achieve this.
+<p>
+
+In order to fan machines together, we demarcate a state as being a <code>fan_in</code> state. Machines instances in the same state with the same event being dispatched are fanned together so that they can be processed as a group. The <code>fan_in</code> number specified is the number of seconds to wait and collect machines in the same state. 
+<p>
+
+Our machine YAML (<code>fsm.yaml</code>) becomes the following:
+<p>
+
+<pre class="prettyprint">
+state_machines:
+- name: SendSubscriberEmail
+
+states:
+- name: SendEmail
+  action: SendEmail
+  continuation: True
+  initial: True
+  transitions:
+    - to: CountEmail
+    - event: ok
+
+- name: CountEmail
+  action: CountEmail
+  final: True
+  <strong>fan_in: 3</strong>
+</pre>
+<p>
+
+The only change is the presence of the <code>fan_in</code> attribute. It means that every 3 seconds, all machines in the state <code>CountEmail</code> will be processed as a group. The only difference to the state action code is that, instead of receiving a single machine context, you will receive a list of machine contexts, one for each machine being fanned in.
+<p>
+
+In this particular example, the number of machines fanning in represents the number of emails successfully sent &mdash; a bit of a subtle point. Because of this, we can use the length of the context list to increment our counter. Our state action method becomes the following:
+<p>
+
+<pre class="prettyprint">
+class CountEmail(object):
+    def execute(self, <strong>list_of_contexts</strong>, obj):
+        """Transactionally update our batch counter"""
+
+        def tx(<strong>count</strong>):
+            batch = EmailBatch.get_by_key_name('1') # key simplified for example
+            if not batch:
+              batch = EmailBatch(key_name='1')
+            batch.counter += <strong>count</strong>
+            batch.put()
+
+        <strong>emails_sent = len(list_of_contexts)</strong>
+        db.run_in_transaction(tx, <strong>emails_sent</strong>)
+</pre>
+<p>
+
+We now only have to execute a Datastore transaction once every 3 seconds. Fan-in is a powerful technique to execute items in batch and is an important tool in our scalability arsenal.
+<p>
+
+<h2 id="ns">Next steps</h2>
+<p>
+
+One of the motivations for Fantasm is operational regularity and visibility. Today, the Fantasm implementation achieves this through regular URLs (with visible context if invoking with GET) and task naming.
+<p>
+
+On the latter point, tasks are named for the machine instance name which includes when the machine was created, as well as the current state and event being dispatched. App Engine's Task Queue console displays these task names as well as how many times they have been retried.
+<p>
+
+On the road map for Fantasm is statistical tracking of machine instances, execution time, failure rates, state invocations. This will help find long-running or fragile states. In addition, we intend to develop an operational console highlighting machines that are currently in-flight and their current state, possibly including a visual representation of the finite state machine.
+<p>
+
+<h2 id="sm">Summary</h2>
+<p>
+
+Fantasm is a framework that allows you to build scalable, resilient workflows and leverages the Task Queue API to achieve retries as well as large scale-out across multiple App Engine instances. We hope it is a benefit to your organization. Additional features and docs can be found at its Google Code project location: <a href="http://code.google.com/p/fantasm">http://code.google.com/p/fantasm</a>.
+<p>
+
+</div>
+</div>
+   
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
+    
+    ©2011 Google -
+    <a href="http://code.google.com">Code Home</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+
+
+
+
+  </body>
+</html>
+
+

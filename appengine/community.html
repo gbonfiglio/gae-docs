@@ -51,7 +51,34 @@ var logged_in_user_email = null;
     
     
 
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -357,6 +384,10 @@ var logged_in_user_email = null;
 <li>Read the <a href="https://groups.google.com/group/google-appengine/web/google-app-engine-discussion-group-charter">discussion group charter</a> which highlights the community guidelines.</li>
 </ol>
 
+<h2>Stack Overflow</h2>
+<p>
+<a href="http://stackoverflow.com/questions/tagged/google-app-engine">Stack Overflow</a> has a dedicated Google App Engine community answering questions using the <b>google-app-engine</b> tag in a Q&A format.
+
 <h2>IRC Chat Time</h2>
 <p>
 Every first and third Wednesday of the month, the App Engine team hosts IRC Chat Time, an opportunity for you to get answers to your App Engine-related questions in real-time.
@@ -367,16 +398,9 @@ The schedule is as follows:
   <li>Every third Wednesday of the month from 9:00 to 10:00 a.m. PDT</li>
 </ul>
 
-<p>These chat sessions take place on the <b>#appengine</b> channel on <i>irc.freenode.net</i>.</p>
-
-<h2>Contribute</h2>
-
-<p>There are various ways to contribute back to the App Engine community once you're a superstar:</p>
-<ul>
-  <li>Help less experienced users get started with App Engine by answering questions in the discussion groups and IRC channel.</li>
-  <li>Post any App Engine issues that you've experienced and later resolved to the <a href="http://knol.google.com/k/marce/app-engine-community-faqs/vkzeph4si12v/1">Community FAQs</a>.</li>
-  <li>Add your own code snippets (i.e. &quot;recipes&quot;) to the <a href="http://appengine-cookbook.appspot.com/">App Engine Cookbook</a>.</li>
-</ul>
+<p>These chat sessions take place on the <b>#appengine</b> channel on <i>irc.freenode.net</i>.
+You can use <a href="http://webchat.freenode.net">Freenode Web IRC</a> client to easily connect through your browser.
+</p>
 
 </div>
 
@@ -414,30 +438,6 @@ The schedule is as follows:
 <script src="../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

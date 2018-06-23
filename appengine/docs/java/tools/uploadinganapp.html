@@ -56,7 +56,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -260,6 +287,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -310,14 +344,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../oauth/index.html">OAuth</a>
           <ul>
@@ -465,9 +499,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
-        <li><a href="../../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -865,7 +900,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -883,7 +918,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -922,6 +956,7 @@ var logged_in_user_email = null;
   <li><a href="#Managing_Task_Queues">Managing Task Queues</a></li>
   <li><a href="#Managing_DoS_Protection">Managing DoS Protection</a></li>
   <li><a href="#Managing_Scheduled_Tasks">Managing Scheduled Tasks</a></li>
+  <li><a href="#Downloading_an_Application">Downloading an Application</li>
   <li><a href="#Downloading_Logs">Downloading Logs</a></li>
   <li><a href="#Using_an_HTTP_Proxy">Using an HTTP Proxy</a></li>
   <li><a href="#Command_Line_Arguments">Command-Line Arguments</a></li>
@@ -1027,9 +1062,44 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
 <p>For more on cron jobs, see the <a href="../config/cron.html">Cron Jobs</a> documentation.</p>
 
 
+<h2 id="Downloading_an_Application">Downloading an Application</h2>
+
+<p>You can download an application by running appcfg.sh with the <code>download_app</code> action in the Java SDK command-line tool:</p>
+
+<pre>./appengine-java-sdk/bin/appcfg.sh download_app -A &lt;application-id&gt; -V &lt;application-version&gt; &lt;output-dir&gt;</pre>
+
+<p>This command downloads your compiled application in the WAR that you uploaded most recently.</p>
+
+<p>Output like the following results if the command is successful:</p>
+<pre>0% Fetching files...
+0% [1/13] WEB-INF/lib/appengine-api-labs-1.2.6.jar
+7% [2/13] WEB-INF/appengine-web.xml
+14% [3/13] WEB-INF/lib/datanucleus-jpa-1.1.5.jar
+21% [4/13] WEB-INF/lib/datanucleus-core-1.1.5.jar
+28% [5/13] WEB-INF/lib/datanucleus-appengine-1.0.3.jar
+35% [6/13] WEB-INF/lib/jdo2-api-2.3-eb.jar
+42% [7/13] WEB-INF/classes/com/example/MyServlet.class
+50% [8/13] WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar
+64% [9/13] WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar
+71% [10/13] testlogin.html
+78% [11/13] WEB-INF/web-bck.xml
+85% [12/13] WEB-INF/web.xml
+92% [13/13] __static__/testlogin.html
+
+download_app completed successfully.</pre>
+
+<p>Only the developer who uploaded the app can download it. If anyone other than that developer attempts to download the app, they'll receive an error message.</p>
+
+<p>You can permanently disable app downloads from the <b>Versions</b> screen in your development web server. On that page, click <b>permanently prohibit code downloads</b>:</p>
+
+<img src="../../images/dev-web-server_download-app.png" />
+
+<p class="warning"><strong>Warning!</strong> This action is irreversible. After you prohibit code download, there is no way to re-enable this feature.</p>
+
+
 <h2 id="Downloading_Logs">Downloading Logs</h2>
 
-<p>App Engine maintains a log of messages that your application emits. App Engine also records each request in the log. You can browse your app's logs from the "Logs" section of <a href="../../theadminconsole.html">the Admin Console</a>.</p>
+<p>App Engine maintains a log of messages that your application emits. App Engine also records each request in the log. Each <a href="#command_line_arguments_appcfg_severity">log level</a> has a fixed buffer size that controls the amount of log information you can access. Normally, you use logging features more at lower log levels; thus, the time window is smaller for log events at these levels. You can browse your app's logs of the last 90 days from the &quot;Logs&quot; section of the <a href="../../adminconsole/index.html">Admin Console</a>.</p>
 
 <p>If you wish to perform more detailed analysis of your application's logs, you can download the log data to a file on your computer. To download logs to a file named <code>mylogs.txt</code>, use the <code>request_logs</code> action, as follows:</p>
 
@@ -1060,42 +1130,33 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
 <p>The following actions are available:</p>
 
 <dl>
-  <dt><code>appcfg.sh <i>[options]</i> update <i>&lt;war-location&gt;</i></code></dt>
-  <dd>
-    <p>Uploads files for an application given the application's root directory. The application ID and version are taken from the <code>appengine-web.xml</code> file.</p>
-  </dd>
-
-  <dt><code>appcfg.sh <i>[options]</i> rollback <i>&lt;war-location&gt;</i></code></dt>
-  <dd>
-    <p>Undoes a partially completed update for the given application. You can use this if an update was interrupted, and the command is reporting that the application cannot be updated due to a lock.</p>
-  </dd>
-
-  <dt><code>appcfg.sh <i>[options]</i> update_indexes <i>&lt;war-location&gt;</i></code></dt>
-  <dd>
-    <p>Updates datastore indexes in App Engine to include newly added indexes. If a new version of your application requires an additional index definition that was added to the index configuration, you can update your index configuration in App Engine prior to uploading the new version of your application. Running this action a few hours prior to uploading your new application version will give the indexes time to build and be serving when the application is deployed.</p>
-  </dd>
-
-  <dt><code>appcfg.sh <i>[options]</i> update_queues <i>&lt;war-location&gt;</i></code></dt>
-  <dd>
-    <p>Updates the task queue configuration (<code>queue.xml</code>) in App Engine. If the new configuration does not include a named queue (other than <code>default</code>) that exists and has tasks, the existing queue is paused.</p>
-  </dd>
-
-
-
-  <dt><code>appcfg.sh <i>[options]</i> update_cron <i>&lt;app-directory&gt;</i></code></dt>
-  <dd>
-    <p>Updates the schedule task (cron) configuration for the app, based on the <code>cron.xml</code> file.</p>
-  </dd>
-
-  <dt><code>appcfg.sh <i>[options]</i> update_dos <i>&lt;app-directory&gt;</i></code></dt>
-  <dd>
-    <p>Updates the DoS protection configuration for the app, based on the <code>dos.xml</code> file.</p>
-  </dd>
 
   <dt><code>appcfg.sh <i>[options]</i> cron_info <i>&lt;app-directory&gt;</i></code></dt>
   <dd>
     <p>Verifies and prints the scheduled task (cron) configuration.</p>
   </dd>
+
+  <dt><code>appcfg.sh download_app -A &lt;app_id&gt; -V &lt;version&gt;&lt;output-dir&gt;</code></dt>
+    <dd>
+      <p>Retrieves the most current version of your application using the following options:</p>
+
+      <dl> 
+        <dt><code>-A</code></dt>
+          <dd><p>The application ID (required).</p></dd>
+
+        <dt><code>-V</code></dt>
+          <dd><p>The current application version. May be one of the following:</p>
+            <ul>
+              <li><code>-V major.minor</code> &ndash; Specifies the exact version specified.</li>
+               <li><code>-V major</code> &ndash; Specifies the latest major version.</li>
+              <li>Omitted entirely &ndash; Returns the current default version, if one exists</li>
+            </ul>
+          </dd>
+
+        <dt><code>&lt;output-dir&gt;</code></dt> 
+          <dd><p>The directory where you wish to save the files (required).</p></dd> 
+      </dl> 
+    </dd> 
 
   <dt><code>appcfg.sh <i>[options]</i> request_logs <i>&lt;war-location&gt;</i> <i>&lt;output-file&gt;</i></code></dt>
   <dd>
@@ -1105,7 +1166,7 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
       <dd>
         <p>The number of days of log data to retrieve, ending on the current date at midnight UTC. A value of 0 retrieves all available logs. If <code>--append</code> is given, then the default is 0, otherwise the default is 1.</p>
       </dd>
-      <dt><code>--severity=<i>...</i></code></dt>
+      <dt id="command_line_arguments_appcfg_severity"><code>--severity=<i>...</i></code></dt>
       <dd>
         <p>The minimum log level for the log messages to retrieve. The value is a number corresponding to the log level: 4 for CRITICAL, 3 for ERROR, 2 for WARNING, 1 for INFO, 0 for DEBUG. All messages at the given log level and above will be retrieved. Default is 1 (INFO).</p>
       </dd>
@@ -1125,6 +1186,38 @@ appengine-java-sdk\bin\appcfg.cmd <i>[options]</i> <i>&lt;action&gt;</i> <i>&lt;
   <dd>
     <p>Prints detailed version information about the SDK, Java and the operating system, then quits. Use this when submitting bug reports.</p>
   </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> rollback <i>&lt;war-location&gt;</i></code></dt>
+  <dd>
+    <p>Undoes a partially completed update for the given application. You can use this if an update was interrupted, and the command is reporting that the application cannot be updated due to a lock.</p>
+  </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> update <i>&lt;war-location&gt;</i></code></dt>
+  <dd>
+    <p>Uploads files for an application given the application's root directory. The application ID and version are taken from the <code>appengine-web.xml</code> file.</p>
+  </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> update_cron <i>&lt;app-directory&gt;</i></code></dt>
+  <dd>
+    <p>Updates the schedule task (cron) configuration for the app, based on the <code>cron.xml</code> file.</p>
+  </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> update_dos <i>&lt;app-directory&gt;</i></code></dt>
+  <dd>
+    <p>Updates the DoS protection configuration for the app, based on the <code>dos.xml</code> file.</p>
+  </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> update_indexes <i>&lt;war-location&gt;</i></code></dt>
+  <dd>
+    <p>Updates datastore indexes in App Engine to include newly added indexes. If a new version of your application requires an additional index definition that was added to the index configuration, you can update your index configuration in App Engine prior to uploading the new version of your application. Running this action a few hours prior to uploading your new application version will give the indexes time to build and be serving when the application is deployed.</p>
+  </dd>
+
+  <dt><code>appcfg.sh <i>[options]</i> update_queues <i>&lt;war-location&gt;</i></code></dt>
+  <dd>
+    <p>Updates the task queue configuration (<code>queue.xml</code>) in App Engine. If the new configuration does not include a named queue (other than <code>default</code>) that exists and has tasks, the existing queue is paused.</p>
+  </dd>
+
+
 
 </dl>
 
@@ -1226,30 +1319,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

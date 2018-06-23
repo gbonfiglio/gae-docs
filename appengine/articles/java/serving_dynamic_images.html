@@ -58,7 +58,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -263,6 +290,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../docs/java/apis.html">Services</a>
       <ul>
+        <li><a href="../../docs/java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../docs/java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../docs/java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../docs/java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../docs/java/blobstore/overview.html">Overview</a></li>
@@ -313,14 +347,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../docs/java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../docs/java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../docs/java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../docs/java/oauth/index.html">OAuth</a>
           <ul>
@@ -468,9 +502,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../docs/python/apis.html">Services</a>
       <ul>
-        <li><a href="../../docs/python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../docs/python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../docs/python/appidentity/functions.html">Functions</a></li>
     <li><a href="../../docs/python/appidentity/exceptions.html">Exceptions</a></li>
@@ -868,7 +903,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../docs/adminconsole/instances.html">Instances</a></li>
 <li><a href="../../docs/adminconsole/roles.html">Roles</a></li>
-<li><a href="../../docs/adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../docs/adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../docs/adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../docs/adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -886,7 +921,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1055,14 +1089,14 @@ import javax.servlet.http.HttpServletResponse;
 public class StoreMovieServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         URLFetchService fetchService =
             URLFetchServiceFactory.getURLFetchService();
 
         // Fetch the image at the location given by the url query string parameter
         HTTPResponse fetchResponse = fetchService.fetch(new URL(
-                request.getParameter("url")));
+                req.getParameter("url")));
         
         String fetchResponseContentType = null;
         for (HTTPHeader header : fetchResponse.getHeaders()) {
@@ -1078,7 +1112,7 @@ public class StoreMovieServlet extends HttpServlet {
         if (fetchResponseContentType != null) {
             // Create a new Movie instance
             Movie movie = new Movie();
-            movie.setTitle(request.getParameter("title"));
+            movie.setTitle(req.getParameter("title"));
             movie.setImageType(fetchResponseContentType);
 
             // Set the movie's promotional image by passing in the bytes pulled
@@ -1129,21 +1163,21 @@ import javax.servlet.http.HttpServletResponse;
 public class GetImageServlet extends HttpServlet {
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        String title = request.getParameter("title");
+        String title = req.getParameter("title");
         Movie movie = getMovie(title);
 
         if (movie != null && movie.getImageType() != null &&
                 movie.getImage() != null) {
             // Set the appropriate Content-Type header and write the raw bytes
             // to the response's output stream
-            response.setContentType(movie.getImageType());
-            response.getOutputStream().write(movie.getImage());
+            resp.setContentType(movie.getImageType());
+            resp.getOutputStream().write(movie.getImage());
         } else {
             // If no image is found with the given title, redirect the user to
             // a static image
-            response.sendRedirect("/static/noimage.jpg");
+            resp.sendRedirect("/static/noimage.jpg");
         }
     }
 
@@ -1286,31 +1320,8 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 
 
 
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
-
-
-
 
   </body>
 </html>
+
 

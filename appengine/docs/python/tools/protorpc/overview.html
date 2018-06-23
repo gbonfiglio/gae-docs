@@ -56,7 +56,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -260,6 +287,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../../java/apis.html">Services</a>
       <ul>
+        <li><a href="../../../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../../java/blobstore/overview.html">Overview</a></li>
@@ -310,14 +344,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -465,9 +499,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../apis.html">Services</a>
       <ul>
-        <li><a href="../../appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../appidentity/functions.html">Functions</a></li>
     <li><a href="../../appidentity/exceptions.html">Exceptions</a></li>
@@ -865,7 +900,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -883,7 +918,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -928,12 +962,13 @@ var logged_in_user_email = null;
 <p>You can define a ProtoRPC service in a single Python class that contains any number of declared remote methods. Each remote method accepts a specific set of parameters as a request and returns a specific response. These request and response parameters are user-defined classes known as messages.</p>
 
 <div class="special">
-<h3>Experimental!</h3
-<p>ProtoRPC is an experimental, innovative, and rapidly changing new
-feature for App Engine. Unfortunately, being on the bleeding edge means that ProtoRPC will go through changes and so should not be relied upon for business-critical applications. We will inform the community once ProtoRPC is no longer experimental.</p>
+<h4>Experimental!</h4>
+<p>ProtoRPC is an experimental, innovative, and rapidly changing new feature for App Engine. Unfortunately, being on the bleeding edge means that we may make backwards-incompatible changes to ProtoRPC. We will inform the community once ProtoRPC is no longer experimental.</p>
+</div>
+
 
 <ul>
-  <li><a href="#The Hello World of ProtoRPC">The Hello World of ProtoRPC</a></li>
+  <li><a href="#The_Hello_World_of_ProtoRPC">The Hello World of ProtoRPC</a></li>
   <li><a href="#Getting_Started_with_ProtoRPC">Getting Started with ProtoRPC</a></li>
   <ul>
     <li><a href="#Creating_the_PostService_Module">Creating the PostService Module</a></li>
@@ -1008,7 +1043,7 @@ if __name__ == '__main__':
 
 <h3 id="Working_with_Messages">Working with Messages</h3>
 
-<p>Messages are the fundamental data type used in ProtoRPC. You define messages by declaring a class that inherits from the <a href="#ADD_LINK_TO_REFERENCE">Message</a> base class. Then you specify class attributes that correspond to each of the message's fields.</p>
+<p>Messages are the fundamental data type used in ProtoRPC. You define messages by declaring a class that inherits from the <a href="messages/messageclass.html">Message</a> base class. Then you specify class attributes that correspond to each of the message's fields.</p>
 
 <p>For example, the guestbook service allows users to post a note. Let's define a message that represents such a note:</p>
 
@@ -1047,7 +1082,7 @@ Good-bye guestbook!</pre>
 
 <h3 id="Defining_a_Service">Defining a Service</h3>
 
-<p>A <i>service</i> is a class definition that inherits from the <a href="#ADD_LINK_TO_SERVICES_CLASS_REF">Service</a> base-class. Remote methods of a service are indicated by using the <code>remote</code> decorator. Every method of a service accepts a single message as its parameter and returns a single message as its response.</p>
+<p>A <i>service</i> is a class definition that inherits from the <a href="remote/serviceclass.html">Service</a> base-class. Remote methods of a service are indicated by using the <code>remote</code> decorator. Every method of a service accepts a single message as its parameter and returns a single message as its response.</p>
 
 <p>Let's define the first method of the PostService. If you haven't done so already, create a file called <code>postservice.py</code> in your application directory and review the <a href="http://code.google.com/appengine/docs/python/gettingstarted/">guestbook tutorial</a> if you need to. In that tutorial, guestbook greetings are put in the datastore using the <a href="http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html">guestbook.Greeting</a> class. The PostService will also use the Greeting class to store a post in the datastore. Add the following to your newly created <code>postservice.py</code> file:</p>
 
@@ -1142,7 +1177,7 @@ if __name__ == '__main__':
 
 <p>When sent to the PostService, this message requests a number of notes on or before a certain date and in a particular order. The <code>limit</code> field indicates the maximum number of notes to fetch. If not explicitly set, <code>limit</code> defaults to 10 notes (as indicated by the <code>default=10</code> keyword argument).</p>
 
-<p>The order field introduces the <a href="#LINK_TO_CLASS_REFERENCE">EnumField</a> class, which enables the <code>enum</code> field type when the value of a field is restricted to a limited number of known symbolic values. In this case, the <code>enum</code> indicates to the server how to order notes in the response. To define the enum values, create a sub-class of the <a href="#LINK_TO_CLASS_REFERENCE">Enum</a> class. Each name must be assigned a unique number for the type. Each number is converted to an instance of the enum type and can be accessed from the class.</p>
+<p>The order field introduces the <a href="messages/enumfieldclass.html">EnumField</a> class, which enables the <code>enum</code> field type when the value of a field is restricted to a limited number of known symbolic values. In this case, the <code>enum</code> indicates to the server how to order notes in the response. To define the enum values, create a sub-class of the <a href="messages/enumclass.html">Enum</a> class. Each name must be assigned a unique number for the type. Each number is converted to an instance of the enum type and can be accessed from the class.</p>
 
 <pre class="prettyprint">
 print 'Enum value Order.%s has number %d' % (Order.WHEN.name,
@@ -1276,30 +1311,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

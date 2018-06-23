@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../java/apis.html">Services</a>
       <ul>
+        <li><a href="../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../java/blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../java/oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="apis.html">Services</a>
       <ul>
-        <li><a href="appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="appidentity/functions.html">Functions</a></li>
     <li><a href="appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../adminconsole/instances.html">Instances</a></li>
 <li><a href="../adminconsole/roles.html">Roles</a></li>
-<li><a href="../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -932,7 +966,6 @@ var logged_in_user_email = null;
 
 
  
-
 
 
 
@@ -1000,12 +1033,12 @@ api_version: 1
 
 <p>The domain name used for the request is included in the request data passed to the application. If you want your app to respond differently depending on the domain name used to access it (such as to restrict access to certain domains, or redirect to an official domain), you can check the request data (such as the <code>Host</code> request header) for the domain from within the application code and respond accordingly.</p>
 
-<p>If your app uses <a href="../java/backends/index.html">backends</a>, you can address requests to a specific backend and a specific instance with that backend. For more information about backend addressability, please see <a href="../java/backends/overview.html#/appengine/docs/python/backends/overview.html#Properties_of_Backends">Properties of Backends</a>.</p>
+<p>If your app uses <a href="backends/index.html">backends</a>, you can address requests to a specific backend and a specific instance with that backend. For more information about backend addressability, please see <a href="backends/overview.html#Properties_of_Backends">Properties of Backends</a>.</p>
 
 
 <h2 id="Requests_and_CGI">Requests and CGI</h2>
 
-<p>When App Engine receives a web request for your application, it calls the handler script that corresponds to the URL, as described in the application's <a href="config/appconfig.html">app.yaml</a> configuration file. App Engine uses <a href="http://www.w3.org/CGI/">the CGI standard</a> to communicate the request data to the handler, and receive the response. If your application uses <a href="../java/backends/index.html">backends</a>, it calls the handler script defined in <code>backends.yaml</code>. See <a href="../java/config/backends.html">Backend Configuration</a> for more information.</p>
+<p>When App Engine receives a web request for your application, it calls the handler script that corresponds to the URL, as described in the application's <a href="config/appconfig.html">app.yaml</a> configuration file. App Engine uses <a href="http://www.w3.org/CGI/">the CGI standard</a> to communicate the request data to the handler, and receive the response. If your application uses <a href="backends/index.html">backends</a>, it calls the handler script defined in <code>backends.yaml</code>. See <a href="config/backends.html">Backend Configuration</a> for more information.</p>
 
 <p>App Engine uses multiple web servers to run your application, and automatically adjusts the number of servers it is using to handle requests reliably. A given request may be routed to any server, and it may not be the same server that handled a previous request from the same user.</p>
 
@@ -1069,7 +1102,7 @@ class MainPage(webapp.RequestHandler):
 <p>While a request can take as long as 30 seconds to respond, App Engine is optimized for applications with short-lived requests, typically those that take a few hundred milliseconds. An efficient app responds quickly for the majority of requests. An app that doesn't will not scale well with App Engine's infrastructure.</p>
 
 
-<p><a href="../java/backends/index.html">Backends</a> allow you to avoid this request timer; with backends, there is no time limit for generating and returning a request.</p>
+<p><a href="backends/index.html">Backends</a> allow you to avoid this request timer; with backends, there is no time limit for generating and returning a request.</p>
 
 
 <h2 id="The_Sandbox">The Sandbox</h2>
@@ -1374,30 +1407,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
+        <li><a href="../appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../multitenancy/overview.html">Overview</a></li>
     <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
-        <li><a href="../../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -1121,7 +1155,7 @@ public class LocalHighRepDatastoreTest {
     }
 }
 </pre>
-<p>By setting the unapplied job percentage to 100, we are instructing the local datastore to operate with the maximum amount of eventual consistency. Maximum eventual consistency means writes will commit but always fail to apply, so global (non-ancestor) queries will consistently fail to see changes. This is of course not representative of the amount of eventual consistency your application will see when running in production, but for testing purposes, it's very useful to be able to configure the local datastore to behave this way every time. If you want more fine-grained control over which transactions fail to apply, you can register your own <a href="localunittesting/javadoc/com/google/appengine/api/datastore/dev/HighRepJobPolicy.html"><code>HighRepJobPolicy</code></a>:</p>
+<p>By setting the unapplied job percentage to 100, we are instructing the local datastore to operate with the maximum amount of eventual consistency. Maximum eventual consistency means writes will commit but always fail to apply, so global (non-ancestor) queries will consistently fail to see changes. This is of course not representative of the amount of eventual consistency your application will see when running in production, but for testing purposes, it's very useful to be able to configure the local datastore to behave this way every time. If you want more fine-grained control over which transactions fail to apply, you can register your own <code>HighRepJobPolicy</code>:</p>
 <pre class="prettyprint">
 // ...
 import com.google.appengine.api.datastore.dev.HighRepJobPolicy;
@@ -1232,7 +1266,7 @@ public class TaskQueueTest {
 <p>Notice how we ask the <code>LocalTaskqueueTestConfig</code> for a handle to the local service instance, and then we investigate the local service itself to make sure the task was scheduled as expected. All <code>LocalServiceTestConfig</code> implementations expose a similar method. You may not always need it, but sooner or later you'll be glad it's there.</p>
 <h2 id="Writing_Deferred_Task_Tests">Writing Deferred Task Tests</h2>
 
-<p>If your application code uses <a href="../taskqueue/overview.html#Deferred_Tasks">Deferred Tasks</a>, the Java Testing Utilities make it easy to write an integration test that verifies the results of these tasks.</p>
+<p>If your application code uses <a href="../javadoc/com/google/appengine/api/taskqueue/DeferredTask.html">Deferred Tasks</a>, the Java Testing Utilities make it easy to write an integration test that verifies the results of these tasks.</p>
 
 <pre class="prettyprint">
 import static org.junit.Assert.*;
@@ -1404,30 +1438,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

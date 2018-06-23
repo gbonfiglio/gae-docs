@@ -56,7 +56,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -260,6 +287,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../java/apis.html">Services</a>
       <ul>
+        <li><a href="../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../java/blobstore/overview.html">Overview</a></li>
@@ -310,14 +344,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../java/oauth/index.html">OAuth</a>
           <ul>
@@ -465,9 +499,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../python/apis.html">Services</a>
       <ul>
-        <li><a href="../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -865,7 +900,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="instances.html">Instances</a></li>
 <li><a href="roles.html">Roles</a></li>
-<li><a href="applicationsettings.html">Application</a></li>
+<li><a href="applicationsettings.html">Application Settings</a></li>
 <li><a href="datastoreadmin.html">Datastore</a></li>
 <li><a href="performancesettings.html">Performance Settings</a></li>
 
@@ -883,7 +918,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -913,9 +947,10 @@ var logged_in_user_email = null;
 
 
 
-<p>If you built your application in Python, you can use the Datastore Admin tab of the Admin Console to copy entities between applications, or delete them, in bulk. You can select all entities of a kind, or all entities of all kinds. This functionality is simple to enable in <code>app.yaml</code> and easy use in your application's administration console.</p>
+<p>You can use the Datastore Admin tab of the Admin Console to copy entities between applications, or delete them, in bulk. You can select all entities of a kind, or all entities of all kinds. This functionality is simple to enable in the Administration Console and easy use in your application's administration console.</p>
 
 <ul>
+  <li><a href="#Enabling_Datastore_Admin">Enabling Datastore Admin</a></li>
   <li><a href="#Copying_Entities_to_Another_Application">Copying Entities to Another Application</a></li>
   <li><a href="#Deleting_Entities_in_Bulk">Deleting Entities in Bulk</a></li>
 </ul>
@@ -927,11 +962,11 @@ var logged_in_user_email = null;
 <br />
 <h3>Prerequisites</h3>
 
-<p>Datastore Admin is available only if it is <a href="#Enable_datastore_admin_in_the_Source_Application">enabled</a> in the source app's <code>app.yaml</code> file. The application must be built in Python.</p>
+<p>Datastore Admin is available only if it is <a href="#Enable_datastore_admin_in_the_Source_Application">enabled</a> in the source app's Admin Console. The application must be built in Python.</p>
 
 <div class="special">
 <h4 id="A_Note_for_Java_Developers">A Note for Java Developers</h4>
-<p>The datastore copy feature is currently available only for Python applications. If your source app is built in Java, you'll need to create a non-default Python runtime for it and use that as the source application. The target app also needs to be built in Python. The following steps describe how to create a non-default Python runtime for your source application using a sample application called datastore_admin:</p>
+<p>The datastore copy feature is currently available only for Python applications. If your target app is built in Java, you'll need to create a non-default Python runtime for it and use that as the target application. The following steps describe how to create a non-default Python runtime for your target application using a sample application called datastore_admin:</p>
 
 <ol>
   <li><a href="../python/gettingstarted/devenvironment.html">Download Python 2.5</a>.</li>
@@ -957,25 +992,27 @@ var logged_in_user_email = null;
 <p>If you used the demo app described in <a href="#A_Note_for_Java_Developers">A Note for Java Developers</a>, you can skip steps 1&ndash;3.</p>
 
 <h4 id="Enable_datastore_admin_in_the_Source_Application">1. Enable datastore_admin in the Source Application</h4>
-<p>The datastore copy feature relies upon the Datastore Admin tab in the source application's Admin Console. To enable Datastore Admin, specify the <code>datastore_admin</code> builtin handler in the source application's <code>app.yaml</code> as follows:</p>
+<p>The datastore copy feature relies upon the Datastore Admin tab in the source application's Administration Console. You can enable Datastore Admin via the Applications Settings page of the Administration Console. Under the Built-Ins heading, click Enable next to Datastore Admin:</p>
 
-<pre>
-builtins:
-- datastore_admin: on
-</pre>
+<br />
+<img src="../images/datastore_admin_enable.png" />
+<br />
 
-<p>If you want to enable the <code>datastore_admin</code> at a custom URI, specify that path using the url handler instead of the builtin handler:</p>
-<pre>
+<p>If you want to enable the <code>datastore_admin</code> at a custom URI, specify that path in <code>app.yaml</code> using the url handler instead of the builtin handler:</p>
+<pre class="prettyprint">
 - url: /datastore_admin
   script: $PYTHON_LIB/google/appengine/ext/datastore_admin/main.py
 </pre>
 
 <p>This maps the <code>datastore_admin</code> handler to the URL <code>/datastore_admin</code>. You can replace <code>/datastore_admin</code> with any URL you choose.</p>
+]
+
+
 
 <h4 id="Enable_remote_api_in_the_Target_Application">2. Enable remote_api in the Target Application</h4>
 <p>In order for the target application to receive data from the source, you need to enable its <code>remote_api</code> builtin by adding the following to <code>app.yaml</code>:</p>
 
-<pre>
+<pre class="prettyprint">
 builtins:
 - remote_api: on
 </pre>
@@ -1011,7 +1048,7 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 <h3>Caveats</h3>
 
 <ul>
-  <li> This feature is currently experimental.</li>
+  <li>This feature is currently experimental.</li>
   <li>Copying entities in bulk happens within your applications, and thus counts against your quota.</li>
   <li>Once you've copied entities, you may wish to re-enable writes in your source application.</li>
   <li>Copying entities overwrites all entities with the same keys in the target datastore. You can perform the copying operations multiple times without the risk of creating duplicates. If you are performing multiple copy operations, be aware that the copy function does not delete extra data in the target datastore.</li>
@@ -1019,10 +1056,8 @@ remoteapi_CUSTOM_ENVIRONMENT_AUTHENTICATION = ('HTTP_X_APPENGINE_INBOUND_APPID',
 </ul>
 
 <h2 id="Deleting_Entities_in_Bulk">Deleting Entities in Bulk</h2>
-<p>You can use the Datastore Admin tab of the Admin Console to delete all entities of a kind, or all entities of all kinds, in the default namespace. To enable this feature, simply include the <code>datastore_admin</code> <a href="../python/config/appconfig.html#Builtin_Handlers">builtin handler</a> in <code>app.yaml</code>:</p>
-<pre>builtins:
-- datastore_admin: on</pre>
-<p>Adding this builtin enables the Datastore Admin screen in the <b>Data</b> section of the Admin Console. From this screen, you can select the entity kind(s) to delete individually or in bulk, and delete them using the <b>Delete Entities</b> button.</p>
+<p>You can use the Datastore Admin tab of the Admin Console to delete all entities of a kind, or all entities of all kinds, in the default namespace. To enable this feature, simply <a href="#Enabling_Datastore_Admin">enable Datastore Admin</a> in the Administration Console.</p>
+<p>Adding this builtin enables the Datastore Admin screen in the <b>Data</b> section of the Administration Console. From this screen, you can select the entity kind(s) to delete individually or in bulk, and delete them using the <b>Delete Entities</b> button.</p>
 <p class="warning"><strong>Warning!</strong> Deleting entities in bulk happens within your application, and thus counts against your <a href="../quotas.html#Datastore">quota</a>.</p>
 <p>This feature is currently experimental. We believe this feature is currently the fastest way to bulk-delete data, but it is not yet stable and you may encounter occasional bugs.</p>
 
@@ -1085,30 +1120,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

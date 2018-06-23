@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
+        <li><a href="../../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../java/blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../appidentity/functions.html">Functions</a></li>
     <li><a href="../appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -912,7 +946,7 @@ var logged_in_user_email = null;
 
 
 
-<p>The Memcache API provides a class-based interface for compatibility with other Memcache APIs.  See also <a href="functions.html">the function interface</a>, which provides identical functionality.</p>
+<p>The Memcache API provides a class-based interface for compatibility with other Memcache APIs.  See also <a href="functions.html">the function interface</a>, which provides identical functionality, except for features that support compare and set (cas) functionality, such as <a href="#Client_cas">cas()</a>, <a href="#Client_cas_multi">cas_multi(), <a href="#Client_cas_reset">cas_reset()</a>, and <a href="#Client_gets">gets()</a>, which are available only through the Client object.</p>
 
 <p>The <code>Client</code> class is provided by the <code>google.appengine.api.memcache</code> module.</p>
 
@@ -923,6 +957,10 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="#Client_set">set()</a></li>
       <li><a href="#Client_set_multi">set_multi()</a></li>
+      <li><a href="#Client_cas">cas()</a></li>
+      <li><a href="#Client_cas_multi">cas_multi()</a></li>
+      <li><a href="#Client_cas_reset">cas_reset()</a></li>
+      <li><a href="#Client_gets">gets()</a></li>
       <li><a href="#Client_get">get()</a></li>
       <li><a href="#Client_get_multi">get_multi()</a></li>
       <li><a href="#Client_delete">delete()</a></li>
@@ -936,6 +974,15 @@ var logged_in_user_email = null;
       <li><a href="#Client_offset_multi">offset_multi()</a></li>
       <li><a href="#Client_flush_all">flush_all()</a></li>
       <li><a href="#Client_get_stats">get_stats()</a></li>
+
+
+
+
+
+
+
+      <li><a href="#Client_get_stats">get_stats()</a></li>
+      <li><a href="#Client_get_stats">get_stats()</a></li>
       
     </ul>
   </li>
@@ -947,6 +994,12 @@ var logged_in_user_email = null;
 <p>As a developer, you invoke all memcache operations through the Memcache client object</p>
 
 <p>Several methods are no-ops and some method values are ignored to retain source-level compatibility with the existing popular Python memcache library. For example, Google App Engine deals with the sharding transparently but still allows any method that takes a 'key' argument will accept that key as a string or a tuple of (hash_value, string). Generally that hash_value, is used for sharding onto a memcache instance but with App Engine it is ignored. See <a href="#Memcached_compatibility">Memcached Compatibility</a> for more information.</p>
+
+<p>Notice that multiple callers can attempt to update the same key value in memcache at the same time, in which case the last write wins with no indication of error for the competing write attempts. Starting with App Engine version 1.5.3, you can avoid this possibility by using the new compare and set functionality (cas). With compare and set, you must retrieve the keys using certain get operations, such as <code>gets()</code> and <code>get_multi()</code> with its for_cas param set to true. Those operations make use of a hidden version number for the key value called a cas_id. After the caller updates the key value or values, one of the cas methods is invoked to do a compare and set write into the memcache. In this compare, the value of the cas_id that was retrieved during the get operation is compared with the cas_id for that key value that is currently in the memecache.  If there is a match, the update to memcache succeeds and the cas_id is updated automatically to reflect this update.</p>
+
+<p>If some other caller updates that key value after you did a gets() to retrieve the key value, but before you attempt your write back, then the cas update will fail, as the cas_ids won't match. This means that you need to re-fetch the key value and repeat your changes, if desired.</p>
+
+<p class ="note"><strong>Note:</strong> The cas_id values fetched during the <code>cas</code> and <code>gets()</code> operations are valid for the current Client object. They are updated in memcache for a key value when <code>gets()</code>, <code>get_multi</code> with for_cas set to true and the various <code>cas</code> methods are used to update key values. During the lifetime of a particular Client object, the cas_ids  that have been fetched with key values can be cleared by invoking <code>cas_reset()</code>. 
 
 <h2>Constructor</h2>
 
@@ -972,17 +1025,11 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>Key to set. The Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dd>Key to set. The Key can be a string or a tuple of (hash_value, string) where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
       <dt><span class="argname">value</span></dt>
       <dd>Value to set. The value type can be any value supported by the Python <code>pickle</code> module for serializing values. The combined size of the serialized key and value must be at most 1 megabyte.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">min_compress_len</span></dt>
       <dd>Ignored option for compatibility.</dd>
       <dt><span class="argname">namespace</span></dt>
@@ -999,11 +1046,7 @@ var logged_in_user_email = null;
       <dt><span class="argname">mapping</span></dt>
       <dd>Dictionary of keys to values.  See <a href="#Client_set">set()</a> for a description of allowed keys and values. The combined size of all keys and values must be at most 32 megabytes.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">key_prefix</span></dt>
       <dd>Prefix to prepend to all keys.</dd>
       <dt><span class="argname">min_compress_len</span></dt>
@@ -1011,9 +1054,63 @@ var logged_in_user_email = null;
       <dt><span class="argname">namespace</span></dt>
       <dd>An optional namespace for the keys.</dd>
     </dl>
-    <p>The return value is a list of keys whose values were NOT set.  On total success,
-      this list should be empty.</p>
+    <p>The return value is a list of keys whose values were NOT set.  On total success, this list should be empty.</p>
   </dd>
+
+  <dt id="Client_cas"><span class="itemname">cas</span>(<span class="argname">key</span>, <span class="argname">value</span>, <span class="argname">time</span>=<span class="argdefault">0</span>, <span class="argname">min_compress_len</span>=<span class="argdefault">0</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+
+
+
+    <p>Performs a "compare and set" update to a key value that was fetched by a method that supports compare and set, such as <a href="#Client_gets">gets()</a> or <a href="#Client_get_multi">get_multi()</a> with its for_cas param set to True. This method compares the cas_id fetched with the key value and compares it to the cas_id value of the key value currently in memcache. If they are equal, <code>cas()</code> updates the key value in memcache, and its cas_id is updated. If the compare finds an inequality, this means that some other caller has modified the key value <em>after</em> you fetched it, and the update is <em>not</em> performed.  If this happens, you need to re-fetch the key value and allow or prompt the user to reapply changes if needed.
+</p>
+<p class="note"><strong>Note:</strong> The cas_id is a hidden value, handled internally and automatically by the methods that support compare and set. You don't do anything explicit in your code to read, write, or manipulate cas_ids.</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">key</span></dt>
+      <dd>Key to set. The Key can be a string or a tuple of (hash_value, string) where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dt><span class="argname">value</span></dt>
+      <dd>Value to set. The value type can be any value supported by the Python <code>pickle</code> module for serializing values. The combined size of the serialized key and value must be at most 1 megabyte.</dd>
+      <dt><span class="argname">time</span></dt>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
+      <dt><span class="argname">min_compress_len</span></dt>
+      <dd>Ignored option for compatibility.</dd>
+      <dt><span class="argname">namespace</span></dt>
+      <dd>An optional namespace for the key.</dd>
+    </dl>
+    <p>The return value is True if the value is successfully updated in memcache, False on an RPC error or if the cas_id value doesn't match the one currently in memcache for that key value.</p>
+  </dd>
+
+  <dt id="Client_cas_multi"><span class="itemname">cas_multi</span>(<span class="argname">mapping</span>, <span class="argname">time</span>=<span class="argdefault">0</span>, <span class="argname">key_prefix</span>=<span class="argdefault">''</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>, <span class="argname">rpc</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Sets multiple key values at the same time, reducing the network latency of doing many requests in serial, using key values fetched by <a href="#Client_gets">gets()</a> or <a href="#Client_get_multi">get_multi()</a> with its for_cas param set to True. Before this call does the update, for each key value it is updating it compares the cas_id of the key value when it was fetched to the current cas_id of the key value in memcache. If there is a match, memcache is updated with the new value. If the two cas_id values don't match, this means the key value was updated some time between the fetch and the attempt to update, and so this method does <em>not</em> update the key value in memcache. This call can be partially successful, where some key values are written to memcache and some are not. (This method returns the key values that could not be updated.)</p>
+
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">mapping</span></dt>
+      <dd>Dictionary of keys to values. A map from key to new_value where the key must have previously been retrieved by <a href="#Client_gets">gets()</a> or <a href="#Client_get_multi">get_multi()</a> with for_cas set to true.  See <a href="#Client_set">set()</a> for a description of allowed keys and values. The combined size of all keys and values must be at most 32 megabytes.</dd>
+      <dt><span class="argname">time</span></dt>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
+      <dt><span class="argname">key_prefix</span></dt>
+      <dd>Prefix to prepend to all keys.</dd>
+      <dt><span class="argname">min_compress_len</span></dt>
+      <dd>Ignored option for compatibility.</dd>
+      <dt><span class="argname">namespace</span></dt>
+      <dd>An optional namespace for the keys.</dd>
+    </dl>
+    <p>Returns a list of keys. If there is complete success, the list is empty.  If another caller has changed a key value after you retrieved it using  gets() or get_multi call and before your attempt to update that value, the write attempt will fail and that key value is returned in the list. </p>
+  </dd>
+
+  <dt id="Client_cas_reset"><span class="itemname">cas_reset</span>(<span class="argname"> </span>)</dt>
+  <dd>
+    <p>Clears all of the cas_ids from the current Client object.
+</p>
+
+  <p>No return value.</p>
+  </dd>
+
+
+
 
   <dt id="Client_get"><span class="itemname">get</span>(<span class="argname">key</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
   <dd>
@@ -1021,33 +1118,45 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>The key in memcache to look up. The Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dd>The key in memcache to look up. The Key can be a string or a tuple of (hash_value, string) where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
       <dt><span class="argname">namespace</span></dt>
       <dd>An optional namespace for the key.</dd>
     </dl>
     <p>The return value is the value of the key, if found in memcache, else None.</p>
   </dd>
 
-  <dt id="Client_get_multi"><span class="itemname">get_multi</span>(<span class="argname">keys</span>, <span class="argname">key_prefix</span>=<span class="argdefault">''</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
+
+  <dt id="Client_gets"><span class="itemname">gets</span>(<span class="argname">key</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
+  <dd>
+    <p>Looks up a single key in memcache and fetches its cas_id as well. You use this method rather than <code>get()</code> if you want to avoid conditions in which two or more callers are trying to modify the same key value at the same time, leading to undesired overwrites. This method fetches the key value and the key value's current cas_id, which is required for <code>cas()</code> and <code>cas_multi()</code> calls. (The cas_id is handled for you automatically by this call.)</p>
+    <p>Arguments:</p>
+    <dl>
+      <dt><span class="argname">key</span></dt>
+      <dd>The key in memcache to look up. The Key can be a string or a tuple of (hash_value, string), where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dt><span class="argname">namespace</span></dt>
+      <dd>An optional namespace for the key.</dd>
+    </dl>
+    <p>The return value is the value of the key, if found in memcache, else None.</p>
+  </dd>
+
+
+  <dt id="Client_get_multi"><span class="itemname">get_multi</span>(<span class="argname">keys</span>, <span class="argname">key_prefix</span>=<span class="argdefault">''</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>,  <span class="argname">for_cas</span>=<span class="argdefault">False</span>)</dt>
   <dd>
     <p>Looks up multiple keys from memcache in one operation. This is the recommended way to do bulk loads.</p>
     <p>The combined size of all values returned must not exceed 32 megabytes.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">keys</span></dt>
-      <dd>List of keys to look up. A Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dd>List of keys to look up. A Key can be a string or a tuple of (hash_value, string), where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
       <dt><span class="argname">key_prefix</span></dt>
       <dd>Prefix to prepend to all keys when talking to the server;
         not included in the returned dictionary.</dd>
       <dt><span class="argname">namespace</span></dt>
       <dd>An optional namespace for the keys.</dd>
+      <dt><span class="argname">for_cas</span></dt>
+      <dd>Supply the value True if you wish to use the compare and set (cas) feature, as this will get the cas_ids needed for the subsequent <code>cas()</code> or <code>cas_multi()</code> call. Supply the value False if you don't want to use that feature.</dd>
     </dl>
-    <p>The returned value is a dictionary of the keys and values that were present in memcache.
-      Even if the <span class="argname">key_prefix</span> is specified, that key_prefix is not included on the keys in the returned dictionary.</p>
+    <p>The returned value is a dictionary of the keys and values that were present in memcache. Even if the <span class="argname">key_prefix</span> is specified, that key_prefix is not included on the keys in the returned dictionary.</p>
   </dd>
 
   <dt id="Client_delete"><span class="itemname">delete</span>(<span class="argname">key</span>, <span class="argname">seconds</span>=<span class="argdefault">0</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
@@ -1056,24 +1165,14 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>Key to delete. A Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dd>Key to delete. A Key can be a string or a tuple of (hash_value, string), where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
       <dt><span class="argname">seconds</span></dt>
-      <dd>Optional number of seconds to make deleted items 'locked'
-        for 'add' operations. Value can be a delta from current time (up to
-        1 month), or an absolute Unix epoch time.  Defaults to 0, which means
-        items can be immediately added.  With or without this option,
-        a 'set' operation will always work.  Float values will be rounded up to
-        the nearest whole second.</dd>
+      <dd>Optional number of seconds to make deleted items 'locked' for 'add' operations. Value can be a delta from current time (up to
+        1 month), or an absolute Unix epoch time.  Defaults to 0, which means items can be immediately added.  With or without this option, a 'set' operation will always work.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">namespace</span></dt>
       <dd>An optional namespace for the key.</dd>
     </dl>
-    <p>The return value is 0 (DELETE_NETWORK_FAILURE) on network failure, 1
-      (DELETE_ITEM_MISSING) if the server tried to delete the item but
-      didn't have it, and 2 (DELETE_SUCCESSFUL) if the item was
-      actually deleted.  This can be used as a boolean value, where a
-      network failure is the only bad condition.</p>
+    <p>The return value is 0 (DELETE_NETWORK_FAILURE) on network failure, 1 (DELETE_ITEM_MISSING) if the server tried to delete the item but didn't have it, and 2 (DELETE_SUCCESSFUL) if the item was actually deleted.  This can be used as a boolean value, where a network failure is the only bad condition.</p>
   </dd>
 
   <dt id="Client_delete_multi"><span class="itemname">delete_multi</span>(<span class="argname">keys</span>, <span class="argname">seconds</span>=<span class="argdefault">0</span>, <span class="argname">key_prefix</span>=<span class="argdefault">''</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>)</dt>
@@ -1082,16 +1181,10 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">keys</span></dt>
-      <dd>List of keys to delete. A Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
+      <dd>List of keys to delete. A Key can be a string or a tuple of (hash_value, string) where the hash_value, normally used for sharding onto a memcache instance, 
           is instead ignored, as Google App Engine deals with the sharding transparently. </dd>
       <dt><span class="argname">seconds</span></dt>
-      <dd>Optional number of seconds to make deleted items 'locked'
-        for 'add' operations. Value can be a delta from current time (up to
-        1 month), or an absolute Unix epoch time.  Defaults to 0, which means
-        items can be immediately added.  With or without this option,
-        a 'set' operation will always work.  Float values will be rounded up to
-        the nearest whole second.</dd>
+      <dd>Optional number of seconds to make deleted items 'locked' for 'add' operations. Value can be a delta from current time (up to 1 month), or an absolute Unix epoch time. Defaults to 0, which means items can be immediately added.  With or without this option, a 'set' operation will always work.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">key_prefix</span></dt>
       <dd>Prefix to put on all keys when sending specified
         keys to memcache.  See docs for <a href="#Client_get_multi">get_multi()</a> and <a href="#Client_set_multi">set_multi()</a></dd>
@@ -1108,17 +1201,11 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>Key to set. The Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
+      <dd>Key to set. The Key can be a string or a tuple of (hash_value, string), where the hash_value, normally used for sharding onto a memcache instance is instead ignored, as Google App Engine deals with the sharding transparently.</dd>
       <dt><span class="argname">value</span></dt>
       <dd>Value to set. The value type can be any value supported by the Python <code>pickle</code> module for serializing values. The combined size of the serialized key and value must be at most 1 megabyte.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">min_compress_len</span></dt>
       <dd>Ignored option for compatibility.</dd>
       <dt><span class="argname">namespace</span></dt>
@@ -1135,14 +1222,9 @@ var logged_in_user_email = null;
       <dt><span class="argname">mapping</span></dt>
       <dd>A mapping of keys to values. See <a href="#Client_add">add()</a> for a description of allowed keys and values.  The combined size of all keys and values must be at most 32 megabytes.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">key_prefix</span></dt>
-      <dd>Prefix to put on all keys when sending specified
-        keys to memcache. Even if the <span class="argname">key_prefix</span> is specified, that key_prefix won't be on the keys in the returned list. See <a href="#Client_get_multi">get_multi()</a>.</dd>
+      <dd>Prefix to put on all keys when sending specified keys to memcache. Even if the <span class="argname">key_prefix</span> is specified, that key_prefix won't be on the keys in the returned list. See <a href="#Client_get_multi">get_multi()</a>.</dd>
       <dt><span class="argname">min_compress_len</span></dt>
       <dd>Ignored option for compatibility.</dd>
       <dt><span class="argname">namespace</span></dt>
@@ -1163,11 +1245,7 @@ var logged_in_user_email = null;
       <dt><span class="argname">value</span></dt>
       <dd>Value to set. The value type can be any value supported by the Python <code>pickle</code> module for serializing values. The combined size of the serialized key and value must be at most 1 megabyte.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">min_compress_len</span></dt>
       <dd>Ignored option for compatibility.</dd>
       <dt><span class="argname">namespace</span></dt>
@@ -1184,11 +1262,7 @@ var logged_in_user_email = null;
       <dt><span class="argname">mapping</span></dt>
       <dd>A mapping of keys to values. See <a href="#Client_replace">replace()</a> for a description of allowed keys and values. The combined size of all keys and values must be at most 32 megabytes.</dd>
       <dt><span class="argname">time</span></dt>
-      <dd>Optional expiration time, either relative number of seconds
-        from current time (up to 1 month), or an absolute Unix epoch time.
-        By default, items never expire, though items may be evicted due to
-        memory pressure.  Float values will be rounded up to the nearest
-        whole second.</dd>
+      <dd>Optional expiration time, either relative number of seconds from current time (up to 1 month), or an absolute Unix epoch time. By default, items never expire, though items may be evicted due to memory pressure.  Float values will be rounded up to the nearest whole second.</dd>
       <dt><span class="argname">key_prefix</span></dt>
       <dd>Prefix to put on all keys when sending specified
         keys to memcache. Even if the <span class="argname">key_prefix</span> is specified, that key_prefix won't be on the keys in the returned list. See <a href="#Client_get_multi">get_multi()</a>.</dd>
@@ -1202,16 +1276,12 @@ var logged_in_user_email = null;
 
   <dt id="Client_incr"><span class="itemname">incr</span>(<span class="argname">key</span>, <span class="argname">delta</span>=<span class="argdefault">1</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>, <span class="argname">initial_value</span>=<span class="argdefault">None</span>)</dt>
   <dd>
-    <p>Atomically increments a key's value. Internally, the value is a unsigned 64-bit integer.  Memcache
-    doesn't check 64-bit overflows.  The value, if too large, will
-    wrap around.</p>
+    <p>Atomically increments a key's value. Internally, the value is a unsigned 64-bit integer.  Memcache doesn't check 64-bit overflows.  The value, if too large, will wrap around.</p>
     <p>If the key does not yet exist in the cache and you specify an <span class="argname">initial_value</span>, the key's value will be set to this initial value and then incremented.  If the key does not exist and no <span class="argname">initial_value</span> is specified, the key's value will not be set.</p>
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>Key to increment, or a list of keys to increment. Each Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently. </dd>
+      <dd>Key to increment, or a list of keys to increment. Each Key can be a string or a tuple of (hash_value, string) where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently. </dd>
       <dt><span class="argname">delta</span></dt>
       <dd>Non-negative integer value (int or long) to increment key by,
         defaulting to 1.</dd>
@@ -1233,9 +1303,7 @@ var logged_in_user_email = null;
     <p>Arguments:</p>
     <dl>
       <dt><span class="argname">key</span></dt>
-      <dd>Key to decrement, or a list of keys to decrement. Each Key can be a string or a tuple of (hash_value, string) 
-          where the hash_value, normally used for sharding onto a memcache instance, 
-          is instead ignored, as Google App Engine deals with the sharding transparently. </dd>
+      <dd>Key to decrement, or a list of keys to decrement. Each Key can be a string or a tuple of (hash_value, string), where the hash_value, normally used for sharding onto a memcache instance, is instead ignored, as Google App Engine deals with the sharding transparently. </dd>
       <dt><span class="argname">delta</span></dt>
       <dd>Non-negative integer value (int or long) to decrement key by,
         defaulting to 1.</dd>
@@ -1292,6 +1360,9 @@ var logged_in_user_email = null;
       <dd>How long in seconds since the oldest item in the cache was accessed. Effectively, this indicates how long a new item will survive in the cache without being accessed. This is <i>not</i> the amount of time that has elapsed since the item was created.</dd>
     </dl>
   </dd>
+
+
+
 
 
 
@@ -1370,30 +1441,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

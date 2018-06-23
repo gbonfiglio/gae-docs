@@ -54,7 +54,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -164,17 +191,27 @@ var logged_in_user_email = null;
 
   <!-- Getting Started Steps -->
   <h2 style="padding-top: 0.5em;">Getting Started</h2>
-    <ol>
-      <li style="margin-left:.5em;">
+    <ol style="margin-left:.5em;">
+      <li>
         <a target="_blank" href="https://appengine.google.com/">Sign up</a> for an App Engine account.
       </li>
-      <li style="margin-left:.5em;">
+      <li>
         <a href="downloads.html">Download</a> the App Engine SDK.
       </li>
-      <li style="margin-left:.5em;">
+      <li>
         Read the <a href="docs/index.html">Getting Started Guide</a>.
       </li>
     </ol>
+
+  <div>
+    <h2 style="padding-top: 0.5em;">Get Involved</h2>
+    <ul style="margin-left:.5em;">
+      <li><a href="community.html">Join</a> App Engine Community.</li>
+      <li><a href="http://code.google.com/p/googleappengine/issues/list">Fill</a> Feature Requests or Defects.</li>
+      <li><a href="http://code.google.com/p/googleappengine">Contribute</a> to the SDK.</li>
+    </ul>
+  </div>
+
 
   <!-- Videos -->
   <div>
@@ -254,7 +291,7 @@ var logged_in_user_email = null;
             Download the App Engine SDKs for Python, Java, or Go.
             <ul>
               <li><a href="downloads.html#Google_App_Engine_SDK_for_Go">Google App Engine SDK for Go</a> <sup class="new">Experimental</sup></li>
-              <li><a href="downloads.html#Google_AppEngine_SDK_for_Java">Google App Engine SDK for Java</a></li>
+              <li><a href="downloads.html#Google_App_Engine_SDK_for_Java">Google App Engine SDK for Java</a></li>
               <li><a href="downloads.html#Google_App_Engine_SDK_for_Python">Google App Engine SDK for Python</a></li>
               <li><a href="downloads.html#Download_the_Google_Plugin_for_Eclipse">Google Plugin for Eclipse</a></li>
             </ul>
@@ -361,30 +398,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

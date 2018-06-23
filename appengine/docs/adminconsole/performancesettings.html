@@ -56,7 +56,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -260,6 +287,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../java/apis.html">Services</a>
       <ul>
+        <li><a href="../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../java/blobstore/overview.html">Overview</a></li>
@@ -310,14 +344,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../java/oauth/index.html">OAuth</a>
           <ul>
@@ -465,9 +499,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../python/apis.html">Services</a>
       <ul>
-        <li><a href="../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -865,7 +900,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="instances.html">Instances</a></li>
 <li><a href="roles.html">Roles</a></li>
-<li><a href="applicationsettings.html">Application</a></li>
+<li><a href="applicationsettings.html">Application Settings</a></li>
 <li><a href="datastoreadmin.html">Datastore</a></li>
 <li><a href="performancesettings.html">Performance Settings</a></li>
 
@@ -883,7 +918,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../kb/index.html">FAQ</a></li>
       <li><a href="../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -918,7 +952,7 @@ var logged_in_user_email = null;
 <h2 id="Setting_the_Number_of_Idle_Instances">Setting the Maximum Number of Idle Instances</h2>
   <p>The <strong>Max Idle Instances</strong> slider allows you to control the maximum number of idle instances available to your application at any given time (up to 100 instances). Idle instances are pre-loaded with your application code, so when a new instance is needed, it can serve traffic immediately. You will not be charged for instances over the specified maximum. Setting a low maximum means your application costs less to run, but may encounter more startup latency during spikes in request volume. Setting a high maximum means that your application will cost more to run, but will encounter less latency during spikes in request volume.</p>
   <p>Setting the Max Idle Instances slider to <strong>Automatic</strong> uses our scheduling algorithm to scale the number of instances based on your recent latency profile and request load. App Engine determines how many instances you need based on recent request data. If you use a manual setting, you may need to adjust it continually as your request volume changes.</p>
-  <p>It is not currently possible to specify a minimum number of idle instances. App Engine automatically determines the number of instances available to your application based on current traffic. Applications using <a href="instances.html#Always_On">Always On</a> always have a minimum number of three dedicated instances.</p>
+  <p>It is not currently possible to specify a minimum number of idle instances. App Engine automatically determines the number of instances available to your application based on current traffic. Applications using <a href="instances.html#Always_On">Always On</a> currently have a minimum number of three dedicated instances.</p>
 
 <h2 id="Setting_the_Minimum_Pending_Latency">Setting the Minimum Pending Latency</h2>
   <p>The <strong>Minimum Pending Latency</strong> slider allows you to specify the minimum period of time (at least 10 milliseconds) that requests must wait in the pending queue before being served by an instance. The App Engine scheduler determines whether or not to start new instances for requests waiting longer than the specified minimum. The scheduler will never create new instances for requests pending for less time than the specified minimum. A low value for minimum pending latency means requests may not wait as long in the pending queue. A high value means requests will spend longer in the pending queue if all existing instances are active. This setting allows you to trade off cost (in terms of instance hours) for user-visible latency.</p>
@@ -936,13 +970,13 @@ var logged_in_user_email = null;
 
   <tr>
     <td>maximum number of idle instances</td>
-    <td>1 instance</td>
-    <td>100 instances</td>
+    <td>Automatic</td>
+    <td>Automatic</td>
   </tr>
   <tr>
     <td>minimum pending latency</td>
-    <td>10 seconds</td>
-    <td>0 seconds</td>
+    <td>Automatic</td>
+    <td>Automatic</td>
   </tr>
   
 
@@ -1009,30 +1043,6 @@ Java is a registered trademark of Oracle and/or its affiliates</div>
 <script src="../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(
-
-
-    ['siteTracker._setAccount', 'UA-18071-1'],
-    ['siteTracker._setDomainName', 'code.google.com'],
-    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
-        window.location.pathname.lastIndexOf('/') + 1)],
-    ['siteTracker._trackPageview']
-);
-(function() {
-  var ga = document.createElement('script');
-  ga.type = 'text/javascript';
-  ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  (document.getElementsByTagName('head')[0] ||
-   document.getElementsByTagName('body')[0]).appendChild(ga);
- })();
-</script>
 
 
 

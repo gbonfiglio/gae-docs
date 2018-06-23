@@ -55,7 +55,34 @@ var logged_in_user_email = null;
 
     
     
-    <div id="gb">
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+var cookiePath = '/appengine/';
+if (cookiePath.lastIndexOf('.html') > cookiePath.lastIndexOf('/')) {
+  cookiePath = cookiePath.substring(0, cookiePath.lastIndexOf('/') + 1);
+};
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', cookiePath],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+
+
+<div id="gb">
  <span>
   
     <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
@@ -259,6 +286,13 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
+        <li><a href="../../java/appidentity/index.html">App Identity</a>
+          <ul>
+            <li><a href="../../java/appidentity/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/appidentity/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
         <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
             <li><a href="../../java/blobstore/overview.html">Overview</a></li>
@@ -309,14 +343,14 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>	
-          <ul>	
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
+          <ul>
                   <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
     <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
     <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a></li>
-	
-          </ul>	
+
+          </ul>
         </li>
         <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
@@ -464,9 +498,10 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
-        <li><a href="../../python/appidentity">App Identity</a>
+        <li>App Identity
           <ul>
-            <li><span class="tlw-title tlw-expanded">Reference</span>
+            <li><a href="../../python/appidentity/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
   <ul>
     <li><a href="../../python/appidentity/functions.html">Functions</a></li>
     <li><a href="../../python/appidentity/exceptions.html">Exceptions</a></li>
@@ -864,7 +899,7 @@ var logged_in_user_email = null;
         <ul>
           <li><a href="../../adminconsole/instances.html">Instances</a></li>
 <li><a href="../../adminconsole/roles.html">Roles</a></li>
-<li><a href="../../adminconsole/applicationsettings.html">Application</a></li>
+<li><a href="../../adminconsole/applicationsettings.html">Application Settings</a></li>
 <li><a href="../../adminconsole/datastoreadmin.html">Datastore</a></li>
 <li><a href="../../adminconsole/performancesettings.html">Performance Settings</a></li>
 
@@ -882,7 +917,6 @@ var logged_in_user_email = null;
     <ul>
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
-      <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -917,5 +951,359 @@ var logged_in_user_email = null;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<p>The Blobstore API allows your app to serve data objects, called blobs, that are much larger than the size allowed for objects in the Datastore service. Blobs are created by uploading a file through an HTTP request. Typically, your apps will do this by presenting a form with a file upload field to the user. When the form is submitted, the Blobstore creates a blob from the file's contents and returns an opaque reference to the blob, called a blob key, which you can later use to serve the blob. The app can serve the complete blob value in response to a user request, or it can read the value directly using a streaming file-like interface.</p>
+
+<ul>
+  <li><a href="#Introducing_the_Blobstore">Introducing the Blobstore</a></li>
+  <li><a href="#Using_the_Blobstore">Using the Blobstore</a></li>
+  <li><a href="#Uploading_a_Blob">Uploading a Blob</a></li>
+  <li><a href="#Serving_a_Blob">Serving a Blob</a></li>
+  <li><a href="#Complete_Sample_App">Complete Sample App</a></li>
+  <li><a href="#Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</a></li>
+  <li><a href="#Writing_Files_to_the_Blobstore">Writing Files to the Blobstore</a><sup class="new">Experimental!</sup></li>
+  <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
+</ul>
+
+
+<h2 id="Introducing_the_Blobstore">Introducing the Blobstore</h2>
+
+<p>Google App Engine includes the Blobstore service, which allows apps to serve data objects limited only by the amount of data you can upload or download over a single HTTP connection. These objects are called Blobstore values, or blobs. Blobstore values are served as responses from request handlers and are created as uploads via web forms. Apps do not create blob data directly; instead, blobs are created indirectly, by a submitted web form or other HTTP POST request. Blobstore values can be served to the user, or accessed by the app in a file-like stream, using the Blobstore API.</p>
+
+<p>Blobs as defined by the Blobstore service are not related to blob property values used by the datastore.</p>
+
+<p>Blobs are useful for serving large files, such as video or image files, and for allowing users to upload large data files.</p>
+
+<p>To prompt a user to upload a Blobstore value, your app presents a web form with a file upload field. The app generates the form's action URL by calling the Blobstore API. The user's browser uploads the file directly to the Blobstore via the generated URL. Blobstore then stores the blob, rewrites the request to contain the blob key, and passes it to a path in your app. A request handler at that path in your app can perform additional form processing, before returning the required headers-only redirect response.</p>
+
+<p>To serve a blob, your app sets a header on the outgoing response, and App Engine replaces the response with the blob value.</p>
+
+<p>Blobs can't be modified after they're created, although they can be deleted. Each blob has a corresponding blob info record, stored in the datastore, that provides details about the blob, such as its creation time and content type. You can use the blob key to fetch blob info records and query their properties.</p>
+
+
+
+
+<h2 id="Using_the_Blobstore">Using the Blobstore</h2>
+
+
+
+
+<p>Apps can use the Blobstore to accept large files as uploads from users and to serve those files. Files are called blobs once they're uploaded. Apps don't access blobs directly by filename. Instead, apps refer to blobs through the <code>appengine.BlobKey</code> type.</p>
+
+<p>The user creates a blob by submitting an HTML form that includes one or more file input fields. Your app sets <code>blobstore.UploadURL</code> as the destination (action) of this form, passing the function a URL path of a handler in your app. When the user submits the form, the user's browser uploads the specified files directly to the Blobstore. The Blobstore rewrites the user's request and stores the uploaded file data, replacing the uploaded file data with one or more corresponding blob keys, then passes the rewritten request to the handler at the URL path you provided to <code>blobstore.UploadURL</code>.  This handler can do additional processing based on the blob key. Finally, the handler must return a headers-only, redirect response (301, 302, or 303), typically a browser redirect to another page indicating the status of the blob upload.</p>
+
+<p>The app can read portions of a Blobstore value using a <code>blobstore.Reader</code>, and can also programatically generate blobs using a <code>blobstore.Writer</code>.</p>
+
+
+
+
+<h2 id="Uploading_a_Blob">Uploading a Blob</h2>
+
+<p>To create and upload a blob, follow this procedure:</p>
+<ul>
+
+ <li>Call <code>blobstore.UploadUrl</code> to create an upload URL for the form that the user will fill out, passing the application path to load when the POST of the form is completed.
+<pre class="prettyprint">
+c := appengine.NewContext(r)
+uploadURL, err := blobstore.UploadURL(c, &quot;/upload&quot;)
+if err != nil {
+	serveError(c, w, err)
+	return
+}
+w.Header().Set(&quot;Content-Type&quot;, &quot;text/html&quot;)
+err = rootTemplate.Execute(w, uploadURL)
+if err != nil {
+	c.Errorf(&quot;%v&quot;, err)
+}
+</pre>
+ </li>
+
+<li>The form must include a file upload field, and the form's <code>enctype</code> must be set to <code>multipart/form-data</code>. When the user submits the form, the POST is handled by the Blobstore API, which creates the blob. The API also creates an info record for the blob and stores the record in the datastore, and passes the rewritten request to your app on the given path as a blob key.
+
+<pre class="prettyprint">
+var rootTemplate = template.MustParse(rootTemplateHTML, nil)
+
+const rootTemplateHTML = `
+&lt;html&gt;&lt;body&gt;
+&lt;form action=&quot;{@}&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+Upload File: &lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;
+`
+</pre>
+
+</li>
+<li>In this handler, you can store the blob key with the rest of your app's data model. The blob key itself remains accessible from the blob info entity in the datastore. Note that after the user submits the form and your handler is called, the blob has already been saved and the blob info added to the datastore. If your app doesn't want to keep the blob, you should delete the blob immediately to prevent it from becoming orphaned.
+
+
+<pre class="prettyprint">
+c := appengine.NewContext(r)
+blobs, _, err := blobstore.ParseUpload(r)
+if err != nil {
+	serveError(c, w, err)
+	return
+}
+file := blobs[&quot;file&quot;]
+if len(file) == 0 {
+	c.Errorf(&quot;no file uploaded&quot;)
+	http.Redirect(w, r, &quot;/&quot;, http.StatusFound)
+	return
+}
+http.Redirect(w, r, &quot;/serve/?blobKey=&quot;+string(file[0].BlobKey), http.StatusFound)
+</pre>
+
+</li>
+</ul>
+<p>When the Blobstore rewrites the user's request, the MIME parts of the uploaded files have their bodies emptied, and the blob key is added as a MIME part header. All other form fields and parts are preserved and passed to the upload handler.</p>
+
+<p>If you don't specify a content type, the Blobstore will try to infer content type from the file extension. If no content type can be determined, the newly created blob is assigned content type <code>application/octet-stream</code>.</p>
+
+
+<h2 id="Serving_a_Blob">Serving a Blob</h2>
+
+<p>To serve blobs, you must include a blob download handler as a path in your app. This handler should pass the blob key for the desired blob to <code>blobstore.Send</code>.
+
+In this example, the blob key is passed to the download handler as the URL argument <code>r.FormValue("blobKey")</code>. In practice, the download handler can get the blob key by any means you choose, such as through another method or user action.
+
+<pre class="prettyprint">
+blobstore.Send(w, appengine.BlobKey(r.FormValue(&quot;blobKey&quot;)))
+</pre>
+
+<p>Blobs can be served from any app URL. To serve a blob in your app, you put a special header in the response containing the blob key. App Engine replaces the body of the response with the content of the blob.</p>
+
+<h3>Blob Byte Ranges</h3>
+
+<p>The Blobstore supports serving part of a large value instead of the full value in response to a request. To serve a partial value, include the <code>X-AppEngine-BlobRange</code> header in the outgoing response. Its value is a standard <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP byte range</a>. A blank <code>X-AppEngine-BlobRange</code> instructs the API to ignore the range header and serve the full blob. Example ranges include:</p>
+
+<ul>
+  <li><code>0-499</code> serves the first 500 bytes of the value (bytes 0 through 499, inclusive).</li>
+  <li><code>500-999</code> serves 500 bytes starting with the 501st byte.</li>
+  <li><code>500-</code> serves all bytes starting with the 501st byte to the end of the value.</li>
+  <li><code>-500</code> serves the last 500 bytes of the value.</li>
+</ul>
+
+<p>If the byte range is valid for the Blobstore value, the Blobstore sends a <code>206 Partial Content</code> status code and the requested byte range to the client. If the range is not valid for the value, the Blobstore sends a <code>416 Requested Range Not Satisfiable</code>.</p>
+
+<p>The Blobstore does not support multiple byte ranges in a single request (e.g. <code>100-199,200-299</code>), whether or not they overlap.</p>
+
+
+
+<h2 id="Complete_Sample_App">Complete Sample App</h2>
+
+<p>In our sample application, the app's main URL loads the form that asks the user for a file to upload, and the upload handler immediately calls the download handler to serve the data. This is to simplify the sample app. In practice, you would probably not use the main URL to request upload data, nor would you immediately serve a blob you had just uploaded.</p>
+
+<pre class="prettyprint">
+package blobstore_example
+
+import (
+	&quot;http&quot;
+	&quot;io&quot;
+	&quot;os&quot;
+	&quot;template&quot;
+
+	&quot;appengine&quot;
+	&quot;appengine/blobstore&quot;
+)
+
+func serveError(c appengine.Context, w http.ResponseWriter, err os.Error) {
+	w.WriteHeader(http.StatusInternalServerError)
+	w.Header().Set(&quot;Content-Type&quot;, &quot;text/plain&quot;)
+	io.WriteString(w, &quot;Internal Server Error&quot;)
+	c.Errorf(&quot;%v&quot;, err)
+}
+
+var rootTemplate = template.MustParse(rootTemplateHTML, nil)
+
+const rootTemplateHTML = `
+&lt;html&gt;&lt;body&gt;
+&lt;form action=&quot;{@}&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+Upload File: &lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;&lt;br&gt;
+&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;
+`
+
+func handleRoot(w http.ResponseWriter, r *http.Request) {
+	c := appengine.NewContext(r)
+	uploadURL, err := blobstore.UploadURL(c, &quot;/upload&quot;)
+	if err != nil {
+		serveError(c, w, err)
+		return
+	}
+	w.Header().Set(&quot;Content-Type&quot;, &quot;text/html&quot;)
+	err = rootTemplate.Execute(w, uploadURL)
+	if err != nil {
+		c.Errorf(&quot;%v&quot;, err)
+	}
+}
+
+func handleServe(w http.ResponseWriter, r *http.Request) {
+	blobstore.Send(w, appengine.BlobKey(r.FormValue("blobKey")))
+}
+
+func handleUpload(w http.ResponseWriter, r *http.Request) {
+	c := appengine.NewContext(r)
+	blobs, _, err := blobstore.ParseUpload(r)
+	if err != nil {
+		serveError(c, w, err)
+		return
+	}
+	file := blobs[[]&quot;file&quot;]
+	if len(file) == 0 {
+		c.Errorf(&quot;no file uploaded&quot;)
+		http.Redirect(w, r, &quot;/&quot;, http.StatusFound)
+		return
+	}
+	http.Redirect(w, r, &quot;/serve/?blobKey=&quot;+string(file[[]0].BlobKey), http.StatusFound)
+}
+
+func init() {
+	http.HandleFunc(&quot;/&quot;, handleRoot)
+	http.HandleFunc(&quot;/serve/&quot;, handleServe)
+	http.HandleFunc(&quot;/upload&quot;, handleUpload)
+}
+</pre>
+
+
+
+<h2 id="Using_the_Image_Service_with_the_Blobstore">Using the Image Service with the Blobstore</h2>
+
+<p>The Images service can use a Blobstore value as the source of a transformation. The source image can be as large as the maximum size for a Blobstore value. The Image service still returns the transformed image to the application, so the transformed image must be smaller than 32 megabytes. This is useful for making thumbnail images of large photographs uploaded by users.</p>
+
+
+
+<h2 id="Writing_Files_to_the_Blobstore">Writing Files to the Blobstore <span class="exp-feat">(Experimental)</span></h2>
+
+<p>App Engine allows you to programmatically create blobstore blobs, providing a file-like API that you can use to read and write to blobs. Some common uses of this functionality include exporting data and generating reports&mdash;or any function that involves generating large binary data objects.</p>
+
+
+
+<p>You begin by creating a new (empty) blobstore file using the <code>Create</code> function, which creates an <code>io.WriteCloser</code>.</p>
+
+
+<p>This is a low-level API.
+
+</p>
+
+
+<p>The following sample shows how to create a new blobstore file and get its blob key:</p>
+<pre class="prettyprint">
+var k appengine.BlobKey
+w, err := blobstore.Create(c, &quot;application/octet-stream&quot;)
+if err != nil {
+	return k, err
+}
+_, err = w.Write([]byte(&quot;... some data ...&quot;))
+if err != nil {
+	return k, err
+}
+err = w.Close()
+if err != nil {
+	return k, err
+}
+return w.Key()
+</pre>
+
+
+<p class="note"><b>Note:</b> Each write consumes a minimum CPU quota, even if you only write one byte. You can use your quota more efficiently by batching writes.</p>
+
+
+<h2 id="Quotas_and_Limits">Quotas and Limits</h2>
+
+<p>Space used for Blobstore values contributes to the <b>Stored Data (billable)</b> quota. Blob info entities in the datastore count towards datastore-related quotas.</p>
+
+<p>The amount of CPU time consumed by blobstore operations applies to the <b>CPU Time (billable)</b> quota.</p>
+
+<p>For more information on quotas, see <a href="../../quotas.html">Quotas</a>, and the "Quota Details" section of <a href="../../adminconsole/index.html">the Admin Console</a>.</p>
+
+<p>In addition to quotas, the following limit applies to the use of the blobstore:</p>
+
+<table>
+  <tr>
+    <th>Limit</th>
+    <th>Amount</th>
+  </tr>
+  <tr>
+    <td>maximum size of Blobstore data that can be read by the app with one API call</td>
+    <td>32 megabytes</td>
+  </tr>
+</table>
+
+
+
+      </div><!-- end gc-pagecontent -->
+   </div><!-- end gooey wrapper -->
+
+    </div> <!-- end codesite content -->
+
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
+    
+    ©2011 Google -
+    <a href="http://code.google.com">Code Home</a> -
+    <a href="http://code.google.com/terms.html">Site Terms of Service</a> -
+    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://code.google.com/more">Site Directory</a>
+    <br> <br>
+    Google Code offered in:
+    <a href="http://code.google.com/intl/en">English</a> -
+    <a href="http://code.google.com/intl/es">Español</a> -
+    <a href="http://code.google.com/intl/ja">日本語</a> -
+    <a href="http://code.google.com/intl/ko">한국어</a> -
+    <a href="http://code.google.com/intl/pt-BR">Português</a> -
+    <a href="http://code.google.com/intl/ru">Pусский</a> -
+    <a href="http://code.google.com/intl/zh-CN">中文(简体)</a> -
+    <a href="http://code.google.com/intl/zh-TW">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-container -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+
+
+
+
+  </body>
+</html>
 
 
