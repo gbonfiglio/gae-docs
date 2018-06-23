@@ -14,17 +14,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -37,7 +33,7 @@
     
     
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>Appstats - Google App Engine - Google Code</title>
+<title>Appstats for Python - Google App Engine - Google Code</title>
 <script type="text/javascript"><!--
 (function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
 
@@ -63,14 +59,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +78,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +202,14 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
     <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +218,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
-        <li><a href="../../java/memcache/index.html">Memcache</a>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../../java/memcache/overview.html">Overview</a></li>
-    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +253,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/xmpp/index.html">XMPP</a>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/images/index.html">Images</a>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../../java/images/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../../java/users/index.html">Google Accounts</a>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../../java/users/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +318,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +343,7 @@ var logged_in_user_email = null;
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +366,7 @@ var logged_in_user_email = null;
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../datastore/overview.html">Overview</a></li>
+     <li><a href="../datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="../datastore/entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="../datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="../datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +374,7 @@ var logged_in_user_email = null;
      <li><a href="../datastore/transactions.html">Transactions</a></li>
      <li><a href="../datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="../datastore/gqlreference.html">GQL Reference</a></li>
+    <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
      <li><a href="../datastore/stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +395,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../memcache/overview.html">Overview</a></li>
-      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../memcache/clientclass.html">Client</a></li>
-         <li><a href="../memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../channel/functions.html">Functions</a></li>
+    <li><a href="../channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                 <li><a href="../images/overview.html">Overview</a></li>
+     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../images/imageclass.html">Image</a></li>
+         <li><a href="../images/functions.html">Functions</a></li>
+         <li><a href="../images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +455,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../xmpp/functions.html">Functions</a></li>
-         <li><a href="../xmpp/messageclass.html">Message</a></li>
-         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../memcache/clientclass.html">Client</a></li>
+         <li><a href="../memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../images/overview.html">Overview</a></li>
-     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../multitenancy/functions.html">Functions</a></li>
+        <li><a href="../multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../images/imageclass.html">Image</a></li>
-         <li><a href="../images/functions.html">Functions</a></li>
-         <li><a href="../images/exceptions.html">Exceptions</a></li>
+         <li><a href="../oauth/functions.html">Functions</a></li>
+         <li><a href="../oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
           <ul>
                  <li><a href="../users/overview.html">Overview</a></li>
      <li><a href="../users/userobjects.html">User Objects</a></li>
@@ -447,31 +539,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="../taskqueue/functions.html">Functions</a></li>
-         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/functions.html">Functions</a></li>
-    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +560,7 @@ var logged_in_user_email = null;
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
+    <li><a href="../config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +612,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +630,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -573,11 +655,11 @@ var logged_in_user_email = null;
       </div>
 
       <div class="g-unit" id="gc-pagecontent">
-        <h1 class="page_title">Appstats</h1>
+        <h1 class="page_title">Appstats for Python</h1>
 
 
 
-<p>The Python SDK includes a suite of tools for measuring the performance of your application, called Appstats.  Appstats integrates with your web application framework to record events, and provides a web-based administrative interface for browsing statistics.</p>
+<p>The Python SDK includes a suite of tools for measuring the performance of your application, called Appstats. Appstats integrates with your web application framework to record events, and provides a web-based administrative interface for browsing statistics. (There's also a version of <a href="../../java/tools/appstats.html">Appstats for Java</a>.)</p>
 
 <ul>
   <li><a href="#Installing_the_Event_Recorder">Installing the Event Recorder</a></li>
@@ -588,7 +670,7 @@ var logged_in_user_email = null;
 
 <h2 id="Installing_the_Event_Recorder">Installing the Event Recorder</h2>
 
-<p>To record statistics about web requests, each request handler must invoke Appstats.  Appstats includes two ways to add this to your handler code easily:</p>
+<p>To record statistics about web requests, each request handler must invoke Appstats. Appstats includes two ways to add this to your handler code easily:</p>
 
 <ul>
   <li>an extension to the <a href="webapp/utilmodule.html#run_wsgi_app">run_wsgi_app()</a> function (in the <code>google.appengine.ext.webapp.util</code> package) that works with any WSGI web application framework, including <a href="webapp/index.html">webapp</a></li>
@@ -597,7 +679,7 @@ var logged_in_user_email = null;
 
 <h3>Using Appstats with run_wsgi_app()</h3>
 
-<p>To use Appstats with a WSGI-compatible framework (such as webapp), you must use the <a href="webapp/utilmodule.html#run_wsgi_app">run_wsgi_app()</a> function to invoke the application in your request handler scripts.  For example, you can use code similar to the following to create an instance of a webapp application and run it:</p>
+<p>To use Appstats with a WSGI-compatible framework (such as webapp), you must use the <a href="webapp/utilmodule.html#run_wsgi_app">run_wsgi_app()</a> function to invoke the application in your request handler scripts. For example, you can use code similar to the following to create an instance of a webapp application and run it:</p>
 
 <pre class="prettyprint">
 from google.appengine.ext import webapp
@@ -646,48 +728,56 @@ MIDDLEWARE_CLASSES = (
 
 <p>The Appstats middleware should be the first item so the profiler can include other middleware in its statistics.</p>
 
-<p>The Django middleware calls Appstats to record events, as appropriate.  You do not need to change any other application code.</p>
+<p>The Django middleware calls Appstats to record events, as appropriate. You do not need to change any other application code.</p>
 
 
 <h2 id="Setting_Up_the_Administrative_Interface">Setting Up the Administrative Interface</h2>
+<p>You have two options for setting up the administrative interface:</p>
+<ol>
+  <li><a href="#Using_the_builtins_Directive">Using the builtins directive</a>, which maps Appstats to <code>/_ah/stats/</code>.</li>
+  <li><a href="#Using_the_url_Directive">Using the url directive</a>, which allows you to specify a custom URL for Appstats. The URL must end in <code>stats/</code>.</li>
+</ol>
+<p>After creating the mapping, you can access the Appstats interface for your application via the URL path in your web browser. You can test this with the development server to ensure it is set up correctly. If you use builtins, the URL for the development server is <a href="http://localhost:8080/_ah/stats">http://localhost:8080/_ah/stats/</a>.</p>
 
-<p>You enable the Appstats administrative web interface by adding the request handler to your <code>app.yaml</code> file.  You can use any URL path that ends in <code>/stats.*</code>.  To enable the interface, add the following URL handler to your <code>app.yaml</code> file:</p>
+<h3 id="Using_the_builtins_Directive">Mapping Appstats to the Default URL</h3>
+<p>To map Appstats to the default directory (<code>/_ah/stats/</code>), add the <code>appstats</code> builtin to your <code>app.yaml</code> file:</p>
 
 <pre>
-- url: /stats.*
-  script: $PYTHON_LIB/google/appengine/ext/appstats/ui.py
+builtins:
+- appstats: on
 </pre>
 
-<p>This example maps all URL paths beginning with <code>/stats</code> to the Appstats interface.  (Remember to include <code>.*</code> at the end of the URL pattern to map all URL paths with this prefix to the interface.)</p>
 
-<p class="note"><b>Tip:</b> The Appstats web interface can be accessed only by application administrators.  This is handled in the Appstats code, so the handler does not need to be restricted in configuration with <code>login: admin</code>.  Leaving out the <code>login</code> restriction makes Appstats easier to use in the development server.</p>
-
-<p>To access the Appstats interface for your application, visit the URL path you chose using your web browser.  You can test this with the development server to ensure it is set up correctly: <a href="http://localhost:8080/stats">http://localhost:8080/stats</a></p>
+<h3 id="Using_the_url_Directive">Mapping Appstats to a Custom URL</h3>
+<p>In most cases, you should use the builtins directive to enable Appstats. If you have a specific need to map Appstats to a directory other than <code>/_ah/stats/</code>, you can use the <code>url</code> directive in <code>app.yaml</code> instead:</p>
+<pre>- url: /stats.*
+  script: $PYTHON_LIB/google/appengine/ext/appstats/ui.py</pre>
+<p class="note"><b>Tip:</b> The Appstats web interface can be accessed only by application administrators. This is handled in the Appstats code, so the handler does not need to be restricted in configuration with <code>login: admin</code>. Leaving out the <code>login</code> restriction makes Appstats easier to use in the development server.</p>
 
 
 <h2 id="Configuring_Appstats">Configuring Appstats</h2>
 
-<p>You can configure the behavior of Appstats by creating a file named <code>appengine_config.py</code> in your application's root directory.  For a complete example of configuration options, see the file <code>google/appengine/ext/appstats/sample_appengine_config.py</code> in the SDK.</p>
+<p>You can configure the behavior of Appstats by creating a file named <code>appengine_config.py</code> in your application's root directory. For a complete example of configuration options, see the file <code>google/appengine/ext/appstats/sample_appengine_config.py</code> in the SDK.</p>
 
 <p>Some things to know about <code>appengine_config.py</code>:</p>
 
 <ul class="doublespace">
   <li>If your request handlers modify <code>sys.path</code>, you must make the same modifications to <code>sys.path</code> in <code>appengine_config.py</code> so the Appstats web interface can see all files.</li>
-  <li>If you use <code>run_wsgi_app()</code> to invoke Django (instead of using the middleware method described above) and you call <code>google.appengine.dist.use_library()</code> to select a Django version, you must also add this call to <code>appengine_config.py</code>.  (We recommend using the middleware method instead.)</li>
+  <li>If you use <code>run_wsgi_app()</code> to invoke Django (instead of using the middleware method described above) and you call <code>google.appengine.dist.use_library()</code> to select a Django version, you must also add this call to <code>appengine_config.py</code>. (We recommend using the middleware method instead.)</li>
 </ul>
 
 
 <h2 id="How_It_Works">How It Works</h2>
 
-<p>Appstats uses API hooks to add itself to the remote procedure call framework that underlies the App Engine service APIs.  It records statistics for all API calls made during the request handler, then stores the data in memcache, using a namespace of <code>__appstats__</code>.  Appstats retains statistics for the most recent 1,000 requests.  The data includes summary records, about 200 bytes each, and detail records, which can be up to 100 KB each.  You can control the amount of detail stored in detail records.  (See <a href="#Configuring_Appstats">Configuring Appstats</a> and the example configuration file.)</p>
+<p>Appstats uses API hooks to add itself to the remote procedure call framework that underlies the App Engine service APIs. It records statistics for all API calls made during the request handler, then stores the data in memcache, using a namespace of <code>__appstats__</code>. Appstats retains statistics for the most recent 1,000 requests. The data includes summary records, about 200 bytes each, and detail records, which can be up to 100 KB each. You can control the amount of detail stored in detail records. (See <a href="#Configuring_Appstats">Configuring Appstats</a> and the example configuration file.)</p>
 
-<p>The API hooks add some overhead to the request handlers.  Appstats adds a message to the logs at the "info" level to report the amount of resources consumed by the Appstats library itself.  The log line looks something like this:</p>
+<p>The API hooks add some overhead to the request handlers. Appstats adds a message to the logs at the "info" level to report the amount of resources consumed by the Appstats library itself. The log line looks something like this:</p>
 
 <pre>INFO 2009-08-25 12:04:07,277 recording.py:290] Saved; key: __appstats__:046800, part: 160 bytes, full: 25278 bytes, overhead: 0.019 + 0.018; link: http://appid.appspot.com/stats/detail?time=1234567890123</pre>
 
-<p>This line reports the memcache key that was updated, the size of the summary (<code>part</code>) and detail (<code>full</code>) records, and the time (in seconds) spent recording this information.  The log line includes the link to the Appstats administrative interface that displays the data for this event.</p>
+<p>This line reports the memcache key that was updated, the size of the summary (<code>part</code>) and detail (<code>full</code>) records, and the time (in seconds) spent recording this information. The log line includes the link to the Appstats administrative interface that displays the data for this event.</p>
 
-<p class="note"><b>Tip:</b> Because Appstats hooks directly into the remote procedure call framework, the administrative interface may use API names that differ from the Python API your application uses.  Most of these names are intuitive: for instance, <code>datastore_v3.Get</code> is called by <code>db.get()</code> or <code>db.Model.get()</code>.  Datastore queries usually involve a <code>datastore_v3.RunQuery</code> followed by zero or more <code>datastore_v3.Next</code> calls.  (<code>RunQuery</code> returns the first few results, so the API only uses <code>Next</code> when fetching many results.  Avoiding unnecessary <code>Next</code> calls may speed up your app!)</p>
+<p class="note"><b>Tip:</b> Because Appstats hooks directly into the remote procedure call framework, the administrative interface may use API names that differ from the Python API your application uses. Most of these names are intuitive: for instance, <code>datastore_v3.Get</code> is called by <code>db.get()</code> or <code>db.Model.get()</code>. Datastore queries usually involve a <code>datastore_v3.RunQuery</code> followed by zero or more <code>datastore_v3.Next</code> calls. (<code>RunQuery</code> returns the first few results, so the API only uses <code>Next</code> when fetching many results. Avoiding unnecessary <code>Next</code> calls may speed up your app!)</p>
 
 
 
@@ -723,14 +813,14 @@ MIDDLEWARE_CLASSES = (
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -743,7 +833,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -751,6 +841,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

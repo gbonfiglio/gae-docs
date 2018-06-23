@@ -12,7 +12,8 @@ gaearticles.tags['API hooks'] = [
   '6f7583182af6697683b1e32e660efe8eee33c6ed'
 ];
 gaearticles.tags['Authentication'] = [
-  '39f2a0dd4a78dec0f86f1fa32bd66c36128ce954'
+  '39f2a0dd4a78dec0f86f1fa32bd66c36128ce954',
+  '475e1cc13ece89dfb3e33a2b172c01fedc75aa4b'
 ];
 gaearticles.tags['Custom domains'] = [
   '39f2a0dd4a78dec0f86f1fa32bd66c36128ce954',
@@ -40,6 +41,7 @@ gaearticles.tags['Datastore'] = [
   'fa1677751b7e7561b1cc49b6d77b05ed9a2c483a'
 ];
 gaearticles.tags['Django'] = [
+  '7f508b242272025d39aa6cad6072f65c081cd14d',
   '2232cbb5b5c441bd48bd983da5bd19a003aeace5',
   '31c3ad2ae29dfdc02e6cb875dda41631d4496f71',
   '6ff4a24392b04e77f9345c00fcc45a7abb63cb1f',
@@ -77,6 +79,10 @@ gaearticles.tags['Indexes'] = [
 ];
 gaearticles.tags['Java runtime'] = [
   '57e8905cbff23a7c5355c3b47900ca1e3f4934ba',
+  'cecfc81f689dee8da589df46eec11384678d1aee'
+];
+gaearticles.tags['Mapper API'] = [
+  '5d610542a50ec20e4f8846ea7c9f61c3f56c1226',
 ];
 gaearticles.tags['Memcache'] = [
   'c33609231c1eac38b54bb4236e7aa58ada86fa68',
@@ -84,6 +90,7 @@ gaearticles.tags['Memcache'] = [
 ];
 gaearticles.tags['Logging'] = [
   '1955ab5899645f932732e94415b964aed5900ddb',
+  '32ecf9ae0b3b1774d21c120a463fc3f436b5544f',
   '3743fbc4ca0d3bfe9d74bbcd8ce85d4c42bb64cf',
   '6f7583182af6697683b1e32e660efe8eee33c6ed'
 ];
@@ -98,6 +105,7 @@ gaearticles.tags['Python runtime'] = [
   '2232cbb5b5c441bd48bd983da5bd19a003aeace5',
   '29e91f011545ed4736c28030069daed8a83c9968',
   '31c3ad2ae29dfdc02e6cb875dda41631d4496f71',
+  '32ecf9ae0b3b1774d21c120a463fc3f436b5544f',
   '3743fbc4ca0d3bfe9d74bbcd8ce85d4c42bb64cf',
   '3fd526e06fc0c9bf563d6db1612344e57b94c97e',
   '445caff6d628529d0235c04c056e41fd86d6e0c5',

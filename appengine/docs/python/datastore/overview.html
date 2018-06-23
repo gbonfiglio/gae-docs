@@ -14,17 +14,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -63,14 +59,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +78,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +202,14 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
     <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +218,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
-        <li><a href="../../java/memcache/index.html">Memcache</a>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../../java/memcache/overview.html">Overview</a></li>
-    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +253,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/xmpp/index.html">XMPP</a>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/images/index.html">Images</a>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../../java/images/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../../java/users/index.html">Google Accounts</a>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../../java/users/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +318,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +343,7 @@ var logged_in_user_email = null;
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +366,7 @@ var logged_in_user_email = null;
     <li><a href="index.html">Storing Data</a>
       <ul>
              <li><a href="overview.html">Overview</a></li>
+     <li><a href="hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +374,7 @@ var logged_in_user_email = null;
      <li><a href="transactions.html">Transactions</a></li>
      <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="gqlreference.html">GQL Reference</a></li>
+    <li><a href="metadataqueries.html">Metadata Queries</a></li>
      <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +395,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../memcache/overview.html">Overview</a></li>
-      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../memcache/clientclass.html">Client</a></li>
-         <li><a href="../memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../channel/functions.html">Functions</a></li>
+    <li><a href="../channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                 <li><a href="../images/overview.html">Overview</a></li>
+     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../images/imageclass.html">Image</a></li>
+         <li><a href="../images/functions.html">Functions</a></li>
+         <li><a href="../images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +455,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../xmpp/functions.html">Functions</a></li>
-         <li><a href="../xmpp/messageclass.html">Message</a></li>
-         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../memcache/clientclass.html">Client</a></li>
+         <li><a href="../memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../images/overview.html">Overview</a></li>
-     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../multitenancy/functions.html">Functions</a></li>
+        <li><a href="../multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../images/imageclass.html">Image</a></li>
-         <li><a href="../images/functions.html">Functions</a></li>
-         <li><a href="../images/exceptions.html">Exceptions</a></li>
+         <li><a href="../oauth/functions.html">Functions</a></li>
+         <li><a href="../oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
           <ul>
                  <li><a href="../users/overview.html">Overview</a></li>
      <li><a href="../users/userobjects.html">User Objects</a></li>
@@ -447,31 +539,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="../taskqueue/functions.html">Functions</a></li>
-         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/functions.html">Functions</a></li>
-    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +560,7 @@ var logged_in_user_email = null;
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
+    <li><a href="../config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +612,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +630,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -584,6 +666,9 @@ var logged_in_user_email = null;
 
 
 
+
+
+
 <p>The Google App Engine datastore provides robust scalable data storage for your web application.  The datastore is designed with web applications in mind, with an emphasis on read and query performance.  It stores data entities with properties, organized by application-defined kinds.  It can perform queries over entities of the same kind, with filters and sort orders on property values and keys.  All queries are pre-indexed for fast results over very large data sets.  The datastore supports transactional updates, using entity groupings defined by the application as the unit of transactionality in the distributed data network.</p>
 
 <ul>
@@ -592,6 +677,7 @@ var logged_in_user_email = null;
   <li><a href="#Entities_and_Properties">Entities and Properties</a></li>
   <li><a href="#Queries_and_Indexes">Queries and Indexes</a></li>
   <li><a href="#Transactions_and_Entity_Groups">Transactions and Entity Groups</a></li>
+  <li><a href="#Datastore_Performance_Features">Datastore Performance Features</a></li>
   <li><a href="#Datastore_Statistics">Datastore Statistics</a></li>
   <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
 </ul>
@@ -630,7 +716,7 @@ class Employee(db.Model):
 e = Employee(name="",
              role="manager",
              account=users.get_current_user())
-e.hire_date = datetime.datetime.now()
+e.hire_date = datetime.datetime.now().date()
 e.put()
 </pre>
 
@@ -685,6 +771,43 @@ for e in employees_trained:
 <p>The datastore uses <i>optimistic concurrency</i> to manage transactions.  While one app instance is applying changes to entities in an entity group, all other attempts to update any entity in the group fail instantly.  The app can try the transaction again to apply it to the updated data.</p>
 
 
+<h2 id="Datastore_Performance_Features">Datastore Performance Features</h2>
+
+<p>The datastore includes features for managing how datastore API calls behave during localized datastore unavailability: read consistency and API call deadlines.</p>
+
+<h3>Strong Consistency and Eventual Consistency</h3>
+
+<p>The datastore replicates all data to multiple storage locations, so if one storage location fails, the datastore can switch to another and still access the data.  To ensure that the view of the data stays consistent as it is being updated, an app uses one location as its primary location, and changes to the data on the primary are replicated to the other locations in parallel.</p>
+
+<p>By default, an app switches to an alternate location only for large failures, and only all at once.  For small failures in primary storage, such as a single machine becoming unavailable temporarily, the datastore waits for primary storage to become available again to complete an interrupted operation.  This is necessary to give the app a reasonably consistent view of the data, since alternate locations may not yet have all of the changes made to the primary.  The datastore may wait up to the request handler deadline to read data on a failing machine at the primary location.</p>
+
+<p>In many cases, it is more important for the datastore to return some version of the data in a short amount of time than it is to wait to return current data.  You can tell the datastore to read from an alternate location (which may have older data) when the primary is unavailable by specifying a <i>read policy</i>.  You can choose between two read policies: a read policy of <i>strong consistency</i> always reads from the primary storage location, and a policy of <i>eventual consistency</i> will read from an alternate location when the primary location is unavailable.  The default behavior is to use strong consistency.</p>
+
+<p>Note that strong consistency is not the same as transactional consistency.  When an entity is read in a <a href="transactions.html">transaction</a>, the entity is read from the entity group as it exists at the moment the transaction begins, causing all changes committed prior to that point to be applied if necessary.  With a non-transactional read of a single entity with strong consistency, the datastore returns whatever version of the entity is in primary storage, without applying pending changes.  Multiple entities read outside a transaction can be inconsistent simply due to changes over time.  If you need a consistent view of multiple entities, the entities must be in an entity group and the reads must occur in the same transaction.</p>
+
+<p>All update operations (create, update, delete) occur in primary storage.  A strongly consistent read of an entity may still be one operation or transaction behind, since a transaction is applied after it is committed.  An eventually consistent read can return data older than data on the primary, since it may take more time for changes to replicate to the alternate locations.</p>
+
+<p>Multiple read operations with a read policy of eventual consistency may use different alternate locations.  In particular, when the read policy is set to eventual consistency, a query that uses multiple indexes (such as some "zigzag" queries) or a query operator that performs multiple queries (<code>!=</code> or <code>IN</code>) may use different, possibly inconsistent locations for each index.</p>
+
+<p>Finally, note that a strongly consistent read and an eventually consistent read are only different when a primary storage machine becomes unavailable.  It is rare for a machine to become unavailable, but it is inevitable in a distributed system.  The read policy lets you choose how the datastore should behave when a datastore machine becomes unavailable.</p>
+
+
+<h3>Datastore Call Deadlines</h3>
+
+<p>By default, a call to the datastore will not return until the call is successful.  The runtime environment will abort the call if the request deadline is reached.</p>
+
+<p>An app can specify a deadline for a call to the datastore, such that if the call does not return results in the specified amount of time, the call is aborted and app execution can continue.  If the deadline elapses during a batch update operation across multiple entity groups, updates committed prior to the deadline will persist, and the remaining updates will not take place.  If the deadline elapses during a transaction, the entire transaction is rolled back.</p>
+
+
+<h3>Configuring the Read Policy and the Datastore Call Deadline</h3>
+
+
+<p>In the Python API, the read policy (strong vs. eventual consistency) and datastore call deadline are set using a remote procedure call (RPC) object.  You create this object with the desired options, then pass it as the <code>rpc</code> argument to calls that support it.  You can use different RPC options for individual calls in the same app.</p>
+
+<p>For information on how to do this, see <a href="queriesandindexes.html#Setting_the_Read_Policy_and_Datastore_Call_Deadline">Queries and Indexes: Setting the Read Policy and Datastore Call Deadline</a> and the <a href="functions.html#create_rpc">create_rpc()</a> function reference.</p>
+
+
+
 <h2 id="Datastore_Statistics">Datastore Statistics</h2>
 
 <p>The datastore maintains statistics about the data stored for an application, such as how many entities there are of a given kind, or how much space is used by property values of a given type.  You can view these statistics in the Administration Console, under Datastore &gt; Statistics.</p>
@@ -698,7 +821,7 @@ for e in employees_trained:
 
 <p>Data sent to the datastore by the app counts toward the <b>Data Sent to (Datastore) API</b> quota.  Data received by the app from the datastore counts toward the <b>Data Received from (Datastore) API</b> quota.</p>
 
-<p>The total amount of data currently stored in the datastore for the app cannot exceed the <b>Stored Data (billable)</b> quota.  This includes entity properties and keys, but does <i>not</i> include indexes.</p>
+<p>The total amount of data currently stored in the datastore for the app cannot exceed the <b>Stored Data (billable)</b> quota.  This includes all entity properties and keys <em>and</em> the indexes necessary to support querying these entities. See <a href="../../../articles/storage_breakdown.html">How Entities and Indexes are Stored</a> for a complete breakdown of the metadata required to store entities and indexes at the Bigtable level.</p>
 
 <p>The amount of CPU time consumed by datastore operations applies to the following quotas:</p>
 
@@ -721,16 +844,12 @@ for e in employees_trained:
     <td>1 megabyte</td>
   </tr>
   <tr>
-    <td>maximum number of values in an index for an entity <super>(1)</super></td>
-    <td>1,000 values</td>
+    <td>maximum number of values in an index for an entity <sup>(1)</sup></td>
+    <td>5,000 values</td>
   </tr>
   <tr>
-    <td>maximum number of entities in a batch put or batch delete <super>(2)</super></td>
+    <td>maximum number of entities in a batch put or batch delete</td>
     <td>500 entities</td>
-  </tr>
-  <tr>
-    <td>maximum results offset for a query</td>
-    <td>1,000</td>
   </tr>
   <tr>
     <td>maximum size of a datastore API call request (the largest size of a batch put)</td>
@@ -783,14 +902,14 @@ for e in employees_trained:
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -803,7 +922,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -811,6 +930,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

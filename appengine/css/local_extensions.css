@@ -25,94 +25,6 @@ dl.apireference .argdefault {
   font-family: monospace;
 }
 
-/*
- * Styles for inline code samples
- */
-
-/* Container for entire sample section */
-div.tabpane {
-  border-collapse: collapse;
-  margin: 1em 0 0 0;
-  width: 100%;
-}
-
-/* For 'pre' elements in samples section */
-div.tabpane pre {
-  background-color: #FAFAFA;
-  border: 0px;
-  margin: 0px;
-  padding: 2px;
-  overflow: visible;
-}
-
-/* Container for tab content section */
-.content-container {
-  border: 1px solid #CCCCCC;
-  margin: 0px 0px 0px -2px;
-  padding:15px 15px 0px 15px;
-  background-color: #FAFAFA;
-}
-
-/* Container for tab header section */
-.ui-tabs-nav {
-  background: #FFFFFF none repeat scroll 0%;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-/* Sample tab headers */
-.ui-tabs-nav li, .ui-tabs-selected {
-  border: 1px solid #cccccc;
-  background-color: #E5ECF9;
-  display: inline;
-  margin: 0px -2px;
-  padding: 0px;
-}
-
-/* Selected tab header */
-.ui-tabs-nav li.ui-tabs-selected {
-  font-weight: bold;
-  padding-bottom: 0px;
-  position: relative;
-  top: 0px;
-  background-color: #FAFAFA;
-  border-bottom: solid 1px #fafafa;
-}
-
-/* Links of tab headers */
-.ui-tabs-nav a {
-  line-height: 1.2;
-  margin: 1px 0pt 0pt;
-  outline-color: invert;
-  outline-style: none;
-  outline-width: 0pt;
-  padding-left: 0pt;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* Spans of tab headers */
-.ui-tabs-nav a, .ui-tabs-nav a span {
-  display: inline;
-  padding: 0pt 10px;
-  color: black;
-}
-
-/* To hide content */
-.ui-tabs-hide {
-  display: none;
-}
-
-/* Link to full sample code */
-div.tabpane .samplelink {
-  text-align: right;
-  font-size: 83%;
-  font-family: Helvetica, Arial, sans-serif;
-  margin-right: 0px;
-}
-
 /* table containing sample's <pre> tag */
 .codesnippet {
   border: none;
@@ -129,4 +41,65 @@ div.tabpane .samplelink {
 /* pre element with line numbers */
 .line-no {
   text-align: center;
+}
+
+/*
+ * Styles for inline code samples
+ */
+
+/* Container for entire sample section */
+div.tabpane {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+/* For 'pre' elements in samples section */
+div.tabpane pre {
+  background-color: #FAFAFA;
+  border: none;
+  margin: 0px;
+  padding: 2px;
+}
+/* Container for tab content section */
+.content-container {
+  border: 1px solid #CCCCCC;
+  padding: 15px;
+  padding-bottom: 0px;
+  background-color: #FAFAFA;
+}
+/* Container for tab header section */
+ul.ui-tabs-nav {
+  background: #FFFFFF none repeat scroll 0%;
+  list-style: none;
+  margin: 0 0 4px 0;
+  padding: 0px;
+}
+/* Sample tab headers */
+ul.ui-tabs-nav li {
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  background-color: #E5ECF9;
+  display: inline;
+  margin: 0;
+  padding: 5px;
+}
+/* Selected tab header */
+ul.ui-tabs-nav li.ui-tabs-selected {
+  background-color: #FAFAFA;
+  border-bottom: solid 1px #FAFAFA;
+  font-weight: bold;
+}
+/* Links of tab headers */
+ul.ui-tabs-nav a {
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+/* Spans of tab headers */
+ul.ui-tabs-nav a, ul.ui-tabs-nav a span {
+  color: black;
+  display: inline;
+}
+/* To hide content */
+.ui-tabs-hide {
+  display: none;
 }

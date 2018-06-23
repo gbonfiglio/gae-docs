@@ -14,17 +14,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -63,14 +59,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +78,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +202,14 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
     <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +218,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
-        <li><a href="../../java/memcache/index.html">Memcache</a>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../../java/memcache/overview.html">Overview</a></li>
-    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +253,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/xmpp/index.html">XMPP</a>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/images/index.html">Images</a>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../../java/images/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../../java/users/index.html">Google Accounts</a>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../../java/users/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +318,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +343,7 @@ var logged_in_user_email = null;
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +366,7 @@ var logged_in_user_email = null;
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../datastore/overview.html">Overview</a></li>
+     <li><a href="../datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="../datastore/entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="../datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="../datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +374,7 @@ var logged_in_user_email = null;
      <li><a href="../datastore/transactions.html">Transactions</a></li>
      <li><a href="../datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="../datastore/gqlreference.html">GQL Reference</a></li>
+    <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
      <li><a href="../datastore/stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +395,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../memcache/overview.html">Overview</a></li>
-      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../memcache/clientclass.html">Client</a></li>
-         <li><a href="../memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../channel/functions.html">Functions</a></li>
+    <li><a href="../channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                 <li><a href="../images/overview.html">Overview</a></li>
+     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../images/imageclass.html">Image</a></li>
+         <li><a href="../images/functions.html">Functions</a></li>
+         <li><a href="../images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +455,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../xmpp/functions.html">Functions</a></li>
-         <li><a href="../xmpp/messageclass.html">Message</a></li>
-         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../memcache/clientclass.html">Client</a></li>
+         <li><a href="../memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../images/overview.html">Overview</a></li>
-     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../multitenancy/functions.html">Functions</a></li>
+        <li><a href="../multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../images/imageclass.html">Image</a></li>
-         <li><a href="../images/functions.html">Functions</a></li>
-         <li><a href="../images/exceptions.html">Exceptions</a></li>
+         <li><a href="../oauth/functions.html">Functions</a></li>
+         <li><a href="../oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="index.html">Task Queues</a>
+          <ul>
+                 <li><a href="overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="tasks.html">Task Class</a></li>
+         <li><a href="queues.html">Queue Class</a></li>
+         <li><a href="functions.html">Functions</a></li>
+         <li><a href="exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
           <ul>
                  <li><a href="../users/overview.html">Overview</a></li>
      <li><a href="../users/userobjects.html">User Objects</a></li>
@@ -447,31 +539,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="overview.html">Overview</a></li>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="tasks.html">Task Class</a></li>
-         <li><a href="queues.html">Queue Class</a></li>
-         <li><a href="functions.html">Functions</a></li>
-         <li><a href="exceptions.html">Exceptions</a></li>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/functions.html">Functions</a></li>
-    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +560,7 @@ var logged_in_user_email = null;
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
+    <li><a href="../config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +612,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +630,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -587,9 +669,7 @@ var logged_in_user_email = null;
 
 
 
-<p>With the Task Queue API, applications can perform work outside of a user request but initiated by a user request.  If an app needs to execute some background work, it may use the Task Queue API to organize that work into small, discrete units, called Tasks. The app then inserts these Tasks into one or more Queues. App Engine automatically detects new Tasks and executes them when system resources permit.</p>
-
-<div class="special"><p>The Task Queue service is currently released as an experimental feature.  This means the API and behavior of the service may change in ways that are not compatible with earlier releases, even for minor releases of the runtime environments.  Please try out this feature and let us know what you think!  (<a href="overview.html#Status_of_the_Task_Queue_API">more info</a>)</p></div>
+<p>With the Task Queue API, applications can perform work initiated by a user request, outside of that request. If an app needs to execute some background work, it may use the Task Queue API to organize that work into small, discrete units, called <i>tasks</i>. The app then inserts these tasks into one or more <i>queues</i>. App Engine automatically detects new tasks and executes them when system resources permit.</p>
 
 <ul>
 <li><a href="#Using_Task_Queues_in_Python">Using Task Queues in Python</a></li>
@@ -597,14 +677,14 @@ var logged_in_user_email = null;
   <li><a href="#Tasks_as_Offline_Web_Hooks">Tasks as Offline Web Hooks</a></li>
   <li><a href="#Worker_URLs_and_Task_Names">Worker URLs and Task Names</a></li>
   <li><a href="#Task_Request_Headers">Task Request Headers</a></li>
-  <li><a href="#Securing_URLs_for_Tasks">Securing URLs for Tasks</a></li>
-  <li><a href="#Task_Within_Transactions">Tasks Within Transactions</a></li>
+  <li><a href="#Securing_URLs_for_Tasks">URLs for Tasks</a></li>
+  <li><a href="#Tasks_within_Transactions">Tasks within Transactions</a></li>
   <li><a href="#Task_Execution">Task Execution</a></li>
   <li><a href="#Queue_Concepts">Queue Concepts</a></li>
   <li><a href="#The_Default_Queue">The Default Queue</a></li>
   <li><a href="#Queue_Default_URLs">Queue Default URLs</a></li>
   <li><a href="#Tasks_and_App_Versions">Tasks and App Versions</a></li>
-  <li><a href="#Managing_Task_Queues">Managing Task Queues</a></li>
+  <li><a href="#Managing_Task_Queues">Task Queues in the Admin Console</a></li>
   <li><a href="#Task_Queues_and_the_Development_Server">Task Queues and the Development Server</a></li>
   <li><a href="#Quotas_and_Limits">Quotas and Limits</a></li>
   <li><a href="#Status_of_the_Task_Queue_API">Status of the Task Queue API</a></li>
@@ -617,12 +697,10 @@ var logged_in_user_email = null;
 
 <p>To enqueue a task, you call the <a href="functions.html#add">taskqueue.add()</a> function.  (You can also create a <a href="tasks.html#Task">Task</a> object and call its <a href="tasks.html#Task_add">add()</a> method.)  The task consists of data for a request, including a URL path, parameters, HTTP headers, and an HTTP payload.  It can also include the earliest time to execute the task (the default is as soon as possible) and a name for the task.  The task is added to a queue, then performed by the Task Queue service as the queue is processed.</p>
 
-<p class="note"><b>Note:</b> While this feature is experimental, the Python module for the Task Queue API is <code>google.appengine.api.labs.taskqueue</code>.  When the feature is formally added to the main API, the package path will change.</p>
-
 <p>The following example defines a task handler (<code>CounterWorker</code>) that increments a counter in the datastore, mapped to the URL <code>/worker</code>.  It also defines a user-accessible request handler that displays the current value of the counter for a GET request, and for a POST request enqueues a task and returns. Please note that the task in this example should run at a rate no greater than once per second.</p>
 
 <pre class="prettyprint">
-from google.appengine.api.labs import taskqueue
+from google.appengine.api import taskqueue
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
@@ -691,7 +769,7 @@ if __name__ == '__main__':
   </li>
 </ul>
 
-<p>Perhaps there are multiple invitees who need to be updated for a given event. The developer may choose to create a new notification Task for each attendee individually:</p>
+<p>Perhaps there are multiple invitees who need to be updated for a given event. The developer may choose to create a new notification task for each attendee individually:</p>
 
 <ul>
   <li>Task 1
@@ -732,19 +810,13 @@ if __name__ == '__main__':
   </li>
 </ul>
 
-<p>More examples of Tasks include:</p>
+<p>More examples of tasks include:</p>
 
 <ul>
-  <li>Feed Aggregator.  A feed reader application needs to fetch, automatically and periodically, the contents of various news feeds from across the Internet. A single task might consist of:
+  <li>Feed Aggregator. A feed reader application needs to fetch, automatically and periodically, the contents of various news feeds from across the Internet. A single task might consist of:
     <ul>
       <li><i>data:</i> the URL of a feed and the timestamp when it was last checked</li>
       <li><i>code:</i> a function which performs a URL Fetch to retrieve a feed, parse its contents, and insert new items into the database</li>
-    </ul>
-  </li>
-  <li>Schema Migration.  A new version of an application needs to programmatically iterate through old entities in the datastore and update them to a new schema. A single task might consist of:
-    <ul>
-      <li><i>data:</i> the key of an Entity which needs to be updated</li>
-      <li><i>code:</i> a function which analyzes the Entity's model, adds or modifies properties, and updates it in the Datastore.</li>
     </ul>
   </li>
 </ul>
@@ -752,7 +824,7 @@ if __name__ == '__main__':
 
 <h2 id="Tasks_as_Offline_Web_Hooks">Tasks as Offline Web Hooks</h2>
 
-<p>For App Engine to support concrete Task instances, two mechanisms are needed:</p>
+<p>For App Engine to support concrete task instances, two mechanisms are needed:</p>
 
 <ul>
   <li><i>Data Storage:</i> a language-agnostic container for arbitrary data</li>
@@ -767,21 +839,21 @@ if __name__ == '__main__':
   <li>Task 1
     <ul>
       <li><i>data:</i> an HTTP POST message containing a form variable of email_address = attendee1's email</li>
-      <li><i>code:</i> a URL which, when requested with the HTTP POST, will execute code on the server side that sends the mail</li>
+      <li><i>code:</i> a URL which, when requested with the HTTP POST, executes code on the server side that sends the mail</li>
     </ul>
   </li>
 </ul>
 
 <p>Using this model, App Engine's Task Queue API allows you to specify tasks as HTTP Requests (both the contents of the request as its data, and the target URL of the request as its code reference). Programmatically referring to a bundled HTTP request in this fashion is sometimes called a "web hook."</p>
 
-<p>Importantly, the offline nature of the Task Queue API allows you to specify web hooks ahead of time, without waiting for their actual execution. Thus, an application might create many web hooks at once and then hand them off to App Engine; the system will then process them asynchronously in the background (by 'invoking' the HTTP request). This web hook model enables efficient parallel processing - App Engine may invoke multiple tasks, or web hooks, simultaneously.</p>
+<p>Importantly, the offline nature of the Task Queue API allows you to specify web hooks ahead of time, without waiting for their actual execution. Thus, an application might create many web hooks at once and then hand them off to App Engine; the system will then process them asynchronously in the background (by 'invoking' the HTTP request). This web hook model enables efficient parallel processing. App Engine may invoke multiple tasks, or web hooks, simultaneously.</p>
 
-<p>To summarize, the Task Queue API allows a developer to execute work in the background, asynchronously, by chunking that work into offline web hooks. The system will invoke those web hooks on the application's behalf, scheduling for optimal performance by possibly executing multiple webhooks in parallel. This model of granular units of work, based on the HTTP standard, allows App Engine to efficiently perform background processing in a way that works with any programming language or web application framework.</p>
+<p>To summarize, the Task Queue API allows a developer to execute work in the background, asynchronously, by chunking that work into offline web hooks. The system invokes those web hooks on the application's behalf, scheduling for optimal performance by possibly executing multiple webhooks in parallel. This model of granular units of work, based on the HTTP standard, allows App Engine to efficiently perform background processing in a way that works with any programming language or web application framework.</p>
 
 
 <h2 id="Worker_URLs_and_Task_Names">Worker URLs and Task Names</h2>
 
-<p>As mentioned above, a Task references its implementation via URL. For example, a task which fetches and parses an RSS feed might use a worker URL called <code>/app_worker/fetch_feed</code>. With the App Engine Task Queue API, you may use any URL as the worker for a task, so long as it is within your application; all Task worker URLs must be specified as relative URLs.</p>
+<p>As mentioned above, a task references its implementation via URL. For example, a task which fetches and parses an RSS feed might use a worker URL called <code>/app_worker/fetch_feed</code>. With the App Engine Task Queue API, you may use any URL as the worker for a task, so long as it is within your application; all task worker URLs must be specified as relative URLs.</p>
 
 
 <pre class="prettyprint">
@@ -791,7 +863,9 @@ taskqueue.add(url='/path?a=b&c=d', method='GET')
 
 
 
-<p>In addition to a Task's contents (its data payload and worker URL), it is also possible to specify a Task's name. This provides a lightweight mechanism for ensuring once-only semantics.  Once a Task with name N is written, any subsequent attempts to insert a Task named N will fail. Eventually (at least seven days after the task successfully executes), the task will be deleted and the name N can be reused.</p>
+<p>In addition to a Task's contents (its data payload and worker URL), it is also possible to specify a Task's name. Once a Task with name N is written, any subsequent attempts to insert a Task named N will fail. While this is generally true, Task names do not provide an absolute guarantee of once-only semantics. In rare cases, multiple calls to create a task of the same name may succeed. It's also possible in exceptional cases for a task to run more than once even if it was only created once. If you need a guarantee of once-only semantics, use the datastore.</p>
+
+<p>If a task is created successfully, it will eventually be deleted (at least seven days after the task successfully executes). Once deleted, its name can be reused.</p>
 
 <h2 id="Task_Request_Headers">Task Request Headers</h2>
 
@@ -804,7 +878,7 @@ taskqueue.add(url='/path?a=b&c=d', method='GET')
 </ul>
 
 
-<h2 id="Securing_URLs_for_Tasks">Securing URLs for Tasks</h2>
+<h2 id="Securing_URLs_for_Tasks">URLs for Tasks</h2>
 
 
 <p>You can prevent users from accessing URLs of tasks by restricting access to administrator accounts. Task queues can access admin-only URLs. You can restrict a URL by adding <code>login: admin</code> to the handler configuration in <code>app.yaml</code>.</p>
@@ -830,7 +904,7 @@ handlers:
 <p>To test a task web hook, sign in as an administrator and visit the URL of the handler in your browser.</p>
 
 
-<h2 id="Task_Within_Transactions">Tasks Within Transactions</h2>
+<h2 id="Tasks_within_Transactions">Tasks within Transactions</h2>
 
 <p>You can enqueue a task as part of a datastore transaction, such that the task is only enqueued&mdash;and guaranteed to be enqueued&mdash;if the transaction is committed successfully. Tasks added within a <a href="../datastore/transactions.html">transaction</a> are considered to be a part of it and have the same level of <a href="../datastore/transactions.html#Isolation_and_Consistency">isolation and consistency</a>.</p>
 
@@ -840,7 +914,7 @@ handlers:
 <pre class="prettyprint">
 def do_something_in_transaction(...)
   taskqueue.add(url='/path/to/my/worker', transactional=True)
-  ...
+  #...
 
 db.run_in_transaction(do_something_in_transaction, ....)
  </pre>
@@ -849,77 +923,94 @@ db.run_in_transaction(do_something_in_transaction, ....)
 
 <h2 id="Task_Execution">Task Execution</h2>
 
-<p>Once you have created a Task and inserted it into a queue for processing, App Engine will execute it as soon as possible (subject to the app's scheduling criteria, if specified). Since a task is a web hook, its lifecycle is the same as any other request in App Engine - it may use the same APIs and is subject to the same constraints as an 'online' request from a user's browser. Notably, this means that the lifetime of a single task's execution is limited to 30 seconds. If your task's execution nears the 30 second limit, App Engine will raise an exception which you may catch and then quickly save your work or log process.</p>
+<p>Once you have created a task and inserted it into a queue for processing, App Engine executes it as soon as possible, unless you specify scheduling criteria. The lifetime of a single task's execution is limited to 10 minutes. If your task's execution nears the 10 minute limit, App Engine raises an exception, which you may catch and then save your work or log progress.</p>
 
-<p>When the developer inserts a new task into a queue, the order in which that task will execute (relative to other tasks) is governed by the contents and properties of that queue. However, it is possible to specify certain properties (such as an ETA) which request special scheduling on a per-task basis.</p>
+<p>When the developer inserts a new task into a queue, the order in which that task executes (relative to other tasks) is governed by the contents and properties of that queue. However, it is possible to specify certain properties (such as an ETA) which request special scheduling on a per-task basis.</p>
 
-<p>If the execution of a particular Task fails (by returning any HTTP status code outside of the range 200-299), App Engine will attempt to retry until it succeeds. The system will back off gradually so as not to flood your application with too many requests, but it will retry failed tasks at least once a day at minimum.</p>
+<p>If a task fails to execute (by returning any HTTP status code outside of the range 200-299), App Engine retries until it succeeds. The system backs off gradually to avoid flooding your application with too many requests, but schedules retry attempts for failed tasks to recur at a maximum of once per hour.</p>
 
-<p>When implementing the code for Tasks (as worker URLs within your app), it is important that you consider whether the task is <a href="http://en.wikipedia.org/wiki/idempotent">idempotent</a>. App Engine's Task Queue API is designed to only invoke a given task once, however it is possible in exceptional circumstances that a Task may execute multiple times (e.g. in the unlikely case of major system failure). Thus, your code must ensure that there are no harmful side-effects of repeated execution.</p>
+<p>You can also configure your own scheme for task retries using the <a href="../config/queue.html#Configuring_Retry_Attempts_for_Failed_Tasks">retry_parameters directive</a> in <code>app.yaml</code>.</p>
 
-<p>If a task performs sensitive operations (such as modifying important data), the developer may wish to protect the worker URL to prevent a malicious external user from calling it directly. This is possible by marking the worker URL as admin-only in the app configuration.</p>
+<p>When implementing the code for tasks (as worker URLs within your app), it is important to consider whether the task is <a href="http://en.wikipedia.org/wiki/idempotent">idempotent</a>. App Engine's Task Queue API is designed to only invoke a given task once, however it is possible in exceptional circumstances that a task may execute multiple times (e.g. in the unlikely case of major system failure). Thus, your code must ensure that there are no harmful side-effects of repeated execution.</p>
+
+<p>If a task performs sensitive operations (such as modifying important data), you may wish to <a href="#Securing_URLs_for_Tasks">secure the worker URL</a> to prevent a malicious external user from calling it directly.
 
 
 <h2 id="Queue_Concepts">Queue Concepts</h2>
 
-<p>Thus far, this document has explained how Tasks can be used to encapsulate small chunks of work for asynchronous execution. When used in large numbers, Tasks provide an efficient and powerful tool for background processing. However, the developer may need to manage the execution of these tasks - in particular, he may need to control the rate at which tasks are invoked, so as not to exhaust resources.</p>
+<p>Thus far, this document has explained how tasks can be used to encapsulate small chunks of work for asynchronous execution. When used in large numbers, tasks provide an efficient and powerful tool for background processing. However, you might need to manage the execution of these tasks. In particular, you might need to control the rate at which tasks are invoked, so as not to exhaust resources.</p>
 
-<p>The Task Queue API provides Queues as a container for tasks. All new tasks must be inserted into a queue; a developer can influence task execution by modifying properties of the queue. As an example, the developer may wish to ensure that his system sends no more than 10 emails per second. He can accomplish this by using a queue called <code>email-throttle</code>, which he configures with a rate of 10 invocations per second. Within his app's code, he makes it so all tasks which send email are inserted into this <code>email-throttle</code> queue. The App Engine system respects his configuration on the <code>email-throttle</code> queue and invokes its tasks at a rate of less than or equal to 10 per second, even if thousands of tasks are inserted at a single instant.</p>
+<p>The Task Queue API provides queues as a container for tasks. All new tasks must be inserted into a queue; you can influence task execution by modifying properties of the queue. As an example, you might want to ensure that your system sends no more than ten emails per second. You can accomplish this by using a queue called <code>email-throttle</code>, which you configure with a rate of ten invocations per second. Within your app's code, you make it so that all tasks which send email are inserted into this <code>email-throttle</code> queue. The App Engine system respects your configuration on the <code>email-throttle</code> queue and invokes its tasks at a rate of less than or equal to ten per second, even if thousands of tasks are inserted at a single instant.</p>
 
-<p>Beyond influencing the rate of task execution, Queues also provide the ordering in which tasks are consumed by the system (not withstanding the special task scheduling parameters). Fundamentally, Queues deliver a best effort FIFO order (first in, first out) - a developer creates new tasks and inserts them into the tail of the queue, the system removes tasks from the head for execution. However, the system attempts to deliver the lowest latency possible for any given task via specially optimized notifications to the scheduler. Thus, in the case that a queue has a large backlog of tasks, the system's scheduling may "jump" new tasks to the head of the queue.</p>
+<p>Beyond influencing the rate of task execution, queues also provide the ordering in which tasks are consumed by the system (not withstanding the special task scheduling parameters). Fundamentally, queues deliver a best effort FIFO order (first in, first out). A developer creates new tasks and inserts them into the tail of the queue, and the system removes tasks from the head for execution. However, the system attempts to deliver the lowest latency possible for any given task via specially optimized notifications to the scheduler. Thus, in the case that a queue has a large backlog of tasks, the system's scheduling may "jump" new tasks to the head of the queue.</p>
 
 <p>Although a queue defines a general FIFO ordering, tasks are not executed entirely serially. Multiple tasks from a single queue may be executed simultaneously by the scheduler, so the usual locking and transaction semantics need to be observed for any work performed by a task.</p>
 
-<p>It is important to understand that Queues are a mechanism for manipulating tasks in aggregate; Queues do not dictate the contents of any given Task. It is possible for a single Queue to contain many different types of tasks, which have varying data payloads and worker URLs.</p>
+<p>It is important to understand that queues are a mechanism for manipulating tasks in aggregate; queues do not dictate the contents of any given task. It is possible for a single queue to contain many different types of tasks, which have varying data payloads and worker URLs.</p>
 
 
 <h2 id="The_Default_Queue">The Default Queue</h2>
 
-<p>For convenience, App Engine provides a default queue to all applications. A developer may use this queue immediately without any additional configuration. This queue automatically has a throughput rate of five task invocations per second, however you may configure its properties in the same fashion as any user-defined queue with configuration for a queue named <code>default</code>. Code may always insert new Tasks into the default queue, but if you wish to disable execution of these tasks, you may do so by adding it to your configuration and lowering its rate to zero.</p>
+<p>For convenience, App Engine provides a default queue to all applications. You can use this queue immediately without any additional configuration. This queue automatically has a throughput rate of five task invocations per second, however you may configure its properties in the same fashion as any user-defined queue with configuration for a queue named <code>default</code>. Code may always insert new tasks into the default queue, but if you wish to disable execution of these tasks, you may do so by adding it to your configuration and lowering its rate to zero.</p>
 
 
 <h2 id="Queue_Default_URLs">Queue Default URLs</h2>
 
-<p>You can specify the worker URL for a Task by passing it to the Task object constructor.  If you do not specify a worker URL, the Task uses a default worker URL named after the queue:</p>
+<p>You can specify the worker URL for a task by passing it to the Task object constructor. If you do not specify a worker URL, the task uses a default worker URL named after the queue:</p>
 
 <p><code>/_ah/queue/<var>queue_name</var></code></p>
 
-<p>As an example, for a queue named <code>email-worker-queue</code>, you may implement a default request handler at <code>/_ah/queue/email-worker-queue</code> (within your application). Any new Task inserted into the <code>email-worker-queue</code> which does not have a worker URL of its own (in other words, it's purely data with no code reference) will be invoked using the URL of <code>/_ah/queue/email-worker-queue</code>.</p>
+<p>As an example, for a queue named <code>email-worker-queue</code>, you may implement a default request handler at <code>/_ah/queue/email-worker-queue</code> (within your application). Any new task inserted into the <code>email-worker-queue</code> which does not have a worker URL of its own (in other words, it's purely data with no code reference) is invoked using the URL of <code>/_ah/queue/email-worker-queue</code>.</p>
 
-<p>A queue's default URL is used if, and only if, a Task does not have a worker URL of its own. If a task does have its own worker URL, then it will only be invoked at that URL, never another. (Once inserted into a Queue, a Task is immutable).</p>
+<p>A queue's default URL is used if, and only if, a task does not have a worker URL of its own. If a task does have its own worker URL, then it is only invoked at the default URL, never another. (Once inserted into a queue, a task is immutable).</p>
 
-<p>Please note that if a Task does not have a worker URL, then the Task will be invoked against the queue's default URL even if there is currently no handler defined for the queue's default URL! In this case, the system would attempt to invoke the Task with a nonexistent URL which would fail with a 404 (this 404, along with the exact URL that was tried, will be available in your application's logs). Due to the failure state of this 404, the system will save the Task and retry it until it is eventually successful. You can clear (or 'flush') tasks that can't complete successfully using the Administration Console.</p>
+<p>Please note that if a task does not have a worker URL, then the task is invoked against the queue's default URL even if there is currently no handler defined for the queue's default URL! In this case, the system attempts to invoke the task with a nonexistent URL which fails with a 404 (this 404, along with the exact URL that was tried, will be available in your application's logs). Due to the failure state of this 404, the system saves the task and retries it until it is eventually successful. You can clear (or 'purge') tasks that can't complete successfully using the Administration Console.</p>
 
 
 <h2 id="Tasks_and_App_Versions">Tasks and App Versions</h2>
 
-<p>All versions of an application share the same task queues.  The version of the app used to perform a task depends on how the task was enqueued.</p>
+<p>All versions of an application share the same task queues. The version of the app used to perform a task depends on how the task was enqueued.</p>
 
-<p>If the version of the app that enqueues a task is the default version (<code>http://app-id.appspot.com</code> or a Google Apps domain), the queue will use the default version of the app to perform the task, even if the default version has changed since the task was enqueued.  If the app enqueues a task then the default version is changed, the queue will use the task's URL path with the new default version of the app to perform the task.</p>
+<p>If the version of the app that enqueues a task is the default version (<code>http://app-id.appspot.com</code> or a Google Apps domain), the queue uses the default version of the app to perform the task, even if the default version has changed since the task was enqueued. If the app enqueues a task then the default version is changed, the queue uses the task's URL path with the new default version of the app to perform the task.</p>
 
 <p>If the version of the app that enqueues a task is not the default version when the task is enqueued (such as <code>http://3.latest.app-id.appspot.com/</code>), the queue will use that version of the app to perform the task, regardless of which version is the default version.</p>
 
 
-<h2 id="Managing_Task_Queues">Managing Task Queues</h2>
+<h2 id="Managing_Task_Queues">Task Queues in the Admin Console</h2>
 
-<p>You can manage task queues for an application using the Administration Console.  You can use the Console to list queues and their configuration, inspect the tasks currently waiting to be executed, and manually delete individual tasks or every task in a queue.  This is useful if a task cannot be completed successfully and is stuck waiting to be retried.</p>
-
+<p>You can manage task queues for an application using the Administration Console. You can use the Console to:
+<ul>
+  <li>List queues and their configuration.</li>
+  <li>Inspect the tasks currently waiting to be executed.</li>
+  <li>Pause the execution of a queue.</li>
+  <li>Run individual tasks immediately. If you click the "Run Now" button next to a task, App Engine executes the task even if the queue is paused. Running tasks immediately is useful for diagnosing application errors.</li>
+  <li>Manually delete individual tasks or every task in a queue. This is useful if a task cannot be completed successfully and is stuck waiting to be retried.</li>
+</ul>
 <p>To manage queues, sign in to the Administration Console and select "Task Queues."  Note that the default queue only appears in the Console after the app has enqueued a task to it for the first time.</p>
-
 
 <h2 id="Task_Queues_and_the_Development_Server">Task Queues and the Development Server</h2>
 
 
-<p>When your app is running in the development server, task queues are not processed automatically.  Instead, task queues accrue tasks which you can examine and execute from the developer console:</p>
+<p>When your app is running in the development server, tasks are automatically executed at the appropriate time just as in production. You can examine and manipulate tasks from the developer console:</p>
+
 
 
 
 <pre>http://localhost:8080/_ah/admin/taskqueue</pre>
 
-<p>To execute tasks, select the queue by clicking on its name, then select the tasks to execute.  To clear a queue without executing any tasks, click the "Flush Queue" button.</p>
+<p>To execute tasks, select the queue by clicking on its name, then select the tasks to execute. To clear a queue without executing any tasks, click the "Purge Queue" button.</p>
 
 
 <h2 id="Quotas_and_Limits">Quotas and Limits</h2>
+
+<p>Enqueuing a task counts toward the following quotas:</p>
+
+<ul>
+  <li><b>Task Queue Stored Task Count</b></li>
+  <li><b>Task Queue Stored Task Bytes</b></li>
+</ul>
+
+<p>The Task Queue Stored Task Bytes quota is configurable in  queue.yaml by setting total_storage_limit. This quota counts towards your Stored Data (billable) quota.</p>
 
 <p>Execution of a task counts toward the following quotas:</p>
 
@@ -930,7 +1021,8 @@ db.run_in_transaction(do_something_in_transaction, ....)
   <li><b>Outgoing Bandwidth</b></li>
 </ul>
 
-<p>The act of executing a task consumes bandwidth-related quotas for the request and response data, just as if the request handler were called by a remote client.  When the task queue processes a task, the response data is discarded.</p>
+<p>The act of executing a task consumes bandwidth-related quotas for the request and response data, just as if the request handler were called by a remote client. When the task queue processes a task, the response data is discarded.</p>
+<p>Once a task has been executed or deleted, the storage used by that task is reclaimed. The reclaiming of storage quota for tasks happens at regular intervals, and this may not be reflected in the storage quota immediately after the task is deleted.</p>
 
 <p>
 For more information on quotas, see <a href="../../quotas.html">Quotas</a>,
@@ -951,57 +1043,33 @@ and the "Quota Details" section of
   </tr>
   <tr>
     <td>number of active queues (not including the default queue)</td>
-    <td>10</td>
+    <td>10 for free apps<br>100 for billed apps</td>
   </tr>
   <tr>
-    <td>total queue execution rate</td>
-    <td>20 task invocations per second</td>
+    <td>queue execution rate</td>
+    <td>50 task invocations per second per queue</td>
   </tr>
   <tr>
     <td>maximum countdown/ETA for a task</td>
     <td>30 days from the current date and time</td>
   </tr>
+  <tr>
+    <td>maximum number of tasks that can be added in a batch</td>
+    <td>100 tasks</td>
+  </tr>
 </table>
 
 <p class="note"><b>Note:</b> Quotas and limits for the Task Queue service may change while the feature is still experimental.</p>
 
-
 <h2 id="Status_of_the_Task_Queue_API">Status of the Task Queue API</h2
 
-<p>The App Engine Task Queue API is currently in an experimental state, released as an App Engine Labs feature. We are eager to get your feedback so that we may improve the API. During this initial, experimental phase, the API will be located under the App Engine Labs package:</p>
-
-
-<p><code>google.appengine.api.labs.taskqueue</code></p>
-
-
-
-<p>In particular, we are looking for feedback on the following:</p>
-
-<ul>
-  <li>the usability of the API itself</li>
-  <li>the behavior and policies which App Engine uses executing Tasks, e.g.:
-    <ul>
-      <li>how much Task throughput per second your app needs</li>
-      <li>how long you need Tasks to run</li>
-      <li>queue lifecycle management</li>
-    </ul>
-  <li>what debugging tools and reporting you need to maximize the utility of Task Queues</li>
-</ul>
-
-<p>Once the API is finalized, we'll move it out of Labs to its final location at:</li>
+<p>The App Engine Task Queue API is now available at its final location of:</p>
 
 
 <p><code>google.appengine.api.taskqueue</code></p>
 
 
-
-<p>Of course, we'll give multiple weeks worth of notice before this happens and we'll work with developers on the best transition possible. Please keep in mind that the following may change before the Task Queue API leaves Labs:</p>
-<ul>
-  <li>quotas and limits, most likely, we'll increase the number of tasks your app can use in a given day</li>
-  <li>the API itself; we may need to make changes to the API, due to usability or bugs</li>
-  <li>billing; we may change how we charge for usage of the Task Queue API</li>
-</ul>
-
+<p>The previous location of the App Engine Task Queue API is now deprecated. If  you have used the App Engine Task Queue API while it was a labs feature, please update your code to remove any deprecation warnings.</p>
 
 
       </div><!-- end gc-pagecontent -->
@@ -1036,14 +1104,14 @@ and the "Quota Details" section of
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -1056,7 +1124,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -1064,6 +1132,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

@@ -14,17 +14,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -63,14 +59,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +78,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +152,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +202,14 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
     <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +218,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
-        <li><a href="../../java/memcache/index.html">Memcache</a>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../../java/memcache/overview.html">Overview</a></li>
-    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +253,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/xmpp/index.html">XMPP</a>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/images/index.html">Images</a>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../../java/images/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../../java/users/index.html">Google Accounts</a>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../../java/users/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +318,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +343,7 @@ var logged_in_user_email = null;
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +366,7 @@ var logged_in_user_email = null;
     <li><a href="index.html">Storing Data</a>
       <ul>
              <li><a href="overview.html">Overview</a></li>
+     <li><a href="hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +374,7 @@ var logged_in_user_email = null;
      <li><a href="transactions.html">Transactions</a></li>
      <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="gqlreference.html">GQL Reference</a></li>
+    <li><a href="metadataqueries.html">Metadata Queries</a></li>
      <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +395,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../memcache/overview.html">Overview</a></li>
-      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../memcache/clientclass.html">Client</a></li>
-         <li><a href="../memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../channel/functions.html">Functions</a></li>
+    <li><a href="../channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                 <li><a href="../images/overview.html">Overview</a></li>
+     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../images/imageclass.html">Image</a></li>
+         <li><a href="../images/functions.html">Functions</a></li>
+         <li><a href="../images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +455,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../xmpp/functions.html">Functions</a></li>
-         <li><a href="../xmpp/messageclass.html">Message</a></li>
-         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../memcache/clientclass.html">Client</a></li>
+         <li><a href="../memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../images/overview.html">Overview</a></li>
-     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../multitenancy/functions.html">Functions</a></li>
+        <li><a href="../multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../images/imageclass.html">Image</a></li>
-         <li><a href="../images/functions.html">Functions</a></li>
-         <li><a href="../images/exceptions.html">Exceptions</a></li>
+         <li><a href="../oauth/functions.html">Functions</a></li>
+         <li><a href="../oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
           <ul>
                  <li><a href="../users/overview.html">Overview</a></li>
      <li><a href="../users/userobjects.html">User Objects</a></li>
@@ -447,31 +539,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="../taskqueue/functions.html">Functions</a></li>
-         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/functions.html">Functions</a></li>
-    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +560,7 @@ var logged_in_user_email = null;
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
+    <li><a href="../config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +612,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +630,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -592,11 +674,12 @@ var logged_in_user_email = null;
   <li>Instance methods:
     <ul>
       <li><a href="#Key_app">app()</a></li>
-      <li><a href="#Key_kind">kind()</a></li>
-      <li><a href="#Key_id">id()</a></li>
-      <li><a href="#Key_name">name()</a></li>
-      <li><a href="#Key_id_or_name">id_or_name()</a></li>
       <li><a href="#Key_has_id_or_name">has_id_or_name()</a></li>
+      <li><a href="#Key_id">id()</a></li>
+      <li><a href="#Key_id_or_name">id_or_name()</a></li>
+      <li><a href="#Key_kind">kind()</a></li>
+      <li><a href="#Key_name">name()</a></li>
+      <li><a href="#Key_namespace">namespace()</a></li>
       <li><a href="#Key_parent">parent()</a></li>
     </ul>
   </li>
@@ -636,26 +719,26 @@ var logged_in_user_email = null;
 
 <dl class="apireference">
 
-  <dt id="Key_from_path"><span class="itemname">Key.from_path</span>(*<span class="argname">args</span>, **<span class="argname">kwds</span>)</dt>
+  <dt id="Key_from_path"><span class="itemname">Key.from_path</span>(<span class="argname">kind</span>, <span class="argname">id_or_name</span>, <span class="argname">parent</span>=<span class="argdefault">none</span>, <span class="argname">namespace</span>=<span class="argdefault">None</span>, **<span class="argname">kwds</span>)</dt>
   <dd>
     <p>Builds a new Key object from an ancestor path of one or more entity keys.</p>
     <p>A path represents the hierarchy of parent-child relationships for an entity.  Each entity in the path is represented the entity's kind, and either its numeric ID or its key name.  The full path represents the entity that appears last in the path, with its ancestors (parents) as preceding entities.</p>
     <p>For example, the following call creates a key for an entity of kind <code>Address</code> with the numeric ID <code>9876</code> whose parent is an entity of kind <code>User</code> with the named key <code>'Boris'</code>:</p>
     <pre>k = Key.from_path('User', 'Boris', 'Address', 9876)</pre>
-
+    <p>For more information about paths, see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
     <p>Arguments:</p>
     <dl>
-      <dt>*<span class="argname">args</span></dt>
-      <dd>The path from the root entity to the subject.  Each entity in the path is represented by two elements in the list: the name of the kind, and the key name or ID of the entity of that kind.</dd>
+      <dt id="from_path_kind"><span class="argname">kind</span></dt>
+        <dd>The entity kind, represented as a string or a unicode license.</dd>
+      <dt id="from_path_id_or_name"><span class="argname">id_or_name</span></dt>
+        <dd>The <code>id</code>, specified as a string or long.</dd>
+      <dt id="from_path_namespace"><span class="argname">namespace</span>=<span class="argdefault">None</span></dt>
+        <dd>The namespace to set for this Key only. If you supply a namespace here, it overrides the current namespace set in the <a href="../multitenancy/functions.html">namespace_manager</a>. If <code>None</code>, the API uses the current namespace from <a href="../multitenancy/functions.html">namespace_manager.get_namespace</a>.</dd>
+      <dt id="from_path_parent"><span class="argname">parent</span>=<span class="argdefault">None</span></dt>
+        <dd>Optional parent key. If not supplied, defaults to <code>None</code>.</dd>
       <dt>**<span class="argname">kwds</span></dt>
-      <dd>Keyword arguments.  The method supports one keyword argument, <span class="argname">parent</span>, which specifies a parent entity to prepend to the given path.  Its value is the parent's Key.</dd>
+        <dd>Keyword arguments.  The method supports one keyword argument, <span class="argname">parent</span>, which specifies a parent entity to prepend to the given path.  Its value is the parent's Key.</dd>
     </dl>
-
-    <p>For more information about paths, see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
-  </dd>
-
-</dl>
-
 
 <h2>Instance Methods</h2>
 
@@ -668,9 +751,9 @@ var logged_in_user_email = null;
     <p>Returns the name of the application that stored the data entity.</p>
   </dd>
 
-  <dt id="Key_kind"><span class="itemname">kind</span>()</dt>
+  <dt id="Key_has_id_or_name"><span class="itemname">has_id_or_name</span>()</dt>
   <dd>
-    <p>Returns the kind of the data entity, as a string.</p>
+    <p>Returns <code>True</code> if the entity has either a name or a numeric ID.</p>
   </dd>
 
   <dt id="Key_id"><span class="itemname">id</span>()</dt>
@@ -678,19 +761,24 @@ var logged_in_user_email = null;
     <p>Returns the numeric ID of the data entity, as an integer, or <code>None</code> if the entity does not have a numeric ID.</p>
   </dd>
 
-  <dt id="Key_name"><span class="itemname">name</span>()</dt>
-  <dd>
-    <p>Returns the name of the data entity, or <code>None</code> if the entity does not have a name.</p>
-  </dd>
-
   <dt id="Key_id_or_name"><span class="itemname">id_or_name</span>()</dt>
   <dd>
     <p>Returns the name or numeric ID of the data entity, whichever it has, or <code>None</code> if the entity has neither a name nor a numeric ID.</p>
   </dd>
 
-  <dt id="Key_has_id_or_name"><span class="itemname">has_id_or_name</span>()</dt>
+  <dt id="Key_kind"><span class="itemname">kind</span>()</dt>
   <dd>
-    <p>Returns <code>True</code> if the entity has either a name or a numeric ID.</p>
+    <p>Returns the kind of the data entity, as a string.</p>
+  </dd>
+
+  <dt id="Key_name"><span class="itemname">name</span>()</dt>
+  <dd>
+    <p>Returns the name of the data entity, or <code>None</code> if the entity does not have a name.</p>
+  </dd>
+
+  <dt id="Key_namespace"><span class="itemname">namespace</span>()</dt>
+  <dd>
+    <p>Returns the namespace of the data entity. If the entity does not have a current namespace, this method returns the current namespace set in the <a href="../multitenancy/functions.html">namespace_manager</a>.</p>
   </dd>
 
   <dt id="Key_parent"><span class="itemname">parent</span>()</dt>
@@ -734,14 +822,14 @@ var logged_in_user_email = null;
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -754,7 +842,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -762,6 +850,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

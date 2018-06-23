@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -14,17 +16,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -63,14 +61,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +80,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +102,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +154,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +204,14 @@ var logged_in_user_email = null;
     <li><a href="../../java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../../java/datastore/overview.html">Overview</a></li>
+    <li><a href="../../java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../../java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../../java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../../java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../../java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../../java/datastore/transactions.html">Transactions</a></li>
     <li><a href="../../java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="../../java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../../java/datastore/stats.html">Statistics</a></li>
     <li><a href="../../java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../../java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +220,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../java/apis.html">Services</a>
       <ul>
-        <li><a href="../../java/memcache/index.html">Memcache</a>
+        <li><a href="../../java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../../java/memcache/overview.html">Overview</a></li>
-    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../../java/channel/overview.html">Overview</a></li>
+<li><a href="../../java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../../java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/images/index.html">Images</a>
+          <ul>
+                <li><a href="../../java/images/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +255,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../java/xmpp/index.html">XMPP</a>
+        <li><a href="../../java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
-     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/memcache/overview.html">Overview</a></li>
+    <li><a href="../../java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/images/index.html">Images</a>
+        <li><a href="../../java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../../java/images/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../../java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../../java/users/index.html">Google Accounts</a>
+        <li><a href="../../java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../../java/users/overview.html">Overview</a></li>
-    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../../java/oauth/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../../java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../../java/taskqueue/overview.html">Overview</a></li>
      <li><a href="../../java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../../java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../../java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../../java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="../../java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/users/index.html">Users</a>
+          <ul>
+                <li><a href="../../java/users/overview.html">Overview</a></li>
+    <li><a href="../../java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../../java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../../java/xmpp/overview.html">Overview</a></li>
+     <li><a href="../../java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +320,17 @@ var logged_in_user_email = null;
     <li><a href="../../java/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../../java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../../java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../../java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../../java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../../java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../../java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +345,7 @@ var logged_in_user_email = null;
             <li><a href="../../java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../../java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +368,7 @@ var logged_in_user_email = null;
     <li><a href="index.html">Storing Data</a>
       <ul>
              <li><a href="overview.html">Overview</a></li>
+     <li><a href="hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +376,7 @@ var logged_in_user_email = null;
      <li><a href="transactions.html">Transactions</a></li>
      <li><a href="typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="gqlreference.html">GQL Reference</a></li>
+    <li><a href="metadataqueries.html">Metadata Queries</a></li>
      <li><a href="stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +397,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../memcache/overview.html">Overview</a></li>
-      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../memcache/clientclass.html">Client</a></li>
-         <li><a href="../memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../blobstore/functions.html">Functions</a></li>
+    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../channel/functions.html">Functions</a></li>
+    <li><a href="../channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                 <li><a href="../images/overview.html">Overview</a></li>
+     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../images/imageclass.html">Image</a></li>
+         <li><a href="../images/functions.html">Functions</a></li>
+         <li><a href="../images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +457,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
+                 <li><a href="../memcache/overview.html">Overview</a></li>
+      <li><a href="../memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../xmpp/functions.html">Functions</a></li>
-         <li><a href="../xmpp/messageclass.html">Message</a></li>
-         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../memcache/clientclass.html">Client</a></li>
+         <li><a href="../memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../images/overview.html">Overview</a></li>
-     <li><a href="../images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../multitenancy/functions.html">Functions</a></li>
+        <li><a href="../multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../images/imageclass.html">Image</a></li>
-         <li><a href="../images/functions.html">Functions</a></li>
-         <li><a href="../images/exceptions.html">Exceptions</a></li>
+         <li><a href="../oauth/functions.html">Functions</a></li>
+         <li><a href="../oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../taskqueue/functions.html">Functions</a></li>
+         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
           <ul>
                  <li><a href="../users/overview.html">Overview</a></li>
      <li><a href="../users/userobjects.html">User Objects</a></li>
@@ -447,31 +541,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="../taskqueue/overview.html">Overview</a></li>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="../taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="../taskqueue/functions.html">Functions</a></li>
-         <li><a href="../taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="../xmpp/functions.html">Functions</a></li>
+         <li><a href="../xmpp/messageclass.html">Message</a></li>
+         <li><a href="../xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../blobstore/functions.html">Functions</a></li>
-    <li><a href="../blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +562,7 @@ var logged_in_user_email = null;
     <li><a href="../config/indexconfig.html">Index Config</a></li>
     <li><a href="../config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../config/queue.html">Task Queue Config</a></li>
+    <li><a href="../config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +614,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +632,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -577,19 +661,20 @@ var logged_in_user_email = null;
 
 
 
-<p>The datastore API represents entities as instances of model classes.  Methods of a model instance create, update and delete the entity.  Entities can be fetched from the datastore as model instances using queries or keys.</p>
+<p>The datastore API represents entities as instances of model classes. Methods of a model instance create, update and delete the entity. Entities can be fetched from the datastore as model instances using queries or keys.</p>
 
 <ul>
   <li><a href="#Creating_and_Updating_an_Entity">Creating and Updating an Entity</a></li>
   <li><a href="#Getting_Entities_Using_a_Query">Getting Entities Using a Query</a></li>
   <li><a href="#Getting_an_Entity_Using_a_Key">Getting an Entity Using a Key</a></li>
   <li><a href="#Deleting_an_Entity">Deleting an Entity</a></li>
+  <li><a href="#Deleting_Entities_in_Bulk">Deleting Entities in Bulk</a><sup class="new">Experimental</sup></li>
 </ul>
 
 
 <h2 id="Creating_and_Updating_an_Entity">Creating and Updating an Entity</h2>
 
-<p>Instances of <a href="modelclass.html">Model</a> (and <a href="expandoclass.html">Expando</a>) classes represent datastore entities.  An application creates a new entity of a given kind by calling the constructor of the model class that corresponds with the kind.</p>
+<p>Instances of <a href="modelclass.html">Model</a> (and <a href="expandoclass.html">Expando</a>) classes represent datastore entities. An application creates a new entity of a given kind by calling the constructor of the model class that corresponds with the kind.</p>
 
 <pre class="prettyprint">
 pet = Pet(name="Fluffy",
@@ -607,7 +692,7 @@ db.put(pet)
 
 <p>If an instance has been stored before, the put() method updates the existing entity.</p>
 
-<p>Queries return results as model instances.  These instances can be modified and put back into the datastore.</p>
+<p>Queries return results as model instances. These instances can be modified and put back into the datastore.</p>
 
 <pre class="prettyprint">
 if users.get_current_user():
@@ -622,7 +707,7 @@ if users.get_current_user():
 
 <h2 id="Getting_Entities_Using_a_Query">Getting Entities Using a Query</h2>
 
-<p>The datastore can execute queries across entities of a given kind.  A query can filter results using conditions that entity property values must meet, and can return the results sorted by property values.  A query can also limit the scope to entities with a given ancestor; see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
+<p>The datastore can execute queries across entities of a given kind. A query can filter results using conditions that entity property values must meet, and can return the results sorted by property values. A query can also limit the scope to entities with a given ancestor; see <a href="keysandentitygroups.html">Keys and Entity Groups</a>.</p>
 
 <p>For a complete description of how queries work, including several things queries cannot do, see <a href="queriesandindexes.html">Queries and Indexes</a>.</p>
 
@@ -630,7 +715,7 @@ if users.get_current_user():
 
 <h3>The Query Interface</h3>
 
-<p>The <a href="modelclass.html#Model_all">all()</a> method on a <a href="modelclass.html">Model</a> (or <a href="expandoclass.html">Expando</a>) class returns a <a href="queryclass.html">Query</a> object that represents a query for all entities of the corresponding kind.  The application prepares the query by calling the <a href="queryclass.html#Query_filter">filter()</a>, <a href="queryclass.html#Query_order">order()</a>, and <a href="queryclass.html#Query_ancestor">ancestor()</a> methods on the object.</p>
+<p>The <a href="modelclass.html#Model_all">all()</a> method on a <a href="modelclass.html">Model</a> (or <a href="expandoclass.html">Expando</a>) class returns a <a href="queryclass.html">Query</a> object that represents a query for all entities of the corresponding kind. The application prepares the query by calling the <a href="queryclass.html#Query_filter">filter()</a>, <a href="queryclass.html#Query_order">order()</a>, and <a href="queryclass.html#Query_ancestor">ancestor()</a> methods on the object.</p>
 
 <pre class="prettyprint">
 class Story(db.Model):
@@ -649,7 +734,7 @@ query.filter('title =', 'Foo').order('-date').ancestor(key)
 
 <h3>The GqlQuery Interface</h3>
 
-<p>The <a href="gqlqueryclass.html">GqlQuery</a> class constructor takes a GQL query string and optional parameter bindings.  The query string specifies the kind, and the filters, sort orders and ancestor conditions.  The query string can also include a result limit and offset.</p>
+<p>The <a href="gqlqueryclass.html">GqlQuery</a> class constructor takes a GQL query string and optional parameter bindings. The query string specifies the kind, and the filters, sort orders and ancestor conditions. The query string can also include a result limit and offset.</p>
 
 <pre class="prettyprint">
 # Parameters can be bound with positional arguments.
@@ -671,7 +756,7 @@ query = db.GqlQuery("SELECT * FROM Story WHERE title = 'Foo' "
                     parent=key)
 </pre>
 
-<p>The <a href="modelclass.html#Model_gql">gql()</a> class method of a <a href="modelclass.html">Model</a> class also prepares a GqlQuery object from a string.  The string is the GQL query string with the <code>SELECT ... FROM Model</code> omitted, because this part is implied.</p>
+<p>The <a href="modelclass.html#Model_gql">gql()</a> class method of a <a href="modelclass.html">Model</a> class also prepares a GqlQuery object from a string. The string is the GQL query string with the <code>SELECT ... FROM Model</code> omitted, because this part is implied.</p>
 
 <pre class="prettyprint">
 query = Story.gql("WHERE title = :title "
@@ -680,15 +765,15 @@ query = Story.gql("WHERE title = :title "
                   title='Foo', parent=key)
 </pre>
 
-<p>Parameter bindings can be re-bound to new values using the <a href="gqlqueryclass.html#GqlQuery_bind">bind()</a> method.  An application can re-use a GqlQuery object by re-binding parameters and re-executing the query.</p>
+<p>Parameter bindings can be re-bound to new values using the <a href="gqlqueryclass.html#GqlQuery_bind">bind()</a> method. An application can re-use a GqlQuery object by re-binding parameters and re-executing the query.</p>
 
 <h3>Executing the Query and Accessing Results</h3>
 
-<p><a href="queryclass.html">Query</a> and <a href="gqlqueryclass.html">GqlQuery</a> objects do not execute the query until the application tries to access the results.  When the application accesses results, the query is executed, and results are loaded into memory as instances of the model class for the query.  Both query classes provide two ways to execute the query and access results: the <a href="queryclass.html#Query_fetch">fetch()</a> method, and the iterator interface.</p>
+<p><a href="queryclass.html">Query</a> and <a href="gqlqueryclass.html">GqlQuery</a> objects do not execute the query until the application tries to access the results. When the application accesses results, the query is executed, and results are loaded into memory as instances of the model class for the query. Both query classes provide two ways to execute the query and access results: the <a href="queryclass.html#Query_fetch">fetch()</a> method, and the iterator interface.</p>
 
-<p>The fetch() method takes a maximum number of results to fetch (the limit), and an optional number of results to skip (the offset).  The method executes the query, then fetches results until it has fetched the limit or there are no more results.  Once the results are loaded into memory, it skips to the offset if one was specified, then returns the requested results as a list of model instances.  The full query is executed for each call to fetch().</p>
+<p>The fetch() method takes a maximum number of results to fetch (the limit), and an optional number of results to skip (the offset). The method executes the query, then fetches results until it has fetched the limit or there are no more results. Once the results are loaded into memory, it skips to the offset if one was specified, then returns the requested results as a list of model instances. The full query is executed for each call to fetch().</p>
 
-<p class="note"><b>Note:</b> The offset does not affect the number of results fetched from the datastore.  All results up to the limit are fetched and stored in memory.  The offset only affects what is returned by the fetch() method.</p>
+<p class="note"><b>Note:</b> The offset does not affect the number of results fetched from the datastore. All results up to the limit are fetched and stored in memory. The offset only affects what is returned by the fetch() method.</p>
 
 <pre class="prettyprint">
 results = query.fetch(10)
@@ -698,7 +783,7 @@ for result in results:
 
 <p>The limit and offset given to the fetch() method override any limit and offset specified in a GQL query string.</p>
 
-<p>If the query object is used as an iterator, the query is executed with no limit or offset, the results are loaded into memory, and the value returned is an iterator over the results.  The iterator yields instances of the model class.</p>
+<p>If the query object is used as an iterator, the query is executed with no limit or offset, the results are loaded into memory, and the value returned is an iterator over the results. The iterator yields instances of the model class.</p>
 
 <pre class="prettyprint">
 for result in query:
@@ -708,7 +793,7 @@ for result in query:
 
 <h2 id="Getting_an_Entity_Using_a_Key">Getting an Entity Using a Key</h2>
 
-<p>After an entity is stored in the datastore, the entity has a unique key.  Key values are represented in the API represents as instances of the <a href="keyclass.html">Key</a> class.  The <a href="modelclass.html#Model_put">put()</a> method of a model instance and <a href="functions.html#put">db.put()</a> function return the Key of the stored entity.  After a model instance has been stored for the first time, the <a href="modelclass.html#Model_key">key()</a> method of the model instance returns the Key for the instance.</p>
+<p>After an entity is stored in the datastore, the entity has a unique key. Key values are represented in the API represents as instances of the <a href="keyclass.html">Key</a> class. The <a href="modelclass.html#Model_put">put()</a> method of a model instance and <a href="functions.html#put">db.put()</a> function return the Key of the stored entity. After a model instance has been stored for the first time, the <a href="modelclass.html#Model_key">key()</a> method of the model instance returns the Key for the instance.</p>
 
 <pre class="prettyprint">
 entity.put()
@@ -719,7 +804,7 @@ key = entity.key()
 entity = db.get(key)
 </pre>
 
-<p>A common use of a Key value is to store it as the value of a property on another entity.  The <a href="typesandpropertyclasses.html#ReferenceProperty">ReferenceProperty</a> model property class provides automatic referencing and dereferencing of model instances as keys: A model instance can be assigned to a ReferenceProperty directly, and its key will be used as the value.</p>
+<p>A common use of a Key value is to store it as the value of a property on another entity. The <a href="typesandpropertyclasses.html#ReferenceProperty">ReferenceProperty</a> model property class provides automatic referencing and dereferencing of model instances as keys: A model instance can be assigned to a ReferenceProperty directly, and its key will be used as the value.</p>
 
 <pre class="prettyprint">
 class PetOwner(db.Model):
@@ -736,7 +821,7 @@ pet = Pet(name="Fluffy", owner=owner)
 pet = Pet(name="Fluffy", owner=owner.key())
 </pre>
 
-<p>Similarly, a ReferenceProperty value accessed via a property acts like its instance.  The data entity is fetched automatically, and is not fetched until it is used.</p>
+<p>Similarly, a ReferenceProperty value accessed via a property acts like its instance. The data entity is fetched automatically, and is not fetched until it is used.</p>
 
 <pre class="prettyprint">
 pets = db.GqlQuery("SELECT * FROM Pet WHERE name = :1", "Fluffy")
@@ -749,7 +834,7 @@ owner_name = pet.owner.name
 
 <p>The <a href="functions.html#get">db.get()</a> function fetches an entity from the datastore for a Key (or list of Keys).</p>
 
-<p>Keys can be encoded as strings for passing around outside of the application.  To convert a string-encoded key back to a Key object, the application passes the string to the <a href="keyclass.html#Key">Key</a> constructor.</p>
+<p>Keys can be encoded as strings for passing around outside of the application. To convert a string-encoded key back to a Key object, the application passes the string to the <a href="keyclass.html#Key">Key</a> constructor.</p>
 
 <pre class="prettyprint">
 obj = MyModel(name="Foo")
@@ -762,12 +847,12 @@ key_name = self.request.get('key')
 obj = db.get(db.Key(key_name))
 </pre>
 
-<p class="note"><b>Note:</b> The string encoding of a Key is opaque, but not encrypted.  If your application needs keys to not be guessable, you should further encrypt the string-encoded Key before sending it to the user.</p>
+<p class="note"><b>Note:</b> The string encoding of a Key is opaque, but not encrypted. If your application needs keys to not be guessable, you should further encrypt the string-encoded Key before sending it to the user.</p>
 
 
 <h2 id="Deleting_an_Entity">Deleting an Entity</h2>
 
-<p>An application can delete an entity from the datastore using a model instance or a Key.  The model instance's <a href="modelclass.html#Model_delete">delete()</a> method deletes the corresponding entity from the datastore.  The <a href="functions.html#delete">delete()</a> function takes a Key or list of Keys and deletes the entity (or entities) from the datastore.</p>
+<p>An application can delete an entity from the datastore using a model instance or a Key. The model instance's <a href="modelclass.html#Model_delete">delete()</a> method deletes the corresponding entity from the datastore. The <a href="functions.html#delete">delete()</a> function takes a Key or list of Keys and deletes the entity (or entities) from the datastore.</p>
 
 <pre class="prettyprint">
 q = db.GqlQuery("SELECT * FROM Message WHERE create_date < :1", earliest_date)
@@ -782,10 +867,17 @@ results = q.fetch(10)
 db.delete(results)
 </pre>
 
-<p>Deleting an entity does not change any Key values in the datastore that may have referred to the entity.  If your application may attempt to de-reference a Key value for a deleted entity, the application should do so using <a href="functions.html#get">db.get()</a>, then test the return value before accessing properties.</p>
+<p>Deleting an entity does not change any Key values in the datastore that may have referred to the entity. If your application may attempt to de-reference a Key value for a deleted entity, the application should do so using <a href="functions.html#get">db.get()</a>, then test the return value before accessing properties.</p>
 
-<p>Deleting an entity that is an ancestor for other entities does not affect the other entities.  As long as the application does not depend on the existence of the ancestor to build keys for the descendant entities, the application can still access the descendants.</p>
+<p>Deleting an entity that is an ancestor for other entities does not affect the other entities. As long as the application does not depend on the existence of the ancestor to build keys for the descendant entities, the application can still access the descendants.</p>
 
+<h2 id="Deleting_Entities_in_Bulk">Deleting Entities in Bulk<sup class="new">Experimental</sup></h2>
+<p>You can use the Datastore Admin tab of the Admin Console to delete all entities of a kind, or all entities of all kinds, in the default namespace. To enable this feature, simply include the <code>datastore_admin</code> <a href="../config/appconfig.html#Builtin_Handlers">builtin handler</a> in <code>app.yaml</code>:</p>
+<pre>builtins:
+- datastore_admin: on</pre>
+<p>Adding this builtin enables the Datastore Admin screen in the <b>Data</b> section of the Admin Console. From this screen, you can select the entity kind(s) to delete individually or in bulk, and delete them using the <b>Delete Entities</b> button.</p>
+<p class="warning"><strong>Warning!</strong> Deleting entities in bulk happens within your application, and thus counts against your <a href="../../quotas.html#Datastore">quota</a>.</p>
+<p>This feature is currently experimental. We believe this feature is currently the fastest way to bulk-delete data, but it is not yet stable and you may encounter occasional bugs.</p>
 
 
       </div><!-- end gc-pagecontent -->
@@ -820,14 +912,14 @@ db.delete(results)
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -840,7 +932,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -848,6 +940,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

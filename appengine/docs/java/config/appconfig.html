@@ -1,3 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 
 
@@ -14,17 +36,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
 
@@ -63,14 +81,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../../../../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +100,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../../../../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +122,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -158,8 +174,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="../../../downloads.html">Downloads</a></li>
+  <li><a href="../../../tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="../../../business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -206,12 +224,14 @@ var logged_in_user_email = null;
     <li><a href="../datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="../datastore/overview.html">Overview</a></li>
+    <li><a href="../datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="../datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="../datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="../datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="../datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="../datastore/transactions.html">Transactions</a></li>
     <li><a href="../datastore/relationships.html">Relationships</a></li>
+    <li><a href="../datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="../datastore/stats.html">Statistics</a></li>
     <li><a href="../datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="../javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -220,19 +240,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../apis.html">Services</a>
       <ul>
-        <li><a href="../memcache/index.html">Memcache</a>
+        <li><a href="../blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="../memcache/overview.html">Overview</a></li>
-    <li><a href="../memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="../blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../urlfetch/index.html">URL Fetch</a>
+        <li><a href="../channel/index.html">Channel</a>
           <ul>
-                <li><a href="../urlfetch/overview.html">Overview</a></li>
-    <li><a href="../urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="../channel/overview.html">Overview</a></li>
+<li><a href="../javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="../channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../images/index.html">Images</a>
+          <ul>
+                <li><a href="../images/overview.html">Overview</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -245,42 +275,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../xmpp/index.html">XMPP</a>
+        <li><a href="../memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../xmpp/overview.html">Overview</a></li>
-     <li><a href="../javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="../memcache/overview.html">Overview</a></li>
+    <li><a href="../memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="../images/index.html">Images</a>
+        <li><a href="../multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="../images/overview.html">Overview</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="../multitenancy/overview.html">Overview</a></li>
+    <li><a href="../multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="../users/index.html">Google Accounts</a>
+        <li><a href="../oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="../users/overview.html">Overview</a></li>
-    <li><a href="../javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="../oauth/overview.html">Overview</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="../taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="../taskqueue/overview.html">Overview</a></li>
      <li><a href="../javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="../blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="../blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="../urlfetch/overview.html">Overview</a></li>
+    <li><a href="../urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../users/index.html">Users</a>
+          <ul>
+                <li><a href="../users/overview.html">Overview</a></li>
+    <li><a href="../javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="../xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="../xmpp/overview.html">Overview</a></li>
+     <li><a href="../javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -295,6 +340,17 @@ var logged_in_user_email = null;
     <li><a href="indexconfig.html">Index Config</a></li>
     <li><a href="cron.html">Scheduled Tasks</a></li>
     <li><a href="queue.html">Task Queue Config</a></li>
+    <li><a href="dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="../configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="../configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="../configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="../configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="../configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="../configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -309,6 +365,7 @@ var logged_in_user_email = null;
             <li><a href="../tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="../tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -331,6 +388,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="../../python/datastore/overview.html">Overview</a></li>
+     <li><a href="../../python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="../../python/datastore/entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="../../python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="../../python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -338,6 +396,7 @@ var logged_in_user_email = null;
      <li><a href="../../python/datastore/transactions.html">Transactions</a></li>
      <li><a href="../../python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="../../python/datastore/gqlreference.html">GQL Reference</a></li>
+    <li><a href="../../python/datastore/metadataqueries.html">Metadata Queries</a></li>
      <li><a href="../../python/datastore/stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -358,28 +417,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="../../python/apis.html">Services</a>
       <ul>
-        <li><a href="../../python/memcache/index.html">Memcache</a>
+        <li><a href="../../python/blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="../../python/memcache/overview.html">Overview</a></li>
-      <li><a href="../../python/memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="../../python/memcache/clientclass.html">Client</a></li>
-         <li><a href="../../python/memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="../../python/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="../../python/blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="../../python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="../../python/blobstore/functions.html">Functions</a></li>
+    <li><a href="../../python/blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="../../python/urlfetch/index.html">URL Fetch</a>
+        <li><a href="../../python/channel/index.html">Channel</a>
           <ul>
-                 <li><a href="../../python/urlfetch/overview.html">Overview</a></li>
+            <li><a href="../../python/channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="../../python/channel/functions.html">Functions</a></li>
+    <li><a href="../../python/channel/exceptions.html">Exceptions</a></li>
+    <li><a href="../../python/channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/images/index.html">Images</a>
+          <ul>
+                 <li><a href="../../python/images/overview.html">Overview</a></li>
+     <li><a href="../../python/images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="../../python/images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="../../python/urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="../../python/urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="../../python/urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="../../python/images/imageclass.html">Image</a></li>
+         <li><a href="../../python/images/functions.html">Functions</a></li>
+         <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -402,35 +477,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../python/xmpp/index.html">XMPP</a>
+        <li><a href="../../python/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="../../python/xmpp/overview.html">Overview</a></li>
+                 <li><a href="../../python/memcache/overview.html">Overview</a></li>
+      <li><a href="../../python/memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/xmpp/functions.html">Functions</a></li>
-         <li><a href="../../python/xmpp/messageclass.html">Message</a></li>
-         <li><a href="../../python/xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="../../python/memcache/clientclass.html">Client</a></li>
+         <li><a href="../../python/memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../../python/images/index.html">Images</a>
+        <li><a href="../../python/multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="../../python/images/overview.html">Overview</a></li>
-     <li><a href="../../python/images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="../../python/images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="../../python/multitenancy/overview.html">Overview</a></li>
+    <li><a href="../../python/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="../../python/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="../../python/multitenancy/functions.html">Functions</a></li>
+        <li><a href="../../python/multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="../../python/oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/images/imageclass.html">Image</a></li>
-         <li><a href="../../python/images/functions.html">Functions</a></li>
-         <li><a href="../../python/images/exceptions.html">Exceptions</a></li>
+         <li><a href="../../python/oauth/functions.html">Functions</a></li>
+         <li><a href="../../python/oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="../../python/users/index.html">Google Accounts</a>
+        <li><a href="../../python/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="../../python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="../../python/taskqueue/functions.html">Functions</a></li>
+         <li><a href="../../python/taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="../../python/urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="../../python/urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="../../python/urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="../../python/urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="../../python/urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="../../python/users/index.html">Users</a>
           <ul>
                  <li><a href="../../python/users/overview.html">Overview</a></li>
      <li><a href="../../python/users/userobjects.html">User Objects</a></li>
@@ -447,31 +561,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="../../python/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="../../python/xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="../../python/taskqueue/overview.html">Overview</a></li>
+                 <li><a href="../../python/xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="../../python/taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="../../python/taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="../../python/taskqueue/functions.html">Functions</a></li>
-         <li><a href="../../python/taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="../../python/xmpp/functions.html">Functions</a></li>
+         <li><a href="../../python/xmpp/messageclass.html">Message</a></li>
+         <li><a href="../../python/xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="../../python/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="../../python/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="../../python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="../../python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="../../python/blobstore/functions.html">Functions</a></li>
-    <li><a href="../../python/blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -483,6 +582,7 @@ var logged_in_user_email = null;
     <li><a href="../../python/config/indexconfig.html">Index Config</a></li>
     <li><a href="../../python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="../../python/config/queue.html">Task Queue Config</a></li>
+    <li><a href="../../python/config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -534,10 +634,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="../../theadminconsole.html">The Admin Console</a></li>
+      <li><a href="../../adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="../../adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="../../quotas.html">Quotas</a></li>
       <li><a href="../../billing.html">Billing</a></li>
-      <li><a href="../../domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="../../domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -547,7 +652,6 @@ var logged_in_user_email = null;
       <li><a href="../../../kb/index.html">FAQ</a></li>
       <li><a href="../../../articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -577,22 +681,31 @@ var logged_in_user_email = null;
 
 
 
-<p>In addition to the <a href="webxml.html">web.xml deployment descriptor</a>, an App Engine Java application uses a configuration file, named <code>appengine-web.xml</code>, to specify the app's registered application ID and the version identifier of the latest code, and to identify which files in the app's WAR are static files (like images) and which are resource files used by the application.  The <a href="../tools/uploadinganapp.html">AppCfg</a> command uses this information when you upload the app.</p>
+<p>In addition to the <a href="webxml.html">web.xml deployment descriptor</a>, an App Engine Java application uses a configuration file, named <code>appengine-web.xml</code>, to specify the app's registered application ID and the version identifier of the latest code, and to identify which files in the app's WAR are static files (like images) and which are resource files used by the application. The <a href="../tools/uploadinganapp.html">AppCfg</a> command uses this information when you upload the app.</p>
 
 <ul>
   <li><a href="#About_appengine_web_xml">About appengine-web.xml</a></li>
-  <li><a href="#Static_Files_and_Resource_Files">Static Files and Resource Files</a></li>
+  <li><a href="#Static_Files_and_Resource_Files">Static Files and Resource Files</a>
+    <ul>
+      <li><a href="#include-exclude">Including and Excluding Files</a></li>
+      <li><a href="#expiration">Setting the Browser Cache Expiration for Static Files</a></li>
+      <li><a href="#static-mime">Changing the MIME Type for Static Files</a></li>
+      <li><a href="#public-root">Changing the Root Directory</a></li>
+    </ul>
+  </li>
   <li><a href="#System_Properties_and_Environment_Variables">System Properties and Environment Variables</a></li>
   <li><a href="#Configuring_Secure_URLs__SSL_">Configuring Secure URLs (SSL)</a></li>
   <li><a href="#Enabling_Sessions">Enabling Sessions</a></li>
   <li><a href="#Inbound_Services">Inbound Services</a></li>
   <li><a href="#Disabling_Precompilation">Disabling Precompilation</a></li>
   <li><a href="#Administration_Console_Custom_Pages">Administration Console Custom Pages</a></li>
+  <li><a href="#Custom_Error_Responses">Custom Error Responses</a></li>
+  <li><a href="#Warming_Requests">Warming Requests</a></li>
 </ul>
 
 <h2 id="About_appengine_web_xml">About appengine-web.xml</h2>
 
-<p>An App Engine Java app must have a file named <code>appengine-web.xml</code> in its WAR, in the directory <code>WEB-INF/</code>.  This is an XML file whose root element is <code>&lt;appengine-web-app&gt;</code>.  A minimal file that specifies the application ID, a version identifier, and no static files or resource files looks like this:</p>
+<p>An App Engine Java app must have a file named <code>appengine-web.xml</code> in its WAR, in the directory <code>WEB-INF/</code>. This is an XML file whose root element is <code>&lt;appengine-web-app&gt;</code>. A minimal file that specifies the application ID, a version identifier, and no static files or resource files looks like this:</p>
 
 <pre class="prettyprint">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -602,56 +715,73 @@ var logged_in_user_email = null;
 &lt;/appengine-web-app&gt;
 </pre>
 
-<p>The <code>&lt;application&gt;</code> element contains the application's ID.  This is the application ID you register when you create your application in <a href="../../theadminconsole.html">the Admin Console</a>.  When you upload your app, AppCfg gets the application ID from this file.</p> 
+<p>The <code>&lt;application&gt;</code> element contains the application's ID. This is the application ID you register when you create your application in <a href="../../theadminconsole.html">the Admin Console</a>. When you upload your app, AppCfg gets the application ID from this file.</p> 
 
-<p>The <code>&lt;version&gt;</code> element contains the version identifier for the latest version of the app's code.  The version identifier can contain letters, digits, and hyphens.  AppCfg uses this version identifier when it uploads the application, telling App Engine to either create a new version of the app with the given identifier, or replace the version of the app with the given identifier if one already exists.  You can test new versions of your app using a URL such as <code>http://<i>version-id</i>.latest.<i>application-id</i>.appspot.com</code>.  You can select which version of the app your users see, the "default" version, using <a href="../../theadminconsole.html">the Admin Console</a>.</p>
+<p>The <code>&lt;version&gt;</code> element contains the version identifier for the latest version of the app's code. The version identifier can contain letters, digits, and hyphens. AppCfg uses this version identifier when it uploads the application, telling App Engine to either create a new version of the app with the given identifier, or replace the version of the app with the given identifier if one already exists. You can test new versions of your app using a URL such as <code>http://<i>version-id</i>.latest.<i>application-id</i>.appspot.com</code>. You can select which version of the app your users see, the "default" version, using <a href="../../theadminconsole.html">the Admin Console</a>.</p>
 
 <p>The <code>&lt;static-files&gt;</code> and <code>&lt;resource-files&gt;</code> elements are described in the next section.</p>
 
 <p>You can find the DTD and schema specifications for this file in the SDK's <code>docs/</code> directory.</p>
 
-
 <h2 id="Static_Files_and_Resource_Files">Static Files and Resource Files</h2>
 
-<p>Many web applications have files that are served directly to the user's browser, such as images, CSS stylesheets, or browser JavaScript code.  These are known as <i>static files</i> because they do not change, and can benefit from web servers dedicated just to static content.  App Engine serves static files from dedicated servers and caches.</p>
+<p>Many web applications have files that are served directly to the user's browser, such as images, CSS style sheets, or browser JavaScript code.  These are known as <i>static files</i> because they do not change, and can benefit from web servers dedicated just to static content. App Engine serves static files from dedicated servers and caches that are separate from the application servers.</p>
 
-<p>Files that are accessible by the application code using the filesystem are called <code>resource files</code>.  These files are stored on the application servers with the app.</p>
+<p>Files that are accessible by the application code using the filesystem are called <i>resource files</i>.  These files are stored on the application servers with the app.</p>
 
 <p>By default, all files in the WAR are treated as both static files and resource files, except for JSP files, which are compiled into servlet classes and mapped to URL paths, and files in the <code>WEB-INF/</code> directory, which are never served as static files and always available to the app as resource files.</p>
 
-<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>appengine-web.xml</code> file.  The <code>&lt;static-files&gt;</code> element specifies patterns that match file paths to include and exclude from the list of static files, amending the default behavior.  Similarly, the <code>&lt;resource-files&gt;</code> element specifies which files are considered resource files.</p>
+<p>You can adjust which files are considered static files and which are considered resource files using elements in the <code>appengine-web.xml</code> file.  The <code><static-files></code> element specifies patterns that match file paths to include and exclude from the list of static files, amending the default behavior.  Similarly, the <code><resource-files></code> element specifies which files are considered resource files.</p>
 
-<p>Path patterns are specified using zero or more <code>&lt;include&gt;</code> and <code>&lt;exclude&gt;</code> elements.  In a pattern, <code>*</code> represents zero or more of any character in a file or directory name, and <code>**</code> represents zero or more directories in a path.</p>
+<h3 id="include-exclude">Including and Excluding Files</h3>
+<p>Path patterns are specified using zero or more <code><include></code> and <code><exclude></code> elements.  In a pattern, <code>*</code> represents zero or more of any character in a file or directory name, and <code>**</code> represents zero or more directories in a path.</p>
 
-<p>An <code>&lt;include&gt;</code> element overrides the default behavior of including all files.  An <code>&lt;exclude&gt;</code> element applies after all <code>&lt;include&gt;</code> patterns (as well as the default if no explicit <code>&lt;include&gt;</code> is provided).</p>
+<p>An <code><include></code> element overrides the default behavior of including all files.  An <code><exclude></code> element applies after all <code><include></code> patterns (as well as the default if no explicit <code><include></code> is provided).</p>
 
-<p>For example, to specify that all files whose names end in <code>.png</code> are static files (but never those in <code>WEB-INF/</code>) except those in the <code>data/</code> directory and all subdirectories:</p>
+<p>The following example demonstrates how to designate all <code>.png</code> files as static files (except those in the <code>data/</code> directory and all of its subdirectories):</p>
 
-<pre class="prettyprint">
+
+  <pre class="prettyprint">
     &lt;static-files&gt;
         &lt;include path="/**.png" /&gt;
         &lt;exclude path="/data/**.png" /&gt;
     &lt;/static-files&gt;
 </pre>
 
-<p>Similarly, to specify that all files whose names end in <code>.xml</code> are resource files (including those outside of <code>WEB-INF/</code>) except those in the <code>feeds/</code> directory and all subdirectories:</p>
 
-<pre class="prettyprint">
+<p>Similarly, the following sample demonstrates how to designate all <code>.xml</code> files as resource files (except those in the <code>feeds/</code> directory and all of its subdirectories):</p>
+
+
+  <pre class="prettyprint">
     &lt;resource-files&gt;
         &lt;include path="/**.xml" /&gt;
         &lt;exclude path="/feeds/**.xml" /&gt;
     &lt;/resource-files&gt;
 </pre>
 
-<p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code>&lt;static-files&gt;&lt;include ... &gt;</code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser.</p>
 
-<pre class="prettyprint">
+
+<h3 id="expiration">Setting Browser Cache Expiration</h3>
+<p>You can specify a browser cache expiration time for static files.  To do so, provide an <code>expiration</code> attribute to <code><static-files><include ... ></code>.  The value is a string of numbers and units, separated by spaces, where units can be <code>d</code> for days, <code>h</code> for hours, <code>m</code> for minutes, and <code>s</code> for seconds. For example, <code>"4d 5h"</code> sets cache expiration to 4 days and 5 hours after the file is first loaded by the browser.</p>
+
+
+  <pre class="prettyprint">
     &lt;static-files&gt;
         &lt;include path="/**.png" expiration="4d 5h" /&gt;
     &lt;/static-files&gt;
 </pre>
 
-<p>By default, static files are served using a MIME type selected based on the filename extension.  You can associate custom MIME types with filename extensions for static files in <a href="webxml.html">web.xml</a> using <code>&lt;mime-mapping&gt;</code> elements.</p>
+
+<h3 id="static-mime">Changing the MIME Type for Static Files</h3>
+<p>By default, static files are served using a MIME type selected based on the filename extension.  You can associate custom MIME types with filename extensions for static files in <a href="webxml.html">web.xml</a> using <code><mime-mapping></code> elements.</p>
+
+<h3 id="public-root">Changing the Root Directory</h3>
+<p>
+  Static files are served from the <code>public_root</code> directory. For the <code>java</code> runtime, this defaults to <code>/</code>. The following example changes public root from <code>/static/</code> to <code>/</code>, such that the application file <code>/static/index.html</code> is served as <code>/index.html</code>:
+</p>
+
+  <pre class="prettyprint">&lt;public-root&gt;"/static"&lt;/public-root&gt;</pre>
+
 
 
 <h2 id="System_Properties_and_Environment_Variables">System Properties and Environment Variables</h2>
@@ -673,7 +803,7 @@ var logged_in_user_email = null;
 
 <h2 id="Configuring_Secure_URLs__SSL_">Configuring Secure URLs (SSL)</h2>
 
-<p>By default, any user can access any URL using either HTTP or HTTPS.  You can configure an app to require HTTPS for certain URLs in the deployment descriptor.  See <a href="webxml.html#Secure_URLs">Deployment Descriptor: Secure URLs</a>.</p>
+<p>By default, any user can access any URL using either HTTP or HTTPS. You can configure an app to require HTTPS for certain URLs in the deployment descriptor. See <a href="webxml.html#Secure_URLs">Deployment Descriptor: Secure URLs</a>.</p>
 
 <p>If you want to disallow the use of HTTPS for the application, put the following in the <code>appengine-web.xml</code> file:</p>
 
@@ -686,9 +816,9 @@ var logged_in_user_email = null;
 
 <h2 id="Enabling_Sessions">Enabling Sessions</h2>
 
-<p>App Engine includes an implementation of sessions, using <a href="http://java.sun.com/products/servlet/2.2/javadoc/javax/servlet/http/HttpSession.html">the servlet session interface</a>.  The implementation stores session data in the App Engine datastore for persistence, and also uses memcache for speed.  As with most other servlet containers, the session attributes that are set with <code>session.setAttribute()</code> during the request are saved to the datastore at the end of the request.</p>
+<p>App Engine includes an implementation of sessions, using <a href="http://java.sun.com/products/servlet/2.2/javadoc/javax/servlet/http/HttpSession.html">the servlet session interface</a>. The implementation stores session data in the App Engine datastore for persistence, and also uses memcache for speed. As with most other servlet containers, the session attributes that are set with <code>session.setAttribute()</code> during the request are saved to the datastore at the end of the request.</p>
 
-<p>This feature is off by default.  To turn it on, add the following to <code>appengine-web.xml</code>:</p>
+<p>This feature is off by default. To turn it on, add the following to <code>appengine-web.xml</code>:</p>
 
 <pre class="prettyprint">
     &lt;sessions-enabled&gt;true&lt;/sessions-enabled&gt;
@@ -701,7 +831,7 @@ var logged_in_user_email = null;
 
 <h2 id="Inbound_Services">Inbound Services</h2>
 
-<p>Before an application can receive email and XMPP messages, the application must be configured to enable those services.  You enable these services for a Python app by including an <code>&lt;inbound-services&gt;</code> element in the <code>appengine-web.xml</code> file.</p>
+<p>Before an application can receive email and XMPP messages, the application must be configured to enable those services. You enable these services for a Java app by including an <code>&lt;inbound-services&gt;</code> element in the <code>appengine-web.xml</code> file.</p>
 
 <p>To enable incoming email and XMPP messages, add the following to <code>appengine-web.xml</code>:</p>
 
@@ -715,18 +845,18 @@ var logged_in_user_email = null;
 
 <h2 id="Disabling_Precompilation">Disabling Precompilation</h2>
 
-<p>App Engine uses a "precompilation" process with the Java bytecode of an app to enhance the performance of the app in the Java runtime environment.  Precompiled code functions identically to the original bytecode.</p>
+<p>App Engine uses a "precompilation" process with the Java bytecode of an app to enhance the performance of the app in the Java runtime environment. Precompiled code functions identically to the original bytecode.</p>
 
 <p>If for some reason you prefer that your app not use precompilation, you can turn it off by adding the following to your <code>appengine-web.xml</code> file:</p>
 
 <pre class="prettyprint">
-  &lt;precompilation-enabled&gt;true&lt;/precompilation-enabled&gt;
+  &lt;precompilation-enabled&gt;false&lt;/precompilation-enabled&gt;
 </pre>
 
 
 <h2 id="Administration_Console_Custom_Pages">Administration Console Custom Pages</h2>
 
-<p>If you have administrator-only pages in your application that are used to administer the app, you can have those pages appear in the Administration Console.  The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML <a href="https://developer.mozilla.org/en/HTML/Element/iframe">iframe</a>.  To add a page to the Administration Console, add an <code>&lt;admin_console&gt;</code> section in your app's <code>appengine-web.xml</code> file, like so:</p>
+<p>If you have administrator-only pages in your application that are used to administer the app, you can have those pages appear in the Administration Console. The Administration Console includes the name of the page in its sidebar, and displays the page in an HTML <a href="https://developer.mozilla.org/en/HTML/Element/iframe">iframe</a>. To add a page to the Administration Console, add an <code>&lt;admin_console&gt;</code> section in your app's <code>appengine-web.xml</code> file, like so:</p>
 
 <pre>
   &lt;admin-console&gt;
@@ -735,11 +865,121 @@ var logged_in_user_email = null;
   &lt;/admin-console&gt;
 </pre>
 
-<p>Each <code>&lt;page&gt;</code> represents a custom page.  The <code>name</code> appears in the Administration Console navigation, and the <code>url</code> is the URL path to the page.</p>
+<p>Each <code>&lt;page&gt;</code> represents a custom page. The <code>name</code> appears in the Administration Console navigation, and the <code>url</code> is the URL path to the page.</p>
 
 <p>At this time, page names must contain only characters in the ASCII character set.</p>
 
-<p>You can use configuration in the <code>web.xml</code> file to restrict access to custom administration pages to only users that are administrators of the app.  See <a href="webxml.html#Security_and_Authentication">Security and Authentication</a>.</p>
+<p>You can use configuration in the <code>web.xml</code> file to restrict access to custom administration pages to only users that are administrators of the app. See <a href="webxml.html#Security_and_Authentication">Security and Authentication</a>.</p>
+
+<h2 id="Custom_Error_Responses">Custom Error Responses</h2>
+
+<p>When certain errors occur, App Engine serves a generic error page. You can configure your app to serve a custom static file instead of these generic error pages. You can set up different static files to be served for each supported error code by specifying the files in your app's <code>appengine-web.xml</code> file.</p>
+
+<p>To serve custom error pages, add a <code>&lt;static-error-handlers&gt;</code> section to your <code>appengine-web.xml</code>, as in this example:</p>
+
+
+<pre>
+  &lt;static-error-handlers&gt;
+    &lt;handler file="default_error.html"/&gt;
+    &lt;handler file="over_quota.html" error-code="over_quota"/&gt;
+  &lt;/static-error-handlers&gt;
+</pre>
+
+
+
+<p>Each <code>file</code> entry indicates a static file that should be served in place of the generic error response. The <code>error-code</code> indicates which error code should cause the associated file to be served. Supported error codes are as follows:
+
+<ul>
+  <li>
+<code>over_quota</code>, which indicates the app has <a href="../../quotas.html">exceeded a resource quota</a>;
+  </li>
+  <li>  
+<code>dos_api_denial</code>, which is served to any client blocked by your app's <a href="dos.html">DoS Protection configuration</a>;
+  <li><code>timeout</code>, served if a deadline is reached before there is a response from your app.
+  </li>
+</ul>
+
+<p>The <code>error-code</code> is optional; if it's not specified, the given file is the default error response for your app.</p>
+
+<p>You can optionally specify a <code>mime-type</code> to use when serving the custom error. See <a href="http://www.iana.org/assignments/media-types/">http://www.iana.org/assignments/media-types/</a> for a complete list of MIME types.</p>
+
+
+
+<h2 id="Warming_Requests">Warming Requests</h2>
+<p>App Engine frequently needs to load application code into a fresh instance. This happens when you redeploy the application, when the load pattern has increased beyond the capacity of the current instances, or simply due to maintenance or repairs of the underlying infrastructure or physical hardware. </p>
+
+<p>Loading new application code on a fresh instance can result in <a href="../../adminconsole/instances.html#Loading_Requests">loading requests</a>. Loading requests can result in increased request latency for your users, but you can avoid this latency using <b>warming requests</b>. Warming requests load application code into a new instance before any live requests reach that instance.</p>
+
+<p>App Engine attempts to detect when your application needs a new instance, and (assuming that warming requests are enabled for your application) initiates a warming request to initialize the new instance. However, these detection attempts do not work in every case. As a result, you may encounter loading requests, even if warming requests are enabled in your app. For example, if your app is serving no traffic, the first request to the app will always be a loading request, not a warming request. You can prevent loading requests in most cases by using the <a href="../../adminconsole/instances.html#Always_On">Always On</a> feature.</p>
+
+<p>Warming requests use CPU quota like any other request to your App Engine application. In most cases, you won't notice an increase in CPU usage, since your application is simply initializing in a warming request instead of a loading request. Your CPU usage will likely increase if you decide to do more work (such as precaching) during a warming request.</p>
+
+
+  
+<p>The default warming request causes all jar files to be indexed in memory and initializes your application and filters. The following sections describe how to configure warming requests and create warming logic for your application:</p>
+
+<ul>
+  <li><a href="#Configuration">Configuration</a></li>
+  <li><a href="#Using_a_load-on-startup_Servlet">Using a &lt;load-on-startup&gt; Servlet</a></li>
+  <li><a href="#Using_a_ServletContextListener">Using a ServletContextListener</a></li>
+  <li><a href="#Using_a_Custom_Servlet">Using a Custom Servlet</a></li>
+</ul>
+
+<h3 id="Configuration">Configuration</h3>
+<p>Warming requests are enabled by default for all Java applications.</p>
+
+<p>If you configured your app with <code>web.xml</code>, you can implement warming requests via an optional <code>&lt;warming-requests-enabled&gt;</code> element in <code>appengine-web.xml</code>, which defaults to true. This causes the App Engine infrastructure to issue <code>GET</code> requests to <code>/_ah/warmup</code>, initializing <a href="#Using_a_load-on-startup_Servlet">&lt;load-on-startup&gt;</a> servlets, <a href="#Using_a_ServletContextListener">ServletContextListeners</a>, and <a href="#Using_a_Custom_Servlet">custom servlets</a>&mdash;which allow you to initialize your application's code as it requires. You may or may not need to implement your own hander for <code>/_ah/warmup</code> depending on which of these methods you choose.</p>
+<p>To disable warming requests, specify the <code>&lt;warming-requests-enabled&gt;</code> element with a value of <code>false</code>:</p>
+
+<pre class="prettyprint">&lt;warming-requests-enabled&gt;false&lt;/warming-requests-enabled&gt;</pre>
+
+<p>Warming requests are also enabled by default if you configured your Java application with <code>app.yaml</code>. For details, please refer to <a href="../configyaml/appconfig_yaml.html#Warming_Requests">Java Application Configuration Using app.yaml</a>.</p>
+
+<h3 id="Using_a_load-on-startup_Servlet">Using a &lt;load-on-startup&gt; Servlet</h3>
+<p>The easiest way to provide warming logic is to mark your own servlets as <code>&lt;load-on-startup&gt;</code> in <code>web.xml</code>. This method requires no changes to your application code, and initializes all specified servlets when your application initializes. The following example demonstrates how to load <code>my-servlet</code> on startup:</p>
+
+<pre class="prettyprint">&lt;servlet&gt;
+  &lt;servlet-name&gt;my-servlet&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;com.company.MyServlet&lt;/servlet-class&gt;
+  &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;</pre>
+
+<p>These lines load the specified servlet class and invoke the servlet's <code>init()</code> method. The warming request initializes the specified servlets before servicing any live requests. However, if there is no warming request, the servlets specified in <code>&lt;load-on-startup&gt;</code> are registered upon the first request to a new instance, which result in a loading request. As noted earlier, App Engine may not issue a warming request every time your application needs a new instance. You can use App Engine's <a href="../../adminconsole/instances.html#Always_On">Always On</a> feature to avoid loading requests in most cases.</p>
+
+<h3 id="Using_a_ServletContextListener">Using a ServletContextListener</h3>
+<p>If you have custom logic that you want to run before any of your servlets is
+invoked, the standard Java mechanism to arrange for that code to be executed is
+to register a <a href="http://download.oracle.com/docs/cd/E17802_01/products/products/servlet/2.3/javad%0Doc/javax/servlet/ServletContextListener.html">ServletContextListener</a> in <code>web.xml</code>.</p>
+
+<pre class="prettyprint">&lt;listener&gt;
+ &lt;listener-class&gt;com.company.MyListener&lt;/listener-class&gt;
+&lt;/listener&gt;</pre>
+
+<p>And then supply a class alongside your servlet and filter code:</p>
+
+<pre class="prettyprint">public class MyListener implements ServletContextListener {
+ public void contextInitialized(ServletContextEvent event) {
+   // This will be invoked as part of a warming request, or the first user
+   // request if no warming request was invoked.
+ }
+ public void contextDestroyed(ServletContextEvent event) {
+   // App Engine does not currently invoke this method.
+ }
+}</pre>
+
+<p>The ServletContextListener runs during a warming request. If there is no warming request, it runs upon the first request to a new instance. This may result in loading requests, but you can use <a href="../../adminconsole/instances.html#Always_On">Always On</a> to avoid most loading requests.</p>
+
+<h3 id="Using_a_Custom_Servlet">Using a Custom Servlet</h3>
+<p>As noted earlier, the prediction algorithm to initiate warming requests for new instances does not work in every case. Even with this feature enabled, you may encounter loading requests. If you use <code>&lt;load-on-startup&gt;</code> or <code>ServletContextListeners</code>, and the warmup request is not initiated, you may incur additional load time and CPU time when a new instance starts to run. You can avoid this additional load time by providing a custom servlet that runs only during warming requests. Custom servlets work best when you plan to have expensive logic (such as precaching) that runs only during a warming request.</p>
+
+<p>The custom warming servlet invokes the warming servlet's <code>service</code> method only during a warming request. To create a custom warming servlet, simply override the built-in servlet definition for <code>_ah_warmup</code> in <code>web.xml</code>:</p>
+
+<pre class="prettyprint">&lt;servlet&gt;
+ &lt;servlet-name&gt;_ah_warmup&lt;/servlet-name&gt;
+ &lt;servlet-class&gt;com.company.MywarmingServlet&lt;/servlet-class&gt;</pre>
+
+
+
 
 
 
@@ -775,14 +1015,14 @@ var logged_in_user_email = null;
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -795,7 +1035,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../../../../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -803,6 +1043,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 

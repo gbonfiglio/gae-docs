@@ -14,17 +14,13 @@
 
 
 
- 
- 
- 
- 
- 
- 
- 
 
 
-
-
+ 
+ 
+ 
+ 
+ 
   
   
   
@@ -63,14 +59,13 @@ var logged_in_user_email = null;
     <div id="gb">
  <span>
   
-    <a id="lang-dropdown" class="dropdown" href="http://code.google.com" onclick="return false;"><img width="13" height="13" class="globeicon" src="../images/globe2_small.png"
-     ><u><span>English</span></u> <small>&#9660;</small></a>
+    <a id="lang-dropdown" href="http://code.google.com" onclick="return false;"><span style="text-decoration:underline">English</span> <span style="font-size:.75em;">&#9660;</span></a>
   
  </span>
 </div>
 
-<div class="gbh" style="left: 0pt;"></div>
-<div class="gbh" style="right: 0pt;"></div>
+<div class="gbh" style="left:0px;"></div>
+<div class="gbh" style="right:0px;"></div>
 
 <div id="gc-container">
 <a id="top"></a>
@@ -83,7 +78,7 @@ var logged_in_user_email = null;
   <div id="logo"><a href="http://code.google.com">
   
   
-     <img src="../images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;">
+     <img src="http://code.google.com/www.google.com/images/logos/code_logo.gif" height="40" width="167" alt="Google Code" style="border:0;margin:3px 0 0 0;">
   
   
   </a></div>
@@ -105,7 +100,6 @@ var logged_in_user_email = null;
 
 
 
-<h2 id="googlecode-promo">4,000 developers, 150 companies, 80 sessions. <a href="http://www.google-io.com/index.cfm?fuseaction=email.Redirect&amp;EID=C5F464777000" onclick="siteTracker._trackEvent('Promos','Header-IO',this.href);">Register for Google I/O!</a></h2>
 
 </div> <!-- end gc-header -->
 
@@ -159,8 +153,10 @@ var logged_in_user_email = null;
       <div class="g-unit g-first" id="gc-toc">
         <ul>
   <li><a href="downloads.html">Downloads</a></li>
+  <li><a href="tools_tips.html">Tools and Tips</a> <sup class="new">New!</sup></li>
   <li><a href="http://code.google.com/status/appengine">System Status</a></li>
   <li><a href="http://code.google.com/p/googleappengine/issues/list">Issue Tracker</a></li>
+  <li><a href="business/index.html">App Engine for Business</a> <sup class="new">New!</sup></li>
 </ul>
 <div class="line"></div>
 <ul>
@@ -207,12 +203,14 @@ var logged_in_user_email = null;
     <li><a href="docs/java/datastore/index.html">Storing Data</a>
       <ul>
             <li><a href="docs/java/datastore/overview.html">Overview</a></li>
+    <li><a href="docs/java/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
     <li><a href="docs/java/datastore/usingjdo.html">Using JDO</a></li>
     <li><a href="docs/java/datastore/dataclasses.html">Defining Data Classes</a></li>
     <li><a href="docs/java/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
     <li><a href="docs/java/datastore/queriesandindexes.html">Queries and Indexes</a></li>
     <li><a href="docs/java/datastore/transactions.html">Transactions</a></li>
     <li><a href="docs/java/datastore/relationships.html">Relationships</a></li>
+    <li><a href="docs/java/datastore/metadataqueries.html">Metadata Queries</a></li>
     <li><a href="docs/java/datastore/stats.html">Statistics</a></li>
     <li><a href="docs/java/datastore/usingjpa.html">Using JPA</a></li>
     <li><a href="docs/java/javadoc/com/google/appengine/api/datastore/package-summary.html">Low-level API</a></li>
@@ -221,19 +219,29 @@ var logged_in_user_email = null;
     </li>
     <li><a href="docs/java/apis.html">Services</a>
       <ul>
-        <li><a href="docs/java/memcache/index.html">Memcache</a>
+        <li><a href="docs/java/blobstore/index.html">Blobstore</a>
           <ul>
-                <li><a href="docs/java/memcache/overview.html">Overview</a></li>
-    <li><a href="docs/java/memcache/usingjcache.html">Using JCache</a></li>
-    <li><a href="docs/java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
+            <li><a href="docs/java/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="docs/java/urlfetch/index.html">URL Fetch</a>
+        <li><a href="docs/java/channel/index.html">Channel</a>
           <ul>
-                <li><a href="docs/java/urlfetch/overview.html">Overview</a></li>
-    <li><a href="docs/java/urlfetch/usingjavanet.html">Using java.net</a></li>
-    <li><a href="docs/java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+            <li><a href="docs/java/channel/overview.html">Overview</a></li>
+<li><a href="docs/java/javadoc/com/google/appengine/api/channel/package-summary.html">Javadoc Reference</li>
+<li><a href="docs/java/channel/javascript.html">JavaScript Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/java/images/index.html">Images</a>
+          <ul>
+                <li><a href="docs/java/images/overview.html">Overview</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -246,42 +254,57 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="docs/java/xmpp/index.html">XMPP</a>
+        <li><a href="docs/java/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="docs/java/xmpp/overview.html">Overview</a></li>
-     <li><a href="docs/java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
+                <li><a href="docs/java/memcache/overview.html">Overview</a></li>
+    <li><a href="docs/java/memcache/usingjcache.html">Using JCache</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/memcache/package-summary.html">Low-level API</a></li>
 
           </ul>
         </li>
-        <li><a href="docs/java/images/index.html">Images</a>
+        <li><a href="docs/java/multitenancy/index.html">Multitenancy</a>
           <ul>
-                <li><a href="docs/java/images/overview.html">Overview</a></li>
-    <li><a href="docs/java/javadoc/com/google/appengine/api/images/package-summary.html">API Reference</a></li>
+                  <li><a href="docs/java/multitenancy/overview.html">Overview</a></li>
+    <li><a href="docs/java/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="docs/java/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/NamespaceManager.html">API Reference</a>
 
           </ul>
         </li>
-        <li><a href="docs/java/users/index.html">Google Accounts</a>
+        <li><a href="docs/java/oauth/index.html">OAuth</a>
           <ul>
-                <li><a href="docs/java/users/overview.html">Overview</a></li>
-    <li><a href="docs/java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+                <li><a href="docs/java/oauth/overview.html">Overview</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/oauth/package-summary.html">API Reference</a></li>
+
 
           </ul>
         </li>
-        <li><a href="docs/java/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="docs/java/taskqueue/index.html">Task Queues</a>
           <ul>
                  <li><a href="docs/java/taskqueue/overview.html">Overview</a></li>
      <li><a href="docs/java/javadoc/com/google/appengine/api/labs/taskqueue/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
-        <li><a href="docs/java/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="docs/java/urlfetch/index.html">URL Fetch</a>
           <ul>
-            <li><a href="docs/java/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="docs/java/javadoc/com/google/appengine/api/blobstore/package-summary.html">API Reference</a></li>
-  </ul>
-</li>
+                <li><a href="docs/java/urlfetch/overview.html">Overview</a></li>
+    <li><a href="docs/java/urlfetch/usingjavanet.html">Using java.net</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/urlfetch/package-summary.html">Low-level API</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/java/users/index.html">Users</a>
+          <ul>
+                <li><a href="docs/java/users/overview.html">Overview</a></li>
+    <li><a href="docs/java/javadoc/com/google/appengine/api/users/package-summary.html">API Reference</a></li>
+
+          </ul>
+        </li>
+        <li><a href="docs/java/xmpp/index.html">XMPP</a>
+          <ul>
+                 <li><a href="docs/java/xmpp/overview.html">Overview</a></li>
+     <li><a href="docs/java/javadoc/com/google/appengine/api/xmpp/package-summary.html">API Reference</a></li>
 
           </ul>
         </li>
@@ -296,6 +319,17 @@ var logged_in_user_email = null;
     <li><a href="docs/java/config/indexconfig.html">Index Config</a></li>
     <li><a href="docs/java/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="docs/java/config/queue.html">Task Queue Config</a></li>
+    <li><a href="docs/java/config/dos.html">DoS Protection Config</a></li>
+
+      </ul>
+    </li>
+    <li><a href="docs/java/configyaml/index.html">YAML Configuration</a>
+      <ul>
+                <li><a href="docs/java/configyaml/appconfig_yaml.html">YAML App Config</a></li>
+        <li><a href="docs/java/configyaml/indexconfig.html">Index Config</a></li>
+        <li><a href="docs/java/configyaml/cron.html">Scheduled Tasks</a></li>
+        <li><a href="docs/java/configyaml/queue.html">Task Queue Config</a></li>
+        <li><a href="docs/java/configyaml/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -310,6 +344,7 @@ var logged_in_user_email = null;
             <li><a href="docs/java/tools/localunittesting/javadoc/index.html">Testing Javadoc</a></li>
         </ul>    
     </li>
+    <li><a href="docs/java/tools/appstats.html">Appstats</a></li>
 
       </ul>
     </li>
@@ -332,6 +367,7 @@ var logged_in_user_email = null;
     <li><a href="docs/python/datastore/index.html">Storing Data</a>
       <ul>
              <li><a href="docs/python/datastore/overview.html">Overview</a></li>
+     <li><a href="docs/python/datastore/hr/index.html">High-Replication Datastore</a><sup class="new">New!</sup></li>
      <li><a href="docs/python/datastore/entitiesandmodels.html">Entities and Models</a></li>
      <li><a href="docs/python/datastore/creatinggettinganddeletingdata.html">Creating, Getting and Deleting Data</a></li>
      <li><a href="docs/python/datastore/keysandentitygroups.html">Keys and Entity Groups</a></li>
@@ -339,6 +375,7 @@ var logged_in_user_email = null;
      <li><a href="docs/python/datastore/transactions.html">Transactions</a></li>
      <li><a href="docs/python/datastore/typesandpropertyclasses.html">Types and Property Classes</a></li>
      <li><a href="docs/python/datastore/gqlreference.html">GQL Reference</a></li>
+    <li><a href="docs/python/datastore/metadataqueries.html">Metadata Queries</a></li>
      <li><a href="docs/python/datastore/stats.html">Statistics</a></li>
 
      <li><span class="tlw-title tlw-expanded">Reference</span>
@@ -359,28 +396,44 @@ var logged_in_user_email = null;
     </li>
     <li><a href="docs/python/apis.html">Services</a>
       <ul>
-        <li><a href="docs/python/memcache/index.html">Memcache</a>
+        <li><a href="docs/python/blobstore/index.html">Blobstore</a>
           <ul>
-                 <li><a href="docs/python/memcache/overview.html">Overview</a></li>
-      <li><a href="docs/python/memcache/usingmemcache.html">Using Memcache</a></li>
-     <li><span class="tlw-title tlw-expanded">Reference</span>
-       <ul>
-         <li><a href="docs/python/memcache/clientclass.html">Client</a></li>
-         <li><a href="docs/python/memcache/functions.html">Functions</a></li>
-       </ul>
-     </li>
+            <li><a href="docs/python/blobstore/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="docs/python/blobstore/blobinfoclass.html">BlobInfo</a></li>
+    <li><a href="docs/python/blobstore/blobkeyclass.html">BlobKey</a></li>
+    <li><a href="docs/python/blobstore/blobreaderclass.html">BlobReader</a></li>
+    <li><a href="docs/python/blobstore/functions.html">Functions</a></li>
+    <li><a href="docs/python/blobstore/exceptions.html">Exceptions</a></li>
+  </ul>
+</li>
 
           </ul>
         </li>
-        <li><a href="docs/python/urlfetch/index.html">URL Fetch</a>
+        <li><a href="docs/python/channel/index.html">Channel</a>
           <ul>
-                 <li><a href="docs/python/urlfetch/overview.html">Overview</a></li>
+            <li><a href="docs/python/channel/overview.html">Overview</a></li>
+<li><span class="tlw-title tlw-expanded">Reference</span>
+  <ul>
+    <li><a href="docs/python/channel/functions.html">Functions</a></li>
+    <li><a href="docs/python/channel/exceptions.html">Exceptions</a></li>
+    <li><a href="docs/python/channel/javascript.html">Client Javascript Reference</a></li>
+  </ul>
+</li>
+
+          </ul>
+        </li>
+        <li><a href="docs/python/images/index.html">Images</a>
+          <ul>
+                 <li><a href="docs/python/images/overview.html">Overview</a></li>
+     <li><a href="docs/python/images/installingPIL.html">Installing PIL</a></li>
+     <li><a href="docs/python/images/usingimages.html">Using the Images API</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="docs/python/urlfetch/fetchfunction.html">The fetch Function</a></li>
-         <li><a href="docs/python/urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
-         <li><a href="docs/python/urlfetch/responseobjects.html">Response Objects</a></li>
-         <li><a href="docs/python/urlfetch/exceptions.html">Exceptions</a></li>
+         <li><a href="docs/python/images/imageclass.html">Image</a></li>
+         <li><a href="docs/python/images/functions.html">Functions</a></li>
+         <li><a href="docs/python/images/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
@@ -403,35 +456,74 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="docs/python/xmpp/index.html">XMPP</a>
+        <li><a href="docs/python/memcache/index.html">Memcache</a>
           <ul>
-                 <li><a href="docs/python/xmpp/overview.html">Overview</a></li>
+                 <li><a href="docs/python/memcache/overview.html">Overview</a></li>
+      <li><a href="docs/python/memcache/usingmemcache.html">Using Memcache</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="docs/python/xmpp/functions.html">Functions</a></li>
-         <li><a href="docs/python/xmpp/messageclass.html">Message</a></li>
-         <li><a href="docs/python/xmpp/exceptions.html">Exceptions</a></li>
+         <li><a href="docs/python/memcache/clientclass.html">Client</a></li>
+         <li><a href="docs/python/memcache/functions.html">Functions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="docs/python/images/index.html">Images</a>
+        <li><a href="docs/python/multitenancy/index.html">Multitenancy</a>
           <ul>
-                 <li><a href="docs/python/images/overview.html">Overview</a></li>
-     <li><a href="docs/python/images/installingPIL.html">Installing PIL</a></li>
-     <li><a href="docs/python/images/usingimages.html">Using the Images API</a></li>
+                  <li><a href="docs/python/multitenancy/overview.html">Overview</a></li>
+    <li><a href="docs/python/multitenancy/multitenancy.html">Multitenancy with Namespaces</a></li>
+    <li><a href="docs/python/multitenancy/namespaces.html">Other Uses for Namespaces</a></li>
+    <li>Reference
+      <ul>
+        <li><a href="docs/python/multitenancy/functions.html">Functions</a></li>
+        <li><a href="docs/python/multitenancy/exceptions.html">Exceptions</a></li>
+      </ul>
+    </li>
+
+          </ul>
+        </li>
+        <li><a href="docs/python/oauth/index.html">OAuth</a>
+          <ul>
+                 <li><a href="docs/python/oauth/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="docs/python/images/imageclass.html">Image</a></li>
-         <li><a href="docs/python/images/functions.html">Functions</a></li>
-         <li><a href="docs/python/images/exceptions.html">Exceptions</a></li>
+         <li><a href="docs/python/oauth/functions.html">Functions</a></li>
+         <li><a href="docs/python/oauth/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
 
           </ul>
         </li>
-        <li><a href="docs/python/users/index.html">Google Accounts</a>
+        <li><a href="docs/python/taskqueue/index.html">Task Queues</a>
+          <ul>
+                 <li><a href="docs/python/taskqueue/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="docs/python/taskqueue/tasks.html">Task Class</a></li>
+         <li><a href="docs/python/taskqueue/queues.html">Queue Class</a></li>
+         <li><a href="docs/python/taskqueue/functions.html">Functions</a></li>
+         <li><a href="docs/python/taskqueue/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="docs/python/urlfetch/index.html">URL Fetch</a>
+          <ul>
+                 <li><a href="docs/python/urlfetch/overview.html">Overview</a></li>
+     <li><span class="tlw-title tlw-expanded">Reference</span>
+       <ul>
+         <li><a href="docs/python/urlfetch/fetchfunction.html">The fetch Function</a></li>
+         <li><a href="docs/python/urlfetch/asynchronousrequests.html">Asynchronous Requests</a></li>
+         <li><a href="docs/python/urlfetch/responseobjects.html">Response Objects</a></li>
+         <li><a href="docs/python/urlfetch/exceptions.html">Exceptions</a></li>
+       </ul>
+     </li>
+
+          </ul>
+        </li>
+        <li><a href="docs/python/users/index.html">Users</a>
           <ul>
                  <li><a href="docs/python/users/overview.html">Overview</a></li>
      <li><a href="docs/python/users/userobjects.html">User Objects</a></li>
@@ -448,31 +540,16 @@ var logged_in_user_email = null;
 
           </ul>
         </li>
-        <li><a href="docs/python/taskqueue/index.html">Task Queues <span class="exp-feat">(Experimental)</span></a>
+        <li><a href="docs/python/xmpp/index.html">XMPP</a>
           <ul>
-                 <li><a href="docs/python/taskqueue/overview.html">Overview</a></li>
+                 <li><a href="docs/python/xmpp/overview.html">Overview</a></li>
      <li><span class="tlw-title tlw-expanded">Reference</span>
        <ul>
-         <li><a href="docs/python/taskqueue/tasks.html">Task Class</a></li>
-         <li><a href="docs/python/taskqueue/queues.html">Queue Class</a></li>
-         <li><a href="docs/python/taskqueue/functions.html">Functions</a></li>
-         <li><a href="docs/python/taskqueue/exceptions.html">Exceptions</a></li>
+         <li><a href="docs/python/xmpp/functions.html">Functions</a></li>
+         <li><a href="docs/python/xmpp/messageclass.html">Message</a></li>
+         <li><a href="docs/python/xmpp/exceptions.html">Exceptions</a></li>
        </ul>
      </li>
-
-          </ul>
-        </li>
-        <li><a href="docs/python/blobstore/index.html">Blobstore <span class="exp-feat">(Experimental)</span></a>
-          <ul>
-            <li><a href="docs/python/blobstore/overview.html">Overview</a></li>
-<li><span class="tlw-title tlw-expanded">Reference</span>
-  <ul>
-    <li><a href="docs/python/blobstore/blobinfoclass.html">BlobInfo</a></li>
-    <li><a href="docs/python/blobstore/blobkeyclass.html">BlobKey</a></li>
-    <li><a href="docs/python/blobstore/functions.html">Functions</a></li>
-    <li><a href="docs/python/blobstore/exceptions.html">Exceptions</a></li>
-  </ul>
-</li>
 
           </ul>
         </li>
@@ -484,6 +561,7 @@ var logged_in_user_email = null;
     <li><a href="docs/python/config/indexconfig.html">Index Config</a></li>
     <li><a href="docs/python/config/cron.html">Scheduled Tasks</a></li>
     <li><a href="docs/python/config/queue.html">Task Queue Config</a></li>
+    <li><a href="docs/python/config/dos.html">DoS Protection Config</a></li>
 
       </ul>
     </li>
@@ -535,10 +613,15 @@ var logged_in_user_email = null;
 <ul>
   <li><h2>Managing Your App</h2>
     <ul>
-      <li><a href="docs/theadminconsole.html">The Admin Console</a></li>
+      <li><a href="docs/adminconsole/index.html">Admin Console</a>
+        <ul>
+          <li><a href="docs/adminconsole/instances.html">Instances</a></li>
+        </ul>
+      </li>
       <li><a href="docs/quotas.html">Quotas</a></li>
       <li><a href="docs/billing.html">Billing</a></li>
-      <li><a href="docs/domain.html">Using a Custom Domain</a></li>    </ul>
+      <li><a href="docs/domain.html">Using a Custom Domain</a></li>
+    </ul>
   </li>
 </ul>
 <div class="line"></div>
@@ -548,7 +631,6 @@ var logged_in_user_email = null;
       <li><a href="kb/index.html">FAQ</a></li>
       <li><a href="articles/index.html">Articles</a></li>
       <li><a href="http://appengine-cookbook.appspot.com/">Cookbook</a></li>
-      <li><a href="http://appgallery.appspot.com/">App Gallery</a></li>
       <li><a href="http://code.google.com/p/googleappengine/">SDK Code</a></li>
       <li><a href="http://code.google.com/p/datanucleus-appengine/">JDO/JPA Code</a></li>
       <li><a href="http://code.google.com/p/google-app-engine-samples/">Sample Apps Code</a></li>
@@ -634,7 +716,7 @@ var logged_in_user_email = null;
 
 <div class="jd-descr">
 <h2 id="Download_the_Google_App_Engine_SDK">Download the Google App Engine SDK</h2>
-<p>By downloading, you agree to the be bound by the <a href="terms.html">Terms</a> that govern use of the App Engine SDK.</p>
+<p>By downloading, you agree to be bound by the <a href="terms.html">Terms</a> that govern use of the App Engine SDK.</p>
  <p>Please note: The App Engine SDK is under <b>active development</b>, please keep this in mind as
  you explore its capabilities. See the <a href="http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes">SDK Release Notes</a> for the information on the most recent changes to the App Engine SDK.
  If you discover any issues, please feel free to notify us via our
@@ -651,24 +733,24 @@ var logged_in_user_email = null;
    </tr>
    <tr>
      <td>Windows</td>
-     <td>1.3.1 - 2010-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngine_1.3.1.msi">GoogleAppEngine_1.3.1.msi</a></td>
-     <td>9.7 MB</td>
-     <td>26ace7042dccd38b53860a91603a99b5c99db941</td>
+     <td>1.3.8 - 2010-10-14</td>
+     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngine-1.3.8.msi">GoogleAppEngine-1.3.8.msi</a></td>
+     <td>9.5 MB</td>
+     <td>048d3dfc31f342639655ebd970daba16c20b0308</td>
    </tr>
    <tr class="alt">
      <td>Mac OS X</td>
-     <td>1.3.1 - 2010-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngineLauncher-1.3.1.dmg">GoogleAppEngineLauncher-1.3.1.dmg</a></td>
-     <td>4.4 MB</td>
-     <td>82cb225e657b9c38d776ea848d9580f2c368095a</td>
+     <td>1.3.8 - 2010-10-14</td>
+     <td><a href="http://googleappengine.googlecode.com/files/GoogleAppEngineLauncher-1.3.8.dmg">GoogleAppEngineLauncher-1.3.8.dmg</a></td>
+     <td>4.3 MB</td>
+     <td>8d91fa047e2e85653c2b8eabe997ee3ea6c83183</td>
    </tr>
    <tr>
      <td>Linux/Other Platforms</td>
-     <td>1.3.1 - 2010-02-10</td>
-     <td><a href="http://googleappengine.googlecode.com/files/google_appengine_1.3.1.zip">google_appengine_1.3.1.zip</a></td>
-     <td>3.0 MB</td>
-     <td>cdd9650da878e6ccf97e478a638a7be723ac08ee</td>
+     <td>1.3.8 - 2010-10-14</td>
+     <td><a href="http://googleappengine.googlecode.com/files/google_appengine_1.3.8.zip">google_appengine_1.3.8.zip</a></td>
+     <td>3.2 MB</td>
+     <td>e2f5ba2f846aab90af41c193ac9c4f8adedad14f</td>
    </tr>
  </table>
  <p>For more information on the SDK for Python:</p>
@@ -686,10 +768,10 @@ var logged_in_user_email = null;
     <th>SHA1 Checksum</th>
   </tr>
   <tr>
-    <td>1.3.1 - 2010-02-10</td>
-    <td><a href="http://googleappengine.googlecode.com/files/appengine-java-sdk-1.3.1.zip">appengine-java-sdk-1.3.1.zip</a></td>
-    <td>26.8 MB</td>
-    <td>735efc725610d9649988e0cc9a4b44bb698ac9b1</td>
+    <td>1.3.8 - 2010-10-14</td>
+    <td><a href="http://googleappengine.googlecode.com/files/appengine-java-sdk-1.3.8.zip">appengine-java-sdk-1.3.8.zip</a></td>
+    <td>28.9 MB</td>
+    <td>5395bb75ab8913ec2312e0cd65815e04858e3d33</td>
   </tr>
 </table>
 <p>For more information on the Google App Engine SDK for Java:</p>
@@ -720,9 +802,9 @@ var logged_in_user_email = null;
    </tr>
    <tr>
      <td>Google App Engine documentation</td>
-     <td>2009-12-15</td>
-     <td><a href="http://googleappengine.googlecode.com/files/google-appengine-docs-20091215.zip">google-appengine-docs-20091215.zip</a></td>
-     <td>5.6 MB</td>
+     <td>2010-10-14</td>
+     <td><a href="http://googleappengine.googlecode.com/files/google-appengine-docs-20101014.zip">google-appengine-docs-20101014.zip</a></td>
+     <td>6.7 MB</td>
    </tr>
  </table>
 
@@ -784,14 +866,14 @@ alt="Powered by Google App Engine" /&gt;</td>
   </License>
 </rdf:RDF> -->
 </div>
-Java is a registered trademark of Sun Microsystems, Inc.</div>
+Java is a registered trademark of Oracle and/or its affiliates</div>
     
     &copy;2010 Google -
     <a href="http://code.google.com">Code Home</a> -
     <a href="http://code.google.com/terms.html">Terms of Service</a> -
-    <a href="http://code.google.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.google.com/intl/en/privacypolicy.html">Privacy Policy</a> -
     <a href="http://code.google.com/more">Site Directory</a>
-    <br /> <br />
+    <br> <br>
     Google Code offered in:
     <a href="http://code.google.com/intl/en">English</a> -
     <a href="http://code.google.com/intl/es">Español</a> -
@@ -804,7 +886,7 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
   </div>
 </div><!-- end gc-footer -->
 
-</div><!-- end gc-containter -->
+</div><!-- end gc-container -->
 
 <script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
 <script src="../js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
@@ -812,6 +894,28 @@ Java is a registered trademark of Sun Microsystems, Inc.</div>
 
 
 
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(
+
+
+    ['siteTracker._setAccount', 'UA-18071-1'],
+    ['siteTracker._setDomainName', 'code.google.com'],
+    ['siteTracker._setCookiePath', window.location.pathname.substring(0,
+        window.location.pathname.lastIndexOf('/') + 1)],
+    ['siteTracker._trackPageview']
+);
+(function() {
+  var ga = document.createElement('script');
+
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = 'http://www.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
 
 
 
